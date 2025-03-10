@@ -1,0 +1,332 @@
+models:
+  - name: Mistral Instruct 
+    displayName: Mistral Instruct
+    modelHubID: mistral-instruct
+    category: Text Generation
+    type: NGC
+    description: Mistral Instruct is a language model that can follow instructions, complete requests, and generate creative text formats. The Mistral Instract Large Language Model (LLM) is an instruct fine-tuned version of the Mistral.
+    modelVariants:
+      - variantId: Mistral 7B Instruct
+        displayName: Mistral 7B Instruct
+        source:
+          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/mistralai/containers/mistral-7b-instruct-v0.3
+        optimizationProfiles:
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-h100x1-fp8-throughput.1.1.2.17547653
+          displayName: Mistral 7B Instruct H100 FP8 Throughput
+          framework: TensorRT-LLM
+          ngcMetadata: MDhhYjQzNjNmMjI1YzE5ZTM3ODViNTg0MDhmYTRkY2FjNDcyNDU5Y2NhMWZlYmNmYWZmYjQzZjg3MzU1N2U4NzoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogSDEwMAogICAgZ3B1X2RldmljZTogMjMzMDoxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnA4CiAgICBwcm9maWxlOiB0aHJvdWdocHV0CiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgICAtIGRzdDogJycKICAgICAgICBzcmM6CiAgICAgICAgICBmaWxlczoKICAgICAgICAgICAgLSAhbmFtZSAnUkVBRE1FLm1kJwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnZ2VuZXJhdGlvbl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbW9kZWwuc2FmZXRlbnNvcnMuaW5kZXguanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncGFyYW1zLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3NwZWNpYWxfdG9rZW5zX21hcC5qc29uJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIubW9kZWwudjMnCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplcl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9vbF91c2VfY29uZmlnLmpzb24nCiAgICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAzOmhmLTM5OTAyNTktdG9vbC1jYWxsaW5nCiAgICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ0xJQ0VOU0UudHh0JwogICAgICAgICAgICAtICFuYW1lICdOT1RJQ0UudHh0JwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbWV0YWRhdGEuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncmFuazAuZW5naW5lJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzowLjExLjErMTQ5NTdiZjgtaDEwMHgxLWZwOC10aHJvdWdocHV0LjEuMS4yLjE3NTQ3NjUz
+          sha: 08ab4363f225c19e3785b58408fa4dcac472459cca1febcfaffb43f873557e87
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 7581039585
+          spec:
+          - key: PROFILE
+            value: Throughput
+          - key: PRECISION
+            value: FP8
+          - key: GPU
+            value: H100
+          - key: COUNT
+            value: 1
+          - key: GPU DEVICE
+            value: 2330:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 7GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-h100x2-fp8-latency.1.1.2.17547653
+          displayName: Mistral 7B Instruct H100 FP8 Latency
+          framework: TensorRT-LLM
+          ngcMetadata: NDgwMDRiYWY0ZjQ1Y2ExNzdhYTk0YWJmZDNjNWM1NDg1ODgwOGFkNzI4OTE0YjE2MjZjM2NmMDM4ZWE4NWJjNDoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogSDEwMAogICAgZ3B1X2RldmljZTogMjMzMDoxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnA4CiAgICBwcm9maWxlOiBsYXRlbmN5CiAgICB0cDogJzInCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgICAtIGRzdDogJycKICAgICAgICBzcmM6CiAgICAgICAgICBmaWxlczoKICAgICAgICAgICAgLSAhbmFtZSAnUkVBRE1FLm1kJwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnZ2VuZXJhdGlvbl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbW9kZWwuc2FmZXRlbnNvcnMuaW5kZXguanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncGFyYW1zLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3NwZWNpYWxfdG9rZW5zX21hcC5qc29uJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIubW9kZWwudjMnCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplcl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9vbF91c2VfY29uZmlnLmpzb24nCiAgICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAzOmhmLTM5OTAyNTktdG9vbC1jYWxsaW5nCiAgICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ0xJQ0VOU0UudHh0JwogICAgICAgICAgICAtICFuYW1lICdOT1RJQ0UudHh0JwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbWV0YWRhdGEuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncmFuazAuZW5naW5lJwogICAgICAgICAgICAtICFuYW1lICdyYW5rMS5lbmdpbmUnCiAgICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAzOjAuMTEuMSsxNDk1N2JmOC1oMTAweDItZnA4LWxhdGVuY3kuMS4xLjIuMTc1NDc2NTM=
+          sha: 48004baf4f45ca177aa94abfd3c5c54858808ad728914b1626c3cf038ea85bc4
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 7683289422
+          spec:
+          - key: PROFILE
+            value: Latency
+          - key: PRECISION
+            value: FP8
+          - key: GPU
+            value: H100
+          - key: COUNT
+            value: 2
+          - key: GPU DEVICE
+            value: 20b2:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 7GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-l40sx2-fp8-latency.1.1.2.17547653
+          displayName: Mistral 7B Instruct L40S FP8 Latency
+          framework: TensorRT-LLM
+          ngcMetadata: NWMxN2MyNzE4NmIyMzJlODM0YWVlOWM2MWQxZjVkYjM4ODg3NGRhNDAwNTNkNzBiODRmZDEzODY0MjFmZjU3NzoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogTDQwUwogICAgZ3B1X2RldmljZTogMjZiNToxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnA4CiAgICBwcm9maWxlOiBsYXRlbmN5CiAgICB0cDogJzInCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgICAtIGRzdDogJycKICAgICAgICBzcmM6CiAgICAgICAgICBmaWxlczoKICAgICAgICAgICAgLSAhbmFtZSAnUkVBRE1FLm1kJwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnZ2VuZXJhdGlvbl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbW9kZWwuc2FmZXRlbnNvcnMuaW5kZXguanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncGFyYW1zLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3NwZWNpYWxfdG9rZW5zX21hcC5qc29uJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIubW9kZWwudjMnCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplcl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9vbF91c2VfY29uZmlnLmpzb24nCiAgICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAzOmhmLTM5OTAyNTktdG9vbC1jYWxsaW5nCiAgICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ0xJQ0VOU0UudHh0JwogICAgICAgICAgICAtICFuYW1lICdOT1RJQ0UudHh0JwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbWV0YWRhdGEuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncmFuazAuZW5naW5lJwogICAgICAgICAgICAtICFuYW1lICdyYW5rMS5lbmdpbmUnCiAgICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAzOjAuMTEuMSsxNDk1N2JmOC1sNDBzeDItZnA4LWxhdGVuY3kuMS4xLjIuMTc1NDc2NTM=
+          sha: 5c17c27186b232e834aee9c61d1f5db388874da40053d70b84fd1386421ff577
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 7668082873
+          spec:
+          - key: PROFILE
+            value: Latency
+          - key: PRECISION
+            value: FP8
+          - key: GPU
+            value: L40S
+          - key: COUNT
+            value: 2
+          - key: GPU DEVICE
+            value: 20b2:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 7GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-h100x2-fp16-latency.1.1.2.17520508
+          displayName: Mistral 7B Instruct H100 FP16 Latency
+          framework: TensorRT-LLM
+          ngcMetadata: NjA2NGFiNGMzM2ExYzZkYTgwNTg0MjJiOGNiMDM0N2U3MjE0MWQyMDNjNzdiYTMwOWNlNWM1NTMzZjU0ODE4ODoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogSDEwMAogICAgZ3B1X2RldmljZTogMjMzMDoxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnAxNgogICAgcHJvZmlsZTogbGF0ZW5jeQogICAgdHA6ICcyJwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgICAgLSBkc3Q6ICcnCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ1JFQURNRS5tZCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ2dlbmVyYXRpb25fY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLnNhZmV0ZW5zb3JzLmluZGV4Lmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3BhcmFtcy5qc29uJwogICAgICAgICAgICAtICFuYW1lICdzcGVjaWFsX3Rva2Vuc19tYXAuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplci5tb2RlbCcKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsLnYzJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXJfY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rvb2xfdXNlX2NvbmZpZy5qc29uJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzpoZi0zOTkwMjU5LXRvb2wtY2FsbGluZwogICAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICAgIHNyYzoKICAgICAgICAgIGZpbGVzOgogICAgICAgICAgICAtICFuYW1lICdMSUNFTlNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnTk9USUNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21ldGFkYXRhLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3JhbmswLmVuZ2luZScKICAgICAgICAgICAgLSAhbmFtZSAncmFuazEuZW5naW5lJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzowLjExLjErMTQ5NTdiZjgtaDEwMHgyLWZwMTYtbGF0ZW5jeS4xLjEuMi4xNzUyMDUwOA==
+          sha: 6064ab4c33a1c6da8058422b8cb0347e72141d203c77ba309ce5c5533f548188
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 14843530523
+          spec:
+          - key: PROFILE
+            value: Latency
+          - key: PRECISION
+            value: FP16
+          - key: GPU
+            value: H100
+          - key: COUNT
+            value: 2
+          - key: GPU DEVICE
+            value: 2330:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 14GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-h100x1-fp16-throughput.1.1.2.17520508
+          displayName: Mistral 7B Instruct H100 FP16 Throughput
+          framework: TensorRT-LLM
+          ngcMetadata: ODgzM2I5ZWJhMWJkNGZiZWQ0Zjc2NGU2NDc5NzIyN2FkY2EzMmUzYzFmNjMwYzI3MjJhOGE1MmZlZTJmZDFmYToKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogSDEwMAogICAgZ3B1X2RldmljZTogMjMzMDoxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnAxNgogICAgcHJvZmlsZTogdGhyb3VnaHB1dAogICAgdHA6ICcxJwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgICAgLSBkc3Q6ICcnCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ1JFQURNRS5tZCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ2dlbmVyYXRpb25fY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLnNhZmV0ZW5zb3JzLmluZGV4Lmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3BhcmFtcy5qc29uJwogICAgICAgICAgICAtICFuYW1lICdzcGVjaWFsX3Rva2Vuc19tYXAuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplci5tb2RlbCcKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsLnYzJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXJfY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rvb2xfdXNlX2NvbmZpZy5qc29uJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzpoZi0zOTkwMjU5LXRvb2wtY2FsbGluZwogICAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICAgIHNyYzoKICAgICAgICAgIGZpbGVzOgogICAgICAgICAgICAtICFuYW1lICdMSUNFTlNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnTk9USUNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21ldGFkYXRhLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3JhbmswLmVuZ2luZScKICAgICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MC4xMS4xKzE0OTU3YmY4LWgxMDB4MS1mcDE2LXRocm91Z2hwdXQuMS4xLjIuMTc1MjA1MDg=
+          sha: 8833b9eba1bd4fbed4f764e64797227adca32e3c1f630c2722a8a52fee2fd1fa
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 14534647998
+          spec:
+          - key: PROFILE
+            value: Throughput
+          - key: PRECISION
+            value: FP16
+          - key: GPU
+            value: H100
+          - key: COUNT
+            value: 1
+          - key: GPU DEVICE
+            value: 2330:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 14GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-l40sx1-fp16-throughput.1.1.2.17541679
+          displayName: Mistral 7B Instruct L40S FP16 Throughput
+          framework: TensorRT-LLM
+          ngcMetadata: OTVmNzY0YjEzZGNhOTgxNzMwNjhhZDdkZDkxODQwOThlMThhMDRhZDgwMzcyMjU0MGE5MTFkMzVhNTk5Mzc4YToKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogTDQwUwogICAgZ3B1X2RldmljZTogMjZiNToxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnAxNgogICAgcHJvZmlsZTogdGhyb3VnaHB1dAogICAgdHA6ICcxJwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgICAgLSBkc3Q6ICcnCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ1JFQURNRS5tZCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ2dlbmVyYXRpb25fY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLnNhZmV0ZW5zb3JzLmluZGV4Lmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3BhcmFtcy5qc29uJwogICAgICAgICAgICAtICFuYW1lICdzcGVjaWFsX3Rva2Vuc19tYXAuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplci5tb2RlbCcKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsLnYzJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXJfY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rvb2xfdXNlX2NvbmZpZy5qc29uJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzpoZi0zOTkwMjU5LXRvb2wtY2FsbGluZwogICAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICAgIHNyYzoKICAgICAgICAgIGZpbGVzOgogICAgICAgICAgICAtICFuYW1lICdMSUNFTlNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnTk9USUNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21ldGFkYXRhLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3JhbmswLmVuZ2luZScKICAgICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MC4xMS4xKzE0OTU3YmY4LWw0MHN4MS1mcDE2LXRocm91Z2hwdXQuMS4xLjIuMTc1NDE2Nzk=
+          sha: 95f764b13dca98173068ad7dd9184098e18a04ad803722540a911d35a599378a
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 14534535777
+          spec:
+          - key: PROFILE
+            value: Throughput
+          - key: PRECISION
+            value: FP16
+          - key: GPU
+            value: L40S
+          - key: COUNT
+            value: 1
+          - key: GPU DEVICE
+            value: 26b5:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 14GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-a100x1-fp16-throughput.1.1.2.17541679
+          displayName: Mistral 7B Instruct A100 FP16 Throughput
+          framework: TensorRT-LLM
+          ngcMetadata: Yzc5NTYxYTc0Zjk3YjE1N2RlMTIwNjZiN2ExMzc3MDJhNGIwOWY3MWY0MjczZmY3NDdlZmUwNjA4ODFmY2E5MjoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogQTEwMAogICAgZ3B1X2RldmljZTogMjBiMjoxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnAxNgogICAgcHJvZmlsZTogdGhyb3VnaHB1dAogICAgdHA6ICcxJwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgICAgLSBkc3Q6ICcnCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ1JFQURNRS5tZCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ2dlbmVyYXRpb25fY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLnNhZmV0ZW5zb3JzLmluZGV4Lmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3BhcmFtcy5qc29uJwogICAgICAgICAgICAtICFuYW1lICdzcGVjaWFsX3Rva2Vuc19tYXAuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplci5tb2RlbCcKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsLnYzJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXJfY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rvb2xfdXNlX2NvbmZpZy5qc29uJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzpoZi0zOTkwMjU5LXRvb2wtY2FsbGluZwogICAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICAgIHNyYzoKICAgICAgICAgIGZpbGVzOgogICAgICAgICAgICAtICFuYW1lICdMSUNFTlNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnTk9USUNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21ldGFkYXRhLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3JhbmswLmVuZ2luZScKICAgICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MC4xMS4xKzE0OTU3YmY4LWExMDB4MS1mcDE2LXRocm91Z2hwdXQuMS4xLjIuMTc1NDE2Nzk=
+          sha: c79561a74f97b157de12066b7a137702a4b09f71f4273ff747efe060881fca92
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 14533870834
+          spec:
+          - key: PROFILE
+            value: Throughput
+          - key: PRECISION
+            value: FP16
+          - key: GPU
+            value: A100
+          - key: COUNT
+            value: 1
+          - key: GPU DEVICE
+            value: 20b2:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 14GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-l40sx1-fp8-throughput.1.1.2.17547653
+          displayName: Mistral 7B Instruct L40S FP8 Throughput
+          framework: TensorRT-LLM
+          ngcMetadata: Y2MxODk0MmY0MGU3NzBhYTI3YTBiMDJjMWY1YmYxNDU4YTZmZWRkMTBhMWVkMzc3NjMwZDMwZDcxYTFiMzZkYjoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogTDQwUwogICAgZ3B1X2RldmljZTogMjZiNToxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnA4CiAgICBwcm9maWxlOiB0aHJvdWdocHV0CiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgICAtIGRzdDogJycKICAgICAgICBzcmM6CiAgICAgICAgICBmaWxlczoKICAgICAgICAgICAgLSAhbmFtZSAnUkVBRE1FLm1kJwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnZ2VuZXJhdGlvbl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbW9kZWwuc2FmZXRlbnNvcnMuaW5kZXguanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncGFyYW1zLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3NwZWNpYWxfdG9rZW5zX21hcC5qc29uJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIubW9kZWwudjMnCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplcl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9vbF91c2VfY29uZmlnLmpzb24nCiAgICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAzOmhmLTM5OTAyNTktdG9vbC1jYWxsaW5nCiAgICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ0xJQ0VOU0UudHh0JwogICAgICAgICAgICAtICFuYW1lICdOT1RJQ0UudHh0JwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbWV0YWRhdGEuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncmFuazAuZW5naW5lJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzowLjExLjErMTQ5NTdiZjgtbDQwc3gxLWZwOC10aHJvdWdocHV0LjEuMS4yLjE3NTQ3NjUz
+          sha: cc18942f40e770aa27a0b02c1f5bf1458a6fedd10a1ed377630d30d71a1b36db
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 7582789228
+          spec:
+          - key: PROFILE
+            value: Throughput
+          - key: PRECISION
+            value: FP8
+          - key: GPU
+            value: L40S
+          - key: COUNT
+            value: 1
+          - key: GPU DEVICE
+            value: 26b5:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 7GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-a100x2-fp16-latency.1.1.2.17541679
+          displayName: Mistral 7B Instruct A100 FP16 Latency
+          framework: TensorRT-LLM
+          ngcMetadata: ZGVhOWFmOTBkNTMxMWZmMmQ2NTFkYjhjMTZmNzUyZDAxNDA1M2QzYjFjNTUwNDc0Y2JlZGEyNDFmODFjOTZiZDoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogQTEwMAogICAgZ3B1X2RldmljZTogMjBiMjoxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnAxNgogICAgcHJvZmlsZTogbGF0ZW5jeQogICAgdHA6ICcyJwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgICAgLSBkc3Q6ICcnCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ1JFQURNRS5tZCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ2dlbmVyYXRpb25fY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLnNhZmV0ZW5zb3JzLmluZGV4Lmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3BhcmFtcy5qc29uJwogICAgICAgICAgICAtICFuYW1lICdzcGVjaWFsX3Rva2Vuc19tYXAuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplci5tb2RlbCcKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsLnYzJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXJfY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rvb2xfdXNlX2NvbmZpZy5qc29uJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzpoZi0zOTkwMjU5LXRvb2wtY2FsbGluZwogICAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICAgIHNyYzoKICAgICAgICAgIGZpbGVzOgogICAgICAgICAgICAtICFuYW1lICdMSUNFTlNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnTk9USUNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21ldGFkYXRhLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3JhbmswLmVuZ2luZScKICAgICAgICAgICAgLSAhbmFtZSAncmFuazEuZW5naW5lJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzowLjExLjErMTQ5NTdiZjgtYTEwMHgyLWZwMTYtbGF0ZW5jeS4xLjEuMi4xNzU0MTY3OQ==
+          sha: dea9af90d5311ff2d651db8c16f752d014053d3b1c550474cbeda241f81c96bd
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 14841967999
+          spec:
+          - key: PROFILE
+            value: Latency
+          - key: PRECISION
+            value: FP16
+          - key: GPU
+            value: A100
+          - key: COUNT
+            value: 2
+          - key: GPU DEVICE
+            value: 20b2:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 14GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-l40sx2-fp16-latency.1.1.2.17541679
+          displayName: Mistral 7B Instruct L40S FP16 Latency
+          framework: TensorRT-LLM
+          ngcMetadata: ZWYyMmM3Y2VjYmNmMmM4YjM4ODliZDU4YTQ4MDk1ZTQ3YThjYzAzOTRkMjIxYWNkYTFiNDA4N2I0NmM2ZjNlOToKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogTDQwUwogICAgZ3B1X2RldmljZTogMjZiNToxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnAxNgogICAgcHJvZmlsZTogbGF0ZW5jeQogICAgdHA6ICcyJwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgICAgLSBkc3Q6ICcnCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ1JFQURNRS5tZCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ2dlbmVyYXRpb25fY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLnNhZmV0ZW5zb3JzLmluZGV4Lmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3BhcmFtcy5qc29uJwogICAgICAgICAgICAtICFuYW1lICdzcGVjaWFsX3Rva2Vuc19tYXAuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplci5tb2RlbCcKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsLnYzJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXJfY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rvb2xfdXNlX2NvbmZpZy5qc29uJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzpoZi0zOTkwMjU5LXRvb2wtY2FsbGluZwogICAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICAgIHNyYzoKICAgICAgICAgIGZpbGVzOgogICAgICAgICAgICAtICFuYW1lICdMSUNFTlNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnTk9USUNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21ldGFkYXRhLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3JhbmswLmVuZ2luZScKICAgICAgICAgICAgLSAhbmFtZSAncmFuazEuZW5naW5lJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzowLjExLjErMTQ5NTdiZjgtbDQwc3gyLWZwMTYtbGF0ZW5jeS4xLjEuMi4xNzU0MTY3OQ==
+          sha: ef22c7cecbcf2c8b3889bd58a48095e47a8cc0394d221acda1b4087b46c6f3e9
+          modelFormat: trt-llm
+          latestVersionSizeInBytes: 14843372758
+          spec:
+          - key: PROFILE
+            value: Latency
+          - key: PRECISION
+            value: FP16
+          - key: GPU
+            value: L40S
+          - key: COUNT
+            value: 2
+          - key: GPU DEVICE
+            value: 26b5:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 14GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-a10gx2-fp16-throughput.1.1.2.17520508
+          displayName: Mistral 7B Instruct A10G FP16 Throughput
+          framework: TensorRT-LLM
+          ngcMetadata: MjdmZmU1NjE0ZDlkNWM4ZTcyN2JmMjFiNWU3YzIzNDA4NmEzMmI0ZTliMzQyM2E1NzlmMzdjZWYzYWQyMmZjMToKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogQTEwRwogICAgZ3B1X2RldmljZTogMjIzNzoxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnAxNgogICAgcHJvZmlsZTogdGhyb3VnaHB1dAogICAgdHA6ICcyJwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgICAgLSBkc3Q6ICcnCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ1JFQURNRS5tZCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ2dlbmVyYXRpb25fY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLnNhZmV0ZW5zb3JzLmluZGV4Lmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3BhcmFtcy5qc29uJwogICAgICAgICAgICAtICFuYW1lICdzcGVjaWFsX3Rva2Vuc19tYXAuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplci5tb2RlbCcKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsLnYzJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXJfY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rvb2xfdXNlX2NvbmZpZy5qc29uJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzpoZi0zOTkwMjU5LXRvb2wtY2FsbGluZwogICAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICAgIHNyYzoKICAgICAgICAgIGZpbGVzOgogICAgICAgICAgICAtICFuYW1lICdMSUNFTlNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnTk9USUNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21ldGFkYXRhLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3JhbmswLmVuZ2luZScKICAgICAgICAgICAgLSAhbmFtZSAncmFuazEuZW5naW5lJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzowLjExLjErMTQ5NTdiZjgtYTEwZ3gyLWZwMTYtdGhyb3VnaHB1dC4xLjEuMi4xNzUyMDUwOA==
+          sha: 27ffe5614d9d5c8e727bf21b5e7c234086a32b4e9b3423a579f37cef3ad22fc1
+          modelFormat: trt-llm
+          spec:
+          - key: PROFILE
+            value: Latency
+          - key: PRECISION
+            value: FP16
+          - key: GPU
+            value: A10G
+          - key: COUNT
+            value: 2
+          - key: GPU DEVICE
+            value: 2237:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 14GB
+        - profileId: nim/mistralai/mistral-7b-instruct-v03:0.11.1+14957bf8-a10gx4-fp16-latency.1.1.2.17520508
+          displayName: Mistral 7B Instruct A10G FP16 Latency
+          framework: TensorRT-LLM
+          ngcMetadata: OTAwNzI5NTY4Yzg5ODgzODU4NWJlOGU1NzY4N2Y0MTI5MDA1MzAxNTIwNTNjMTVjMTdmNTA4NWMzNWM0Y2I0MDoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogZmFsc2UKICAgIGdwdTogQTEwRwogICAgZ3B1X2RldmljZTogMjIzNzoxMGRlCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHBwOiAnMScKICAgIHByZWNpc2lvbjogZnAxNgogICAgcHJvZmlsZTogbGF0ZW5jeQogICAgdHA6ICc0JwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgICAgLSBkc3Q6ICcnCiAgICAgICAgc3JjOgogICAgICAgICAgZmlsZXM6CiAgICAgICAgICAgIC0gIW5hbWUgJ1JFQURNRS5tZCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ2dlbmVyYXRpb25fY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLnNhZmV0ZW5zb3JzLmluZGV4Lmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3BhcmFtcy5qc29uJwogICAgICAgICAgICAtICFuYW1lICdzcGVjaWFsX3Rva2Vuc19tYXAuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplci5tb2RlbCcKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsLnYzJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXJfY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rvb2xfdXNlX2NvbmZpZy5qc29uJwogICAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL21pc3RyYWxhaS9taXN0cmFsLTdiLWluc3RydWN0LXYwMzpoZi0zOTkwMjU5LXRvb2wtY2FsbGluZwogICAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICAgIHNyYzoKICAgICAgICAgIGZpbGVzOgogICAgICAgICAgICAtICFuYW1lICdMSUNFTlNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnTk9USUNFLnR4dCcKICAgICAgICAgICAgLSAhbmFtZSAnY2hlY2tzdW1zLmJsYWtlMycKICAgICAgICAgICAgLSAhbmFtZSAnY29uZmlnLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ21ldGFkYXRhLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3JhbmswLmVuZ2luZScKICAgICAgICAgICAgLSAhbmFtZSAncmFuazEuZW5naW5lJwogICAgICAgICAgICAtICFuYW1lICdyYW5rMi5lbmdpbmUnCiAgICAgICAgICAgIC0gIW5hbWUgJ3JhbmszLmVuZ2luZScKICAgICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MC4xMS4xKzE0OTU3YmY4LWExMGd4NC1mcDE2LWxhdGVuY3kuMS4xLjIuMTc1MjA1MDg=
+          sha: 900729568c898838585be8e57687f412900530152053c15c17f5085c35c4cb40
+          modelFormat: trt-llm
+          spec:
+          - key: PROFILE
+            value: Latency
+          - key: PRECISION
+            value: FP16
+          - key: GPU
+            value: A10G
+          - key: COUNT
+            value: 4
+          - key: GPU DEVICE
+            value: 2237:10de
+          - key: NIM VERSION
+            value: '1.1.2'
+          - key: DOWNLOAD SIZE
+            value: 14GB
+        # - profileId: nim/mistralai/mistral-7b-instruct-v03:hf-3990259-tool-calling
+        #   displayName: Mistral 7B Instruct FP16 (2xGPU)
+        #   framework: vLLM
+        #   ngcMetadata: MWI2OTVjNTcxMDg3NjI3NDRhNjNkMDcxZmY0MzYyMzE4NWIwYzg2NWU4NDI1YzZlOGE4NTcyZWE4YjVjYWMyMzoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogJ2ZhbHNlJwogICAgbGxtX2VuZ2luZTogdmxsbQogICAgcHJlY2lzaW9uOiBiZjE2CiAgICB0cDogJzInCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgICAtIGRzdDogJycKICAgICAgICBzcmM6CiAgICAgICAgICBmaWxlczoKICAgICAgICAgICAgLSAhbmFtZSAnUkVBRE1FLm1kJwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnZ2VuZXJhdGlvbl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbW9kZWwtMDAwMDEtb2YtMDAwMDMuc2FmZXRlbnNvcnMnCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLTAwMDAyLW9mLTAwMDAzLnNhZmV0ZW5zb3JzJwogICAgICAgICAgICAtICFuYW1lICdtb2RlbC0wMDAwMy1vZi0wMDAwMy5zYWZldGVuc29ycycKICAgICAgICAgICAgLSAhbmFtZSAnbW9kZWwuc2FmZXRlbnNvcnMuaW5kZXguanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncGFyYW1zLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3NwZWNpYWxfdG9rZW5zX21hcC5qc29uJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIubW9kZWwudjMnCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplcl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9vbF91c2VfY29uZmlnLmpzb24nCiAgICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAzOmhmLTM5OTAyNTktdG9vbC1jYWxsaW5n
+        #   sha: 1b695c57108762744a63d071ff43623185b0c865e8425c6e8a8572ea8b5cac23
+        #   modelFormat: vllm
+        #   spec:
+        #   - key: PROFILE
+        #     value: NA
+        #   - key: PRECISION
+        #     value: FP16
+        #   - key: GPU
+        #     value: any
+        #   - key: COUNT
+        #     value: 2
+        #   - key: GPU DEVICE
+        #     value: any
+        #   - key: NIM VERSION
+        #     value: '1.1.2'
+        #   - key: feat_lora
+        #     value: False
+        #   - key: DOWNLOAD SIZE
+        #     value: 14GB
+        # - profileId: nim/mistralai/mistral-7b-instruct-v03:hf-3990259-tool-calling
+        #   displayName: Mistral 7B Instruct FP16 (1xGPU)
+        #   framework: vLLM
+        #   ngcMetadata: MDkxMmRmYWJjODE2YTk4MTliMjA5YjRhYjBiYTYzYjNkY2Q5MmUzM2VhMWQxNGViMTYxY2Y5ZjEyYzgzZTYyNjoKICBjb250YWluZXJfdXJsOiBudmNyLmlvL25pbS9taXN0cmFsYWkvbWlzdHJhbC03Yi1pbnN0cnVjdC12MDM6MS4xLjIKICBtb2RlbDogbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAuMwogIHJlbGVhc2U6IDEuMS4yCiAgdGFnczoKICAgIGZlYXRfbG9yYTogJ2ZhbHNlJwogICAgbGxtX2VuZ2luZTogdmxsbQogICAgcHJlY2lzaW9uOiBiZjE2CiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgICAtIGRzdDogJycKICAgICAgICBzcmM6CiAgICAgICAgICBmaWxlczoKICAgICAgICAgICAgLSAhbmFtZSAnUkVBRE1FLm1kJwogICAgICAgICAgICAtICFuYW1lICdjaGVja3N1bXMuYmxha2UzJwogICAgICAgICAgICAtICFuYW1lICdjb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnZ2VuZXJhdGlvbl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAnbW9kZWwtMDAwMDEtb2YtMDAwMDMuc2FmZXRlbnNvcnMnCiAgICAgICAgICAgIC0gIW5hbWUgJ21vZGVsLTAwMDAyLW9mLTAwMDAzLnNhZmV0ZW5zb3JzJwogICAgICAgICAgICAtICFuYW1lICdtb2RlbC0wMDAwMy1vZi0wMDAwMy5zYWZldGVuc29ycycKICAgICAgICAgICAgLSAhbmFtZSAnbW9kZWwuc2FmZXRlbnNvcnMuaW5kZXguanNvbicKICAgICAgICAgICAgLSAhbmFtZSAncGFyYW1zLmpzb24nCiAgICAgICAgICAgIC0gIW5hbWUgJ3NwZWNpYWxfdG9rZW5zX21hcC5qc29uJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9rZW5pemVyLm1vZGVsJwogICAgICAgICAgICAtICFuYW1lICd0b2tlbml6ZXIubW9kZWwudjMnCiAgICAgICAgICAgIC0gIW5hbWUgJ3Rva2VuaXplcl9jb25maWcuanNvbicKICAgICAgICAgICAgLSAhbmFtZSAndG9vbF91c2VfY29uZmlnLmpzb24nCiAgICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbWlzdHJhbGFpL21pc3RyYWwtN2ItaW5zdHJ1Y3QtdjAzOmhmLTM5OTAyNTktdG9vbC1jYWxsaW5n
+        #   sha: 0912dfabc816a9819b209b4ab0ba63b3dcd92e33ea1d14eb161cf9f12c83e626
+        #   modelFormat: vllm
+        #   spec:
+        #   - key: PROFILE
+        #     value: NA
+        #   - key: PRECISION
+        #     value: FP16
+        #   - key: GPU
+        #     value: any
+        #   - key: COUNT
+        #     value: 1
+        #   - key: GPU DEVICE
+        #     value: any
+        #   - key: NIM VERSION
+        #     value: '1.1.2'
+        #   - key: DOWNLOAD SIZE
+        #     value: 14GB
+    labels:
+      - "Mistral"
+      - "Instruct"
+      - "Large Language Model"
+      - "TensorRT-LLM"
+      - "Language Generation"
+      - "NeMo"
+      - "NVIDIA Validated"
+    config:
+      architectures:
+        - Other
+      modelType: Mistral
+    license: NVIDIA AI Foundation Models Community License
