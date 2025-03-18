@@ -16,6 +16,68 @@ models:
         source:
           URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_1-8b-instruct-nemo
         optimizationProfiles:
+        - profileId: nim/meta/llama-3_1-8b-instruct:0.11.1+ba20956e-a10gx2-bf16-throughput.1.1.0.17443761
+          framework: TensorRT-LLM
+          displayName: Llama 3.1 8B Instruct A10G BF16 Throughput
+          sha: ba515cc44a34ae4db8fe375bd7e5ad30e9a760bd032230827d8a54835a69c409
+          ngcMetadata: 
+            ba515cc44a34ae4db8fe375bd7e5ad30e9a760bd032230827d8a54835a69c409:
+              container_url: nvcr.io/nim/meta/llama-3.1-8b-instruct:1.2.0
+              model: meta/llama-3.1-8b-instruct
+              release: 1.2.2
+              tags:
+                feat_lora: false
+                gpu: A10G
+                gpu_device: 2237:10de
+                llm_engine: tensorrt_llm
+                pp: '1'
+                precision: bf16
+                profile: throughput
+                tp: '2'
+              workspace: !workspace
+                components:
+                  - dst: ''
+                    src:
+                      files:
+                        - !name 'LICENSE.txt'
+                        - !name 'NOTICE.txt'
+                        - !name 'checksums.blake3'
+                        - !name 'config.json'
+                        - !name 'generation_config.json'
+                        - !name 'model.safetensors.index.json'
+                        - !name 'special_tokens_map.json'
+                        - !name 'tokenizer.json'
+                        - !name 'tokenizer_config.json'
+                        - !name 'tool_use_config.json'
+                      repo_id: ngc://nim/meta/llama-3_1-8b-instruct:hf-8c22764-nim1.2
+                  - dst: trtllm_engine
+                    src:
+                      files:
+                        - !name 'LICENSE.txt'
+                        - !name 'NOTICE.txt'
+                        - !name 'checksums.blake3'
+                        - !name 'config.json'
+                        - !name 'metadata.json'
+                        - !name 'rank0.engine'
+                        - !name 'rank1.engine'
+                      repo_id: ngc://nim/meta/llama-3_1-8b-instruct:0.11.1+ba20956e-a10gx2-bf16-throughput.1.1.0.17443761
+          latestVersionSizeInBytes: 17408782025
+          modelFormat: trt-llm
+          spec:
+          - key: PROFILE
+            value: Throughput
+          - key: PRECISION
+            value: BF16
+          - key: GPU
+            value: A10G
+          - key: COUNT
+            value: 2
+          - key: GPU DEVICE
+            value: 2237:10de
+          - key: NIM VERSION
+            value: '1.2.2'
+          - key: DOWNLOAD SIZE
+            value: 17GB
         - profileId: nim/meta/llama-3_1-8b-instruct:0.11.1+ba20956e-l40sx2-bf16-latency.1.1.0.16792222
           framework: TensorRT-LLM
           displayName: Llama 3.1 8B Instruct L40S BF16 Latency
