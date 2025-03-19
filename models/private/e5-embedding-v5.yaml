@@ -1,96 +1,159 @@
 models:
-  - name: E5 Embedding v5 
-    displayName: E5 Embedding v5
-    modelHubID: e5-embedding-v5
-    category: Embedding
-    type: NGC
-    description: NVIDIA NIM for GPU accelerated NVIDIA Retrieval QA E5 Embedding v5 inference
-    modelVariants:
-      - variantId: E5 Embedding
-        displayName: E5 Embedding
-        source:
-          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nv-embedqa-e5-v5
-        optimizationProfiles:
-        - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_onnx
-          displayName: Embedding ONNX FP16
-          framework: ONNX
-          sha: onnx
-          ngcMetadata: b25ueDoKICBjb250YWluZXJfdXJsOiBodHRwczovL2NhdGFsb2cubmdjLm52aWRpYS5jb20vY29udGFpbmVycwogIG1vZGVsOiBudmlkaWEvbnYtZW1iZWRxYS1lNS12NQogIG1vZGVsX3R5cGU6IGVtYmVkZGluZwogIHRhZ3M6CiAgICBsbG1fZW5naW5lOiBvbm54CiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtZTUtdjU6NV90b2tlbml6ZXIKICAgIC0gZHN0OiBvbm54CiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtZTUtdjU6NV9GUDE2X29ubng=
-          modelFormat: onnx
-          latestVersionSizeInBytes: 668847682
-          spec:
-          - key: DOWNLOAD SIZE
-            value: 1GB
-          - key: MAX TOKENS
-            value: 512
-          - key: Dimension
-            value: 1024
-          - key: NIM VERSION
-            value: '1.0.1'
-        - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_A10_24GB
-          displayName: Embedding A10G FP16
-          framework: TensorRT-LLM
-          sha: NVIDIA-A10G_10.0.1_12
-          ngcMetadata: TlZJRElBLUExMEdfMTAuMC4xXzEyOgogIGNvbnRhaW5lcl91cmw6IGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9jb250YWluZXJzCiAgbW9kZWw6IG52aWRpYS9udi1lbWJlZHFhLWU1LXY1CiAgbW9kZWxfdHlwZTogZW1iZWRkaW5nCiAgdGFnczoKICAgIGdwdTogQTEwRwogICAgbGxtX2VuZ2luZTogdGVuc29ycnRfbGxtCiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtZTUtdjU6NV90b2tlbml6ZXIKICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtZTUtdjU6NV9GUDE2X0ExMF8yNEdC
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 672920180
-          spec:
-          - key: GPU
-            value: A10G
-          - key: COUNT
-            value: 1
-          - key: DOWNLOAD SIZE
-            value: 1GB
-          - key: MAX TOKENS
-            value: 512
-          - key: Dimension
-            value: 1024
-          - key: NIM VERSION
-            value: '1.0.1'
-        - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_A100_SXM4_80GB
-          displayName: Embedding A100 FP16
-          framework: TensorRT-LLM
-          sha: NVIDIA-A100_10.0.1_12
-          ngcMetadata: TlZJRElBLUExMDBfMTAuMC4xXzEyOgogIGNvbnRhaW5lcl91cmw6IGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9jb250YWluZXJzCiAgbW9kZWw6IG52aWRpYS9udi1lbWJlZHFhLWU1LXY1CiAgbW9kZWxfdHlwZTogZW1iZWRkaW5nCiAgdGFnczoKICAgIGdwdTogQTEwMAogICAgbGxtX2VuZ2luZTogdGVuc29ycnRfbGxtCiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtZTUtdjU6NV90b2tlbml6ZXIKICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtZTUtdjU6NV9GUDE2X0ExMDBfU1hNNF84MEdC
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 672515204
-          spec:
-          - key: GPU
-            value: A100
-          - key: COUNT
-            value: 1
-          - key: DOWNLOAD SIZE
-            value: 1GB
-          - key: MAX TOKENS
-            value: 512
-          - key: Dimension
-            value: 1024
-          - key: NIM VERSION
-            value: '1.0.1'
-        - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_H100_HBM3_80GB
-          displayName: Embedding H100 FP16
-          framework: TensorRT-LLM
-          sha: NVIDIA-H100_10.0.1_12
-          ngcMetadata: TlZJRElBLUgxMDBfMTAuMC4xXzEyOgogIGNvbnRhaW5lcl91cmw6IGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9jb250YWluZXJzCiAgbW9kZWw6IG52aWRpYS9udi1lbWJlZHFhLWU1LXY1CiAgbW9kZWxfdHlwZTogZW1iZWRkaW5nCiAgdGFnczoKICAgIGdwdTogSDEwMAogICAgbGxtX2VuZ2luZTogdGVuc29ycnRfbGxtCiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtZTUtdjU6NV90b2tlbml6ZXIKICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtZTUtdjU6NV9GUDE2X0gxMDBfSEJNM184MEdC
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 675755740
-          spec:
-          - key: GPU
-            value: H100
-          - key: COUNT
-            value: 1
-          - key: DOWNLOAD SIZE
-            value: 1GB
-          - key: MAX TOKENS
-            value: 512
-          - key: Dimension
-            value: 1024
-          - key: NIM VERSION
-            value: '1.0.1'
-    labels:
-      - Embedding
-    config:
-      architectures:
-        - Other
-      modelType: embedding
-    license: NVIDIA AI Foundation Models Community License
+- name: E5 Embedding v5
+  displayName: E5 Embedding v5
+  modelHubID: e5-embedding-v5
+  category: Embedding
+  type: NGC
+  description: NVIDIA NIM for GPU accelerated NVIDIA Retrieval QA E5 Embedding v5
+    inference
+  modelVariants:
+  - variantId: E5 Embedding
+    displayName: E5 Embedding
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nv-embedqa-e5-v5
+    optimizationProfiles:
+    - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_onnx
+      displayName: Embedding ONNX FP16
+      framework: ONNX
+      sha: onnx
+      ngcMetadata:
+        onnx:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-e5-v5
+          model_type: embedding
+          tags:
+            llm_engine: onnx
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_tokenizer
+            - dst: onnx
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_FP16_onnx
+      modelFormat: onnx
+      latestVersionSizeInBytes: 668847682
+      spec:
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 1024
+      - key: NIM VERSION
+        value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_A10_24GB
+      displayName: Embedding A10G FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-A10G_10.0.1_12
+      ngcMetadata:
+        NVIDIA-A10G_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-e5-v5
+          model_type: embedding
+          tags:
+            gpu: A10G
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_tokenizer
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_FP16_A10_24GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 672920180
+      spec:
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 1024
+      - key: NIM VERSION
+        value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_A100_SXM4_80GB
+      displayName: Embedding A100 FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-A100_10.0.1_12
+      ngcMetadata:
+        NVIDIA-A100_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-e5-v5
+          model_type: embedding
+          tags:
+            gpu: A100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_tokenizer
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_FP16_A100_SXM4_80GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 672515204
+      spec:
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 1024
+      - key: NIM VERSION
+        value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_H100_HBM3_80GB
+      displayName: Embedding H100 FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-H100_10.0.1_12
+      ngcMetadata:
+        NVIDIA-H100_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-e5-v5
+          model_type: embedding
+          tags:
+            gpu: H100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_tokenizer
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_FP16_H100_HBM3_80GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 675755740
+      spec:
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 1024
+      - key: NIM VERSION
+        value: 1.0.1
+  labels:
+  - Embedding
+  config:
+    architectures:
+    - Other
+    modelType: embedding
+  license: NVIDIA AI Foundation Models Community License
