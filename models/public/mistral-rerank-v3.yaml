@@ -1,161 +1,288 @@
 models:
-  - name: Mistral Rerank v3
-    displayName: Mistral Rerank v3
-    modelHubID: mistral-rerank-v3
-    category: Reranking
-    type: NGC
-    description: NVIDIA NIM for GPU accelerated NVIDIA Retrieval QA Mistral 4B Reranking v3 inference
-    modelVariants:
-      - variantId: Mistral 4B Reranking
-        displayName: Mistral 4B Reranking
-        source:
-          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nv-rerankqa-mistral-4b-v3
-        optimizationProfiles:
-        - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_onnx
-          displayName: Mistral 4B Reranking ONNX FP16
-          framework: ONNX
-          sha: onnx
-          ngcMetadata: b25ueDoKICBjb250YWluZXJfdXJsOiBodHRwczovL2NhdGFsb2cubmdjLm52aWRpYS5jb20vY29udGFpbmVycwogIG1vZGVsOiBudmlkaWEvbnYtcmVyYW5rcWEtbWlzdHJhbC00Yi12MwogIG1vZGVsX3R5cGU6IHJlcmFua2luZwogIHRhZ3M6CiAgICBsbG1fZW5naW5lOiBvbm54CiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M190b2tlbml6ZXJfdjMKICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M19GUDE2X29ubng=
-          modelFormat: onnx
-          latestVersionSizeInBytes: 7259396025
-          spec:
-          - key: PRECISION
-            value: FP16
-          - key: DOWNLOAD SIZE
-            value: 7GB
-          - key: NIM VERSION
-            value: '1.0.2'
-        - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP8_L40s_48GB
-          displayName: Mistral 4B Reranking L40S FP8
-          framework: TensorRT-LLM
-          sha: NVIDIA-L40S_10.0.1_12_FP8
-          ngcMetadata: TlZJRElBLUw0MFNfMTAuMC4xXzEyX0ZQODoKICBjb250YWluZXJfdXJsOiBodHRwczovL2NhdGFsb2cubmdjLm52aWRpYS5jb20vY29udGFpbmVycwogIG1vZGVsOiBudmlkaWEvbnYtcmVyYW5rcWEtbWlzdHJhbC00Yi12MwogIG1vZGVsX3R5cGU6IHJlcmFua2luZwogIHRhZ3M6CiAgICBncHU6IEw0MFMKICAgIGxsbV9lbmdpbmU6IHRlbnNvcnJ0X2xsbQogICAgdHA6ICcxJwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgIC0gZHN0OiAnJwogICAgICBzcmM6CiAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL252aWRpYS9udi1yZXJhbmtxYS1taXN0cmFsLTRiLXYzOjNfdG9rZW5pemVyX3YzCiAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICBzcmM6CiAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL252aWRpYS9udi1yZXJhbmtxYS1taXN0cmFsLTRiLXYzOjNfRlA4X0w0MHNfNDhHQg==
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 3778195436
-          spec:
-          - key: GPU
-            value: L40S
-          - key: COUNT
-            value: 1
-          - key: PRECISION
-            value: FP8
-          - key: DOWNLOAD SIZE
-            value: 4GB
-          - key: NIM VERSION
-            value: '1.0.2'
-        - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_L40s_48GB
-          displayName: Mistral 4B Reranking L40S FP16
-          framework: TensorRT-LLM
-          sha: NVIDIA-L40S_10.0.1_12
-          ngcMetadata: TlZJRElBLUw0MFNfMTAuMC4xXzEyOgogIGNvbnRhaW5lcl91cmw6IGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9jb250YWluZXJzCiAgbW9kZWw6IG52aWRpYS9udi1yZXJhbmtxYS1taXN0cmFsLTRiLXYzCiAgbW9kZWxfdHlwZTogcmVyYW5raW5nCiAgdGFnczoKICAgIGdwdTogTDQwUwogICAgbGxtX2VuZ2luZTogdGVuc29ycnRfbGxtCiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M190b2tlbml6ZXJfdjMKICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M19GUDE2X0w0MHNfNDhHQg==
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 7268026908
-          spec:
-          - key: GPU
-            value: L40S
-          - key: COUNT
-            value: 1
-          - key: PRECISION
-            value: FP16
-          - key: DOWNLOAD SIZE
-            value: 7GB
-          - key: NIM VERSION
-            value: '1.0.2'
-        - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP8_H100_HBM3_80GB
-          displayName: Mistral 4B Reranking H100 FP8
-          framework: TensorRT-LLM
-          sha: NVIDIA-H100_10.0.1_12_FP8
-          ngcMetadata: TlZJRElBLUgxMDBfMTAuMC4xXzEyX0ZQODoKICBjb250YWluZXJfdXJsOiBodHRwczovL2NhdGFsb2cubmdjLm52aWRpYS5jb20vY29udGFpbmVycwogIG1vZGVsOiBudmlkaWEvbnYtcmVyYW5rcWEtbWlzdHJhbC00Yi12MwogIG1vZGVsX3R5cGU6IHJlcmFua2luZwogIHRhZ3M6CiAgICBncHU6IEgxMDAKICAgIGxsbV9lbmdpbmU6IHRlbnNvcnJ0X2xsbQogICAgdHA6ICcxJwogIHdvcmtzcGFjZTogIXdvcmtzcGFjZQogICAgY29tcG9uZW50czoKICAgIC0gZHN0OiAnJwogICAgICBzcmM6CiAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL252aWRpYS9udi1yZXJhbmtxYS1taXN0cmFsLTRiLXYzOjNfdG9rZW5pemVyX3YzCiAgICAtIGRzdDogdHJ0bGxtX2VuZ2luZQogICAgICBzcmM6CiAgICAgICAgcmVwb19pZDogbmdjOi8vbmltL252aWRpYS9udi1yZXJhbmtxYS1taXN0cmFsLTRiLXYzOjNfRlA4X0gxMDBfSEJNM184MEdC
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 3775478108
-          spec:
-          - key: GPU
-            value: H100
-          - key: COUNT
-            value: 1
-          - key: PRECISION
-            value: FP8
-          - key: DOWNLOAD SIZE
-            value: 4GB
-          - key: NIM VERSION
-            value: '1.0.2'
-        - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_H100_HBM3_80GB
-          displayName: Mistral 4B Reranking H100 FP16
-          framework: TensorRT-LLM
-          sha: NVIDIA-H100_10.0.1_12
-          ngcMetadata: TlZJRElBLUgxMDBfMTAuMC4xXzEyOgogIGNvbnRhaW5lcl91cmw6IGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9jb250YWluZXJzCiAgbW9kZWw6IG52aWRpYS9udi1yZXJhbmtxYS1taXN0cmFsLTRiLXYzCiAgbW9kZWxfdHlwZTogcmVyYW5raW5nCiAgdGFnczoKICAgIGdwdTogSDEwMAogICAgbGxtX2VuZ2luZTogdGVuc29ycnRfbGxtCiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M190b2tlbml6ZXJfdjMKICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M19GUDE2X0gxMDBfSEJNM184MEdC
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 7272493940
-          spec:
-          - key: GPU
-            value: H100
-          - key: COUNT
-            value: 1
-          - key: PRECISION
-            value: FP16
-          - key: DOWNLOAD SIZE
-            value: 7GB
-          - key: NIM VERSION
-            value: '1.0.2'
-        - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_A100_SXM4_40GB
-          displayName: Mistral 4B Reranking A100 FP16
-          framework: TensorRT-LLM
-          sha: NVIDIA-A100_10.0.1_12
-          ngcMetadata: TlZJRElBLUExMDBfMTAuMC4xXzEyOgogIGNvbnRhaW5lcl91cmw6IGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9jb250YWluZXJzCiAgbW9kZWw6IG52aWRpYS9udi1yZXJhbmtxYS1taXN0cmFsLTRiLXYzCiAgbW9kZWxfdHlwZTogcmVyYW5raW5nCiAgdGFnczoKICAgIGdwdTogQTEwMAogICAgbGxtX2VuZ2luZTogdGVuc29ycnRfbGxtCiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M190b2tlbml6ZXJfdjMKICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M19GUDE2X0ExMDBfU1hNNF80MEdC
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 7266402076
-          spec:
-          - key: GPU
-            value: A100
-          - key: COUNT
-            value: 1
-          - key: PRECISION
-            value: FP16
-          - key: DOWNLOAD SIZE
-            value: 7GB
-          - key: NIM VERSION
-            value: '1.0.2'
-        - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_A10G_24GB
-          displayName: Mistral 4B Reranking A10G FP16
-          framework: TensorRT-LLM
-          sha: NVIDIA-A10G_10.0.1_12
-          ngcMetadata: TlZJRElBLUExMEdfMTAuMC4xXzEyOgogIGNvbnRhaW5lcl91cmw6IGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9jb250YWluZXJzCiAgbW9kZWw6IG52aWRpYS9udi1yZXJhbmtxYS1taXN0cmFsLTRiLXYzCiAgbW9kZWxfdHlwZTogcmVyYW5raW5nCiAgdGFnczoKICAgIGdwdTogQTEwRwogICAgbGxtX2VuZ2luZTogdGVuc29ycnRfbGxtCiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M190b2tlbml6ZXJfdjMKICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LXJlcmFua3FhLW1pc3RyYWwtNGItdjM6M19GUDE2X0ExMEdfMjRHQg==
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 7267924540
-          spec:
-          - key: GPU
-            value: A10G
-          - key: COUNT
-            value: 1
-          - key: PRECISION
-            value: FP16
-          - key: DOWNLOAD SIZE
-            value: 7GB
-          - key: NIM VERSION
-            value: '1.0.2'
-        - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_L4_24GB
-          displayName: Mistral 4B Reranking L4 FP16
-          framework: TensorRT-LLM
-          sha: NVIDIA-L4_10.0.1_12
-          ngcMetadata: TlZJRElBLUw0XzEwLjAuMV8xMjoKICBjb250YWluZXJfdXJsOiBodHRwczovL2NhdGFsb2cubmdjLm52aWRpYS5jb20vY29udGFpbmVycwogIG1vZGVsOiBudmlkaWEvbnYtcmVyYW5rcWEtbWlzdHJhbC00Yi12MwogIG1vZGVsX3R5cGU6IHJlcmFua2luZwogIHRhZ3M6CiAgICBncHU6IEw0CiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHRwOiAnMScKICB3b3Jrc3BhY2U6ICF3b3Jrc3BhY2UKICAgIGNvbXBvbmVudHM6CiAgICAtIGRzdDogJycKICAgICAgc3JjOgogICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9udmlkaWEvbnYtcmVyYW5rcWEtbWlzdHJhbC00Yi12MzozX3Rva2VuaXplcl92MwogICAgLSBkc3Q6IHRydGxsbV9lbmdpbmUKICAgICAgc3JjOgogICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9udmlkaWEvbnYtcmVyYW5rcWEtbWlzdHJhbC00Yi12MzozX0ZQMTZfTDRfMjRHQg==
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 7267891932
-          spec:
-          - key: GPU
-            value: L4
-          - key: COUNT
-            value: 1
-          - key: PRECISION
-            value: FP16
-          - key: DOWNLOAD SIZE
-            value: 7GB
-          - key: NIM VERSION
-            value: '1.0.2'
-    labels:
-      - Reranking
-      - Mistral
-    config:
-      architectures:
-        - Other
-      modelType: reranking
-    license: NVIDIA AI Foundation Models Community License
+- name: Mistral Rerank v3
+  displayName: Mistral Rerank v3
+  modelHubID: mistral-rerank-v3
+  category: Reranking
+  type: NGC
+  description: NVIDIA NIM for GPU accelerated NVIDIA Retrieval QA Mistral 4B Reranking v3 inference
+  modelVariants:
+  - variantId: Mistral 4B Reranking
+    displayName: Mistral 4B Reranking
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nv-rerankqa-mistral-4b-v3
+    optimizationProfiles:
+    - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_onnx
+      displayName: Mistral 4B Reranking ONNX FP16
+      framework: ONNX
+      sha: onnx
+      ngcMetadata:
+        onnx:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-rerankqa-mistral-4b-v3
+          model_type: reranking
+          tags:
+            llm_engine: onnx
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_tokenizer_v3
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_onnx
+      modelFormat: onnx
+      latestVersionSizeInBytes: 7259396025
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: NIM VERSION
+        value: 1.0.2
+    - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP8_L40s_48GB
+      displayName: Mistral 4B Reranking L40S FP8
+      framework: TensorRT-LLM
+      sha: NVIDIA-L40S_10.0.1_12_FP8
+      ngcMetadata:
+        NVIDIA-L40S_10.0.1_12_FP8:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-rerankqa-mistral-4b-v3
+          model_type: reranking
+          tags:
+            gpu: L40S
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_tokenizer_v3
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP8_L40s_48GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 3778195436
+      spec:
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: PRECISION
+        value: FP8
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: NIM VERSION
+        value: 1.0.2
+    - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_L40s_48GB
+      displayName: Mistral 4B Reranking L40S FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-L40S_10.0.1_12
+      ngcMetadata:
+        NVIDIA-L40S_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-rerankqa-mistral-4b-v3
+          model_type: reranking
+          tags:
+            gpu: L40S
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_tokenizer_v3
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_L40s_48GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 7268026908
+      spec:
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: PRECISION
+        value: FP16
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: NIM VERSION
+        value: 1.0.2
+    - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP8_H100_HBM3_80GB
+      displayName: Mistral 4B Reranking H100 FP8
+      framework: TensorRT-LLM
+      sha: NVIDIA-H100_10.0.1_12_FP8
+      ngcMetadata:
+        NVIDIA-H100_10.0.1_12_FP8:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-rerankqa-mistral-4b-v3
+          model_type: reranking
+          tags:
+            gpu: H100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_tokenizer_v3
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP8_H100_HBM3_80GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 3775478108
+      spec:
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: PRECISION
+        value: FP8
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: NIM VERSION
+        value: 1.0.2
+    - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_H100_HBM3_80GB
+      displayName: Mistral 4B Reranking H100 FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-H100_10.0.1_12
+      ngcMetadata:
+        NVIDIA-H100_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-rerankqa-mistral-4b-v3
+          model_type: reranking
+          tags:
+            gpu: H100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_tokenizer_v3
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_H100_HBM3_80GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 7272493940
+      spec:
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: PRECISION
+        value: FP16
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: NIM VERSION
+        value: 1.0.2
+    - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_A100_SXM4_40GB
+      displayName: Mistral 4B Reranking A100 FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-A100_10.0.1_12
+      ngcMetadata:
+        NVIDIA-A100_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-rerankqa-mistral-4b-v3
+          model_type: reranking
+          tags:
+            gpu: A100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_tokenizer_v3
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_A100_SXM4_40GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 7266402076
+      spec:
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: PRECISION
+        value: FP16
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: NIM VERSION
+        value: 1.0.2
+    - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_A10G_24GB
+      displayName: Mistral 4B Reranking A10G FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-A10G_10.0.1_12
+      ngcMetadata:
+        NVIDIA-A10G_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-rerankqa-mistral-4b-v3
+          model_type: reranking
+          tags:
+            gpu: A10G
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_tokenizer_v3
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_A10G_24GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 7267924540
+      spec:
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: PRECISION
+        value: FP16
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: NIM VERSION
+        value: 1.0.2
+    - profileId: nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_L4_24GB
+      displayName: Mistral 4B Reranking L4 FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-L4_10.0.1_12
+      ngcMetadata:
+        NVIDIA-L4_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-rerankqa-mistral-4b-v3
+          model_type: reranking
+          tags:
+            gpu: L4
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_tokenizer_v3
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-rerankqa-mistral-4b-v3:3_FP16_L4_24GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 7267891932
+      spec:
+      - key: GPU
+        value: L4
+      - key: COUNT
+        value: 1
+      - key: PRECISION
+        value: FP16
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: NIM VERSION
+        value: 1.0.2
+  labels:
+  - Reranking
+  - Mistral
+  config:
+    architectures:
+    - Other
+    modelType: reranking
+  license: NVIDIA AI Foundation Models Community License
