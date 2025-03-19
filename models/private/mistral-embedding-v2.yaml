@@ -1,96 +1,158 @@
 models:
-  - name: Mistral Embedding v2 
-    displayName: Mistral Embedding v2
-    modelHubID: mistral-embedding-v2
-    category: Embedding
-    type: NGC
-    description: NVIDIA NIM for GPU accelerated NVIDIA Retrieval QA Mistral 7B Embedding v2 inference
-    modelVariants:
-      - variantId: Mistral 7B Embedding
-        displayName: Mistral 7B Embedding
-        source:
-          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nv-embedqa-mistral-7b-v2
-        optimizationProfiles:
-        - profileId: nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP16_onnx
-          displayName: Mistral 7B Embedding ONNX FP16
-          framework: ONNX
-          ngcMetadata: b25ueDoKICBjb250YWluZXJfdXJsOiBodHRwczovL2NhdGFsb2cubmdjLm52aWRpYS5jb20vY29udGFpbmVycwogIG1vZGVsOiBudmlkaWEvbnYtZW1iZWRxYS1taXN0cmFsLTdiLXYyCiAgbW9kZWxfdHlwZTogZW1iZWRkaW5nCiAgdGFnczoKICAgIGxsbV9lbmdpbmU6IG9ubngKICB3b3Jrc3BhY2U6ICF3b3Jrc3BhY2UKICAgIGNvbXBvbmVudHM6CiAgICAtIGRzdDogJycKICAgICAgc3JjOgogICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9udmlkaWEvbnYtZW1iZWRxYS1taXN0cmFsLTdiLXYyOjJfdG9rZW5pemVyXzUxMgogICAgLSBkc3Q6IG9ubngKICAgICAgc3JjOgogICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9udmlkaWEvbnYtZW1iZWRxYS1taXN0cmFsLTdiLXYyOjJfRlAxNl9vbm54Cg==
-          modelFormat: onnx
-          latestVersionSizeInBytes: 14239651604
-          spec:
-          - key: DOWNLOAD SIZE
-            value: 14GB
-          - key: MAX TOKENS
-            value: 512
-          - key: Dimension
-            value: 4096
-          - key: NIM VERSION
-            value: '1.0.1'
-        - profileId: nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP16_A100_SXM4_80GB
-          displayName: Mistral 7B Embedding A100
-          framework: TensorRT-LLM
-          sha: NVIDIA-A100_10.0.1_12
-          ngcMetadata: TlZJRElBLUExMDBfMTAuMC4xXzEyOgogIGNvbnRhaW5lcl91cmw6IGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9jb250YWluZXJzCiAgbW9kZWw6IG52aWRpYS9udi1lbWJlZHFhLW1pc3RyYWwtN2ItdjIKICBtb2RlbF90eXBlOiBlbWJlZGRpbmcKICB0YWdzOgogICAgZ3B1OiBBMTAwCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHRwOiAnMScKICB3b3Jrc3BhY2U6ICF3b3Jrc3BhY2UKICAgIGNvbXBvbmVudHM6CiAgICAtIGRzdDogJycKICAgICAgc3JjOgogICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9udmlkaWEvbnYtZW1iZWRxYS1taXN0cmFsLTdiLXYyOjJfdG9rZW5pemVyXzUxMgogICAgLSBkc3Q6IHRydGxsbV9lbmdpbmUKICAgICAgc3JjOgogICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9udmlkaWEvbnYtZW1iZWRxYS1taXN0cmFsLTdiLXYyOjJfRlAxNl9BMTAwX1NYTTRfODBHQg==
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 14254672452
-          spec:
-          - key: GPU
-            value: A100
-          - key: COUNT
-            value: 1
-          - key: DOWNLOAD SIZE
-            value: 14GB
-          - key: MAX TOKENS
-            value: 512
-          - key: Dimension
-            value: 4096
-          - key: NIM VERSION
-            value: '1.0.1'
-        - profileId: nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP8_H100_HBM3_80GB
-          displayName: Mistral 7B Embedding H100 FP8
-          framework: TensorRT-LLM
-          sha: NVIDIA-H100_10.0.1_12_FP8
-          ngcMetadata: TlZJRElBLUgxMDBfMTAuMC4xXzEyX0ZQODoKICBjb250YWluZXJfdXJsOiBodHRwczovL2NhdGFsb2cubmdjLm52aWRpYS5jb20vY29udGFpbmVycwogIG1vZGVsOiBudmlkaWEvbnYtZW1iZWRxYS1taXN0cmFsLTdiLXYyCiAgbW9kZWxfdHlwZTogZW1iZWRkaW5nCiAgdGFnczoKICAgIGdwdTogSDEwMAogICAgbGxtX2VuZ2luZTogdGVuc29ycnRfbGxtCiAgICB0cDogJzEnCiAgd29ya3NwYWNlOiAhd29ya3NwYWNlCiAgICBjb21wb25lbnRzOgogICAgLSBkc3Q6ICcnCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtbWlzdHJhbC03Yi12MjoyX3Rva2VuaXplcl81MTIKICAgIC0gZHN0OiB0cnRsbG1fZW5naW5lCiAgICAgIHNyYzoKICAgICAgICByZXBvX2lkOiBuZ2M6Ly9uaW0vbnZpZGlhL252LWVtYmVkcWEtbWlzdHJhbC03Yi12MjoyX0ZQOF9IMTAwX0hCTTNfODBHQgo=
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 7271196548
-          spec:
-          - key: GPU
-            value: H100
-          - key: COUNT
-            value: 1
-          - key: DOWNLOAD SIZE
-            value: 7GB
-          - key: MAX TOKENS
-            value: 512
-          - key: Dimension
-            value: 4096
-          - key: NIM VERSION
-            value: '1.0.1'
-        - profileId: nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP16_H100_HBM3_80GB
-          displayName: Mistral 7B Embedding H100 FP16
-          framework: TensorRT-LLM
-          sha: NVIDIA-H100_10.0.1_12
-          ngcMetadata: TlZJRElBLUgxMDBfMTAuMC4xXzEyOgogIGNvbnRhaW5lcl91cmw6IGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9jb250YWluZXJzCiAgbW9kZWw6IG52aWRpYS9udi1lbWJlZHFhLW1pc3RyYWwtN2ItdjIKICBtb2RlbF90eXBlOiBlbWJlZGRpbmcKICB0YWdzOgogICAgZ3B1OiBIMTAwCiAgICBsbG1fZW5naW5lOiB0ZW5zb3JydF9sbG0KICAgIHRwOiAnMScKICB3b3Jrc3BhY2U6ICF3b3Jrc3BhY2UKICAgIGNvbXBvbmVudHM6CiAgICAtIGRzdDogJycKICAgICAgc3JjOgogICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9udmlkaWEvbnYtZW1iZWRxYS1taXN0cmFsLTdiLXYyOjJfdG9rZW5pemVyXzUxMgogICAgLSBkc3Q6IHRydGxsbV9lbmdpbmUKICAgICAgc3JjOgogICAgICAgIHJlcG9faWQ6IG5nYzovL25pbS9udmlkaWEvbnYtZW1iZWRxYS1taXN0cmFsLTdiLXYyOjJfRlAxNl9IMTAwX0hCTTNfODBHQg==
-          modelFormat: trt-llm
-          latestVersionSizeInBytes: 14266992708
-          spec:
-          - key: GPU
-            value: H100
-          - key: COUNT
-            value: 1
-          - key: DOWNLOAD SIZE
-            value: 14GB
-          - key: MAX TOKENS
-            value: 512
-          - key: Dimension
-            value: 4096
-          - key: NIM VERSION
-            value: '1.0.1'
-    labels:
-      - Embedding
-      - Mistral
-    config:
-      architectures:
-        - Other
-      modelType: embedding
-    license: NVIDIA AI Foundation Models Community License  
+- name: Mistral Embedding v2
+  displayName: Mistral Embedding v2
+  modelHubID: mistral-embedding-v2
+  category: Embedding
+  type: NGC
+  description: NVIDIA NIM for GPU accelerated NVIDIA Retrieval QA Mistral 7B Embedding v2 inference
+  modelVariants:
+  - variantId: Mistral 7B Embedding
+    displayName: Mistral 7B Embedding
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nv-embedqa-mistral-7b-v2
+    optimizationProfiles:
+    - profileId: nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP16_onnx
+      displayName: Mistral 7B Embedding ONNX FP16
+      framework: ONNX
+      ngcMetadata:
+        onnx:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-mistral-7b-v2
+          model_type: embedding
+          tags:
+            llm_engine: onnx
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-mistral-7b-v2:2_tokenizer_512
+            - dst: onnx
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP16_onnx
+      modelFormat: onnx
+      latestVersionSizeInBytes: 14239651604
+      spec:
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 4096
+      - key: NIM VERSION
+        value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP16_A100_SXM4_80GB
+      displayName: Mistral 7B Embedding A100
+      framework: TensorRT-LLM
+      sha: NVIDIA-A100_10.0.1_12
+      ngcMetadata:
+        NVIDIA-A100_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-mistral-7b-v2
+          model_type: embedding
+          tags:
+            gpu: A100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-mistral-7b-v2:2_tokenizer_512
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP16_A100_SXM4_80GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 14254672452
+      spec:
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 4096
+      - key: NIM VERSION
+        value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP8_H100_HBM3_80GB
+      displayName: Mistral 7B Embedding H100 FP8
+      framework: TensorRT-LLM
+      sha: NVIDIA-H100_10.0.1_12_FP8
+      ngcMetadata:
+        NVIDIA-H100_10.0.1_12_FP8:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-mistral-7b-v2
+          model_type: embedding
+          tags:
+            gpu: H100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-mistral-7b-v2:2_tokenizer_512
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP8_H100_HBM3_80GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 7271196548
+      spec:
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 4096
+      - key: NIM VERSION
+        value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP16_H100_HBM3_80GB
+      displayName: Mistral 7B Embedding H100 FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-H100_10.0.1_12
+      ngcMetadata:
+        NVIDIA-H100_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-mistral-7b-v2
+          model_type: embedding
+          tags:
+            gpu: H100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-mistral-7b-v2:2_tokenizer_512
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-mistral-7b-v2:2_FP16_H100_HBM3_80GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 14266992708
+      spec:
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 4096
+      - key: NIM VERSION
+        value: 1.0.1
+  labels:
+  - Embedding
+  - Mistral
+  config:
+    architectures:
+    - Other
+    modelType: embedding
+  license: NVIDIA AI Foundation Models Community License
