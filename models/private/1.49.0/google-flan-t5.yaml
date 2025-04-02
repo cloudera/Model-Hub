@@ -1,0 +1,65 @@
+models:
+  - name: Google Flan T5
+    displayName: Google Flan T5
+    modelHubID: google-flan-t5
+    category: Text to Text Generation
+    type: HF
+    description: Flan-T5 is an encoder-decoder model pre-trained on a variety of language tasks developed by Google Researchers. The model has been trained on supervised and unsupervised datasets with the goal of learning mappings between sequences of text, i.e., text-to-text.  The model has knowledge of performing specific tasks such as summarization, classification and translation.
+    modelVariants:
+      - variantId: Google Flan T5 Base
+        displayName: Google Flan T5 Base
+        source:
+          URL: https://huggingface.co/google/flan-t5-base
+        requireToken: false
+        requireLicense: false
+        optimizationProfiles:
+        - profileId: google/flan-t5-base
+          displayName: Google Flan T5 Base
+          framework: huggingface
+          sha: huggingface
+          modelFormat: huggingface
+          spec:
+          - key: A10G
+            value: 1
+      - variantId: Google Flan T5 Large
+        displayName: Google Flan T5 Large
+        source:
+          URL: https://huggingface.co/google/flan-t5-large
+        requireToken: false
+        requireLicense: false
+        optimizationProfiles:
+        - profileId: google/flan-t5-large
+          displayName: Google Flan T5 Large
+          framework: huggingface
+          sha: huggingface
+          modelFormat: huggingface
+          spec:
+          - key: A10G
+            value: 1
+      - variantId: Google Flan T5 XL
+        displayName: Google Flan T5 XL
+        source:
+          URL: https://huggingface.co/google/flan-t5-xl
+        requireToken: false
+        requireLicense: false
+        optimizationProfiles:
+        - profileId: google/flan-t5-xl
+          displayName: Google Flan T5 XL
+          framework: huggingface
+          sha: huggingface
+          modelFormat: huggingface
+          spec:
+          - key: A10G
+            value: 1
+    labels:
+      - T5
+      - Google
+      - Chat
+      - "Text to Text"
+      - "Language Conversion"
+      - "Text Summarization"
+    config:
+      architectures:
+        - T5ForConditionalGeneration
+      modelType: T5
+    license: Google AI License
