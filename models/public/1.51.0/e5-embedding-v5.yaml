@@ -42,6 +42,36 @@ models:
         value: 1024
       - key: NIM VERSION
         value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_onnx
+      displayName: Embedding ONNX FP16 - duplicate entry
+      framework: ONNX
+      sha: onnx
+      ngcMetadata:
+        onnx:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-e5-v5
+          model_type: embedding
+          tags:
+            llm_engine: onnx
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_tokenizer
+            - dst: onnx
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_FP16_onnx
+      modelFormat: onnx
+      latestVersionSizeInBytes: 668847682
+      spec:
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 1024
+      - key: NIM VERSION
+        value: 1.0.1
     - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_A10_24GB
       displayName: Embedding A10G FP16
       framework: TensorRT-LLM
