@@ -1,0 +1,548 @@
+models:
+- name: Llama 3.1 Instruct
+  displayName: Llama 3.1 Instruct
+  modelHubID: llama-3.1-instruct
+  category: Text Generation
+  type: NGC
+  description: The Llama 3.1 70B-Instruct, 8B instruct and 8B base NIM simplifies the deployment of the Llama 3.1 70B-Instruct, 8B instruct and 8B base tuned models which is optimized for language understanding, reasoning, and text generation use cases, and outperforms many of the available open source chat models on common industry benchmarks.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://llama.meta.com/llama3/use-policy/
+  - label: License Agreement
+    url: https://llama.meta.com/llama3/license/
+  modelVariants:
+  - variantId: Llama 3.1 70B Instruct
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_1-70b-instruct-nemo
+    optimizationProfiles:
+    - profileId: nim/meta/llama-3_1-70b-instruct:0.12.0+2333135a3-h100x4-fp8-throughput.1.3.18299501
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct H100x4 FP8 Throughput
+      ngcMetadata:
+        0462612f0f2de63b2d423bc3863030835c0fbdbc13b531868670cc416e030029:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.3.3
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.3
+      - key: DOWNLOAD SIZE
+        value: 74GB
+    - profileId: nim/meta/llama-3_1-70b-instruct:0.12.0+2333135a3-h100x2-fp8-throughput.1.3.18299501
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct H100x2 FP8 Throughput
+      ngcMetadata:
+        0b0193d56ec0bba1840ea429993c776f9168a1ca4699e81f4db48319dd7e5c3a:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.3.3
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.3
+      - key: DOWNLOAD SIZE
+        value: 74GB
+    - profileId: nim/meta/llama-3_1-70b-instruct:0.12+2333135a3-h100x8-bf16-latency.1.3.733114
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct H100x8 BF16 Latency
+      ngcMetadata:
+        3195a1b385c57c3cae2113f63a37c6ad5aacfd17915922b6a3abf109aa210606:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.3.3
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Latency
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.3
+      - key: DOWNLOAD SIZE
+        value: 157GB
+    - profileId: nim/meta/llama-3_1-70b-instruct:0.12.0+2333135a3-l40sx4-fp16-throughput.1.3.18335308
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct L40Sx4 FP16 Throughput
+      ngcMetadata:
+        536502b5ba23293b7a9bd6dfabd9b93d2d82c8436d0788cc748b28aefd4adf79:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.3.3
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b5:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26b5:10de
+      - key: NIM VERSION
+        value: 1.3.3
+      - key: DOWNLOAD SIZE
+        value: 148GB
+    - profileId: nim/meta/llama-3_1-70b-instruct:0.12.0+2333135a3-h100x8-fp8-latency.1.3.18299501
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct H100x8 FP8 Latency
+      ngcMetadata:
+        a29dc20fff4ad67746205295ccb4af9e010f8f31207235c75e27786fb834e574:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.3.3
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Latency
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.3
+      - key: DOWNLOAD SIZE
+        value: 75GB
+    - profileId: nim/meta/llama-3_1-70b-instruct:0.12+2333135a3-h100x4-bf16-throughput.1.3.733114
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct H100x4 BF16 Throughput
+      ngcMetadata:
+        d0916297151396580e08d1863f5c778bd55c4e5c0064c02ba9d62b0b2e016761:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.3.3
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.3
+      - key: DOWNLOAD SIZE
+        value: 148GB
+  - variantId: Llama 3.1 8B Instruct
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_1-8b-instruct-nemo
+    optimizationProfiles:
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12+2333135a3-l40sx4-bf16-latency.1.3.60325
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct L40Sx4 BF16 Latency
+      ngcMetadata:
+        25cd80b0cf0f0989de30be57025771aea3f871d22b60c0bc088cbda0701b4b23:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b5:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Latency
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26b5:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 20GB
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12.0+2333135a3-a10gx2-fp16-throughput.1.3.18335308
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct A10Gx2 FP16 Throughput
+      ngcMetadata:
+        69545d0e42d494d0c03be120535898cf2d8e6fd9a5c0a5687a168ef6ba6501e5:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp16
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 18GB
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12+2333135a3-l40sx1-bf16-throughput.1.3.121240
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct L40S BF16 Throughput
+      ngcMetadata:
+        8af967d80ae8f30f4635a59b2140fdc2b38d3004e16e66c9667fa032e56497fd:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b5:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 17GB
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12+2333135a3-h100x2-bf16-latency.1.3.60325
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct H100x2 BF16 Latency
+      ngcMetadata:
+        8c27f77dab1986e76b524c755fa5a809f8882517b503e76bfcf8d42b991adc89:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Latency
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 17GB
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12+2333135a3-a100x1-bf16-throughput.1.3.143640
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct A100 BF16 Throughput
+      ngcMetadata:
+        9189d008806a9638d4206e6ff94c0b0d9acc2a8861f6de5a49b9d0a5acdcf049:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20b2:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 17GB
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12+2333135a3-a10gx4-bf16-latency.1.3.154196
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct A10Gx4 BF16 Latency
+      ngcMetadata:
+        9bccc20c28c1728b59cdbad4b2c1607d3b57388ff266da4477ea8a413ae0fb7d:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Latency
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 20GB
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12+2333135a3-h100x1-bf16-throughput.1.3.143640
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct H100 BF16 Throughput
+      ngcMetadata:
+        ed4af8b6563348d37f72bfd013be44573a1c88f384ef8fb3eaf0c69e4f235c20:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 16GB
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12+2333135a3-l40sx2-bf16-throughput.1.3.143640
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct L40Sx2 BF16 Throughput
+      ngcMetadata:
+        f25fe2be374f7dfd85e42d3be1792f12deab691c6e2dcdf807ad4857e163b8e0:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b5:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 26b5:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 17GB
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12+2333135a3-h100x1-fp8-throughput.1.3.143640
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct H100 FP8 Throughput
+      ngcMetadata:
+        f8b5f71dd66c36c70deac7927cbd98b1c4f78caf1abf01f768be7118e1daa278:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 9GB
+    - profileId: nim/meta/llama-3_1-8b-instruct:0.12+2333135a3-h100x2-fp8-latency.1.3.60325
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct H100x2 FP8 Throughput
+      ngcMetadata:
+        fa55c825306dfc09c9d0e7ef423e897d91fe8334a3da87d284f45f45cbd4c1b0:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.3.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 9GB
+  labels:
+  - Llama
+  - Meta
+  - Text Generation
+  - Large Language Model
+  - TensorRT-LLM
+  - Language Generation
+  - NeMo
+  - NVIDIA Validated
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License
