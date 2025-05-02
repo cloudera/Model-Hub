@@ -1,0 +1,120 @@
+models:
+- name: Llama 3.1 Nemotron Nano 8b V1
+  displayName: Llama 3.1 Nemotron Nano 8b V1
+  modelHubID: llama-3.1-nemotron-nano-8b-v1
+  category: Chatbots
+  type: NGC
+  description: Llama-3.1-Nemotron-Nano-8B-v1 is a language model that can follow instructions, complete requests, and generate creative text formats. The Llama-3.1-Nemotron-Nano-8B-v1 Large Language Model (LLM) is an instruct fine-tuned version of the Nemotron-Nano.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://llama.meta.com/llama3/use-policy/
+  - label: License Agreement
+    url: https://llama.meta.com/llama3/license/
+  modelVariants:
+  - variantId: Llama 3.1 Nemotron Nano 8b V1
+    source:
+          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.1-nemotron-nano-8b-v1
+    optimizationProfiles:
+    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 7B Instruct A10Gx2 BF16
+      ngcMetadata:
+        375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
+          model: llama-3.1-nemotron-nano-8b-v1
+          release: 1.8.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            gpu: A10G
+            gpu_device: 2237:10de
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.8.3
+      - key: DOWNLOAD SIZE
+        value: 16GB
+    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 7B Instruct L40S BF16
+      ngcMetadata:
+        ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
+          model: llama-3.1-nemotron-nano-8b-v1
+          release: 1.8.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            gpu: L40S
+            gpu_device: 26b9:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.8.3
+      - key: DOWNLOAD SIZE
+        value: 16GB
+    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 7B Instruct H100 BF16
+      ngcMetadata:
+        ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
+          model: llama-3.1-nemotron-nano-8b-v1
+          release: 1.8.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            gpu: H100
+            gpu_device: 2330:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.8.3
+      - key: DOWNLOAD SIZE
+        value: 16GB
+  labels:
+  - Llama
+  - Meta
+  - Text Generation
+  - Large Language Model
+  - NVIDIA Validated
+  - Nemo
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License
