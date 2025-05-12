@@ -1,0 +1,37 @@
+models:
+  - name: Llama 3.3 Instruct
+    displayName: Llama 3.3 Instruct
+    modelHubID: llama-3-3-instruct
+    category: Text Generation
+    type: HF
+    description: Meta's Llama 3.3 is an instruction-tuned generative LLM optimized for multilingual dialogue use cases. It outperforms many available open-source and closed chat models on common industry benchmarks.
+    modelVariants:
+      - variantId: Llama 3.3 70B Instruct
+        displayName: Llama 3.3 70B Instruct
+        source:
+          URL: https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct
+        requireToken: true
+        requireLicense: true
+        licenseAgreements:
+        - label: License Agreement
+          url: https://www.llama.com/llama3_3/license/
+        optimizationProfiles:
+        - profileId: meta-llama/Llama-3.3-70B-Instruct
+          displayName: Llama 3.3 70B Instruct
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+          - key: A100
+            value: 1
+          - key: L40S
+            value: 8          
+    labels:
+      - "Llama"
+      - "Code Generation"
+      - "Meta"
+    config:
+      architectures:
+        - LlamaForCausalLM
+      modelType: llama
+    license: llama3.3
