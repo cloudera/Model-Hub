@@ -1,37 +1,120 @@
 models:
-  - name: Llama 3.3 Instruct
-    displayName: Llama 3.3 Instruct
-    modelHubID: llama-3-3-instruct
-    category: Text Generation
-    type: HF
-    description: Meta's Llama 3.3 is an instruction-tuned generative LLM optimized for multilingual dialogue use cases. It outperforms many available open-source and closed chat models on common industry benchmarks.
-    modelVariants:
-      - variantId: Llama 3.3 70B Instruct
-        displayName: Llama 3.3 70B Instruct
-        source:
-          URL: https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct
-        requireToken: true
-        requireLicense: true
-        licenseAgreements:
-        - label: License Agreement
-          url: https://www.llama.com/llama3_3/license/
-        optimizationProfiles:
-        - profileId: meta-llama/Llama-3.3-70B-Instruct
-          displayName: Llama 3.3 70B Instruct
-          framework: vllm
-          sha: vllm
-          modelFormat: vllm
-          spec:
-          - key: A100
-            value: 1
-          - key: L40S
-            value: 8          
-    labels:
-      - "Llama"
-      - "Code Generation"
-      - "Meta"
-    config:
-      architectures:
-        - LlamaForCausalLM
-      modelType: llama
-    license: llama3.3
+- name: Llama 3.3 70B Instruct
+  displayName: Llama 3.3 70B Instruct
+  modelHubID: llama-3-3-70b-instruct
+  category: Text Generation
+  type: NGC
+  description: The Llama 3.3 70B-Instruct NIM simplifies the deployment of the Llama 3.3 70B instruction tuned model which is optimized for language understanding, reasoning, and text generation use cases, and outperforms many of the available open source chat models on common industry benchmarks.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.llama.com/llama3_3/use-policy/
+  - label: License Agreement
+    url: https://www.llama.com/llama3_3/license/
+  modelVariants:
+  - variantId: Llama 3.3 70B Instruct
+    source:
+          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/meta/containers/llama-3.3-70b-instruct
+    optimizationProfiles:
+    - profileId: nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 70B Instruct A10Gx8 BF16
+      ngcMetadata:
+        1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
+          model: meta/llama-3.3-70b-instruct
+          release: 1.8.2
+          tags:
+            feat_lora: 'false'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 1.8.2
+      - key: DOWNLOAD SIZE
+        value: 141GB
+    - profileId: nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 7B Instruct L40Sx4 BF16
+      ngcMetadata:
+        54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
+          model: meta/llama-3.3-70b-instruct
+          release: 1.8.2
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: GPU DEVICE
+        value: 26b9:10de
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.8.2
+      - key: DOWNLOAD SIZE
+        value: 141GB
+    - profileId: nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 7B Instruct H100x4 BF16
+      ngcMetadata:
+        54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
+          model: meta/llama-3.3-70b-instruct
+          release: 1.8.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.8.2
+      - key: DOWNLOAD SIZE
+        value: 141GB
+  labels:
+  - Llama
+  - Meta
+  - Chat
+  - Text Generation
+  - Large Language Model
+  - NVIDIA Validated
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License
