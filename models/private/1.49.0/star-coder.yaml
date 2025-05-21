@@ -17,16 +17,34 @@ models:
           url: https://huggingface.co/spaces/bigcode/bigcode-model-license-agreement
         optimizationProfiles:
         - profileId: bigcode/starcoder
-          displayName: starcoder
+          displayName: starcoder A10G
           framework: vllm
           sha: vllm
           modelFormat: vllm
           spec:
-          - key: A10G
-            value: 2
-          - key: A100
-            value: 1
-          - key: L40S
+            - key: GPU
+              value: A10G
+            - key: COUNT
+              value: 1
+        - profileId: bigcode/starcoder
+          displayName: starcoder A100
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+            - key: GPU
+              value: A100
+            - key: COUNT
+              value: 1
+        - profileId: bigcode/starcoder
+          displayName: starcoder L40S
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+          - key: GPU
+            value: L40S
+          - key: COUNT
             value: 1
     labels:
       - bigCode
