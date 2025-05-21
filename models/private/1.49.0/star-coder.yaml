@@ -22,20 +22,20 @@ models:
           sha: vllm
           modelFormat: vllm
           spec:
-            - key: GPU
-              value: A10G
-            - key: COUNT
-              value: 1
+          - key: GPU
+            value: A10G
+          - key: COUNT
+            value: 1
         - profileId: bigcode/starcoder
           displayName: starcoder A100
           framework: vllm
           sha: vllm
           modelFormat: vllm
           spec:
-            - key: GPU
-              value: A100
-            - key: COUNT
-              value: 1
+          - key: GPU
+            value: A100
+          - key: COUNT
+            value: 1
         - profileId: bigcode/starcoder
           displayName: starcoder L40S
           framework: vllm
