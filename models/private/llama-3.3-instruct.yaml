@@ -17,15 +17,25 @@ models:
           url: https://www.llama.com/llama3_3/license/
         optimizationProfiles:
         - profileId: meta-llama/Llama-3.3-70B-Instruct
-          displayName: Llama 3.3 70B Instruct
+          displayName: Llama 3.3 70B Instruct A100
           framework: vllm
           sha: vllm
           modelFormat: vllm
           spec:
-          - key: A100
+          - key: GPU
+            value: A100
+          - key: COUNT
             value: 1
-          - key: L40S
-            value: 8          
+        - profileId: meta-llama/Llama-3.3-70B-Instruct
+          displayName: Llama 3.3 70B Instruct L40S
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+          - key: GPU
+            value: L40S
+          - key: COUNT
+            value: 8 
     labels:
       - "Llama"
       - "Code Generation"
