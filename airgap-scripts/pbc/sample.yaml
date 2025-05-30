@@ -1,0 +1,486 @@
+models:
+- name: E5 Embedding v5
+  displayName: E5 Embedding v5
+  modelHubID: e5-embedding-v5
+  category: Embedding
+  type: NGC
+  description: NVIDIA NIM for GPU accelerated NVIDIA Retrieval QA E5 Embedding v5
+    inference
+  modelVariants:
+  - variantId: E5 Embedding
+    displayName: E5 Embedding
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nv-embedqa-e5-v5
+    optimizationProfiles:
+    - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_onnx
+      displayName: Embedding ONNX FP16
+      framework: ONNX
+      sha: onnx
+      ngcMetadata:
+        onnx:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-e5-v5
+          model_type: embedding
+          tags:
+            llm_engine: onnx
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_tokenizer
+            - dst: onnx
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_FP16_onnx
+      modelFormat: onnx
+      latestVersionSizeInBytes: 668847682
+      spec:
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 1024
+      - key: NIM VERSION
+        value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_A10_24GB
+      displayName: Embedding A10G FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-A10G_10.0.1_12
+      ngcMetadata:
+        NVIDIA-A10G_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-e5-v5
+          model_type: embedding
+          tags:
+            gpu: A10G
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_tokenizer
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_FP16_A10_24GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 672920180
+      spec:
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 1024
+      - key: NIM VERSION
+        value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_A100_SXM4_80GB
+      displayName: Embedding A100 FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-A100_10.0.1_12
+      ngcMetadata:
+        NVIDIA-A100_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-e5-v5
+          model_type: embedding
+          tags:
+            gpu: A100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_tokenizer
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_FP16_A100_SXM4_80GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 672515204
+      spec:
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 1024
+      - key: NIM VERSION
+        value: 1.0.1
+    - profileId: nim/nvidia/nv-embedqa-e5-v5:5_FP16_H100_HBM3_80GB
+      displayName: Embedding H100 FP16
+      framework: TensorRT-LLM
+      sha: NVIDIA-H100_10.0.1_12
+      ngcMetadata:
+        NVIDIA-H100_10.0.1_12:
+          container_url: https://catalog.ngc.nvidia.com/containers
+          model: nvidia/nv-embedqa-e5-v5
+          model_type: embedding
+          tags:
+            gpu: H100
+            llm_engine: tensorrt_llm
+            tp: '1'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_tokenizer
+            - dst: trtllm_engine
+              src:
+                repo_id: ngc://nim/nvidia/nv-embedqa-e5-v5:5_FP16_H100_HBM3_80GB
+      modelFormat: trt-llm
+      latestVersionSizeInBytes: 675755740
+      spec:
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: MAX TOKENS
+        value: 512
+      - key: Dimension
+        value: 1024
+      - key: NIM VERSION
+        value: 1.0.1
+  labels:
+  - Embedding
+  config:
+    architectures:
+    - Other
+    modelType: embedding
+  license: NVIDIA AI Foundation Models Community License
+- name: NeMo Retriever-Parse
+  displayName: NeMo Retriever-Parse
+  modelHubID: nemoretriever-parse
+  category: Text Extraction
+  type: NGC
+  description: Nemoretriever-parse is a general purpose text-extraction model, specifically designed to handle documents. Given an image, nemoretriever-parse is able to extract formatted-text, with bounding-boxes and the corresponding semantic class. This has downstream benefits for several tasks such as increasing the availability of training-data for Large Language Models (LLMs), improving the accuracy of retriever systems, and enhancing document understanding pipelines.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://llama.meta.com/llama3/use-policy/
+  - label: License Agreement
+    url: https://llama.meta.com/llama3/license/
+  modelVariants:
+  - variantId: nemoretriever-parse:1.2.0
+    source:
+      URL: https://build.nvidia.com/nvidia/nemoretriever-parse
+    optimizationProfiles:
+    - profileId: nim/nvidia/nemoretriever-parse:a100x1-throughput-bf16-e9wjao-enw
+      framework: TensorRT-LLM
+      displayName: nemoretriever-parse A100 BF16 Throughput
+      ngcMetadata:
+        19c68819d9428cfa494e977f4d2be6378215a8f610cce9bdfc0aa3cdd7d66aa9:
+          model: nvidia/nemoretriever-parse
+          release: 1.2.0
+          tags:
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            profile: throughput
+            precision: bf16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20b2:10de
+      - key: NIM VERSION
+        value: 1.2.0
+      - key: DOWNLOAD SIZE
+        value: 600MB
+    - profileId: nim/nvidia/nemoretriever-parse:h100x1-throughput-bf16-2apiazbpma
+      framework: TensorRT-LLM
+      displayName: nemoretriever-parse H100 BF16 Throughput
+      ngcMetadata:
+        8db6dcd816ca1ce8d07e72d8b9c4682120b3c50799422361e35b4ab87820efd6:
+          model: nvidia/nemoretriever-parse
+          release: 1.2.0
+          tags:
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            profile: throughput
+            precision: bf16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.2.0
+      - key: DOWNLOAD SIZE
+        value: 600MB
+    - profileId: nim/nvidia/nemoretriever-parse:l40sx1-throughput-bf16-r98ogb1a1a
+      framework: TensorRT-LLM
+      displayName: nemoretriever-parse L40S BF16 Throughput
+      ngcMetadata:
+        00c8a43783e7acf3d59a0d773cd78d3d29eaa71fa4412af7af2fbaf20e196a8b:
+          model: nvidia/nemoretriever-parse
+          release: 1.2.0
+          tags:
+            gpu: L40S
+            gpu_device: 26b5:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            profile: throughput
+            precision: bf16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26b5:10de
+      - key: NIM VERSION
+        value: 1.2.0
+      - key: DOWNLOAD SIZE
+        value: 600MB
+  labels:
+  - NeMo
+  - Text Extraction
+  - Large Language Model
+  - NVIDIA Validated
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License
+- name: Mixtral Instruct
+  displayName: Mixtral Instruct
+  modelHubID: mixtral-instruct
+  category: Text Generation
+  type: NGC
+  description: The Mixtral Large Language Model (LLM) is a pretrained generative Sparse Mixture of Experts model. Mixtral Instruct is a language model that can follow instructions, complete requests, and generate creative text formats. The Mixtral Instruct Large Language Model (LLM) is an instruct fine-tuned version of the Mixtral.
+  modelVariants:
+  - variantId: Mixtral 8x7B Instruct
+    displayName: Mixtral 8x7B Instruct
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/mistralai/containers/mixtral-8x7b-instruct-v01
+    optimizationProfiles:
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-a10gx8-fp16-throughput.1.3.18301798
+      displayName: Mixtral 8x7B Instruct A10Gx8 FP16 Throughput
+      framework: TensorRT-LLM
+      ngcMetadata:
+        03501a01c138dcfc63fc672c20053e3fca8d7bdae1f448165d7bed3f241973cf:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.3.0
+          tags:
+            feat_lora: false
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp16
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 89GB
+- name: Llama 3.1 Instruct
+  displayName: Llama 3.1 Instruct
+  modelHubID: llama-3.1-instruct
+  category: Text Generation
+  type: NGC
+  description: The Llama 3.1 70B-Instruct, 8B instruct and 8B base NIM simplifies the deployment of the Llama 3.1 70B-Instruct, 8B instruct and 8B base tuned models which is optimized for language understanding, reasoning, and text generation use cases, and outperforms many of the available open source chat models on common industry benchmarks.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://llama.meta.com/llama3/use-policy/
+  - label: License Agreement
+    url: https://llama.meta.com/llama3/license/
+  modelVariants:
+  - variantId: Llama 3.1 70B Instruct
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_1-70b-instruct-nemo
+    optimizationProfiles:
+    - profileId: nim/meta/llama-3_1-70b-instruct:0.11.1+14957bf8-h100x4-fp8-throughput.1.2.18099809
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct H100 FP8 Throughput
+      sha: 4e0aeeefd4dfeae46ad40f16238bbde8858850ce0cf56c26449f447a02a9ac8f
+      ngcMetadata:
+        4e0aeeefd4dfeae46ad40f16238bbde8858850ce0cf56c26449f447a02a9ac8f:
+          container_url: nvcr.io/nim/meta/llama-3.1-70b-instruct:1.2.0
+          model: meta/llama-3.1-70b-instruct
+          release: 1.2.0
+          tags:
+            feat_lora: false
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                files:
+                - !name 'LICENSE.txt'
+                - !name 'NOTICE.txt'
+                - !name 'checksums.blake3'
+                - !name 'config.json'
+                - !name 'generation_config.json'
+                - !name 'model.safetensors.index.json'
+                - !name 'special_tokens_map.json'
+                - !name 'tokenizer.json'
+                - !name 'tokenizer_config.json'
+                - !name 'tool_use_config.json'
+                repo_id: ngc://nim/meta/llama-3_1-70b-instruct:hf-1d54af3-nim1.2
+            - dst: trtllm_engine
+              src:
+                files:
+                - !name 'LICENSE.txt'
+                - !name 'NOTICE.txt'
+                - !name 'checksums.blake3'
+                - !name 'config.json'
+                - !name 'metadata.json'
+                - !name 'rank0.engine'
+                - !name 'rank1.engine'
+                - !name 'rank2.engine'
+                - !name 'rank3.engine'
+                repo_id: ngc://nim/meta/llama-3_1-70b-instruct:0.11.1+14957bf8-h100x4-fp8-throughput.1.2.18099809
+      latestVersionSizeInBytes: 91738571464
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Throughput
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.2.1
+      - key: DOWNLOAD SIZE
+        value: 91GB
+    - profileId: nim/meta/llama-3_1-70b-instruct:0.11.1+14957bf8-h100x8-fp8-latency.1.2.18099809
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct H100 FP8 Latency
+      sha: 5296eed82c6309b64b13da03fbb843d99c3276effd6a0c51e28ad5bb29f56017
+      ngcMetadata:
+        5296eed82c6309b64b13da03fbb843d99c3276effd6a0c51e28ad5bb29f56017:
+          container_url: nvcr.io/nim/meta/llama-3.1-70b-instruct:1.2.0
+          model: meta/llama-3.1-70b-instruct
+          release: 1.2.0
+          tags:
+            feat_lora: false
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '8'
+          workspace: !workspace
+            components:
+            - dst: ''
+              src:
+                files:
+                - !name 'LICENSE.txt'
+                - !name 'NOTICE.txt'
+                - !name 'checksums.blake3'
+                - !name 'config.json'
+                - !name 'generation_config.json'
+                - !name 'model.safetensors.index.json'
+                - !name 'special_tokens_map.json'
+                - !name 'tokenizer.json'
+                - !name 'tokenizer_config.json'
+                - !name 'tool_use_config.json'
+                repo_id: ngc://nim/meta/llama-3_1-70b-instruct:hf-1d54af3-nim1.2
+            - dst: trtllm_engine
+              src:
+                files:
+                - !name 'LICENSE.txt'
+                - !name 'NOTICE.txt'
+                - !name 'checksums.blake3'
+                - !name 'config.json'
+                - !name 'metadata.json'
+                - !name 'rank0.engine'
+                - !name 'rank1.engine'
+                - !name 'rank2.engine'
+                - !name 'rank3.engine'
+                - !name 'rank4.engine'
+                - !name 'rank5.engine'
+                - !name 'rank6.engine'
+                - !name 'rank7.engine'
+                repo_id: ngc://nim/meta/llama-3_1-70b-instruct:0.11.1+14957bf8-h100x8-fp8-latency.1.2.18099809
+      latestVersionSizeInBytes: 100947599129
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: Latency
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.2.1
+      - key: DOWNLOAD SIZE
+        value: 101GB
+  labels:
+  - Llama
+  - Meta
+  - Chat
+  - Large Language Model
+  - TensorRT-LLM
+  - Language Generation
+  - NeMo
+  - NVIDIA Validated
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License
