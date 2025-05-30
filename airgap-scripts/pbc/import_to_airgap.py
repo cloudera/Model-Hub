@@ -395,18 +395,18 @@ def canusenimcli(metadata):
         
         # Extract information from the first entry in the YAML
         # (In this case, there's only one entry with a hash as the key)
-        print("here")
         ngcmetadata = metadata['ngcMetadata']
         
         print(ngcmetadata)
         hash_key = next(iter(ngcmetadata))
-        print("hashkey")
         release_info = ngcmetadata[hash_key]
         print(release_info)
         # Check if the release key is present
         if "release" not in release_info:
             return False
-        
+        if "model" in release_info:
+            if release_info['model'] ==  "nvidia/nemoretriever-parse":
+                return True
         if "release" in release_info:
             version = release_info["release"]
             checkversion = "1.3.0"
