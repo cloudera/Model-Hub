@@ -18,16 +18,34 @@ models:
           url: https://choosealicense.com/licenses/cc-by-sa-4.0/
         optimizationProfiles:
         - profileId: Defog/Llama-3-sqlcoder-8B
-          displayName: Llama 3 SQLCoder 8B
+          displayName: Llama 3 SQLCoder 8B A10G
           framework: vllm
           sha: vllm
           modelFormat: vllm
           spec:
-          - key: A10G
+          - key: GPU
+            value: A10G
+          - key: COUNT
             value: 1
-          - key: A100
+        - profileId: Defog/Llama-3-sqlcoder-8B
+          displayName: Llama 3 SQLCoder 8B A100
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+          - key: GPU
+            value: A100
+          - key: COUNT
             value: 1
-          - key: L40S
+        - profileId: Defog/Llama-3-sqlcoder-8B
+          displayName: Llama 3 SQLCoder 8B L40S
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+          - key: GPU
+            value: L40S
+          - key: COUNT
             value: 1
     labels:
       - Llama
