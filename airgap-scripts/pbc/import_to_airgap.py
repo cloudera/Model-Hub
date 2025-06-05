@@ -8,6 +8,7 @@ import sys
 import logging
 
 import yaml
+from typing import List, Dict, Optional, Tuple
 
 # courtesy : https://stackoverflow.com/questions/43765849/pyyaml-load-and-dump-yaml-file-and-preserve-tags-customtag
 class SafeUnknownConstructor(yaml.constructor.SafeConstructor):
@@ -77,6 +78,110 @@ class SafeUnknownDumper(SafeUnknownRepresenter, yaml.dumper.SafeDumper):
 
 MySafeLoader = SafeUnknownLoader
 yaml.constructor.SafeConstructor.add_constructor(None, SafeUnknownConstructor.construct_undefined)
+
+class ModelParser:
+    def __init__(self, yaml_file_path: str):
+        """Initialize the parser with a YAML file path."""
+        self.yaml_file_path = yaml_file_path
+        self.models_data = self._load_yaml()
+    
+    def _load_yaml(self) -> Dict:
+        """Load and parse the YAML file."""
+        try:
+            with open(self.yaml_file_path, "r") as file:
+                yaml_data = file.read()
+                return yaml.load(yaml_data,Loader=MySafeLoader)
+        except FileNotFoundError:
+            print(f"Error: File {self.yaml_file_path} not found.")
+            return {}
+        except yaml.YAMLError as e:
+            print(f"Error parsing YAML: {e}")
+            return {}
+    
+    def get_all_models(self) -> List[Dict[str, str]]:
+        """Fetch all models with their basic information."""
+        models = []
+        if 'models' in self.models_data:
+            for model in self.models_data['models']:
+                model_info = {
+                    'name': model.get('name', ''),
+                    'displayName': model.get('displayName', ''),
+                    'modelHubID': model.get('modelHubID', ''),
+                    'category': model.get('category', ''),
+                    'description': model.get('description', '')
+                }
+                models.append(model_info)
+        return models
+    
+    def get_model_variant_ids(self, model_name: str) -> List[str]:
+        """
+        Fetch all model variant IDs for a given model name.
+        
+        Args:
+            model_name: The name of the model to search for
+            
+        Returns:
+            List of variant IDs for the specified model
+        """
+        variant_ids = []
+        if 'models' in self.models_data:
+            for model in self.models_data['models']:
+                if model.get('name', '').lower() == model_name.lower():
+                    if 'modelVariants' in model:
+                        for variant in model['modelVariants']:
+                            variant_id = variant.get('variantId', '')
+                            if variant_id:
+                                variant_ids.append(variant_id)
+                    break
+        return variant_ids
+    
+    def get_optimization_profile_ids(self, model_name: str, variant_id: str = None) -> List[str]:
+        """
+        Fetch all optimization profile IDs for a given model name and optional variant ID.
+        
+        Args:
+            model_name: The name of the model
+            variant_id: Optional variant ID. If None, gets profiles from all variants
+            
+        Returns:
+            List of optimization profile IDs
+        """
+        profile_ids = []
+        if 'models' in self.models_data:
+            for model in self.models_data['models']:
+                if model.get('name', '').lower() == model_name.lower():
+                    if 'modelVariants' in model:
+                        for variant in model['modelVariants']:
+                            # If variant_id is specified, only process that variant
+                            if variant_id and variant.get('variantId', '').lower() != variant_id.lower():
+                                continue
+                            
+                            if 'optimizationProfiles' in variant:
+                                for profile in variant['optimizationProfiles']:
+                                    profile_id = profile.get('profileId', '')
+                                    if profile_id:
+                                        profile_ids.append(profile_id)
+                    break
+        return profile_ids
+    
+    def get_detailed_model_info(self, model_name: str) -> Optional[Dict]:
+        """
+        Get detailed information about a specific model including all variants and profiles.
+        
+        Args:
+            model_name: The name of the model
+            
+        Returns:
+            Dictionary containing detailed model information
+        """
+        if 'models' in self.models_data:
+            for model in self.models_data['models']:
+                if model.get('name', '').lower() == model_name.lower():
+                    return model
+        return None
+    
+
+
 
 def extract_last_part(input_string):
     # Split the string by '/' and return the last part
@@ -160,8 +265,11 @@ def execute_nim_download_command(repo_id, folder_location, ngc_spec, profile_sha
     model_name = repo_id.split(":")[0]
     count = model_name.count('/')
     if count != 2:
-        raise ValueError(f"Expected 3 '/' characters, but found {count} in model name") 
-    manifest_path = f"{ngc_spec}/{version}/{model_name}.yaml"
+        raise ValueError(f"Expected 3 '/' characters, but found {count} in model name")
+
+    # Get the absolute path of the ngc_spec folder
+    ngc_spec_abs = os.path.dirname(ngc_spec)
+    manifest_path = f"{ngc_spec_abs}/manifests/{version}/{model_name}.yaml"
     cmd = [
         "nimcli", "download", "--profiles", profile_sha, "--manifest-file",
         manifest_path, "--model-cache-path", folder_location
@@ -416,7 +524,7 @@ def canusenimcli(metadata):
         print("error Failed to parse YAML:", e)
         return False
 
-def download_repo(repo_id, token, download_path, repo_type, metadata, ngc_spec, version):
+def download_repo(repo_id, token, download_path, repo_type, metadata, ngc_spec):
     """Download a repository using huggingface-cli."""
     print(f"start downloading {repo_type} repository: {repo_id}")
     if repo_type == 'hf':
@@ -432,6 +540,10 @@ def download_repo(repo_id, token, download_path, repo_type, metadata, ngc_spec, 
         nimcli=canusenimcli(metadata)
         ngcmetadata = metadata['ngcMetadata']
         profile_sha = next(iter(ngcmetadata))
+        spec = load_ngc_spec(ngc_spec)
+        version = ''
+        if 'version' in spec:
+            version = spec['version']
         if nimcli:
             model_name = repo_id.split(":")[0]
             model_name_parts = model_name.split("/")
@@ -476,7 +588,7 @@ def get_repo_info_ngc(repo_id, spec_file):
     return ngcMetadata, modelMetadata
 
 
-def get_repo_info(repo_id, token, repo_type, download_path, ngc_spec, version):
+def get_repo_info(repo_id, token, repo_type, download_path, ngc_spec):
     """Get repository metadata and save it to a file."""
     print(f"Fetching information for {repo_type} repository: {repo_id}")
     print(f"Download path: {download_path}")
@@ -490,8 +602,7 @@ def get_repo_info(repo_id, token, repo_type, download_path, ngc_spec, version):
     elif repo_type == 'ngc':
         repo_path = extract_last_part(repo_id)
         metadata_path = os.path.join(download_path, "ngc", repo_path, "metadata")
-        ngc_spec_file = f'{ngc_spec}/{version}/ngc-spec.yaml'
-        metadata, modelmetadata =  get_repo_info_ngc(repo_id, ngc_spec_file)
+        metadata, modelmetadata =  get_repo_info_ngc(repo_id, ngc_spec)
         metadataToFile = metadata['ngcMetadata']
         os.makedirs(metadata_path, exist_ok=True)
         output_file = os.path.join(metadata_path, "metadata.yaml")
@@ -567,6 +678,68 @@ def upload_to_cloud(src, dst, cloud, token=None, recursive=False, endpoint=None,
         print(f"Error during upload: {str(e)}")
         return False
 
+
+def print_models(models: List[Dict[str, str]], title: str = "Models"):
+    """Print models in a formatted way."""
+    print(f"\n=== {title.upper()} ===")
+    if not models:
+        print("No models found.")
+        return
+    
+    for i, model in enumerate(models, 1):
+        print(f"{i}. {model['name']}")
+        print(f"   Display Name: {model['displayName']}")
+        print(f"   Category: {model['category']}")
+        print(f"   Hub ID: {model['modelHubID']}")
+        if model['description']:
+            desc = model['description'][:100] + "..." if len(model['description']) > 100 else model['description']
+            print(f"   Description: {desc}")
+        print()
+
+def print_list(items: List[str], title: str):
+    """Print a list of items in a formatted way."""
+    print(f"\n=== {title.upper()} ===")
+    if not items:
+        print(f"No {title.lower()} found.")
+        return
+    
+    for i, item in enumerate(items, 1):
+        print(f"{i}. {item}")
+
+def print_detailed_model(model_data: Dict, model_name: str):
+    """Print detailed model information."""
+    print(f"\n=== DETAILED INFO FOR '{model_name}' ===")
+    
+    if not model_data:
+        print(f"Model '{model_name}' not found.")
+        return
+    
+    print(f"Name: {model_data.get('name', 'N/A')}")
+    print(f"Display Name: {model_data.get('displayName', 'N/A')}")
+    print(f"Model Hub ID: {model_data.get('modelHubID', 'N/A')}")
+    print(f"Category: {model_data.get('category', 'N/A')}")
+    print(f"Type: {model_data.get('type', 'N/A')}")
+    print(f"Description: {model_data.get('description', 'N/A')}")
+    print(f"License: {model_data.get('license', 'N/A')}")
+    
+    if 'labels' in model_data:
+        print(f"Labels: {', '.join(model_data['labels'])}")
+    
+    if 'modelVariants' in model_data:
+        print(f"\nModel Variants ({len(model_data['modelVariants'])}):")
+        for i, variant in enumerate(model_data['modelVariants'], 1):
+            print(f"  {i}. {variant.get('variantId', 'N/A')}")
+            if 'optimizationProfiles' in variant:
+                print(f"     Optimization Profiles ({len(variant['optimizationProfiles'])}):")
+                for j, profile in enumerate(variant['optimizationProfiles'], 1):
+                    profile_id = profile.get('profileId', 'N/A')
+                    display_name = profile.get('displayName', 'N/A')
+                    framework = profile.get('framework', 'N/A')
+                    print(f"       {j}. {profile_id}")
+                    print(f"          Display Name: {display_name}")
+                    print(f"          Framework: {framework}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Hugging Face model management script")
     
@@ -592,9 +765,13 @@ def main():
     parser.add_argument("-ac", "--account", help="Account for Azure uploads")
     parser.add_argument("-cn", "--container", help="Container name for Azure uploads")
     parser.add_argument("-ns", "--ngc-spec", help="NGC spec folder path")
-    parser.add_argument("-v", "--version", help="Version of AI registry")
-
     
+    parser.add_argument('-m', '--model-name', help='Name of the model to query')
+    parser.add_argument('-vid', '--variant-id', help='Variant ID (used with model name for specific queries)')
+    parser.add_argument('--list-all', action='store_true',help='List all available models')
+    parser.add_argument('--list-variants', action='store_true',help='List all variant IDs for the specified model')
+    parser.add_argument('--list-profiles', action='store_true',help='List all optimization profile IDs for the specified model (and variant if provided)')
+
     args = parser.parse_args()
     
     # # Show help if requested or no arguments provided
@@ -605,6 +782,46 @@ def main():
     if not check_requirements(args.download, args.cloud if args.src else None):
         sys.exit(1)
     
+    
+    # Handle different command combinations
+    if args.list_all:
+        ngc_spec_file = args.ngc_spec
+        parser = ModelParser(ngc_spec_file)
+        models = parser.get_all_models()
+        print_models(models, "All Models")
+        return
+    
+    elif args.model_name:
+        ngc_spec_file = args.ngc_spec
+        parser = ModelParser(ngc_spec_file)
+        
+        if args.list_variants:
+            variants = parser.get_model_variant_ids(args.model_name)
+            print_list(variants, f"Variants for '{args.model_name}'")
+        
+        elif args.list_profiles:
+            profiles = parser.get_optimization_profile_ids(args.model_name, args.variant_id)
+            if args.variant_id:
+                title = f"Optimization Profiles for '{args.model_name}' variant '{args.variant_id}'"
+            else:
+                title = f"Optimization Profiles for '{args.model_name}'"
+            print_list(profiles, title)
+        
+        else:
+            # Default: show basic info about the model
+            model_data = parser.get_detailed_model_info(args.model_name)
+            if model_data:
+                model_info = {
+                    'name': model_data.get('name', ''),
+                    'displayName': model_data.get('displayName', ''),
+                    'modelHubID': model_data.get('modelHubID', ''),
+                    'category': model_data.get('category', ''),
+                    'description': model_data.get('description', '')
+                }
+                print_models([model_info], f"Model '{args.model_name}'")
+            else:
+                print(f"Model '{args.model_name}' not found.")
+        return
     # Handle download use case
     if args.download:
         if not args.repo_id:
@@ -615,9 +832,9 @@ def main():
             sys.exit(1)
         
         # Get repository info and download
-        metadata = get_repo_info(args.repo_id, args.token, args.repo_type, args.path, args.ngc_spec, args.version)
+        metadata = get_repo_info(args.repo_id, args.token, args.repo_type, args.path, args.ngc_spec)
         if metadata is not None:
-            download_repo(args.repo_id, args.token, args.path, args.repo_type, metadata, args.ngc_spec, args.version)
+            download_repo(args.repo_id, args.token, args.path, args.repo_type, metadata, args.ngc_spec)
         else:
             print("Error: Failed to get repository metadata")
             sys.exit(1)

@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: model-registry
+    role: model-registry
+  annotations:
+    cdsw-tls-service: "true"
+  name: model-registry
+  namespace: mlnamespace
+spec:
+  ports:
+    - port: 8188
+      protocol: TCP
+  selector:
+    app: model-registry
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mlcerts
+  namespace: mlnamespace
+data:
+  hive.keytab: |
+    BQIAAAC0AAIAIEVORy1NTC1ELlhDVTItOFk4WC5ERVYuQ0xEUi5XT1JLABNtb2RlbHJlZ2lzdHJ5LXRlc3QxAEg1NjQxNTUxMS0zZjc1LTQ0MjgtODgzZi04MTZiYWZjNTdiODEubWx4LmNsb3VkZXJhLnNpdGUubWx4LmNsb3VkZXJhLnNpdGUAAAABYfm6PwEAEgAgzzPZiBYXmB+ninVsIIDgI0qgldInvPylNKrc6EkJqGgAAAABAAAApAACACBFTkctTUwtRC5YQ1UyLThZOFguREVWLkNMRFIuV09SSwATbW9kZWxyZWdpc3RyeS10ZXN0MQBINTY0MTU1MTEtM2Y3NS00NDI4LTg4M2YtODE2YmFmYzU3YjgxLm1seC5jbG91ZGVyYS5zaXRlLm1seC5jbG91ZGVyYS5zaXRlAAAAAWH5uj8BABEAEA0XmuqFQCwoUIbOzQOj2jwAAAABAAAAAA==
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: model-registry
+    role: model-registry
+  name: model-registry
+  namespace: mlnamespace
+spec:
+  selector:
+    matchLabels:
+      app: model-registry
+  template:
+    metadata:
+      labels:
+        app: model-registry
+    # see buildkit/docs/rootless.md for caveats of rootless mode
+    spec:
+      containers:
+        - name: model-registry
+          image: mlimage
+          args:
+            - /model-registry
+            - --host=0.0.0.0
+            - --port=8188
+          ports:
+            - containerPort: 8188
+          volumeMounts:
+            - name: certs
+              readOnly: true
+              mountPath: /certs
+          resources:
+            limits:
+              cpu: 1
+              memory: 1000mi
+            requests:
+              cpu: 1
+              memory: 1000mi
+      volumes:
+        - name: certs
+          secret:
+            secretName: mlcerts
