@@ -32,7 +32,7 @@ Jenkins jobs used in the Modelhub operations.
     **Note**
     1. YAML files for a chosen platform will be copied over to master branch of mlx-crud-app. If needed we need to cherry-pick the commit to release branch.
   
-  3. **mlx_copy_modelhub_manifest_to_model_registry**
+3. **mlx_copy_modelhub_manifest_to_model_registry**
 
    **Description**: Job to push changes in model-registry manifest to model-registry repo. We use this job to keep both external github and model-registry manifest master branch to be in sync.
 
