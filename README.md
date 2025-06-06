@@ -44,6 +44,6 @@ Jenkins jobs used in the Modelhub operations.
    **How does the job work**:
    For the choosen registyVersion the job will copy over all the content from Model-Hub/manifest/registyVersion github repo to Cloudera's model-registry repo. Any changes in the YAML files will be directly merged to master branch of mlx-crud-app repo.
 
-    **Note**
+  **Note**
     1. YAML files will be copied over to master branch of mlx-crud-app. If needed we need to cherry-pick the commit to release branch.
 
