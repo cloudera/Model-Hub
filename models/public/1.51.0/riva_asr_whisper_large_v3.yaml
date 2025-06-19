@@ -1,0 +1,129 @@
+models:
+- name: Riva ASR Whisper Large v3
+  displayName: Riva ASR Whisper Large v3
+  modelHubID: nvidia/riva-asr/whisper
+  category: Text-Prompt
+  type: NGC
+  description: This model is used to transcribe short-form audio files and is designed to be compatible with OpenAI's sequential long-form transcription algorithm. Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation. Trained on 680k hours of labeled data, Whisper models demonstrate a strong ability to generalize to many datasets and domains without the need for fine-tuning. Whisper-large-v3 is one of the 5 configurations of the model with 1550M parameters. This model version is optimized to run with NVIDIA TensorRT-LLM. This model is ready for commercial use.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+  modelVariants:
+  - variantId: Riva ASR Whisper Large v3
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/whisper_large
+    optimizationProfiles:
+    - profileId: nim/nvidia/whisper-large-v3:ofl_rmir_24.12
+      framework: TensorRT-LLM
+      displayName: Riva ASR Whisper Large v3 A10G
+      ngcMetadata:
+        5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
+          model: nvidia/riva-asr/whisper
+          release: 1.3.0
+          tags:
+            mode: ofl
+            model_type: rmir
+            name: whisper-large-v3
+            gpu: A10G
+            gpu_device: 2237:10de
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+    - profileId: nim/nvidia/whisper-large-v3:ofl_rmir_24.12
+      framework: TensorRT-LLM
+      displayName: Riva ASR Whisper Large v3 L40S
+      ngcMetadata:
+        5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
+          model: nvidia/riva-asr/whisper
+          release: 1.3.0
+          tags:
+            mode: ofl
+            model_type: rmir
+            name: whisper-large-v3
+            gpu: L40S
+            gpu_device: 26b9:10de
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26b9:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+    - profileId: nim/nvidia/whisper-large-v3:ofl_rmir_24.12
+      framework: TensorRT-LLM
+      displayName: Riva ASR Whisper Large v3 A100
+      ngcMetadata:
+        5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
+          model: nvidia/riva-asr/whisper
+          release: 1.3.0
+          tags:
+            mode: ofl
+            model_type: rmir
+            name: whisper-large-v3
+            gpu: A100
+            gpu_device: 20b2:10de
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20b2:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+    - profileId: nim/nvidia/whisper-large-v3:ofl_h100x1_24.12
+      framework: TensorRT-LLM
+      displayName: Riva ASR Whisper Large v3 H100
+      ngcMetadata:
+        af97029e733095a937ac19e86e586e4a4e2042e1019866dc031e629c7a875fb2:
+          model: nvidia/riva-asr/whisper
+          release: 1.3.0
+          tags:
+            gpu_device: 2331:10de
+            mode: ofl
+            model_type: prebuilt
+            name: whisper-large-v3
+            gpu: H100
+            gpu_device: 2330:10de
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+  labels:
+  - Transformer
+  - TensorRT-LLM
+  - Audio
+  - NVIDIA Validated
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License
