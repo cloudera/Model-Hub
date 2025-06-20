@@ -1,0 +1,800 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: llama-3-3-70b-instruct
+release: 1.8.2
+profiles:
+- id: 1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09
+  tags:
+    feat_lora: 'false'
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    tp: '8'
+    trtllm_buildable: 'true'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=LICENSE
+        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
+      README.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=README.md
+        checksum: blake3:2155a5bb2fb6fde1d020ca0e93fbf5e405822d0e926fecb0e265148ecfe2c967
+      USE_POLICY.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=USE_POLICY.md
+        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
+      checksums.blake3:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=checksums.blake3
+        checksum: blake3:bb446af842e5a61ad352f6163cc06f08ae97908aa549bcb11b80509d403a7b86
+      config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=config.json
+        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
+      generation_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=generation_config.json
+        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
+      model-00001-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00001-of-00030.safetensors
+        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
+      model-00002-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00002-of-00030.safetensors
+        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
+      model-00003-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00003-of-00030.safetensors
+        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
+      model-00004-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00004-of-00030.safetensors
+        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
+      model-00005-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00005-of-00030.safetensors
+        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
+      model-00006-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00006-of-00030.safetensors
+        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
+      model-00007-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00007-of-00030.safetensors
+        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
+      model-00008-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00008-of-00030.safetensors
+        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
+      model-00009-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00009-of-00030.safetensors
+        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
+      model-00010-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00010-of-00030.safetensors
+        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
+      model-00011-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00011-of-00030.safetensors
+        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
+      model-00012-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00012-of-00030.safetensors
+        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
+      model-00013-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00013-of-00030.safetensors
+        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
+      model-00014-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00014-of-00030.safetensors
+        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
+      model-00015-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00015-of-00030.safetensors
+        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
+      model-00016-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00016-of-00030.safetensors
+        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
+      model-00017-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00017-of-00030.safetensors
+        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
+      model-00018-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00018-of-00030.safetensors
+        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
+      model-00019-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00019-of-00030.safetensors
+        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
+      model-00020-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00020-of-00030.safetensors
+        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
+      model-00021-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00021-of-00030.safetensors
+        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
+      model-00022-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00022-of-00030.safetensors
+        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
+      model-00023-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00023-of-00030.safetensors
+        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
+      model-00024-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00024-of-00030.safetensors
+        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
+      model-00025-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00025-of-00030.safetensors
+        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
+      model-00026-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00026-of-00030.safetensors
+        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
+      model-00027-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00027-of-00030.safetensors
+        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
+      model-00028-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00028-of-00030.safetensors
+        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
+      model-00029-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00029-of-00030.safetensors
+        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
+      model-00030-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00030-of-00030.safetensors
+        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
+      model.safetensors.index.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model.safetensors.index.json
+        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
+      special_tokens_map.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=special_tokens_map.json
+        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
+      tokenizer.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer.json
+        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
+      tokenizer_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer_config.json
+        checksum: blake3:b26cfb0419725278dc6acaf99d8695f5bf401c4c104c063f6797ec151383c547
+      tool_use_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tool_use_config.json
+        checksum: blake3:42e0e469d130b7834206c437b1b86d5d5c5aa4d1a223d85787dbfa5b10267909
+- id: 375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd
+  tags:
+    feat_lora: 'false'
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    tp: '2'
+    trtllm_buildable: 'true'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=LICENSE
+        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
+      README.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=README.md
+        checksum: blake3:2155a5bb2fb6fde1d020ca0e93fbf5e405822d0e926fecb0e265148ecfe2c967
+      USE_POLICY.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=USE_POLICY.md
+        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
+      checksums.blake3:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=checksums.blake3
+        checksum: blake3:bb446af842e5a61ad352f6163cc06f08ae97908aa549bcb11b80509d403a7b86
+      config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=config.json
+        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
+      generation_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=generation_config.json
+        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
+      model-00001-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00001-of-00030.safetensors
+        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
+      model-00002-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00002-of-00030.safetensors
+        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
+      model-00003-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00003-of-00030.safetensors
+        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
+      model-00004-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00004-of-00030.safetensors
+        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
+      model-00005-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00005-of-00030.safetensors
+        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
+      model-00006-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00006-of-00030.safetensors
+        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
+      model-00007-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00007-of-00030.safetensors
+        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
+      model-00008-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00008-of-00030.safetensors
+        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
+      model-00009-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00009-of-00030.safetensors
+        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
+      model-00010-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00010-of-00030.safetensors
+        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
+      model-00011-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00011-of-00030.safetensors
+        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
+      model-00012-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00012-of-00030.safetensors
+        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
+      model-00013-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00013-of-00030.safetensors
+        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
+      model-00014-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00014-of-00030.safetensors
+        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
+      model-00015-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00015-of-00030.safetensors
+        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
+      model-00016-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00016-of-00030.safetensors
+        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
+      model-00017-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00017-of-00030.safetensors
+        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
+      model-00018-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00018-of-00030.safetensors
+        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
+      model-00019-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00019-of-00030.safetensors
+        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
+      model-00020-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00020-of-00030.safetensors
+        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
+      model-00021-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00021-of-00030.safetensors
+        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
+      model-00022-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00022-of-00030.safetensors
+        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
+      model-00023-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00023-of-00030.safetensors
+        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
+      model-00024-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00024-of-00030.safetensors
+        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
+      model-00025-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00025-of-00030.safetensors
+        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
+      model-00026-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00026-of-00030.safetensors
+        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
+      model-00027-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00027-of-00030.safetensors
+        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
+      model-00028-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00028-of-00030.safetensors
+        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
+      model-00029-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00029-of-00030.safetensors
+        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
+      model-00030-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00030-of-00030.safetensors
+        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
+      model.safetensors.index.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model.safetensors.index.json
+        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
+      special_tokens_map.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=special_tokens_map.json
+        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
+      tokenizer.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer.json
+        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
+      tokenizer_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer_config.json
+        checksum: blake3:b26cfb0419725278dc6acaf99d8695f5bf401c4c104c063f6797ec151383c547
+      tool_use_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tool_use_config.json
+        checksum: blake3:42e0e469d130b7834206c437b1b86d5d5c5aa4d1a223d85787dbfa5b10267909
+- id: 54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95
+  tags:
+    feat_lora: 'false'
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    tp: '4'
+    trtllm_buildable: 'true'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=LICENSE
+        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
+      README.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=README.md
+        checksum: blake3:2155a5bb2fb6fde1d020ca0e93fbf5e405822d0e926fecb0e265148ecfe2c967
+      USE_POLICY.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=USE_POLICY.md
+        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
+      checksums.blake3:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=checksums.blake3
+        checksum: blake3:bb446af842e5a61ad352f6163cc06f08ae97908aa549bcb11b80509d403a7b86
+      config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=config.json
+        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
+      generation_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=generation_config.json
+        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
+      model-00001-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00001-of-00030.safetensors
+        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
+      model-00002-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00002-of-00030.safetensors
+        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
+      model-00003-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00003-of-00030.safetensors
+        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
+      model-00004-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00004-of-00030.safetensors
+        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
+      model-00005-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00005-of-00030.safetensors
+        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
+      model-00006-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00006-of-00030.safetensors
+        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
+      model-00007-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00007-of-00030.safetensors
+        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
+      model-00008-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00008-of-00030.safetensors
+        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
+      model-00009-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00009-of-00030.safetensors
+        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
+      model-00010-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00010-of-00030.safetensors
+        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
+      model-00011-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00011-of-00030.safetensors
+        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
+      model-00012-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00012-of-00030.safetensors
+        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
+      model-00013-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00013-of-00030.safetensors
+        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
+      model-00014-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00014-of-00030.safetensors
+        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
+      model-00015-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00015-of-00030.safetensors
+        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
+      model-00016-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00016-of-00030.safetensors
+        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
+      model-00017-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00017-of-00030.safetensors
+        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
+      model-00018-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00018-of-00030.safetensors
+        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
+      model-00019-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00019-of-00030.safetensors
+        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
+      model-00020-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00020-of-00030.safetensors
+        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
+      model-00021-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00021-of-00030.safetensors
+        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
+      model-00022-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00022-of-00030.safetensors
+        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
+      model-00023-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00023-of-00030.safetensors
+        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
+      model-00024-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00024-of-00030.safetensors
+        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
+      model-00025-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00025-of-00030.safetensors
+        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
+      model-00026-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00026-of-00030.safetensors
+        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
+      model-00027-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00027-of-00030.safetensors
+        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
+      model-00028-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00028-of-00030.safetensors
+        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
+      model-00029-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00029-of-00030.safetensors
+        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
+      model-00030-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00030-of-00030.safetensors
+        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
+      model.safetensors.index.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model.safetensors.index.json
+        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
+      special_tokens_map.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=special_tokens_map.json
+        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
+      tokenizer.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer.json
+        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
+      tokenizer_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer_config.json
+        checksum: blake3:b26cfb0419725278dc6acaf99d8695f5bf401c4c104c063f6797ec151383c547
+      tool_use_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tool_use_config.json
+        checksum: blake3:42e0e469d130b7834206c437b1b86d5d5c5aa4d1a223d85787dbfa5b10267909
+- id: 7fa4a5a68c0338f16aef61de94977acfdacb7cabd848d38c49c48d2f639f04b3
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    pp: '1'
+    precision: bf16
+    tp: '2'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=LICENSE
+        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
+      README.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=README.md
+        checksum: blake3:2155a5bb2fb6fde1d020ca0e93fbf5e405822d0e926fecb0e265148ecfe2c967
+      USE_POLICY.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=USE_POLICY.md
+        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
+      checksums.blake3:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=checksums.blake3
+        checksum: blake3:bb446af842e5a61ad352f6163cc06f08ae97908aa549bcb11b80509d403a7b86
+      config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=config.json
+        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
+      generation_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=generation_config.json
+        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
+      model-00001-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00001-of-00030.safetensors
+        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
+      model-00002-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00002-of-00030.safetensors
+        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
+      model-00003-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00003-of-00030.safetensors
+        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
+      model-00004-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00004-of-00030.safetensors
+        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
+      model-00005-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00005-of-00030.safetensors
+        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
+      model-00006-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00006-of-00030.safetensors
+        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
+      model-00007-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00007-of-00030.safetensors
+        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
+      model-00008-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00008-of-00030.safetensors
+        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
+      model-00009-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00009-of-00030.safetensors
+        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
+      model-00010-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00010-of-00030.safetensors
+        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
+      model-00011-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00011-of-00030.safetensors
+        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
+      model-00012-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00012-of-00030.safetensors
+        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
+      model-00013-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00013-of-00030.safetensors
+        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
+      model-00014-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00014-of-00030.safetensors
+        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
+      model-00015-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00015-of-00030.safetensors
+        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
+      model-00016-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00016-of-00030.safetensors
+        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
+      model-00017-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00017-of-00030.safetensors
+        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
+      model-00018-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00018-of-00030.safetensors
+        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
+      model-00019-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00019-of-00030.safetensors
+        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
+      model-00020-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00020-of-00030.safetensors
+        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
+      model-00021-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00021-of-00030.safetensors
+        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
+      model-00022-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00022-of-00030.safetensors
+        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
+      model-00023-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00023-of-00030.safetensors
+        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
+      model-00024-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00024-of-00030.safetensors
+        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
+      model-00025-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00025-of-00030.safetensors
+        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
+      model-00026-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00026-of-00030.safetensors
+        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
+      model-00027-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00027-of-00030.safetensors
+        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
+      model-00028-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00028-of-00030.safetensors
+        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
+      model-00029-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00029-of-00030.safetensors
+        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
+      model-00030-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00030-of-00030.safetensors
+        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
+      model.safetensors.index.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model.safetensors.index.json
+        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
+      special_tokens_map.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=special_tokens_map.json
+        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
+      tokenizer.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer.json
+        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
+      tokenizer_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer_config.json
+        checksum: blake3:b26cfb0419725278dc6acaf99d8695f5bf401c4c104c063f6797ec151383c547
+      tool_use_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tool_use_config.json
+        checksum: blake3:42e0e469d130b7834206c437b1b86d5d5c5aa4d1a223d85787dbfa5b10267909
+- id: c84b2a068e56a551906563035ed77f88c88cbe1a63c6768fb2d4a9e0af1e67ba
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    pp: '1'
+    precision: bf16
+    tp: '4'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=LICENSE
+        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
+      README.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=README.md
+        checksum: blake3:2155a5bb2fb6fde1d020ca0e93fbf5e405822d0e926fecb0e265148ecfe2c967
+      USE_POLICY.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=USE_POLICY.md
+        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
+      checksums.blake3:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=checksums.blake3
+        checksum: blake3:bb446af842e5a61ad352f6163cc06f08ae97908aa549bcb11b80509d403a7b86
+      config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=config.json
+        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
+      generation_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=generation_config.json
+        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
+      model-00001-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00001-of-00030.safetensors
+        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
+      model-00002-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00002-of-00030.safetensors
+        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
+      model-00003-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00003-of-00030.safetensors
+        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
+      model-00004-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00004-of-00030.safetensors
+        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
+      model-00005-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00005-of-00030.safetensors
+        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
+      model-00006-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00006-of-00030.safetensors
+        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
+      model-00007-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00007-of-00030.safetensors
+        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
+      model-00008-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00008-of-00030.safetensors
+        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
+      model-00009-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00009-of-00030.safetensors
+        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
+      model-00010-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00010-of-00030.safetensors
+        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
+      model-00011-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00011-of-00030.safetensors
+        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
+      model-00012-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00012-of-00030.safetensors
+        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
+      model-00013-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00013-of-00030.safetensors
+        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
+      model-00014-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00014-of-00030.safetensors
+        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
+      model-00015-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00015-of-00030.safetensors
+        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
+      model-00016-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00016-of-00030.safetensors
+        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
+      model-00017-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00017-of-00030.safetensors
+        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
+      model-00018-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00018-of-00030.safetensors
+        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
+      model-00019-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00019-of-00030.safetensors
+        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
+      model-00020-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00020-of-00030.safetensors
+        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
+      model-00021-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00021-of-00030.safetensors
+        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
+      model-00022-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00022-of-00030.safetensors
+        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
+      model-00023-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00023-of-00030.safetensors
+        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
+      model-00024-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00024-of-00030.safetensors
+        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
+      model-00025-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00025-of-00030.safetensors
+        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
+      model-00026-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00026-of-00030.safetensors
+        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
+      model-00027-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00027-of-00030.safetensors
+        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
+      model-00028-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00028-of-00030.safetensors
+        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
+      model-00029-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00029-of-00030.safetensors
+        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
+      model-00030-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00030-of-00030.safetensors
+        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
+      model.safetensors.index.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model.safetensors.index.json
+        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
+      special_tokens_map.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=special_tokens_map.json
+        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
+      tokenizer.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer.json
+        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
+      tokenizer_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer_config.json
+        checksum: blake3:b26cfb0419725278dc6acaf99d8695f5bf401c4c104c063f6797ec151383c547
+      tool_use_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tool_use_config.json
+        checksum: blake3:42e0e469d130b7834206c437b1b86d5d5c5aa4d1a223d85787dbfa5b10267909
+- id: f95be114df33dd6613105f76fd567a071ed3bd08232888a5ba2f0545a99dbd92
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    pp: '1'
+    precision: bf16
+    tp: '8'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=LICENSE
+        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
+      README.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=README.md
+        checksum: blake3:2155a5bb2fb6fde1d020ca0e93fbf5e405822d0e926fecb0e265148ecfe2c967
+      USE_POLICY.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=USE_POLICY.md
+        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
+      checksums.blake3:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=checksums.blake3
+        checksum: blake3:bb446af842e5a61ad352f6163cc06f08ae97908aa549bcb11b80509d403a7b86
+      config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=config.json
+        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
+      generation_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=generation_config.json
+        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
+      model-00001-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00001-of-00030.safetensors
+        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
+      model-00002-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00002-of-00030.safetensors
+        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
+      model-00003-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00003-of-00030.safetensors
+        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
+      model-00004-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00004-of-00030.safetensors
+        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
+      model-00005-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00005-of-00030.safetensors
+        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
+      model-00006-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00006-of-00030.safetensors
+        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
+      model-00007-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00007-of-00030.safetensors
+        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
+      model-00008-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00008-of-00030.safetensors
+        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
+      model-00009-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00009-of-00030.safetensors
+        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
+      model-00010-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00010-of-00030.safetensors
+        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
+      model-00011-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00011-of-00030.safetensors
+        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
+      model-00012-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00012-of-00030.safetensors
+        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
+      model-00013-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00013-of-00030.safetensors
+        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
+      model-00014-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00014-of-00030.safetensors
+        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
+      model-00015-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00015-of-00030.safetensors
+        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
+      model-00016-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00016-of-00030.safetensors
+        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
+      model-00017-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00017-of-00030.safetensors
+        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
+      model-00018-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00018-of-00030.safetensors
+        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
+      model-00019-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00019-of-00030.safetensors
+        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
+      model-00020-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00020-of-00030.safetensors
+        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
+      model-00021-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00021-of-00030.safetensors
+        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
+      model-00022-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00022-of-00030.safetensors
+        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
+      model-00023-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00023-of-00030.safetensors
+        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
+      model-00024-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00024-of-00030.safetensors
+        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
+      model-00025-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00025-of-00030.safetensors
+        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
+      model-00026-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00026-of-00030.safetensors
+        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
+      model-00027-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00027-of-00030.safetensors
+        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
+      model-00028-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00028-of-00030.safetensors
+        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
+      model-00029-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00029-of-00030.safetensors
+        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
+      model-00030-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model-00030-of-00030.safetensors
+        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
+      model.safetensors.index.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=model.safetensors.index.json
+        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
+      special_tokens_map.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=special_tokens_map.json
+        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
+      tokenizer.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer.json
+        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
+      tokenizer_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tokenizer_config.json
+        checksum: blake3:b26cfb0419725278dc6acaf99d8695f5bf401c4c104c063f6797ec151383c547
+      tool_use_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:hf-5825c91-tool-calling-fix-checksum?file=tool_use_config.json
+        checksum: blake3:42e0e469d130b7834206c437b1b86d5d5c5aa4d1a223d85787dbfa5b10267909
