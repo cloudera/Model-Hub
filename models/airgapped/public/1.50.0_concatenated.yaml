@@ -1,3 +1,4 @@
+registryVersion: 1.8.0
 models:
 - name: Llama 3.3 70B Instruct
   displayName: Llama 3.3 70B Instruct
@@ -4433,16 +4434,34 @@ models:
           url: https://ai.google.dev/gemma/prohibited_use_policy
       optimizationProfiles:
         - profileId: google/gemma-2-9b
-          displayName: Gemma 2 9b
+          displayName: Gemma 2 9b A10G
           framework: vllm
           sha: vllm
           modelFormat: vllm
           spec:
-            - key: A10G
-              value: 2
-            - key: A100
+            - key: GPU
+              value: A10G
+            - key: COUNT
               value: 1
-            - key: L40S
+        - profileId: google/gemma-2-9b
+          displayName: Gemma 2 A100
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+            - key: GPU
+              value: A100
+            - key: COUNT
+              value: 1
+        - profileId: google/gemma-2-9b
+          displayName: Gemma 2 9b L40S
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+            - key: GPU
+              value: L40S
+            - key: COUNT
               value: 1
   labels:
     - google
@@ -4472,16 +4491,34 @@ models:
           url: https://choosealicense.com/licenses/cc-by-sa-4.0/
       optimizationProfiles:
         - profileId: Defog/Llama-3-sqlcoder-8B
-          displayName: Llama 3 SQLCoder 8B
+          displayName: Llama 3 SQLCoder 8B A10G
           framework: vllm
           sha: vllm
           modelFormat: vllm
           spec:
-            - key: A10G
+            - key: GPU
+              value: A10G
+            - key: COUNT
               value: 1
-            - key: A100
+        - profileId: Defog/Llama-3-sqlcoder-8B
+          displayName: Llama 3 SQLCoder 8B A100
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+            - key: GPU
+              value: A100
+            - key: COUNT
               value: 1
-            - key: L40S
+        - profileId: Defog/Llama-3-sqlcoder-8B
+          displayName: Llama 3 SQLCoder 8B L40S
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+            - key: GPU
+              value: L40S
+            - key: COUNT
               value: 1
   labels:
     - Llama
