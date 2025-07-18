@@ -16,37 +16,13 @@ models:
     source:
           URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/deepseek-ai/containers/deepseek-r1-distill-llama-70b
     optimizationProfiles:
-    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:hf-1772b07
-      framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 70b
-      ngcMetadata:
-        1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
-          model: deepseek-ai/deepseek-r1-distill-llama-70b
-          release: 1.5.1
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            pp: '1'
-            precision: bf16
-            tp: '8'
-            trtllm_buildable: 'true'
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 1.5.1
-      - key: DOWNLOAD SIZE
-        value: 141GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:l40sx4-throughput-fp8-46u3lvp6ja
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 70b L40Sx4 Throughput
+      displayName: Deepseek R1 Distill Llama 70B L40Sx4 FP8 Throughput
       ngcMetadata:
         23c28e4a1ad4d963c1504f1a33b45afb65bf61b64b20be1a8ea2c8816ea0fc36:
-          model: deepseek-ai/deepseek-r1-distill-llama-70b
-          release: 1.5.1
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: L40S
@@ -60,7 +36,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Throughput
+        value: THROUGHPUT
       - key: PRECISION
         value: FP8
       - key: GPU
@@ -68,51 +44,18 @@ models:
       - key: COUNT
         value: 4
       - key: GPU DEVICE
-        value: 26b9:10de
+        value: 26B9:10DE
       - key: NIM VERSION
-        value: 1.5.1
+        value: 1.5.2
       - key: DOWNLOAD SIZE
-        value: 73GB
-    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:hf-1772b07
-      framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 70b L40S Throughput
-      ngcMetadata:
-        375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
-          model: deepseek-ai/deepseek-r1-distill-llama-70b
-          release: 1.5.1
-          tags:
-            feat_lora: 'false'
-            gpu: L40S
-            gpu_device: 26b9:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '4'
-            pp: '1'
-            precision: fp8
-            profile: throughput
-            tp: '4'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: Latency
-      - key: THROUGHPUT
-        value: FP8
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 4
-      - key: GPU DEVICE
-        value: 26b9:10de
-      - key: NIM VERSION
-        value: 1.5.1
-      - key: DOWNLOAD SIZE
-        value: 73GB
+        value: 69GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x4-latency-fp8-k5tlofelyw
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 70b H100x4 Latency
+      displayName: Deepseek R1 Distill Llama 70B H100x4 FP8 Latency
       ngcMetadata:
         4696d5c5b44b13bb5e864affcdcfa30ad229390285476315d9921fd0828bda5b:
-          model: deepseek-ai/deepseek-r1-distill-llama-70b
-          release: 1.5.1
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: H100
@@ -126,7 +69,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Latency
+        value: LATENCY
       - key: PRECISION
         value: FP8
       - key: GPU
@@ -134,51 +77,18 @@ models:
       - key: COUNT
         value: 4
       - key: GPU DEVICE
-        value: 2330:10de
+        value: 2330:10DE
       - key: NIM VERSION
-        value: 1.5.1
+        value: 1.5.2
       - key: DOWNLOAD SIZE
-        value: 73GB
-    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:hf-1772b07
-      framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 70b H100x4 Latency
-      ngcMetadata:
-        54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
-          model: deepseek-ai/deepseek-r1-distill-llama-70b
-          release: 1.5.1
-          tags:
-            feat_lora: 'false'
-            gpu: H100
-            gpu_device: 2330:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '4'
-            pp: '1'
-            precision: fp8
-            profile: latency
-            tp: '4'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: Latency
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: H100
-      - key: COUNT
-        value: 4
-      - key: GPU DEVICE
-        value: 2330:10de
-      - key: NIM VERSION
-        value: 1.5.1
-      - key: DOWNLOAD SIZE
-        value: 73GB
+        value: 69GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x8-latency-fp8-xz3eymtuzq
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 70b H100x8 Latency
+      displayName: Deepseek R1 Distill Llama 70B H100x8 FP8 Latency
       ngcMetadata:
         91f2b7c9e719c0c380ba6c1d6c3e5cad61aaf807730de88fa3b6233a39edeeaa:
-          model: deepseek-ai/deepseek-r1-distill-llama-70b
-          release: 1.5.1
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: H100
@@ -192,7 +102,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Latency
+        value: LATENCY
       - key: PRECISION
         value: FP8
       - key: GPU
@@ -200,18 +110,18 @@ models:
       - key: COUNT
         value: 8
       - key: GPU DEVICE
-        value: 2330:10de
+        value: 2330:10DE
       - key: NIM VERSION
-        value: 1.5.1
+        value: 1.5.2
       - key: DOWNLOAD SIZE
-        value: 74GB
+        value: 70GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x2-throughput-fp8-8cx2penaia
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 70b H100x2 Throughput
+      displayName: Deepseek R1 Distill Llama 70B H100x2 FP8 Throughput
       ngcMetadata:
         da94a5c34cf665e85813fa49f321f1e87ca12317722b5e65628cf3ed0371897b:
-          model: deepseek-ai/deepseek-r1-distill-llama-70b
-          release: 1.5.1
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: H100
@@ -225,7 +135,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Throughput
+        value: THROUGHPUT
       - key: PRECISION
         value: FP8
       - key: GPU
@@ -233,18 +143,18 @@ models:
       - key: COUNT
         value: 2
       - key: GPU DEVICE
-        value: 2330:10de
+        value: 2330:10DE
       - key: NIM VERSION
-        value: 1.5.1
+        value: 1.5.2
       - key: DOWNLOAD SIZE
-        value: 73GB
+        value: 69GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x4-throughput-bf16-g31fj2uvrw
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 70b H100x4 Throughput
+      displayName: Deepseek R1 Distill Llama 70B H100x4 BF16 Throughput
       ngcMetadata:
         e6b8fb8c4c76343b05b9051974593e5bd9110a868770d52e8eb0fe5a3b46dd67:
-          model: deepseek-ai/deepseek-r1-distill-llama-70b
-          release: 1.5.1
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: H100
@@ -258,7 +168,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Throughput
+        value: THROUGHPUT
       - key: PRECISION
         value: BF16
       - key: GPU
@@ -266,18 +176,18 @@ models:
       - key: COUNT
         value: 4
       - key: GPU DEVICE
-        value: 2330:10de
+        value: 2330:10DE
       - key: NIM VERSION
-        value: 1.5.1
+        value: 1.5.2
       - key: DOWNLOAD SIZE
-        value: 147GB
+        value: 138GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x8-latency-bf16-v8q6jmcd9g
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 70b H100x8 Latency
+      displayName: Deepseek R1 Distill Llama 70B H100x8 BF16 Latency
       ngcMetadata:
         f87605b6d8cfc0ca39fad21b4ec580219f3a3be42884d2c7caad9b8ae4b3c1c7:
-          model: deepseek-ai/deepseek-r1-distill-llama-70b
-          release: 1.5.1
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: H100
@@ -291,7 +201,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Latency
+        value: LATENCY
       - key: PRECISION
         value: BF16
       - key: GPU
@@ -299,22 +209,22 @@ models:
       - key: COUNT
         value: 8
       - key: GPU DEVICE
-        value: 2330:10de
+        value: 2330:10DE
       - key: NIM VERSION
-        value: 1.5.1
+        value: 1.5.2
       - key: DOWNLOAD SIZE
-        value: 156GB
+        value: 147GB
   - variantId: Deepseek R1 Distill Llama 8b
     source:
           URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/deepseek-ai/containers/deepseek-r1-distill-llama-8b
     optimizationProfiles:
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:l40sx1-throughput-fp8-vbqc0btoqg
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b L40S Throughput
+      displayName: Deepseek R1 Distill Llama 8B L40Sx1 FP8 Throughput
       ngcMetadata:
         d968c663c710e56275088096bc0dcf823560aaf7dca910bfcb41f5056063ab02:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: L40S
@@ -328,7 +238,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Throughput
+        value: THROUGHPUT
       - key: PRECISION
         value: FP8
       - key: GPU
@@ -336,18 +246,18 @@ models:
       - key: COUNT
         value: 1
       - key: GPU DEVICE
-        value: 26b9:10de
+        value: 26B9:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 9GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:h100x1-throughput-fp8-d9grrq-lka
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b H100 Throughput
+      displayName: Deepseek R1 Distill Llama 8B H100x1 FP8 Throughput
       ngcMetadata:
         0bdec027404c16d6ca96e159079082f9630a24a277ff519d0c8fea71007222ec:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: H100
@@ -361,7 +271,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Throughput
+        value: THROUGHPUT
       - key: PRECISION
         value: FP8
       - key: GPU
@@ -369,18 +279,18 @@ models:
       - key: COUNT
         value: 1
       - key: GPU DEVICE
-        value: 2330:10de
+        value: 2330:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 9GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:h100x2-latency-bf16-7ztok5r0dg
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b H100x2 BF16 Latency
+      displayName: Deepseek R1 Distill Llama 8B H100x2 BF16 Latency
       ngcMetadata:
         0ce355335e6c3aec54e49ab53822e628fa1227091d0326da962bcc4f95b5f602:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: H100
@@ -394,7 +304,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Latency
+        value: LATENCY
       - key: PRECISION
         value: BF16
       - key: GPU
@@ -402,18 +312,18 @@ models:
       - key: COUNT
         value: 2
       - key: GPU DEVICE
-        value: 2330:10de
+        value: 2330:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 17GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:a10gx4-latency-bf16-aiejrysrlw
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b A10Gx4 Latency
+      displayName: Deepseek R1 Distill Llama 8B A10Gx4 BF16 Latency
       ngcMetadata:
         1dfac8e12042573dc93536a393902478e1a6a46d1cd742cf0a4251c11f77e253:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: A10G
@@ -427,7 +337,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Latency
+        value: LATENCY
       - key: PRECISION
         value: BF16
       - key: GPU
@@ -435,18 +345,18 @@ models:
       - key: COUNT
         value: 4
       - key: GPU DEVICE
-        value: 2237:10de
+        value: 2237:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 19GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:l40sx2-latency-fp8-fmuoxfbb0q
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b L40Sx2 Latency
+      displayName: Deepseek R1 Distill Llama 8B L40Sx2 FP8 Latency
       ngcMetadata:
         c2d4efce2d553c3aa78109b6d5dff0fd34b86bbb3b765aa8afdf12e9d13e8e83:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: L40S
@@ -460,7 +370,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Latency
+        value: LATENCY
       - key: PRECISION
         value: FP8
       - key: GPU
@@ -468,18 +378,18 @@ models:
       - key: COUNT
         value: 2
       - key: GPU DEVICE
-        value: 26b9:10de
+        value: 26B9:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 9GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:h100x1-throughput-bf16-4jcstzx27q
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b H100 Throughput
+      displayName: Deepseek R1 Distill Llama 8B H100x1 BF16 Throughput
       ngcMetadata:
         4f6dba657c08280bdb419cbc1c60d265e82731b807ee2ae3c111cb9a91571aa1:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: H100
@@ -493,7 +403,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Throughput
+        value: THROUGHPUT
       - key: PRECISION
         value: BF16
       - key: GPU
@@ -501,18 +411,18 @@ models:
       - key: COUNT
         value: 1
       - key: GPU DEVICE
-        value: 2330:10de
+        value: 2330:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 16GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:h100x2-latency-fp8-q8xwzp22aa
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b H100x2 Latency
+      displayName: Deepseek R1 Distill Llama 8B H100x2 FP8 Latency
       ngcMetadata:
         518edac01f731b63676743a1860fe21861d1399b19cb2e584de3d9a6a3ea6d8e:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: H100
@@ -526,7 +436,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Latency
+        value: LATENCY
       - key: PRECISION
         value: FP8
       - key: GPU
@@ -534,18 +444,18 @@ models:
       - key: COUNT
         value: 2
       - key: GPU DEVICE
-        value: 2330:10de
+        value: 2330:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 9GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:l40sx1-throughput-bf16-yvbnwvfzew
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b L40S BF16 Throughput
+      displayName: Deepseek R1 Distill Llama 8B L40Sx1 BF16 Throughput
       ngcMetadata:
         9bc8e8aa12847674fa2840b9c03cbdb0246d7f144a5257510fd53eacc2a9d62f:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: L40S
@@ -559,7 +469,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Throughput
+        value: THROUGHPUT
       - key: PRECISION
         value: BF16
       - key: GPU
@@ -567,18 +477,18 @@ models:
       - key: COUNT
         value: 1
       - key: GPU DEVICE
-        value: 26b9:10de
+        value: 26B9:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 16GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:a100x1-throughput-bf16-iq9maz9nkw
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b A100 Throughput
+      displayName: Deepseek R1 Distill Llama 8B A100x1 BF16 Throughput
       ngcMetadata:
         c959aa89b69ad9295ccc99a34546819d16bb0e2566a6cfed0985eecf37bcc14b:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: A100
@@ -592,7 +502,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Throughput
+        value: THROUGHPUT
       - key: PRECISION
         value: BF16
       - key: GPU
@@ -600,18 +510,18 @@ models:
       - key: COUNT
         value: 1
       - key: GPU DEVICE
-        value: 20b2:10de
+        value: 20B2:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 16GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:l40sx2-latency-bf16-tlmx3sgrdw
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b L40Sx2 Latency
+      displayName: Deepseek R1 Distill Llama 8B L40Sx2 BF16 Latency
       ngcMetadata:
         20d6bb61a1ee5160c0baed3721f8b580525a0aaaaa3b1333e9a882d4c61b1ed7:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: L40S
@@ -625,7 +535,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Latency
+        value: LATENCY
       - key: PRECISION
         value: BF16
       - key: GPU
@@ -633,18 +543,18 @@ models:
       - key: COUNT
         value: 2
       - key: GPU DEVICE
-        value: 26b9:10de
+        value: 26B9:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 17GB
     - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:a10gx2-throughput-bf16-uv8ptkf8-g
       framework: TensorRT-LLM
-      displayName: Deepseek R1 Distill Llama 8b A10Gx2 BF16 Throughput
+      displayName: Deepseek R1 Distill Llama 8B A10Gx2 BF16 Throughput
       ngcMetadata:
         edbb37d3ef94a5cc38919ab86694b835307c0668ca6d41ea746796b34ced78f1:
           model: deepseek-ai/deepseek-r1-distill-llama-8b
-          release: 1.5.0
+          release: 1.5.2
           tags:
             feat_lora: 'false'
             gpu: A10G
@@ -658,7 +568,7 @@ models:
       modelFormat: trt-llm
       spec:
       - key: PROFILE
-        value: Throughput
+        value: THROUGHPUT
       - key: PRECISION
         value: BF16
       - key: GPU
@@ -666,9 +576,9 @@ models:
       - key: COUNT
         value: 2
       - key: GPU DEVICE
-        value: 2237:10de
+        value: 2237:10DE
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.5.2
       - key: DOWNLOAD SIZE
         value: 17GB
   labels:
