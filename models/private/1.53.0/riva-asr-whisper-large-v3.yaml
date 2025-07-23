@@ -29,6 +29,8 @@ models:
             name: whisper-large-v3
             gpu: A10G
             gpu_device: 2237:10de
+            pp: '1'
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: GPU
@@ -54,6 +56,8 @@ models:
             name: whisper-large-v3
             gpu: L40S
             gpu_device: 26b9:10de
+            pp: '1'
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: GPU
@@ -79,6 +83,8 @@ models:
             name: whisper-large-v3
             gpu: A100
             gpu_device: 20b2:10de
+            pp: '1'
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: GPU
@@ -104,6 +110,8 @@ models:
             model_type: prebuilt
             name: whisper-large-v3
             gpu: H100
+            pp: '1'
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: GPU
