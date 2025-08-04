@@ -1,0 +1,227 @@
+
+19c68819d9428cfa494e977f4d2be6378215a8f610cce9bdfc0aa3cdd7d66aa9:
+  model: nvidia/nemoretriever-parse
+  container_url: nvcr.io/nvstaging/nim/nemoretriever-parse:1.2.0ga.rc3
+  release: 1.2.0 # fixed by cloudera; was: `1.2.0ga.rc3`
+  tags: {'gpu': 'A100', 'gpu_device': '20b2:10de', 'llm_engine': 'tensorrt_llm', 'pp': '1', 'profile': 'throughput', 'precision': 'bf16', 'tp': '1'}
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:hfconfig_update_v1
+          files:
+            - !name config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:tokenizer_update_v2
+          files:
+            - !name tokenizer_config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:tool_use_config_v1
+          files:
+            - !name tool_use_config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:v3
+          files:
+            - !name tokenizer.json
+            - !name generation_config.json
+            - !name special_tokens_map.json
+            - !name preprocessor_config.json
+      - dst: 'trtllm_engine'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:a100x1-throughput-bf16-e9wjao-enw
+          files:
+            - !name checksums.blake3
+            - !name config.json
+            - !name metadata.json
+            - !name rank0.engine
+      - dst: 'visual_engine'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:a100x1-vision-trt-bf16--vgbsydsfg
+          files:
+            - !name checksums.blake3
+            - !name config.json
+            - !name metadata.json
+            - !name visual_encoder.engine
+        
+      - dst: 'visual_engine'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:vision_processor-rc2
+          files:
+            - !name 'vision_processor.py'
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:runtime-params-trtllm
+          files:
+            - !name 'runtime_params.json'
+  
+8db6dcd816ca1ce8d07e72d8b9c4682120b3c50799422361e35b4ab87820efd6:
+  model: nvidia/nemoretriever-parse
+  container_url: nvcr.io/nvstaging/nim/nemoretriever-parse:1.2.0ga.rc3
+  release: 1.2.0 # fixed by cloudera; was: `1.2.0ga.rc3`
+  tags: {'gpu': 'H100', 'gpu_device': '2330:10de', 'llm_engine': 'tensorrt_llm', 'pp': '1', 'profile': 'throughput', 'precision': 'bf16', 'tp': '1'}
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:hfconfig_update_v1
+          files:
+            - !name config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:tokenizer_update_v2
+          files:
+            - !name tokenizer_config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:tool_use_config_v1
+          files:
+            - !name tool_use_config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:v3
+          files:
+            - !name tokenizer.json
+            - !name generation_config.json
+            - !name special_tokens_map.json
+            - !name preprocessor_config.json
+      - dst: 'trtllm_engine'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:h100x1-throughput-bf16-2apiazbpma
+          files:
+            - !name checksums.blake3
+            - !name config.json
+            - !name metadata.json
+            - !name rank0.engine
+      - dst: 'visual_engine'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:h100x1-vision-trt-bf16-jyadvc-w9w
+          files:
+            - !name checksums.blake3
+            - !name config.json
+            - !name metadata.json
+            - !name visual_encoder.engine
+        
+      - dst: 'visual_engine'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:vision_processor-rc2
+          files:
+            - !name 'vision_processor.py'
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:runtime-params-trtllm
+          files:
+            - !name 'runtime_params.json'
+  
+00c8a43783e7acf3d59a0d773cd78d3d29eaa71fa4412af7af2fbaf20e196a8b:
+  model: nvidia/nemoretriever-parse
+  container_url: nvcr.io/nvstaging/nim/nemoretriever-parse:1.2.0ga.rc3
+  release: 1.2.0 # fixed by cloudera; was: `1.2.0ga.rc3`
+  tags: {'gpu': 'L40S', 'gpu_device': '26b5:10de', 'llm_engine': 'tensorrt_llm', 'pp': '1', 'profile': 'throughput', 'precision': 'bf16', 'tp': '1'}
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:hfconfig_update_v1
+          files:
+            - !name config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:tokenizer_update_v2
+          files:
+            - !name tokenizer_config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:tool_use_config_v1
+          files:
+            - !name tool_use_config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:v3
+          files:
+            - !name tokenizer.json
+            - !name generation_config.json
+            - !name special_tokens_map.json
+            - !name preprocessor_config.json
+      - dst: 'trtllm_engine'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:l40sx1-throughput-bf16-r98ogb1a1a
+          files:
+            - !name checksums.blake3
+            - !name config.json
+            - !name metadata.json
+            - !name rank0.engine
+      - dst: 'visual_engine'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:l40sx1-vision-trt-bf16-gf8rrpi17a
+          files:
+            - !name checksums.blake3
+            - !name config.json
+            - !name metadata.json
+            - !name visual_encoder.engine
+        
+      - dst: 'visual_engine'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:vision_processor-rc2
+          files:
+            - !name 'vision_processor.py'
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:runtime-params-trtllm
+          files:
+            - !name 'runtime_params.json'
+  
+
+82ec47683fd0f95cee922844e2a3f1709797d574a520d254b9c0d563ab4e4664:
+  model: nvidia/nemoretriever-parse
+  container_url: nvcr.io/nvstaging/nim/nemoretriever-parse:1.2.0ga.rc3
+  release: 1.2.0 # fixed by cloudera; was: `1.2.0ga.rc3`
+  tags: {'llm_engine': 'tensorrt_llm', 'precision': 'bf16', 'pp': '1', 'profile': 'throughput', 'tp': '1', 'trtllm_buildable': 'true'}
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:hfconfig_update_v1
+          files:
+            - !name config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:tokenizer_update_v2
+          files:
+            - !name tokenizer_config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:tool_use_config_v1
+          files:
+            - !name tool_use_config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:v3
+          files:
+            - !name tokenizer.json
+            - !name generation_config.json
+            - !name special_tokens_map.json
+            - !name preprocessor_config.json
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:onnx_graph_v3
+          files:
+            - !name onnx_graph.zip
+      - dst: 'converted_checkpoint'
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:converted_checkpoint_v2
+          files:
+            - !name decoder/config.json
+            - !name decoder/rank0.safetensors
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:vision_processor-rc2
+          files:
+            - !name 'vision_processor.py'
+      - dst: ''
+        src:
+          repo_id: ngc://nim/nvidia/nemoretriever-parse:runtime-params-trtllm
+          files:
+            - !name 'runtime_params.json'
