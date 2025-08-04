@@ -1,0 +1,134 @@
+models:
+- name: Riva ASR/AST Canary-1B Multilingual
+  displayName: Riva ASR/AST Canary-1B Multilingual
+  modelHubID: nvidia/riva-asr/canary-1b
+  category: Speech-To-Text Recognition
+  type: NGC
+  description: Multilingual Canary-1B ASR/AST model trained on ASR/AST set 1.0
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-community-models-license/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-community-models-license/
+  modelVariants:
+  - variantId: Riva ASR/AST Canary-1B Multilingual
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/canary-riva-1b
+    optimizationProfiles:
+    - profileId: nim/nvidia/canary-1b:ofl_generic_24.12
+      framework: TensorRT-LLM
+      displayName: Riva ASR/AST Canary-1B Multilingual A10G
+      ngcMetadata:
+        3ef04bf1621561955c66dcd76b961eff0b318536de1cbd6512c0f60b39f9275b:
+          model: nvidia/riva-asr/canary-1b
+          release: 1.3.0
+          tags:
+            mode: ofl
+            model_type: prebuilt
+            name: canary-1b
+            gpu: A10G
+            gpu_device: 2237:10de
+            pp: '1'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2237:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 4GB
+    - profileId: nim/nvidia/canary-1b:ofl_generic_24.12
+      framework: TensorRT-LLM
+      displayName: Riva ASR/AST Canary-1B Multilingual L40S
+      ngcMetadata:
+        3ef04bf1621561955c66dcd76b961eff0b318536de1cbd6512c0f60b39f9275b:
+          model: nvidia/riva-asr/canary-1b
+          release: 1.3.0
+          tags:
+            mode: ofl
+            model_type: prebuilt
+            name: canary-1b
+            gpu: L40S
+            gpu_device: 26b9:10de
+            pp: '1'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26b9:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 4GB
+    - profileId: nim/nvidia/canary-1b:ofl_generic_24.12
+      framework: TensorRT-LLM
+      displayName: Riva ASR/AST Canary-1B Multilingual A100
+      ngcMetadata:
+        3ef04bf1621561955c66dcd76b961eff0b318536de1cbd6512c0f60b39f9275b:
+          model: nvidia/riva-asr/canary-1b
+          release: 1.3.0
+          tags:
+            mode: ofl
+            model_type: prebuilt
+            name: canary-1b
+            gpu: A100
+            gpu_device: 20b2:10de
+            pp: '1'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20b2:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 4GB
+    - profileId: nim/nvidia/canary-1b:ofl_generic_24.12
+      framework: TensorRT-LLM
+      displayName: Riva ASR/AST Canary-1B Multilingual H100
+      ngcMetadata:
+        3ef04bf1621561955c66dcd76b961eff0b318536de1cbd6512c0f60b39f9275b:
+          model: nvidia/riva-asr/canary-1b
+          release: 1.3.0
+          tags:
+            mode: ofl
+            model_type: prebuilt
+            name: canary-1b
+            gpu: H100
+            gpu_device: 2331:10de
+            pp: '1'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 4GB
+  labels:
+  - signed models
+  - NSPECT-803B-2JFR
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License
