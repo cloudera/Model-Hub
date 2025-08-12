@@ -14,7 +14,7 @@ models:
   modelVariants:
   - variantId: Llama 3.2 NV EmbedQA 1b V2
     source:
-          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.2-nv-embedqa-1b-v2
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.2-nv-embedqa-1b-v2
     optimizationProfiles:
     - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:a10gx1-trt-fp16-kvrfa1guww
       framework: TensorRT-LLM
@@ -25,7 +25,7 @@ models:
           release: 1.5.0
           tags:
             backend: tensorrt
-            gpu: a10g
+            gpu: A10G
             model_type: tensorrt
             precision: fp16
       modelFormat: trt-llm
@@ -49,7 +49,7 @@ models:
           release: 1.5.0
           tags:
             backend: tensorrt
-            gpu: h100-hbm3-80gb
+            gpu: H100-HBM3-80GB
             model_type: tensorrt
             precision: fp8
       modelFormat: trt-llm
@@ -73,7 +73,7 @@ models:
           release: 1.5.0
           tags:
             backend: tensorrt
-            gpu: l40s
+            gpu: L40S
             model_type: tensorrt
             precision: fp8
       modelFormat: trt-llm
@@ -97,7 +97,7 @@ models:
           release: 1.5.0
           tags:
             backend: tensorrt
-            gpu: h100-hbm3-80gb
+            gpu: H100-HBM3-80GB
             model_type: tensorrt
             precision: fp16
       modelFormat: trt-llm
@@ -121,7 +121,7 @@ models:
           release: 1.5.0
           tags:
             backend: tensorrt
-            gpu: l40s
+            gpu: L40S
             model_type: tensorrt
             precision: fp16
       modelFormat: trt-llm
