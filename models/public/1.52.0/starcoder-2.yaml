@@ -14,7 +14,7 @@ models:
   modelVariants:
   - variantId: StarCoder2-7B
     source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/bigcode/containers/starcoder2-7b
+          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/bigcode/containers/starcoder2-7b
     optimizationProfiles:
     - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde
       framework: TensorRT-LLM
@@ -55,7 +55,7 @@ models:
           release: 1.8.1
           tags:
             feat_lora: 'false'
-            gpu: H100
+            gpu: h100
             gpu_device: 2330:10de
             llm_engine: tensorrt_llm
             number_of_gpus: '2'
@@ -88,7 +88,7 @@ models:
           release: 1.8.1
           tags:
             feat_lora: 'false'
-            gpu: H100
+            gpu: h100
             gpu_device: 2330:10de
             llm_engine: tensorrt_llm
             number_of_gpus: '1'
@@ -151,7 +151,7 @@ models:
           release: 1.8.1
           tags:
             feat_lora: 'false'
-            gpu: H100
+            gpu: h100
             gpu_device: 2330:10de
             llm_engine: tensorrt_llm
             number_of_gpus: '2'
@@ -184,7 +184,7 @@ models:
           release: 1.8.1
           tags:
             feat_lora: 'false'
-            gpu: H100
+            gpu: h100
             gpu_device: 2330:10de
             llm_engine: tensorrt_llm
             number_of_gpus: '1'
