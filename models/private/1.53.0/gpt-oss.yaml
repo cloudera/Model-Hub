@@ -1,0 +1,226 @@
+models:
+- name: GPT-OSS
+  displayName: GPT-OSS
+  modelHubID: gpt-oss
+  category: Text Generation
+  type: NGC
+  description: The GPT-OSS NIM simplifies the deployment of the GPT-OSS-120B and GPT-OSS-20B tuned models which are optimized for language understanding, reasoning, and text generation use cases, and outperforms many of the available open source chat models on common industry benchmarks.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+  modelVariants:
+  - variantId: GPT-OSS 120B
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/openai/containers/gpt-oss-120b
+    optimizationProfiles:
+    - profileId: nim/openai/gpt-oss-120b:v1
+      framework: VLLM
+      displayName: Gpt Oss 120B MXFP4
+      ngcMetadata:
+        46b15913be22333eb518656e23ce6e4add9ef248521868cca0bb31af8c99458c:
+          model: openai/gpt-oss-120b
+          release: 1.12.1
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 0d2325f68f4fecf18db654a22e7647c17ee6003b0f8c605d29675be643727b60
+            pp: '1'
+            precision: mxfp4
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 1.12.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+    - profileId: nim/openai/gpt-oss-120b:v1
+      framework: VLLM
+      displayName: Gpt Oss 120B MXFP4
+      ngcMetadata:
+        4a0d3557b2676290857e191d9b71eeff964f4fe10a7ddac66c66d2fc9983c399:
+          model: openai/gpt-oss-120b
+          release: 1.12.1
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 0d2325f68f4fecf18db654a22e7647c17ee6003b0f8c605d29675be643727b60
+            pp: '1'
+            precision: mxfp4
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.12.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+    - profileId: nim/openai/gpt-oss-120b:v1
+      framework: VLLM
+      displayName: Gpt Oss 120B MXFP4
+      ngcMetadata:
+        531bca8ac3e457ae8a69a62780430eab361264dbd29b79f2da474084a93ee000:
+          model: openai/gpt-oss-120b
+          release: 1.12.1
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 0d2325f68f4fecf18db654a22e7647c17ee6003b0f8c605d29675be643727b60
+            pp: '1'
+            precision: mxfp4
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.12.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+    - profileId: nim/openai/gpt-oss-120b:v1
+      framework: VLLM
+      displayName: Gpt Oss 120B MXFP4
+      ngcMetadata:
+        899cf2e170bb3af67ba7fef534eda3eeb8e3b69c415cd1ec4872752f6c64e6a0:
+          model: openai/gpt-oss-120b
+          release: 1.12.1
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 0d2325f68f4fecf18db654a22e7647c17ee6003b0f8c605d29675be643727b60
+            pp: '1'
+            precision: mxfp4
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.12.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+  - variantId: GPT-OSS 20B
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/openai/containers/gpt-oss-20b
+    optimizationProfiles:
+    optimizationProfiles:
+    - profileId: nim/openai/gpt-oss-20b:v1
+      framework: VLLM
+      displayName: Gpt Oss 20B MXFP4
+      ngcMetadata:
+        2e2c8811172659dd321e19a927ec632eaba747f3e0017bacc8ad27109e75878a:
+          model: openai/gpt-oss-20b
+          release: 1.12.1
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1a244f5794c2c5706bd813ad4d1b003065f81939741d67ccc0bd11f9c963f5db
+            pp: '1'
+            precision: mxfp4
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 1.12.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+    - profileId: nim/openai/gpt-oss-20b:v1
+      framework: VLLM
+      displayName: Gpt Oss 20B MXFP4
+      ngcMetadata:
+        319230871747dcf65aac0a4af04e603297460c2eab06611b7a7e6a41ae885da8:
+          model: openai/gpt-oss-20b
+          release: 1.12.1
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1a244f5794c2c5706bd813ad4d1b003065f81939741d67ccc0bd11f9c963f5db
+            pp: '1'
+            precision: mxfp4
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.12.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+    - profileId: nim/openai/gpt-oss-20b:v1
+      framework: VLLM
+      displayName: Gpt Oss 20B MXFP4
+      ngcMetadata:
+        bfa3fc92db1f01459fe0dea1886ad7f89366a04208a24debb1ad13747fe1cb9b:
+          model: openai/gpt-oss-20b
+          release: 1.12.1
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1a244f5794c2c5706bd813ad4d1b003065f81939741d67ccc0bd11f9c963f5db
+            pp: '1'
+            precision: mxfp4
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.12.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+    - profileId: nim/openai/gpt-oss-20b:v1
+      framework: VLLM
+      displayName: Gpt Oss 20B MXFP4
+      ngcMetadata:
+        efa7e9795d36904b4466f82f6b32c28507ed700b2fef0be0b2e7c1de10a2eeb8:
+          model: openai/gpt-oss-20b
+          release: 1.12.1
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1a244f5794c2c5706bd813ad4d1b003065f81939741d67ccc0bd11f9c963f5db
+            pp: '1'
+            precision: mxfp4
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.12.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+  labels:
+  - OpenAI
+  - signed images
+  - NSPECT-LJGD-9W15
+  - NVIDIA AI Enterprise Supported
+  - NVIDIA NIM
+  config:
+    architectures:
+    - Other
+    modelType: NIM
+  license: NVIDIA AI Foundation Models Community License
