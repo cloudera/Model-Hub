@@ -124,6 +124,33 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 4GB
+    - profileId: nim/nvidia/canary-1b:ofl_generic_24.12
+      framework: TensorRT-LLM
+      displayName: Riva ASR/AST Canary-1B Multilingual H200
+      ngcMetadata:
+        3ef04bf1621561955c66dcd76b961eff0b318536de1cbd6512c0f60b39f9275b:
+          model: nvidia/riva-asr/canary-1b
+          release: 1.3.0
+          tags:
+            mode: ofl
+            model_type: prebuilt
+            name: canary-1b
+            gpu: H200
+            gpu_device: 2331:10de
+            pp: '1'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 4GB
   labels:
   - signed models
   - NSPECT-803B-2JFR

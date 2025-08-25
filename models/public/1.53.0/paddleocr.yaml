@@ -41,6 +41,10 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
     - profileId: nim/baidu/paddleocr:l40sx1-trt-fp16-evboykuf0g
       framework: TensorRT-LLM
       displayName: Paddleocr L40Sx1 FP16
@@ -66,6 +70,10 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
   labels:
   - signed images
   - NSPECT-LDAL-INWI
