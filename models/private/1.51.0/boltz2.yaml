@@ -66,31 +66,6 @@ models:
         value: 1.1.0
       - key: DOWNLOAD SIZE
         value: 12GB
-    - profileId: nim/mit/boltz2:1.1.0-combi-gpuL40S_sm89_v11
-      framework: TensorRT-LLM
-      displayName: Boltz2 L40Sx1 SM89 V11
-      ngcMetadata:
-        f429a14a6470d83cd68dd11dc45cbd69c235636d5f82f147cad04b927e86be56:
-          model: mit/boltz2
-          release: 1.1.0
-          tags:
-            gpu: L40S
-            sm: '89'
-            v: '11'
-      modelFormat: trt-llm
-      spec:
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 1
-      - key: SM
-        value: 89
-      - key: V
-        value: 11
-      - key: NIM VERSION
-        value: 1.1.0
-      - key: DOWNLOAD SIZE
-        value: 14GB
     - profileId: nim/mit/boltz2:1.1.0-combi-gpuH100_sm90_v11
       framework: TensorRT-LLM
       displayName: Boltz2 H100x1 SM90 V11
