@@ -45,6 +45,33 @@ models:
         value: 3GB
     - profileId: nim/nvidia/whisper-large-v3:ofl_rmir_24.12
       framework: TensorRT-LLM
+      displayName: Riva ASR Whisper Large v3 H200
+      ngcMetadata:
+        5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
+          model: nvidia/riva-asr/whisper
+          release: 1.3.0
+          tags:
+            mode: ofl
+            model_type: rmir
+            name: whisper-large-v3
+            gpu: H200
+            gpu_device: 2331:10de
+            pp: '1'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2331:10de
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+    - profileId: nim/nvidia/whisper-large-v3:ofl_rmir_24.12
+      framework: TensorRT-LLM
       displayName: Riva ASR Whisper Large v3 L40S
       ngcMetadata:
         5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
