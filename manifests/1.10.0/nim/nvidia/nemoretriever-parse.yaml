@@ -2,15 +2,8 @@
 19c68819d9428cfa494e977f4d2be6378215a8f610cce9bdfc0aa3cdd7d66aa9:
   model: nvidia/nemoretriever-parse
   container_url: nvcr.io/nvstaging/nim/nemoretriever-parse:1.2.0ga.rc3
-  release: 1.2.0
-  tags: 
-    gpu: A100
-    gpu_device: 20b2:10de
-    llm_engine: tensorrt_llm
-    pp: '1'
-    precision: bf16
-    profile: throughput
-    tp: '1'
+  release: 1.2.0 # fixed by cloudera; was: `1.2.0ga.rc3`
+  tags: {'gpu': 'A100', 'gpu_device': '20b2:10de', 'llm_engine': 'tensorrt_llm', 'pp': '1', 'profile': 'throughput', 'precision': 'bf16', 'tp': '1'}
   workspace: !workspace
     components:
       - dst: ''
@@ -52,7 +45,7 @@
             - !name config.json
             - !name metadata.json
             - !name visual_encoder.engine
-        
+
       - dst: 'visual_engine'
         src:
           repo_id: ngc://nim/nvidia/nemoretriever-parse:vision_processor-rc2
@@ -63,18 +56,12 @@
           repo_id: ngc://nim/nvidia/nemoretriever-parse:runtime-params-trtllm
           files:
             - !name 'runtime_params.json'
+
 8db6dcd816ca1ce8d07e72d8b9c4682120b3c50799422361e35b4ab87820efd6:
   model: nvidia/nemoretriever-parse
   container_url: nvcr.io/nvstaging/nim/nemoretriever-parse:1.2.0ga.rc3
-  release: 1.2.0
-  tags: 
-    gpu: H100
-    gpu_device: 2330:10de
-    llm_engine: tensorrt_llm
-    pp: '1'
-    precision: bf16
-    profile: throughput
-    tp: '1'
+  release: 1.2.0 # fixed by cloudera; was: `1.2.0ga.rc3`
+  tags: {'gpu': 'H100', 'gpu_device': '2330:10de', 'llm_engine': 'tensorrt_llm', 'pp': '1', 'profile': 'throughput', 'precision': 'bf16', 'tp': '1'}
   workspace: !workspace
     components:
       - dst: ''
@@ -116,7 +103,7 @@
             - !name config.json
             - !name metadata.json
             - !name visual_encoder.engine
-        
+
       - dst: 'visual_engine'
         src:
           repo_id: ngc://nim/nvidia/nemoretriever-parse:vision_processor-rc2
@@ -127,18 +114,12 @@
           repo_id: ngc://nim/nvidia/nemoretriever-parse:runtime-params-trtllm
           files:
             - !name 'runtime_params.json'
+
 00c8a43783e7acf3d59a0d773cd78d3d29eaa71fa4412af7af2fbaf20e196a8b:
   model: nvidia/nemoretriever-parse
   container_url: nvcr.io/nvstaging/nim/nemoretriever-parse:1.2.0ga.rc3
-  release: 1.2.0
-  tags: 
-    gpu: L40S
-    gpu_device: 26b5:10de
-    llm_engine: tensorrt_llm
-    pp: '1'
-    precision: bf16
-    profile: throughput
-    tp: '1'
+  release: 1.2.0 # fixed by cloudera; was: `1.2.0ga.rc3`
+  tags: {'gpu': 'L40S', 'gpu_device': '26b5:10de', 'llm_engine': 'tensorrt_llm', 'pp': '1', 'profile': 'throughput', 'precision': 'bf16', 'tp': '1'}
   workspace: !workspace
     components:
       - dst: ''
@@ -180,7 +161,7 @@
             - !name config.json
             - !name metadata.json
             - !name visual_encoder.engine
-        
+
       - dst: 'visual_engine'
         src:
           repo_id: ngc://nim/nvidia/nemoretriever-parse:vision_processor-rc2
@@ -191,17 +172,13 @@
           repo_id: ngc://nim/nvidia/nemoretriever-parse:runtime-params-trtllm
           files:
             - !name 'runtime_params.json'
+
+
 82ec47683fd0f95cee922844e2a3f1709797d574a520d254b9c0d563ab4e4664:
   model: nvidia/nemoretriever-parse
   container_url: nvcr.io/nvstaging/nim/nemoretriever-parse:1.2.0ga.rc3
-  release: 1.2.0
-  tags:
-    llm_engine: tensorrt_llm
-    pp: '1'
-    precision: bf16
-    profile: throughput
-    tp: '1'  
-    trtllm_buildable: 'true'
+  release: 1.2.0 # fixed by cloudera; was: `1.2.0ga.rc3`
+  tags: {'llm_engine': 'tensorrt_llm', 'precision': 'bf16', 'pp': '1', 'profile': 'throughput', 'tp': '1', 'trtllm_buildable': 'true'}
   workspace: !workspace
     components:
       - dst: ''
