@@ -1,0 +1,59 @@
+# The model spec is designed keeping in mind both the HF and NGC APIs and tried to capture minimal information from both the APIs.
+models:
+  - name: Llama 3 SQLCoder
+    displayName: Llama 3 SQLCoder
+    modelHubID: llama-3-sqlcoder-8b
+    category: Text Generation
+    type: HF
+    description: A capable language model for text to SQL generation for Postgres, Redshift and Snowflake that is on-par with the most capable generalist frontier models.
+    modelVariants:
+      - variantId: Llama 3 SQLCoder 8B
+        displayName: Llama 3 SQLCoder 8B
+        source:
+          URL: https://huggingface.co/defog/llama-3-sqlcoder-8b
+        requireToken: false
+        requireLicense: false
+        licenseAgreements:
+        - label: License Agreement
+          url: https://choosealicense.com/licenses/cc-by-sa-4.0/
+        optimizationProfiles:
+        - profileId: Defog/Llama-3-sqlcoder-8B
+          displayName: Llama 3 SQLCoder 8B A10G
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+          - key: GPU
+            value: A10G
+          - key: COUNT
+            value: 1
+        - profileId: Defog/Llama-3-sqlcoder-8B
+          displayName: Llama 3 SQLCoder 8B A100
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+          - key: GPU
+            value: A100
+          - key: COUNT
+            value: 1
+        - profileId: Defog/Llama-3-sqlcoder-8B
+          displayName: Llama 3 SQLCoder 8B L40S
+          framework: vllm
+          sha: vllm
+          modelFormat: vllm
+          spec:
+          - key: GPU
+            value: L40S
+          - key: COUNT
+            value: 1
+    labels:
+      - Llama
+      - "Text To SQL"
+      - "Code Generation"
+      - "Fine Tuned"
+    config:
+      architectures:
+        - LlamaForCausalLM
+      modelType: llama
+    license: Creative Commons Attribution Share Alike 4.0
