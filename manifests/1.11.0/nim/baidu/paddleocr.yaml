@@ -1,0 +1,294 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: baidu/paddleocr
+release: 1.4.0
+profiles:
+- id: 26c97e9919dae5405145446f00e0189f615ce682526ec9b6da88b5138ff8097d
+  tags:
+    backend: triton
+    batch_size: '32'
+    gpu: a100-sxm4-80gb
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      paddle/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=checksums.blake3
+        checksum: blake3:c9351fe2a49173300e4303bdce5890e1245fd1d33d767f32bd6b89357d74c1cd
+      paddle/1/model.py:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=model.py
+        checksum: blake3:5fec05dfaf1f6d2e5bd97bb0d3828af95bd889e9de6be9d7ce88ca7f913babeb
+      paddle_det/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-pmwetdrjua?file=checksums.blake3
+        checksum: blake3:cc22d32fd5aeb317c0903859f81ad28b82d8fdefa6781542b9d114e6eb0212f9
+      paddle_det/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-pmwetdrjua?file=metadata.json
+        checksum: blake3:10c4c9a491278301448e2bc7e038e2a1b79ba79e657c86dd9fef8048f4579c3e
+      paddle_det/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-pmwetdrjua?file=model.plan
+        checksum: blake3:24153f35c45b6dfaed8dc4117daf2141c9caeac02a8acc1bf1a99d60dee4d76a
+      paddle_rec/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-ebu61zavqq?file=checksums.blake3
+        checksum: blake3:6e3181f678cbe9a72ddbb467ba96437a60466410b1925353e9034ede007303eb
+      paddle_rec/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-ebu61zavqq?file=metadata.json
+        checksum: blake3:10c4c9a491278301448e2bc7e038e2a1b79ba79e657c86dd9fef8048f4579c3e
+      paddle_rec/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-ebu61zavqq?file=model.plan
+        checksum: blake3:c94852ea911a0251046569da5b7ef92822caa00856d57cc065c129b00f36f79e
+- id: 2e7da4417b1c44978e00f67823ae7ec885edb310e34c2c18464fbd6cad345065
+  tags:
+    backend: triton
+    batch_size: '32'
+    gpu: h100-nvl
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      paddle/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=checksums.blake3
+        checksum: blake3:c9351fe2a49173300e4303bdce5890e1245fd1d33d767f32bd6b89357d74c1cd
+      paddle/1/model.py:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=model.py
+        checksum: blake3:5fec05dfaf1f6d2e5bd97bb0d3828af95bd889e9de6be9d7ce88ca7f913babeb
+      paddle_det/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-uswjt0qwaa?file=checksums.blake3
+        checksum: blake3:d356a11dae9cda2e2fba4a3c35a5c4d437bd74da07a0ccbfb0a91eb9995f5167
+      paddle_det/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-uswjt0qwaa?file=metadata.json
+        checksum: blake3:893a626c5b6a795fa58deb651540c89317df1ddd06c2570300318f09815564fc
+      paddle_det/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-uswjt0qwaa?file=model.plan
+        checksum: blake3:5fddc9652b5ab976a4873e26777bdd8d5441d0eabfcb37c4f07b538b3daefd9e
+      paddle_rec/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-nctrcxvjdg?file=checksums.blake3
+        checksum: blake3:aa5f0fbc42d6227a3154ccf30099b93e13c51c6e5f95231df587ec74ed229945
+      paddle_rec/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-nctrcxvjdg?file=metadata.json
+        checksum: blake3:893a626c5b6a795fa58deb651540c89317df1ddd06c2570300318f09815564fc
+      paddle_rec/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-nctrcxvjdg?file=model.plan
+        checksum: blake3:44f38d402f397e63cad058c84e716fa2d1529c148588673f35b34941795619c8
+- id: 6097695b532c9abe549de9918de6b4702eda625f27b508acd7b7dcc04f38ebe1
+  tags:
+    backend: triton
+    batch_size: '32'
+    gpu: h100-hbm3-80gb
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      paddle/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=checksums.blake3
+        checksum: blake3:c9351fe2a49173300e4303bdce5890e1245fd1d33d767f32bd6b89357d74c1cd
+      paddle/1/model.py:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=model.py
+        checksum: blake3:5fec05dfaf1f6d2e5bd97bb0d3828af95bd889e9de6be9d7ce88ca7f913babeb
+      paddle_det/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-uswjt0qwaa?file=checksums.blake3
+        checksum: blake3:d356a11dae9cda2e2fba4a3c35a5c4d437bd74da07a0ccbfb0a91eb9995f5167
+      paddle_det/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-uswjt0qwaa?file=metadata.json
+        checksum: blake3:893a626c5b6a795fa58deb651540c89317df1ddd06c2570300318f09815564fc
+      paddle_det/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-uswjt0qwaa?file=model.plan
+        checksum: blake3:5fddc9652b5ab976a4873e26777bdd8d5441d0eabfcb37c4f07b538b3daefd9e
+      paddle_rec/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-nctrcxvjdg?file=checksums.blake3
+        checksum: blake3:aa5f0fbc42d6227a3154ccf30099b93e13c51c6e5f95231df587ec74ed229945
+      paddle_rec/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-nctrcxvjdg?file=metadata.json
+        checksum: blake3:893a626c5b6a795fa58deb651540c89317df1ddd06c2570300318f09815564fc
+      paddle_rec/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:h100x1-trt-fp16-nctrcxvjdg?file=model.plan
+        checksum: blake3:44f38d402f397e63cad058c84e716fa2d1529c148588673f35b34941795619c8
+- id: 859ace730c899fb7b8362fe773639da57544f87584f9ed138089e85665653972
+  tags:
+    backend: triton
+    batch_size: '32'
+    gpu: a10g
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      paddle/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=checksums.blake3
+        checksum: blake3:c9351fe2a49173300e4303bdce5890e1245fd1d33d767f32bd6b89357d74c1cd
+      paddle/1/model.py:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=model.py
+        checksum: blake3:5fec05dfaf1f6d2e5bd97bb0d3828af95bd889e9de6be9d7ce88ca7f913babeb
+      paddle_det/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:a10gx1-trt-fp16-ijpjeptpna?file=checksums.blake3
+        checksum: blake3:051fda769d4964c3ca8ef2f3b04ffc4bf26135fe21997bc86740ae2eacc906c9
+      paddle_det/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:a10gx1-trt-fp16-ijpjeptpna?file=metadata.json
+        checksum: blake3:a904c8238c7388dda6e75e56669126883e1c57c6a4bd69a6625ca85cc7f2681f
+      paddle_det/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:a10gx1-trt-fp16-ijpjeptpna?file=model.plan
+        checksum: blake3:22b2454d32b70e82e503b1a12bb4a2acbdb4459128c193d70308e2ccaec0e37b
+      paddle_rec/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:a10gx1-trt-fp16-awu3xltmya?file=checksums.blake3
+        checksum: blake3:52b9e1ce84bf737bda440190cb30076171f5853dc1cafe5a06bbad84efcf0306
+      paddle_rec/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:a10gx1-trt-fp16-awu3xltmya?file=metadata.json
+        checksum: blake3:a904c8238c7388dda6e75e56669126883e1c57c6a4bd69a6625ca85cc7f2681f
+      paddle_rec/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:a10gx1-trt-fp16-awu3xltmya?file=model.plan
+        checksum: blake3:4330a703d5b6c04adcb2bc8641f1cf6cfbd0a0120e15b3689549b01ea2adc883
+- id: 90699b066c264c9533628aeb4f1814ef51e0f2f021540e3ae77181f2ef9ce9ed
+  tags:
+    backend: triton
+    batch_size: '32'
+    gpu: l40s
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      paddle/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=checksums.blake3
+        checksum: blake3:c9351fe2a49173300e4303bdce5890e1245fd1d33d767f32bd6b89357d74c1cd
+      paddle/1/model.py:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=model.py
+        checksum: blake3:5fec05dfaf1f6d2e5bd97bb0d3828af95bd889e9de6be9d7ce88ca7f913babeb
+      paddle_det/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:l40sx1-trt-fp16-evboykuf0g?file=checksums.blake3
+        checksum: blake3:9875387ccc5b5995777214de008275eaa2fa3f943b1bd7e137ec306eafc347c4
+      paddle_det/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:l40sx1-trt-fp16-evboykuf0g?file=metadata.json
+        checksum: blake3:c4679fb3139affd30b4fdc16bbefede0974265778cc52ce61564cc3b3b6f509b
+      paddle_det/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:l40sx1-trt-fp16-evboykuf0g?file=model.plan
+        checksum: blake3:48dba752d9364077ed3ddaae826dc1fc28d0713f85820a076eafa5927f1a3952
+      paddle_rec/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:l40sx1-trt-fp16-k7vnc-ymcg?file=checksums.blake3
+        checksum: blake3:f8571548d46a4fd2eac0f559d5223a36d1a8ddc6469d330e38bf22a1945f3e23
+      paddle_rec/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:l40sx1-trt-fp16-k7vnc-ymcg?file=metadata.json
+        checksum: blake3:c4679fb3139affd30b4fdc16bbefede0974265778cc52ce61564cc3b3b6f509b
+      paddle_rec/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:l40sx1-trt-fp16-k7vnc-ymcg?file=model.plan
+        checksum: blake3:793fda2548d745e9f4eda402325a859ac4c81a7b6f51d816a4749f96b6e1c256
+- id: a7d7cc7f7236b793a7722a3f0777b0cf3a989cc3c2c34d3e66a392329e1530e7
+  tags:
+    backend: triton
+    batch_size: '32'
+    gpu: b200
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      paddle/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=checksums.blake3
+        checksum: blake3:c9351fe2a49173300e4303bdce5890e1245fd1d33d767f32bd6b89357d74c1cd
+      paddle/1/model.py:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=model.py
+        checksum: blake3:5fec05dfaf1f6d2e5bd97bb0d3828af95bd889e9de6be9d7ce88ca7f913babeb
+      paddle_det/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:b200x1-trt-fp16-itomrwaucq?file=checksums.blake3
+        checksum: blake3:4c93eadcce10fc818b3b110c1734519fc46ec3e69f49a7a96c5bb804f1ac0ee3
+      paddle_det/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:b200x1-trt-fp16-itomrwaucq?file=metadata.json
+        checksum: blake3:f4c3bc62dc78644f0c7c003b0138700e7d9d8d3c1d63fa1a635cac6f6046b67d
+      paddle_det/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:b200x1-trt-fp16-itomrwaucq?file=model.plan
+        checksum: blake3:38a6d0dcb38c76a8526d24c6ae7718bbbeb1fb34b105b0c611a14bcf44269e1c
+      paddle_rec/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:b200x1-trt-fp16-olfssszeza?file=checksums.blake3
+        checksum: blake3:40de7321f1bc606f67723adc46a9372baf7534d9ca925377547e0733143402fe
+      paddle_rec/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:b200x1-trt-fp16-olfssszeza?file=metadata.json
+        checksum: blake3:f4c3bc62dc78644f0c7c003b0138700e7d9d8d3c1d63fa1a635cac6f6046b67d
+      paddle_rec/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:b200x1-trt-fp16-olfssszeza?file=model.plan
+        checksum: blake3:0781dafd23335013b0677ee6d3bf1dd3f29756999b2291b8499a1b0fb5789c42
+- id: ed0b8106aedfc536be363b6f1f0901bd4cd371ef22e640ac03fa7f4e3ed71647
+  tags:
+    backend: triton
+    batch_size: '32'
+    gpu: l4
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      paddle/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=checksums.blake3
+        checksum: blake3:c9351fe2a49173300e4303bdce5890e1245fd1d33d767f32bd6b89357d74c1cd
+      paddle/1/model.py:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=model.py
+        checksum: blake3:5fec05dfaf1f6d2e5bd97bb0d3828af95bd889e9de6be9d7ce88ca7f913babeb
+      paddle_det/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:l4x1-trt-fp16-fswetrkejq?file=checksums.blake3
+        checksum: blake3:7182fe285af9ab18c14b20fc6bce7aeddd73e7e8642f9fc0589e8656fb2fa99b
+      paddle_det/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:l4x1-trt-fp16-fswetrkejq?file=metadata.json
+        checksum: blake3:495231929fab32c9a8fbf59778a2311c46872cfa539ea27a85bc957e2eadf77f
+      paddle_det/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:l4x1-trt-fp16-fswetrkejq?file=model.plan
+        checksum: blake3:fc4807600041caa7a18ce339331c9acdf60d4471288931242983ee71ac2c03dd
+      paddle_rec/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:l4x1-trt-fp16-ymwspsdwrw?file=checksums.blake3
+        checksum: blake3:6728b540aaf942c952853ac154254133c7bb4d5d6a6f970dbee84572bc3fbca9
+      paddle_rec/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:l4x1-trt-fp16-ymwspsdwrw?file=metadata.json
+        checksum: blake3:495231929fab32c9a8fbf59778a2311c46872cfa539ea27a85bc957e2eadf77f
+      paddle_rec/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:l4x1-trt-fp16-ymwspsdwrw?file=model.plan
+        checksum: blake3:337caf25c1c0ef8e5c361e44ceca10ea2f9c59aa752cbde682485773360c566a
+- id: edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b
+  tags:
+    backend: triton
+    model_type: onnx
+    precision: fp16
+  workspace:
+    files:
+      paddle/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:4_ONNX_python_2?file=checksums.blake3
+        checksum: blake3:fa9d3a90609ca406d1bde9b5be2907dd61ac62b3d1aba98cde8ae95b8d4b1e38
+      paddle/1/det/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:4_ONNX_FP16_detector_2?file=checksums.blake3
+        checksum: blake3:4d058bd16f34b6f2a657f7527fb62733088d495886fda4bb03f8fec92c14f903
+      paddle/1/det/model.onnx:
+        uri: ngc://nim/baidu/paddleocr:4_ONNX_FP16_detector_2?file=model.onnx
+        checksum: blake3:c05e55e7c601218b06559bc39b65763efb4aa5cfb66b1d1584d47233efd8de0b
+      paddle/1/model.py:
+        uri: ngc://nim/baidu/paddleocr:4_ONNX_python_2?file=model.py
+        checksum: blake3:af71e6d9695139691d7070aac098ed79c0c90a5d5c9e5469285d2f648f173f27
+      paddle/1/rec/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:4_ONNX_FP16_recognizer_2?file=checksums.blake3
+        checksum: blake3:e89cda29462f3308ee7de6a7445c9095031a142f26ed051fd0dd6b917b5bff01
+      paddle/1/rec/model.onnx:
+        uri: ngc://nim/baidu/paddleocr:4_ONNX_FP16_recognizer_2?file=model.onnx
+        checksum: blake3:881387d79339d4e2a9c1a836b40b5524cbc15ed463faf839807868f831fdcb8d
+- id: f93ae043aafc696a85fc58461c074397d39ec747651ca996ae470222f93b4e62
+  tags:
+    backend: triton
+    batch_size: '32'
+    gpu: a100-sxm4-40gb
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      paddle/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=checksums.blake3
+        checksum: blake3:c9351fe2a49173300e4303bdce5890e1245fd1d33d767f32bd6b89357d74c1cd
+      paddle/1/model.py:
+        uri: ngc://nim/baidu/paddleocr:2_TRT_python_2?file=model.py
+        checksum: blake3:5fec05dfaf1f6d2e5bd97bb0d3828af95bd889e9de6be9d7ce88ca7f913babeb
+      paddle_det/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-pmwetdrjua?file=checksums.blake3
+        checksum: blake3:cc22d32fd5aeb317c0903859f81ad28b82d8fdefa6781542b9d114e6eb0212f9
+      paddle_det/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-pmwetdrjua?file=metadata.json
+        checksum: blake3:10c4c9a491278301448e2bc7e038e2a1b79ba79e657c86dd9fef8048f4579c3e
+      paddle_det/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-pmwetdrjua?file=model.plan
+        checksum: blake3:24153f35c45b6dfaed8dc4117daf2141c9caeac02a8acc1bf1a99d60dee4d76a
+      paddle_rec/1/checksums.blake3:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-ebu61zavqq?file=checksums.blake3
+        checksum: blake3:6e3181f678cbe9a72ddbb467ba96437a60466410b1925353e9034ede007303eb
+      paddle_rec/1/metadata.json:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-ebu61zavqq?file=metadata.json
+        checksum: blake3:10c4c9a491278301448e2bc7e038e2a1b79ba79e657c86dd9fef8048f4579c3e
+      paddle_rec/1/model.plan:
+        uri: ngc://nim/baidu/paddleocr:a100x1-trt-fp16-ebu61zavqq?file=model.plan
+        checksum: blake3:c94852ea911a0251046569da5b7ef92822caa00856d57cc065c129b00f36f79e
