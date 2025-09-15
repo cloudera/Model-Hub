@@ -1,0 +1,333 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: openai/gpt-oss-120b
+release: 1.12.1
+profiles:
+- id: 46b15913be22333eb518656e23ce6e4add9ef248521868cca0bb31af8c99458c
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    nim_workspace_hash_v1: 0d2325f68f4fecf18db654a22e7647c17ee6003b0f8c605d29675be643727b60
+    pp: '1'
+    precision: mxfp4
+    tp: '8'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=chat_template.jinja
+        checksum: blake3:66812f819bcb3e390284fd75a6fb1febeb92f642914211783775990f2256eb3b
+      chat_template.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=chat_template.json
+        checksum: blake3:9e45ec7481d5b7ed51f623f2bc9e613f12afdf0c7ad470f8b3a4ebaaf1e38047
+      checksums.blake3:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=checksums.blake3
+        checksum: blake3:b3fad8d1a4237afa212d1921be4a00e35e28a88b5b0409b76ef1afd15375de9a
+      config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=config.json
+        checksum: blake3:8e28333d12513ec3604005e4c48e66d248d687b4ca5e25d1a74694f046c58888
+      generation_config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=generation_config.json
+        checksum: blake3:a2931758cd57e9c4c90211b3b755608d9cb05edc80a9ff0f65002f8124153326
+      model-00000-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00000-of-00014.safetensors
+        checksum: blake3:c7683db4da5b323e6960347aa460d3fb83228038fedfb7270e1001f518971511
+      model-00001-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00001-of-00014.safetensors
+        checksum: blake3:0bd292907a91f879819c131542648dbd6bb8705402f8b7f37221e3ca917b672c
+      model-00002-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00002-of-00014.safetensors
+        checksum: blake3:736432cd1e338b5f2a3b3a769c0ae9aa3693813ec21da7a3c7d07cbad315ba10
+      model-00003-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00003-of-00014.safetensors
+        checksum: blake3:05394c0a8318c13d345c40d026f10c95be1a8eb5119a346a298d79df1ac13e9d
+      model-00004-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00004-of-00014.safetensors
+        checksum: blake3:e49b588d0f3190b43c69b40c35526273e0595e1c3c9c195211d49bac9c5765ec
+      model-00005-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00005-of-00014.safetensors
+        checksum: blake3:4982a6fb0d9b9cf92b9601d429e8b5ebb4d9ce92d95301a1cfe243361603ddcf
+      model-00006-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00006-of-00014.safetensors
+        checksum: blake3:b8528b6f11695eb382d5eb392f5c91a7bd67f702efb229c959db9ce324b79b22
+      model-00007-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00007-of-00014.safetensors
+        checksum: blake3:523c8b6c6b45adfd1131175c503e0a15e19ffdcc1752342e555ec0d85eec29e5
+      model-00008-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00008-of-00014.safetensors
+        checksum: blake3:9b0da590e6c635412048082e8ec49d6accecee05a48d4ca02fbc9c0e50b97202
+      model-00009-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00009-of-00014.safetensors
+        checksum: blake3:1277120f0694a05c3bbf48bc43245c4c54e28981680ebc836a85731a11a0ef57
+      model-00010-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00010-of-00014.safetensors
+        checksum: blake3:6c5f6b00f570d64f4cac5025c7fddabe56e7787acf0ea7978e65c9575282ab5f
+      model-00011-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00011-of-00014.safetensors
+        checksum: blake3:7c8628dcfbba3bd3f6baa693c0beb92eed80070cc3e6ccaf128485421f0a817a
+      model-00012-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00012-of-00014.safetensors
+        checksum: blake3:0b8b007ee03c3424753accc2975683946bdd00d4e5baff056cb55958a204ffd4
+      model-00013-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00013-of-00014.safetensors
+        checksum: blake3:46368eb497c58818f7554a183ab74d892a715f7d03f3daaf5ab8f7ec4ba904f4
+      model-00014-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00014-of-00014.safetensors
+        checksum: blake3:5b8be14437ff639d8c1c777ff3e78a5d4d001556daf619dfabb5b3600a9566d2
+      model.safetensors.index.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model.safetensors.index.json
+        checksum: blake3:d53acd88f1ec305819d0557795da2955225623342b27ca25dad933d1d51695d8
+      special_tokens_map.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=special_tokens_map.json
+        checksum: blake3:68620543eb60dc7135d1a6621726109915e14f137be4e4c4234886501b8b517a
+      tokenizer.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=tokenizer.json
+        checksum: blake3:0596814de1ca4de2980968802fdb4340e84e39f8ffa67467648e8e606680acb1
+      tokenizer_config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=tokenizer_config.json
+        checksum: blake3:c26e7214c1d5c37f8f4caecf16cfba7cd8791b9f3e89c11656b7d80937b7b43e
+- id: 4a0d3557b2676290857e191d9b71eeff964f4fe10a7ddac66c66d2fc9983c399
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    nim_workspace_hash_v1: 0d2325f68f4fecf18db654a22e7647c17ee6003b0f8c605d29675be643727b60
+    pp: '1'
+    precision: mxfp4
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=chat_template.jinja
+        checksum: blake3:66812f819bcb3e390284fd75a6fb1febeb92f642914211783775990f2256eb3b
+      chat_template.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=chat_template.json
+        checksum: blake3:9e45ec7481d5b7ed51f623f2bc9e613f12afdf0c7ad470f8b3a4ebaaf1e38047
+      checksums.blake3:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=checksums.blake3
+        checksum: blake3:b3fad8d1a4237afa212d1921be4a00e35e28a88b5b0409b76ef1afd15375de9a
+      config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=config.json
+        checksum: blake3:8e28333d12513ec3604005e4c48e66d248d687b4ca5e25d1a74694f046c58888
+      generation_config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=generation_config.json
+        checksum: blake3:a2931758cd57e9c4c90211b3b755608d9cb05edc80a9ff0f65002f8124153326
+      model-00000-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00000-of-00014.safetensors
+        checksum: blake3:c7683db4da5b323e6960347aa460d3fb83228038fedfb7270e1001f518971511
+      model-00001-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00001-of-00014.safetensors
+        checksum: blake3:0bd292907a91f879819c131542648dbd6bb8705402f8b7f37221e3ca917b672c
+      model-00002-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00002-of-00014.safetensors
+        checksum: blake3:736432cd1e338b5f2a3b3a769c0ae9aa3693813ec21da7a3c7d07cbad315ba10
+      model-00003-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00003-of-00014.safetensors
+        checksum: blake3:05394c0a8318c13d345c40d026f10c95be1a8eb5119a346a298d79df1ac13e9d
+      model-00004-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00004-of-00014.safetensors
+        checksum: blake3:e49b588d0f3190b43c69b40c35526273e0595e1c3c9c195211d49bac9c5765ec
+      model-00005-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00005-of-00014.safetensors
+        checksum: blake3:4982a6fb0d9b9cf92b9601d429e8b5ebb4d9ce92d95301a1cfe243361603ddcf
+      model-00006-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00006-of-00014.safetensors
+        checksum: blake3:b8528b6f11695eb382d5eb392f5c91a7bd67f702efb229c959db9ce324b79b22
+      model-00007-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00007-of-00014.safetensors
+        checksum: blake3:523c8b6c6b45adfd1131175c503e0a15e19ffdcc1752342e555ec0d85eec29e5
+      model-00008-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00008-of-00014.safetensors
+        checksum: blake3:9b0da590e6c635412048082e8ec49d6accecee05a48d4ca02fbc9c0e50b97202
+      model-00009-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00009-of-00014.safetensors
+        checksum: blake3:1277120f0694a05c3bbf48bc43245c4c54e28981680ebc836a85731a11a0ef57
+      model-00010-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00010-of-00014.safetensors
+        checksum: blake3:6c5f6b00f570d64f4cac5025c7fddabe56e7787acf0ea7978e65c9575282ab5f
+      model-00011-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00011-of-00014.safetensors
+        checksum: blake3:7c8628dcfbba3bd3f6baa693c0beb92eed80070cc3e6ccaf128485421f0a817a
+      model-00012-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00012-of-00014.safetensors
+        checksum: blake3:0b8b007ee03c3424753accc2975683946bdd00d4e5baff056cb55958a204ffd4
+      model-00013-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00013-of-00014.safetensors
+        checksum: blake3:46368eb497c58818f7554a183ab74d892a715f7d03f3daaf5ab8f7ec4ba904f4
+      model-00014-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00014-of-00014.safetensors
+        checksum: blake3:5b8be14437ff639d8c1c777ff3e78a5d4d001556daf619dfabb5b3600a9566d2
+      model.safetensors.index.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model.safetensors.index.json
+        checksum: blake3:d53acd88f1ec305819d0557795da2955225623342b27ca25dad933d1d51695d8
+      special_tokens_map.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=special_tokens_map.json
+        checksum: blake3:68620543eb60dc7135d1a6621726109915e14f137be4e4c4234886501b8b517a
+      tokenizer.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=tokenizer.json
+        checksum: blake3:0596814de1ca4de2980968802fdb4340e84e39f8ffa67467648e8e606680acb1
+      tokenizer_config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=tokenizer_config.json
+        checksum: blake3:c26e7214c1d5c37f8f4caecf16cfba7cd8791b9f3e89c11656b7d80937b7b43e
+- id: 531bca8ac3e457ae8a69a62780430eab361264dbd29b79f2da474084a93ee000
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    nim_workspace_hash_v1: 0d2325f68f4fecf18db654a22e7647c17ee6003b0f8c605d29675be643727b60
+    pp: '1'
+    precision: mxfp4
+    tp: '4'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=chat_template.jinja
+        checksum: blake3:66812f819bcb3e390284fd75a6fb1febeb92f642914211783775990f2256eb3b
+      chat_template.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=chat_template.json
+        checksum: blake3:9e45ec7481d5b7ed51f623f2bc9e613f12afdf0c7ad470f8b3a4ebaaf1e38047
+      checksums.blake3:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=checksums.blake3
+        checksum: blake3:b3fad8d1a4237afa212d1921be4a00e35e28a88b5b0409b76ef1afd15375de9a
+      config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=config.json
+        checksum: blake3:8e28333d12513ec3604005e4c48e66d248d687b4ca5e25d1a74694f046c58888
+      generation_config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=generation_config.json
+        checksum: blake3:a2931758cd57e9c4c90211b3b755608d9cb05edc80a9ff0f65002f8124153326
+      model-00000-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00000-of-00014.safetensors
+        checksum: blake3:c7683db4da5b323e6960347aa460d3fb83228038fedfb7270e1001f518971511
+      model-00001-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00001-of-00014.safetensors
+        checksum: blake3:0bd292907a91f879819c131542648dbd6bb8705402f8b7f37221e3ca917b672c
+      model-00002-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00002-of-00014.safetensors
+        checksum: blake3:736432cd1e338b5f2a3b3a769c0ae9aa3693813ec21da7a3c7d07cbad315ba10
+      model-00003-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00003-of-00014.safetensors
+        checksum: blake3:05394c0a8318c13d345c40d026f10c95be1a8eb5119a346a298d79df1ac13e9d
+      model-00004-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00004-of-00014.safetensors
+        checksum: blake3:e49b588d0f3190b43c69b40c35526273e0595e1c3c9c195211d49bac9c5765ec
+      model-00005-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00005-of-00014.safetensors
+        checksum: blake3:4982a6fb0d9b9cf92b9601d429e8b5ebb4d9ce92d95301a1cfe243361603ddcf
+      model-00006-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00006-of-00014.safetensors
+        checksum: blake3:b8528b6f11695eb382d5eb392f5c91a7bd67f702efb229c959db9ce324b79b22
+      model-00007-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00007-of-00014.safetensors
+        checksum: blake3:523c8b6c6b45adfd1131175c503e0a15e19ffdcc1752342e555ec0d85eec29e5
+      model-00008-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00008-of-00014.safetensors
+        checksum: blake3:9b0da590e6c635412048082e8ec49d6accecee05a48d4ca02fbc9c0e50b97202
+      model-00009-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00009-of-00014.safetensors
+        checksum: blake3:1277120f0694a05c3bbf48bc43245c4c54e28981680ebc836a85731a11a0ef57
+      model-00010-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00010-of-00014.safetensors
+        checksum: blake3:6c5f6b00f570d64f4cac5025c7fddabe56e7787acf0ea7978e65c9575282ab5f
+      model-00011-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00011-of-00014.safetensors
+        checksum: blake3:7c8628dcfbba3bd3f6baa693c0beb92eed80070cc3e6ccaf128485421f0a817a
+      model-00012-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00012-of-00014.safetensors
+        checksum: blake3:0b8b007ee03c3424753accc2975683946bdd00d4e5baff056cb55958a204ffd4
+      model-00013-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00013-of-00014.safetensors
+        checksum: blake3:46368eb497c58818f7554a183ab74d892a715f7d03f3daaf5ab8f7ec4ba904f4
+      model-00014-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00014-of-00014.safetensors
+        checksum: blake3:5b8be14437ff639d8c1c777ff3e78a5d4d001556daf619dfabb5b3600a9566d2
+      model.safetensors.index.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model.safetensors.index.json
+        checksum: blake3:d53acd88f1ec305819d0557795da2955225623342b27ca25dad933d1d51695d8
+      special_tokens_map.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=special_tokens_map.json
+        checksum: blake3:68620543eb60dc7135d1a6621726109915e14f137be4e4c4234886501b8b517a
+      tokenizer.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=tokenizer.json
+        checksum: blake3:0596814de1ca4de2980968802fdb4340e84e39f8ffa67467648e8e606680acb1
+      tokenizer_config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=tokenizer_config.json
+        checksum: blake3:c26e7214c1d5c37f8f4caecf16cfba7cd8791b9f3e89c11656b7d80937b7b43e
+- id: 899cf2e170bb3af67ba7fef534eda3eeb8e3b69c415cd1ec4872752f6c64e6a0
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    nim_workspace_hash_v1: 0d2325f68f4fecf18db654a22e7647c17ee6003b0f8c605d29675be643727b60
+    pp: '1'
+    precision: mxfp4
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=chat_template.jinja
+        checksum: blake3:66812f819bcb3e390284fd75a6fb1febeb92f642914211783775990f2256eb3b
+      chat_template.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=chat_template.json
+        checksum: blake3:9e45ec7481d5b7ed51f623f2bc9e613f12afdf0c7ad470f8b3a4ebaaf1e38047
+      checksums.blake3:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=checksums.blake3
+        checksum: blake3:b3fad8d1a4237afa212d1921be4a00e35e28a88b5b0409b76ef1afd15375de9a
+      config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=config.json
+        checksum: blake3:8e28333d12513ec3604005e4c48e66d248d687b4ca5e25d1a74694f046c58888
+      generation_config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=generation_config.json
+        checksum: blake3:a2931758cd57e9c4c90211b3b755608d9cb05edc80a9ff0f65002f8124153326
+      model-00000-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00000-of-00014.safetensors
+        checksum: blake3:c7683db4da5b323e6960347aa460d3fb83228038fedfb7270e1001f518971511
+      model-00001-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00001-of-00014.safetensors
+        checksum: blake3:0bd292907a91f879819c131542648dbd6bb8705402f8b7f37221e3ca917b672c
+      model-00002-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00002-of-00014.safetensors
+        checksum: blake3:736432cd1e338b5f2a3b3a769c0ae9aa3693813ec21da7a3c7d07cbad315ba10
+      model-00003-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00003-of-00014.safetensors
+        checksum: blake3:05394c0a8318c13d345c40d026f10c95be1a8eb5119a346a298d79df1ac13e9d
+      model-00004-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00004-of-00014.safetensors
+        checksum: blake3:e49b588d0f3190b43c69b40c35526273e0595e1c3c9c195211d49bac9c5765ec
+      model-00005-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00005-of-00014.safetensors
+        checksum: blake3:4982a6fb0d9b9cf92b9601d429e8b5ebb4d9ce92d95301a1cfe243361603ddcf
+      model-00006-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00006-of-00014.safetensors
+        checksum: blake3:b8528b6f11695eb382d5eb392f5c91a7bd67f702efb229c959db9ce324b79b22
+      model-00007-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00007-of-00014.safetensors
+        checksum: blake3:523c8b6c6b45adfd1131175c503e0a15e19ffdcc1752342e555ec0d85eec29e5
+      model-00008-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00008-of-00014.safetensors
+        checksum: blake3:9b0da590e6c635412048082e8ec49d6accecee05a48d4ca02fbc9c0e50b97202
+      model-00009-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00009-of-00014.safetensors
+        checksum: blake3:1277120f0694a05c3bbf48bc43245c4c54e28981680ebc836a85731a11a0ef57
+      model-00010-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00010-of-00014.safetensors
+        checksum: blake3:6c5f6b00f570d64f4cac5025c7fddabe56e7787acf0ea7978e65c9575282ab5f
+      model-00011-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00011-of-00014.safetensors
+        checksum: blake3:7c8628dcfbba3bd3f6baa693c0beb92eed80070cc3e6ccaf128485421f0a817a
+      model-00012-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00012-of-00014.safetensors
+        checksum: blake3:0b8b007ee03c3424753accc2975683946bdd00d4e5baff056cb55958a204ffd4
+      model-00013-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00013-of-00014.safetensors
+        checksum: blake3:46368eb497c58818f7554a183ab74d892a715f7d03f3daaf5ab8f7ec4ba904f4
+      model-00014-of-00014.safetensors:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model-00014-of-00014.safetensors
+        checksum: blake3:5b8be14437ff639d8c1c777ff3e78a5d4d001556daf619dfabb5b3600a9566d2
+      model.safetensors.index.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=model.safetensors.index.json
+        checksum: blake3:d53acd88f1ec305819d0557795da2955225623342b27ca25dad933d1d51695d8
+      special_tokens_map.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=special_tokens_map.json
+        checksum: blake3:68620543eb60dc7135d1a6621726109915e14f137be4e4c4234886501b8b517a
+      tokenizer.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=tokenizer.json
+        checksum: blake3:0596814de1ca4de2980968802fdb4340e84e39f8ffa67467648e8e606680acb1
+      tokenizer_config.json:
+        uri: ngc://nim/openai/gpt-oss-120b:v1?file=tokenizer_config.json
+        checksum: blake3:c26e7214c1d5c37f8f4caecf16cfba7cd8791b9f3e89c11656b7d80937b7b43e
