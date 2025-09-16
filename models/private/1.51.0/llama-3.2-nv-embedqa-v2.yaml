@@ -16,133 +16,13 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.2-nv-embedqa-1b-v2
     optimizationProfiles:
-    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:a10gx1-trt-fp16-kvrfa1guww
-      framework: TensorRT-LLM
-      displayName: Llama 3.2 NV EmbedQA 1b V2 A10G FP16
-      ngcMetadata:
-        037eb6c468847dc15b9801e2df2977ea2850439c586797347dfc06366e7f0fce:
-          model: nvidia/llama-3.2-nv-embedqa-1b-v2
-          release: 1.5.0
-          tags:
-            backend: tensorrt
-            gpu: A10G
-            model_type: tensorrt
-            precision: fp16
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: FP16
-      - key: GPU
-        value: A10G
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.5.0
-      - key: DOWNLOAD SIZE
-        value: 2GB
-    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:h100x1-trt-fp8-35ct-xro1a
-      framework: TensorRT-LLM
-      displayName: Llama 3.2 NV EmbedQA 1b V2 H100 FP8
-      ngcMetadata:
-        8918df0dca55add3cce5d64bd465a9b4970951d45fe1742daedab84d3092e379:
-          model: nvidia/llama-3.2-nv-embedqa-1b-v2
-          release: 1.5.0
-          tags:
-            backend: tensorrt
-            gpu: H100-HBM3-80GB
-            model_type: tensorrt
-            precision: fp8
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: H100-HBM3-80GB
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.5.0
-      - key: DOWNLOAD SIZE
-        value: 2GB
-    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:l40sx1-trt-fp8-zil-cdkkuw
-      framework: TensorRT-LLM
-      displayName: Llama 3.2 NV EmbedQA 1b V2 L40S FP8
-      ngcMetadata:
-        9995fab013634316772d67e32c83d5209a2fd455233950f4082d4eb2ddaf407f:
-          model: nvidia/llama-3.2-nv-embedqa-1b-v2
-          release: 1.5.0
-          tags:
-            backend: tensorrt
-            gpu: L40S
-            model_type: tensorrt
-            precision: fp8
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.5.0
-      - key: DOWNLOAD SIZE
-        value: 2GB
-    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:h100x1-trt-fp16-oy6bp9ytcw
-      framework: TensorRT-LLM
-      displayName: Llama 3.2 NV EmbedQA 1b V2 H100 FP16
-      ngcMetadata:
-        bd7c050e36afa6684c3fdce002171ee6755a841687f8fe4e425940223dc93020:
-          model: nvidia/llama-3.2-nv-embedqa-1b-v2
-          release: 1.5.0
-          tags:
-            backend: tensorrt
-            gpu: H100-HBM3-80GB
-            model_type: tensorrt
-            precision: fp16
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: FP16
-      - key: GPU
-        value: H100-HBM3-80GB
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.5.0
-      - key: DOWNLOAD SIZE
-        value: 3GB
-    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:l40sx1-trt-fp16-0vibbsr19g
-      framework: TensorRT-LLM
-      displayName: Llama 3.2 NV EmbedQA 1b V2 L40S FP16
-      ngcMetadata:
-        dd267fa7a6351300c70c84bc2f3298c76ffaa8afa3ee7d859d088d7db99b6921:
-          model: nvidia/llama-3.2-nv-embedqa-1b-v2
-          release: 1.5.0
-          tags:
-            backend: tensorrt
-            gpu: L40S
-            model_type: tensorrt
-            precision: fp16
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: FP16
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.5.0
-      - key: DOWNLOAD SIZE
-        value: 3GB
     - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:onnx-precision.fp16-7c7a1c17
-      framework: TensorRT-LLM
-      displayName: Llama 3.2 NV EmbedQA 1b V2 ONNX FP16
+      framework: ONNX
+      displayName: Llama 3.2 NV Embedqa 1B V2 ONNX FP16
       ngcMetadata:
         f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f:
           model: nvidia/llama-3.2-nv-embedqa-1b-v2
-          release: 1.5.0
+          release: 1.10.0
           tags:
             backend: onnx
             model_type: onnx
@@ -151,10 +31,22 @@ models:
       spec:
       - key: PRECISION
         value: FP16
+      - key: COUNT
+        value: 1
       - key: NIM VERSION
-        value: 1.5.0
+        value: 1.10.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: BACKEND
+        value: ONNX
+      - key: MODEL TYPE
+        value: ONNX
+      - key: MAX TOKENS
+        value: 8192
+      - key: TOTAL PARAMETERS
+        value: 1236
+      - key: Embedding Dimension
+        value: 2048
   labels:
   - Llama
   - Meta
