@@ -1,10 +1,10 @@
 models:
-- name: Nemoretriever Graphic Elements V1
-  displayName: Nemoretriever Graphic Elements V1
-  modelHubID: nemoretriever-graphic-elements-v1
+- name: Nemoretriever Page Elements V2
+  displayName: Nemoretriever Page Elements V2
+  modelHubID: nemoretriever-page-elements-v2
   category: Object Detection
   type: NGC
-  description: NVIDIA NeMo Retriever NIM for graphic elements v1 is a fine-tuned object detection model, trained specifically for detecting the elements of charts and tables in documents
+  description: NVIDIA NeMo Retriever NIM for page elements v2 is a fine-tuned object detection model, trained specifically for detecting charts, tables, infographics, and titles on a document page.
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -12,16 +12,16 @@ models:
   - label: License Agreement
     url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
   modelVariants:
-  - variantId: Nemoretriever Graphic Elements V1
+  - variantId: Nemoretriever Page Elements V2
     source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemoretriever-graphic-elements-v1
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemoretriever-page-elements-v2
     optimizationProfiles:
-    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:a100x1-trt-fp16-7lfmwoem-q
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:a100x1-trt-fp16-vwtgi2gdbg
       framework: TensorRT-LLM
-      displayName: Nemoretriever Graphic Elements V1 A100-SXM4-80GBx1 FP16
+      displayName: Nemoretriever Page Elements V2 A100-SXM4-80GBx1 FP16
       ngcMetadata:
         26c97e9919dae5405145446f00e0189f615ce682526ec9b6da88b5138ff8097d:
-          model: nvidia/nemoretriever-graphic-elements-v1
+          model: nvidia/nemoretriever-page-elements-v2
           release: 1.3.0
           tags:
             backend: triton
@@ -43,12 +43,12 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 1GB
-    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:h100-nvlx1-trt-fp16-pqwy1dxfxg
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:h100x1-trt-fp16-gu9grcql-w
       framework: TensorRT-LLM
-      displayName: Nemoretriever Graphic Elements V1 H100-NVLx1 FP16
+      displayName: Nemoretriever Page Elements V2 H100-NVLx1 FP16
       ngcMetadata:
         2e7da4417b1c44978e00f67823ae7ec885edb310e34c2c18464fbd6cad345065:
-          model: nvidia/nemoretriever-graphic-elements-v1
+          model: nvidia/nemoretriever-page-elements-v2
           release: 1.3.0
           tags:
             backend: triton
@@ -70,12 +70,12 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 1GB
-    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:h100x1-trt-fp16-tcgzpfpbwq
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:h100x1-trt-fp16-gu9grcql-w
       framework: TensorRT-LLM
-      displayName: Nemoretriever Graphic Elements V1 H100-HBM3-80GBx1 FP16
+      displayName: Nemoretriever Page Elements V2 H100-HBM3-80GBx1 FP16
       ngcMetadata:
         6097695b532c9abe549de9918de6b4702eda625f27b508acd7b7dcc04f38ebe1:
-          model: nvidia/nemoretriever-graphic-elements-v1
+          model: nvidia/nemoretriever-page-elements-v2
           release: 1.3.0
           tags:
             backend: triton
@@ -83,8 +83,6 @@ models:
             gpu: H100-HBM3-80GB
             model_type: tensorrt
             precision: fp16
-            pp: '1'
-            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -97,12 +95,12 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 1GB
-    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:a10gx1-trt-fp16-ge6bpqew8g
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:a10gx1-trt-fp16-xrpnjisxaw
       framework: TensorRT-LLM
-      displayName: Nemoretriever Graphic Elements V1 A10Gx1 FP16
+      displayName: Nemoretriever Page Elements V2 A10Gx1 FP16
       ngcMetadata:
         859ace730c899fb7b8362fe773639da57544f87584f9ed138089e85665653972:
-          model: nvidia/nemoretriever-graphic-elements-v1
+          model: nvidia/nemoretriever-page-elements-v2
           release: 1.3.0
           tags:
             backend: triton
@@ -110,8 +108,6 @@ models:
             gpu: A10G
             model_type: tensorrt
             precision: fp16
-            pp: '1'
-            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -124,12 +120,12 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 1GB
-    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:l40sx1-trt-fp16-ltjamioamw
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:l40sx1-trt-fp16-ckx59ghtpa
       framework: TensorRT-LLM
-      displayName: Nemoretriever Graphic Elements V1 L40Sx1 FP16
+      displayName: Nemoretriever Page Elements V2 L40Sx1 FP16
       ngcMetadata:
         90699b066c264c9533628aeb4f1814ef51e0f2f021540e3ae77181f2ef9ce9ed:
-          model: nvidia/nemoretriever-graphic-elements-v1
+          model: nvidia/nemoretriever-page-elements-v2
           release: 1.3.0
           tags:
             backend: triton
@@ -137,8 +133,6 @@ models:
             gpu: L40S
             model_type: tensorrt
             precision: fp16
-            pp: '1'
-            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -151,12 +145,12 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 1GB
-    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:b200x1-trt-fp16-4kosyy1fig
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:b200x1-trt-fp16-b0owuhri1a
       framework: TensorRT-LLM
-      displayName: Nemoretriever Graphic Elements V1 B200x1 FP16
+      displayName: Nemoretriever Page Elements V2 B200x1 FP16
       ngcMetadata:
         a7d7cc7f7236b793a7722a3f0777b0cf3a989cc3c2c34d3e66a392329e1530e7:
-          model: nvidia/nemoretriever-graphic-elements-v1
+          model: nvidia/nemoretriever-page-elements-v2
           release: 1.3.0
           tags:
             backend: triton
@@ -164,8 +158,6 @@ models:
             gpu: B200
             model_type: tensorrt
             precision: fp16
-            pp: '1'
-            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -178,12 +170,12 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 1GB
-    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:l4x1-trt-fp16-lhpdyawoug
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:l4x1-trt-fp16-z-e8x-oorg
       framework: TensorRT-LLM
-      displayName: Nemoretriever Graphic Elements V1 L4x1 FP16
+      displayName: Nemoretriever Page Elements V2 L4x1 FP16
       ngcMetadata:
         ed0b8106aedfc536be363b6f1f0901bd4cd371ef22e640ac03fa7f4e3ed71647:
-          model: nvidia/nemoretriever-graphic-elements-v1
+          model: nvidia/nemoretriever-page-elements-v2
           release: 1.3.0
           tags:
             backend: triton
@@ -191,8 +183,6 @@ models:
             gpu: L4
             model_type: tensorrt
             precision: fp16
-            pp: '1'
-            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -205,12 +195,12 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 1GB
-    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:a100x1-trt-fp16-7lfmwoem-q
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:a100x1-trt-fp16-vwtgi2gdbg
       framework: TensorRT-LLM
-      displayName: Nemoretriever Graphic Elements V1 A100-SXM4-40GBx1 FP16
+      displayName: Nemoretriever Page Elements V2 A100-SXM4-40GBx1 FP16
       ngcMetadata:
         f93ae043aafc696a85fc58461c074397d39ec747651ca996ae470222f93b4e62:
-          model: nvidia/nemoretriever-graphic-elements-v1
+          model: nvidia/nemoretriever-page-elements-v2
           release: 1.3.0
           tags:
             backend: triton
@@ -218,8 +208,6 @@ models:
             gpu: A100-SXM4-40GB
             model_type: tensorrt
             precision: fp16
-            pp: '1'
-            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -234,11 +222,11 @@ models:
         value: 1GB
   labels:
   - signed images
+  - NSPECT-7OBP-T77C
   - NVIDIA AI Enterprise Supported
   - NVIDIA NIM
-  - NSPECT-7OBP-T77C
   config:
     architectures:
     - Other
-    modelType: NGC
+    modelType: NIM
   license: NVIDIA AI Foundation Models Community License
