@@ -1,0 +1,1132 @@
+6d22b7268bf1fa8a589f0b75f3759ade908149d75b8b80d3e543d80675fc0b26:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    pp: '1'
+    precision: bf16
+    llm_engine: vllm
+    tp: '2'
+  container_url:
+  workspace: !workspace
+    components:
+    - dst: ''
+      src:
+        repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+        files:
+        - !name config.json
+        - !name generation_config.json
+        - !name preprocessor_config.json
+        - !name model-00001-of-00037.safetensors
+        - !name model-00002-of-00037.safetensors
+        - !name model-00003-of-00037.safetensors
+        - !name model-00004-of-00037.safetensors
+        - !name model-00005-of-00037.safetensors
+        - !name model-00006-of-00037.safetensors
+        - !name model-00007-of-00037.safetensors
+        - !name model-00008-of-00037.safetensors
+        - !name model-00009-of-00037.safetensors
+        - !name model-00010-of-00037.safetensors
+        - !name model-00011-of-00037.safetensors
+        - !name model-00012-of-00037.safetensors
+        - !name model-00013-of-00037.safetensors
+        - !name model-00014-of-00037.safetensors
+        - !name model-00015-of-00037.safetensors
+        - !name model-00016-of-00037.safetensors
+        - !name model-00017-of-00037.safetensors
+        - !name model-00018-of-00037.safetensors
+        - !name model-00019-of-00037.safetensors
+        - !name model-00020-of-00037.safetensors
+        - !name model-00021-of-00037.safetensors
+        - !name model-00022-of-00037.safetensors
+        - !name model-00023-of-00037.safetensors
+        - !name model-00024-of-00037.safetensors
+        - !name model-00025-of-00037.safetensors
+        - !name model-00026-of-00037.safetensors
+        - !name model-00027-of-00037.safetensors
+        - !name model-00028-of-00037.safetensors
+        - !name model-00029-of-00037.safetensors
+        - !name model-00030-of-00037.safetensors
+        - !name model-00031-of-00037.safetensors
+        - !name model-00032-of-00037.safetensors
+        - !name model-00033-of-00037.safetensors
+        - !name model-00034-of-00037.safetensors
+        - !name model-00035-of-00037.safetensors
+        - !name model-00036-of-00037.safetensors
+        - !name model-00037-of-00037.safetensors
+        - !name model.safetensors.index.json
+    - dst: ''
+      src:
+        repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+        files:
+        - !name special_tokens_map.json
+        - !name tokenizer.json
+        - !name tokenizer_config.json
+    - dst: ''
+      src:
+        repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-eager-mml
+        files:
+        - !name runtime_params.json
+cd3378d956c8f663391615ba64b117e74005bcb39a168b6254b731c0d77c40fa:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    pp: '1'
+    precision: bf16
+    llm_engine: vllm
+    tp: '4'
+  container_url:
+  workspace: !workspace
+    components:
+    - dst: ''
+      src:
+        repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+        files:
+        - !name config.json
+        - !name generation_config.json
+        - !name preprocessor_config.json
+        - !name model-00001-of-00037.safetensors
+        - !name model-00002-of-00037.safetensors
+        - !name model-00003-of-00037.safetensors
+        - !name model-00004-of-00037.safetensors
+        - !name model-00005-of-00037.safetensors
+        - !name model-00006-of-00037.safetensors
+        - !name model-00007-of-00037.safetensors
+        - !name model-00008-of-00037.safetensors
+        - !name model-00009-of-00037.safetensors
+        - !name model-00010-of-00037.safetensors
+        - !name model-00011-of-00037.safetensors
+        - !name model-00012-of-00037.safetensors
+        - !name model-00013-of-00037.safetensors
+        - !name model-00014-of-00037.safetensors
+        - !name model-00015-of-00037.safetensors
+        - !name model-00016-of-00037.safetensors
+        - !name model-00017-of-00037.safetensors
+        - !name model-00018-of-00037.safetensors
+        - !name model-00019-of-00037.safetensors
+        - !name model-00020-of-00037.safetensors
+        - !name model-00021-of-00037.safetensors
+        - !name model-00022-of-00037.safetensors
+        - !name model-00023-of-00037.safetensors
+        - !name model-00024-of-00037.safetensors
+        - !name model-00025-of-00037.safetensors
+        - !name model-00026-of-00037.safetensors
+        - !name model-00027-of-00037.safetensors
+        - !name model-00028-of-00037.safetensors
+        - !name model-00029-of-00037.safetensors
+        - !name model-00030-of-00037.safetensors
+        - !name model-00031-of-00037.safetensors
+        - !name model-00032-of-00037.safetensors
+        - !name model-00033-of-00037.safetensors
+        - !name model-00034-of-00037.safetensors
+        - !name model-00035-of-00037.safetensors
+        - !name model-00036-of-00037.safetensors
+        - !name model-00037-of-00037.safetensors
+        - !name model.safetensors.index.json
+    - dst: ''
+      src:
+        repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+        files:
+        - !name special_tokens_map.json
+        - !name tokenizer.json
+        - !name tokenizer_config.json
+    - dst: ''
+      src:
+        repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-eager-mml
+        files:
+        - !name runtime_params.json
+
+b46681d3e72e1a936c494ed422f08194c35ab013d4e2c1aeea7ea9fc6338fa07:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    pp: '1'
+    precision: bf16
+    llm_engine: vllm
+    tp: '8'
+  container_url:
+  workspace: !workspace
+    components:
+    - dst: ''
+      src:
+        repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+        files:
+        - !name config.json
+        - !name generation_config.json
+        - !name preprocessor_config.json
+        - !name model-00001-of-00037.safetensors
+        - !name model-00002-of-00037.safetensors
+        - !name model-00003-of-00037.safetensors
+        - !name model-00004-of-00037.safetensors
+        - !name model-00005-of-00037.safetensors
+        - !name model-00006-of-00037.safetensors
+        - !name model-00007-of-00037.safetensors
+        - !name model-00008-of-00037.safetensors
+        - !name model-00009-of-00037.safetensors
+        - !name model-00010-of-00037.safetensors
+        - !name model-00011-of-00037.safetensors
+        - !name model-00012-of-00037.safetensors
+        - !name model-00013-of-00037.safetensors
+        - !name model-00014-of-00037.safetensors
+        - !name model-00015-of-00037.safetensors
+        - !name model-00016-of-00037.safetensors
+        - !name model-00017-of-00037.safetensors
+        - !name model-00018-of-00037.safetensors
+        - !name model-00019-of-00037.safetensors
+        - !name model-00020-of-00037.safetensors
+        - !name model-00021-of-00037.safetensors
+        - !name model-00022-of-00037.safetensors
+        - !name model-00023-of-00037.safetensors
+        - !name model-00024-of-00037.safetensors
+        - !name model-00025-of-00037.safetensors
+        - !name model-00026-of-00037.safetensors
+        - !name model-00027-of-00037.safetensors
+        - !name model-00028-of-00037.safetensors
+        - !name model-00029-of-00037.safetensors
+        - !name model-00030-of-00037.safetensors
+        - !name model-00031-of-00037.safetensors
+        - !name model-00032-of-00037.safetensors
+        - !name model-00033-of-00037.safetensors
+        - !name model-00034-of-00037.safetensors
+        - !name model-00035-of-00037.safetensors
+        - !name model-00036-of-00037.safetensors
+        - !name model-00037-of-00037.safetensors
+        - !name model.safetensors.index.json
+    - dst: ''
+      src:
+        repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+        files:
+        - !name special_tokens_map.json
+        - !name tokenizer.json
+        - !name tokenizer_config.json
+    - dst: ''
+      src:
+        repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-eager-mml
+        files:
+        - !name runtime_params.json
+
+1b1bf5e095aaf874abd8a55c44a2be474c512b67bd81f3a6943e0f5bdbd15d6f:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H200
+    gpu_device: 2335:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: latency
+    tp: '4'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h200x4-bf16-latency.0.3.1339
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+1c2497fffb227c2baa4a9ad168ea758c747013c374d161e3c5fb468cb51fe2d8:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H200
+    gpu_device: 2335:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: throughput
+    tp: '2'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h200x2-bf16-throughput.0.3.1339
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+29436a8e8bf247d36421bce49a57a4d94e0a6c2445082bd86589266daa4f395c:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H100-PCIe
+    gpu_device: 2331:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: fp8
+    profile: throughput
+    tp: '2'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100-pciex2-fp8-throughput.0.3.1342
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+3768177072e461a3839f05d4a133c5ed580ef81ce733baccb27a6b485cff538a:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: A100-PCIe
+    gpu_device: 20b5:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: throughput
+    tp: '4'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100-pciex4-bf16-throughput.0.3.1342
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+42c91902414bc5ea7f4ef4e9a34ef382165b8b65f9adcc5d1abaf195ade2d8fc:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H100
+    gpu_device: 2330:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: throughput
+    tp: '4'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-bf16-throughput.0.3.20194742
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+49ec4c63d948e1176be848da5f76f2a70189a27816c07bd838b795bdc37e8de1:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H200
+    gpu_device: 2335:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: fp8
+    profile: throughput
+    tp: '1'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h200x1-fp8-throughput.0.3.1342
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+6b24bf2e19c23b85f9d2651efdc2de08cd179a03c50f942b1dcd856fa4d4074b:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H100
+    gpu_device: 2330:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: fp8
+    profile: throughput
+    tp: '2'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-fp8-throughput.0.3.20194742
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+7bb72cbd19b5eab69ed21b2e031e4ea18909ff034255471c25b29ab45a99cc8b:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: L40S
+    gpu_device: 26b5:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: throughput
+    tp: '8'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'trtllm_engine/rank4.engine'
+            - !name 'trtllm_engine/rank5.engine'
+            - !name 'trtllm_engine/rank6.engine'
+            - !name 'trtllm_engine/rank7.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx8-bf16-throughput.0.3.1342
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+8523451bd9d2f52a598e87f5b421c921f0084b17acf524951ccfa99b55bf5169:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H100-PCIe
+    gpu_device: 2331:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: throughput
+    tp: '4'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100-pciex4-bf16-throughput.0.3.1342
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+85e7244275402fe69b281c0c4fdbaba957b704dc936ea6bb7b4fc98d6f60b2d7:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: A100-PCIe
+    gpu_device: 20b5:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: latency
+    tp: '8'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'trtllm_engine/rank4.engine'
+            - !name 'trtllm_engine/rank5.engine'
+            - !name 'trtllm_engine/rank6.engine'
+            - !name 'trtllm_engine/rank7.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100-pciex8-bf16-latency.0.3.1337
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+874cd9d4e077867631b53cc97203893692c6a66e2ea861aacd6186500c8e52d4:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H100-PCIe
+    gpu_device: 2331:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: latency
+    tp: '8'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'trtllm_engine/rank4.engine'
+            - !name 'trtllm_engine/rank5.engine'
+            - !name 'trtllm_engine/rank6.engine'
+            - !name 'trtllm_engine/rank7.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100-pciex8-bf16-latency.0.3.1337
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+a47e93fbb1392ef02c396096d3d610219a49e1a00cbc61818d93c2db5e298e4d:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: A100
+    gpu_device: 20b2:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: latency
+    tp: '8'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'trtllm_engine/rank4.engine'
+            - !name 'trtllm_engine/rank5.engine'
+            - !name 'trtllm_engine/rank6.engine'
+            - !name 'trtllm_engine/rank7.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x8-bf16-latency.0.3.20194742
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+a5dcdf7b6790e6084e6bef28018a6f22e578c43c335defec9723c1c5b7232f7a:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H200
+    gpu_device: 2335:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: fp8
+    profile: latency
+    tp: '2'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h200x2-fp8-latency.0.3.1339
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+a6e9fde5c1edfb4ab4c0b206a536693a6f9b1f95cde1448ddd679fb880fcef71:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H100
+    gpu_device: 2330:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: fp8
+    profile: latency
+    tp: '4'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-fp8-latency.0.3.20194742
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+e75f928acc511ca16350e80f6f4dfe70d1939e2b011019bd86883a51dbf278f4:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: A100
+    gpu_device: 20b2:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: throughput
+    tp: '4'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x4-bf16-throughput.0.3.20194742
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+e994500d8b0e10f63a08e6a90143a60c360d004f6d5ea8bdb4d38d215eb3fa83:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H100
+    gpu_device: 2330:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    profile: latency
+    tp: '8'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'trtllm_engine/rank4.engine'
+            - !name 'trtllm_engine/rank5.engine'
+            - !name 'trtllm_engine/rank6.engine'
+            - !name 'trtllm_engine/rank7.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x8-bf16-latency.0.3.20194742
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+
+f234484aa99918f5208eb6b9ce12116ede688d582c5cea51fe1a5c038d0c2531:
+  model: meta/llama-3.2-90b-vision-instruct
+  release: 1.1.1
+  tags:
+    gpu: H100-PCIe
+    gpu_device: 2331:10de
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: fp8
+    profile: latency
+    tp: '4'
+  workspace: !workspace
+    components:
+      - dst: ''
+        src:
+          files:
+            - !name 'LICENSE.txt'
+            - !name 'NOTICE.txt'
+            - !name 'checksums.blake3'
+            - !name 'trtllm_engine/config.json'
+            - !name 'trtllm_engine/metadata.json'
+            - !name 'trtllm_engine/rank0.engine'
+            - !name 'trtllm_engine/rank1.engine'
+            - !name 'trtllm_engine/rank2.engine'
+            - !name 'trtllm_engine/rank3.engine'
+            - !name 'visual_engine/config.json'
+            - !name 'visual_engine/metadata.json'
+            - !name 'visual_engine/visual_encoder.engine'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100-pciex4-fp8-latency.0.3.1337
+      - dst: ''
+        src:
+          files:
+            - !name 'config.json'
+            - !name 'generation_config.json'
+            - !name 'preprocessor_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b
+      - dst: ''
+        src:
+          files:
+            - !name 'special_tokens_map.json'
+            - !name 'tokenizer.json'
+            - !name 'tokenizer_config.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+      - dst: visual_engine
+        src:
+          files:
+            - !name 'vision_processor.py'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+      - dst: ''
+        src:
+          files:
+            - !name 'runtime_params.json'
+          repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
