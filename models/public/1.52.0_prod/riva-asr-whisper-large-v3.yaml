@@ -1,7 +1,7 @@
 models:
 - name: Riva ASR Whisper Large v3
   displayName: Riva ASR Whisper Large v3
-  modelHubID: riva-asr-whisper-large-v3
+  modelHubID: nvidia/riva-asr/whisper
   category: Text-Prompt
   type: NGC
   description: This model is used to transcribe short-form audio files and is designed to be compatible with OpenAI's sequential long-form transcription algorithm. Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation. Trained on 680k hours of labeled data, Whisper models demonstrate a strong ability to generalize to many datasets and domains without the need for fine-tuning. Whisper-large-v3 is one of the 5 configurations of the model with 1550M parameters. This model version is optimized to run with NVIDIA TensorRT-LLM. This model is ready for commercial use.
@@ -16,13 +16,13 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/whisper_large
     optimizationProfiles:
-    - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-25.06
+    - profileId: nim/nvidia/whisper-large-v3:ofl_rmir_24.12
       framework: TensorRT-LLM
       displayName: Riva ASR Whisper Large v3 A10G
       ngcMetadata:
         5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
           model: nvidia/riva-asr/whisper
-          release: 1.3.1
+          release: 1.3.0
           tags:
             mode: ofl
             model_type: rmir
@@ -40,51 +40,16 @@ models:
       - key: GPU DEVICE
         value: 2237:10de
       - key: NIM VERSION
-        value: 1.3.1
+        value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 3GB
-      - key: MODEL TYPE
-        value: RMIR
-      - key: MODE
-        value: OFL
-    - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-25.06
-      framework: TensorRT-LLM
-      displayName: Riva ASR Whisper Large v3 H200
-      ngcMetadata:
-        5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
-          model: nvidia/riva-asr/whisper
-          release: 1.3.1
-          tags:
-            mode: ofl
-            model_type: rmir
-            name: whisper-large-v3
-            gpu: H200
-            gpu_device: 2331:10de
-            pp: '1'
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2331:10de
-      - key: NIM VERSION
-        value: 1.3.1
-      - key: DOWNLOAD SIZE
-        value: 3GB
-      - key: MODEL TYPE
-        value: RMIR
-      - key: MODE
-        value: OFL
-    - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-25.06
+    - profileId: nim/nvidia/whisper-large-v3:ofl_rmir_24.12
       framework: TensorRT-LLM
       displayName: Riva ASR Whisper Large v3 L40S
       ngcMetadata:
         5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
           model: nvidia/riva-asr/whisper
-          release: 1.3.1
+          release: 1.3.0
           tags:
             mode: ofl
             model_type: rmir
@@ -102,20 +67,16 @@ models:
       - key: GPU DEVICE
         value: 26b9:10de
       - key: NIM VERSION
-        value: 1.3.1
+        value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 3GB
-      - key: MODEL TYPE
-        value: RMIR
-      - key: MODE
-        value: OFL
-    - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-25.06
+    - profileId: nim/nvidia/whisper-large-v3:ofl_rmir_24.12
       framework: TensorRT-LLM
       displayName: Riva ASR Whisper Large v3 A100
       ngcMetadata:
         5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
           model: nvidia/riva-asr/whisper
-          release: 1.3.1
+          release: 1.3.0
           tags:
             mode: ofl
             model_type: rmir
@@ -133,22 +94,18 @@ models:
       - key: GPU DEVICE
         value: 20b2:10de
       - key: NIM VERSION
-        value: 1.3.1
+        value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 3GB
-      - key: MODEL TYPE
-        value: RMIR
-      - key: MODE
-        value: OFL
-    - profileId: nim/nvidia/whisper-large-v3:h100x1-ofl-25.08-fp16-mnz4pnn0pw
+    - profileId: nim/nvidia/whisper-large-v3:ofl_h100x1_24.12
       framework: TensorRT-LLM
-      displayName: Riva ASR Whisper Large v3 H100 FP16
+      displayName: Riva ASR Whisper Large v3 H100
       ngcMetadata:
-        72232937075119887298deb92b5e58f4d98a0ce0948df60d424f0d97b05da55e:
+        af97029e733095a937ac19e86e586e4a4e2042e1019866dc031e629c7a875fb2:
           model: nvidia/riva-asr/whisper
-          release: 1.3.1
+          release: 1.3.0
           tags:
-            gpu_device: '2330'
+            gpu_device: 2331:10de
             mode: ofl
             model_type: prebuilt
             name: whisper-large-v3
@@ -162,15 +119,11 @@ models:
       - key: COUNT
         value: 1
       - key: GPU DEVICE
-        value: 2330
+        value: 2330:10de
       - key: NIM VERSION
-        value: 1.3.1
+        value: 1.3.0
       - key: DOWNLOAD SIZE
-        value: 2GB
-      - key: MODEL TYPE
-        value: PREBUILT
-      - key: MODE
-        value: OFL
+        value: 3GB
   labels:
   - Transformer
   - TensorRT-LLM
