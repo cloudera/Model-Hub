@@ -11,6 +11,7 @@ profiles:
     gpu_key: h100-nvl
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -42,6 +43,7 @@ profiles:
     gpu_key: a100-sxm4-40gb
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -71,6 +73,7 @@ profiles:
     compute_capability: '12.0'
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -99,6 +102,7 @@ profiles:
     gpu_key: l40s
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -128,6 +132,7 @@ profiles:
     compute_capability: '8.9'
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -159,6 +164,7 @@ profiles:
     gpu_key: a100-sxm4-80gb
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -190,6 +196,7 @@ profiles:
     gpu_key: l40s
     model_type: tensorrt
     precision: fp8
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -219,6 +226,7 @@ profiles:
     compute_capability: '12.0'
     model_type: tensorrt
     precision: fp8
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -247,6 +255,7 @@ profiles:
     gpu_key: a10g
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -276,6 +285,7 @@ profiles:
     compute_capability: '8.6'
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -307,6 +317,7 @@ profiles:
     gpu_key: b200
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -338,6 +349,7 @@ profiles:
     gpu_key: h100-hbm3-80gb
     model_type: tensorrt
     precision: fp8
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -367,6 +379,7 @@ profiles:
     compute_capability: '10.0'
     model_type: tensorrt
     precision: fp8
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -398,6 +411,7 @@ profiles:
     gpu_key: l4
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -427,6 +441,7 @@ profiles:
     compute_capability: '9.0'
     model_type: tensorrt
     precision: fp8
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -458,6 +473,7 @@ profiles:
     gpu_key: l4
     model_type: tensorrt
     precision: fp8
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -487,6 +503,7 @@ profiles:
     compute_capability: '9.0'
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -516,6 +533,7 @@ profiles:
     compute_capability: '8.0'
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -547,6 +565,7 @@ profiles:
     gpu_key: h100-nvl
     model_type: tensorrt
     precision: fp8
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -576,6 +595,7 @@ profiles:
     compute_capability: '8.9'
     model_type: tensorrt
     precision: fp8
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -605,6 +625,7 @@ profiles:
     compute_capability: '10.0'
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -636,6 +657,7 @@ profiles:
     gpu_key: h100-hbm3-80gb
     model_type: tensorrt
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/checksums.blake3:
@@ -664,6 +686,7 @@ profiles:
     backend: onnx
     model_type: onnx
     precision: fp16
+    tp: '1'
   workspace:
     files:
       model/model.onnx.tar:
