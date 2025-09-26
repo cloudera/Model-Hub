@@ -30,12 +30,13 @@ models:
             gpu_key: h100-nvl
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: H100
+        value: H100-NVL
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -60,12 +61,13 @@ models:
             gpu_key: a100-sxm4-40gb
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: A100
+        value: A100-SXM4-40GB
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -90,6 +92,7 @@ models:
             gpu_key: l40s
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -120,12 +123,13 @@ models:
             gpu_key: a100-sxm4-80gb
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: A100
+        value: A100-SXM4-80GB
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -150,6 +154,7 @@ models:
             gpu_key: l40s
             model_type: tensorrt
             precision: fp8
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -180,6 +185,7 @@ models:
             gpu_key: a10g
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -210,6 +216,7 @@ models:
             gpu_key: b200
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -240,12 +247,13 @@ models:
             gpu_key: h100-hbm3-80gb
             model_type: tensorrt
             precision: fp8
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
         value: FP8
       - key: GPU
-        value: H100
+        value: H100-HBM3-80GB
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -270,6 +278,7 @@ models:
             gpu_key: l4
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -300,6 +309,7 @@ models:
             gpu_key: l4
             model_type: tensorrt
             precision: fp8
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -330,12 +340,13 @@ models:
             gpu_key: h100-nvl
             model_type: tensorrt
             precision: fp8
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
         value: FP8
       - key: GPU
-        value: H100
+        value: H100-NVL
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -360,12 +371,13 @@ models:
             gpu_key: h100-hbm3-80gb
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: H100
+        value: H100-HBM3-80GB
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -387,10 +399,13 @@ models:
             backend: onnx
             model_type: onnx
             precision: fp16
+            tp: '1'
       modelFormat: onnx
       spec:
       - key: PRECISION
         value: FP16
+      - key: COUNT
+        value: 1
       - key: NIM VERSION
         value: 1.8.0
       - key: DOWNLOAD SIZE

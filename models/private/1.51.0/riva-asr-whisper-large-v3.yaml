@@ -27,6 +27,7 @@ models:
             mode: ofl
             model_type: rmir
             name: whisper-large-v3
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: COUNT
@@ -52,7 +53,6 @@ models:
             model_type: prebuilt
             name: whisper-large-v3
             gpu: H100
-            pp: '1'
             tp: '1'
       modelFormat: trt-llm
       spec:
