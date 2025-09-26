@@ -29,6 +29,7 @@ models:
             gpu: A100-SXM4-80GB
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -41,6 +42,10 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
     - profileId: nim/baidu/paddleocr:2_TRT_python_2
       framework: TensorRT-LLM
       displayName: Paddleocr H100-NVLx1 FP16
@@ -54,6 +59,7 @@ models:
             gpu: H100-NVL
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -66,6 +72,10 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
     - profileId: nim/baidu/paddleocr:2_TRT_python_2
       framework: TensorRT-LLM
       displayName: Paddleocr H100-HBM3-80GBx1 FP16
@@ -79,6 +89,7 @@ models:
             gpu: H100-HBM3-80GB
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -91,6 +102,10 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
     - profileId: nim/baidu/paddleocr:a10gx1-trt-fp16-ijpjeptpna
       framework: TensorRT-LLM
       displayName: Paddleocr A10Gx1 FP16
@@ -104,6 +119,7 @@ models:
             gpu: A10G
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -116,6 +132,10 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
     - profileId: nim/baidu/paddleocr:l40sx1-trt-fp16-evboykuf0g
       framework: TensorRT-LLM
       displayName: Paddleocr L40Sx1 FP16
@@ -129,6 +149,7 @@ models:
             gpu: L40S
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -141,6 +162,10 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
     - profileId: nim/baidu/paddleocr:b200x1-trt-fp16-itomrwaucq
       framework: TensorRT-LLM
       displayName: Paddleocr B200x1 FP16
@@ -154,6 +179,7 @@ models:
             gpu: B200
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -166,6 +192,10 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
     - profileId: nim/baidu/paddleocr:l4x1-trt-fp16-fswetrkejq
       framework: TensorRT-LLM
       displayName: Paddleocr L4x1 FP16
@@ -179,6 +209,7 @@ models:
             gpu: L4
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -191,6 +222,36 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/baidu/paddleocr:4_ONNX_python_2
+      framework: ONNX
+      displayName: Paddleocr ONNX FP16
+      ngcMetadata:
+        edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b:
+          model: baidu/paddleocr
+          release: 1.4.0
+          tags:
+            backend: triton
+            model_type: onnx
+            precision: fp16
+            tp: '1'
+      modelFormat: onnx
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.4.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: ONNX
     - profileId: nim/baidu/paddleocr:2_TRT_python_2
       framework: TensorRT-LLM
       displayName: Paddleocr A100-SXM4-40GBx1 FP16
@@ -204,6 +265,7 @@ models:
             gpu: A100-SXM4-40GB
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -216,6 +278,10 @@ models:
         value: 1.4.0
       - key: DOWNLOAD SIZE
         value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
   labels:
   - signed images
   - NSPECT-LDAL-INWI
