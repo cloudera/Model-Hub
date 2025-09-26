@@ -29,6 +29,7 @@ models:
             gpu: A10G
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -58,6 +59,7 @@ models:
             gpu: L40S
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -74,6 +76,32 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
+    - profileId: nim/baidu/paddleocr:4_ONNX_python_2
+      framework: ONNX
+      displayName: Paddleocr ONNX FP16
+      ngcMetadata:
+        edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b:
+          model: baidu/paddleocr
+          release: 1.4.0
+          tags:
+            backend: triton
+            model_type: onnx
+            precision: fp16
+            tp: '1'
+      modelFormat: onnx
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.4.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: ONNX
   labels:
   - signed images
   - NSPECT-LDAL-INWI

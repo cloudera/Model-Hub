@@ -26,7 +26,7 @@ models:
           tags:
             backend: triton
             batch_size: '32'
-            gpu: A10G
+            gpu: a10g
             model_type: tensorrt
             precision: fp16
             pp: '1'
@@ -57,7 +57,7 @@ models:
           tags:
             backend: triton
             batch_size: '32'
-            gpu: L40S
+            gpu: l40s
             model_type: tensorrt
             precision: fp16
             pp: '1'
@@ -78,6 +78,31 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:a100x1-onnx-fp16-wagmq6-x1q
+      framework: ONNX
+      displayName: Nemoretriever Page Elements V2 ONNX FP16
+      ngcMetadata:
+        edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b:
+          model: nvidia/nemoretriever-page-elements-v2
+          release: 1.3.0
+          tags:
+            backend: triton
+            model_type: onnx
+            precision: fp16
+      modelFormat: onnx
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: ONNX
   labels:
   - signed images
   - NSPECT-7OBP-T77C
