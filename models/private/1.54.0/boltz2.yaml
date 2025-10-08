@@ -1,0 +1,79 @@
+models:
+- name: Boltz2
+  displayName: Boltz2
+  modelHubID: boltz2
+  category: Biology Foundation Model
+  type: NGC
+  description: Boltz-2 NIM is a next-generation structural biology foundation model that shows strong performance for both structure and affinity prediction.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+  modelVariants:
+  - variantId: Boltz2
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/mit/containers/boltz2
+    optimizationProfiles:
+    - profileId: nim/mit/boltz2:1.1.0-combi-gpuA100_sm80_v11
+      framework: TensorRT-LLM
+      displayName: Boltz2 A100x1 SM80 V11
+      ngcMetadata:
+        9c411ee75a91c41ae5e85ae81e91ab9fcdde58477da17785d188e0de41a54a8e:
+          model: mit/boltz2
+          release: 1.1.0
+          tags:
+            gpu: A100
+            sm: '80'
+            v: '11'
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.1.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: SM
+        value: '80'
+      - key: V
+        value: '11'
+    - profileId: nim/mit/boltz2:1.1.0-combi-gpuL40S_sm89_v11
+      framework: TensorRT-LLM
+      displayName: Boltz2 L40Sx1 SM89 V11
+      ngcMetadata:
+        f429a14a6470d83cd68dd11dc45cbd69c235636d5f82f147cad04b927e86be56:
+          model: mit/boltz2
+          release: 1.1.0
+          tags:
+            gpu: L40S
+            sm: '89'
+            v: '11'
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.1.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: SM
+        value: '89'
+      - key: V
+        value: '11'
+  labels:
+  - Biology Foundation Model
+  - signed images
+  - NSPECT-D4IX-8I2O
+  - NVIDIA AI Enterprise Supported
+  - NVIDIA NIM
+  config:
+    architectures:
+    - Other
+    modelType: NIM
+  license: NVIDIA AI Foundation Models Community License

@@ -1,0 +1,62 @@
+models:
+- name: Llama 3.2 NV EmbedQA 1b V2
+  displayName: Llama 3.2 NV EmbedQA 1b V2
+  modelHubID: nvidia/llama-3.2-nv-embedqa-1b-v2
+  category: Text Embedding
+  type: NGC
+  description: The NVIDIA Retrieval QA Llama3.2 1b Embedding NIM is an embedding NIM optimized for multilingual and crosslingual text question-answering retrieval.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://llama.meta.com/llama3/use-policy/
+  - label: License Agreement
+    url: https://llama.meta.com/llama3/license/
+  modelVariants:
+  - variantId: Llama 3.2 NV EmbedQA 1b V2
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.2-nv-embedqa-1b-v2
+    optimizationProfiles:
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:onnx-precision.fp16-7c7a1c17
+      framework: ONNX
+      displayName: Llama 3.2 NV Embedqa 1B V2 ONNX FP16
+      ngcMetadata:
+        f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.10.0
+          tags:
+            backend: onnx
+            model_type: onnx
+            precision: fp16
+      modelFormat: onnx
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.10.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: BACKEND
+        value: ONNX
+      - key: MODEL TYPE
+        value: ONNX
+      - key: MAX TOKENS
+        value: 8192
+      - key: TOTAL PARAMETERS (MILLIONS)
+        value: 1236
+      - key: Embedding Dimension
+        value: 2048
+  labels:
+  - Llama
+  - Embedding
+  - NeMo Retrieve
+  - Meta
+  - Chat
+  - Large Language Model
+  - NVIDIA Validated
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License
