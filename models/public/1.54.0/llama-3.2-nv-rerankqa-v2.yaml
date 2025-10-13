@@ -30,6 +30,7 @@ models:
             gpu_key: l40s
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -60,6 +61,7 @@ models:
             gpu_key: l40s
             model_type: tensorrt
             precision: fp8
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -90,6 +92,7 @@ models:
             gpu_key: a10g
             model_type: tensorrt
             precision: fp16
+            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -117,6 +120,7 @@ models:
             backend: onnx
             model_type: onnx
             precision: fp16
+            tp: '1'
       modelFormat: onnx
       spec:
       - key: PRECISION

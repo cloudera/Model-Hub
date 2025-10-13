@@ -29,7 +29,6 @@ models:
             gpu: A10G
             model_type: tensorrt
             precision: fp16
-            pp: '1'
             tp: '1'
       modelFormat: trt-llm
       spec:
@@ -60,7 +59,6 @@ models:
             gpu: L40S
             model_type: tensorrt
             precision: fp16
-            pp: '1'
             tp: '1'
       modelFormat: trt-llm
       spec:
@@ -89,6 +87,7 @@ models:
             backend: triton
             model_type: onnx
             precision: fp16
+            tp: '1'
       modelFormat: onnx
       spec:
       - key: PRECISION
