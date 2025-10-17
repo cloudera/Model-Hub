@@ -8,7 +8,6 @@ profiles:
     gpu: A100
     sm: '80'
     v: '11'
-    tp: '1'
   workspace:
     files:
       affinity_module1_1_1_bfloat16_16_1536_engines/torch/config.json:
@@ -129,8 +128,7 @@ profiles:
         uri: ngc://nim/mit/boltz2:1.1.0-combi-gpuA100_sm80_v11?file=token_transformer_1_1_bfloat16_16_1536_engines%2Ftrt%2Frank0.engine
         checksum: blake3:cd8a0421a152cc5d84ddb59179d0b8c6789a355ed9c10a8e2959322a580639db
 - id: af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262
-  tags:
-    tp: '1'
+  tags: {}
   workspace:
     files:
       boltz1_conf.ckpt:
@@ -153,7 +151,6 @@ profiles:
     gpu: B200
     sm: '100'
     v: '11'
-    tp: '1'
   workspace:
     files:
       affinity_module1_1_1_bfloat16_16_1536_engines/torch/config.json:
@@ -278,7 +275,6 @@ profiles:
     gpu: L40S
     sm: '89'
     v: '11'
-    tp: '1'
   workspace:
     files:
       affinity_module1_1_1_bfloat16_16_1536_engines/torch/config.json:
@@ -403,7 +399,6 @@ profiles:
     gpu: H100
     sm: '90'
     v: '11'
-    tp: '1'
   workspace:
     files:
       affinity_module1_1_1_bfloat16_16_1536_engines/torch/config.json:
