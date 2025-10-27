@@ -1,0 +1,680 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: nvidia/llama-3.2-nv-rerankqa-1b-v2
+release: 1.8.0
+profiles:
+- id: 3b1e767e41d02ed0ffa5aa6b46a2edfdd1540edaec2eeda4c00278c838bba38b
+  tags:
+    backend: tensorrt
+    device_id: 2321:10de
+    gpu: NVIDIA H100 NVL
+    gpu_key: h100-nvl
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16--ckqlv3j2g?file=checksums.blake3
+        checksum: blake3:e2bdf43f016d653e6ab1f6f240c3c40b34436fe2e7ce3d9ca221e5ba3997681f
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16--ckqlv3j2g?file=memory_footprint.json
+        checksum: blake3:e8dd981016f422e91706f2fa0f704e98cf4889b50e641d4fa0197c332338d880
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16--ckqlv3j2g?file=metadata.json
+        checksum: blake3:893a626c5b6a795fa58deb651540c89317df1ddd06c2570300318f09815564fc
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16--ckqlv3j2g?file=model.plan
+        checksum: blake3:f28b4bd0a1d63a302ac1c0a792c112ca2a0923c8f7aa2ed0dc019ff48d77f511
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 477500a740ea33ea1419289866bbfd598ce51a806fe034b48dc176db32155f59
+  tags:
+    backend: tensorrt
+    device_id: 20b0:10de
+    gpu: NVIDIA A100-SXM4-40GB
+    gpu_key: a100-sxm4-40gb
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-dxtbz8wstg?file=checksums.blake3
+        checksum: blake3:ea705697e73a6ea13ca957c96193fcdf381037c0199cfd7f7f45cd735f0405e5
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-dxtbz8wstg?file=memory_footprint.json
+        checksum: blake3:62b03f1bf33dbeb4ae43ca79205889c747e1c1fa2d024a0c66789f37c52eec43
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-dxtbz8wstg?file=metadata.json
+        checksum: blake3:10c4c9a491278301448e2bc7e038e2a1b79ba79e657c86dd9fef8048f4579c3e
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-dxtbz8wstg?file=model.plan
+        checksum: blake3:766e58f3b98dd10be0e6da62f3344474a7f8611a62acf960f8c24f83fa59be3b
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 49a005cac3ae63d3016de2d91856590cf51f8fbb5b88e4f1dfc56039713ae970
+  tags:
+    backend: tensorrt
+    compute_capability: '12.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:rtx6000-blackwell-svx1-trt-fp16-otgooizflw?file=checksums.blake3
+        checksum: blake3:3192a952ffcba0b5034fa6d3335d7cdb5757ba3e1eb25ae68100bfcbc2db5e69
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:rtx6000-blackwell-svx1-trt-fp16-otgooizflw?file=metadata.json
+        checksum: blake3:5c1a2dd04eae1f9463d8acc7cfcdf62edd3b41c82418ae3d7825670a320c7b7c
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:rtx6000-blackwell-svx1-trt-fp16-otgooizflw?file=model.plan
+        checksum: blake3:d1610bf5506e2baed5a11089aa4d30ce1551de65f2c0217b3e5bf78b72535277
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 49d14b4eaebc6b1f61e48afb3d88535f4ad3758ea55036f5ab3815d1c5a927fc
+  tags:
+    backend: tensorrt
+    device_id: 26b9:10de
+    gpu: NVIDIA L40S
+    gpu_key: l40s
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp16-20qsn53gag?file=checksums.blake3
+        checksum: blake3:90f551acb7a4eee867864e7c481a68cf4e8abf0218cc4c038be1690819e7134a
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp16-20qsn53gag?file=memory_footprint.json
+        checksum: blake3:048fd5d55b14a9ada4c3a535fc7bec4258d99c2c345a01e0b11f4a272a1e2e2b
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp16-20qsn53gag?file=metadata.json
+        checksum: blake3:c4679fb3139affd30b4fdc16bbefede0974265778cc52ce61564cc3b3b6f509b
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp16-20qsn53gag?file=model.plan
+        checksum: blake3:5511430d6a2964541a226bc8c88702ad3c0b1b3066eb73175c2021a52fb0803d
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 4aa05527bed7c338689c9418e81d029fa03a2b58569aedda792e8d5af6abe91c
+  tags:
+    backend: tensorrt
+    compute_capability: '8.9'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp16-k5no-6dx4q?file=checksums.blake3
+        checksum: blake3:8c490bbd2fff30c1aa01ebd2e486c6c92aa311280bdf93f8ced1f947d0accbd2
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp16-k5no-6dx4q?file=memory_footprint.json
+        checksum: blake3:00c2dbeed800cbe1f5564ed0b3de115af3c388cc74d2c627b87dd8f5c16755d4
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp16-k5no-6dx4q?file=metadata.json
+        checksum: blake3:0f167083c33f06dbe26bef39094962ffca3a981d70507394aac5eb986de1ea37
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp16-k5no-6dx4q?file=model.plan
+        checksum: blake3:9df912efcb98dcdddb535aaf2b0d94795650fc2efeb20e76c29fcdfbd27a4afb
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 4ea4624dcc114adeeb29272322897800cddf5dfa873dac467f67d827b7dd9c4d
+  tags:
+    backend: tensorrt
+    device_id: 20b2:10de
+    gpu: NVIDIA A100-SXM4-80GB
+    gpu_key: a100-sxm4-80gb
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-dxtbz8wstg?file=checksums.blake3
+        checksum: blake3:ea705697e73a6ea13ca957c96193fcdf381037c0199cfd7f7f45cd735f0405e5
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-dxtbz8wstg?file=memory_footprint.json
+        checksum: blake3:62b03f1bf33dbeb4ae43ca79205889c747e1c1fa2d024a0c66789f37c52eec43
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-dxtbz8wstg?file=metadata.json
+        checksum: blake3:10c4c9a491278301448e2bc7e038e2a1b79ba79e657c86dd9fef8048f4579c3e
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-dxtbz8wstg?file=model.plan
+        checksum: blake3:766e58f3b98dd10be0e6da62f3344474a7f8611a62acf960f8c24f83fa59be3b
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 5036ebf412fba4e54511ab4b3822ec7dfb9fd2c256c3100ad2ed9d2b4bda9f79
+  tags:
+    backend: tensorrt
+    device_id: 26b9:10de
+    gpu: NVIDIA L40S
+    gpu_key: l40s
+    model_type: tensorrt
+    precision: fp8
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp8-4nwnajwq4g?file=checksums.blake3
+        checksum: blake3:df310d2fb9fa751d29b694f1791f679d5fae0189847c42496109f0d7646288eb
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp8-4nwnajwq4g?file=memory_footprint.json
+        checksum: blake3:298c53f8bff31c05a1459da773612c9d4ce80d43b8ae72bd0ccc319d5ecccc2f
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp8-4nwnajwq4g?file=metadata.json
+        checksum: blake3:884632ab897eaee8c34af0ccdb604d99a73f61941f39dab05842dd014d0150e3
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp8-4nwnajwq4g?file=model.plan
+        checksum: blake3:c49a3e9e396c683850f5763fb735c16f38ba197328dfebad6cd3f9a1e971d1e2
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 59158e9b900a3354d31240630a919edcb66e098846064e5b1ddff08894648410
+  tags:
+    backend: tensorrt
+    compute_capability: '12.0'
+    model_type: tensorrt
+    precision: fp8
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:rtx6000-blackwell-svx1-trt-fp8-qx2mxpz--g?file=checksums.blake3
+        checksum: blake3:f08a827bcc9d143dd7dee6e3b17c73333f60a556ec45e413ad1800cb31f480fe
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:rtx6000-blackwell-svx1-trt-fp8-qx2mxpz--g?file=metadata.json
+        checksum: blake3:0d08be0af195975a2dbdc31b90fddf43b1f57b372c4430c7ffa5db78f8b419bb
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:rtx6000-blackwell-svx1-trt-fp8-qx2mxpz--g?file=model.plan
+        checksum: blake3:3fb7eeabc68d67a2c0519e9a8d5516aa6baac830861bf0f0f41b244e93a4c4d5
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 6f21ae4169cfe3c03cc92eb194713f5a3044ac2f61526edf632d0f9a5155b538
+  tags:
+    backend: tensorrt
+    device_id: 2237:10de
+    gpu: NVIDIA A10G
+    gpu_key: a10g
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a10gx1-trt-fp16-fxo3knzn8w?file=checksums.blake3
+        checksum: blake3:04808dc5bc49209abd1958f3b114b796f18bc5fbd66f765a0a769171010f12d8
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a10gx1-trt-fp16-fxo3knzn8w?file=memory_footprint.json
+        checksum: blake3:9b15e6b4f1f23a8e80a415e50f7963b2ed5328610e1d991a61498f5b9f828257
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a10gx1-trt-fp16-fxo3knzn8w?file=metadata.json
+        checksum: blake3:a904c8238c7388dda6e75e56669126883e1c57c6a4bd69a6625ca85cc7f2681f
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a10gx1-trt-fp16-fxo3knzn8w?file=model.plan
+        checksum: blake3:466d8657c253965562ee8bd70097d7435628b50b424786d7732108fea8a4151e
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 6f5c738dcd6ce23e4f4256821411be425567817c688dbfc90c68ca706ea8dcee
+  tags:
+    backend: tensorrt
+    compute_capability: '8.6'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a10gx1-trt-fp16-elyjchstia?file=checksums.blake3
+        checksum: blake3:ebaa328a59fb490efd309e680ffa012a528a7cd8697cb427707a4aeb51d84298
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a10gx1-trt-fp16-elyjchstia?file=memory_footprint.json
+        checksum: blake3:9b15e6b4f1f23a8e80a415e50f7963b2ed5328610e1d991a61498f5b9f828257
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a10gx1-trt-fp16-elyjchstia?file=metadata.json
+        checksum: blake3:f150bcd97204c5abde16031338309590a40ac5a452a1bebcc705edd6be67d768
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a10gx1-trt-fp16-elyjchstia?file=model.plan
+        checksum: blake3:9b22a67e02f9bb0a772bb0e39420f1d74250e529410eb88fa7e1f32259513c16
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 75b659320dada86548fb6af5d3adfe386df6c515969d71db4e76cd64375777e1
+  tags:
+    backend: tensorrt
+    device_id: 2901:10de
+    gpu: NVIDIA B200
+    gpu_key: b200
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp16-jiw0-uharg?file=checksums.blake3
+        checksum: blake3:1561c0e8b18d7124afab46697adb18950baa9103103a3c4f9218172ae8657c5c
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp16-jiw0-uharg?file=memory_footprint.json
+        checksum: blake3:3af6a9a0fcf4c76b92701d41a0ec8db03b07d4da6f12c7287aebf4e018a394a5
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp16-jiw0-uharg?file=metadata.json
+        checksum: blake3:f4c3bc62dc78644f0c7c003b0138700e7d9d8d3c1d63fa1a635cac6f6046b67d
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp16-jiw0-uharg?file=model.plan
+        checksum: blake3:47a646c6fb82f40a662ff8eaf4b1c15057f5b0fcc3221e4af6dd6374e32753f8
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 774e4d699d318f41630b51b4280cadecb184b9b2755b707aa74232f1ea642b2c
+  tags:
+    backend: tensorrt
+    device_id: 2330:10de
+    gpu: NVIDIA H100 80GB HBM3
+    gpu_key: h100-hbm3-80gb
+    model_type: tensorrt
+    precision: fp8
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-bm87q6egvq?file=checksums.blake3
+        checksum: blake3:c8804d2e67e75b9b898a231a15e5315a95b499fcd7a2f0bef81e48c2ad2da24f
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-bm87q6egvq?file=memory_footprint.json
+        checksum: blake3:f977b3022a394f38bf6cbb3e1f5d62db1ad73a3645cecf68fe2c1cce4eac40ba
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-bm87q6egvq?file=metadata.json
+        checksum: blake3:c5153c8993d1ddfd29a3760520580095cd7e41a5892c5c377a01d3cfb4a9de1c
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-bm87q6egvq?file=model.plan
+        checksum: blake3:0c92e85e1e73195cb2197bddb4e4a82b19318a5f218e500f9b3a877f905c5970
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 7ae5cef1c851037bd86b5a41023af65824b5fc59cfcd4041d0d3d4aa11d4bcfb
+  tags:
+    backend: tensorrt
+    compute_capability: '10.0'
+    model_type: tensorrt
+    precision: fp8
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp8-yikjqqyrqw?file=checksums.blake3
+        checksum: blake3:2b38063cfe7c190e6fa5ea090433693abde464d766f89bdcb83e2745b2a698f3
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp8-yikjqqyrqw?file=memory_footprint.json
+        checksum: blake3:f977b3022a394f38bf6cbb3e1f5d62db1ad73a3645cecf68fe2c1cce4eac40ba
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp8-yikjqqyrqw?file=metadata.json
+        checksum: blake3:128077b3c99d78051da0986432603869b1244cb1bff52b8593cb8adb076e28c2
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp8-yikjqqyrqw?file=model.plan
+        checksum: blake3:d752a081a1a854acf6948285752903f7f5e11c716a675af9675a2ea535286361
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 9278eac727396c9f6ab9b3d421748889b0686afd20a9cef12d1d16c39fcd6a9d
+  tags:
+    backend: tensorrt
+    device_id: 27b8:10de
+    gpu: NVIDIA L4
+    gpu_key: l4
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l4x1-trt-fp16-bajefiwkra?file=checksums.blake3
+        checksum: blake3:d6f73e0a0597e656b2e2089ee6fb16c4bf2f449505556f1f752a7cdf9fa23419
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l4x1-trt-fp16-bajefiwkra?file=memory_footprint.json
+        checksum: blake3:2f6f627a34e9987803ae760ca2a692353a4f17a7603b8e03cd5bded9fd274ed3
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l4x1-trt-fp16-bajefiwkra?file=metadata.json
+        checksum: blake3:495231929fab32c9a8fbf59778a2311c46872cfa539ea27a85bc957e2eadf77f
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l4x1-trt-fp16-bajefiwkra?file=model.plan
+        checksum: blake3:b15ae9fca4bd76ae0581a8a0670047527ea3e9f247253c02fa121cf298842ef9
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: 9a997dabd50866ff3bcd92bece13c7a4ac1f65bb4b84b5dd487c1851580312ac
+  tags:
+    backend: tensorrt
+    compute_capability: '9.0'
+    model_type: tensorrt
+    precision: fp8
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-uwh-pks18q?file=checksums.blake3
+        checksum: blake3:8f2e0debd298dce8a404489b838d8203cbcc9c189dd9ad5359ca57bdd6b3ce2d
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-uwh-pks18q?file=memory_footprint.json
+        checksum: blake3:f977b3022a394f38bf6cbb3e1f5d62db1ad73a3645cecf68fe2c1cce4eac40ba
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-uwh-pks18q?file=metadata.json
+        checksum: blake3:08357d8962af1199a245b416e01ea1beca8f8336b793b3c87edf3abd35e1058f
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-uwh-pks18q?file=model.plan
+        checksum: blake3:8dd2ab500d0c587db1613c03a7066d6b6d80c5924441b6f7b0a54d77fd5a32b1
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: a344745c8dbe62413a4e95b4e5718a689c155dfb8743868fb5d13956a621b31e
+  tags:
+    backend: tensorrt
+    device_id: 27b8:10de
+    gpu: NVIDIA L4
+    gpu_key: l4
+    model_type: tensorrt
+    precision: fp8
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l4x1-trt-fp8-vk0qdpls2w?file=checksums.blake3
+        checksum: blake3:506889e523bba81b8c49ae191fa1f6e198db425e503bd00f482b7baa42948834
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l4x1-trt-fp8-vk0qdpls2w?file=memory_footprint.json
+        checksum: blake3:364eeb819d5bccd69f34b30da885ad39dbe19b0cb0b3cba2eb40624da8149a88
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l4x1-trt-fp8-vk0qdpls2w?file=metadata.json
+        checksum: blake3:8bbd0b85d0309f793f3280bbb7cddaa8b2f3b3efc05566e8489d2ac4e0cdb890
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l4x1-trt-fp8-vk0qdpls2w?file=model.plan
+        checksum: blake3:648cbdccd9a7758ea2e0a9b07e076dfef48725a48afdfb5f2ddf493f819e5d87
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: a35e2d127eded1ab38a5b0067b23ae1cb4f54f8e2f98e184dc9fc5a2f2837ed0
+  tags:
+    backend: tensorrt
+    compute_capability: '9.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16-nlh9symlhg?file=checksums.blake3
+        checksum: blake3:612cffb4bc9392b814367ed9bafc0120ebcf73633cb135be1ee697beab72437b
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16-nlh9symlhg?file=memory_footprint.json
+        checksum: blake3:3af6a9a0fcf4c76b92701d41a0ec8db03b07d4da6f12c7287aebf4e018a394a5
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16-nlh9symlhg?file=metadata.json
+        checksum: blake3:585cc965030e313284fef96876f6f521a3057d8c27076b78aebfd47bafa8083a
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16-nlh9symlhg?file=model.plan
+        checksum: blake3:35fdafff474f21471f9df6455d29d2b020d8387fbf0336560f7adfebed610519
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: a5be9bc5261f736c3cdbe1e06d57dbb28a477f7dece787e4ce53e945c7f3a858
+  tags:
+    backend: tensorrt
+    compute_capability: '8.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-pbqmwpikda?file=checksums.blake3
+        checksum: blake3:9acdf87ca1dcb81fe9329f8df284adffa2406c8366cf799873e53a5328da2400
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-pbqmwpikda?file=memory_footprint.json
+        checksum: blake3:62b03f1bf33dbeb4ae43ca79205889c747e1c1fa2d024a0c66789f37c52eec43
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-pbqmwpikda?file=metadata.json
+        checksum: blake3:141e9189176df07c85f1207428ddd9343eaa376f47552305172e049616976162
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:a100x1-trt-fp16-pbqmwpikda?file=model.plan
+        checksum: blake3:c9ba217c1a1de05e4bbbffe59b5c35a41411a7451ac4b844196ecc47a8d6e79c
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: b469c56c1a9ac1001151765527d3c7de77f590255b08eea4aa064ee1abf0ef3f
+  tags:
+    backend: tensorrt
+    device_id: 2321:10de
+    gpu: NVIDIA H100 NVL
+    gpu_key: h100-nvl
+    model_type: tensorrt
+    precision: fp8
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-bm87q6egvq?file=checksums.blake3
+        checksum: blake3:c8804d2e67e75b9b898a231a15e5315a95b499fcd7a2f0bef81e48c2ad2da24f
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-bm87q6egvq?file=memory_footprint.json
+        checksum: blake3:f977b3022a394f38bf6cbb3e1f5d62db1ad73a3645cecf68fe2c1cce4eac40ba
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-bm87q6egvq?file=metadata.json
+        checksum: blake3:c5153c8993d1ddfd29a3760520580095cd7e41a5892c5c377a01d3cfb4a9de1c
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp8-bm87q6egvq?file=model.plan
+        checksum: blake3:0c92e85e1e73195cb2197bddb4e4a82b19318a5f218e500f9b3a877f905c5970
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: bbf794644e63fe68abeffb0dae1c4f734122ace0350f827c8935cc75e80df265
+  tags:
+    backend: tensorrt
+    compute_capability: '8.9'
+    model_type: tensorrt
+    precision: fp8
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp8-lwpgyxqy1w?file=checksums.blake3
+        checksum: blake3:b2a85174334ace43135ffaf5b7de7c1d0fa6cb5c6500b2e55f645e5d86998d7a
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp8-lwpgyxqy1w?file=memory_footprint.json
+        checksum: blake3:298c53f8bff31c05a1459da773612c9d4ce80d43b8ae72bd0ccc319d5ecccc2f
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp8-lwpgyxqy1w?file=metadata.json
+        checksum: blake3:ca2c59313460e690d8e58aef1b8d897b4a7daf6f6c5d88a812cd7f70015e3fd1
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:l40sx1-trt-fp8-lwpgyxqy1w?file=model.plan
+        checksum: blake3:0e05018e6af1b16e715d8993a4bb700021a07de47faf9f734ab02d1c82650007
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: bf427e4e37f7b613f2233f000948f8df2b1cda392e8ef8b1d58f201856b725e9
+  tags:
+    backend: tensorrt
+    compute_capability: '10.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp16-gahqsuygkw?file=checksums.blake3
+        checksum: blake3:86af15bc32f33eaa252ad75ab19ffa567c0e1bd090bd5aa306768c5846fa9897
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp16-gahqsuygkw?file=memory_footprint.json
+        checksum: blake3:f60a56c636d36b44d425a2ac6da0a4058db72784198d7b9a5e04a8e89c6aa515
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp16-gahqsuygkw?file=metadata.json
+        checksum: blake3:d38ac103d23d04b8821924f988c6235a605de0d16230dda2e58b26f277370ac2
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:b200x1-trt-fp16-gahqsuygkw?file=model.plan
+        checksum: blake3:b5df1e3dcd81e416069f7bad107d1907c0ebf6cc62698c0dac756d925eaaad97
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: ddd9c5d1430631c0bd75c04b0c18e9b620219ad82c808a30d019be9cbcd618bd
+  tags:
+    backend: tensorrt
+    device_id: 2330:10de
+    gpu: NVIDIA H100 80GB HBM3
+    gpu_key: h100-hbm3-80gb
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      model/checksums.blake3:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16--ckqlv3j2g?file=checksums.blake3
+        checksum: blake3:e2bdf43f016d653e6ab1f6f240c3c40b34436fe2e7ce3d9ca221e5ba3997681f
+      model/memory_footprint.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16--ckqlv3j2g?file=memory_footprint.json
+        checksum: blake3:e8dd981016f422e91706f2fa0f704e98cf4889b50e641d4fa0197c332338d880
+      model/metadata.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16--ckqlv3j2g?file=metadata.json
+        checksum: blake3:893a626c5b6a795fa58deb651540c89317df1ddd06c2570300318f09815564fc
+      model/model.plan:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:h100x1-trt-fp16--ckqlv3j2g?file=model.plan
+        checksum: blake3:f28b4bd0a1d63a302ac1c0a792c112ca2a0923c8f7aa2ed0dc019ff48d77f511
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-8192-3fe66485?file=tokenizer_config.json
+        checksum: blake3:90afe2ebe6df3196de737bd375d8c17389718605c5d2a61a85e2f9e149807815
+- id: f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
+  tags:
+    backend: onnx
+    model_type: onnx
+    precision: fp16
+  workspace:
+    files:
+      model/model.onnx.tar:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:onnx-precision.fp16-d03bf375?file=model.onnx.tar
+        checksum: blake3:b05d384b4c3332d9a7605bc6c26e4dee5ddc120727bc052c1cd93f8cf63fa710
+      tokenizer/special_tokens_map.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-4096-f250c002?file=special_tokens_map.json
+        checksum: blake3:532a13dbec6deb90ff6efe6fbdee0c274109b757bfde7d2a4d67b44d9a61674c
+      tokenizer/tokenizer.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-4096-f250c002?file=tokenizer.json
+        checksum: blake3:6c628c92d1623f93fe811c3974c81fbc415d776f33cc440d44ee6c7d9ed9e066
+      tokenizer/tokenizer_config.json:
+        uri: ngc://nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:tokenizer-4096-f250c002?file=tokenizer_config.json
+        checksum: blake3:e6db3817fd6026853c8f697dffc42b63f5392c426184181a7475ff3b97bb7e65
