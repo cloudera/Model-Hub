@@ -1,0 +1,294 @@
+models:
+- name: Nemoretriever Table Structure V1
+  displayName: Nemoretriever Table Structure V1
+  modelHubID: nemoretriever-table-structure-v1
+  category: Object Detection
+  type: NGC
+  description: NVIDIA NeMo Retriever NIM for table structure v1 is a fine-tuned object detection model, trained specifically for detecting the structure of complex tables.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-community-models-license/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+  modelVariants:
+  - variantId: Nemoretriever Table Structure V1
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemoretriever-table-structure-v1
+    optimizationProfiles:
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:a100x1-trt-fp16-sdugvfnmmg
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Table Structure V1 A100-SXM4-80GBx1 FP16
+      ngcMetadata:
+        26c97e9919dae5405145446f00e0189f615ce682526ec9b6da88b5138ff8097d:
+          model: nvidia/nemoretriever-table-structure-v1
+          release: 1.3.0
+          tags:
+            backend: triton
+            batch_size: '32'
+            gpu: A100-SXM4-80GB
+            model_type: tensorrt
+            precision: fp16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: A100-SXM4-80GB
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:h100x1-trt-fp16-ujymwllaaq
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Table Structure V1 H100-NVLx1 FP16
+      ngcMetadata:
+        2e7da4417b1c44978e00f67823ae7ec885edb310e34c2c18464fbd6cad345065:
+          model: nvidia/nemoretriever-table-structure-v1
+          release: 1.3.0
+          tags:
+            backend: triton
+            batch_size: '32'
+            gpu: H100-NVL
+            model_type: tensorrt
+            precision: fp16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:h100x1-trt-fp16-ujymwllaaq
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Table Structure V1 H100-HBM3-80GBx1 FP16
+      ngcMetadata:
+        6097695b532c9abe549de9918de6b4702eda625f27b508acd7b7dcc04f38ebe1:
+          model: nvidia/nemoretriever-table-structure-v1
+          release: 1.3.0
+          tags:
+            backend: triton
+            batch_size: '32'
+            gpu: H100-HBM3-80GB
+            model_type: tensorrt
+            precision: fp16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: H100-HBM3-80GB
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:a10gx1-trt-fp16-rxf-vkobqa
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Table Structure V1 A10Gx1 FP16
+      ngcMetadata:
+        859ace730c899fb7b8362fe773639da57544f87584f9ed138089e85665653972:
+          model: nvidia/nemoretriever-table-structure-v1
+          release: 1.3.0
+          tags:
+            backend: triton
+            batch_size: '32'
+            gpu: A10G
+            model_type: tensorrt
+            precision: fp16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:l40sx1-trt-fp16-s31zox26qg
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Table Structure V1 L40Sx1 FP16
+      ngcMetadata:
+        90699b066c264c9533628aeb4f1814ef51e0f2f021540e3ae77181f2ef9ce9ed:
+          model: nvidia/nemoretriever-table-structure-v1
+          release: 1.3.0
+          tags:
+            backend: triton
+            batch_size: '32'
+            gpu: L40S
+            model_type: tensorrt
+            precision: fp16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:b200x1-trt-fp16-gqzy1y0hua
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Table Structure V1 B200x1 FP16
+      ngcMetadata:
+        a7d7cc7f7236b793a7722a3f0777b0cf3a989cc3c2c34d3e66a392329e1530e7:
+          model: nvidia/nemoretriever-table-structure-v1
+          release: 1.3.0
+          tags:
+            backend: triton
+            batch_size: '32'
+            gpu: B200
+            model_type: tensorrt
+            precision: fp16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:l4x1-trt-fp16-5m0higxepq
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Table Structure V1 L4x1 FP16
+      ngcMetadata:
+        ed0b8106aedfc536be363b6f1f0901bd4cd371ef22e640ac03fa7f4e3ed71647:
+          model: nvidia/nemoretriever-table-structure-v1
+          release: 1.3.0
+          tags:
+            backend: triton
+            batch_size: '32'
+            gpu: L4
+            model_type: tensorrt
+            precision: fp16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: L4
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:a100x1-onnx-fp16-l8hnwsbr3g
+      framework: ONNX
+      displayName: Nemoretriever Table Structure V1 ONNX FP16
+      ngcMetadata:
+        edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b:
+          model: nvidia/nemoretriever-table-structure-v1
+          release: 1.3.0
+          tags:
+            backend: triton
+            model_type: onnx
+            precision: fp16
+            tp: '1'
+      modelFormat: onnx
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: ONNX
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:a100x1-trt-fp16-sdugvfnmmg
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Table Structure V1 A100-SXM4-40GBx1 FP16
+      ngcMetadata:
+        f93ae043aafc696a85fc58461c074397d39ec747651ca996ae470222f93b4e62:
+          model: nvidia/nemoretriever-table-structure-v1
+          release: 1.3.0
+          tags:
+            backend: triton
+            batch_size: '32'
+            gpu: A100-SXM4-40GB
+            model_type: tensorrt
+            precision: fp16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: A100-SXM4-40GB
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+  labels:
+  - signed images
+  - NSPECT-7OBP-T77C
+  - NVIDIA AI Enterprise Supported
+  - NVIDIA NIM
+  config:
+    architectures:
+    - Other
+    modelType: NIM
+  license: NVIDIA AI Foundation Models Community License
