@@ -38,29 +38,38 @@
 #        3.1 This is because cml-serving provides different manifests for different variants of same model
 #   4. Filtering and inclusion rules (public unless stated otherwise):
 #       - GPU whitelist is case-insensitive; if not provided, all supported GPUs are considered.
-#       - GPU tag is normalized to uppercase.
+#       - GPU canonicalization for matching uses `gpu_key` (preferred) or `gpu`, strips vendor prefix (e.g., "NVIDIA "), and uppercases; original tags.gpu is preserved.
 #       - Regular profiles are ignored when:
 #           a) tags.feat_lora == 'true'
-#           b) llm_engine == 'vllm' and --include-vllm is NOT set (public)
-#           c) public: A100 with TP*PP > 1
-#           d) public: H100 with gpu_device != 2330:10de; H200 with gpu_device != 2335:10de
-#       - Generic profile synthesis:
-#           a) TRT-LLM generics (llm_engine: tensorrt_llm, trtllm_buildable: 'true', feat_lora: 'false') synthesize entries for supported GPUs
-#              (A10G, L40S, H100, H200, A100) restricted by whitelist and A100>1 rule.
-#           b) VLLM generics: public: synthesize only if --include-vllm; private: included as-is if --include-vllm.
+#           b) public and llm_engine == 'vllm' and --include-vllm is NOT set
+#           c) public and GPU not in --whitelisted-gpus
+#           d) public and A100 with TP*PP > --a100-max-count (default: 1; set 4 to allow up to 4)
+#           e) public and H100 with gpu_device != 2330:10de; public and H200 with gpu_device != 2335:10de
+#           f) no GPU in tags (handled by generic synthesis paths below)
+#       - Generic profile synthesis (public):
+#           a) TRT-LLM generics (llm_engine: tensorrt_llm, trtllm_buildable: 'true', feat_lora: 'false') synthesize entries for GPUs [A10G, L40S, H100, H200, A100], respecting whitelist and A100 limit.
+#           b) VLLM generics synthesize only if --include-vllm is set, respecting whitelist and A100 limit.
+#           c) Capacity check: skip synthesized entries when download size (GB) > (TP*PP* per-GPU memory GB) using built-in GPU_SPECS.
+#           d) Generated profiles set gpu_device via mapping; H200 supported (2335:10de).
+#       - Private platform generics: included as-is without GPU details (VLLM requires --include-vllm).
 #       - Combination tracking ensures we only create missing GPU-TP*PP-PRECISION-PROFILE combinations.
 #   5. Display names:
-#       - Public: "<Model Name> <GPU>x<count> [SM<sm>] [V<v>] <PRECISION> <Profile>"
-#       - Private generics: "<Model Name> Generic NVIDIA GPUx<count> [SM<sm>] [V<v>] <PRECISION> <Profile>"
+#       - Public: "<Model Name> <GPU>x<count> [SM<sm>] [V<v>] [ONNX] <PRECISION> <Profile>"
+#       - Private generics (non-ONNX): "<Model Name> Generic NVIDIA GPUx<count> [SM<sm>] [V<v>] <PRECISION> <Profile>"
+#       - Private ONNX: "<Model Name> ONNX <PRECISION> <Profile>"
 #         (count = TP*PP)
 #   6. Spec population rules:
 #       - PROFILE only when non-empty
 #       - PRECISION only when non-empty
 #       - GPU DEVICE only when non-empty
+#       - COUNT always included
 #       - Adds keys when present in tags: LLM ENGINE, SM, V, BACKEND, MODEL TYPE, TRTLLM BUILDABLE
-#   7. Serialization:
+#   7. Serialization & metadata:
 #       - nim_workspace_hash_v1 is emitted as a single-line, unquoted scalar
 #       - Long scalars are not wrapped
+#       - ngcMetadata: tags.gpu is uppercased at serialization time (source tags are not mutated)
+#   8. Manifest copy:
+#       - If --create-manifest-path is set, write a copy of --profiles-yaml to <base>/<profileId_prefix>.yaml (prefix is text before ':'), preserving folder structure; falls back to model when applicable
 ####################################################################################################################
 
 import argparse
@@ -191,7 +200,7 @@ def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vll
     if whitelisted_gpus:
         whitelisted_gpus_upper = [g.upper() for g in whitelisted_gpus]
         if gpu.upper() not in whitelisted_gpus_upper:
-            return True
+        return True
     # Only apply A100 filtering for public platform
     if platform == "public" and gpu.upper() == "A100" and tp * pp > a100_max_count:
         return True
