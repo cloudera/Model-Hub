@@ -1,0 +1,1124 @@
+models:
+- name: Llama 3.3 Nemotron Super 49B V1
+  displayName: Llama 3.3 Nemotron Super 49B V1
+  modelHubID: llama-3.3-nemotron-super-49b-v1
+  category: Chatbots
+  type: NGC
+  description: Llama-3.3-Nemotron-Super-49B-v1 is a language model that can follow instructions, complete requests, and generate creative text formats. The Llama-3.3-Nemotron-Super-49B-v1 Large Language Model (LLM) is an instruct fine-tuned version of the Llama-Nemotron.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+  modelVariants:
+  - variantId: Llama 3.3 Nemotron Super 49B V1
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.3-nemotron-super-49b-v1
+    optimizationProfiles:
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:a100x4-throughput-bf16--d40eserlg
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 A100x4 BF16 Throughput
+      ngcMetadata:
+        00e6f59e1003f038ecee8e9aa3ab2d40745bef214c476a381b21886dd8383952:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 101GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100_NVLx8 BF16 Latency
+      ngcMetadata:
+        144fcde387869e92dfec8597f477ad671ee4424269e3e25cd16037c721bf925d:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100_NVLx4 BF16 Throughput
+      ngcMetadata:
+        14654290e66815c15ef45c507c483a4bcc3a22fcc11a479083bce0a14b743b71:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x8-latency-fp8-sfw5xn1oba
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100x8 FP8 Latency
+      ngcMetadata:
+        233973ff86b33b1076b8d8dfbf1b1c292ad224ae2d9c8b18f28a44b6f6f42768:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 51GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:b200x2-throughput-fp8-kiq2efz-dq
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 B200x2 FP8 Throughput
+      ngcMetadata:
+        26bd84b107a99415b474267bec4cbcf932fbb28e45d7fb4e4db2971506825888:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 49GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx4-throughput-fp8-dtuojeeekw
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx4 FP8 Throughput
+      ngcMetadata:
+        3d0e5989f2fbc23e7d4504cd69269c9636deb61d0efc12225d3d59d54afea297:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 50GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100_NVLx2 FP8 Throughput
+      ngcMetadata:
+        4c538175eb36814513f5c95c115c8ed15273f0cffda9d2d355a17f0f311f2fbd:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100_NVLx1 FP8 Throughput
+      ngcMetadata:
+        5811750e70b7e9f340f4d670c72fcbd5282e254aeb31f62fd4f937cfb9361007:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100_NVLx8 FP8 Latency
+      ngcMetadata:
+        582fd7bfbe504eb5ee4ded5254cced1d83ea2682a91b6dd6610af842be947ecc:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:a100x8-latency-bf16-96llyrpauw
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 A100x8 BF16 Latency
+      ngcMetadata:
+        646e2eff5f305302c1cd5fe873ef7c8172021d9948157163761817c4e36352d7:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 111GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx8-latency-bf16-9kyxnmiu9w
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx8 BF16 Latency
+      ngcMetadata:
+        66341208a7bba7fdde341dcad4a654eecb27681d2e322ec10c4fde9970030c26:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 111GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100_NVLx4 FP8 Throughput
+      ngcMetadata:
+        6708ebad5077e24eaff0eabce1134feb16b2a35d2313567b94e3f27479a90544:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x8-latency-bf16-prto0dmpjw
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100x8 BF16 Latency
+      ngcMetadata:
+        758482618a1f166cc4e620228600410a6f05649a05c1838d5a93572d44289b95:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 109GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x1-throughput-fp8-kjzavt-3zq
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100x1 FP8 Throughput
+      ngcMetadata:
+        7b508014e846234db3cabe5c9f38568b4ee96694b60600a0b71c621dc70cacf3:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 49GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x4-throughput-fp8-slqbwxm0vq
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100x4 FP8 Throughput
+      ngcMetadata:
+        7d8a02f47911fb7ddf1a6f6b09438f621b6057cb21098999484f09d5a5bb7b23:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 50GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x2-throughput-fp8-4ocry3irow
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100x2 FP8 Throughput
+      ngcMetadata:
+        7ee2258631ed9d51ebfe5ab44bd547ae5777217686d87cc89c15d06ccdca4047:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 49GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x4-throughput-bf16-fzhqywxh-a
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H100x4 BF16 Throughput
+      ngcMetadata:
+        7f99ed5107c79b938b0ef4fcf2dd21aac27281f71d41a0a7c46d649879d374f0:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 100GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:b200x1-throughput-fp8-cpviqqa47q
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 B200x1 FP8 Throughput
+      ngcMetadata:
+        8b87146e39b0305ae1d73bc053564d1b4b4c565f81aa5abe3e84385544ca9b60:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 49GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:b200x8-latency-fp8-jbthzwoarq
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 B200x8 FP8 Latency
+      ngcMetadata:
+        8f9f165fc2a52b860b8eca20856e3bf5f6dc411ff3e2d1e617b1e4408a1d0191:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 50GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:b200x8-latency-bf16-glb4omvl8q
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 B200x8 BF16 Latency
+      ngcMetadata:
+        91df8db9fbe818a6a9c3cb1779f151ac7bc70d4806924abdd591c7cf1bfee2f6:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 108GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:a10gx8-throughput-bf16-ea3czux3aq
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 A10Gx8 BF16 Throughput
+      ngcMetadata:
+        935ec3ac922bf54106311dfc6b3214a1651a26033b4f5007b6351fffb4058b7a:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2237:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 111GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x4-latency-bf16-2v7ziveceg
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H200x4 BF16 Latency
+      ngcMetadata:
+        99142c13a095af184ae20945a208a81fae8d650ac0fd91747b03148383f882cf:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 100GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:b200x4-throughput-bf16-wudyjwpk6w
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 B200x4 BF16 Throughput
+      ngcMetadata:
+        9b4836e143f78d245cf161c16a225be11d3e8f9b2024b99dd76e5b2ac6cd7efd:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 100GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:b200x4-throughput-fp8-mvpvygyr-g
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 B200x4 FP8 Throughput
+      ngcMetadata:
+        a9b23031714881187b3beddb0eaa526006c799def8fca0e7975721724296a9d2:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 50GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx4-throughput-bf16-gt01zn8w7a
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx4 BF16 Throughput
+      ngcMetadata:
+        ab8f2faec3bcafc32efaf05acada4df4d8a171a759b4fb5c44d2d9d43a348764:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 101GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x1-throughput-fp8-bj-uzcumnq
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H200x1 FP8 Throughput
+      ngcMetadata:
+        af876a179190d1832143f8b4f4a71f640f3df07b0503259cedee3e3a8363aa96:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 49GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x2-throughput-bf16-cqdwimpbbw
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H200x2 BF16 Throughput
+      ngcMetadata:
+        b407d3df1db123ba8a4c98fb9f73790c01cd53a70fa0e0185814ad57a17cb72b:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 96GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 A100_SXM4_40GBx8 BF16 Throughput
+      ngcMetadata:
+        dc0f5f87ca37f69af7f525ac293c599cd0cbdaf8130da4d9e2ad63d376b12039:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: A100_SXM4_40GB
+            gpu_device: 20b0:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100_SXM4_40GB
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 20B0:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx8-latency-fp8-ataopkp21a
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx8 FP8 Latency
+      ngcMetadata:
+        e19c01f4cfb3b39ba19830f23fde73783d9c3044a5864bdee29e13c867a5382c:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 51GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x2-latency-fp8-gljasu2ggw
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 H200x2 FP8 Latency
+      ngcMetadata:
+        e4f217a5fb016b570e34b8a8eb06051ccfef9534ba43da973bb7f678242eaa5f:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 49GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 GH200_480GBx1 FP8 Throughput
+      ngcMetadata:
+        f49b49f3d90159a594def51efd8595f1d618e288bca2721fe08e786a1ac67d04:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 Generic NVIDIA GPUx8 BF16
+      ngcMetadata:
+        1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 Generic NVIDIA GPUx2 BF16
+      ngcMetadata:
+        375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+      framework: TensorRT-LLM
+      displayName: Llama 3.3 Nemotron Super 49B V1 Generic NVIDIA GPUx4 BF16
+      ngcMetadata:
+        54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1
+          release: 1.8.6
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.8.6
+      - key: DOWNLOAD SIZE
+        value: 93GB
+  labels:
+  - Llama
+  - Chatbots
+  - Virtual Assistants
+  - Large Language Model
+  - NVIDIA Validated
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License

@@ -1,7 +1,7 @@
 models:
-- name: Llama 3.1 Nemotron Nano
-  displayName: Llama 3.1 Nemotron Nano
-  modelHubID: llama-3.1-nemotron-nano
+- name: Llama 3.1 Nemotron Nano 8b V1
+  displayName: Llama 3.1 Nemotron Nano 8b V1
+  modelHubID: llama-3.1-nemotron-nano-v1
   category: Chatbots
   type: NGC
   description: Llama 3.1 Nemotron Nano 8B or 4B is a language model that can follow instructions, complete requests, and generate creative text formats.
@@ -12,381 +12,6 @@ models:
   - label: License Agreement
     url: https://llama.meta.com/llama3/license/
   modelVariants:
-  - variantId: Llama 3.1 Nemotron Nano 4b V1.1
-    source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama3.1-nemotron-nano-4b-v1.1
-    optimizationProfiles:
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:a100x1-throughput-bf16-a-zgkhv-7a
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 A100x1 BF16 Throughput
-      ngcMetadata:
-        222d1729a785201e8a021b226d74d227d01418c41b556283ee1bdbf0a818bd94:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            gpu: A100
-            gpu_device: 20b2:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '1'
-            pp: '1'
-            precision: bf16
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: A100
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 20B2:10DE
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 H100_NVLx1 BF16 Throughput
-      ngcMetadata:
-        25b5e251d366671a4011eaada9872ad1d02b48acc33aa0637853a3e3c3caa516:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            gpu: H100_NVL
-            gpu_device: 2321:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '1'
-            pp: '1'
-            precision: bf16
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H100_NVL
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2321:10DE
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:h200x1-throughput-bf16-6ej0hxqqug
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 H200x1 BF16 Throughput
-      ngcMetadata:
-        434e8d336fa23cbe151748d32b71e196d69f20d319ee8b59852a1ca31a48d311:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            gpu: H200
-            gpu_device: 2335:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '1'
-            pp: '1'
-            precision: bf16
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:a10gx1-throughput-bf16-kf8s30cw4q
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 A10Gx1 BF16 Throughput
-      ngcMetadata:
-        74bfd8b2df5eafe452a9887637eef4820779fb4e1edb72a4a7a2a1a2d1e6480b:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            gpu: A10G
-            gpu_device: 2237:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '1'
-            pp: '1'
-            precision: bf16
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: A10G
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2237:10DE
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:l40sx1-throughput-bf16-ji5fmrct-w
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 L40Sx1 BF16 Throughput
-      ngcMetadata:
-        ac5071bbd91efcc71dc486fcd5210779570868b3b8328b4abf7a408a58b5e57c:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            gpu: L40S
-            gpu_device: 26b9:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '1'
-            pp: '1'
-            precision: bf16
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 26B9:10DE
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:l40sx1-throughput-fp8-y0vtnnyy0q
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 L40Sx1 FP8 Throughput
-      ngcMetadata:
-        ad17776f4619854fccd50354f31132a558a1ca619930698fd184d6ccf5fe3c99:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            gpu: L40S
-            gpu_device: 26b9:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '1'
-            pp: '1'
-            precision: fp8
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 26B9:10DE
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 6GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 A100_SXM4_40GBx1 BF16 Throughput
-      ngcMetadata:
-        c6821c013c559912c37e61d7b954c5ca8fe07dda76d8bea0f4a52320e0a54427:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            gpu: A100_SXM4_40GB
-            gpu_device: 20b0:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '1'
-            pp: '1'
-            precision: bf16
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: A100_SXM4_40GB
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 20B0:10DE
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:h100x1-throughput-bf16-n6thxsck2g
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 H100x1 BF16 Throughput
-      ngcMetadata:
-        e7dbd9a8ce6270d2ec649a0fecbcae9b5336566113525f20aee3809ba5e63856:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            gpu: H100
-            gpu_device: 2330:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '1'
-            pp: '1'
-            precision: bf16
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H100
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2330:10DE
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 GH200_480GBx1 BF16 Throughput
-      ngcMetadata:
-        f7f74ecd523cd63065a50016a8786a893b9b1efe0d313bc5bcc54682f56e55fe:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            gpu: GH200_480GB
-            gpu_device: 2342:10de
-            llm_engine: tensorrt_llm
-            number_of_gpus: '1'
-            pp: '1'
-            precision: bf16
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: GH200_480GB
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2342:10DE
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 AnyGPUx2 BF16
-      ngcMetadata:
-        375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            trtllm_buildable: 'true'
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 4B V1.1 AnyGPUx1 BF16
-      ngcMetadata:
-        ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
-          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
-          release: 1.8.5
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            trtllm_buildable: 'true'
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.8.5
-      - key: DOWNLOAD SIZE
-        value: 9GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
   - variantId: Llama 3.1 Nemotron Nano 8b V1
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.1-nemotron-nano-8b-v1
@@ -1156,6 +781,58 @@ models:
         value: 1.8.4
       - key: DOWNLOAD SIZE
         value: 15GB
+  - variantId: Llama 3.1 Nemotron Nano 4b V1
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama3.1-nemotron-nano-4b-v1.1
+    optimizationProfiles:
+    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 Nemotron Nano 4B V1.1 Generic NVIDIA GPUx2 BF16
+      ngcMetadata:
+        375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
+          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 9GB
+    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 Nemotron Nano 4B V1.1 Generic NVIDIA GPUx1 BF16
+      ngcMetadata:
+        ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
+          model: nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            trtllm_buildable: 'true'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 9GB
   labels:
   - Llama
   - Meta
