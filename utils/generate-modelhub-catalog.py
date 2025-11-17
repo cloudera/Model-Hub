@@ -200,7 +200,7 @@ def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vll
     if whitelisted_gpus:
         whitelisted_gpus_upper = [g.upper() for g in whitelisted_gpus]
         if gpu.upper() not in whitelisted_gpus_upper:
-        return True
+            return True
     # Only apply A100 filtering for public platform
     if platform == "public" and gpu.upper() == "A100" and tp * pp > a100_max_count:
         return True
