@@ -1,0 +1,816 @@
+models:
+- name: Nemotron Nano 12B V2 VL
+  displayName: Nemotron Nano 12B V2 VL
+  modelHubID: nemotron-nano-12b-v2-vl
+  category: VLM
+  type: NGC
+  description: The Nemotron Nano12B v2 VL model is an advanced autoregressive Visual Language Model (VLM) designed for document transcription from images and videos, outputting text in a reading order.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+  modelVariants:
+  - variantId: Nemotron Nano 12B V2 VL
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemotron-nano-12b-v2-vl?version=1
+    optimizationProfiles:
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H200x2 FP8
+      ngcMetadata:
+        04571f2160949a968ef4d55573010bb4937adb3055565383e4975d6b579eabb5:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL RTX-PRO-6K-BWE-MAXQx1 FP8
+      ngcMetadata:
+        124606e1502807f80b51d1bb02eac73130f5f0772333e954cce58e983b51cd8f:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX-PRO-6K-BWE-MAXQ
+            gpu_device: 2bb4:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX-PRO-6K-BWE-MAXQ
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB4:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL B200x1 FP8
+      ngcMetadata:
+        2319f3a24597d85e3997ea5d7904bde6a3172d77ec0f3caf4dd51db4989e8ee0:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GB200x1 FP8
+      ngcMetadata:
+        23237e540f5d6eed2e0cbd82ffa671324113254452ff6d2a8de4f525ba119d16:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GB200x2 FP8
+      ngcMetadata:
+        2589b47cefde8493906f5134017b790cc08b2d2be613f11ef9597b3915664de5:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GH200-144GBx1 FP8
+      ngcMetadata:
+        260e0af1b99e6283a0a76895b5d5e4909f0b22f24f92a837fdfd0b52f85bdbaf:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200-144GB
+            gpu_device: 2348:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200-144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL RTX-PRO-6K-BSEx2 FP8
+      ngcMetadata:
+        38c33abf967522c8e7b944244d4ed8b13eb338a3123ae0b258b19ea93ee0af63:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX-PRO-6K-BSE
+            gpu_device: 2bb5:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX-PRO-6K-BSE
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100-PCIEx2 FP8
+      ngcMetadata:
+        44a56408cfe76bc50ee3c1ed96f06cd267d1248512ad9a865e534e80b190c019:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-PCIE
+            gpu_device: 2331:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-PCIE
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2331:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100-NVLx2 FP8
+      ngcMetadata:
+        46b31dbe7ba6d101c01faea3c7c9ccdba6480461aa410ca775ddb6250320943f:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-NVL
+            gpu_device: 2321:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100-PCIEx1 FP8
+      ngcMetadata:
+        6f14f519be3c8fc26ce3f419659df86e271cbb3c1db94293fb975e1f1fd58ee5:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-PCIE
+            gpu_device: 2331:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-PCIE
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2331:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL RTX-PRO-6K-BWEx1 FP8
+      ngcMetadata:
+        7188e938073f73e7012da9c0b769a567de69b5f5203dfe8ba36769ce179cb822:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX-PRO-6K-BWE
+            gpu_device: 2bb1:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX-PRO-6K-BWE
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB1:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL L40Sx1 FP8
+      ngcMetadata:
+        76775139c252ddbaaf9fd191e94036e43402bc15b87639d3216602eb39eb6463:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H200-NVLx2 FP8
+      ngcMetadata:
+        7a520b8c8ea2b8a7caee81f2c5fd1e4d9c6d88106d2f3152507a9a8164c4a525:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200-NVL
+            gpu_device: 233b:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200-NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H200-NVLx1 FP8
+      ngcMetadata:
+        8cc85ddc49fb35402b2bc813804467366404ffad5a1f25e0dd96a9707d797851:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200-NVL
+            gpu_device: 233b:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GH200x1 FP8
+      ngcMetadata:
+        9a9699699ec75d96159bc6978e1139fd254403458b15656a5e57e7fbc20acf07:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200
+            gpu_device: 2342:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL B200x2 FP8
+      ngcMetadata:
+        c5fb44b0cf08feb8bf8efb547071ee22df4d552ad5a901bc352ded2de38946fd:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100-NVLx1 FP8
+      ngcMetadata:
+        d53f04f82506d15b2d6d22b3e9d9380a125ae9f198d7fc2b93947549ae647128:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-NVL
+            gpu_device: 2321:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100x2 FP8
+      ngcMetadata:
+        d70d4c3bafd1f00ad715ac59c361616460e6eb728669c292cd52f40734badd10:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H200x1 FP8
+      ngcMetadata:
+        dc1ef5d2e9342285671a8e28c1f04b5cffe3e8fcc929c58557fb563f8c71600a:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL RTX-PRO-6K-BSEx1 FP8
+      ngcMetadata:
+        e278c7e2ab8238ef2f75762356e587052e3a743fa768d40f372f60aac3532a4b:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX-PRO-6K-BSE
+            gpu_device: 2bb5:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX-PRO-6K-BSE
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL L40Sx2 FP8
+      ngcMetadata:
+        e2cb05e0c0218d13be144321bbf58817ae680d9b1a9fc7f0e8c619aeb19d19b7:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100x1 FP8
+      ngcMetadata:
+        e93d865568e4f60dd391994e84fe298808dadf3aa0e03f928618e6d5f9c14fe6:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GH200-144GBx2 FP8
+      ngcMetadata:
+        f1274100b8089ab334a01209d6d9d59e10d7f998eeb476602d6c0c2073a5e84f:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200-144GB
+            gpu_device: 2348:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200-144GB
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf
+      framework: VLLM
+      displayName: Nemotron Nano 12B V2 VL Generic NVIDIA GPUx1 BF16
+      ngcMetadata:
+        06a217a1099a72e5d86a12a31fd39eaba9d7c00d3d311589557d2dc720b59358:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: d943a0e2491f1abaae2e3c2532bc3b70535b0d8637d7b1aeed4e686f0e3e0f61
+            pp: '1'
+            precision: bf16
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 25GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf
+      framework: VLLM
+      displayName: Nemotron Nano 12B V2 VL Generic NVIDIA GPUx2 BF16
+      ngcMetadata:
+        97aae95b218c9838fea29548ebaa771a922a8c9781c8450e542e323e2a76a937:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: d943a0e2491f1abaae2e3c2532bc3b70535b0d8637d7b1aeed4e686f0e3e0f61
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 25GB
+      - key: LLM ENGINE
+        value: VLLM
+  labels:
+  - signed images
+  - NSPECT-P1Z6-6PVL
+  - NVIDIA AI Enterprise Supported
+  - NVIDIA NIM
+  config:
+    architectures:
+    - Other
+    modelType: NIM
+  license: NVIDIA AI Foundation Models Community License
