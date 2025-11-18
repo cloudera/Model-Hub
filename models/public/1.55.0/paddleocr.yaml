@@ -16,50 +16,21 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/baidu/containers/paddleocr
     optimizationProfiles:
-    - profileId: nim/baidu/paddleocr:a10gx1-trt-fp16-ijpjeptpna
-      framework: TensorRT-LLM
-      displayName: Paddleocr A10Gx1 FP16
-      ngcMetadata:
-        859ace730c899fb7b8362fe773639da57544f87584f9ed138089e85665653972:
-          model: baidu/paddleocr
-          release: 1.4.0
-          tags:
-            backend: triton
-            batch_size: '32'
-            gpu: A10G
-            model_type: tensorrt
-            precision: fp16
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: FP16
-      - key: GPU
-        value: A10G
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.4.0
-      - key: DOWNLOAD SIZE
-        value: 1GB
-      - key: BACKEND
-        value: TRITON
-      - key: MODEL TYPE
-        value: TENSORRT
     - profileId: nim/baidu/paddleocr:l40sx1-trt-fp16-evboykuf0g
       framework: TensorRT-LLM
-      displayName: Paddleocr L40Sx1 FP16
+      displayName: Paddleocr NVIDIA L40Sx1 FP16
       ngcMetadata:
-        90699b066c264c9533628aeb4f1814ef51e0f2f021540e3ae77181f2ef9ce9ed:
+        631c6b6c76996d8cc04cf7cfde63d15d1b5f57cb323dc129f2a838b35703f1d9:
           model: baidu/paddleocr
-          release: 1.4.0
+          release: 1.5.0
           tags:
             backend: triton
             batch_size: '32'
-            gpu: L40S
+            device_id: 26b9:10de
+            gpu: NVIDIA L40S
+            gpu_key: l40s
             model_type: tensorrt
             precision: fp16
-            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -69,7 +40,38 @@ models:
       - key: COUNT
         value: 1
       - key: NIM VERSION
-        value: 1.4.0
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/baidu/paddleocr:a10gx1-trt-fp16-ijpjeptpna
+      framework: TensorRT-LLM
+      displayName: Paddleocr NVIDIA A10Gx1 FP16
+      ngcMetadata:
+        acba2841622c4da2050811e8c7c4bae4c16996ab61b67d68b089176524d70383:
+          model: baidu/paddleocr
+          release: 1.5.0
+          tags:
+            backend: triton
+            batch_size: '32'
+            device_id: 2237:10de
+            gpu: NVIDIA A10G
+            gpu_key: a10g
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.5.0
       - key: DOWNLOAD SIZE
         value: 1GB
       - key: BACKEND
@@ -82,12 +84,11 @@ models:
       ngcMetadata:
         edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b:
           model: baidu/paddleocr
-          release: 1.4.0
+          release: 1.5.0
           tags:
             backend: triton
             model_type: onnx
             precision: fp16
-            tp: '1'
       modelFormat: onnx
       spec:
       - key: PRECISION
@@ -95,7 +96,7 @@ models:
       - key: COUNT
         value: 1
       - key: NIM VERSION
-        value: 1.4.0
+        value: 1.5.0
       - key: DOWNLOAD SIZE
         value: 1GB
       - key: BACKEND
