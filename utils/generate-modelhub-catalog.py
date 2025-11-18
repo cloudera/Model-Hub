@@ -80,6 +80,7 @@ import json
 import os
 import math
 import shutil
+import re
 
 # GPU memory specs for capacity checks (per-GPU memory in GB)
 GPU_SPECS = {
@@ -101,14 +102,7 @@ def _parse_gb(size_str: str):
 
 def generate_display_name(model, tags):
     model_name = model.split('/')[-1]
-    parts = model_name.replace('_', ' ').split('-')
-    formatted_parts = []
-    for part in parts:
-        if part.lower().endswith('b') and part[:-1].replace('.', '').isdigit():
-            formatted_parts.append(part[:-1] + 'B')
-        else:
-            formatted_parts.append(part.capitalize())
-    base_name = " ".join(formatted_parts)
+    base_name = format_model_base_name(model_name)
     gpu = tags.get("gpu", "").upper()
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
@@ -126,14 +120,7 @@ def generate_display_name(model, tags):
 
 def generate_display_name_private(model, tags):
     model_name = model.split('/')[-1]
-    parts = model_name.replace('_', ' ').split('-')
-    formatted_parts = []
-    for part in parts:
-        if part.lower().endswith('b') and part[:-1].replace('.', '').isdigit():
-            formatted_parts.append(part[:-1] + 'B')
-        else:
-            formatted_parts.append(part.capitalize())
-    base_name = " ".join(formatted_parts)
+    base_name = format_model_base_name(model_name)
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
     precision = tags.get("precision", "").upper()
@@ -205,6 +192,173 @@ def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vll
     if platform == "public" and gpu.upper() == "A100" and tp * pp > a100_max_count:
         return True
     return False
+
+def extract_gpu_tp_pp_from_uris(profile):
+    """Best-effort extraction of GPU, TP and PP from any workspace URI suffix.
+    Does NOT modify tags; returns tuple (gpu_upper, tp_int or None, pp_int or None).
+    Recognized GPUs: A10G, L40S, H100, H200, A100. Looks for patterns like:
+      - ...:<gpu>x<count>-...
+      - ...:...-tp<tp>-pp<pp>-...
+    If only x<count> is present, tp/pp are left as None.
+    """
+    files = profile.get("workspace", {}).get("files", {})
+    gpu_aliases = {"a10g": "A10G", "l40s": "L40S", "h100": "H100", "h200": "H200", "a100": "A100"}
+    for fdata in files.values():
+        uri = fdata.get("uri", "")
+        if not uri or ":" not in uri:
+            continue
+        # Strip ngc:// and query params
+        clean = uri
+        if clean.startswith("ngc://"):
+            clean = clean[len("ngc://"):]
+        clean = clean.split("?", 1)[0]
+        # Variant suffix after the first ':' (nim/...:<variant>)
+        try:
+            variant = clean.split(":", 1)[1].lower()
+        except Exception:
+            continue
+
+        # Extract GPU and optional count via "<gpu>x<count>" for known GPUs
+        m_gpu = re.search(r"\b(a10g|l40s|h100|h200|a100)(?:x(\d+))?\b", variant)
+        gpu = None
+        count = None
+        if m_gpu:
+            gpu = gpu_aliases.get(m_gpu.group(1))
+            if m_gpu.group(2):
+                try:
+                    count = int(m_gpu.group(2))
+                except Exception:
+                    count = None
+        else:
+            # Generic fallback: split by '-' and find a segment containing 'x<digits>'
+            segments = [seg for seg in variant.split("-") if seg]
+            x_index = None
+            x_match = None
+            for idx, seg in enumerate(segments):
+                m = re.search(r"\bx(\d+)\b", seg)
+                if not m:
+                    # allow embedded like 'svx1' but require ending with digits
+                    m = re.search(r"x(\d+)$", seg)
+                if m:
+                    x_index = idx
+                    x_match = m
+                    break
+            if x_index is not None:
+                try:
+                    count = int(x_match.group(1))
+                except Exception:
+                    count = None
+                # Treat everything before the x-segment as the GPU descriptor
+                if x_index > 0:
+                    gpu_candidate = "-".join(segments[:x_index]).strip()
+                    if gpu_candidate:
+                        gpu = gpu_candidate.upper()
+
+        # Extract explicit tp/pp if present
+        m_tp = re.search(r"\btp\s*([0-9]+)\b", variant)
+        m_pp = re.search(r"\bpp\s*([0-9]+)\b", variant)
+        tp = int(m_tp.group(1)) if m_tp else None
+        pp = int(m_pp.group(1)) if m_pp else None
+
+        # If tp/pp not present but count is, leave tp/pp as None (do not infer)
+        if gpu:
+            return gpu, tp, pp
+
+    return None, None, None
+
+def extract_gpu_from_uri(profile):
+    """Extract GPU type from workspace file URIs when gpu tag is missing"""
+    files = profile.get("workspace", {}).get("files", {})
+    gpu_patterns = {
+        "rtx5090": "RTX5090",
+        "rtx6000": "RTX6000",
+        "gb200": "GB200",
+        "b200": "B200",
+        "h200": "H200",
+        "h100": "H100",
+        "l40s": "L40S",
+        "a100": "A100",
+        "a10g": "A10G",
+        # Accept both 'l4' and 'l4x' patterns (e.g., l4x1)
+        "l4x": "L4",
+        "l4": "L4",
+    }
+    for fdata in files.values():
+        uri = str(fdata.get("uri", "")).lower()
+        if not uri:
+            continue
+        for pattern, gpu_name in gpu_patterns.items():
+            if pattern in uri:
+                return gpu_name
+    return None
+
+def build_display_name_with_overrides(model: str, tags: dict, override_gpu: str = None, override_count: int = None) -> str:
+    """Generate display name using overrides for GPU and COUNT without mutating tags."""
+    model_name = model.split('/')[-1]
+    base_name = format_model_base_name(model_name)
+
+    precision = str(tags.get("precision", "")).upper()
+    profile = str(tags.get("profile", "")).capitalize()
+    sm_val = str(tags.get("sm", "")).strip()
+    v_val = str(tags.get("v", "")).strip()
+    sm_part = f"SM{sm_val}" if sm_val else ""
+    v_part = f"V{v_val}" if v_val else ""
+    onnx_part = "ONNX" if str(tags.get("model_type", "")).lower() == "onnx" else ""
+
+    gpu_part = ""
+    if override_gpu and override_count and override_count > 0:
+        gpu_part = f"{override_gpu.upper()}x{override_count}"
+    elif override_gpu:
+        gpu_part = f"{override_gpu.upper()}"
+
+    suffix = " ".join(part for part in [gpu_part, sm_part, v_part, onnx_part, precision, profile] if part)
+    return f"{base_name} {suffix}".strip()
+
+def format_model_base_name(model_name: str) -> str:
+    """Format base model name with special handling:
+    - If the name starts with 2+ short alphabetic tokens (<=4 letters) separated by hyphens,
+      render those tokens as an uppercase hyphenated prefix (e.g., gpt-oss -> GPT-OSS).
+    - The remaining tokens are rendered in title style with spaces and '20b' -> '20B'.
+    """
+    lowered = model_name.lower()
+    hy_tokens = lowered.split('-')
+    prefix_tokens = []
+    i = 0
+    while i < len(hy_tokens) and hy_tokens[i].isalpha() and 1 <= len(hy_tokens[i]) <= 4:
+        prefix_tokens.append(hy_tokens[i].upper())
+        i += 1
+    # Only keep a hyphenated prefix when we have at least two short alphabetic tokens
+    if len(prefix_tokens) >= 2:
+        prefix_str = "-".join(prefix_tokens)
+    else:
+        prefix_tokens = []
+        i = 0
+        prefix_str = ""
+
+    # Build remainder from the rest of the tokens
+    remainder_raw = "-".join(hy_tokens[i:]) if i < len(hy_tokens) else ""
+    parts = remainder_raw.replace('_', ' ').split('-') if remainder_raw else []
+    formatted_parts = []
+    for part in parts:
+        if part.lower().endswith('b') and part[:-1].replace('.', '').isdigit():
+            formatted_parts.append(part[:-1] + 'B')
+        else:
+            formatted_parts.append(part.capitalize() if part else part)
+    remainder_str = " ".join(fp for fp in formatted_parts if fp)
+
+    if prefix_str and remainder_str:
+        return f"{prefix_str} {remainder_str}"
+    if prefix_str:
+        return prefix_str
+    # Fallback to legacy formatting when no special prefix
+    parts_std = model_name.replace('_', ' ').split('-')
+    formatted_std = []
+    for part in parts_std:
+        if part.lower().endswith('b') and part[:-1].replace('.', '').isdigit():
+            formatted_std.append(part[:-1] + 'B')
+        else:
+            formatted_std.append(part.capitalize())
+    return " ".join(formatted_std)
 
 def is_generic_profile(tags):
     """Check if a profile is a generic profile that can be used to generate GPU-specific entries"""
@@ -510,9 +664,19 @@ def main():
 
         # Prefer 'gpu', else 'gpu_key'
         gpu_tag = _get_gpu_tag(tags)
-        
-        # Skip generic profiles in first pass
-        if not gpu_tag:
+        parsed_gpu, parsed_tp, parsed_pp = None, None, None
+        effective_gpu = gpu_tag
+        if not effective_gpu:
+            parsed_gpu, parsed_tp, parsed_pp = extract_gpu_tp_pp_from_uris(profile)
+            if parsed_gpu:
+                effective_gpu = parsed_gpu
+        # Fallback: simple GPU extraction by patterns if still unresolved
+        if not effective_gpu:
+            simple_gpu = extract_gpu_from_uri(profile)
+            if simple_gpu:
+                effective_gpu = simple_gpu
+        # Skip generic profiles in first pass unless GPU details can be extracted from URI
+        if not effective_gpu:
             continue
  
         # Normalize GPU tag to uppercase
@@ -525,22 +689,50 @@ def main():
         if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
             tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
 
-        if should_ignore_profile(tags, args.whitelisted_gpus, args.platform, args.include_vllm, args.a100_max_count):
-            continue
+        # Apply ignore rules:
+        # - If GPU present in tags, reuse existing helper
+        # - If GPU extracted from URI, apply equivalent checks using extracted GPU and TP/PP/count
+        if gpu_tag:
+            if should_ignore_profile(tags, args.whitelisted_gpus, args.platform, args.include_vllm, args.a100_max_count):
+                continue
+        else:
+            # Basic tag-based filters
+            if tags.get("feat_lora", "").lower() == "true":
+                continue
+            if tags.get("llm_engine", "").lower() == "vllm" and not args.include_vllm:
+                continue
+            # Whitelist check
+            if args.whitelisted_gpus:
+                if effective_gpu.upper() not in [g.upper() for g in args.whitelisted_gpus]:
+                    continue
+            # A100 count limit (public only)
+            if args.platform == "public" and effective_gpu.upper() == "A100":
+                tp_eff = parsed_tp if parsed_tp is not None else int(tags.get("tp", "1"))
+                pp_eff = parsed_pp if parsed_pp is not None else int(tags.get("pp", "1"))
+                if tp_eff * pp_eff > args.a100_max_count:
+                    continue
         # Public-only: enforce gpu_device correctness for H100 and H200
         if args.platform == "public":
             gpu_device_actual = tags.get("gpu_device", "").strip().lower()
-            if gpu_tag == "H100" and gpu_device_actual != "2330:10de":
+            # Enforce device ID only when tags specify it
+            if effective_gpu == "H100" and gpu_device_actual and gpu_device_actual != "2330:10de":
                 continue
-            if gpu_tag == "H200" and gpu_device_actual != "2335:10de":
+            if effective_gpu == "H200" and gpu_device_actual and gpu_device_actual != "2335:10de":
                 continue
 
-        profile_id_uri = profile_id_from_workspace(profile, gpu_tag)
+        profile_id_uri = profile_id_from_workspace(profile, effective_gpu)
         if not profile_id_uri:
             continue
 
-        display_name = generate_display_name(model, tags)
-        count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
+        # Prefer extracted TP/PP for COUNT when available
+        tp_eff = parsed_tp if parsed_tp is not None else int(tags.get("tp", "1"))
+        pp_eff = parsed_pp if parsed_pp is not None else int(tags.get("pp", "1"))
+        count = tp_eff * pp_eff
+        # Update display name to include GPU and COUNT when inferred from URI
+        if not str(tags.get("gpu", "")).strip() and effective_gpu:
+            display_name = build_display_name_with_overrides(model, tags, override_gpu=effective_gpu, override_count=count)
+        else:
+            display_name = generate_display_name(model, tags)
         download_size = get_download_size_gb(str(profile_id_uri), args.ngc_api_key)
 
         # Build spec list, skipping empty values
@@ -555,9 +747,15 @@ def main():
             spec_list.append({"key": "PRECISION", "value": precision_value})
 
         spec_list.extend([
-            {"key": "GPU", "value": gpu_tag.upper()},
+            {"key": "GPU", "value": effective_gpu.upper()},
             {"key": "COUNT", "value": count}
         ])
+
+        # Add TP/PP to spec only when not present in tags and extracted from URI
+        if parsed_tp is not None and not str(tags.get("tp", "")).strip():
+            spec_list.append({"key": "TP", "value": parsed_tp})
+        if parsed_pp is not None and not str(tags.get("pp", "")).strip():
+            spec_list.append({"key": "PP", "value": parsed_pp})
 
         gpu_device_value = tags.get("gpu_device", "").upper()
         if gpu_device_value:  # Only add GPU DEVICE if it's not empty
@@ -591,7 +789,9 @@ def main():
 
         optimization_profiles.append(optimization_profile)
         # Track GPU-TP*PP-PRECISION-PROFILE combination as covered
-        gpu_combination = f"{gpu_tag.upper()}-TP{tags.get('tp', '1')}-PP{tags.get('pp', '1')}-{tags.get('precision', '').upper()}-{tags.get('profile', '').upper()}"
+        comb_tp = str(tp_eff)
+        comb_pp = str(pp_eff)
+        gpu_combination = f"{effective_gpu.upper()}-TP{comb_tp}-PP{comb_pp}-{tags.get('precision', '').upper()}-{tags.get('profile', '').upper()}"
         covered_gpu_combinations.add(gpu_combination)
 
     # Second pass: Process generic profiles differently based on platform
