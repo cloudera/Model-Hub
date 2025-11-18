@@ -16,20 +16,18 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemoretriever-page-elements-v2
     optimizationProfiles:
-    - profileId: nim/nvidia/nemoretriever-page-elements-v2:a10gx1-trt-fp16-xrpnjisxaw
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:a10gx1-trt-fp16-toixhuroha
       framework: TensorRT-LLM
       displayName: Nemoretriever Page Elements V2 A10Gx1 FP16
       ngcMetadata:
-        859ace730c899fb7b8362fe773639da57544f87584f9ed138089e85665653972:
+        09231248dff89cf8859d9206931342e468fbddfe469df56334fbe00df7fda1da:
           model: nvidia/nemoretriever-page-elements-v2
-          release: 1.3.0
+          release: 1.6.0
           tags:
             backend: triton
-            batch_size: '32'
-            gpu: A10G
+            compute_capability: '8.6'
             model_type: tensorrt
             precision: fp16
-            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -39,27 +37,53 @@ models:
       - key: COUNT
         value: 1
       - key: NIM VERSION
-        value: 1.3.0
+        value: 1.6.0
       - key: DOWNLOAD SIZE
         value: 1GB
       - key: BACKEND
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
-    - profileId: nim/nvidia/nemoretriever-page-elements-v2:l40sx1-trt-fp16-ckx59ghtpa
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:h100x1-trt-fp16-nuq3ijukrw
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Page Elements V2 H100x1 FP16
+      ngcMetadata:
+        58adeef41afa742e753314ae51818e9f017f2c92ba0bfdc01befe6234703a54c:
+          model: nvidia/nemoretriever-page-elements-v2
+          release: 1.6.0
+          tags:
+            backend: triton
+            compute_capability: '9.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.6.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:l40sx1-trt-fp16-qnrq36wfcw
       framework: TensorRT-LLM
       displayName: Nemoretriever Page Elements V2 L40Sx1 FP16
       ngcMetadata:
-        90699b066c264c9533628aeb4f1814ef51e0f2f021540e3ae77181f2ef9ce9ed:
+        bc1487bf0ec3430f17595fff029c1bc50668344c7a30f9e5d64ee061c6e2d5fa:
           model: nvidia/nemoretriever-page-elements-v2
-          release: 1.3.0
+          release: 1.6.0
           tags:
             backend: triton
-            batch_size: '32'
-            gpu: L40S
+            compute_capability: '8.9'
             model_type: tensorrt
             precision: fp16
-            tp: '1'
       modelFormat: trt-llm
       spec:
       - key: PRECISION
@@ -69,7 +93,7 @@ models:
       - key: COUNT
         value: 1
       - key: NIM VERSION
-        value: 1.3.0
+        value: 1.6.0
       - key: DOWNLOAD SIZE
         value: 1GB
       - key: BACKEND
@@ -82,12 +106,11 @@ models:
       ngcMetadata:
         edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b:
           model: nvidia/nemoretriever-page-elements-v2
-          release: 1.3.0
+          release: 1.6.0
           tags:
             backend: triton
             model_type: onnx
             precision: fp16
-            tp: '1'
       modelFormat: onnx
       spec:
       - key: PRECISION
@@ -95,13 +118,41 @@ models:
       - key: COUNT
         value: 1
       - key: NIM VERSION
-        value: 1.3.0
+        value: 1.6.0
       - key: DOWNLOAD SIZE
         value: 1GB
       - key: BACKEND
         value: TRITON
       - key: MODEL TYPE
         value: ONNX
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:a100x1-trt-fp16-yukvwcfl5q
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Page Elements V2 A100x1 FP16
+      ngcMetadata:
+        f0fb2f72a66230096c40fc3307872ebb9bce69816cbfc6e2918695ca824bd284:
+          model: nvidia/nemoretriever-page-elements-v2
+          release: 1.6.0
+          tags:
+            backend: triton
+            compute_capability: '8.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.6.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
   labels:
   - signed images
   - NSPECT-7OBP-T77C
