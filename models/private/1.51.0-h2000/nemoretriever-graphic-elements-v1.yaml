@@ -156,6 +156,31 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:2_ONNX_FP16_1024
+      framework: ONNX
+      displayName: Nemoretriever Graphic Elements V1 ONNX FP16
+      ngcMetadata:
+        edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b:
+          model: nvidia/nemoretriever-graphic-elements-v1
+          release: 1.6.0
+          tags:
+            backend: triton
+            model_type: onnx
+            precision: fp16
+      modelFormat: onnx
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.6.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: ONNX
     - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:a100x1-trt-fp16-qpwy-4niaa
       framework: TensorRT-LLM
       displayName: Nemoretriever Graphic Elements V1 A100x1 FP16

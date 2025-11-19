@@ -16,7 +16,7 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/baidu/containers/paddleocr
     optimizationProfiles:
-    - profileId: nim/baidu/paddleocr:2_TRT_python_2
+    - profileId: nim/baidu/paddleocr:l4x1-trt-fp16-fswetrkejq
       framework: TensorRT-LLM
       displayName: Paddleocr NVIDIA L4x1 FP16
       ngcMetadata:
@@ -36,7 +36,7 @@ models:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: NVIDIA L4
+        value: L4
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -67,7 +67,7 @@ models:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: NVIDIA A100-SXM4-80GB
+        value: A100-SXM4-80GB
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -98,7 +98,7 @@ models:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: NVIDIA H100 NVL
+        value: H100-NVL
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -109,7 +109,7 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
-    - profileId: nim/baidu/paddleocr:2_TRT_python_2
+    - profileId: nim/baidu/paddleocr:l40sx1-trt-fp16-evboykuf0g
       framework: TensorRT-LLM
       displayName: Paddleocr NVIDIA L40Sx1 FP16
       ngcMetadata:
@@ -129,7 +129,7 @@ models:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: NVIDIA L40S
+        value: L40S
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -160,7 +160,7 @@ models:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: NVIDIA A100-SXM4-40GB
+        value: A100-SXM4-40GB
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -171,7 +171,7 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
-    - profileId: nim/baidu/paddleocr:2_TRT_python_2
+    - profileId: nim/baidu/paddleocr:a10gx1-trt-fp16-ijpjeptpna
       framework: TensorRT-LLM
       displayName: Paddleocr NVIDIA A10Gx1 FP16
       ngcMetadata:
@@ -191,7 +191,7 @@ models:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: NVIDIA A10G
+        value: A10G
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -202,7 +202,7 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
-    - profileId: nim/baidu/paddleocr:2_TRT_python_2
+    - profileId: nim/baidu/paddleocr:b200x1-trt-fp16-itomrwaucq
       framework: TensorRT-LLM
       displayName: Paddleocr NVIDIA B200x1 FP16
       ngcMetadata:
@@ -222,7 +222,7 @@ models:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: NVIDIA B200
+        value: B200
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -253,7 +253,7 @@ models:
       - key: PRECISION
         value: FP16
       - key: GPU
-        value: NVIDIA H100 80GB HBM3
+        value: H100-HBM3-80GB
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -264,6 +264,31 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
+    - profileId: nim/baidu/paddleocr:4_ONNX_python_2
+      framework: ONNX
+      displayName: Paddleocr ONNX FP16
+      ngcMetadata:
+        edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b:
+          model: baidu/paddleocr
+          release: 1.5.0
+          tags:
+            backend: triton
+            model_type: onnx
+            precision: fp16
+      modelFormat: onnx
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: ONNX
   labels:
   - signed images
   - NSPECT-LDAL-INWI

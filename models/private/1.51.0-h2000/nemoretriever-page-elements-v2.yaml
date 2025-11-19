@@ -157,8 +157,8 @@ models:
       - key: MODEL TYPE
         value: TENSORRT
     - profileId: nim/nvidia/nemoretriever-page-elements-v2:a100x1-onnx-fp16-wagmq6-x1q
-      framework: TensorRT-LLM
-      displayName: Nemoretriever Page Elements V2 A100x1 FP16
+      framework: ONNX
+      displayName: Nemoretriever Page Elements V2 ONNX FP16
       ngcMetadata:
         edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b:
           model: nvidia/nemoretriever-page-elements-v2
@@ -167,12 +167,10 @@ models:
             backend: triton
             model_type: onnx
             precision: fp16
-      modelFormat: trt-llm
+      modelFormat: onnx
       spec:
       - key: PRECISION
         value: FP16
-      - key: GPU
-        value: A100
       - key: COUNT
         value: 1
       - key: NIM VERSION
