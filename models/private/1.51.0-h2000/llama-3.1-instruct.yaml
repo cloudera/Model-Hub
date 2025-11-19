@@ -25,7 +25,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: a10g
+            gpu: A10G
             gpu_device: 2237:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: c0232176c2e5374758e3d88ea13e70aa0edca0862c923428f54b85da208960a9
@@ -61,7 +61,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h100_nvl
+            gpu: H100_NVL
             gpu_device: 2321:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: cb6ac7eedef673edc08e85f4f3e7525c31f499e5c5f376cbffc05cb8eefe197a
@@ -97,7 +97,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gb200
+            gpu: GB200
             gpu_device: 2941:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 2feaef51b8c016e5c678f39202dfe542c11eb5fc2443749e6c2330f3474aaffe
@@ -133,7 +133,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h100
+            gpu: H100
             gpu_device: 2330:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 4217e8fa6ba7ac9609ee76470bec904253dadbe7fc33a52f715e08791073c501
@@ -169,7 +169,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gb200
+            gpu: GB200
             gpu_device: 2941:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 0222120a0b05a944b22ed6b0d7376bbe89abef1c05fa6ecd7967199500398864
@@ -205,7 +205,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h200_nvl
+            gpu: H200_NVL
             gpu_device: 233b:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 2660946198ebbb837e487b333ef86b2ac4cbc37b907151de45f291596625f919
@@ -241,7 +241,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: rtx6000_ada
+            gpu: RTX6000_ADA
             gpu_device: 26b1:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 4d714aa3567eb6e2d72aa08be91bb5fc632e7bbaa645c265104ea1d65eb28efa
@@ -277,7 +277,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: b200
+            gpu: B200
             gpu_device: 2901:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 61348d392451059a37d2218d940f4aaf266562d0d6fa156e211f266022d5d26e
@@ -313,7 +313,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gh200_480gb
+            gpu: GH200_480GB
             gpu_device: 2342:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 828408fdd397e49bb4256a997d3f85d90c3d9a3e756531b8895cd78a83574aa6
@@ -340,40 +340,6 @@ models:
         value: 30GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct:rtx5090x1-latency-nvfp4-ykoby0xhrg
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct RTX5090x1 NVFP4 Latency
-      ngcMetadata:
-        354ba4587a553bc92e5ce6caf8623e573bc0c3c5b318f5951102190d2dcfafde:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.13.1
-          tags:
-            feat_lora: 'false'
-            gpu: rtx5090
-            gpu_device: 2b85:10de
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: e0aa73ee31c3c8abbd63613ab1b090f884d7b6a26dd132eacd42628b99752b74
-            number_of_gpus: '1'
-            pp: '1'
-            precision: nvfp4
-            profile: latency
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: LATENCY
-      - key: PRECISION
-        value: NVFP4
-      - key: GPU
-        value: RTX5090
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2B85:10DE
-      - key: NIM VERSION
-        value: 1.13.1
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct:8c22764a7e3675c50d4c7c9a4edb474456022b16
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct A100_SXM4_40GBx1 BF16 Throughput
@@ -383,7 +349,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: a100_sxm4_40gb
+            gpu: A100_SXM4_40GB
             gpu_device: 20b0:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 72732266ad2f3d3b824f413f11716f81b87ccb602c3cdda972c7341c0d1e60b5
@@ -410,40 +376,6 @@ models:
         value: 30GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct:rtx4090x1-throughput-int4-awq-h2km-agcia
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct RTX4090x1 INT4_AWQ Throughput
-      ngcMetadata:
-        4351693dec21e2af27f6309206818eae6ef49a9464d96e043221add168e81d09:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.13.1
-          tags:
-            feat_lora: 'false'
-            gpu: rtx4090
-            gpu_device: 2684:10de
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: dbbdb2faa9a306ecf3066820bd37393b1530a725a55a15aed80ce250e3473786
-            number_of_gpus: '1'
-            pp: '1'
-            precision: int4_awq
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: INT4_AWQ
-      - key: GPU
-        value: RTX4090
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2684:10DE
-      - key: NIM VERSION
-        value: 1.13.1
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct:h100x1-throughput-fp8-rmqqnk9ima
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct H100x1 FP8 Throughput
@@ -453,7 +385,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h100
+            gpu: H100
             gpu_device: 2330:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 3950ee02bc0277147b77079c0cc5bc954b9189f7866fbbebc37ece4ec31283f6
@@ -489,7 +421,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: b200
+            gpu: B200
             gpu_device: 2901:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 467e29e38751b085aa13fdc92f6eaf1a08a8c360ef19718a92f64bd507221fd8
@@ -525,7 +457,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gb200
+            gpu: GB200
             gpu_device: 2941:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 0a3a8da158191386b506caa79c0bd9787f45009a7e52113b82fcdde0511001d7
@@ -561,7 +493,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: l40s
+            gpu: L40S
             gpu_device: 26b9:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 9b1feaf6e923581317ff4291ca09856eb403efd7acdeee1c8e787d988ced56ce
@@ -597,7 +529,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h200
+            gpu: H200
             gpu_device: 2335:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 7b377dc3e02bbcef7ec1c0ccee4afc1d99d2409dc7ab6576f1f386ebbedeabc6
@@ -633,7 +565,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: b200
+            gpu: B200
             gpu_device: 2901:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 2693061ea8698de078f95517349178ce8894a51a97db468183032cba22ab04ae
@@ -669,7 +601,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h100_nvl
+            gpu: H100_NVL
             gpu_device: 2321:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: a0de60706fabf3ee071fef41f0c14225a3d88799bb9728af810e57a7499f038f
@@ -705,7 +637,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: b200
+            gpu: B200
             gpu_device: 2901:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: d07936f83cf22e053e9fe3339050f2e05459ebcde766c94fdb7a6ac90aeb1fda
@@ -741,7 +673,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gh200_480gb
+            gpu: GH200_480GB
             gpu_device: 2342:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 1fa738c9de9d4b25a298b3cd021b05beab57c2c9ab5a930a3d1efcf7204fc463
@@ -768,40 +700,6 @@ models:
         value: 30GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct:rtx5090x1-throughput-nvfp4-mtx9sbomjq
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct RTX5090x1 NVFP4 Throughput
-      ngcMetadata:
-        7ce08f76c0ca314e10e00fed7a67de7067b79bada8abe7734c62f4e15ceba717:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.13.1
-          tags:
-            feat_lora: 'false'
-            gpu: rtx5090
-            gpu_device: 2b85:10de
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: ebc97512fc41b1175532b6636aad97e20c356283aaf7bab2eaad5dc4ecb62a71
-            number_of_gpus: '1'
-            pp: '1'
-            precision: nvfp4
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: NVFP4
-      - key: GPU
-        value: RTX5090
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2B85:10DE
-      - key: NIM VERSION
-        value: 1.13.1
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct:h200x1-throughput-fp8-mqkoo4u9fa
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct H200x1 FP8 Throughput
@@ -811,7 +709,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h200
+            gpu: H200
             gpu_device: 2335:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: d7e3e88abee403b365d238441ca9c1172e71745fe43cd7dce511e7d95309d237
@@ -847,7 +745,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: rtx6000_blackwell_sv
+            gpu: RTX6000_BLACKWELL_SV
             gpu_device: 2bb5:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 0852d2d4b6d54d6bc12acf922890bfa19e801e74276ddddcff98034ba0dc4c0f
@@ -883,7 +781,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: rtx6000_blackwell_sv
+            gpu: RTX6000_BLACKWELL_SV
             gpu_device: 2bb5:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: a11707b8479a7230d31a451c07c5650f0e8ff58948507a983a2e89b846929ecf
@@ -919,7 +817,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h200_nvl
+            gpu: H200_NVL
             gpu_device: 233b:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 362023b28455913264302e9d87593459bc9930c544859af88689346e92085fea
@@ -946,40 +844,6 @@ models:
         value: 30GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct:rtx4090x1-latency-int4-awq-sepy5e-epg
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct RTX4090x1 INT4_AWQ Latency
-      ngcMetadata:
-        889b6bd58523ef352f53980df73fca1a387b4d37664d251639a3ca183ac6a8f6:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.13.1
-          tags:
-            feat_lora: 'false'
-            gpu: rtx4090
-            gpu_device: 2684:10de
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: a35f746edb2b2c7dd9bfcf72e7ab8334042de7f4bab51cc2793d4dd7fc10d4c7
-            number_of_gpus: '1'
-            pp: '1'
-            precision: int4_awq
-            profile: latency
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: LATENCY
-      - key: PRECISION
-        value: INT4_AWQ
-      - key: GPU
-        value: RTX4090
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2684:10DE
-      - key: NIM VERSION
-        value: 1.13.1
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct:8c22764a7e3675c50d4c7c9a4edb474456022b16
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct A100_SXM4_40GBx2 BF16 Latency
@@ -989,7 +853,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: a100_sxm4_40gb
+            gpu: A100_SXM4_40GB
             gpu_device: 20b0:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 344bc1f6c75518604e27015bf9131a6dc8c5257396806f35575516bb14234706
@@ -1025,7 +889,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gb200
+            gpu: GB200
             gpu_device: 2941:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 3cb77524c717d774efbda1f850840b59abc39d9bd46fc2983ebc3dc1f4931ff6
@@ -1061,7 +925,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h200_nvl
+            gpu: H200_NVL
             gpu_device: 233b:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 3a251730a9c214eea8101d8192f6c4c35b1d321aad615edc1e0a942521b828b0
@@ -1097,7 +961,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h100
+            gpu: H100
             gpu_device: 2330:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 782d96856a10dac93438804c42286ba3e7d0d7445d7fbd8f8497dd3c80238564
@@ -1133,7 +997,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h100
+            gpu: H100
             gpu_device: 2330:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 04c9939245eef94e92510642382d6ad26f65a25cf1687b76ccc4e66aba70da39
@@ -1169,7 +1033,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gh200_144gb
+            gpu: GH200_144GB
             gpu_device: 2348:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: ca7f6e7d29a1f514a9d7f4f3d731b0a0d286a9358a96287b12a1045ac9ca590b
@@ -1205,7 +1069,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: b200
+            gpu: B200
             gpu_device: 2901:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: b1e67d29794a75bf923a7224dd297dbc4aacd4d97273a7fd66dda7e8371a6da8
@@ -1241,7 +1105,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: rtx6000_blackwell_sv
+            gpu: RTX6000_BLACKWELL_SV
             gpu_device: 2bb5:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 9cd258950837575782b24640b90c1cd969334d691131036208cd3c8b0735f927
@@ -1277,7 +1141,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h200_nvl
+            gpu: H200_NVL
             gpu_device: 233b:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 93297aebf65f337e982d4ebd8e79f380bd9ad05346cf2e18908c6365de2b2307
@@ -1313,7 +1177,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gb200
+            gpu: GB200
             gpu_device: 2941:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: efc59c490dab28006a89a5d53a36d4ef5c5d3b0927c7d118f02014d4eb0c29e8
@@ -1349,7 +1213,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: l40s
+            gpu: L40S
             gpu_device: 26b9:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 7ebba124e3f58d0563b96377f7c85432ef3e2f393efb9e158fd308a8738abcfb
@@ -1385,7 +1249,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h200
+            gpu: H200
             gpu_device: 2335:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 6bc839be18669cae90a69af4e02503965be03b8c68b1b7ac2cf6b612033abeb8
@@ -1412,40 +1276,6 @@ models:
         value: 9GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct:rtx5090x1-throughput-int4-awq-ll9tz8v2cw
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct RTX5090x1 INT4_AWQ Throughput
-      ngcMetadata:
-        a87072ad49cfd71bf350df5757a464c8ee41a88c7df6bb436fd799242191dbf6:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.13.1
-          tags:
-            feat_lora: 'false'
-            gpu: rtx5090
-            gpu_device: 2b85:10de
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 037a33809085ec8ca342250e92024461ffc81a890525269921be8aa0c24b1e13
-            number_of_gpus: '1'
-            pp: '1'
-            precision: int4_awq
-            profile: throughput
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: THROUGHPUT
-      - key: PRECISION
-        value: INT4_AWQ
-      - key: GPU
-        value: RTX5090
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2B85:10DE
-      - key: NIM VERSION
-        value: 1.13.1
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct:a100x2-latency-bf16-oxfjg8md-a
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct A100x2 BF16 Latency
@@ -1455,7 +1285,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: a100
+            gpu: A100
             gpu_device: 20b2:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 0b1583a74d6516dd30c0bfdce8972835384f10fb4f617df4e0260fdf5092b059
@@ -1491,7 +1321,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gb200
+            gpu: GB200
             gpu_device: 2941:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: a381f8cc9d090bc49cb320a47cdefe01b0555dc9409312516194cb19437436d0
@@ -1527,7 +1357,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h100_nvl
+            gpu: H100_NVL
             gpu_device: 2321:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: d0040f5636dd8d4baa9c36337ccb4157b58e47ba7118b2d54b36e2ad96061ed0
@@ -1563,7 +1393,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gh200_144gb
+            gpu: GH200_144GB
             gpu_device: 2348:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 0ec33e185e2d8e2e4bd97118f54276dbece4b6744371f895bd4c86e8e4dceedb
@@ -1599,7 +1429,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h200
+            gpu: H200
             gpu_device: 2335:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 673a0a6cdd37cabec7d8dcc8f05f787884c72f2b56fcaad416429dda38238c0b
@@ -1635,7 +1465,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gh200_480gb
+            gpu: GH200_480GB
             gpu_device: 2342:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: b41e403000a7d5221cdd4f00ab4d8a2ef58aa3470a65db51abd523b245c63ea6
@@ -1671,7 +1501,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: l40s
+            gpu: L40S
             gpu_device: 26b9:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 570d33681085a88ae5ea6bd28342996817acb2d9b0a5e8486e197bba77b832a1
@@ -1707,7 +1537,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: rtx6000_ada
+            gpu: RTX6000_ADA
             gpu_device: 26b1:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 737909c201e9ccea9bfb138401ed768b71985f2aad636ed91b7ca0712e02cb43
@@ -1743,7 +1573,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: rtx6000_blackwell_sv
+            gpu: RTX6000_BLACKWELL_SV
             gpu_device: 2bb5:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 689cc0a0026ff1fff0e5818d26ffe369c59e7b16f96d9239248504fbab23c28c
@@ -1779,7 +1609,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: rtx6000_blackwell_sv
+            gpu: RTX6000_BLACKWELL_SV
             gpu_device: 2bb5:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: fa369969c2e20bb29b6b004cde3f63ba17a65056818bd8ad63528141ecb41527
@@ -1815,7 +1645,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: a100
+            gpu: A100
             gpu_device: 20b2:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 2c735fe09841c686ba2f7ace400337d0f11be549d41cdeb9ba1c82688d0688fa
@@ -1851,7 +1681,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gh200_144gb
+            gpu: GH200_144GB
             gpu_device: 2348:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: c9d911dd01c8c520784ca0fec350f83855a8ca1ea1a3fed5f707fa642945a3e3
@@ -1878,40 +1708,6 @@ models:
         value: 30GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct:rtx5090x1-latency-int4-awq-kxnfajup9a
-      framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct RTX5090x1 INT4_AWQ Latency
-      ngcMetadata:
-        de3e9db1f9e1c1864e22598536feef42e80b6c33ae1327713a78874dddb2e32c:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.13.1
-          tags:
-            feat_lora: 'false'
-            gpu: rtx5090
-            gpu_device: 2b85:10de
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: e01b16995e3845a260c61640c84529f3eac8233a1b72271a8d73f958ca5921d4
-            number_of_gpus: '1'
-            pp: '1'
-            precision: int4_awq
-            profile: latency
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: LATENCY
-      - key: PRECISION
-        value: INT4_AWQ
-      - key: GPU
-        value: RTX5090
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2B85:10DE
-      - key: NIM VERSION
-        value: 1.13.1
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct:b200x1-throughput-fp8-i5rbiys4jq
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct B200x1 FP8 Throughput
@@ -1921,7 +1717,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: b200
+            gpu: B200
             gpu_device: 2901:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 9d7c4bc4201757dcd3f1147712dfb1c83a8f8535405a59e1fa547f17b4a5869b
@@ -1957,7 +1753,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: h100_nvl
+            gpu: H100_NVL
             gpu_device: 2321:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: b75eb29f401f555ea3d19a6df30861ef874d10760590ee8856ff0542d7ea1e7f
@@ -1993,7 +1789,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gh200_480gb
+            gpu: GH200_480GB
             gpu_device: 2342:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: aab7bbbbcf3e6f7fb544ee77017dd2ee59aa0b81dc314dec4bb46317def34714
@@ -2029,7 +1825,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: rtx6000_blackwell_sv
+            gpu: RTX6000_BLACKWELL_SV
             gpu_device: 2bb5:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 60b75ec923fe8a417deb0273d9a21b4fcd4e3e0f8f9ed6e9527a66433cf6030c
@@ -2065,7 +1861,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: l40s
+            gpu: L40S
             gpu_device: 26b9:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: ded6e827825103665f5fea2381f04196a88c95525aea31c073556f0204ad9c8e
@@ -2101,7 +1897,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: gh200_144gb
+            gpu: GH200_144GB
             gpu_device: 2348:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: 02d2b0459a15ab0a39ec4335caf74e3105e66f51ae577b7bf8a1b64cfcb5c472
@@ -2137,7 +1933,7 @@ models:
           release: 1.13.1
           tags:
             feat_lora: 'false'
-            gpu: a10g
+            gpu: A10G
             gpu_device: 2237:10de
             llm_engine: tensorrt_llm
             nim_workspace_hash_v1: fda7bc4c0bf1f5eaeecbf29fbdd078ecbf587ac57c62610180d3d5fb90ffcfda
