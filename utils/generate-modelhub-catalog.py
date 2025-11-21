@@ -37,7 +37,7 @@
 #
 # Note:
 #   1. Existing model: pass the model YAML with "optimizationProfiles: []" to append newly generated profiles.
-#   2. New model: use default mlx-crud-app/service/resources/utils/base_model.yaml, then update user-defined values after profiles are loaded.
+#   2. New model: use default ./utils/base_model.yaml, then update user-defined values after profiles are loaded.
 #   3. Multiple variants: generate profiles per variant using the base file and copy profiles into the original catalog YAML.
 #        3.1 cml-serving provides different manifests for different variants of the same model.
 #   4. Filtering and inclusion rules (public unless stated otherwise):
