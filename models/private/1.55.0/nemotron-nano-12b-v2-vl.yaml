@@ -1,0 +1,817 @@
+models:
+- name: Nemotron Nano 12B V2 VL
+  displayName: Nemotron Nano 12B V2 VL
+  modelHubID: nemotron-nano-12b-v2-vl
+  category: VLM
+  type: NGC
+  description: The Nemotron Nano12B v2 VL model is an advanced autoregressive Visual Language Model (VLM) designed for document transcription from images and videos, outputting text in a reading order.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+  modelVariants:
+  - variantId: Nemotron Nano 12B V2 VL
+    modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJjYW5HdWVzdERvd25sb2FkIjogZmFsc2UsCiAgICAiY3JlYXRlZERhdGUiOiAiMjAyNS0xMS0wNVQxODozOToyMS42MzhaIiwKICAgICJkZXNjcmlwdGlvbiI6ICIjIE1vZGVsIE92ZXJ2aWV3XG4jIyMgRGVzY3JpcHRpb246XG5OVklESUEgTmVtb3Ryb24gTmFubyAxMkIgdjIgVkwgbW9kZWwgZW5hYmxlcyBtdWx0aS1pbWFnZSByZWFzb25pbmcgYW5kIHZpZGVvIHVuZGVyc3RhbmRpbmcsIGFsb25nIHdpdGggc3Ryb25nIGRvY3VtZW50IGludGVsbGlnZW5jZSwgdmlzdWFsIFEmQSBhbmQgc3VtbWFyaXphdGlvbiBjYXBhYmlsaXRpZXMuXG48YnI+XG5cblRoaXMgbW9kZWwgaXMgcmVhZHkgZm9yIGNvbW1lcmNpYWwgdXNlLiA8YnI+XG5cbiMjIyBMaWNlbnNlL1Rlcm1zIG9mIFVzZVxuR292ZXJuaW5nIFRlcm1zOiBVc2Ugb2YgdGhpcyBtb2RlbCBpcyBnb3Zlcm5lZCBieSB0aGUgWyBOVklESUEgT3BlbiBNb2RlbCBMaWNlbnNlIEFncmVlbWVudF0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9hZ3JlZW1lbnRzL2VudGVycHJpc2Utc29mdHdhcmUvbnZpZGlhLW9wZW4tbW9kZWwtbGljZW5zZS8pXG5cblxuXG4jIyMgRGVwbG95bWVudCBHZW9ncmFwaHk6XG5HbG9iYWwgPGJyPlxuXG4jIyMgVXNlIENhc2U6IDxicj5cbk5lbW90cm9uIE5hbm8gMTJCIFYyIFZMIGlzIGEgbW9kZWwgZm9yIG11bHRpLW1vZGFsIGRvY3VtZW50IGludGVsbGlnZW5jZS4gSXQgd291bGQgYmUgdXNlZCBieSBpbmRpdmlkdWFscyBvciBidXNpbmVzc2VzIHRoYXQgbmVlZCB0byBwcm9jZXNzIGRvY3VtZW50cyBzdWNoIGFzIGludm9pY2VzLCByZWNlaXB0cywgYW5kIG1hbnVhbHMuIFRoZSBtb2RlbCBpcyBjYXBhYmxlIG9mIGhhbmRsaW5nIG11bHRpcGxlIGltYWdlcyBvZiBkb2N1bWVudHMsIHVwIHRvIGZvdXIgaW1hZ2VzIGF0IGEgcmVzb2x1dGlvbiBvZiAxayB4IDJrIGVhY2gsIGFsb25nIHdpdGggYSBsb25nIHRleHQgcHJvbXB0LiBUaGUgZXhwZWN0ZWQgdXNlIGlzIGZvciB0YXNrcyBsaWtlIHN1bW1hcml6YXRpb24gYW5kIFZpc3VhbCBRdWVzdGlvbiBBbnN3ZXJpbmcgKFZRQSkuIFRoZSBtb2RlbCBpcyBhbHNvIGV4cGVjdGVkIHRvIGhhdmUgYSBzaWduaWZpY2FudCBhZHZhbnRhZ2UgaW4gdGhyb3VnaHB1dC4gPGJyPlxuXG5cbiMjIyBSZWxlYXNlIERhdGU6ICA8YnI+XG4tIEJ1aWxkLk52aWRpYS5jb20gW09jdG9iZXIgMjh0aCwgMjAyNV0gdmlhIFtudmlkaWEvTlZJRElBLU5lbW90cm9uLU5hbm8tVkwtMTJCLVYyXShodHRwczovL2J1aWxkLm52aWRpYS5jb20vbnZpZGlhL25lbW90cm9uLW5hbm8tMTJiLXYyLXZsKTxicj5cbi0gSHVnZ2luZyBGYWNlIFtPY3RvYmVyIDI4dGgsIDIwMjVdIHZpYSBbbnZpZGlhL05WSURJQS1OZW1vdHJvbi1OYW5vLVZMLTEyQi1WMi1CRjE2XShodHRwczovL2h1Z2dpbmdmYWNlLmNvL252aWRpYS9OZW1vdHJvbi1OYW5vLTEyQi12Mi1WTC1CRjE2KTxicj5cbi0gSHVnZ2luZyBGYWNlIFtPY3RvYmVyIDI4dGgsIDIwMjVdIHZpYSBbbnZpZGlhL05WSURJQS1OZW1vdHJvbi1OYW5vLVZMLTEyQi1WMi1GUDhdKGh0dHBzOi8vaHVnZ2luZ2ZhY2UuY28vbnZpZGlhL05WSURJQS1OZW1vdHJvbi1OYW5vLTEyQi12Mi1WTC1GUDgpPGJyPlxuLSBIdWdnaW5nIEZhY2UgW09jdG9iZXIgMjh0aCwgMjAyNV0gdmlhIFtudmlkaWEvTlZJRElBLU5lbW90cm9uLU5hbm8tVkwtMTJCLVYyLU5WRlA0XShodHRwczovL2h1Z2dpbmdmYWNlLmNvL252aWRpYS9OVklESUEtTmVtb3Ryb24tTmFuby0xMkItdjItVkwtTlZGUDQtUUFEKVxuXG5cblxuXG4jIyMgU3lzdGVtIFByb21wdFxuXG5OZW1vdHJvbiBOYW5vIDEyQiBWMiBWTCBzdXBwb3J0cyByZWFzb25pbmcgZm9yIHRleHQsIGltYWdlIGFuZCBtdWx0aS1pbWFnZXMgaW5wdXRzLlxuXG5SZWFzb25pbmcgYmVoYXZpb3IgaXMgY29udHJvbGxlZCB2aWEgdGhlIHN5c3RlbSBwcm9tcHQuIEJ5IGRlZmF1bHQsIHJlYXNvbmluZyBpcyBPRkYuXG5cbkZvciB2aWRlbyBpbnB1dHMsIHJlYXNvbmluZyBpcyBub3Qgc3VwcG9ydGVkLlxuXG5cbi0gVG8gZW5hYmxlIHJlYXNvbmluZyAodGV4dCBhbmQgaW1hZ2VzIG9ubHkpLCBpbmNsdWRlIGAvdGhpbmtgIGluIHRoZSBzeXN0ZW0gcHJvbXB0OlxuYGBgXG57XCJyb2xlXCI6IFwic3lzdGVtXCIsIFwiY29udGVudFwiOiBcIi90aGlua1wifVxuYGBgXG4tIFRvIGRpc2FibGUgcmVhc29uaW5nLCBpbmNsdWRlIGAvbm9fdGhpbmtgIGluIHRoZSBzeXN0ZW0gcHJvbXB0OlxuYGBgXG57XCJyb2xlXCI6IFwic3lzdGVtXCIsIFwiY29udGVudFwiOiBcIi9ub190aGlua1wifVxuYGBgXG5cblxuXG5cbiMgTW9kZWwgQXJjaGl0ZWN0dXJlOlxuKipBcmNoaXRlY3R1cmUgVHlwZToqKlxuVHJhbnNmb3JtZXIgIDxicj5cbioqTmV0d29yayBBcmNoaXRlY3R1cmU6KiogXG5WaXNpb24gRW5jb2RlcjogQ1JhZGlvVjItSFxuTGFuZ3VhZ2UgRW5jb2RlcjogTlZJRElBLU5lbW90cm9uLU5hbm8tMTJCLXYyXG4gPGJyPlxuXG5OdW1iZXIgb2YgbW9kZWwgcGFyYW1ldGVyczogMTIuNkI8YnI+XG5cblxuIyMgSW5wdXQ6IDxicj5cbioqSW5wdXQgVHlwZShzKToqKiAgSW1hZ2UsIFZpZGVvLCBUZXh0PGJyPlxuKipJbnB1dCBGb3JtYXQ6KiogSW1hZ2UgKHBuZyxqcGcsanBlZyx3ZWJwKSwgVmlkZW8gKE1QNCwgTU9WLCBXRUJNKSwgVGV4dCAoU3RyaW5nKTxicj5cbioqSW5wdXQgUGFyYW1ldGVyczoqKiBJbWFnZSAoMkQpLFZpZGVvKDNEKSwgVGV4dCAoMUQpICA8YnI+XG4qKk90aGVyIFByb3BlcnRpZXMgUmVsYXRlZCB0byBJbnB1dDoqKlxuLSBJbnB1dCBJbWFnZXMgU3VwcG9ydGVkOiA1XG4tIExhbmd1YWdlIFN1cHBvcnRlZDogRW5nbGlzaCBvbmx5IDxicj5cbi0gSW5wdXQgKyBPdXRwdXQgVG9rZW46IDEyOEtcbi0gTWluaW11bSBSZXNvbHV0aW9uOiAzMiBcdTAwZDcgMzIgcGl4ZWxzXG4tIE1heGltdW0gUmVzb2x1dGlvbjogRGV0ZXJtaW5lZCBieSBhIDEyLXRpbGUgbGF5b3V0IGNvbnN0cmFpbnQsIHdpdGggZWFjaCB0aWxlIGJlaW5nIDUxMiBcdTAwZDcgNTEyIHBpeGVscy4gVGhpcyBzdXBwb3J0cyBhc3BlY3QgcmF0aW9zIHN1Y2ggYXM6XG4gIC0gNCBcdTAwZDcgMyBsYXlvdXQ6IHVwIHRvIDIwNDggXHUwMGQ3IDE1MzYgcGl4ZWxzXG4gIC0gMyBcdTAwZDcgNCBsYXlvdXQ6IHVwIHRvIDE1MzYgXHUwMGQ3IDIwNDggcGl4ZWxzXG4gIC0gMiBcdTAwZDcgNiBsYXlvdXQ6IHVwIHRvIDEwMjQgXHUwMGQ3IDMwNzIgcGl4ZWxzXG4gIC0gNiBcdTAwZDcgMiBsYXlvdXQ6IHVwIHRvIDMwNzIgXHUwMGQ3IDEwMjQgcGl4ZWxzXG4gIC0gT3RoZXIgY29uZmlndXJhdGlvbnMgYWxsb3dlZCwgcHJvdmlkZWQgdG90YWwgdGlsZXMgXHUyMjY0IDEyXG4tIENoYW5uZWwgQ291bnQ6IDMgY2hhbm5lbHMgKFJHQilcbi0gQWxwaGEgQ2hhbm5lbDogTm90IHN1cHBvcnRlZCAobm8gdHJhbnNwYXJlbmN5KSA8YnI+XG4tIEZyYW1lczogMiBGUFMgd2l0aCBtaW4gb2YgOCBmcmFtZSBhbmQgbWF4IG9mIDEyOCBmcmFtZXNcblxuXG5cbiMjIE91dHB1dDogPGJyPlxuKipPdXRwdXQgVHlwZShzKToqKiAgVGV4dCA8YnI+XG4qKk91dHB1dCBGb3JtYXQ6KiogIFN0cmluZyA8YnI+XG5PdXRwdXQgUGFyYW1ldGVyczogMUQgPGJyPlxuKipPdGhlciBQcm9wZXJ0aWVzIFJlbGF0ZWQgdG8gT3V0cHV0OioqICBJbnB1dCArIE91dHB1dCBUb2tlbjogMTI4SyA8YnI+XG5cbk91ciBBSSBtb2RlbHMgYXJlIGRlc2lnbmVkIGFuZC9vciBvcHRpbWl6ZWQgdG8gcnVuIG9uIE5WSURJQSBHUFUtYWNjZWxlcmF0ZWQgc3lzdGVtcy4gQnkgbGV2ZXJhZ2luZyBOVklESUFcdTIwMTlzIGhhcmR3YXJlIChlLmcuIEdQVSBjb3JlcykgYW5kIHNvZnR3YXJlIGZyYW1ld29ya3MgKGUuZy4sIENVREEgbGlicmFyaWVzKSwgdGhlIG1vZGVsIGFjaGlldmVzIGZhc3RlciB0cmFpbmluZyBhbmQgaW5mZXJlbmNlIHRpbWVzIGNvbXBhcmVkIHRvIENQVS1vbmx5IHNvbHV0aW9ucy4gPGJyPiBcblxuXG4jIyBTb2Z0d2FyZSBJbnRlZ3JhdGlvbjpcbioqUnVudGltZSBFbmdpbmUocyk6KiogXG4qIHZMTE0gPGJyPlxuKiBUUlQtTExNIDxicj5cblxuKipTdXBwb3J0ZWQgSGFyZHdhcmUgTWljcm9hcmNoaXRlY3R1cmUgQ29tcGF0aWJpbGl0eToqKiA8YnI+XG4qIE5WSURJQSBMNDBTIDxicj5cbiogTlZJRElBIEExMDAgPGJyPlxuKiBOVklESUEgQjIwMCA8YnI+XG4qIE5WSURJQSBIMTAwL0gyMDAgPGJyPlxuKiBOVklESUEgUlRYIFBSTyA2MDAwIFNlcnZlciBFZGl0aW9uPGJyPlxuKiBOVklESUEgR0IyMDAgPGJyPlxuXG4qKlByZWZlcnJlZC9TdXBwb3J0ZWQgT3BlcmF0aW5nIFN5c3RlbShzKToqKlxuKiBMaW51eCA8YnI+XG5cblRoZSBpbnRlZ3JhdGlvbiBvZiBmb3VuZGF0aW9uIGFuZCBmaW5lLXR1bmVkIG1vZGVscyBpbnRvIEFJIHN5c3RlbXMgcmVxdWlyZXMgYWRkaXRpb25hbCB0ZXN0aW5nIHVzaW5nIHVzZS1jYXNlLXNwZWNpZmljIGRhdGEgdG8gZW5zdXJlIHNhZmUgYW5kIGVmZmVjdGl2ZSBkZXBsb3ltZW50LiBGb2xsb3dpbmcgdGhlIFYtbW9kZWwgbWV0aG9kb2xvZ3ksIGl0ZXJhdGl2ZSB0ZXN0aW5nIGFuZCB2YWxpZGF0aW9uIGF0IGJvdGggdW5pdCBhbmQgc3lzdGVtIGxldmVscyBhcmUgZXNzZW50aWFsIHRvIG1pdGlnYXRlIHJpc2tzLCBtZWV0IHRlY2huaWNhbCBhbmQgZnVuY3Rpb25hbCByZXF1aXJlbWVudHMsIGFuZCBlbnN1cmUgY29tcGxpYW5jZSB3aXRoIHNhZmV0eSBhbmQgZXRoaWNhbCBzdGFuZGFyZHMgYmVmb3JlIGRlcGxveW1lbnQuIDxicj5cblxuXG4jIyBNb2RlbCBWZXJzaW9uKHMpOlxudjEuMDxicj5cblxuIyMgVHJhaW5pbmcsIFRlc3RpbmcsIGFuZCBFdmFsdWF0aW9uIERhdGFzZXRzOlxuXG4jIyMgVHJhaW5pbmcgRGF0YXNldHM6IFxuXG4qKkRhdGEgTW9kYWxpdGllcyoqIDxicj5cbioqVG90YWwgU2l6ZToqKiAzOS40ODYuNzAzIHNhbXBsZXMgPGJyPlxuKipUb3RhbCBOdW1iZXIgb2YgRGF0YXNldHM6KiogMjcwIDxicj4gICBcbioqVGV4dC1vbmx5IGRhdGFzZXRzOioqIDMzIDxicj5cbioqVGV4dC1hbmQtaW1hZ2UgZGF0YXNldHM6KiogMTc2IDxicj5cbioqVmlkZW8tYW5kLXRleHQgZGF0YXNldHM6KiogNjEgPGJyPlxuKipUb3RhbCBzaXplOioqIDI3LjcgVEIgPGJyPlxuXG4qKkRhdGEgbW9kYWxpdGllczoqKiBUZXh0LCBJbWFnZSwgVmlkZW8gPGJyPlxuKipEYXRhIENvbGxlY3Rpb24gTWV0aG9kIGJ5IGRhdGFzZXQ6KiogSHlicmlkOiBBdXRvbWF0ZWQsIEh1bWFuLCBTeW50aGV0aWMgPGJyPlxuKipMYWJlbGluZyBNZXRob2QgYnkgZGF0YXNldDoqKiBIeWJyaWQ6IEF1dG9tYXRlZCwgSHVtYW4sIFN5bnRoZXRpYyA8YnI+XG5cbioqRGF0YXNldCBwYXJ0aXRpb246KiogVHJhaW5pbmcgWzEwMCVdLCBUZXN0aW5nIFswJV0sIFZhbGlkYXRpb24gWzAlXSA8YnI+IFxuKipUaW1lIHBlcmlvZCBmb3IgdHJhaW5pbmcgZGF0YSBjb2xsZWN0aW9uOioqIDIwMjMtMjAyNSA8YnI+IFxuKipUaW1lIHBlcmlvZCBmb3IgdGVzdGluZyBkYXRhIGNvbGxlY3Rpb246KiogTi9BIDxicj4gXG4qKlRpbWUgcGVyaW9kIGZvciB2YWxpZGF0aW9uIGRhdGEgY29sbGVjdGlvbjoqKiBOL0EgPGJyPlxuXG5UaGUgcG9zdC10cmFpbmluZyBkYXRhc2V0cyBjb25zaXN0IG9mIGEgbWl4IG9mIGludGVybmFsIGFuZCBwdWJsaWMgZGF0YXNldHMgZGVzaWduZWQgZm9yIHRyYWluaW5nIHZpc2lvbiBsYW5ndWFnZSBtb2RlbHMgYWNyb3NzIHZhcmlvdXMgdGFza3MuIEl0IGluY2x1ZGVzOiBcblxuKiBQdWJsaWMgZGF0YXNldHMgc291cmNlZCBmcm9tIHB1YmxpY2x5IGF2YWlsYWJsZSBpbWFnZXMgYW5kIGFubm90YXRpb25zLCBzdXBwb3J0aW5nIHRhc2tzIGxpa2UgY2xhc3NpZmljYXRpb24sIGNhcHRpb25pbmcsIHZpc3VhbCBxdWVzdGlvbiBhbnN3ZXJpbmcsIGNvbnZlcnNhdGlvbiBtb2RlbGluZywgZG9jdW1lbnQgYW5hbHlzaXMgYW5kIHRleHQvaW1hZ2UgcmVhc29uaW5nLlxuKiBJbnRlcm5hbCB0ZXh0IGFuZCBpbWFnZSBkYXRhc2V0cyBidWlsdCB3aXRoIHB1YmxpYyBjb21tZXJjaWFsIGltYWdlcyBhbmQgaW50ZXJuYWwgbGFiZWxzLCBhZGFwdGVkIGZvciB0aGUgc2FtZSB0YXNrcyBhcyBsaXN0ZWQgYWJvdmUuXG4qIFN5bnRoZXRpYyBpbWFnZSBkYXRhc2V0cyBnZW5lcmF0ZWQgcHJvZ3JhbW1hdGljYWxseSBmb3Igc3BlY2lmaWMgdGFza3MgbGlrZSB0YWJ1bGFyIGRhdGEgdW5kZXJzdGFuZGluZyBhbmQgb3B0aWNhbCBjaGFyYWN0ZXIgcmVjb2duaXRpb24gKE9DUiksIGZvciBFbmdsaXNoLCBDaGluZXNlIGFzIHdlbGwgYXMgb3RoZXIgbGFuZ3VhZ2VzLlxuKiBWaWRlbyBkYXRhc2V0cyBzdXBwb3J0aW5nIHZpZGVvIHF1ZXN0aW9uIGFuc3dlcmluZyBhbmQgcmVhc29uaW5nIHRhc2tzIGZyb20gcHVibGljbHkgYXZhaWxhYmxlIHZpZGVvIHNvdXJjZXMsIHdpdGggZWl0aGVyIHB1YmxpY2x5IGF2YWlsYWJsZSBvciBpbnRlcm5hbGx5IGdlbmVyYXRlZCBhbm5vdGF0aW9ucy5cbiogU3BlY2lhbGl6ZWQgZGF0YXNldHMgZm9yIHNhZmV0eSBhbGlnbm1lbnQsIGZ1bmN0aW9uIGNhbGxpbmcsIGFuZCBkb21haW4tc3BlY2lmaWMgdGFza3MgKGUuZy4sIHNjaWVuY2UgZGlhZ3JhbXMsIGZpbmFuY2lhbCBxdWVzdGlvbiBhbnN3ZXJpbmcpLlxuKiBOVklESUEtU291cmNlZCBTeW50aGV0aWMgRGF0YXNldHMgZm9yIHRleHQgcmVhc29uaW5nLlxuKiBQcml2YXRlIGRhdGFzZXRzIGZvciBzYWZldHkgYWxpZ25tZW50IG9yIFZRQSBvbiBpbnZvaWNlcy5cbiogQ3Jhd2xlZCBvciBzY3JhcGVkIGNhcHRpb25pbmcsIFZRQSwgYW5kIHZpZGVvIGRhdGFzZXRzLlxuKiBTb21lIGRhdGFzZXRzIHdlcmUgaW1wcm92ZWQgd2l0aCBRd2VuMi41LTcyQi1JbnN0cnVjdCBhbm5vdGF0aW9uc1xuXG5Gb3IgYXJvdW5kIH4zMCUgb2Ygb3VyIHRvdGFsIHRyYWluaW5nIGNvcnB1cyBhbmQgc2V2ZXJhbCBvZiB0aGUgZG9tYWlucyBsaXN0ZWQgYWJvdmUsIHdlIHVzZWQgY29tbWVyY2lhbGx5IHBlcm1pc3NpdmUgbW9kZWxzIHRvIHBlcmZvcm06XG4qIExhbmd1YWdlIHRyYW5zbGF0aW9uXG4qIFJlLWxhYmVsaW5nIG9mIGFubm90YXRpb25zIGZvciB0ZXh0LCBpbWFnZSBhbmQgdmlkZW8gZGF0YXNldHNcbiogU3ludGhldGljIGRhdGEgZ2VuZXJhdGlvblxuKiBHZW5lcmF0aW5nIGNoYWluLW9mLXRob3VnaHQgKENvVCkgdHJhY2VzXG5cbkFkZGl0aW9uYWwgcHJvY2Vzc2luZyBmb3Igc2V2ZXJhbCBkYXRhc2V0cyBpbmNsdWRlZCBydWxlLWJhc2VkIFFBIGdlbmVyYXRpb24gKGUuZy4sIHdpdGggdGVtcGxhdGVzKSwgZXhwYW5kaW5nIHNob3J0IGFuc3dlcnMgaW50byBsb25nZXIgcmVzcG9uc2VzLCBhcyB3ZWxsIGFzIHByb3BlciByZWZvcm1hdHRpbmcuIE1vcmUgZGV0YWlscyBjYW4gYmUgZm91bmQgW2hlcmVdKGh0dHBzOi8vYXJ4aXYub3JnL2Ficy8yNTAxLjE0ODE4KS4gXG5cblxuKiogSW1hZ2UgYmFzZWQgZGF0YXNldHMgd2VyZSBhbGwgc2Nhbm5lZCBhZ2FpbnN0IGtub3duIENTQU0gdG8gbWFrZSBzdXJlIG5vIHN1Y2ggY29udGVudCB3YXMgaW5jbHVkZWQgaW4gdHJhaW5pbmcuPGJyPlxuXG4jIFB1YmxpYyBEYXRhc2V0cyA8YnI+IFxufCBUeXBlIHwgRGF0YSBUeXBlIHwgVG90YWwgU2FtcGxlcyB8IFRvdGFsIFNpemUgKEdCKSB8XG58LS0tLS0tfC0tLS0tLS0tLS0tfC0tLS0tLS0tLS0tLS0tLXwtLS0tLS0tLS0tLS0tLS0tLS18XG58IEZ1bmN0aW9uIGNhbGwgfCB0ZXh0IHwgOCwwMDAgfCAwLjAyIHxcbnwgSW1hZ2UgQ2FwdGlvbmluZyB8IGltYWdlLCB0ZXh0IHwgMSw0MjIsMTAyIHwgMSwwNTEuMDQgfFxufCBJbWFnZSBSZWFzb25pbmcgfCBpbWFnZSwgdGV4dCB8IDEsODg4LDIxNyB8IDI4Ni45NSB8XG58IE9DUiB8IGltYWdlLCB0ZXh0IHwgOSw4MzAsNTcwIHwgNSwzMTcuNjAgfFxufCBSZWZlcnJpbmcgRXhwcmVzc2lvbiBHcm91bmRpbmcgfCBpbWFnZSwgdGV4dCB8IDE0LDY5NCB8IDIuMzkgfFxufCBTYWZldHkgfCBpbWFnZSwgdGV4dCB8IDM0LDE4NyB8IDkuMjEgfFxufCBTYWZldHkgfCB0ZXh0IHwgNTcsMjIzIHwgMC41MiB8XG58IFNhZmV0eSB8IHZpZGVvLCB0ZXh0IHwgMTIsOTg4IHwgMTEuNzggfFxufCBUZXh0IEluc3RydWN0aW9uIFR1bmluZyB8IHRleHQgfCAyNDUsMDU2IHwgMS4xMyB8XG58IFRleHQgUmVhc29uaW5nIHwgdGV4dCB8IDIyNSw0MDggfCA0LjU1IHxcbnwgVlFBIHwgaW1hZ2UsIHRleHQgfCA4LDE3NCwxMzYgfCAyLDIwNy41MiB8XG58IFZRQSB8IHZpZGVvLCB0ZXh0IHwgNDAsMDAwIHwgNDYuMDUgfFxufCBWaWRlbyBDYXB0aW9uaW5nIHwgdmlkZW8sIHRleHQgfCAzLDI4OSB8IDYuMzEgfFxufCBWaWRlbyBSZWFzb25pbmcgfCB2aWRlbywgdGV4dCB8IDQyLDYyMCB8IDQ5LjEwIHxcbnwgVmlkZW9RQSB8IHZpZGVvLCB0ZXh0IHwgMSwzNzEsOTIzIHwgMTcsNjQxLjc5IHxcbnwgVmlzdWFsIEluc3RydWN0aW9uIFR1bmluZyB8IGltYWdlLCB0ZXh0IHwgMSwxNzMsODc3IHwgMTY3Ljc5IHxcbnwtLS0tLS18LS0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLS0tfC0tLS0tLS0tLS0tLS0tLS0tLXxcbnwgKipUT1RBTCoqIHwgfCAqKjI0LDU0NCwyOTAqKiB8ICoqMjYsODAzLjc1KiogfFxuXG5cbjxicj5cblxuIyBQcml2YXRlIERhdGFzZXRzIDxicj4gXG58IFR5cGUgfCBNb2RhbGl0aWVzIHwgVG90YWwgU2FtcGxlcyB8IFRvdGFsIFNpemUgKEdCKSB8XG58LS0tLS0tfC0tLS0tLS0tLS0tLXwtLS0tLS0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLS0tLS0tfFxufCBJbWFnZSBSZWFzb25pbmcgfCBpbWFnZSwgdGV4dCB8IDE3LDcyOSB8IDE1LjQxIHxcbnwgVGV4dCBSZWFzb25pbmcgfCB0ZXh0IHwgNDQ1LDk1OCB8IDkuMDEgfFxufC0tLS0tLXwtLS0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLS0tfC0tLS0tLS0tLS0tLS0tLS0tLXxcbnwgKipUT1RBTCoqIHwgfCAqKjQ2Myw2ODcqKiB8ICoqMjQuNDIqKiB8XG48YnI+XG5cbiMgRGF0YSBDcmF3bGluZyBhbmQgU2NyYXBpbmcgPGJyPiBcbnwgVHlwZSB8IE1vZGFsaXRpZXMgfCBUb3RhbCBTYW1wbGVzIHwgVG90YWwgU2l6ZSAoR0IpIHxcbnwtLS0tLS18LS0tLS0tLS0tLS0tfC0tLS0tLS0tLS0tLS0tLXwtLS0tLS0tLS0tLS0tLS0tLS18XG58IEltYWdlIENhcHRpb25pbmcgfCBpbWFnZSwgdGV4dCB8IDM5LDg3MCB8IDEwLjI0IHxcbnwgVlFBIHwgaW1hZ2UsIHRleHQgfCA0MCwzNDggfCAzLjk0IHxcbnwgVmlkZW9RQSB8IHZpZGVvLCB0ZXh0IHwgMjg4LDcyOCB8IDM5My4zMCB8XG58LS0tLS0tfC0tLS0tLS0tLS0tLXwtLS0tLS0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLS0tLS0tfFxufCAqKlRPVEFMKiogfCB8ICoqMzY4LDk0NioqIHwgKio0MDcuNDgqKiB8XG48YnI+XG5cbiMgVXNlci1Tb3VyY2VkIERhdGEgKENvbGxlY3RlZCBieSBQcm92aWRlciBpbmNsdWRpbmcgUHJvbXB0cykgPGJyPiBcbjxicj5cblxuIyBTZWxmLVNvdXJjZWQgU3ludGhldGljIERhdGEgPGJyPiBcbnwgVHlwZSB8IERhdGEgVHlwZSB8IFRvdGFsIFNhbXBsZXMgfCBUb3RhbCBTaXplIChHQikgfFxufC0tLS0tLXwtLS0tLS0tLS0tLXwtLS0tLS0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLS0tLS0tfFxufCBDb2RlIHwgdGV4dCB8IDEsMTY1LDU5MSB8IDU0LjE1IHxcbnwgT0NSIHwgaW1hZ2UsIHRleHQgfCAyMTYsMzMyIHwgODMuNTMgfFxufCBUZXh0IFJlYXNvbmluZyB8IHRleHQgfCAxMiw3MjcsODU3IHwgMjk1LjgwIHxcbnwtLS0tLS18LS0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLS0tfC0tLS0tLS0tLS0tLS0tLS0tLXxcbnwgKipUT1RBTCoqIHwgfCAqKjE0LDEwOSw3ODAqKiB8ICoqNDMzLjQ4KiogfFxuPGJyPlxuXG4qKlByb3BlcnRpZXMqKjxicj5cbiogQWRkaXRpb25hbGx5LCB0aGUgZGF0YXNldCBjb2xsZWN0aW9uIChmb3IgdHJhaW5pbmcgYW5kIGV2YWx1YXRpb24pIGNvbnNpc3RzIG9mIGEgbWl4IG9mIGludGVybmFsIGFuZCBwdWJsaWMgZGF0YXNldHMgZGVzaWduZWQgZm9yIHRyYWluaW5nIGFuZCBldmFsdWF0aW9uIGFjcm9zcyB2YXJpb3VzIHRhc2tzLiBJdCBpbmNsdWRlczogXG4gICogSW50ZXJuYWwgZGF0YXNldHMgYnVpbHQgd2l0aCBwdWJsaWMgY29tbWVyY2lhbCBpbWFnZXMgYW5kIGludGVybmFsIGxhYmVscywgc3VwcG9ydGluZyB0YXNrcyBsaWtlIGNvbnZlcnNhdGlvbiBtb2RlbGluZyBhbmQgZG9jdW1lbnQgYW5hbHlzaXMuXG4gICogUHVibGljIGRhdGFzZXRzIHNvdXJjZWQgZnJvbSBwdWJsaWNseSBhdmFpbGFibGUgaW1hZ2VzIGFuZCBhbm5vdGF0aW9ucywgYWRhcHRlZCBmb3IgdGFza3Mgc3VjaCBhcyBpbWFnZSBjYXB0aW9uaW5nIGFuZCB2aXN1YWwgcXVlc3Rpb24gYW5zd2VyaW5nLlxuICAqIFN5bnRoZXRpYyBkYXRhc2V0cyBnZW5lcmF0ZWQgcHJvZ3JhbW1hdGljYWxseSBmb3Igc3BlY2lmaWMgdGFza3MgbGlrZSB0YWJ1bGFyIGRhdGEgdW5kZXJzdGFuZGluZy5cbiAgKiBTcGVjaWFsaXplZCBkYXRhc2V0cyBmb3Igc2FmZXR5IGFsaWdubWVudCwgZnVuY3Rpb24gY2FsbGluZywgYW5kIGRvbWFpbi1zcGVjaWZpYyB0YXNrcyAoZS5nLiwgc2NpZW5jZSBkaWFncmFtcywgZmluYW5jaWFsIHF1ZXN0aW9uIGFuc3dlcmluZykuXG5cbiMjIyBFdmFsdWF0aW9uIERhdGFzZXRzOlxuVGhlIGZvbGxvd2luZyBleHRlcm5hbCBiZW5jaG1hcmtzIGFyZSB1c2VkIGZvciBldmFsdWF0aW5nIHRoZSBtb2RlbDogPGJyPlxuXG58IERhdGFzZXQgfFxufC0tLS0tLS0tLXxcbnwgW1JEVGFibGVCZW5jaF0oaHR0cHM6Ly9naXRodWIuY29tL0ZpbGltb2EvcmQtdGFibGViZW5jaD90YWI9cmVhZG1lLW92LWZpbGUgKSB8XG58IE5WSURJQSBpbnRlcm5hbCB0ZXN0IHNldCBmb3IgT0NSIHxcbnwgW01NTVUgVmFsIHdpdGggQ2hhdEdQVCBhcyBqdWRnZV0oaHR0cHM6Ly9tbW11LWJlbmNobWFyay5naXRodWIuaW8vKSAgfFxufCBbQUkyRCBUZXN0XShodHRwczovL3ByaW9yLmFsbGVuYWkub3JnL3Byb2plY3RzL2RpYWdyYW0tdW5kZXJzdGFuZGluZyApICB8XG58IFtDaGFydFFBIFRlc3RdKGh0dHBzOi8vZ2l0aHViLmNvbS92aXMtbmxwL0NoYXJ0UUEpIHxcbnwgW0luZm9WUUEgVmFsXShodHRwczovL3d3dy5kb2N2cWEub3JnL2RhdGFzZXRzL2luZm9ncmFwaGljdnFhKSB8XG58IFtPQ1JCZW5jaF0oaHR0cHM6Ly9naXRodWIuY29tL1l1bGlhbmctTGl1L011bHRpbW9kYWxPQ1IpIHxcbnwgW09DUkJlbmNoVjJdKGh0dHBzOi8vZ2l0aHViLmNvbS9ZdWxpYW5nLUxpdS9NdWx0aW1vZGFsT0NSKSBFbmdsaXNoIHxcbnwgW0RvY1ZRQSBWYWxdKGh0dHBzOi8vd3d3LmRvY3ZxYS5vcmcvZGF0YXNldHMpIHxcbnwgW1NsaWRlUUEgVmFsXShodHRwczovL2dpdGh1Yi5jb20vbnR0bWRsYWItbmxwL1NsaWRlVlFBKSB8XG58IFtWaWRlbyBNTUVdKGh0dHBzOi8vZ2l0aHViLmNvbS9NTUUtQmVuY2htYXJrcy9WaWRlby1NTUUpICB8XG5cblxuXG5EYXRhIENvbGxlY3Rpb24gTWV0aG9kIGJ5IGRhdGFzZXQ6ICA8YnI+XG4qIEh5YnJpZDogSHVtYW4sIEF1dG9tYXRlZCA8YnI+XG5cbkxhYmVsaW5nIE1ldGhvZCBieSBkYXRhc2V0OiAgPGJyPlxuKiBIeWJyaWQ6IEh1bWFuLCBBdXRvbWF0ZWQgIDxicj5cblxuKipQcm9wZXJ0aWVzIChRdWFudGl0eSwgRGF0YXNldCBEZXNjcmlwdGlvbnMsIFNlbnNvcihzKSk6KiogTi9BIDxicj5cblxuKipEYXRhc2V0IExpY2Vuc2Uocyk6KiogTi9BIDxicj5cblxuRXZhbHVhdGlvbiBiZW5jaG1hcmtzIHNjb3JlczogPGJyPlxuXG5cbnwgQmVuY2htYXJrcyAgICAgICAgIHwgU2NvcmUgfFxufC0tLS0tLS0tLS0tLS0tLS0tLS0tfC0tLS0tLS18XG58IE1NTVUqICAgICAgICAgICAgICB8IDY4ICAgIHxcbnwgTWF0aFZpc3RhKiAgICAgICAgIHwgNzYuOSAgfFxufCBBSTJEICAgICAgICAgICAgICAgfCA4Ny4xMSB8XG58IE9DUkJlbmNodjIgICAgICAgICB8IDYyLjAgIHxcbnwgT0NSQmVuY2ggICAgICAgICAgIHwgODUuNiAgfFxufCBPQ1ItUmVhc29uaW5nICAgICAgfCAzNi40ICB8XG58IENoYXJ0UUEgICAgICAgICAgICB8IDg5LjcyIHxcbnwgRG9jVlFBICAgICAgICAgICAgIHwgOTQuMzkgfFxufCBWaWRlby1NTUUgdy9vIHN1YiAgfCA2NS45ICB8XG58IFZpc2lvbiBBdmVyYWdlICAgICB8IDc0LjAgIHxcblxuXG48YnI+XG5cbiMgSW5mZXJlbmNlOlxuKipBY2NlbGVyYXRpb24gRW5naW5lOioqIFt2TExNXSA8YnI+XG4qKkFjY2VsZXJhdGlvbiBFbmdpbmU6KiogW1RSVC1MTE1dIDxicj5cblxuKipUZXN0IEhhcmR3YXJlOioqIDxicj4gIFxuKiBOVklESUEgTDQwUyA8YnI+XG4qIE5WSURJQSBBMTAwIDxicj5cbiogTlZJRElBIEIyMDAgPGJyPlxuKiBOVklESUEgSDEwMC9IMjAwIDxicj5cbiogTlZJRElBIFJUWCBQUk8gNjAwMCBTZXJ2ZXIgRWRpdGlvbjxicj5cbiogTlZJRElBIEdCMjAwIDxicj5cblxuIyMgRXRoaWNhbCBDb25zaWRlcmF0aW9uczpcbk5WSURJQSBiZWxpZXZlcyBUcnVzdHdvcnRoeSBBSSBpcyBhIHNoYXJlZCByZXNwb25zaWJpbGl0eSBhbmQgd2UgaGF2ZSBlc3RhYmxpc2hlZCBwb2xpY2llcyBhbmQgcHJhY3RpY2VzIHRvIGVuYWJsZSBkZXZlbG9wbWVudCBmb3IgYSB3aWRlIGFycmF5IG9mIEFJIGFwcGxpY2F0aW9ucy4gIFdoZW4gZG93bmxvYWRlZCBvciB1c2VkIGluIGFjY29yZGFuY2Ugd2l0aCBvdXIgdGVybXMgb2Ygc2VydmljZSwgZGV2ZWxvcGVycyBzaG91bGQgd29yayB3aXRoIHRoZWlyIGludGVybmFsIG1vZGVsIHRlYW0gdG8gZW5zdXJlIHRoaXMgbW9kZWwgbWVldHMgcmVxdWlyZW1lbnRzIGZvciB0aGUgcmVsZXZhbnQgaW5kdXN0cnkgYW5kIHVzZSBjYXNlIGFuZCBhZGRyZXNzZXMgdW5mb3Jlc2VlbiBwcm9kdWN0IG1pc3VzZS48YnI+XG5QbGVhc2UgcmVwb3J0IHNlY3VyaXR5IHZ1bG5lcmFiaWxpdGllcyBvciBOVklESUEgQUkgQ29uY2VybnMgW2hlcmVdKGh0dHBzOi8vYXBwLmludGlncml0aS5jb20vcHJvZ3JhbXMvbnZpZGlhL252aWRpYXZkcC9kZXRhaWwpLjxicj5cblVzZXJzIGFyZSByZXNwb25zaWJsZSBmb3IgbW9kZWwgaW5wdXRzIGFuZCBvdXRwdXRzLiBVc2VycyBhcmUgcmVzcG9uc2libGUgZm9yIGVuc3VyaW5nIHNhZmUgaW50ZWdyYXRpb24gb2YgdGhpcyBtb2RlbCwgaW5jbHVkaW5nIGltcGxlbWVudGluZyBndWFyZHJhaWxzIGFzIHdlbGwgYXMgb3RoZXIgc2FmZXR5IG1lY2hhbmlzbXMsIHByaW9yIHRvIGRlcGxveW1lbnQuPGJyPlxuT3V0cHV0cyBnZW5lcmF0ZWQgYnkgdGhlc2UgbW9kZWxzIG1heSBjb250YWluIHBvbGl0aWNhbCBjb250ZW50IG9yIG90aGVyIHBvdGVudGlhbGx5IG1pc2xlYWRpbmcgaW5mb3JtYXRpb24sIGlzc3VlcyB3aXRoIGNvbnRlbnQgc2VjdXJpdHkgYW5kIHNhZmV0eSwgb3IgdW53YW50ZWQgYmlhcyB0aGF0IGlzIGluZGVwZW5kZW50IG9mIG91ciBvdmVyc2lnaHQuPGJyPlxuWW91IGFyZSByZXNwb25zaWJsZSBmb3IgZW5zdXJpbmcgdGhhdCB5b3VyIHVzZSBvZiBOVklESUEgTW9kZWxzIGNvbXBsaWVzIHdpdGggYWxsIGFwcGxpY2FibGUgbGF3cy5cblxuXG5cbiMjIEVudGVycHJpc2UgU3VwcG9ydFxuR2V0IGFjY2VzcyB0byBrbm93bGVkZ2UgYmFzZSBhcnRpY2xlcyBhbmQgc3VwcG9ydCBjYXNlcyBvciBbc3VibWl0IGEgdGlja2V0XShodHRwczovL3d3dy5udmlkaWEuY29tL2VuLXVzL2RhdGEtY2VudGVyL3Byb2R1Y3RzL2FpLWVudGVycHJpc2Utc3VpdGUvc3VwcG9ydC8pLiIsCiAgICAiZGlzcGxheU5hbWUiOiAiTlZJRElBIE5lbW90cm9uIE5hbm8gdjIgMTJCIFZMIiwKICAgICJleHBsYWluYWJpbGl0eSI6ICIiLAogICAgImZyYW1ld29yayI6ICJPdGhlciIsCiAgICAiaGFzUGxheWdyb3VuZCI6IGZhbHNlLAogICAgImhhc1NpZ25lZFZlcnNpb24iOiB0cnVlLAogICAgImlzUGxheWdyb3VuZEVuYWJsZWQiOiBmYWxzZSwKICAgICJpc1B1YmxpYyI6IGZhbHNlLAogICAgImlzUmVhZE9ubHkiOiB0cnVlLAogICAgImxhYmVscyI6IFsKICAgICAgICAiTlNQRUNULVdUVTUtU0NTNSIsCiAgICAgICAgIm52YWllOm1vZGVsOm52YWllX3N1cHBvcnRlZCIsCiAgICAgICAgIm52aWRpYV9uaW06bW9kZWw6bmltbWNyb19udmlkaWFfbmltIiwKICAgICAgICAicHJvZHVjdE5hbWVzOm5pbS1kZXYiLAogICAgICAgICJwcm9kdWN0TmFtZXM6bnYtYWktZW50ZXJwcmlzZSIsCiAgICAgICAgInRlY2hub2xvZ3k6bW9kZWw6c29sbl9haSIKICAgIF0sCiAgICAibGF0ZXN0VmVyc2lvbklkU3RyIjogIjEuNS4wLWZwOC1oZiIsCiAgICAibGF0ZXN0VmVyc2lvblNpemVJbkJ5dGVzIjogMTU0MTU5MTkzNzQsCiAgICAibG9nbyI6ICJodHRwczovL2Fzc2V0cy5uZ2MubnZpZGlhLmNvbS9wcm9kdWN0cy9hcGktY2F0YWxvZy9pbWFnZXMvbnZpZGlhLW5lbW90cm9uLW5hbm8tMTJiLXYyLXZsLmpwZyIsCiAgICAibW9kZWxGb3JtYXQiOiAiU2F2ZWRNb2RlbCIsCiAgICAibmFtZSI6ICJuZW1vdHJvbi1uYW5vLTEyYi12Mi12bCIsCiAgICAib3JnTmFtZSI6ICJuaW0iLAogICAgInByZWNpc2lvbiI6ICJPVEhFUiIsCiAgICAicHJpdmFjeSI6ICIiLAogICAgInByb2R1Y3ROYW1lcyI6IFsKICAgICAgICAibmltLWRldiIsCiAgICAgICAgIm52LWFpLWVudGVycHJpc2UiCiAgICBdLAogICAgInB1YmxpY0RhdGFzZXRVc2VkIjoge30sCiAgICAicHVibGlzaGVyIjogIk5WSURJQSIsCiAgICAic2FmZXR5QW5kU2VjdXJpdHkiOiAiIiwKICAgICJzaG9ydERlc2NyaXB0aW9uIjogIk5WSURJQSBOZW1vdHJvbiBOYW5vIHYyIDEyQiBWTCBtb2RlbCBlbmFibGVzIG11bHRpLWltYWdlIHJlYXNvbmluZyBhbmQgdmlkZW8gdW5kZXJzdGFuZGluZywgYWxvbmcgd2l0aCBzdHJvbmcgZG9jdW1lbnQgaW50ZWxsaWdlbmNlLCB2aXN1YWwgUSZBIGFuZCBzdW1tYXJpemF0aW9uIGNhcGFiaWxpdGllcy4iLAogICAgInRlYW1OYW1lIjogIm52aWRpYSIsCiAgICAidXBkYXRlZERhdGUiOiAiMjAyNS0xMS0wNVQxODozOTo1NC4zMzRaIgp9
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemotron-nano-12b-v2-vl?version=1
+    optimizationProfiles:
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H200x2 FP8
+      ngcMetadata:
+        04571f2160949a968ef4d55573010bb4937adb3055565383e4975d6b579eabb5:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL RTX-PRO-6K-BWE-MAXQx1 FP8
+      ngcMetadata:
+        124606e1502807f80b51d1bb02eac73130f5f0772333e954cce58e983b51cd8f:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX-PRO-6K-BWE-MAXQ
+            gpu_device: 2bb4:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX-PRO-6K-BWE-MAXQ
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB4:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL B200x1 FP8
+      ngcMetadata:
+        2319f3a24597d85e3997ea5d7904bde6a3172d77ec0f3caf4dd51db4989e8ee0:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GB200x1 FP8
+      ngcMetadata:
+        23237e540f5d6eed2e0cbd82ffa671324113254452ff6d2a8de4f525ba119d16:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GB200x2 FP8
+      ngcMetadata:
+        2589b47cefde8493906f5134017b790cc08b2d2be613f11ef9597b3915664de5:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GH200-144GBx1 FP8
+      ngcMetadata:
+        260e0af1b99e6283a0a76895b5d5e4909f0b22f24f92a837fdfd0b52f85bdbaf:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200-144GB
+            gpu_device: 2348:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200-144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL RTX-PRO-6K-BSEx2 FP8
+      ngcMetadata:
+        38c33abf967522c8e7b944244d4ed8b13eb338a3123ae0b258b19ea93ee0af63:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX-PRO-6K-BSE
+            gpu_device: 2bb5:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX-PRO-6K-BSE
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100-PCIEx2 FP8
+      ngcMetadata:
+        44a56408cfe76bc50ee3c1ed96f06cd267d1248512ad9a865e534e80b190c019:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-PCIE
+            gpu_device: 2331:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-PCIE
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2331:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100-NVLx2 FP8
+      ngcMetadata:
+        46b31dbe7ba6d101c01faea3c7c9ccdba6480461aa410ca775ddb6250320943f:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-NVL
+            gpu_device: 2321:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100-PCIEx1 FP8
+      ngcMetadata:
+        6f14f519be3c8fc26ce3f419659df86e271cbb3c1db94293fb975e1f1fd58ee5:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-PCIE
+            gpu_device: 2331:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-PCIE
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2331:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL RTX-PRO-6K-BWEx1 FP8
+      ngcMetadata:
+        7188e938073f73e7012da9c0b769a567de69b5f5203dfe8ba36769ce179cb822:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX-PRO-6K-BWE
+            gpu_device: 2bb1:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX-PRO-6K-BWE
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB1:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL L40Sx1 FP8
+      ngcMetadata:
+        76775139c252ddbaaf9fd191e94036e43402bc15b87639d3216602eb39eb6463:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H200-NVLx2 FP8
+      ngcMetadata:
+        7a520b8c8ea2b8a7caee81f2c5fd1e4d9c6d88106d2f3152507a9a8164c4a525:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200-NVL
+            gpu_device: 233b:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200-NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H200-NVLx1 FP8
+      ngcMetadata:
+        8cc85ddc49fb35402b2bc813804467366404ffad5a1f25e0dd96a9707d797851:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200-NVL
+            gpu_device: 233b:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GH200x1 FP8
+      ngcMetadata:
+        9a9699699ec75d96159bc6978e1139fd254403458b15656a5e57e7fbc20acf07:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200
+            gpu_device: 2342:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL B200x2 FP8
+      ngcMetadata:
+        c5fb44b0cf08feb8bf8efb547071ee22df4d552ad5a901bc352ded2de38946fd:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100-NVLx1 FP8
+      ngcMetadata:
+        d53f04f82506d15b2d6d22b3e9d9380a125ae9f198d7fc2b93947549ae647128:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-NVL
+            gpu_device: 2321:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100x2 FP8
+      ngcMetadata:
+        d70d4c3bafd1f00ad715ac59c361616460e6eb728669c292cd52f40734badd10:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H200x1 FP8
+      ngcMetadata:
+        dc1ef5d2e9342285671a8e28c1f04b5cffe3e8fcc929c58557fb563f8c71600a:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL RTX-PRO-6K-BSEx1 FP8
+      ngcMetadata:
+        e278c7e2ab8238ef2f75762356e587052e3a743fa768d40f372f60aac3532a4b:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX-PRO-6K-BSE
+            gpu_device: 2bb5:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX-PRO-6K-BSE
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL L40Sx2 FP8
+      ngcMetadata:
+        e2cb05e0c0218d13be144321bbf58817ae680d9b1a9fc7f0e8c619aeb19d19b7:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL H100x1 FP8
+      ngcMetadata:
+        e93d865568e4f60dd391994e84fe298808dadf3aa0e03f928618e6d5f9c14fe6:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf
+      framework: TensorRT-LLM
+      displayName: Nemotron Nano 12B V2 VL GH200-144GBx2 FP8
+      ngcMetadata:
+        f1274100b8089ab334a01209d6d9d59e10d7f998eeb476602d6c0c2073a5e84f:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200-144GB
+            gpu_device: 2348:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200-144GB
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 15GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf
+      framework: VLLM
+      displayName: Nemotron Nano 12B V2 VL Generic NVIDIA GPUx1 BF16
+      ngcMetadata:
+        06a217a1099a72e5d86a12a31fd39eaba9d7c00d3d311589557d2dc720b59358:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: d943a0e2491f1abaae2e3c2532bc3b70535b0d8637d7b1aeed4e686f0e3e0f61
+            pp: '1'
+            precision: bf16
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 25GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf
+      framework: VLLM
+      displayName: Nemotron Nano 12B V2 VL Generic NVIDIA GPUx2 BF16
+      ngcMetadata:
+        97aae95b218c9838fea29548ebaa771a922a8c9781c8450e542e323e2a76a937:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: d943a0e2491f1abaae2e3c2532bc3b70535b0d8637d7b1aeed4e686f0e3e0f61
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 25GB
+      - key: LLM ENGINE
+        value: VLLM
+  labels:
+  - signed images
+  - NSPECT-P1Z6-6PVL
+  - NVIDIA AI Enterprise Supported
+  - NVIDIA NIM
+  config:
+    architectures:
+    - Other
+    modelType: NIM
+  license: NVIDIA AI Foundation Models Community License
