@@ -5,7 +5,6 @@ models:
   category: Text Generation
   type: NGC
   description: The GPT-OSS NIM simplifies the deployment of the GPT-OSS-120B and GPT-OSS-20B tuned models which are optimized for language understanding, reasoning, and text generation use cases, and outperforms many of the available open source chat models on common industry benchmarks.
-  modelCard: base64encodedDummyModelCard
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,6 +13,7 @@ models:
     url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
   modelVariants:
   - variantId: GPT-OSS 120B
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/openai/containers/gpt-oss-120b
     optimizationProfiles:
@@ -530,6 +530,7 @@ models:
       - key: LLM ENGINE
         value: VLLM
   - variantId: GPT-OSS 20B
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/openai/containers/gpt-oss-20b
     optimizationProfiles:

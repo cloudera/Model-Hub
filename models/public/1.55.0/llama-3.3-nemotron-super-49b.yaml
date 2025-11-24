@@ -5,7 +5,6 @@ models:
   category: Chatbots
   type: NGC
   description: Llama-3.3-Nemotron-Super-49B v1 and v1.5 are language models that can follow instructions, complete requests, and generate creative text formats. The Llama-3.3-Nemotron-Super-49B v1 series of Large Language Models (LLMs) are instruction-tuned versions of the Llama-Nemotron.
-  modelCard: base64encodedDummyModelCard
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,6 +13,7 @@ models:
     url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
   modelVariants:
   - variantId: Llama 3.3 Nemotron Super 49B V1
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.3-nemotron-super-49b-v1
     optimizationProfiles:
@@ -845,6 +845,7 @@ models:
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
   - variantId: Llama 3.3 Nemotron Super 49B V1.5
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.3-nemotron-super-49b-v1.5
     optimizationProfiles:

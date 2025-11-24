@@ -5,7 +5,6 @@ models:
   category: Text Extraction
   type: NGC
   description: Nemoretriever-parse is a general purpose text-extraction model, specifically designed to handle documents. Given an image, nemoretriever-parse is able to extract formatted-text, with bounding-boxes and the corresponding semantic class. This has downstream benefits for several tasks such as increasing the availability of training-data for Large Language Models (LLMs), improving the accuracy of retriever systems, and enhancing document understanding pipelines.
-  modelCard: base64encodedDummyModelCard
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,6 +13,7 @@ models:
     url: https://llama.meta.com/llama3/license/
   modelVariants:
   - variantId: nemoretriever-parse:1.2.0
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://build.nvidia.com/nvidia/nemoretriever-parse
     optimizationProfiles:

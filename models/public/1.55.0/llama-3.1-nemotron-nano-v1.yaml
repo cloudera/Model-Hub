@@ -5,7 +5,6 @@ models:
   category: Chatbots
   type: NGC
   description: Llama 3.1 Nemotron Nano 8B or 4B are the language models that can follow instructions, complete requests, and generate creative text formats.
-  modelCard: base64encodedDummyModelCard
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,6 +13,7 @@ models:
     url: https://llama.meta.com/llama3/license/
   modelVariants:
   - variantId: Llama 3.1 Nemotron Nano 8b V1
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.1-nemotron-nano-8b-v1
     optimizationProfiles:
@@ -1123,6 +1123,7 @@ models:
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
   - variantId: Llama 3.1 Nemotron Nano 4b V1
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama3.1-nemotron-nano-4b-v1.1
     optimizationProfiles:

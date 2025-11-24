@@ -5,7 +5,6 @@ models:
   category: Text-Prompt
   type: NGC
   description: This model is used to transcribe short-form audio files and is designed to be compatible with OpenAI's sequential long-form transcription algorithm. Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation. Trained on 680k hours of labeled data, Whisper models demonstrate a strong ability to generalize to many datasets and domains without the need for fine-tuning. Whisper-large-v3 is one of the 5 configurations of the model with 1550M parameters. This model version is optimized to run with NVIDIA TensorRT-LLM. This model is ready for commercial use.
-  modelCard: base64encodedDummyModelCard
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,6 +13,7 @@ models:
     url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
   modelVariants:
   - variantId: Riva ASR Whisper Large v3
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/whisper_large
     optimizationProfiles:

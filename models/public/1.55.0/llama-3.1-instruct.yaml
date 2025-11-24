@@ -5,7 +5,6 @@ models:
   category: Text Generation
   type: NGC
   description: The Llama 3.1 70B-Instruct, 8B instruct and 8B base NIM simplifies the deployment of the Llama 3.1 70B-Instruct, 8B instruct and 8B base tuned models which is optimized for language understanding, reasoning, and text generation use cases, and outperforms many of the available open source chat models on common industry benchmarks.
-  modelCard: base64encodedDummyModelCard
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,6 +13,7 @@ models:
     url: https://llama.meta.com/llama3/license/
   modelVariants:
   - variantId: Llama 3.1 70B Instruct
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_1-70b-instruct-nemo
     optimizationProfiles:
@@ -522,6 +522,7 @@ models:
       - key: LLM ENGINE
         value: TENSORRT_LLM
   - variantId: Llama 3.1 8B Instruct
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_1-8b-instruct-nemo
     optimizationProfiles:

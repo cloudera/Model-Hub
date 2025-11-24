@@ -5,7 +5,6 @@ models:
   category: Commercial and Research
   type: NGC
   description: The Meta Llama 3.2 collection of multilingual large language models (LLMs) is a collection of pre-trained and instruction-tuned generative models in 1B and 3B sizes (text in/text out).
-  modelCard: base64encodedDummyModelCard
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,6 +13,7 @@ models:
     url: https://llama.meta.com/llama3_2/license/
   modelVariants:
   - variantId: Llama 3.2 1B Instruct
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_2-1b-instruct
     optimizationProfiles:
@@ -666,6 +666,7 @@ models:
       - key: LLM ENGINE
         value: TENSORRT_LLM
   - variantId: Llama 3.2 3B Instruct
+    modelCard: base64encodedDummyModelCard
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_2-3b-instruct
     optimizationProfiles:

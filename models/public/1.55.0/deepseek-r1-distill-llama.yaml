@@ -5,7 +5,6 @@ models:
   category: Chat Assistant
   type: NGC
   description: The DeepSeek-R1-Distill-Llama-70B NIM simplifies the deployment of a distilled version of the DeepSeek-R1 series, built upon the Llama3.3-70B-Instruct architecture. This model is designed to deliver efficient performance for reasoning, math, and code tasks while maintaining high accuracy. By distilling knowledge from the larger DeepSeek-R1 model, it provides state-of-the-art performance with reduced computational requirements.
-  modelCard: base64encodedDummyModelCard
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,6 +13,7 @@ models:
     url: https://llama.meta.com/llama3/license/
   modelVariants:
   - variantId: Deepseek R1 Distill Llama 70b
+    modelCard: base64encodedDummyModelCard
     source:
           URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/deepseek-ai/containers/deepseek-r1-distill-llama-70b
     optimizationProfiles:
@@ -216,6 +216,7 @@ models:
       - key: DOWNLOAD SIZE
         value: 147GB
   - variantId: Deepseek R1 Distill Llama 8b
+    modelCard: base64encodedDummyModelCard
     source:
           URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/deepseek-ai/containers/deepseek-r1-distill-llama-8b
     optimizationProfiles:
