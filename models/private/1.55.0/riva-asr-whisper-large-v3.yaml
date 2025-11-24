@@ -13,12 +13,13 @@ models:
     url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
   modelVariants:
   - variantId: Riva ASR Whisper Large v3
+    modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJidWlsdEJ5IjogIk9wZW5BSSIsCiAgICAiY2FuR3Vlc3REb3dubG9hZCI6IGZhbHNlLAogICAgImNyZWF0ZWREYXRlIjogIjIwMjQtMTAtMjhUMTY6NDU6MjAuOTkwWiIsCiAgICAiZGVzY3JpcHRpb24iOiAiT3ZlcnZpZXdcbj09PT09PT09PT1cblxuTW9yZSBkZXRhaWxzXG49PT09PT09PT09PT09XG5cbkRvY3VtZW50YXRpb25cbj09PT09PT09PT09PT09PSIsCiAgICAiZGlzcGxheU5hbWUiOiAiV2hpc3Blci1MYXJnZS12MyIsCiAgICAiZXhwbGFpbmFiaWxpdHkiOiAiIiwKICAgICJmcmFtZXdvcmsiOiAiT3RoZXIiLAogICAgImhhc1BsYXlncm91bmQiOiBmYWxzZSwKICAgICJoYXNTaWduZWRWZXJzaW9uIjogdHJ1ZSwKICAgICJpc1BsYXlncm91bmRFbmFibGVkIjogZmFsc2UsCiAgICAiaXNQdWJsaWMiOiBmYWxzZSwKICAgICJpc1JlYWRPbmx5IjogdHJ1ZSwKICAgICJsYWJlbHMiOiBbCiAgICAgICAgIk5JTSIsCiAgICAgICAgIk5TUEVDVC1GNVBWLVNHQU8iLAogICAgICAgICJXaGlzcGVyLUxhcmdlLXYzIiwKICAgICAgICAibnZhaWU6bW9kZWw6bnZhaWVfc3VwcG9ydGVkIiwKICAgICAgICAibnZpZGlhX25pbTptb2RlbDpuaW1tY3JvX252aWRpYV9uaW0iLAogICAgICAgICJwcm9kdWN0TmFtZXM6bmltLWRldiIsCiAgICAgICAgInByb2R1Y3ROYW1lczpudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJsYXRlc3RWZXJzaW9uSWRTdHIiOiAiaDEwMHgxLW9mbC0yNS4wOC1mcDE2LW1uejRwbm4wcHciLAogICAgImxhdGVzdFZlcnNpb25TaXplSW5CeXRlcyI6IDE1MzI4NjU4OTIsCiAgICAibG9nbyI6ICJodHRwczovL2Fzc2V0cy5uZ2MubnZpZGlhLmNvbS9wcm9kdWN0cy9hcGktY2F0YWxvZy9pbWFnZXMvcmFkdHRzLWhpZmlnYW4tcml2YS5qcGciLAogICAgIm1vZGVsRm9ybWF0IjogIlJNSVIiLAogICAgIm5hbWUiOiAid2hpc3Blci1sYXJnZS12MyIsCiAgICAib3JnTmFtZSI6ICJuaW0iLAogICAgInByZWNpc2lvbiI6ICJBTVAiLAogICAgInByaXZhY3kiOiAiIiwKICAgICJwcm9kdWN0TmFtZXMiOiBbCiAgICAgICAgIm5pbS1kZXYiLAogICAgICAgICJudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJwdWJsaWNEYXRhc2V0VXNlZCI6IHt9LAogICAgInB1Ymxpc2hlciI6ICJOVklESUEiLAogICAgInNhZmV0eUFuZFNlY3VyaXR5IjogIiIsCiAgICAic2hvcnREZXNjcmlwdGlvbiI6ICJXaGlzcGVyIGxhcmdlIHYzIHRyYWluZWQgYnkgT3BlbkFJIiwKICAgICJ0ZWFtTmFtZSI6ICJudmlkaWEiLAogICAgInVwZGF0ZWREYXRlIjogIjIwMjUtMDktMDZUMDQ6MTU6MzYuNzIzWiIKfQ==
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/whisper_large
     optimizationProfiles:
     - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-25.06
       framework: TensorRT-LLM
-      displayName: Riva ASR Whisper Large v3 A10G
+      displayName: Riva ASR Whisper Large v3 Generic NVIDIA GPUx1
       ngcMetadata:
         5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
           model: nvidia/riva-asr/whisper
@@ -27,111 +28,11 @@ models:
             mode: ofl
             model_type: rmir
             name: whisper-large-v3
-            gpu: A10G
-            gpu_device: 2237:10de
-            pp: '1'
             tp: '1'
       modelFormat: trt-llm
       spec:
-      - key: GPU
-        value: A10G
       - key: COUNT
         value: 1
-      - key: GPU DEVICE
-        value: 2237:10de
-      - key: NIM VERSION
-        value: 1.3.1
-      - key: DOWNLOAD SIZE
-        value: 3GB
-      - key: MODEL TYPE
-        value: RMIR
-      - key: MODE
-        value: OFL
-    - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-25.06
-      framework: TensorRT-LLM
-      displayName: Riva ASR Whisper Large v3 H200
-      ngcMetadata:
-        5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
-          model: nvidia/riva-asr/whisper
-          release: 1.3.1
-          tags:
-            mode: ofl
-            model_type: rmir
-            name: whisper-large-v3
-            gpu: H200
-            gpu_device: 2331:10de
-            pp: '1'
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2331:10de
-      - key: NIM VERSION
-        value: 1.3.1
-      - key: DOWNLOAD SIZE
-        value: 3GB
-      - key: MODEL TYPE
-        value: RMIR
-      - key: MODE
-        value: OFL
-    - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-25.06
-      framework: TensorRT-LLM
-      displayName: Riva ASR Whisper Large v3 L40S
-      ngcMetadata:
-        5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
-          model: nvidia/riva-asr/whisper
-          release: 1.3.1
-          tags:
-            mode: ofl
-            model_type: rmir
-            name: whisper-large-v3
-            gpu: L40S
-            gpu_device: 26b9:10de
-            pp: '1'
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 26b9:10de
-      - key: NIM VERSION
-        value: 1.3.1
-      - key: DOWNLOAD SIZE
-        value: 3GB
-      - key: MODEL TYPE
-        value: RMIR
-      - key: MODE
-        value: OFL
-    - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-25.06
-      framework: TensorRT-LLM
-      displayName: Riva ASR Whisper Large v3 A100
-      ngcMetadata:
-        5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
-          model: nvidia/riva-asr/whisper
-          release: 1.3.1
-          tags:
-            mode: ofl
-            model_type: rmir
-            name: whisper-large-v3
-            gpu: A100
-            gpu_device: 20b2:10de
-            pp: '1'
-            tp: '1'
-      modelFormat: trt-llm
-      spec:
-      - key: GPU
-        value: A100
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 20b2:10de
       - key: NIM VERSION
         value: 1.3.1
       - key: DOWNLOAD SIZE
@@ -153,7 +54,6 @@ models:
             model_type: prebuilt
             name: whisper-large-v3
             gpu: H100
-            pp: '1'
             tp: '1'
       modelFormat: trt-llm
       spec:
