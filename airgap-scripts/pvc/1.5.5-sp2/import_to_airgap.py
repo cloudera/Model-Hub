@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import base64
 import subprocess
 import sys
 import logging
@@ -357,11 +358,12 @@ def extract_profile_components(data, target_profile_id):
         'components': [],
         'ngcMetadata': None,
     }
-
+    modelCard = ''
     # Iterate through models
     for model in data.get('models', []):
         # Iterate through variants
         for variant in model.get('modelVariants', []):
+            modelCard = variant.get('modelCard', '')
             # Iterate through profiles
             for profile in variant.get('optimizationProfiles', []):
                 # Check if this is the target profileID
@@ -390,9 +392,9 @@ def extract_profile_components(data, target_profile_id):
                                 
                                 result['components'].append(component_info)
                     
-                    return result  # Return once the profile is found
+                    return result, modelCard  # Return once the profile is found
     
-    return result  # Return not found if we get here
+    return result, modelCard  # Return not found if we get here
 
 
 def show_help():
@@ -451,7 +453,7 @@ def check_requirements(download_model, cloud):
         except (subprocess.SubprocessError, FileNotFoundError):
             print("Error: huggingface-cli is required for downloading but not installed.")
             print("Please install it using pip:")
-            print("  pip install huggingface_hub")
+            print("pip install --upgrade huggingface_hub")
             return False
         try:
             subprocess.run(["ngc", "version", "info"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -609,9 +611,12 @@ def get_repo_info_ngc(repo_id, spec_file):
     """Get NGC repository metadata and save it to a file."""
     # Implement NGC repository metadata fetching if needed
     spec = load_ngc_spec(spec_file)
-    ngcMetadata =  extract_profile_components(spec, repo_id)
+    ngcMetadata, modelCard =  extract_profile_components(spec, repo_id)
     repo_id=repo_id.split(':')
-    modelMetadata = get_ngc_model_info(repo_id[0], repo_id[1])
+    try:
+        modelMetadata = json.loads(base64.b64decode(modelCard).decode('utf-8'))
+    except Exception:
+        modelMetadata = {}
     return ngcMetadata, modelMetadata
 
 

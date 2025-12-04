@@ -112,11 +112,12 @@ def extract_profile_components(data, target_profile_id):
         'components': [],
         'ngcMetadata': None,
     }
-
+    modelCard = ''
     # Iterate through models
     for model in data.get('models', []):
         # Iterate through variants
         for variant in model.get('modelVariants', []):
+            modelCard = variant.get('modelCard', '')
             # Iterate through profiles
             for profile in variant.get('optimizationProfiles', []):
                 # Check if this is the target profileID
@@ -146,9 +147,9 @@ def extract_profile_components(data, target_profile_id):
                                 
                                 result['components'].append(component_info)
                     print("result in side", result)
-                    return result  # Return once the profile is found
+                    return result, modelCard  # Return once the profile is found
     print("resut is ", result)
-    return result 
+    return result , modelCard
 
 
 def canusenimcli(ngcmetadata):
@@ -187,7 +188,8 @@ if __name__ == "__main__":
     yaml_file_path = "your_file.yaml"  # Replace with your actual file path
     try:
         yaml_data = load_ngc_spec()
-        result=extract_profile_components(yaml_data,'nim/meta/llama-3_1-70b-instruct:0.11.1+14957bf8-h100x4-fp8-throughput.1.2.18099809')
+        result, modelCard=extract_profile_components(yaml_data,'nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:l40sx4-throughput-bf16-lb51ks7uxa')
+        print("modelCard in main", modelCard)
         metadataToFile=result['ngcMetadata']
         print('metadataToFile', metadataToFile)
         print("can use nimcli", canusenimcli(metadataToFile))
