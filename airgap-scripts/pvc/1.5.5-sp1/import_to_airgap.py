@@ -10,6 +10,8 @@ import logging
 import yaml
 from typing import List, Dict, Optional, Tuple
 
+HUGGINGFACE_CLI_CMD = "huggingface-cli"
+
 # courtesy : https://stackoverflow.com/questions/43765849/pyyaml-load-and-dump-yaml-file-and-preserve-tags-customtag
 class SafeUnknownConstructor(yaml.constructor.SafeConstructor):
     def __init__(self):
@@ -414,13 +416,19 @@ def show_help():
 def check_requirements(download_model, cloud):
     """Check if the required tools are installed."""
     if download_model:
+        global HUGGINGFACE_CLI_CMD
         try:
-            subprocess.run(["huggingface-cli", "version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.run(["hf", "version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            HUGGINGFACE_CLI_CMD = "hf"
         except (subprocess.SubprocessError, FileNotFoundError):
-            print("Error: huggingface-cli is required for downloading but not installed.")
-            print("Please install it using pip:")
-            print("  pip install huggingface_hub")
-            return False
+            try:
+                subprocess.run(["huggingface-cli", "version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                HUGGINGFACE_CLI_CMD = "huggingface-cli"
+            except (subprocess.SubprocessError, FileNotFoundError):
+                print("Error: huggingface-cli (or hf) is required for downloading but not installed.")
+                print("Please install it using pip:")
+                print("  pip install huggingface_hub")
+                return False
         try:
             subprocess.run(["ngc", "version", "info"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         except (subprocess.SubprocessError, FileNotFoundError):
@@ -468,9 +476,9 @@ def download_repo_hf(repo_id, token, download_path):
     os.makedirs(os.path.join(download_path, "hf", repo_id, "artifacts"), exist_ok=True)
     
     # Download the repository
-    print("Starting download with huggingface-cli...")
+    print(f"Starting download with {HUGGINGFACE_CLI_CMD}...")
     try:
-        cmd = ["huggingface-cli", "download", repo_id, "--local-dir", f"{download_path}/hf/{repo_id}/artifacts"]
+        cmd = [HUGGINGFACE_CLI_CMD, "download", repo_id, "--local-dir", f"{download_path}/hf/{repo_id}/artifacts"]
         if token:
             cmd.extend(["--token", token])
         
