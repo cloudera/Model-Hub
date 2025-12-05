@@ -268,7 +268,17 @@ def execute_nim_download_command(repo_id, folder_location, ngc_spec, profile_sha
 
     # Get the absolute path of the ngc_spec folder
     ngc_spec_abs = os.path.dirname(ngc_spec)
-    manifest_path = f"{ngc_spec_abs}/manifests/{version}/{model_name}.yaml"
+    try:
+        manifests_dir = f"{ngc_spec_abs}/manifests"
+        if not os.path.exists(manifests_dir):
+            raise FileNotFoundError(f"Manifests directory not found: {manifests_dir}")
+        
+        manifest_path = f"{ngc_spec_abs}/manifests/{version}/{model_name}.yaml"
+        if not os.path.exists(manifest_path):
+            raise FileNotFoundError(f"Manifest file not found: {manifest_path}")
+    except Exception as e:
+        logging.error(f"Error accessing manifest files: {str(e)}")
+        return folder_location, e
     cmd = [
         "nimcli", "download", "--profiles", profile_sha, "--manifest-file",
         manifest_path, "--model-cache-path", folder_location
