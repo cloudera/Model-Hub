@@ -1,0 +1,993 @@
+models:
+- name: Mixtral Instruct
+  displayName: Mixtral Instruct
+  modelHubID: mixtral-instruct
+  category: Text Generation
+  type: NGC
+  description: The Mixtral Large Language Model (LLM) is a pretrained generative Sparse Mixture of Experts model. Mixtral Instruct is a language model that can follow instructions, complete requests, and generate creative text formats. The Mixtral Instruct Large Language Model (LLM) is an instruct fine-tuned version of the Mixtral.
+  modelVariants:
+  - variantId: Mixtral 8x7B Instruct
+    modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJjYW5HdWVzdERvd25sb2FkIjogZmFsc2UsCiAgICAiY3JlYXRlZERhdGUiOiAiMjAyNC0wNy0xM1QxODo1ODo0MC4wOTRaIiwKICAgICJkZXNjcmlwdGlvbiI6ICIjIyBNb2RlbCBPdmVydmlld1xuXG4jIyMgRGVzY3JpcHRpb25cblxuTWl4dHJhbCA4eDdCIEluc3RydWN0IGlzIGEgbGFuZ3VhZ2UgbW9kZWwgdGhhdCBjYW4gZm9sbG93IGluc3RydWN0aW9ucywgY29tcGxldGUgcmVxdWVzdHMsIGFuZCBnZW5lcmF0ZSBjcmVhdGl2ZSB0ZXh0IGZvcm1hdHMuIE1peHRyYWwgOHg3QiBhIGhpZ2gtcXVhbGl0eSBzcGFyc2UgbWl4dHVyZSBvZiBleHBlcnRzIG1vZGVsIChTTW9FKSB3aXRoIG9wZW4gd2VpZ2h0cy48YnI+XG5UaGlzIG1vZGVsIGhhcyBiZWVuIG9wdGltaXplZCB0aHJvdWdoIHN1cGVydmlzZWQgZmluZS10dW5pbmcgYW5kIGRpcmVjdCBwcmVmZXJlbmNlIG9wdGltaXphdGlvbiAoRFBPKSBmb3IgY2FyZWZ1bCBpbnN0cnVjdGlvbiBmb2xsb3dpbmcuIE9uIE1ULUJlbmNoLCBpdCByZWFjaGVzIGEgc2NvcmUgb2YgOC4zMCwgIHdpdGggYSBwZXJmb3JtYW5jZSBjb21wYXJhYmxlIHRvIEdQVDMuNS48YnI+XG5cbkxpY2Vuc2VkIHVuZGVyIEFwYWNoZSAyLjAuIE1peHRyYWwgb3V0cGVyZm9ybXMgTGxhbWEgMiA3MEIgb24gbW9zdCBiZW5jaG1hcmtzIHdpdGggNnggZmFzdGVyIGluZmVyZW5jZS4gSW4gcGFydGljdWxhciwgaXQgbWF0Y2hlcyBvciBvdXRwZXJmb3JtcyBHUFQzLjUgb24gbW9zdCBzdGFuZGFyZCBiZW5jaG1hcmtzLjxicj5cbk1peHRyYWwgaGFzIHRoZSBmb2xsb3dpbmcgY2FwYWJpbGl0aWVzLlxuKiBJdCBncmFjZWZ1bGx5IGhhbmRsZXMgYSBjb250ZXh0IG9mIDMyayB0b2tlbnMuXG4qIEl0IGhhbmRsZXMgRW5nbGlzaCwgRnJlbmNoLCBJdGFsaWFuLCBHZXJtYW4gYW5kIFNwYW5pc2guXG4qIEl0IHNob3dzIHN0cm9uZyBwZXJmb3JtYW5jZSBpbiBjb2RlIGdlbmVyYXRpb24uXG4qIEl0IGNhbiBiZSBmaW5ldHVuZWQgaW50byBhbiBpbnN0cnVjdGlvbi1mb2xsb3dpbmcgbW9kZWwgdGhhdCBhY2hpZXZlcyBhIHNjb3JlIG9mIDguMyBvbiBNVC1CZW5jaC5cblxuVGhpcyBtb2RlbCBpcyByZWFkeSBjb21tZXJpY2lhbCB1c2UuIFxuXG4jIyMgVGhpcmQtUGFydHkgQ29tbXVuaXR5IENvbnNpZGVyYXRpb24gXG5UaGlzIG1vZGVsIGlzIG5vdCBvd25lZCBvciBkZXZlbG9wZWQgYnkgTlZJRElBLiBUaGlzIG1vZGVsIGhhcyBiZWVuIGRldmVsb3BlZCBhbmQgYnVpbHQgdG8gYSB0aGlyZC1wYXJ0eVx1MjAxOXMgcmVxdWlyZW1lbnRzIGZvciB0aGlzIGFwcGxpY2F0aW9uIGFuZCB1c2UgY2FzZTsgc2VlIGxpbmsgdG8gdGhlIFtNaXh0cmFsIDh4N0ItSW5zdHJ1Y3QtdjAuMSBNb2RlbCBDYXJkXShodHRwczovL2h1Z2dpbmdmYWNlLmNvL21pc3RyYWxhaS9NaXh0cmFsLTh4N0ItSW5zdHJ1Y3QtdjAuMSkuXG5cbiMjIyBHb3Zlcm5pbmcgVGVybXNcbl9Ob3RlOiBUaGUgTklNIGNvbnRhaW5lciBpcyBnb3Zlcm5lZCBieSB0aGUgW05WSURJQSBTb2Z0d2FyZSBMaWNlbnNlIEFncmVlbWVudF0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9hZ3JlZW1lbnRzL2VudGVycHJpc2Utc29mdHdhcmUvbnZpZGlhLXNvZnR3YXJlLWxpY2Vuc2UtYWdyZWVtZW50LykgYW5kIHRoZSBbUHJvZHVjdC1TcGVjaWZpYyBUZXJtcyBmb3IgTlZJRElBIEFJIFByb2R1Y3RzXShodHRwczovL3d3dy5udmlkaWEuY29tL2VuLXVzL2FncmVlbWVudHMvZW50ZXJwcmlzZS1zb2Z0d2FyZS9wcm9kdWN0LXNwZWNpZmljLXRlcm1zLWZvci1haS1wcm9kdWN0cy8pOyBhbmQgdGhlIHVzZSBvZiB0aGlzIG1vZGVsIGlzIGdvdmVybmVkIGJ5IHRoZSBbTlZJRElBIENvbW11bml0eSBNb2RlbCBMaWNlbnNlIEFncmVlbWVudF0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9hZ3JlZW1lbnRzL2VudGVycHJpc2Utc29mdHdhcmUvbnZpZGlhLWNvbW11bml0eS1tb2RlbHMtbGljZW5zZS8pLiBBRERJVElPTkFMIElORk9STUFUSU9OOiBbQXBhY2hlIExpY2Vuc2UgMi4wXShodHRwczovL2Nob29zZWFsaWNlbnNlLmNvbS9saWNlbnNlcy9hcGFjaGUtMi4wLykuXG5cbioqWW91IGFyZSByZXNwb25zaWJsZSBmb3IgZW5zdXJpbmcgdGhhdCB5b3VyIHVzZSBvZiBOVklESUEgQUkgRm91bmRhdGlvbiBNb2RlbHMgY29tcGxpZXMgd2l0aCBhbGwgYXBwbGljYWJsZSBsYXdzLioqXG5cbiMjIyBHZXR0aW5nIFN0YXJ0ZWRcbltRdWljayBTdGFydCBHdWlkZV0oaHR0cHM6Ly9kb2NzLm52aWRpYS5jb20vbmltL2xhcmdlLWxhbmd1YWdlLW1vZGVscy9sYXRlc3QvZ2V0dGluZy1zdGFydGVkLmh0bWwgKVxuXG4jIyMgUmVmZXJlbmNlcyhzKTpcblxuKiBbTWl4dHJhbCBvZiBleHBlcnRzIHwgTWlzdHJhbCBBSSB8IE9wZW4gc291cmNlIG1vZGVsc10oaHR0cHM6Ly9taXN0cmFsLmFpL25ld3MvbWl4dHJhbC1vZi1leHBlcnRzLykgPGJyPlxuXG4jIyBNb2RlbCBBcmNoaXRlY3R1cmVcblxuKipBcmNoaXRlY3R1cmUgVHlwZToqKiBUcmFuc2Zvcm1lciA8YnI+XG4qKk5ldHdvcmsgQXJjaGl0ZWN0dXJlOioqIFNwYXJzZSBNaXh0dXJlIG9mIEdQVC1iYXNlZCBleHBlcnRzIDxicj5cbioqTW9kZWwgVmVyc2lvbjoqKiAwLjEgPGJyPlxuXG4jIyMgSW5wdXRcbi0gKipJbnB1dCBUeXBlOioqIFRleHRcbi0gKipJbnB1dCBGb3JtYXQ6KiogU3RyaW5nXG4tICoqSW5wdXQgUGFyYW1ldGVyczoqKiBJbnB1dCBTZXF1ZW5jZSBMZW5ndGggKFRva2VucykgPSA4MTkyIFxuXG4jIyMgT3V0cHV0XG4tICoqT3V0cHV0IFR5cGU6KiogVGV4dFxuLSAqKk91dHB1dCBGb3JtYXQ6KiogU3RyaW5nXG4tICoqT3V0cHV0IFBhcmFtZXRlcnM6KiogT3V0cHV0IFNlcXVlbmNlIExlbmd0aCAoVG9rZW5zKSA9IDgxOTIgXG5cbiMjIyBTb2Z0d2FyZSBJbnRlZ3JhdGlvbjpcblxuKipTdXBwb3J0ZWQgSGFyZHdhcmUgUGxhdGZvcm0ocyk6KiogTlZJRElBIEFtcGVyZSwgTlZJRElBIEhvcHBlciwgTlZJRElBIExvdmVsYWNlLCBOVklESUEgVHVyaW5nIDxicj5cbioqU3VwcG9ydGVkIE9wZXJhdGluZyBTeXN0ZW0ocyk6KiogTGludXggPGJyPlxuXG4jIyBUcmFpbmluZyBEYXRhXG5cblRyYWluaW5nIGFuZCB0dW5pbmcgZGF0YSBoYXMgbm90IGJlZW4gZGlzY2xvc2VkIGZvciBNaXh0cmFsLTh4N0ItSW5zdHJ1Y3QtdjAuMSBtb2RlbC5cblxuIyMgRXZhbHVhdGlvbiBEYXRhXG5PZmZpY2lhbCBldmFsdWF0aW9uIGRhdGEgaGFzIG5vdCBiZWVuIHB1Ymxpc2hlZCBmb3IgTWl4dHJhbC04eDdCLUluc3RydWN0LXYwLjEgbW9kZWwuXG5cbiMjIEluZmVyZW5jZVxuXG4qKkVuZ2luZToqKiBbVHJpdG9uXShodHRwczovL2RldmVsb3Blci5udmlkaWEuY29tL3RyaXRvbi1pbmZlcmVuY2Utc2VydmVyKSA8YnI+XG4qKlRlc3QgSGFyZHdhcmU6KiogSDEwMCwgQTEwMCA4MEdCIDxicj5cblxuIyMgR2V0IEhlbHA6IEVudGVycHJpc2UgU3VwcG9ydFxuR2V0IGFjY2VzcyB0byBrbm93bGVkZ2UgYmFzZSBhcnRpY2xlcyBhbmQgc3VwcG9ydCBjYXNlcyBvciBbc3VibWl0IGEgdGlja2V0XShodHRwczovL3d3dy5udmlkaWEuY29tL2VuLXVzL2RhdGEtY2VudGVyL3Byb2R1Y3RzL2FpLWVudGVycHJpc2Utc3VpdGUvc3VwcG9ydC8pLlxuXG4jIyBOVklESUEgQUkgRW50ZXJwcmlzZSBEb2N1bWVudGF0aW9uXG5WaXNpdCB0aGUgW05WSURJQSBBSSBFbnRlcnByaXNlIERvY3VtZW50YXRpb24gSHViXShodHRwczovL2RvY3MubnZpZGlhLmNvbS9haS1lbnRlcnByaXNlLykgZm9yIHJlbGVhc2UgZG9jdW1lbnRhdGlvbiwgZGVwbG95bWVudCBndWlkZXMgYW5kIG1vcmUuIiwKICAgICJkaXNwbGF5TmFtZSI6ICJNaXh0cmFsLTh4N0ItSW5zdHJ1Y3QtdjAuMSIsCiAgICAiZXhwbGFpbmFiaWxpdHkiOiAiIiwKICAgICJmcmFtZXdvcmsiOiAiT3RoZXIiLAogICAgImhhc1BsYXlncm91bmQiOiBmYWxzZSwKICAgICJoYXNTaWduZWRWZXJzaW9uIjogdHJ1ZSwKICAgICJpc1BsYXlncm91bmRFbmFibGVkIjogZmFsc2UsCiAgICAiaXNQdWJsaWMiOiBmYWxzZSwKICAgICJpc1JlYWRPbmx5IjogdHJ1ZSwKICAgICJsYWJlbHMiOiBbCiAgICAgICAgIkJ1bGsgQnVpbGQiLAogICAgICAgICJOU1BFQ1QtNFM4MC1OMUE3IiwKICAgICAgICAiTlNQRUNULUJFMDgtMTRNViIsCiAgICAgICAgIm1peHRyYWwtOHg3Yi1pbnN0cnVjdC12MC0xIiwKICAgICAgICAibnZhaWU6bW9kZWw6bnZhaWVfc3VwcG9ydGVkIiwKICAgICAgICAibnZpZGlhX25pbTptb2RlbDpuaW1tY3JvX252aWRpYV9uaW0iLAogICAgICAgICJwcm9kdWN0TmFtZXM6bmltLWRldiIsCiAgICAgICAgInByb2R1Y3ROYW1lczpudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJsYXRlc3RWZXJzaW9uSWRTdHIiOiAiaGYtYTYwODMyYy0wNTA4LXRvb2wtdXNlLXYyIiwKICAgICJsYXRlc3RWZXJzaW9uU2l6ZUluQnl0ZXMiOiA5MzQwODExNDI2OCwKICAgICJsb2dvIjogImh0dHBzOi8vYXNzZXRzLm5nYy5udmlkaWEuY29tL3Byb2R1Y3RzL2FwaS1jYXRhbG9nL2ltYWdlcy9taXh0cmFsLTh4N2ItaW5zdHJ1Y3QuanBnIiwKICAgICJtb2RlbEZvcm1hdCI6ICJOL0EiLAogICAgIm5hbWUiOiAibWl4dHJhbC04eDdiLWluc3RydWN0LXYwMSIsCiAgICAib3JnTmFtZSI6ICJuaW0iLAogICAgInByZWNpc2lvbiI6ICJOL0EiLAogICAgInByaXZhY3kiOiAiIiwKICAgICJwcm9kdWN0TmFtZXMiOiBbCiAgICAgICAgIm5pbS1kZXYiLAogICAgICAgICJudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJwdWJsaWNEYXRhc2V0VXNlZCI6IHt9LAogICAgInB1Ymxpc2hlciI6ICJNaXN0cmFsIEFJIiwKICAgICJzYWZldHlBbmRTZWN1cml0eSI6ICIiLAogICAgInNob3J0RGVzY3JpcHRpb24iOiAiTWl4dHJhbCA4eDdCIEluc3RydWN0IGlzIGEgbGFuZ3VhZ2UgbW9kZWwgdGhhdCBjYW4gZm9sbG93IGluc3RydWN0aW9ucywgY29tcGxldGUgcmVxdWVzdHMsIGFuZCBnZW5lcmF0ZSBjcmVhdGl2ZSB0ZXh0IGZvcm1hdHMuIiwKICAgICJ0ZWFtTmFtZSI6ICJtaXN0cmFsYWkiLAogICAgInVwZGF0ZWREYXRlIjogIjIwMjUtMDYtMDNUMTc6MzM6MzMuMDMyWiIKfQ==
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/mistralai/containers/mixtral-8x7b-instruct-v01
+    optimizationProfiles:
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:a100x2-throughput-bf16-s69xvudfza
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 A100x2 BF16 Throughput
+      ngcMetadata:
+        0db3b5e8468c9debf30bcf41cbfea084adc59000885efd6fdcb3bbb902651bd6:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:h100x2-throughput-bf16-zwhl2fsi5a
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H100x2 BF16 Throughput
+      ngcMetadata:
+        1617d074ce252f66e96d5f0e331fa5c6cc0a0330519e56b5c66c60eb7d7bf4f9:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:l40sx4-throughput-fp8-hbavqk65yw
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 L40Sx4 FP8 Throughput
+      ngcMetadata:
+        3d0e5989f2fbc23e7d4504cd69269c9636deb61d0efc12225d3d59d54afea297:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 45GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:h200x1-throughput-bf16-00qqbltmrg
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H200x1 BF16 Throughput
+      ngcMetadata:
+        434e8d336fa23cbe151748d32b71e196d69f20d319ee8b59852a1ca31a48d311:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:h200x2-latency-bf16-uh6awyzpta
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H200x2 BF16 Latency
+      ngcMetadata:
+        6832a9395f54086162fd7b1c6cfaae17c7d1e535a60e2b7675504c9fc7b57689:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:h100x2-latency-fp8-4-l0a-rlkq
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H100x2 FP8 Latency
+      ngcMetadata:
+        6c3f01dd2b2a56e3e83f70522e4195d3f2add70b28680082204bbb9d6150eb04:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 44GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:h100x4-latency-bf16-axe5ogfgvq
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H100x4 BF16 Latency
+      ngcMetadata:
+        73f41fabbb60beb5b05ab21c8dcce5c277d99bcabec31abf46a0194d0dd18d04:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:h100x1-throughput-fp8-j1x74k--ng
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H100x1 FP8 Throughput
+      ngcMetadata:
+        7b508014e846234db3cabe5c9f38568b4ee96694b60600a0b71c621dc70cacf3:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 44GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:l40sx4-latency-bf16-qavtgypi5w
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 L40Sx4 BF16 Latency
+      ngcMetadata:
+        844ebe2b42df8de8ce66cbb6ecf43f90858ea7efc14ddf020cf1ae7450ae0c33:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:a10gx8-throughput-bf16-jxekvgjfha
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 A10Gx8 BF16 Throughput
+      ngcMetadata:
+        935ec3ac922bf54106311dfc6b3214a1651a26033b4f5007b6351fffb4058b7a:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2237:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 90GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:l40sx4-throughput-bf16-d9jierrahq
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 L40Sx4 BF16 Throughput
+      ngcMetadata:
+        ab8f2faec3bcafc32efaf05acada4df4d8a171a759b4fb5c44d2d9d43a348764:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:h200x1-throughput-fp8-skjppy5-iw
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H200x1 FP8 Throughput
+      ngcMetadata:
+        af876a179190d1832143f8b4f4a71f640f3df07b0503259cedee3e3a8363aa96:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 44GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:l40sx4-latency-fp8-vmkcxgu3fw
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 L40Sx4 FP8 Latency
+      ngcMetadata:
+        bdd0d3cd53fad1130259beea81ab5711fb98f2f1a020b5b26c3c82fd7d43c5af:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 45GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:a100x4-latency-bf16-yphkz2bivw
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 A100x4 BF16 Latency
+      ngcMetadata:
+        d73b7cf2f719d720329fc65fc255ae901bc3beebdc59be9815ede1a07948c1f7:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:h200x2-latency-fp8-skwo6uxqkq
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H200x2 FP8 Latency
+      ngcMetadata:
+        e4f217a5fb016b570e34b8a8eb06051ccfef9534ba43da973bb7f678242eaa5f:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 44GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 A10Gx8 BF16
+      ngcMetadata:
+        1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            trtllm_buildable: 'true'
+            gpu: A10G
+            gpu_device: 2237:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2237:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 L40Sx8 BF16
+      ngcMetadata:
+        1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            trtllm_buildable: 'true'
+            gpu: L40S
+            gpu_device: 26b9:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H100x8 BF16
+      ngcMetadata:
+        1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            trtllm_buildable: 'true'
+            gpu: H100
+            gpu_device: 2330:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H200x8 BF16
+      ngcMetadata:
+        1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            trtllm_buildable: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 L40Sx2 BF16
+      ngcMetadata:
+        375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            trtllm_buildable: 'true'
+            gpu: L40S
+            gpu_device: 26b9:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H100x2 BF16
+      ngcMetadata:
+        375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            trtllm_buildable: 'true'
+            gpu: H100
+            gpu_device: 2330:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H200x2 BF16
+      ngcMetadata:
+        375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            trtllm_buildable: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 A100x2 BF16
+      ngcMetadata:
+        375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            trtllm_buildable: 'true'
+            gpu: A100
+            gpu_device: 20b2:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 A10Gx4 BF16
+      ngcMetadata:
+        54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            trtllm_buildable: 'true'
+            gpu: A10G
+            gpu_device: 2237:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2237:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 L40Sx4 BF16
+      ngcMetadata:
+        54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            trtllm_buildable: 'true'
+            gpu: L40S
+            gpu_device: 26b9:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H100x4 BF16
+      ngcMetadata:
+        54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            trtllm_buildable: 'true'
+            gpu: H100
+            gpu_device: 2330:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 H200x4 BF16
+      ngcMetadata:
+        54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            trtllm_buildable: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:hf-a60832c-0508-tool-use-v2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 A100x4 BF16
+      ngcMetadata:
+        54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.8.4
+          tags:
+            feat_lora: 'false'
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            trtllm_buildable: 'true'
+            gpu: A100
+            gpu_device: 20b2:10de
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.8.4
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+  labels:
+  - Mistral
+  - Instruct
+  - Large Language Model
+  - TensorRT-LLM
+  - Language Generation
+  - NeMo
+  - NVIDIA Validated
+  config:
+    architectures:
+    - Other
+    modelType: mistral
+  license: NVIDIA AI Foundation Models Community License
