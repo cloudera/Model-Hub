@@ -3,9 +3,12 @@
 import argparse
 import json
 import os
+import base64
 import subprocess
 import sys
 import logging
+from pathlib import Path
+from datetime import datetime
 
 import yaml
 from typing import List, Dict, Optional, Tuple
@@ -265,7 +268,17 @@ def execute_nim_download_command(repo_id, folder_location, ngc_spec, profile_sha
 
     # Get the absolute path of the ngc_spec folder
     ngc_spec_abs = os.path.dirname(ngc_spec)
-    manifest_path = f"{ngc_spec_abs}/manifests/{version}/{model_name}.yaml"
+    try:
+        manifests_dir = f"{ngc_spec_abs}/manifests"
+        if not os.path.exists(manifests_dir):
+            raise FileNotFoundError(f"Manifests directory not found: {manifests_dir}")
+        
+        manifest_path = f"{ngc_spec_abs}/manifests/{version}/{model_name}.yaml"
+        if not os.path.exists(manifest_path):
+            raise FileNotFoundError(f"Manifest file not found: {manifest_path}")
+    except Exception as e:
+        logging.error(f"Error accessing manifest files: {str(e)}")
+        return folder_location, e
     cmd = [
         "nimcli", "download", "--profiles", profile_sha, "--manifest-file",
         manifest_path, "--model-cache-path", folder_location
@@ -355,11 +368,12 @@ def extract_profile_components(data, target_profile_id):
         'components': [],
         'ngcMetadata': None,
     }
-
+    modelCard = ''
     # Iterate through models
     for model in data.get('models', []):
         # Iterate through variants
         for variant in model.get('modelVariants', []):
+            modelCard = variant.get('modelCard', '')
             # Iterate through profiles
             for profile in variant.get('optimizationProfiles', []):
                 # Check if this is the target profileID
@@ -388,9 +402,9 @@ def extract_profile_components(data, target_profile_id):
                                 
                                 result['components'].append(component_info)
                     
-                    return result  # Return once the profile is found
+                    return result, modelCard  # Return once the profile is found
     
-    return result  # Return not found if we get here
+    return result, modelCard  # Return not found if we get here
 
 
 def show_help():
@@ -398,28 +412,58 @@ def show_help():
     help_text = """
     Description: Fetches information about a model from the Hugging Face Hub and optionally downloads it,
     or uploads model artifacts to cloud storage.
-
+    Commands:
+      configure           Run interactive configuration setup to save default values
+      list-local-models   List all downloaded models with their download status and retry count
+    Download Options:
+      -do, --download         Download the model repository
+      -ri, --repo-id          Repository ID to download (required with --download)
+      -rt, --repo-type        Repository type: hf (HuggingFace) or ngc (NVIDIA GPU Cloud) [default: hf]
+      -p, --path              Path to download model files [default: from config or ~/.airgap/model]
+      -t, --token             Token for authentication
+      -ns, --ngc-spec         NGC spec file for downloading (required for NGC downloads)
+    Upload Options:
+      -c, --cloud             Cloud provider: aws, azure, or pvc
+      -s, --src               Source directory for upload
+      -d, --dst               Destination path in object storage
+      -r, --recursive         Recursively upload folders
+      -e, --endpoint          S3 gateway endpoint (for pvc only)
+      -i, --insecure          Allow insecure SSL connections
+      -ca, --ca-bundle        Path to custom CA bundle file
+      -ac, --account          Account for Azure uploads
+      -cn, --container        Container name for Azure uploads
     Examples:
-      python script.py gpt2
-      python script.py --token YOUR_HF_TOKEN --repo-id facebook/bart-large
-      python script.py --download --path ~/my_models --repo-id bert-base-uncased
-      python script.py --repo-type dataset --download --repo-id mnist
-      python script.py --cloud aws --src /path/to/models/ --dst s3://bucket/path --recursive
-      python script.py --cloud pvc --src /path/to/model/hf/meta/llama3.1 --dst s3://bucket/secured-models/hf/meta/llama3.1
-      python script.py --cloud azure --src /path/to/model/hf/meta/llama3.1 --account cloudera-customer1 --container data --dst modelregistry/secured-models/hf/meta/llama3.1
+      # Configure default settings
+      python import_to_airgap.py configure
+      # List all downloaded models
+      python import_to_airgap.py list-local-models
+      # Download a HuggingFace model
+      python import_to_airgap.py -do --repo-id facebook/bart-large --repo-type hf
+      # Download an NGC model
+      python import_to_airgap.py -do --repo-id nim/meta/llama-3.1-8b-instruct:1.0.0 --repo-type ngc --ngc-spec spec.yaml
+      # Upload to cloud storage wih configured defaults
+      python import_to_airgap.py --repo-id bert-base-uncased --repo-type hf
+      # Upload to cloud storage with overridden defaults
+      # Upload to AWS S3
+      python import_to_airgap.py --cloud aws --src /path/to/models/ --dst s3://bucket/path --repo-id bert-base-uncased --repo-type hf
+      # Upload to private cloud with S3 endpoint
+      python import_to_airgap.py --cloud pvc --src /path/to/model/hf/meta/llama3.1 --dst s3://bucket/secured-models/hf/meta/llama3.1 --repo-id meta/llama3.1 --repo-type hf
+      # Upload to Azure Blob Storage
+      python import_to_airgap.py --cloud azure --src /path/to/model --account cloudera-customer1 --container data --dst modelregistry/secured-models/hf/meta/llama3.1 --repo-id meta/llama3.1 --repo-type hf
     """
     print(help_text)
     sys.exit(1)
+
 
 def check_requirements(download_model, cloud):
     """Check if the required tools are installed."""
     if download_model:
         try:
-            subprocess.run(["huggingface-cli", "version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.run(["hf", "version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         except (subprocess.SubprocessError, FileNotFoundError):
             print("Error: huggingface-cli is required for downloading but not installed.")
             print("Please install it using pip:")
-            print("  pip install huggingface_hub")
+            print("pip install --upgrade huggingface_hub")
             return False
         try:
             subprocess.run(["ngc", "version", "info"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -470,7 +514,7 @@ def download_repo_hf(repo_id, token, download_path):
     # Download the repository
     print("Starting download with huggingface-cli...")
     try:
-        cmd = ["huggingface-cli", "download", repo_id, "--local-dir", f"{download_path}/hf/{repo_id}/artifacts"]
+        cmd = ["hf", "download", repo_id, "--local-dir", f"{download_path}/hf/{repo_id}/artifacts"]
         if token:
             cmd.extend(["--token", token])
         
@@ -577,9 +621,12 @@ def get_repo_info_ngc(repo_id, spec_file):
     """Get NGC repository metadata and save it to a file."""
     # Implement NGC repository metadata fetching if needed
     spec = load_ngc_spec(spec_file)
-    ngcMetadata =  extract_profile_components(spec, repo_id)
+    ngcMetadata, modelCard =  extract_profile_components(spec, repo_id)
     repo_id=repo_id.split(':')
-    modelMetadata = get_ngc_model_info(repo_id[0], repo_id[1])
+    try:
+        modelMetadata = json.loads(base64.b64decode(modelCard).decode('utf-8'))
+    except Exception:
+        modelMetadata = {}
     return ngcMetadata, modelMetadata
 
 
@@ -735,48 +782,312 @@ def print_detailed_model(model_data: Dict, model_name: str):
                     print(f"          Framework: {framework}")
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Hugging Face model management script")
+def get_config_path():
+    """Get the path to the configuration file."""
+    home = Path.home()
+    config_dir = home / ".airgap"
+    config_dir.mkdir(parents=True, exist_ok=True)
+    return config_dir / "config.json"
+
+
+def get_metadata_file_path(download_path):
+    """Get the path to the models-metadata.yaml file."""
+    metadata_file = os.path.join(download_path, "models-metadata.yaml")
+    return metadata_file
+
+
+def load_models_metadata(download_path):
+    """Load models metadata from YAML file."""
+    metadata_file = get_metadata_file_path(download_path)
+    if os.path.exists(metadata_file):
+        try:
+            with open(metadata_file, 'r') as f:
+                data = yaml.safe_load(f)
+                return data if data else []
+        except (yaml.YAMLError, IOError) as e:
+            print(f"Warning: Could not load metadata file: {e}")
+            return []
+    return []
+
+
+def save_models_metadata(download_path, metadata):
+    """Save models metadata to YAML file."""
+    metadata_file = get_metadata_file_path(download_path)
+    try:
+        with open(metadata_file, 'w') as f:
+            yaml.dump(metadata, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    except IOError as e:
+        print(f"Error: Could not save metadata file: {e}")
+
+
+def update_model_metadata(download_path, repo_type, repo_id, download_success, start_time, finish_time):
+    """Update or add model metadata entry."""
+    metadata = load_models_metadata(download_path)
     
-    # Help option
+    # Find existing entry for this repo-type and repo-id
+    existing_entry = None
+    for entry in metadata:
+        if entry.get('repo-type') == repo_type and entry.get('repo-id') == repo_id:
+            existing_entry = entry
+            break
+    
+    if existing_entry:
+        # Update existing entry
+        existing_entry['num-retries'] = existing_entry.get('num-retries', 0) + 1
+        existing_entry['download-starttime'] = start_time
+        existing_entry['download-finishtime'] = finish_time
+        existing_entry['download-success'] = download_success
+    else:
+        # Create new entry
+        new_entry = {
+            'repo-type': repo_type,
+            'repo-id': repo_id,
+            'download-starttime': start_time,
+            'download-finishtime': finish_time,
+            'download-success': download_success,
+            'num-retries': 0
+        }
+        metadata.append(new_entry)
+    
+    save_models_metadata(download_path, metadata)
+    print(f"Metadata updated for {repo_type}/{repo_id}")
+
+
+def list_local_models(download_path):
+    """List all models from the models-metadata.yaml file."""
+    metadata = load_models_metadata(download_path)
+    
+    if not metadata:
+        print("No models found in metadata.")
+        return
+    
+    print("\n=== LOCAL MODELS ===")
+    print(f"{'Repo Type':<15} {'Repo ID':<50} {'Download Success':<20} {'Num Retries':<15}")
+    print("=" * 100)
+    
+    for entry in metadata:
+        repo_type = entry.get('repo-type', 'N/A')
+        repo_id = entry.get('repo-id', 'N/A')
+        download_success = 'true' if entry.get('download-success', False) else 'false'
+        num_retries = entry.get('num-retries', 0)
+        
+        print(f"{repo_type:<15} {repo_id:<50} {download_success:<20} {num_retries:<15}")
+    
+    print()
+
+
+def load_config():
+    """Load configuration from file."""
+    config_path = get_config_path()
+    if config_path.exists():
+        try:
+            with open(config_path, 'r') as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError) as e:
+            print(f"Warning: Could not load config file: {e}")
+            return {}
+    return {}
+
+
+def save_config(config):
+    """Save configuration to file."""
+    config_path = get_config_path()
+    try:
+        with open(config_path, 'w') as f:
+            json.dump(config, f, indent=2)
+        print(f"\nConfiguration saved to {config_path}")
+    except IOError as e:
+        print(f"Error: Could not save config file: {e}")
+        sys.exit(1)
+
+
+def configure_interactive():
+    """Interactively configure the tool settings."""
+    print("=== Airgap Model Import Configuration ===\n")
+    
+    config = load_config()
+    
+    # Get default model path
+    default_path = str(Path.home() / ".airgap" / "model")
+    current_path = config.get('path', default_path)
+    path_input = input(f"Enter default model download/source path [{current_path}]: ").strip()
+    config['path'] = path_input if path_input else current_path
+    
+    # Get authentication token
+    current_token = config.get('token', '')
+    token_display = '*' * 8 if current_token else 'none'
+    token_input = input(f"Enter authentication token (for HuggingFace) [current: {token_display}]: ").strip()
+    if token_input:
+        config['token'] = token_input
+    elif not current_token:
+        config['token'] = ''
+    
+    # Get cloud provider
+    current_cloud = config.get('cloud', 'aws')
+    cloud_input = input(f"Enter cloud provider (aws/azure/pvc) [{current_cloud}]: ").strip().lower()
+    config['cloud'] = cloud_input if cloud_input else current_cloud
+    
+    # Validate cloud provider
+    if config['cloud'] not in ['aws', 'azure', 'pvc']:
+        print(f"Warning: Invalid cloud provider '{config['cloud']}'. Defaulting to 'aws'.")
+        config['cloud'] = 'aws'
+    
+    # Get destination path
+    current_dst = config.get('dst', '')
+    dst_input = input(f"Enter default destination path in cloud storage [{current_dst or 'none'}]: ").strip()
+    config['dst'] = dst_input if dst_input else current_dst
+    
+    # Cloud-specific configuration
+    if config['cloud'] in ['aws', 'pvc']:
+        print(f"\n--- AWS/PVC Configuration ---")
+        
+        if config['cloud'] == 'pvc':
+            current_endpoint = config.get('endpoint', '')
+            endpoint_input = input(f"Enter S3 endpoint URL [{current_endpoint or 'none'}]: ").strip()
+            config['endpoint'] = endpoint_input if endpoint_input else current_endpoint
+            
+            current_insecure = config.get('insecure', False)
+            insecure_input = input(f"Allow insecure SSL connections? (yes/no) [{'yes' if current_insecure else 'no'}]: ").strip().lower()
+            if insecure_input in ['yes', 'y']:
+                config['insecure'] = True
+                config.pop('ca_bundle', None)  # Remove ca_bundle if insecure is enabled
+            elif insecure_input in ['no', 'n']:
+                config['insecure'] = False
+                current_ca = config.get('ca_bundle', '')
+                ca_input = input(f"Enter path to CA bundle file [{current_ca or 'none'}]: ").strip()
+                config['ca_bundle'] = ca_input if ca_input else current_ca
+            # If no input, keep current settings
+        else:
+            # For AWS, clear PVC-specific settings
+            config.pop('endpoint', None)
+            config.pop('insecure', None)
+            config.pop('ca_bundle', None)
+        
+        # Clear Azure-specific settings
+        config.pop('account', None)
+        config.pop('container', None)
+    
+    elif config['cloud'] == 'azure':
+        print(f"\n--- Azure Configuration ---")
+        
+        current_account = config.get('account', '')
+        account_input = input(f"Enter Azure storage account name [{current_account or 'none'}]: ").strip()
+        config['account'] = account_input if account_input else current_account
+        
+        current_container = config.get('container', '')
+        container_input = input(f"Enter Azure container name [{current_container or 'none'}]: ").strip()
+        config['container'] = container_input if container_input else current_container
+        
+        # Clear AWS/PVC-specific settings
+        config.pop('endpoint', None)
+        config.pop('insecure', None)
+        config.pop('ca_bundle', None)
+    
+    # Save configuration
+    save_config(config)
+    print("\nConfiguration complete!")
+    return config
+
+
+def main():
+    # Load configuration first to get defaults
+    config = load_config()
+    
+    # Set up default values from config
+    default_path = config.get('path', str(Path.home() / ".airgap" / "model"))
+    default_token = config.get('token', '')
+    default_cloud = config.get('cloud', 'aws')
+    default_dst = config.get('dst', '')
+    default_endpoint = config.get('endpoint', '')
+    default_ca_bundle = config.get('ca_bundle', '')
+    default_account = config.get('account', '')
+    default_container = config.get('container', '')
+    
+    parser = argparse.ArgumentParser(description="Airgap model import and management tool", add_help=False)
+    parser.add_argument("-h", "--help", action="store_true", help="Show this help message and exit")
+    
+    # Configuration option
+    parser.add_argument("--configure", action="store_true", help="Configure default settings interactively")
     
     # Download options
-    parser.add_argument("-t", "--token", default="", help="Token for authentication")
+    parser.add_argument("-t", "--token", default=None, help=f"Token for authentication (default: configured value)")
     parser.add_argument("-j", "--json", action="store_true", help="Output raw JSON")
     parser.add_argument("-do", "--download", action="store_true", help="Download the model repository")
-    parser.add_argument("-p", "--path", default="./models", help="Path to download model files")
+    parser.add_argument("-p", "--path", default=None, help=f"Path to download/source model files (default: {default_path})")
     parser.add_argument("-ri", "--repo-id", help="Repository ID to download")
     parser.add_argument("-rt", "--repo-type", default="hf", help="Repository type (default: hf)")
-    # parser.add_argument("-sha", "--profile-sha", help="Sha of the p rofile of the repoID")
     
     # Upload options
-    parser.add_argument("-c", "--cloud", default="aws", help="Cloud provider (aws, gcp, azure, pvc)")
-    parser.add_argument("-s", "--src", help="Source directory for upload")
-    parser.add_argument("-d", "--dst", help="Destination path in object storage")
+    parser.add_argument("-c", "--cloud", default=None, help=f"Cloud provider (aws, azure, pvc) (default: {default_cloud})")
+    parser.add_argument("-s", "--src", default=None, help=f"Source directory for upload (default: same as --path)")
+    parser.add_argument("-d", "--dst", default=None, help=f"Destination path in object storage (default: configured value)")
     parser.add_argument("-r", "--recursive", action="store_true", help="Recursively upload folders")
-    parser.add_argument("-e", "--endpoint", help="S3 gateway endpoint (Private cloud only)")
+    parser.add_argument("-e", "--endpoint", default=None, help=f"S3 gateway endpoint (Private cloud only) (default: configured value)")
     parser.add_argument("-i", "--insecure", action="store_true", help="Allow insecure SSL connections")
-    parser.add_argument("-ca", "--ca-bundle", help="Path to custom CA bundle file")
-    parser.add_argument("-ac", "--account", help="Account for Azure uploads")
-    parser.add_argument("-cn", "--container", help="Container name for Azure uploads")
+    parser.add_argument("-ca", "--ca-bundle", default=None, help=f"Path to custom CA bundle file (default: configured value)")
+    parser.add_argument("-ac", "--account", default=None, help=f"Account for Azure uploads (default: configured value)")
+    parser.add_argument("-cn", "--container", default=None, help=f"Container name for Azure uploads (default: configured value)")
     parser.add_argument("-ns", "--ngc-spec", help="NGC spec folder path")
     
+    # Query options
     parser.add_argument('-m', '--model-name', help='Name of the model to query')
     parser.add_argument('-vid', '--variant-id', help='Variant ID (used with model name for specific queries)')
-    parser.add_argument('--list-all', action='store_true',help='List all available models')
-    parser.add_argument('--list-variants', action='store_true',help='List all variant IDs for the specified model')
-    parser.add_argument('--list-profiles', action='store_true',help='List all optimization profile IDs for the specified model (and variant if provided)')
+    parser.add_argument('--list-all', action='store_true', help='List all available models')
+    parser.add_argument('--list-variants', action='store_true', help='List all variant IDs for the specified model')
+    parser.add_argument('--list-profiles', action='store_true', help='List all optimization profile IDs for the specified model (and variant if provided)')
+    parser.add_argument('--list-local-models', action='store_true', help='List all locally downloaded models from metadata')
+
+    # Support 'help' command by converting it to --help flag
+    if len(sys.argv) > 1 and sys.argv[1] == 'help':
+        sys.argv[1] = '--help'
 
     args = parser.parse_args()
     
+    # Handle configure command
+    if args.configure:
+        configure_interactive()
+        sys.exit(0)
+    
+    # Apply defaults from config if not provided in command line
+    if args.token is None:
+        args.token = default_token
+    if args.path is None:
+        args.path = default_path
+    if args.cloud is None:
+        args.cloud = default_cloud
+    if args.src is None:
+        args.src = default_path  # src defaults to path
+    if args.dst is None:
+        args.dst = default_dst
+    if args.endpoint is None:
+        args.endpoint = default_endpoint
+    if args.ca_bundle is None:
+        if default_ca_bundle and default_ca_bundle != '':
+            args.ca_bundle = default_ca_bundle
+    if args.account is None:
+        if default_account and default_account != '':
+            args.account = default_account
+    if args.container is None:
+        if default_container and default_container != '':
+            args.container = default_container
+    
+    # Handle insecure flag - if explicitly set in command line, it overrides config
+    # Otherwise, use config value
+    if not args.insecure and config.get('insecure', False):
+        args.insecure = True
+    
     # # Show help if requested or no arguments provided
-    # if args.help or len(sys.argv) == 1:
-    #     show_help()
+    if args.help or len(sys.argv) == 1:
+        show_help()
     
     # Check requirements
     if not check_requirements(args.download, args.cloud if args.src else None):
         sys.exit(1)
     
+    # Handle list-local-models command
+    if args.list_local_models:
+        list_local_models(args.path)
+        return
     
     # Handle different command combinations
     if args.list_all:
@@ -826,28 +1137,40 @@ def main():
         if not validate_repo_type(args.repo_type):
             sys.exit(1)
         
-        # Get repository info and download
-        metadata = get_repo_info(args.repo_id, args.token, args.repo_type, args.path, args.ngc_spec)
-        if metadata is not None:
-            download_repo(args.repo_id, args.token, args.path, args.repo_type, metadata, args.ngc_spec)
-        else:
-            print("Error: Failed to get repository metadata")
+        # Track download timing and success
+        start_time = datetime.now().isoformat()
+        download_success = False
+        
+        try:
+            # Get repository info and download
+            metadata = get_repo_info(args.repo_id, args.token, args.repo_type, args.path, args.ngc_spec)
+            if metadata is not None:
+                download_repo(args.repo_id, args.token, args.path, args.repo_type, metadata, args.ngc_spec)
+                download_success = True
+            else:
+                print("Error: Failed to get repository metadata")
+        except Exception as e:
+            print(f"Error during download: {str(e)}")
+            download_success = False
+        finally:
+            finish_time = datetime.now().isoformat()
+            # Update metadata file
+            update_model_metadata(args.path, args.repo_type, args.repo_id, download_success, start_time, finish_time)
+        
+        if not download_success:
             sys.exit(1)
         sys.exit(0)
     
-    # Handle upload use case
-    if args.src and args.dst:
-        if not upload_to_cloud(
-            args.src, args.dst, args.cloud, args.token, args.recursive,
-            args.endpoint, args.insecure, args.ca_bundle, args.account, args.container,
-            args.repo_id, args.repo_type
 
-        ):
-            sys.exit(1)
-        print("Upload completed.")
-    else:
-        print("Error: Missing required parameters.")
-        show_help()
+    if not upload_to_cloud(
+        args.src, args.dst, args.cloud, args.token, args.recursive,
+        args.endpoint, args.insecure, args.ca_bundle, args.account, args.container,
+        args.repo_id, args.repo_type
+
+    ):
+        print(f"Error: Failed to upload repository: {args.repo_id} to {args.cloud}")
+        sys.exit(1)
+    print(f"Upload completed for repository: {args.repo_id} to {args.cloud}")
 
 if __name__ == "__main__":
     main()
