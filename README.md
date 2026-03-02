@@ -1,49 +1,33 @@
-Jenkins jobs used in the Modelhub operations.
+# Cloudera Model Hub
 
-1. **mlx_concat_model_hub_yamls**
+A curated catalog of NVIDIA NIM microservices — production-ready AI models spanning language, vision, speech, and more — optimized for deployment with [Cloudera AI Inference Service](https://www.cloudera.com/products/machine-learning/ai-inference-service.html).
 
-   **Description**: Job to concatenate individual YAML files under a release directory to generate a single YAML file which can be used in airgapped installations to generate ModelHub cards
-  
-   **URL** : https://master-01.jenkins.cloudera.com/job/mlx_concat_model_hub_yamls/
+## Browse the catalog
 
-   **Parameters**:
-    1. **PLATFORM** : Private or Public based on which paltform's individual modelhub catalog YAML files needs to be merged.
-    2. **MLX_CRUD_APP_MAJOR_VERSION** : Major version of MLX_CRUD_APP (**like 1.51.0 and NOT 1.51.0-b133**) for which individual modelhub catalog YAML files needs to be merged.
+**[→ Open the Model Hub catalog](https://cloudera.github.io/Model-Hub/)**
 
-   **How does the job work**:
-   1. Based on the PLATFORM and MLX_CRUD_APP_MAJOR_VERSION individual files will be merged into a single YAML file and will be stroed under https://github.com/cloudera/Model-Hub/tree/main/models/airgapped/.
-   2. The naming convention of the concatenated file will be **<MLX_CRUD_APP_MAJOR_VERSION>_concatenated.yaml**
+Models can be imported directly into the Cloudera AI Registry and deployed with a single click via Cloudera AI Inference Service.
 
+## Repository structure
 
-2. **mlx_copy_modelhub_spec**
+```
+models/public/          # Model descriptor YAMLs (latest)
+models/private/         # Private cloud variants
+models-order/public/    # Merge order defining catalog sequence
+manifests/              # Model Registry manifest versions
+airgap-scripts/         # Scripts for airgapped deployments
+```
 
-   **Description**: Job to push ModelHub changes to mlx-crud-app repo. A few customers might have restriction on accessing external github repositires so the mlx-crud-app will use the modelhub catalog files from local repo instead of external github repo. We use this job to keep both external github and mlx-crud-app master branch to be in sync.
+## Adding or updating a model
 
-   **URL**: https://master-01.jenkins.cloudera.com/job/mlx_copy_modelhub_spec/
+1. Add or edit the model YAML in `models/public/` following the schema in `utils/base_model.yaml`.
+2. Add the filename to `models-order/public/merge-order.yaml` in the desired position.
+3. Commit to `main` — the catalog page picks up changes immediately, no build step required.
 
-   **Parameters**:
-   1. **DSE_TICKET**: DSE ticket number corresponding to this copy operation
-   2. **PLATFORM**: Private or Public for which the modelhub catalog files needs to be synced in mlx-crud-app
-   3. **MLX_CRUD_APP_MAJOR_VERSION**: Major version of MLX_CRUD_APP (**like 1.51.0 and NOT 1.51.0-b133**) for which modelhub catalog YAML files needs to be copied.
-  
-   **How does the job work**:
-   For the choosen platform the job will copy over all the content from Model-Hub github repo to Cloudera's mlx-crud-app repo. Any changes in the YAML files will be directly merged to master branch of mlx-crud-app repo.
+## GitHub Pages setup
 
-    **Note**
-    1. YAML files for a chosen platform will be copied over to master branch of mlx-crud-app. If needed we need to cherry-pick the commit to release branch.
-  
-3. **mlx_copy_modelhub_manifest_to_model_registry**
+The catalog is served directly from `index.html` at the repo root. It fetches the YAML files at runtime.
 
-   **Description**: Job to push changes in model-registry manifest to model-registry repo. We use this job to keep both external github and model-registry manifest master branch to be in sync.
+## Internal operations
 
-   **URL**: https://master-01.jenkins.cloudera.com/job/mlx_copy_modelhub_manifest_to_model_registry/
-
-   **Parameters**:
-   1. **registyVersion**: model registry version for which manifest YAML files needs to be copied.
-  
-   **How does the job work**:
-   For the choosen registyVersion the job will copy over all the content from Model-Hub/manifest/registyVersion github repo to Cloudera's model-registry repo. Any changes in the YAML files will be directly merged to master branch of mlx-crud-app repo.
-
-  **Note**
-    1. YAML files will be copied over to master branch of mlx-crud-app. If needed we need to cherry-pick the commit to release branch.
-
+See [OPERATIONS.md](OPERATIONS.md) for Jenkins jobs used to sync content into `mlx-crud-app` and `model-registry`.
