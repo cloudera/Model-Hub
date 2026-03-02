@@ -145,7 +145,7 @@
     }
 
     /* ── Grid ── */
-    .content { padding: 20px 24px; }
+    .content { padding: 14px 24px 24px; }
     .results-bar {
       font-size: 13px;
       color: var(--text-muted);
@@ -155,8 +155,8 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
     }
 
     /* ── Card ── */
@@ -164,7 +164,7 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 16px;
+      padding: 14px;
       cursor: pointer;
       transition: box-shadow .15s, transform .15s, border-color .15s;
       display: flex;
@@ -517,96 +517,85 @@
     .hero {
       background: linear-gradient(135deg, #1a2639 0%, #0d3259 60%, #0a4a7a 100%);
       color: #fff;
-      padding: 36px 24px 32px;
+      padding: 24px 24px 20px;
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: 32px;
     }
-    .hero-text { flex: 1; max-width: 680px; }
+    .hero-text { flex: 1; max-width: 780px; }
     .hero-eyebrow {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.2px;
       color: #F96702;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
     .hero h2 {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       letter-spacing: -.2px;
     }
     .hero p {
-      font-size: 14.5px;
-      line-height: 1.65;
-      color: rgba(255,255,255,.78);
-      max-width: 580px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.75);
+      max-width: 640px;
+      margin-bottom: 14px;
     }
     .hero-steps {
       display: flex;
-      gap: 0;
-      margin-top: 24px;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 6px;
     }
     .hero-step {
       display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      flex: 1;
-      min-width: 160px;
-      max-width: 220px;
-      padding: 14px 16px;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px 6px 8px;
       background: rgba(255,255,255,.07);
       border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius);
+      border-radius: 20px;
     }
     .step-num {
-      width: 22px;
-      height: 22px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: #F96702;
       color: #fff;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      margin-top: 1px;
     }
     .step-body strong {
-      display: block;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       color: #fff;
-      margin-bottom: 2px;
     }
-    .step-body span {
-      font-size: 12px;
-      color: rgba(255,255,255,.6);
-      line-height: 1.4;
-    }
+    .step-body span { display: none; }
     .hero-badge {
       flex-shrink: 0;
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.12);
-      border-radius: 12px;
-      padding: 20px 24px;
+      border-radius: 10px;
+      padding: 16px 20px;
       text-align: center;
-      min-width: 160px;
+      min-width: 120px;
     }
     .hero-badge .badge-num {
-      font-size: 40px;
+      font-size: 34px;
       font-weight: 700;
       color: #fff;
       line-height: 1;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .hero-badge .badge-label {
-      font-size: 12px;
+      font-size: 11px;
       color: rgba(255,255,255,.55);
       line-height: 1.4;
     }
@@ -619,9 +608,9 @@
       .tab-panel { padding: 16px; }
       header { padding: 0 16px; }
       .search-wrap { flex: 1 1 100%; }
-      .hero { padding: 24px 16px; flex-direction: column; gap: 20px; }
+      .hero { padding: 20px 16px; flex-direction: column; gap: 16px; }
       .hero-badge { display: none; }
-      .hero h2 { font-size: 20px; }
+      .hero h2 { font-size: 18px; }
     }
   </style>
 </head>
@@ -737,10 +726,18 @@
   // ── Category → icon background color + CSS class ──────────────────
   const CATEGORY_META = {
     'Text Generation':              { cls: 'cat-text-gen' },
+    'Chatbots':                     { cls: 'cat-text-gen' },
+    'Chat Assistant':               { cls: 'cat-text-gen' },
+    'Language Model':               { cls: 'cat-text-gen' },
+    'Commercial and Research':      { cls: 'cat-text-gen' },
     'Text-Prompt':                  { cls: 'cat-text-prompt' },
     'Optical Character Recognition':{ cls: 'cat-ocr' },
-    'Embedding':                    { cls: 'cat-embedding' },
+    'Text Extraction':              { cls: 'cat-ocr' },
+    'Object Detection':             { cls: 'cat-ocr' },
+    'VLM':                          { cls: 'cat-ocr' },
+    'Text Embedding':               { cls: 'cat-embedding' },
     'Reranking':                    { cls: 'cat-rerank' },
+    'Biology Foundation Model':     { cls: 'cat-rerank' },
   };
   const catMeta = c => CATEGORY_META[c] || { cls: 'cat-default' };
 
@@ -811,9 +808,9 @@
     });
 
     // Extract parameter-count label from variantId, e.g. "Llama 3.1 70B Instruct" → "70B"
-    const sizeLabels = variants
+    const sizeLabels = [...new Set(variants
       .map(v => { const m = v.id.match(/\d+(\.\d+)?[BMKT](?=\b)/i); return m ? m[0].toUpperCase() : null; })
-      .filter(Boolean);
+      .filter(Boolean))];
 
     return {
       name: m.name || '',
