@@ -18,14 +18,22 @@
 #         --ngc-api-key <API key to run ngc cli command> \
 #         --platform <public|private, default: public> \
 #         [--whitelisted-gpus <Space separated GPU types; case-insensitive>] \
+#         [--a10g-min-count <Min GPU count for A10G>] [--a10g-max-count <Max GPU count for A10G>] \
+#         [--l40s-min-count <Min GPU count for L40S>] [--l40s-max-count <Max GPU count for L40S>] \
+#         [--h100-min-count <Min GPU count for H100>] [--h100-max-count <Max GPU count for H100>] \
+#         [--h200-min-count <Min GPU count for H200>] [--h200-max-count <Max GPU count for H200>] \
+#         [--a100-min-count <Min GPU count for A100>] [--a100-max-count <Max GPU count for A100, default: 1>] \
 #         [--include-vllm]
 #         [--create-manifest-path <base output dir>]
 #         [--no-include-onnx]
 #
-# E.g (public, whitelist all major GPUs):
+# E.g (public, whitelist all major GPUs with min/max counts):
 #   python ./generate-modelhub-catalog.py --profiles-yaml ~/Documents/llama-3.1-70b-instruct.yaml \
 #     --output-yaml ./llama-3.1-70b-instruct.yaml --ngc-api-key <> \
-#     --platform public --whitelisted-gpus A10G L40S H100 H200 A100
+#     --platform public --whitelisted-gpus A10G L40S H100 H200 A100 \
+#     --a10g-min-count 1 --a10g-max-count 8 --l40s-min-count 1 --l40s-max-count 8 \
+#     --h100-min-count 1 --h100-max-count 8 --h200-min-count 1 --h200-max-count 8 \
+#     --a100-min-count 1 --a100-max-count 4
 #
 # E.g (private):
 #   python ./generate-modelhub-catalog.py --profiles-yaml ~/Documents/llama-3.1-70b-instruct.yaml \
@@ -51,11 +59,11 @@
 #           a) tags.feat_lora == 'true'
 #           b) public and llm_engine == 'vllm' and --include-vllm is NOT set
 #           c) public and GPU not in --whitelisted-gpus
-#           d) public and A100 with TP*PP > --a100-max-count (default: 1; set 4 to allow up to 4)
+#           d) public and GPU with TP*PP outside GPU-specific min/max range (--<gpu>-min-count, --<gpu>-max-count; A100 max default: 1, others: no limits)
 #           e) public and H100 with gpu_device != 2330:10de; public and H200 with gpu_device != 2335:10de (enforced only if gpu_device is present in tags)
 #       - Generic profile synthesis (public):
-#           a) TRT-LLM generics (llm_engine: tensorrt_llm, trtllm_buildable: 'true', feat_lora: 'false') synthesize entries for GPUs [A10G, L40S, H100, H200, A100], respecting whitelist and A100 limit.
-#           b) VLLM generics synthesize only if --include-vllm is set, respecting whitelist and A100 limit.
+#           a) TRT-LLM generics (llm_engine: tensorrt_llm, trtllm_buildable: 'true', feat_lora: 'false') synthesize entries for GPUs [A10G, L40S, H100, H200, A100], respecting whitelist and GPU-specific min/max counts.
+#           b) VLLM generics synthesize only if --include-vllm is set, respecting whitelist and GPU-specific min/max counts.
 #           c) Capacity check: skip synthesized entries when download size (GB) > (TP*PP* per-GPU memory GB) using built-in GPU_SPECS.
 #           d) Generated profiles set gpu_device via mapping; H200 supported (2335:10de).
 #       - Private platform generics: included as-is without GPU details (VLLM requires --include-vllm).
@@ -194,7 +202,41 @@ def _get_gpu_tag(tags):
         up = up[len("NVIDIA "):]
     return up
 
-def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vllm=False, a100_max_count=1):
+def should_skip_gpu_count(gpu_upper, count, args):
+    """Check if GPU count is outside configured min/max limits for public platform.
+    Returns True if the profile should be skipped, False otherwise.
+    """
+    if gpu_upper == "A10G":
+        if args.a10g_min_count is not None and count < args.a10g_min_count:
+            return True
+        if args.a10g_max_count is not None and count > args.a10g_max_count:
+            return True
+    elif gpu_upper == "L40S":
+        if args.l40s_min_count is not None and count < args.l40s_min_count:
+            return True
+        if args.l40s_max_count is not None and count > args.l40s_max_count:
+            return True
+    elif gpu_upper == "H100":
+        if args.h100_min_count is not None and count < args.h100_min_count:
+            return True
+        if args.h100_max_count is not None and count > args.h100_max_count:
+            return True
+    elif gpu_upper == "H200":
+        if args.h200_min_count is not None and count < args.h200_min_count:
+            return True
+        if args.h200_max_count is not None and count > args.h200_max_count:
+            return True
+    elif gpu_upper == "A100":
+        if args.a100_min_count is not None and count < args.a100_min_count:
+            return True
+        if count > args.a100_max_count:
+            return True
+    return False
+
+def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vllm=False, a100_max_count=1, 
+                         a10g_min_count=None, a10g_max_count=None, l40s_min_count=None, l40s_max_count=None, 
+                         h100_min_count=None, h100_max_count=None, h200_min_count=None, h200_max_count=None, 
+                         a100_min_count=None):
     gpu = _get_gpu_tag(tags)
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
@@ -211,9 +253,27 @@ def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vll
         whitelisted_gpus_upper = [g.upper() for g in whitelisted_gpus]
         if gpu.upper() not in whitelisted_gpus_upper:
             return True
-    # Only apply A100 filtering for public platform
-    if platform == "public" and gpu.upper() == "A100" and tp * pp > a100_max_count:
-        return True
+    
+    if platform == "public":
+        count = tp * pp
+        
+        class Args:
+            pass
+        args_obj = Args()
+        args_obj.a10g_min_count = a10g_min_count
+        args_obj.a10g_max_count = a10g_max_count
+        args_obj.l40s_min_count = l40s_min_count
+        args_obj.l40s_max_count = l40s_max_count
+        args_obj.h100_min_count = h100_min_count
+        args_obj.h100_max_count = h100_max_count
+        args_obj.h200_min_count = h200_min_count
+        args_obj.h200_max_count = h200_max_count
+        args_obj.a100_min_count = a100_min_count
+        args_obj.a100_max_count = a100_max_count
+        
+        if should_skip_gpu_count(gpu.upper(), count, args_obj):
+            return True
+    
     return False
 
 def extract_gpu_tp_pp_from_uris(profile):
@@ -596,6 +656,15 @@ def main():
     parser.add_argument("--ngc-api-key", required=True, help="NGC CLI API Key")
     parser.add_argument("--platform", choices=["public", "private"], default="public", help="Platform type: 'public' (default) or 'private'. Affects filtering and generic profile handling.")
     parser.add_argument("--include-vllm", action="store_true", help="Include VLLM profiles. Public: only GPU-defined VLLM profiles are included. Private: also includes generic (no-GPU) VLLM profiles as-is.")
+    parser.add_argument("--a10g-min-count", type=int, default=None, help="Public only: Exclude A10G profiles where TP*PP < this value (default: no limit).")
+    parser.add_argument("--a10g-max-count", type=int, default=None, help="Public only: Exclude A10G profiles where TP*PP > this value (default: no limit).")
+    parser.add_argument("--l40s-min-count", type=int, default=None, help="Public only: Exclude L40S profiles where TP*PP < this value (default: no limit).")
+    parser.add_argument("--l40s-max-count", type=int, default=None, help="Public only: Exclude L40S profiles where TP*PP > this value (default: no limit).")
+    parser.add_argument("--h100-min-count", type=int, default=None, help="Public only: Exclude H100 profiles where TP*PP < this value (default: no limit).")
+    parser.add_argument("--h100-max-count", type=int, default=None, help="Public only: Exclude H100 profiles where TP*PP > this value (default: no limit).")
+    parser.add_argument("--h200-min-count", type=int, default=None, help="Public only: Exclude H200 profiles where TP*PP < this value (default: no limit).")
+    parser.add_argument("--h200-max-count", type=int, default=None, help="Public only: Exclude H200 profiles where TP*PP > this value (default: no limit).")
+    parser.add_argument("--a100-min-count", type=int, default=None, help="Public only: Exclude A100 profiles where TP*PP < this value (default: no limit).")
     parser.add_argument("--a100-max-count", type=int, default=1, help="Public only: Exclude A100 profiles where TP*PP > this value (default: 1). Use 4 to allow up to 4 GPUs.")
     parser.add_argument("--create-manifest-path", help="Base directory to write a copy of --profiles-yaml using path derived from first profileId (prefix before ':') with .yaml extension, preserving folder structure under this base directory.")
     # ONNX handling: included by default; allow explicit opt-out
@@ -719,7 +788,10 @@ def main():
         # - If GPU present in tags, reuse existing helper
         # - If GPU extracted from URI, apply equivalent checks using extracted GPU and TP/PP/count
         if gpu_tag:
-            if should_ignore_profile(tags, args.whitelisted_gpus, args.platform, args.include_vllm, args.a100_max_count):
+            if should_ignore_profile(tags, args.whitelisted_gpus, args.platform, args.include_vllm, args.a100_max_count,
+                                   args.a10g_min_count, args.a10g_max_count, args.l40s_min_count, args.l40s_max_count, 
+                                   args.h100_min_count, args.h100_max_count, args.h200_min_count, args.h200_max_count, 
+                                   args.a100_min_count):
                 continue
         else:
             # Basic tag-based filters
@@ -731,11 +803,14 @@ def main():
             if args.whitelisted_gpus:
                 if effective_gpu.upper() not in [g.upper() for g in args.whitelisted_gpus]:
                     continue
-            # A100 count limit (public only)
-            if args.platform == "public" and effective_gpu.upper() == "A100":
+            # GPU count limits (public only)
+            if args.platform == "public":
                 tp_eff = parsed_tp if parsed_tp is not None else int(tags.get("tp", "1"))
                 pp_eff = parsed_pp if parsed_pp is not None else int(tags.get("pp", "1"))
-                if tp_eff * pp_eff > args.a100_max_count:
+                count_eff = tp_eff * pp_eff
+                gpu_upper = effective_gpu.upper()
+                
+                if should_skip_gpu_count(gpu_upper, count_eff, args):
                     continue
         # Public-only: enforce gpu_device correctness for H100 and H200
         if args.platform == "public":
@@ -840,7 +915,11 @@ def main():
                     comb = f"{target_gpu.upper()}-TP{tp}-PP{pp}-{precision.upper()}-{profile_type.upper()}"
                     if comb in covered_gpu_combinations:
                         continue
-                    if target_gpu.upper() == "A100" and int(tp) * int(pp) > args.a100_max_count:
+                    
+                    gpu_upper = target_gpu.upper()
+                    count = int(tp) * int(pp)
+                    
+                    if should_skip_gpu_count(gpu_upper, count, args):
                         continue
                     # Capacity check: skip if download size exceeds total GPU memory for this combo
                     profile_id_uri_tmp = profile_id_from_workspace(profile, target_gpu)
@@ -881,8 +960,11 @@ def main():
                     if target_gpu.upper() not in whitelisted_gpus_upper:
                         continue
 
-                # Skip A100 profiles with more than 1 GPU (apply the same rule as regular profiles)
-                if target_gpu.upper() == "A100" and int(tp) * int(pp) > args.a100_max_count:
+                # Apply GPU-specific count limits
+                gpu_upper = target_gpu.upper()
+                count = int(tp) * int(pp)
+                
+                if should_skip_gpu_count(gpu_upper, count, args):
                     continue
 
                 # Capacity check: skip if download size exceeds total GPU memory for this combo
