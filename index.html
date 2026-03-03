@@ -17,11 +17,8 @@
       --text-secondary: #5a6472;
       --text-muted: #8a95a2;
       --accent: #0066cc;
-      --accent-hover: #0052a3;
       --header-bg: #1a2639;
       --header-text: #ffffff;
-      --badge-bg: #e8f0fe;
-      --badge-text: #1558d6;
       --gpu-bg: #f0faf4;
       --gpu-text: #1a7340;
       --gpu-border: #b7e2c8;
@@ -146,11 +143,7 @@
 
     /* ── Grid ── */
     .content { padding: 14px 5% 24px; }
-    .results-bar {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
+    .results-bar { font-size: 13px; color: var(--text-muted); }
     .results-bar strong { color: var(--text-primary); }
 
     .grid {
@@ -685,7 +678,7 @@
 
 <!-- Detail modal -->
 <div class="overlay" id="overlay" role="dialog" aria-modal="true">
-  <div class="modal" id="modal">
+  <div class="modal">
     <div class="modal-header">
       <div class="modal-title-wrap">
         <div class="modal-title" id="modal-title"></div>
@@ -731,12 +724,6 @@
   };
   const catMeta = c => CATEGORY_META[c] || { cls: 'cat-default' };
 
-
-  const FW_TAG = {
-    'TensorRT-LLM': 'tag-trt',
-    'VLLM':         'tag-vllm',
-    'ONNX':         'tag-onnx',
-  };
 
   // ── Fetch & parse all models ───────────────────────────────────────
   async function fetchYaml(path) {
@@ -803,16 +790,9 @@
       .filter(Boolean))];
 
     return {
-      name: m.name || '',
       displayName: m.displayName || m.name || '',
-      modelHubID: m.modelHubID || '',
       category: m.category || '',
-      type: m.type || 'NGC',
       description: m.description || '',
-      requireLicense: !!m.requireLicense,
-      licenseAgreements: m.licenseAgreements || [],
-      license: m.license || '',
-      config: m.config || {},
       sourceURL,
       modelCardMarkdown,
       variants,
@@ -977,9 +957,6 @@
     if (allVariants.length === 0) {
       tabProfiles.innerHTML = '<p style="color:var(--text-muted);font-size:13px">No optimization profiles available.</p>';
     } else {
-      // Selector row (only shown when >1 variant)
-      let activeVariantIdx = 0;
-
       const selectorWrap = document.createElement('div');
       selectorWrap.style.cssText = 'display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px';
 
@@ -987,7 +964,6 @@
       tableWrap.style.overflowX = 'auto';
 
       function renderVariantTable(idx) {
-        activeVariantIdx = idx;
         selectorWrap.querySelectorAll('.variant-btn').forEach((b, i) =>
           b.classList.toggle('active', i === idx));
 
@@ -1042,8 +1018,6 @@
       document.getElementById('tab-model-card').innerHTML =
         '<p style="color:var(--text-muted);font-size:13px">No model card available.</p>';
     }
-
-    // License tab
 
     // Reset to first tab
     document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
