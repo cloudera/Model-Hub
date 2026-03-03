@@ -76,7 +76,7 @@
     .toolbar {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      padding: 12px 24px;
+      padding: 12px 5%;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -145,7 +145,7 @@
     }
 
     /* ── Grid ── */
-    .content { padding: 14px 24px 24px; }
+    .content { padding: 14px 5% 24px; }
     .results-bar {
       font-size: 13px;
       color: var(--text-muted);
@@ -517,12 +517,13 @@
     .hero {
       background: linear-gradient(135deg, #1a2639 0%, #0d3259 60%, #0a4a7a 100%);
       color: #fff;
-      padding: 24px 24px 20px;
+      padding: 28px 5% 24px;
       display: flex;
+      flex-direction: row;
       align-items: center;
-      gap: 32px;
+      gap: 24px;
     }
-    .hero-text { flex: 1; max-width: 780px; }
+    .hero-text { flex: 0 0 42%; }
     .hero-eyebrow {
       font-size: 10px;
       font-weight: 700;
@@ -543,25 +544,26 @@
       line-height: 1.6;
       color: rgba(255,255,255,.75);
       max-width: 640px;
-      margin-bottom: 14px;
     }
     .hero-steps {
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+      flex-direction: row;
+      gap: 8px;
+      flex: 1;
     }
     .hero-step {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px 6px 8px;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 14px;
       background: rgba(255,255,255,.07);
       border: 1px solid rgba(255,255,255,.12);
-      border-radius: 20px;
+      border-radius: var(--radius);
+      flex: 1;
     }
     .step-num {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: #F96702;
       color: #fff;
@@ -571,45 +573,33 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      margin-top: 1px;
     }
     .step-body strong {
+      display: block;
       font-size: 12px;
       font-weight: 600;
       color: #fff;
+      margin-bottom: 2px;
     }
-    .step-body span { display: none; }
-    .hero-badge {
-      flex-shrink: 0;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 10px;
-      padding: 16px 20px;
-      text-align: center;
-      min-width: 120px;
-    }
-    .hero-badge .badge-num {
-      font-size: 34px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .hero-badge .badge-label {
-      font-size: 11px;
-      color: rgba(255,255,255,.55);
+    .step-body span {
+      font-size: 11.5px;
+      color: rgba(255,255,255,.6);
       line-height: 1.4;
     }
 
     /* ── Responsive ── */
     @media (max-width: 600px) {
       .toolbar { padding: 10px 16px; }
-      .content { padding: 14px 16px; }
+      .content { padding: 14px 16px 24px; }
       .modal-header { padding: 16px; }
       .tab-panel { padding: 16px; }
       header { padding: 0 16px; }
       .search-wrap { flex: 1 1 100%; }
-      .hero { padding: 20px 16px; flex-direction: column; gap: 16px; }
-      .hero-badge { display: none; }
+      .hero { padding: 20px 16px 18px; flex-direction: column; gap: 14px; }
+      .hero-text { max-width: 100%; }
+      .hero-steps { flex-wrap: wrap; }
+      .hero-step { min-width: 140px; }
       .hero h2 { font-size: 18px; }
     }
   </style>
@@ -640,27 +630,27 @@
       <a href="https://www.cloudera.com/products/machine-learning/ai-inference-service.html" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(255,255,255,.4)">Cloudera AI Inference Service</a>, with full GPU
       optimization profiles selected for you.
     </p>
-    <div class="hero-steps">
-      <div class="hero-step">
-        <div class="step-num">1</div>
-        <div class="step-body">
-          <strong>Browse &amp; discover</strong>
-          <span>Find the right model for your use case</span>
-        </div>
+  </div>
+  <div class="hero-steps">
+    <div class="hero-step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Browse &amp; discover</strong>
+        <span>Find the right model for your use case</span>
       </div>
-      <div class="hero-step">
-        <div class="step-num">2</div>
-        <div class="step-body">
-          <strong>Import to AI Registry</strong>
-          <span>Single click — no manual configuration</span>
-        </div>
+    </div>
+    <div class="hero-step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Import to AI Registry</strong>
+        <span>Single click — no manual configuration</span>
       </div>
-      <div class="hero-step">
-        <div class="step-num">3</div>
-        <div class="step-body">
-          <strong>Deploy &amp; serve</strong>
-          <span>Cloudera AI Inference Service handles the rest</span>
-        </div>
+    </div>
+    <div class="hero-step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Deploy &amp; serve</strong>
+        <span>Cloudera AI Inference Service handles the rest</span>
       </div>
     </div>
   </div>
@@ -1104,12 +1094,6 @@
     allModels = models;
     buildFilters();
     renderGrid();
-    const badge = document.getElementById('hero-badge');
-    const countEl = document.getElementById('hero-model-count');
-    if (badge && countEl) {
-      countEl.textContent = models.length;
-      badge.style.display = '';
-    }
   }).catch(err => {
     document.getElementById('grid').innerHTML =
       `<div class="state-center"><p>Failed to load models: ${escapeHtml(err.message)}</p></div>`;
