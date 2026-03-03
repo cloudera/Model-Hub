@@ -1,0 +1,201 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: nvidia/riva-tts/magpie-tts-multilingual # fixed by cloudera; was: `nvidia/magpie-tts-multilingual`
+release: 1.6.0
+profiles:
+- id: 262a309a35479be09707f4532ef44d6463ea0f8fae019558546cbe8550f407d4
+  tags:
+    batch_size: '32'
+    model_type: rmir
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-rmir-bs32-25.12.6/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs32.rmir:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:rmir-bs32-25.12.6?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs32.rmir
+- id: 3263ca3ecc33ca903f66f401a05aa904f385d61f30636cfeba6d1f8751a0ddf9
+  tags:
+    ampereplus: disabled
+    batch_size: '32'
+    gpu: h100
+    gpu_device: '2330'
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-h100x1-multi-generic-25.12.6-fp16--f-vhctyyq/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:h100x1-multi-generic-25.12.6-fp16--f-vhctyyq?file=checksums.blake3
+      magpie-tts-multilingual-h100x1-multi-generic-25.12.6-fp16--f-vhctyyq/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:h100x1-multi-generic-25.12.6-fp16--f-vhctyyq?file=metadata.json
+      magpie-tts-multilingual-h100x1-multi-generic-25.12.6-fp16--f-vhctyyq/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs32.tar.gz:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:h100x1-multi-generic-25.12.6-fp16--f-vhctyyq?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs32.tar.gz
+- id: 44d57e8ce2ad103fc68df92363a492a800828c7a6a3c39ee6b8d3dad491f4aae
+  tags:
+    ampereplus: disabled
+    batch_size: '1'
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-dgx-sparkx1-multi-generic-25.12.6-fp16-owuw2y18ra/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:dgx-sparkx1-multi-generic-25.12.6-fp16-owuw2y18ra?file=checksums.blake3
+      magpie-tts-multilingual-dgx-sparkx1-multi-generic-25.12.6-fp16-owuw2y18ra/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:dgx-sparkx1-multi-generic-25.12.6-fp16-owuw2y18ra?file=metadata.json
+      ? magpie-tts-multilingual-dgx-sparkx1-multi-generic-25.12.6-fp16-owuw2y18ra/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs1.tar.gz
+      : uri: ngc://nim/nvidia/magpie-tts-multilingual:dgx-sparkx1-multi-generic-25.12.6-fp16-owuw2y18ra?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs1.tar.gz
+- id: 48afefb5babbc2666d0c07e302f9e2faf3940542fddc1ca9d77a2cfbe87025f1
+  tags:
+    ampereplus: disabled
+    batch_size: '8'
+    gpu: h100
+    gpu_device: '2330'
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-h100x1-multi-generic-25.12.6-fp16-n22kdsl-dg/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:h100x1-multi-generic-25.12.6-fp16-n22kdsl-dg?file=checksums.blake3
+      magpie-tts-multilingual-h100x1-multi-generic-25.12.6-fp16-n22kdsl-dg/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:h100x1-multi-generic-25.12.6-fp16-n22kdsl-dg?file=metadata.json
+      magpie-tts-multilingual-h100x1-multi-generic-25.12.6-fp16-n22kdsl-dg/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs8.tar.gz:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:h100x1-multi-generic-25.12.6-fp16-n22kdsl-dg?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs8.tar.gz
+- id: 676f29e8f80935a721ad27969acf4d92db44a377b72f601ba3302ab85771894c
+  tags:
+    ampereplus: disabled
+    batch_size: '32'
+    gpu: a100
+    gpu_device: 20b2
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-a100x1-multi-generic-25.12.6-fp16-jcplrr0qew/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:a100x1-multi-generic-25.12.6-fp16-jcplrr0qew?file=checksums.blake3
+      magpie-tts-multilingual-a100x1-multi-generic-25.12.6-fp16-jcplrr0qew/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:a100x1-multi-generic-25.12.6-fp16-jcplrr0qew?file=metadata.json
+      magpie-tts-multilingual-a100x1-multi-generic-25.12.6-fp16-jcplrr0qew/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs32.tar.gz:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:a100x1-multi-generic-25.12.6-fp16-jcplrr0qew?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs32.tar.gz
+- id: 92aaefc8f69a291643720528095a91d9b1068c259117fb5f9f37d4565c2aaee0
+  tags:
+    ampereplus: disabled
+    batch_size: '8'
+    gpu: l40s
+    gpu_device: 26b9
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-l40sx1-multi-generic-25.12.6-fp16-zy-ztj0dhw/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:l40sx1-multi-generic-25.12.6-fp16-zy-ztj0dhw?file=checksums.blake3
+      magpie-tts-multilingual-l40sx1-multi-generic-25.12.6-fp16-zy-ztj0dhw/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:l40sx1-multi-generic-25.12.6-fp16-zy-ztj0dhw?file=metadata.json
+      magpie-tts-multilingual-l40sx1-multi-generic-25.12.6-fp16-zy-ztj0dhw/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs8.tar.gz:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:l40sx1-multi-generic-25.12.6-fp16-zy-ztj0dhw?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs8.tar.gz
+- id: 9a8ba11ff97fe7583beba2b1f5bb7238ce00d94e6fbbc5f8bee0575b8f66ffb3
+  tags:
+    ampereplus: disabled
+    batch_size: '64'
+    gpu: a100
+    gpu_device: 20b2
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-a100x1-multi-generic-25.12.6-fp16-nsnvjmevew/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:a100x1-multi-generic-25.12.6-fp16-nsnvjmevew?file=checksums.blake3
+      magpie-tts-multilingual-a100x1-multi-generic-25.12.6-fp16-nsnvjmevew/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:a100x1-multi-generic-25.12.6-fp16-nsnvjmevew?file=metadata.json
+      magpie-tts-multilingual-a100x1-multi-generic-25.12.6-fp16-nsnvjmevew/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs64.tar.gz:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:a100x1-multi-generic-25.12.6-fp16-nsnvjmevew?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs64.tar.gz
+- id: a162605329dc80e7d685b8e2f8e913adf9d6b218442702042832749e8398e2fa
+  tags:
+    ampereplus: disabled
+    batch_size: '32'
+    gpu: l40s
+    gpu_device: 26b9
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-l40sx1-multi-generic-25.12.6-fp16-imxsldo3vg/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:l40sx1-multi-generic-25.12.6-fp16-imxsldo3vg?file=checksums.blake3
+      magpie-tts-multilingual-l40sx1-multi-generic-25.12.6-fp16-imxsldo3vg/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:l40sx1-multi-generic-25.12.6-fp16-imxsldo3vg?file=metadata.json
+      magpie-tts-multilingual-l40sx1-multi-generic-25.12.6-fp16-imxsldo3vg/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs32.tar.gz:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:l40sx1-multi-generic-25.12.6-fp16-imxsldo3vg?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs32.tar.gz
+- id: a78701bae30226ed228389eaace4e23e2b77aa2fdbc83ecbc70fcfe94e74085e
+  tags:
+    ampereplus: disabled
+    batch_size: '8'
+    gpu: a100
+    gpu_device: 20b2
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-a100x1-multi-generic-25.12.6-fp16--y7vbxxl1q/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:a100x1-multi-generic-25.12.6-fp16--y7vbxxl1q?file=checksums.blake3
+      magpie-tts-multilingual-a100x1-multi-generic-25.12.6-fp16--y7vbxxl1q/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:a100x1-multi-generic-25.12.6-fp16--y7vbxxl1q?file=metadata.json
+      magpie-tts-multilingual-a100x1-multi-generic-25.12.6-fp16--y7vbxxl1q/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs8.tar.gz:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:a100x1-multi-generic-25.12.6-fp16--y7vbxxl1q?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs8.tar.gz
+- id: c22515e8861affad674375ea30c5461e305e04f2bf57b5f53282b19226197b71
+  tags:
+    ampereplus: disabled
+    batch_size: '64'
+    gpu: h100
+    gpu_device: '2330'
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-h100x1-multi-generic-25.12.6-fp16-a1ynrb9efg/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:h100x1-multi-generic-25.12.6-fp16-a1ynrb9efg?file=checksums.blake3
+      magpie-tts-multilingual-h100x1-multi-generic-25.12.6-fp16-a1ynrb9efg/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:h100x1-multi-generic-25.12.6-fp16-a1ynrb9efg?file=metadata.json
+      magpie-tts-multilingual-h100x1-multi-generic-25.12.6-fp16-a1ynrb9efg/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs64.tar.gz:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:h100x1-multi-generic-25.12.6-fp16-a1ynrb9efg?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs64.tar.gz
+- id: c4e0bf4f014c1c43d12db362e6ed79de40ec0b8315a57e0a77795dc186d52afb
+  tags:
+    batch_size: '8'
+    model_type: rmir
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-rmir-bs8-25.12.6/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs8.rmir:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:rmir-bs8-25.12.6?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs8.rmir
+- id: d11ef4c46c985aa6dbd8de522663cd43936aa9c619df5e2fb393f4ad2ac7260e
+  tags:
+    batch_size: '1'
+    model_type: rmir
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-rmir-bs1-25.12.6/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs1.rmir:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:rmir-bs1-25.12.6?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs1.rmir
+- id: f2f1b5ab392f8432ef226ace90cc1349c52727b12abc89b3898485121c58be6a
+  tags:
+    batch_size: '64'
+    model_type: rmir
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-rmir-bs64-25.12.6/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs64.rmir:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:rmir-bs64-25.12.6?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs64.rmir
+- id: f3e0f3c8c376bd5c57c484ea01e60842d6960e13284a0e68d61ce306e03fb0f7
+  tags:
+    ampereplus: disabled
+    batch_size: '64'
+    gpu: l40s
+    gpu_device: 26b9
+    model_type: prebuilt
+    name: magpie-tts-multilingual
+  workspace:
+    files:
+      magpie-tts-multilingual-l40sx1-multi-generic-25.12.6-fp16-8cv1o7elhg/checksums.blake3:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:l40sx1-multi-generic-25.12.6-fp16-8cv1o7elhg?file=checksums.blake3
+      magpie-tts-multilingual-l40sx1-multi-generic-25.12.6-fp16-8cv1o7elhg/metadata.json:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:l40sx1-multi-generic-25.12.6-fp16-8cv1o7elhg?file=metadata.json
+      magpie-tts-multilingual-l40sx1-multi-generic-25.12.6-fp16-8cv1o7elhg/tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs64.tar.gz:
+        uri: ngc://nim/nvidia/magpie-tts-multilingual:l40sx1-multi-generic-25.12.6-fp16-8cv1o7elhg?file=tts-MagpieTTS_21hz_codec_trtllm_Multilingual_bs64.tar.gz
