@@ -264,6 +264,50 @@
     .cat-vision    { background: #fce4ec; color: #b71c5a; }
     .cat-default   { background: #f1f3f4; color: #555e6a; }
 
+    /* ── Source icon ── */
+    .source-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+      line-height: 1;
+      position: relative;
+      cursor: default;
+    }
+    .source-icon-nim { background: #76b900; color: #fff; }
+    .source-icon-hf  { background: #FFD21E; color: #1a1a1a; font-size: 13px; }
+    .source-icon::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 6px);
+      right: 0;
+      background: #1b2329;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 4px 8px;
+      border-radius: 4px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .15s;
+    }
+    .source-icon:hover::after { opacity: 1; }
+    .source-badge-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
     /* ── Empty / Loading ── */
     .state-center {
       grid-column: 1 / -1;
@@ -663,6 +707,9 @@
   <div class="toolbar-sep"></div>
   <span class="filter-label">GPU</span>
   <div id="gpu-filters" class="filter-group"></div>
+  <div class="toolbar-sep"></div>
+  <span class="filter-label">Source</span>
+  <div id="source-filters" class="filter-group"></div>
 </div>
 
 <div class="content">
@@ -706,6 +753,7 @@
   let allModels = [];
   let activeGPU = 'All';
   let activeCategory = 'All';
+  let activeSource = 'All';
   let searchQuery = '';
 
   // ── Category → CSS class ──────────────────────────────────────────
@@ -787,6 +835,7 @@
     return {
       displayName: m.displayName || m.name || '',
       category: m.category || '',
+      modelType: m.type || 'NGC',
       description: m.description || '',
       sourceURL,
       modelCardMarkdown,
@@ -802,6 +851,7 @@
   function filtered() {
     const q = searchQuery.toLowerCase();
     return allModels.filter(m => {
+      if (activeSource !== 'All' && m.modelType !== activeSource) return false;
       if (activeCategory !== 'All' && m.category !== activeCategory) return false;
       if (activeGPU !== 'All' && !m.availableGPUs.includes(activeGPU)) return false;
       if (q && !m.displayName.toLowerCase().includes(q) &&
@@ -826,6 +876,16 @@
     return el;
   }
 
+  function buildSourceIcon(modelType) {
+    const isHF = modelType === 'HF';
+    const icon = h('span', {
+      class: `source-icon ${isHF ? 'source-icon-hf' : 'source-icon-nim'}`,
+      'data-tooltip': isHF ? 'Hugging Face' : 'NVIDIA NIM',
+    });
+    icon.textContent = isHF ? '🤗' : 'N';
+    return icon;
+  }
+
   function buildCard(model) {
     const { cls } = catMeta(model.category);
     const card = h('div', { class: 'card' });
@@ -840,6 +900,7 @@
       catBadge.appendChild(h('span', { class: 'card-sizes' }, model.sizeLabels.join(' · ')));
     tw.appendChild(catBadge);
     header.appendChild(tw);
+    header.appendChild(buildSourceIcon(model.modelType));
     card.appendChild(header);
 
     card.appendChild(h('p', { class: 'card-desc' }, model.description));
@@ -886,6 +947,18 @@
   const GPU_ORDER = ['H200', 'H100', 'A100', 'L40S', 'A10G'];
 
   function buildFilters() {
+    const sourceContainer = document.getElementById('source-filters');
+    [{ value: 'All', label: 'All' }, { value: 'NGC', label: 'NVIDIA NIM' }, { value: 'HF', label: 'Hugging Face' }].forEach(({ value, label }) => {
+      const pill = h('button', { class: `pill ${value === activeSource ? 'active' : ''}` }, label);
+      pill.addEventListener('click', () => {
+        activeSource = value;
+        sourceContainer.querySelectorAll('.pill').forEach(p =>
+          p.classList.toggle('active', p.textContent === label));
+        renderGrid();
+      });
+      sourceContainer.appendChild(pill);
+    });
+
     const catSet = new Set(allModels.map(m => m.category).filter(Boolean));
     const cats = ['All', ...CATEGORY_ORDER.filter(c => catSet.has(c)),
                   ...[...catSet].filter(c => !CATEGORY_ORDER.includes(c)).sort()];
@@ -928,9 +1001,14 @@
     meta.innerHTML = '';
     const { cls } = catMeta(model.category);
     meta.appendChild(h('span', { class: `cat-badge ${cls}` }, model.category));
+    const isHF = model.modelType === 'HF';
+    const srcLabel = h('span', { class: `source-badge-inline ${isHF ? 'source-icon-hf' : 'source-icon-nim'}` });
+    srcLabel.textContent = isHF ? '🤗 Hugging Face' : 'NVIDIA NIM';
+    meta.appendChild(srcLabel);
     if (model.sourceURL) {
       const a = h('a', { href: model.sourceURL, target: '_blank', rel: 'noopener' });
-      a.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View on NGC`;
+      const linkLabel = isHF ? 'View on Hugging Face' : 'View on NGC';
+      a.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> ${linkLabel}`;
       meta.appendChild(a);
     }
 
@@ -995,11 +1073,9 @@
           </tr></thead><tbody>`;
 
         profiles.forEach(p => {
-          const fwClass = p.framework === 'TensorRT-LLM' ? 'tag-trt' :
-                          p.framework === 'VLLM' ? 'tag-vllm' : 'tag-onnx';
           html += `<tr>
             <td class="profile-name">${escapeHtml(p.displayName)}</td>
-            <td><span class="tag-sm ${fwClass}">${escapeHtml(p.framework)}</span></td>
+            <td>${escapeHtml(p.framework)}</td>
             ${orderedKeys.map(k => `<td>${escapeHtml(p.spec[k] || '—')}</td>`).join('')}
           </tr>`;
         });
