@@ -3,7 +3,7 @@ models:
 - name: Llama 3.3 70B Instruct
   displayName: Llama 3.3 70B Instruct
   modelHubID: llama-3-3-70b-instruct
-  category: Text Generation
+  category: Language
   type: NGC
   description: The Llama 3.3 70B-Instruct NIM simplifies the deployment of the Llama 3.3 70B instruction tuned model which is optimized for language understanding, reasoning, and text generation use cases, and outperforms many of the available open source chat models on common industry benchmarks.
   requireLicense: true
@@ -122,7 +122,7 @@ models:
 - name: Riva ASR Whisper Large v3
   displayName: Riva ASR Whisper Large v3
   modelHubID: nvidia/riva-asr/whisper
-  category: Text-Prompt
+  category: Speech
   type: NGC
   description: This model is used to transcribe short-form audio files and is designed to be compatible with OpenAI's sequential long-form transcription algorithm. Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation. Trained on 680k hours of labeled data, Whisper models demonstrate a strong ability to generalize to many datasets and domains without the need for fine-tuning. Whisper-large-v3 is one of the 5 configurations of the model with 1550M parameters. This model version is optimized to run with NVIDIA TensorRT-LLM. This model is ready for commercial use.
   requireLicense: true
@@ -249,7 +249,7 @@ models:
 - name: Deepseek R1 Distill Llama
   displayName: Deepseek R1 Distill Llama
   modelHubID: deepseek-r1-distill-llama
-  category: Chat Assistant
+  category: Language
   type: NGC
   description: The DeepSeek-R1-Distill-Llama-70B NIM simplifies the deployment of a distilled version of the DeepSeek-R1 series, built upon the Llama3.3-70B-Instruct architecture. This model is designed to deliver efficient performance for reasoning, math, and code tasks while maintaining high accuracy. By distilling knowledge from the larger DeepSeek-R1 model, it provides state-of-the-art performance with reduced computational requirements.
   requireLicense: true
@@ -934,7 +934,7 @@ models:
 - name: StarCoder2-7B
   displayName: StarCoder2-7B
   modelHubID: starcoder2-7b
-  category: Language Model
+  category: Code
   type: NGC
   description: StarCoder2-7B is a language model that can follow instructions, complete requests, and generate creative text formats.
   requireLicense: true
@@ -1156,7 +1156,7 @@ models:
 - name: Llama 3.3 Nemotron Super 49B V1
   displayName: Llama 3.3 Nemotron Super 49B V1
   modelHubID: nvidia/llama-3.3-nemotron-super-49b-v1
-  category: Chatbots
+  category: Language
   type: NGC
   description: Llama-3.3-Nemotron-Super-49B-v1 is a language model that can follow instructions, complete requests, and generate creative text formats. The Llama-3.3-Nemotron-Super-49B-v1 Large Language Model (LLM) is an instruct fine-tuned version of the Llama-Nemotron.
   requireLicense: true
@@ -1547,7 +1547,7 @@ models:
 - name: Llama 3.2 Instruct
   displayName: Llama 3.2 Instruct
   modelHubID: meta/llama-3.2-instruct
-  category: Commercial and Research
+  category: Language
   type: NGC
   description: The Meta Llama 3.2 collection of multilingual large language models (LLMs) is a collection of pre-trained and instruction-tuned generative models in 1B and 3B sizes (text in/text out).
   requireLicense: true
@@ -1818,7 +1818,7 @@ models:
 - name: Llama 3.2 Vision Instruct
   displayName: Llama 3.2 Vision Instruct
   modelHubID: llama-3.2-vision-instruct
-  category: Image to Text Generation
+  category: Vision & Multimodal
   type: NGC
   description: The Llama 3.2 Vision instruction-tuned models are optimized for visual recognition, image reasoning, captioning, and answering general questions about an image.
   requireLicense: true
@@ -2958,7 +2958,7 @@ models:
 - name: Llama 3.1 Nemotron Nano 8b V1
   displayName: Llama 3.1 Nemotron Nano 8b V1
   modelHubID: llama-3.1-nemotron-nano-8b-v1
-  category: Chatbots
+  category: Language
   type: NGC
   description: Llama-3.1-Nemotron-Nano-8B-v1 is a language model that can follow instructions, complete requests, and generate creative text formats. The Llama-3.1-Nemotron-Nano-8B-v1 Large Language Model (LLM) is an instruct fine-tuned version of the Nemotron-Nano.
   requireLicense: true
@@ -3077,7 +3077,7 @@ models:
 - name: Llama 3.1 Instruct
   displayName: Llama 3.1 Instruct
   modelHubID: llama-3.1-instruct
-  category: Text Generation
+  category: Language
   type: NGC
   description: The Llama 3.1 70B-Instruct, 8B instruct and 8B base NIM simplifies the deployment of the Llama 3.1 70B-Instruct, 8B instruct and 8B base tuned models which is optimized for language understanding, reasoning, and text generation use cases, and outperforms many of the available open source chat models on common industry benchmarks.
   requireLicense: true
@@ -3624,7 +3624,7 @@ models:
 - name: Mistral Instruct
   displayName: Mistral Instruct
   modelHubID: mistral-instruct
-  category: Text Generation
+  category: Language
   type: NGC
   description: Mistral Instruct is a language model that can follow instructions, complete requests, and generate creative text formats. The Mistral Instract Large Language Model (LLM) is an instruct fine-tuned version of the Mistral.
   modelVariants:
@@ -4004,7 +4004,7 @@ models:
 - name: Mixtral Instruct
   displayName: Mixtral Instruct
   modelHubID: mixtral-instruct
-  category: Text Generation
+  category: Language
   type: NGC
   description: The Mixtral Large Language Model (LLM) is a pretrained generative Sparse Mixture of Experts model. Mixtral Instruct is a language model that can follow instructions, complete requests, and generate creative text formats. The Mixtral Instruct Large Language Model (LLM) is an instruct fine-tuned version of the Mixtral.
   modelVariants:
@@ -4428,7 +4428,7 @@ models:
 - name: NeMo Retriever-Parse
   displayName: NeMo Retriever-Parse
   modelHubID: nemoretriever-parse
-  category: Text Extraction
+  category: Retrieval
   type: NGC
   description: Nemoretriever-parse is a general purpose text-extraction model, specifically designed to handle documents. Given an image, nemoretriever-parse is able to extract formatted-text, with bounding-boxes and the corresponding semantic class. This has downstream benefits for several tasks such as increasing the availability of training-data for Large Language Models (LLMs), improving the accuracy of retriever systems, and enhancing document understanding pipelines.
   requireLicense: true
@@ -4548,7 +4548,7 @@ models:
 - name: Llama 3.2 NV EmbedQA 1b V2
   displayName: Llama 3.2 NV EmbedQA 1b V2
   modelHubID: nvidia/llama-3.2-nv-embedqa-1b-v2
-  category: Text Embedding
+  category: Retrieval
   type: NGC
   description: The NVIDIA Retrieval QA Llama3.2 1b Embedding NIM is an embedding NIM optimized for multilingual and crosslingual text question-answering retrieval.
   requireLicense: true
@@ -4715,7 +4715,7 @@ models:
 - name: Llama 3.2 NV RerankQA 1b V2
   displayName: Llama 3.2 NV RerankQA 1b V2
   modelHubID: nvidia/llama-3.2-nv-rerankqa-1b-v2
-  category: Text Embedding
+  category: Retrieval
   type: NGC
   description: The NVIDIA Retrieval QA Llama 1B Reranking NIM is a NIM optimized for providing a logit score that represents how relevant a document(s) is to a given query, fine-tuned for multilingual and cross-lingual text question-answering retrieval.
   requireLicense: true
@@ -4935,7 +4935,7 @@ models:
 - name: Gemma 2
   displayName: Gemma 2
   modelHubID: gemma-2
-  category: Text Generation
+  category: Language
   type: HF
   description: Gemma 2 the second generation of the Google community Gemma lineage.  Gemma 2 is improved with higher performance with significant safety improvements and well-suited for a variety of text generation tasks, including question answering, summarization, and reasoning.
   modelVariants:
@@ -4994,7 +4994,7 @@ models:
 - name: Llama 3 SQLCoder
   displayName: Llama 3 SQLCoder
   modelHubID: llama-3-sqlcoder-8b
-  category: Text Generation
+  category: Code
   type: HF
   description: A capable language model for text to SQL generation for Postgres, Redshift and Snowflake that is on-par with the most capable generalist frontier models.
   modelVariants:
