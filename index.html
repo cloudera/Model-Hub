@@ -73,7 +73,7 @@
     .toolbar {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      padding: 12px 5%;
+      padding: 10px 5%;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -136,9 +136,9 @@
 
     .toolbar-sep {
       width: 1px;
-      height: 24px;
+      height: 20px;
       background: var(--border);
-      margin: 0 4px;
+      flex-shrink: 0;
     }
 
     /* ── Grid ── */
@@ -256,12 +256,13 @@
       border-radius: 4px;
       letter-spacing: .2px;
     }
-    .cat-text-gen    { background: #e8f0fe; color: #1558d6; }
-    .cat-text-prompt { background: #e6f4ea; color: #1a7340; }
-    .cat-ocr         { background: #f3e8ff; color: #7c3aed; }
-    .cat-embedding   { background: #fff3e0; color: #c45c00; }
-    .cat-rerank      { background: #fce4ec; color: #b71c5a; }
-    .cat-default     { background: #f1f3f4; color: #555e6a; }
+    .cat-language  { background: #e8f0fe; color: #1558d6; }
+    .cat-code      { background: #f3e8ff; color: #7c3aed; }
+    .cat-retrieval { background: #fff3e0; color: #c45c00; }
+    .cat-speech    { background: #e6f4ea; color: #1a7340; }
+    .cat-science   { background: #e0f7fa; color: #00696f; }
+    .cat-vision    { background: #fce4ec; color: #b71c5a; }
+    .cat-default   { background: #f1f3f4; color: #555e6a; }
 
     /* ── Empty / Loading ── */
     .state-center {
@@ -588,7 +589,7 @@
       .modal-header { padding: 16px; }
       .tab-panel { padding: 16px; }
       header { padding: 0 16px; }
-      .search-wrap { flex: 1 1 100%; }
+      .search-wrap { flex: 1; }
       .hero { padding: 20px 16px 18px; flex-direction: column; gap: 14px; }
       .hero-text { max-width: 100%; }
       .hero-steps { flex-wrap: wrap; }
@@ -656,15 +657,12 @@
     </svg>
     <input type="text" id="search" placeholder="Search models…" autocomplete="off">
   </div>
-
   <div class="toolbar-sep"></div>
-
-  <div class="filter-group">
-    <span class="filter-label">GPU</span>
-    <div id="gpu-filters" class="filter-group"></div>
-  </div>
-
-  <span class="results-bar" id="results-bar" style="margin-left:auto;white-space:nowrap"></span>
+  <span class="filter-label">Category</span>
+  <div id="category-filters" class="filter-group"></div>
+  <div class="toolbar-sep"></div>
+  <span class="filter-label">GPU</span>
+  <div id="gpu-filters" class="filter-group"></div>
 </div>
 
 <div class="content">
@@ -673,6 +671,9 @@
       <div class="spinner"></div>
       <p>Loading models…</p>
     </div>
+  </div>
+  <div style="text-align:right;margin-top:12px">
+    <span class="results-bar" id="results-bar"></span>
   </div>
 </div>
 
@@ -704,23 +705,17 @@
   // ── State ──────────────────────────────────────────────────────────
   let allModels = [];
   let activeGPU = 'All';
+  let activeCategory = 'All';
   let searchQuery = '';
 
-  // ── Category → icon background color + CSS class ──────────────────
+  // ── Category → CSS class ──────────────────────────────────────────
   const CATEGORY_META = {
-    'Text Generation':              { cls: 'cat-text-gen' },
-    'Chatbots':                     { cls: 'cat-text-gen' },
-    'Chat Assistant':               { cls: 'cat-text-gen' },
-    'Language Model':               { cls: 'cat-text-gen' },
-    'Commercial and Research':      { cls: 'cat-text-gen' },
-    'Text-Prompt':                  { cls: 'cat-text-prompt' },
-    'Optical Character Recognition':{ cls: 'cat-ocr' },
-    'Text Extraction':              { cls: 'cat-ocr' },
-    'Object Detection':             { cls: 'cat-ocr' },
-    'VLM':                          { cls: 'cat-ocr' },
-    'Text Embedding':               { cls: 'cat-embedding' },
-    'Reranking':                    { cls: 'cat-rerank' },
-    'Biology Foundation Model':     { cls: 'cat-rerank' },
+    'Language':           { cls: 'cat-language' },
+    'Code':               { cls: 'cat-code' },
+    'Retrieval':          { cls: 'cat-retrieval' },
+    'Speech':             { cls: 'cat-speech' },
+    'Science':            { cls: 'cat-science' },
+    'Vision & Multimodal':{ cls: 'cat-vision' },
   };
   const catMeta = c => CATEGORY_META[c] || { cls: 'cat-default' };
 
@@ -807,6 +802,7 @@
   function filtered() {
     const q = searchQuery.toLowerCase();
     return allModels.filter(m => {
+      if (activeCategory !== 'All' && m.category !== activeCategory) return false;
       if (activeGPU !== 'All' && !m.availableGPUs.includes(activeGPU)) return false;
       if (q && !m.displayName.toLowerCase().includes(q) &&
                !m.description.toLowerCase().includes(q) &&
@@ -886,10 +882,26 @@
   }
 
   // ── Build filter pills ────────────────────────────────────────────
-  // Preferred GPU display order
+  const CATEGORY_ORDER = ['Language', 'Code', 'Retrieval', 'Speech', 'Science', 'Vision & Multimodal'];
   const GPU_ORDER = ['H200', 'H100', 'A100', 'L40S', 'A10G'];
 
   function buildFilters() {
+    const catSet = new Set(allModels.map(m => m.category).filter(Boolean));
+    const cats = ['All', ...CATEGORY_ORDER.filter(c => catSet.has(c)),
+                  ...[...catSet].filter(c => !CATEGORY_ORDER.includes(c)).sort()];
+
+    const catContainer = document.getElementById('category-filters');
+    cats.forEach(cat => {
+      const pill = h('button', { class: `pill ${cat === activeCategory ? 'active' : ''}` }, cat);
+      pill.addEventListener('click', () => {
+        activeCategory = cat;
+        catContainer.querySelectorAll('.pill').forEach(p =>
+          p.classList.toggle('active', p.textContent === cat));
+        renderGrid();
+      });
+      catContainer.appendChild(pill);
+    });
+
     const gpuSet = new Set(allModels.flatMap(m => m.availableGPUs));
     const gpus = ['All', ...GPU_ORDER.filter(g => gpuSet.has(g)),
                   ...[...gpuSet].filter(g => !GPU_ORDER.includes(g)).sort()];
