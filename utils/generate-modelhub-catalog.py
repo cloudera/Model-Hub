@@ -7,6 +7,17 @@
 #   4. ngc-cli setup (refer: https://org.ngc.nvidia.com/setup/installers/cli)
 #   3. cml-serving manifest files in your local machine (https://github.infra.cloudera.com/Sense/cml-serving/tree/main/manifests)
 #
+#  High level overview:
+#  Contract - https://docs.google.com/document/d/1GJoefhPx1bPH1hQYG6PZjlzgqDofJWEsbJ_0LIQ5whc/edit?tab=t.0
+#  --include-vllm - has been used for OpenAI models - 20B & 120B; And also for nemotron-3-nano  (same scenario in both public and private). Also, all models starting NIM 2.0 will need this and thus at that time, maybe we can make this flag default
+#  ONNX profiles: included by default; use "--no-include-onnx" to disable but they have never been disabled across form factors
+#  in public, we have a whilelist of GPUs alongwith supported gpu_device. At the same time, min/max counts for each GPU are also supported in public cloud. 
+#       --- in private, all gpus with any gpu_device, min/max counts are supported are supported (after top level filtering with feat_lora: true and vllm profiles unless --include-vllm is set)
+#  is_generic_profile condition is - no GPU and either:
+#       --- (llm_engine: tensorrt_llm, trtllm_buildable: 'true', feat_lora: 'false') OR (model_type: rmir)
+#       --- in public, generic_profile is transformed to gpu specific optimization profiles while in private, it is included as it is
+#  
+#
 # ####################################################################################################################
 # ##### PLEASE READ THE NOTES BELOW BEFORE RUNNING THE SCRIPT #####
 # ####################################################################################################################
@@ -146,7 +157,20 @@ def generate_display_name(model, tags):
     sm_part = f"SM{sm_val}" if sm_val else ""
     v_part = f"V{v_val}" if v_val else ""
     onnx_part = "ONNX" if str(tags.get("model_type", "")).lower() == "onnx" else ""
-    suffix = " ".join(part for part in [gpu_count, sm_part, v_part, onnx_part, precision, profile] if part)
+    
+    mode_val = str(tags.get("mode", "")).strip()
+    mode_part = mode_val.capitalize() if mode_val else ""
+    
+    vad_val = str(tags.get("vad", "")).strip()
+    vad_part = vad_val.capitalize() if vad_val else ""
+    
+    diarizer_val = str(tags.get("diarizer", "")).strip().lower()
+    diarizer_part = diarizer_val.capitalize() if diarizer_val and diarizer_val != "disabled" else ""
+    
+    batch_size_val = str(tags.get("batch_size", "")).strip()
+    batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
+    
+    suffix = " ".join(part for part in [gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def generate_display_name_private(model, tags):
@@ -394,7 +418,19 @@ def build_display_name_with_overrides(model: str, tags: dict, override_gpu: str 
     elif override_gpu:
         gpu_part = f"{override_gpu.upper()}"
 
-    suffix = " ".join(part for part in [gpu_part, sm_part, v_part, onnx_part, precision, profile] if part)
+    mode_val = str(tags.get("mode", "")).strip()
+    mode_part = mode_val.capitalize() if mode_val else ""
+    
+    vad_val = str(tags.get("vad", "")).strip()
+    vad_part = vad_val.capitalize() if vad_val else ""
+    
+    diarizer_val = str(tags.get("diarizer", "")).strip().lower()
+    diarizer_part = diarizer_val.capitalize() if diarizer_val and diarizer_val != "disabled" else ""
+    
+    batch_size_val = str(tags.get("batch_size", "")).strip()
+    batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
+
+    suffix = " ".join(part for part in [gpu_part, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def format_model_base_name(model_name: str) -> str:
@@ -449,12 +485,21 @@ def is_generic_profile(tags):
     llm_engine = tags.get("llm_engine", "").lower()
     trtllm_buildable = tags.get("trtllm_buildable", "").lower()
     feat_lora = tags.get("feat_lora", "").lower()
+    model_type = tags.get("model_type", "").lower()
 
-    # Generic profile criteria: no GPU, tensorrt_llm engine, buildable, not lora
-    return (not gpu and
-            llm_engine == "tensorrt_llm" and
-            trtllm_buildable == "true" and
-            feat_lora == "false")
+    # Generic profile criteria: no GPU and one of:
+    # 1. tensorrt_llm engine, buildable, not lora
+    # 2. model_type is rmir or vllm (for Riva ASR models)
+    if gpu:
+        return False
+    
+    if llm_engine == "tensorrt_llm" and trtllm_buildable == "true" and feat_lora == "false":
+        return True
+    
+    if model_type == "rmir":
+        return True
+    
+    return False
 
 def create_gpu_specific_profile(base_profile, model, release, target_gpu, api_key):
     """Create a GPU-specific optimization profile from a generic profile"""
@@ -816,9 +861,10 @@ def main():
         if args.platform == "public":
             gpu_device_actual = tags.get("gpu_device", "").strip().lower()
             # Enforce device ID only when tags specify it
-            if effective_gpu == "H100" and gpu_device_actual and gpu_device_actual != "2330:10de":
+            # Accept both formats: "2330" or "2330:10de"
+            if effective_gpu == "H100" and gpu_device_actual and gpu_device_actual not in ("2330", "2330:10de"):
                 continue
-            if effective_gpu == "H200" and gpu_device_actual and gpu_device_actual != "2335:10de":
+            if effective_gpu == "H200" and gpu_device_actual and gpu_device_actual not in ("2335", "2335:10de"):
                 continue
 
         profile_id_uri = profile_id_from_workspace(profile, effective_gpu)
