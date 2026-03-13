@@ -1,0 +1,598 @@
+models:
+- name: Deepseek R1 Distill Llama
+  displayName: Deepseek R1 Distill Llama
+  modelHubID: deepseek-r1-distill-llama
+  category: Language
+  type: NGC
+  description: The DeepSeek-R1-Distill-Llama-70B NIM simplifies the deployment of a distilled version of the DeepSeek-R1 series, built upon the Llama3.3-70B-Instruct architecture. This model is designed to deliver efficient performance for reasoning, math, and code tasks while maintaining high accuracy. By distilling knowledge from the larger DeepSeek-R1 model, it provides state-of-the-art performance with reduced computational requirements.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://llama.meta.com/llama3/use-policy/
+  - label: License Agreement
+    url: https://llama.meta.com/llama3/license/
+  modelVariants:
+  - variantId: Deepseek R1 Distill Llama 70b
+    modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJjYW5HdWVzdERvd25sb2FkIjogZmFsc2UsCiAgICAiY3JlYXRlZERhdGUiOiAiMjAyNS0wMi0wN1QwMDozMjo1OC4yNzBaIiwKICAgICJkZXNjcmlwdGlvbiI6ICIqKk1vZGVsIE92ZXJ2aWV3KipcblxuIyMgRGVzY3JpcHRpb246XG5cbkRlZXBTZWVrLVIxLURpc3RpbGwtTGxhbWEtNzBCIGlzIGEgZGlzdGlsbGVkIHZlcnNpb24gb2YgdGhlIERlZXBTZWVrLVIxIHNlcmllcywgYnVpbHQgdXBvbiB0aGUgTGxhbWEzLjMtNzBCLUluc3RydWN0IGFyY2hpdGVjdHVyZS4gVGhpcyBtb2RlbCBpcyBkZXNpZ25lZCB0byBkZWxpdmVyIGVmZmljaWVudCBwZXJmb3JtYW5jZSBmb3IgcmVhc29uaW5nLCBtYXRoLCBhbmQgY29kZSB0YXNrcyB3aGlsZSBtYWludGFpbmluZyBoaWdoIGFjY3VyYWN5LiBCeSBkaXN0aWxsaW5nIGtub3dsZWRnZSBmcm9tIHRoZSBsYXJnZXIgRGVlcFNlZWstUjEgbW9kZWwsIGl0IHByb3ZpZGVzIHN0YXRlLW9mLXRoZS1hcnQgcGVyZm9ybWFuY2Ugd2l0aCByZWR1Y2VkIGNvbXB1dGF0aW9uYWwgcmVxdWlyZW1lbnRzLlxuXG5UaGlzIG1vZGVsIGlzIHJlYWR5IGZvciBib3RoIHJlc2VhcmNoIGFuZCBjb21tZXJjaWFsIHVzZS5cbkZvciBtb3JlIGRldGFpbHMsIHZpc2l0IHRoZSBbRGVlcFNlZWsgd2Vic2l0ZV0oaHR0cHM6Ly93d3cuZGVlcHNlZWsuY29tLykuXG5cbiMjIFRoaXJkLVBhcnR5IENvbW11bml0eSBDb25zaWRlcmF0aW9uXG5cblRoaXMgbW9kZWwgaXMgbm90IG93bmVkIG9yIGRldmVsb3BlZCBieSBOVklESUEuIFRoaXMgbW9kZWwgaGFzIGJlZW4gZGV2ZWxvcGVkIGFuZCBidWlsdCB0byBhIHRoaXJkLXBhcnR5XHUyMDE5cyByZXF1aXJlbWVudHMgZm9yIHRoaXMgYXBwbGljYXRpb24gYW5kIHVzZSBjYXNlOyBzZWUgbGluayB0byBOb24tTlZJRElBIFtEZWVwU2Vlay1SMSBNb2RlbCBDYXJkXShodHRwczovL2h1Z2dpbmdmYWNlLmNvL2RlZXBzZWVrLWFpL0RlZXBTZWVrLVIxLURpc3RpbGwtTGxhbWEtNzBCKS5cblxuIyMjIExpY2Vuc2UvVGVybXMgb2YgVXNlXG5cbkdPVkVSTklORyBURVJNUzogVGhlIE5JTSBjb250YWluZXIgaXMgZ292ZXJuZWQgYnkgdGhlIFtOVklESUEgU29mdHdhcmUgTGljZW5zZSBBZ3JlZW1lbnRdKGh0dHBzOi8vd3d3Lm52aWRpYS5jb20vZW4tdXMvYWdyZWVtZW50cy9lbnRlcnByaXNlLXNvZnR3YXJlL252aWRpYS1zb2Z0d2FyZS1saWNlbnNlLWFncmVlbWVudC8pIGFuZCBbUHJvZHVjdC1TcGVjaWZpYyBUZXJtcyBmb3IgQUkgUHJvZHVjdHNdKGh0dHBzOi8vd3d3Lm52aWRpYS5jb20vZW4tdXMvYWdyZWVtZW50cy9lbnRlcnByaXNlLXNvZnR3YXJlL3Byb2R1Y3Qtc3BlY2lmaWMtdGVybXMtZm9yLWFpLXByb2R1Y3RzLyk7IGFuZCB0aGUgdXNlIG9mIHRoaXMgbW9kZWwgaXMgZ292ZXJuZWQgYnkgdGhlIFtOVklESUEgQ29tbXVuaXR5IE1vZGVsIExpY2Vuc2VdKGh0dHBzOi8vd3d3Lm52aWRpYS5jb20vZW4tdXMvYWdyZWVtZW50cy9lbnRlcnByaXNlLXNvZnR3YXJlL252aWRpYS1jb21tdW5pdHktbW9kZWxzLWxpY2Vuc2UvKS4gQWRkaXRpb25hbCBJbmZvcm1hdGlvbjogW01JVCBMaWNlbnNlXShodHRwczovL2h1Z2dpbmdmYWNlLmNvL2RhdGFzZXRzL2Nob29zZWFsaWNlbnNlL2xpY2Vuc2VzL2Jsb2IvbWFpbi9tYXJrZG93bi9taXQubWQpOyBbTWV0YSBMbGFtYSAzLjMgQ29tbXVuaXR5IExpY2Vuc2UgQWdyZWVtZW50XShodHRwczovL2h1Z2dpbmdmYWNlLmNvL21ldGEtbGxhbWEvTGxhbWEtMy4zLTcwQi1JbnN0cnVjdC9ibG9iL21haW4vTElDRU5TRSkuIEJ1aWx0IHdpdGggTGxhbWEuXG5cbiMjIFJlZmVyZW5jZXM6XG5cbi0gW0RlZXBTZWVrIEdpdEh1YiBSZXBvc2l0b3J5XShodHRwczovL2dpdGh1Yi5jb20vZGVlcHNlZWstYWkvRGVlcFNlZWstVjMpXG4tIFtEZWVwU2Vlay1SMSBQYXBlcl0oaHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzI1MDEuMTI5NDgpXG4tIFtIdWdnaW5nIEZhY2UgTW9kZWwgQ2FyZCBmb3IgRGVlcFNlZWstUjEtRGlzdGlsbC1MbGFtYS03MEJdKGh0dHBzOi8vaHVnZ2luZ2ZhY2UuY28vZGVlcHNlZWstYWkvRGVlcFNlZWstUjEtRGlzdGlsbC1MbGFtYS03MEIpXG5cbiMjIE1vZGVsIEFyY2hpdGVjdHVyZTpcblxuKipBcmNoaXRlY3R1cmUgVHlwZToqKiBEaXN0aWxsZWQgdmVyc2lvbiBvZiBNaXh0dXJlIG9mIEV4cGVydHMgKE1vRSkgPGJyPlxuKipCYXNlIE1vZGVsOioqIExsYW1hMy4zLTcwQi1JbnN0cnVjdFxuXG4jIyBJbnB1dDpcblxuKipJbnB1dCBUeXBlKHMpOioqIFRleHQgPGJyPlxuKipJbnB1dCBGb3JtYXQocyk6KiogU3RyaW5nIDxicj5cbioqSW5wdXQgUGFyYW1ldGVyczoqKiAoMUQpIDxicj5cbioqT3RoZXIgUHJvcGVydGllcyBSZWxhdGVkIHRvIElucHV0OioqIDxicj5cbkRlZXBTZWVrIHJlY29tbWVuZHMgYWRoZXJpbmcgdG8gdGhlIGZvbGxvd2luZyBjb25maWd1cmF0aW9ucyB3aGVuIHV0aWxpemluZyB0aGUgRGVlcFNlZWstUjEgc2VyaWVzIG1vZGVscywgaW5jbHVkaW5nIGJlbmNobWFya2luZywgdG8gYWNoaWV2ZSB0aGUgZXhwZWN0ZWQgcGVyZm9ybWFuY2U6XG5cbjEuIFNldCB0aGUgdGVtcGVyYXR1cmUgd2l0aGluIHRoZSByYW5nZSBvZiAwLjUtMC43ICgwLjYgaXMgcmVjb21tZW5kZWQpIHRvIHByZXZlbnQgZW5kbGVzcyByZXBldGl0aW9ucyBvciBpbmNvaGVyZW50IG91dHB1dHMuXG4yLiAqKkF2b2lkIGFkZGluZyBhIHN5c3RlbSBwcm9tcHQ7IGFsbCBpbnN0cnVjdGlvbnMgc2hvdWxkIGJlIGNvbnRhaW5lZCB3aXRoaW4gdGhlIHVzZXIgcHJvbXB0LioqXG4zLiBGb3IgbWF0aGVtYXRpY2FsIHByb2JsZW1zLCBpdCBpcyBhZHZpc2FibGUgdG8gaW5jbHVkZSBhIGRpcmVjdGl2ZSBpbiB5b3VyIHByb21wdCBzdWNoIGFzOiBcIlBsZWFzZSByZWFzb24gc3RlcCBieSBzdGVwLCBhbmQgcHV0IHlvdXIgZmluYWwgYW5zd2VyIHdpdGhpbiBcXGJveGVke30uXCJcbjQuIFdoZW4gZXZhbHVhdGluZyBtb2RlbCBwZXJmb3JtYW5jZSwgaXQgaXMgcmVjb21tZW5kZWQgdG8gY29uZHVjdCBtdWx0aXBsZSB0ZXN0cyBhbmQgYXZlcmFnZSB0aGUgcmVzdWx0cy5cblxuIyMgT3V0cHV0OlxuXG4qKk91dHB1dCBUeXBlKHMpOioqIFRleHQgPGJyPlxuKipPdXRwdXQgRm9ybWF0OioqIFN0cmluZyA8YnI+XG4qKk91dHB1dCBQYXJhbWV0ZXJzOioqICgxRCkgPGJyPlxuXG4jIyBTb2Z0d2FyZSBJbnRlZ3JhdGlvbjpcblxuKipSdW50aW1lIEVuZ2luZShzKToqKiBUZW5zb3JSVC1MTE0gPGJyPlxuKipTdXBwb3J0ZWQgSGFyZHdhcmUgTWljcm9hcmNoaXRlY3R1cmUgQ29tcGF0aWJpbGl0eToqKiBOVklESUEgQW1wZXJlLCBOVklESUEgQmxhY2t3ZWxsLCBOVklESUEgSmV0c29uLCBOVklESUEgSG9wcGVyLCBOVklESUEgTG92ZWxhY2UsIE5WSURJQSBQYXNjYWwsIE5WSURJQSBUdXJpbmcsIGFuZCBOVklESUEgVm9sdGEgYXJjaGl0ZWN0dXJlcyA8YnI+XG4qKltQcmVmZXJyZWQvU3VwcG9ydGVkXSBPcGVyYXRpbmcgU3lzdGVtKHMpOioqIExpbnV4XG5cbiMjIE1vZGVsIFZlcnNpb24ocyk6XG5cbkRlZXBTZWVrLVIxLURpc3RpbGwtTGxhbWEtNzBCXG5cbiMgVHJhaW5pbmcsIFRlc3RpbmcsIGFuZCBFdmFsdWF0aW9uIERhdGFzZXRzOlxuXG4jIyBUcmFpbmluZyBEYXRhc2V0OlxuXG4qKkRhdGEgQ29sbGVjdGlvbiBNZXRob2QgYnkgZGF0YXNldDoqKiBIeWJyaWQ6IEh1bWFuLCBBdXRvbWF0ZWQgPGJyPlxuKipMYWJlbGluZyBNZXRob2QgYnkgZGF0YXNldDoqKiBIeWJyaWQ6IEh1bWFuLCBBdXRvbWF0ZWQgPGJyPlxuXG4jIyBUZXN0aW5nIERhdGFzZXQ6XG5cbioqRGF0YSBDb2xsZWN0aW9uIE1ldGhvZCBieSBkYXRhc2V0OioqIEh5YnJpZDogSHVtYW4sIEF1dG9tYXRlZCA8YnI+XG4qKkxhYmVsaW5nIE1ldGhvZCBieSBkYXRhc2V0OioqIEh5YnJpZDogSHVtYW4sIEF1dG9tYXRlZCA8YnI+XG5cbiMjIEV2YWx1YXRpb24gRGF0YXNldDpcblxuKipEYXRhIENvbGxlY3Rpb24gTWV0aG9kIGJ5IGRhdGFzZXQ6KiogSHlicmlkOiBIdW1hbiwgQXV0b21hdGVkIDxicj5cbioqTGFiZWxpbmcgTWV0aG9kIGJ5IGRhdGFzZXQ6KiogSHlicmlkOiBIdW1hbiwgQXV0b21hdGVkIDxicj5cblxuIyMgSW5mZXJlbmNlOlxuXG4qKkVuZ2luZToqKiBUZW5zb3JSVC1MTE0gPGJyPlxuKipUZXN0IEhhcmR3YXJlOioqIE5WSURJQSBIb3BwZXJcblxuIyMgRXRoaWNhbCBDb25zaWRlcmF0aW9uczpcblxuTlZJRElBIGJlbGlldmVzIFRydXN0d29ydGh5IEFJIGlzIGEgc2hhcmVkIHJlc3BvbnNpYmlsaXR5IGFuZCB3ZSBoYXZlIGVzdGFibGlzaGVkIHBvbGljaWVzIGFuZCBwcmFjdGljZXMgdG8gZW5hYmxlIGRldmVsb3BtZW50IGZvciBhIHdpZGUgYXJyYXkgb2YgQUkgYXBwbGljYXRpb25zLiBXaGVuIGRvd25sb2FkZWQgb3IgdXNlZCBpbiBhY2NvcmRhbmNlIHdpdGggb3VyIHRlcm1zIG9mIHNlcnZpY2UsIGRldmVsb3BlcnMgc2hvdWxkIHdvcmsgd2l0aCB0aGVpciBpbnRlcm5hbCBtb2RlbCB0ZWFtIHRvIGVuc3VyZSB0aGlzIG1vZGVsIG1lZXRzIHJlcXVpcmVtZW50cyBmb3IgdGhlIHJlbGV2YW50IGluZHVzdHJ5IGFuZCB1c2UgY2FzZSBhbmQgYWRkcmVzc2VzIHVuZm9yZXNlZW4gcHJvZHVjdCBtaXN1c2UuIFBsZWFzZSByZXBvcnQgc2VjdXJpdHkgdnVsbmVyYWJpbGl0aWVzIG9yIE5WSURJQSBBSSBDb25jZXJucyBbaGVyZV0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9zdXBwb3J0L3N1Ym1pdC1zZWN1cml0eS12dWxuZXJhYmlsaXR5LykuXG5cbiMjIE1vZGVsIExpbWl0YXRpb25zOlxuVGhlIGJhc2UgbW9kZWwgd2FzIHRyYWluZWQgb24gZGF0YSB0aGF0IGNvbnRhaW5zIHRveGljIGxhbmd1YWdlIGFuZCBzb2NpZXRhbCBiaWFzZXMgb3JpZ2luYWxseSBjcmF3bGVkIGZyb20gdGhlIGludGVybmV0LiBUaGVyZWZvcmUsIHRoZSBtb2RlbCBtYXkgYW1wbGlmeSB0aG9zZSBiaWFzZXMgYW5kIHJldHVybiB0b3hpYyByZXNwb25zZXMgZXNwZWNpYWxseSB3aGVuIHByb21wdGVkIHdpdGggdG94aWMgcHJvbXB0cy4gVGhlIG1vZGVsIG1heSBnZW5lcmF0ZSBhbnN3ZXJzIHRoYXQgbWF5IGJlIGluYWNjdXJhdGUsIG9taXQga2V5IGluZm9ybWF0aW9uLCBvciBpbmNsdWRlIGlycmVsZXZhbnQgb3IgcmVkdW5kYW50IHRleHQgcHJvZHVjaW5nIHNvY2lhbGx5IHVuYWNjZXB0YWJsZSBvciB1bmRlc2lyYWJsZSB0ZXh0LCBldmVuIGlmIHRoZSBwcm9tcHQgaXRzZWxmIGRvZXMgbm90IGluY2x1ZGUgYW55dGhpbmcgZXhwbGljaXRseSBvZmZlbnNpdmUuXG5cbioqWW91IGFyZSByZXNwb25zaWJsZSBmb3IgZW5zdXJpbmcgdGhhdCB5b3VyIHVzZSBvZiBOVklESUEgQUkgRm91bmRhdGlvbiBNb2RlbHMgY29tcGxpZXMgd2l0aCBhbGwgYXBwbGljYWJsZSBsYXdzLioqIiwKICAgICJkaXNwbGF5TmFtZSI6ICJEZWVwU2Vlay1SMS1EaXN0aWxsLUxsYW1hLTcwQiIsCiAgICAiZXhwbGFpbmFiaWxpdHkiOiAiIiwKICAgICJmcmFtZXdvcmsiOiAiT3RoZXIiLAogICAgImhhc1BsYXlncm91bmQiOiBmYWxzZSwKICAgICJoYXNTaWduZWRWZXJzaW9uIjogdHJ1ZSwKICAgICJpc1BsYXlncm91bmRFbmFibGVkIjogZmFsc2UsCiAgICAiaXNQdWJsaWMiOiBmYWxzZSwKICAgICJpc1JlYWRPbmx5IjogdHJ1ZSwKICAgICJsYWJlbHMiOiBbCiAgICAgICAgIk5TUEVDVC1SQUhXLTVMMFgiLAogICAgICAgICJudmFpZTptb2RlbDpudmFpZV9zdXBwb3J0ZWQiLAogICAgICAgICJudmlkaWFfbmltOm1vZGVsOm5pbW1jcm9fbnZpZGlhX25pbSIsCiAgICAgICAgInByb2R1Y3ROYW1lczpuaW0tZGV2IiwKICAgICAgICAicHJvZHVjdE5hbWVzOm52LWFpLWVudGVycHJpc2UiCiAgICBdLAogICAgImxhdGVzdFZlcnNpb25JZFN0ciI6ICJsNDBzeDQtdGhyb3VnaHB1dC1mcDgtNDZ1M2x2cDZqYSIsCiAgICAibGF0ZXN0VmVyc2lvblNpemVJbkJ5dGVzIjogNzM2MjM4NjQwOTUsCiAgICAibG9nbyI6ICJodHRwczovL2Fzc2V0cy5uZ2MubnZpZGlhLmNvbS9wcm9kdWN0cy9hcGktY2F0YWxvZy9pbWFnZXMvZGVlcHNlZWstcjEtZGlzdGlsbC1sbGFtYS03MGIuanBnIiwKICAgICJtb2RlbEZvcm1hdCI6ICJOL0EiLAogICAgIm5hbWUiOiAiZGVlcHNlZWstcjEtZGlzdGlsbC1sbGFtYS03MGIiLAogICAgIm9yZ05hbWUiOiAibmltIiwKICAgICJwcmVjaXNpb24iOiAiTi9BIiwKICAgICJwcml2YWN5IjogIiIsCiAgICAicHJvZHVjdE5hbWVzIjogWwogICAgICAgICJuaW0tZGV2IiwKICAgICAgICAibnYtYWktZW50ZXJwcmlzZSIKICAgIF0sCiAgICAicHVibGljRGF0YXNldFVzZWQiOiB7fSwKICAgICJwdWJsaXNoZXIiOiAiRGVlcFNlZWstQUkiLAogICAgInNhZmV0eUFuZFNlY3VyaXR5IjogIiIsCiAgICAic2hvcnREZXNjcmlwdGlvbiI6ICJEZWVwU2Vlay1SMS1EaXN0aWxsLUxsYW1hLTcwQiBpcyBhIGRpc3RpbGxlZCB2ZXJzaW9uIG9mIHRoZSBEZWVwU2Vlay1SMSBzZXJpZXMsIGJ1aWx0IHVwb24gdGhlIExsYW1hMy4zLTcwQi1JbnN0cnVjdCBhcmNoaXRlY3R1cmUuIFRoaXMgbW9kZWwgaXMgZGVzaWduZWQgdG8gZGVsaXZlciBlZmZpY2llbnQgcGVyZm9ybWFuY2UgZm9yIHJlYXNvbmluZywgbWF0aCwgYW5kIGNvZGUgdGFza3Mgd2hpbGUgbWFpbnRhaW5pbmcgaGlnaCBhY2N1cmFjeSIsCiAgICAidGVhbU5hbWUiOiAiZGVlcHNlZWstYWkiLAogICAgInVwZGF0ZWREYXRlIjogIjIwMjUtMDItMjhUMDI6MTU6MTIuMDQ0WiIKfQ==
+    source:
+          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/deepseek-ai/containers/deepseek-r1-distill-llama-70b
+    optimizationProfiles:
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:l40sx4-throughput-fp8-46u3lvp6ja
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 70B L40Sx4 FP8 Throughput
+      ngcMetadata:
+        23c28e4a1ad4d963c1504f1a33b45afb65bf61b64b20be1a8ea2c8816ea0fc36:
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 69GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x4-latency-fp8-k5tlofelyw
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 70B H100x4 FP8 Latency
+      ngcMetadata:
+        4696d5c5b44b13bb5e864affcdcfa30ad229390285476315d9921fd0828bda5b:
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 69GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x8-latency-fp8-xz3eymtuzq
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 70B H100x8 FP8 Latency
+      ngcMetadata:
+        91f2b7c9e719c0c380ba6c1d6c3e5cad61aaf807730de88fa3b6233a39edeeaa:
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 70GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x2-throughput-fp8-8cx2penaia
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 70B H100x2 FP8 Throughput
+      ngcMetadata:
+        da94a5c34cf665e85813fa49f321f1e87ca12317722b5e65628cf3ed0371897b:
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 69GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x4-throughput-bf16-g31fj2uvrw
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 70B H100x4 BF16 Throughput
+      ngcMetadata:
+        e6b8fb8c4c76343b05b9051974593e5bd9110a868770d52e8eb0fe5a3b46dd67:
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 138GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-70b:h100x8-latency-bf16-v8q6jmcd9g
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 70B H100x8 BF16 Latency
+      ngcMetadata:
+        f87605b6d8cfc0ca39fad21b4ec580219f3a3be42884d2c7caad9b8ae4b3c1c7:
+          model: deepseek-r1-distill-llama-70b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 147GB
+  - variantId: Deepseek R1 Distill Llama 8b
+    modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJjYW5HdWVzdERvd25sb2FkIjogZmFsc2UsCiAgICAiY3JlYXRlZERhdGUiOiAiMjAyNS0wMi0wN1QwMDozNjoyMS4yNTVaIiwKICAgICJkZXNjcmlwdGlvbiI6ICIqKk1vZGVsIE92ZXJ2aWV3KipcblxuIyMgRGVzY3JpcHRpb246XG5cbkRlZXBTZWVrLVIxLURpc3RpbGwtTGxhbWEtOEIgaXMgYSBkaXN0aWxsZWQgdmVyc2lvbiBvZiB0aGUgRGVlcFNlZWstUjEgc2VyaWVzLCBidWlsdCB1cG9uIHRoZSBMbGFtYTMuMS04Qi1JbnN0cnVjdCBhcmNoaXRlY3R1cmUuIFRoaXMgbW9kZWwgaXMgZGVzaWduZWQgdG8gZGVsaXZlciBlZmZpY2llbnQgcGVyZm9ybWFuY2UgZm9yIHJlYXNvbmluZywgbWF0aCwgYW5kIGNvZGUgdGFza3Mgd2hpbGUgbWFpbnRhaW5pbmcgaGlnaCBhY2N1cmFjeS4gQnkgZGlzdGlsbGluZyBrbm93bGVkZ2UgZnJvbSB0aGUgbGFyZ2VyIERlZXBTZWVrLVIxIG1vZGVsLCBpdCBwcm92aWRlcyBzdGF0ZS1vZi10aGUtYXJ0IHBlcmZvcm1hbmNlIHdpdGggcmVkdWNlZCBjb21wdXRhdGlvbmFsIHJlcXVpcmVtZW50cy5cblxuVGhpcyBtb2RlbCBpcyByZWFkeSBmb3IgYm90aCByZXNlYXJjaCBhbmQgY29tbWVyY2lhbCB1c2UuXG5Gb3IgbW9yZSBkZXRhaWxzLCB2aXNpdCB0aGUgW0RlZXBTZWVrIHdlYnNpdGVdKGh0dHBzOi8vd3d3LmRlZXBzZWVrLmNvbS8pLlxuXG4jIyBUaGlyZC1QYXJ0eSBDb21tdW5pdHkgQ29uc2lkZXJhdGlvblxuXG5UaGlzIG1vZGVsIGlzIG5vdCBvd25lZCBvciBkZXZlbG9wZWQgYnkgTlZJRElBLiBUaGlzIG1vZGVsIGhhcyBiZWVuIGRldmVsb3BlZCBhbmQgYnVpbHQgdG8gYSB0aGlyZC1wYXJ0eVx1MjAxOXMgcmVxdWlyZW1lbnRzIGZvciB0aGlzIGFwcGxpY2F0aW9uIGFuZCB1c2UgY2FzZTsgc2VlIGxpbmsgdG8gTm9uLU5WSURJQSBbRGVlcFNlZWstUjEgTW9kZWwgQ2FyZF0oaHR0cHM6Ly9odWdnaW5nZmFjZS5jby9kZWVwc2Vlay1haS9EZWVwU2Vlay1SMS1EaXN0aWxsLUxsYW1hLThCKS5cblxuIyMjIExpY2Vuc2UvVGVybXMgb2YgVXNlXG5cbkdPVkVSTklORyBURVJNUzogVGhlIE5JTSBjb250YWluZXIgaXMgZ292ZXJuZWQgYnkgdGhlIFtOVklESUEgU29mdHdhcmUgTGljZW5zZSBBZ3JlZW1lbnRdKGh0dHBzOi8vd3d3Lm52aWRpYS5jb20vZW4tdXMvYWdyZWVtZW50cy9lbnRlcnByaXNlLXNvZnR3YXJlL252aWRpYS1zb2Z0d2FyZS1saWNlbnNlLWFncmVlbWVudC8pIGFuZCBbUHJvZHVjdC1TcGVjaWZpYyBUZXJtcyBmb3IgQUkgUHJvZHVjdHNdKGh0dHBzOi8vd3d3Lm52aWRpYS5jb20vZW4tdXMvYWdyZWVtZW50cy9lbnRlcnByaXNlLXNvZnR3YXJlL3Byb2R1Y3Qtc3BlY2lmaWMtdGVybXMtZm9yLWFpLXByb2R1Y3RzLyk7IGFuZCB0aGUgdXNlIG9mIHRoaXMgbW9kZWwgaXMgZ292ZXJuZWQgYnkgdGhlIFtOVklESUEgQ29tbXVuaXR5IE1vZGVsIExpY2Vuc2VdKGh0dHBzOi8vd3d3Lm52aWRpYS5jb20vZW4tdXMvYWdyZWVtZW50cy9lbnRlcnByaXNlLXNvZnR3YXJlL252aWRpYS1jb21tdW5pdHktbW9kZWxzLWxpY2Vuc2UvKS4gQWRkaXRpb25hbCBJbmZvcm1hdGlvbjogW01JVCBMaWNlbnNlXShodHRwczovL2h1Z2dpbmdmYWNlLmNvL2RhdGFzZXRzL2Nob29zZWFsaWNlbnNlL2xpY2Vuc2VzL2Jsb2IvbWFpbi9tYXJrZG93bi9taXQubWQpOyBbTWV0YSBMbGFtYSAzLjMgQ29tbXVuaXR5IExpY2Vuc2UgQWdyZWVtZW50XShodHRwczovL2h1Z2dpbmdmYWNlLmNvL21ldGEtbGxhbWEvTGxhbWEtMy4zLTcwQi1JbnN0cnVjdC9ibG9iL21haW4vTElDRU5TRSkuIEJ1aWx0IHdpdGggTGxhbWEuXG5cbiMjIFJlZmVyZW5jZXM6XG5cbi0gW0RlZXBTZWVrIEdpdEh1YiBSZXBvc2l0b3J5XShodHRwczovL2dpdGh1Yi5jb20vZGVlcHNlZWstYWkvRGVlcFNlZWstVjMpXG4tIFtEZWVwU2Vlay1SMSBQYXBlcl0oaHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzI1MDEuMTI5NDgpXG4tIFtIdWdnaW5nIEZhY2UgTW9kZWwgQ2FyZCBmb3IgRGVlcFNlZWstUjEtRGlzdGlsbC1MbGFtYS04Ql0oaHR0cHM6Ly9odWdnaW5nZmFjZS5jby9kZWVwc2Vlay1haS9EZWVwU2Vlay1SMS1EaXN0aWxsLUxsYW1hLThCKVxuXG4jIyBNb2RlbCBBcmNoaXRlY3R1cmU6XG5cbioqQXJjaGl0ZWN0dXJlIFR5cGU6KiogRGlzdGlsbGVkIHZlcnNpb24gb2YgTWl4dHVyZSBvZiBFeHBlcnRzIChNb0UpIDxicj5cbioqQmFzZSBNb2RlbDoqKiBMbGFtYTMuMS04Qi1JbnN0cnVjdFxuXG4jIyBJbnB1dDpcblxuKipJbnB1dCBUeXBlKHMpOioqIFRleHQgPGJyPlxuKipJbnB1dCBGb3JtYXQocyk6KiogU3RyaW5nIDxicj5cbioqSW5wdXQgUGFyYW1ldGVyczoqKiAoMUQpIDxicj5cbioqT3RoZXIgUHJvcGVydGllcyBSZWxhdGVkIHRvIElucHV0OioqIDxicj5cbkRlZXBTZWVrIHJlY29tbWVuZHMgYWRoZXJpbmcgdG8gdGhlIGZvbGxvd2luZyBjb25maWd1cmF0aW9ucyB3aGVuIHV0aWxpemluZyB0aGUgRGVlcFNlZWstUjEgc2VyaWVzIG1vZGVscywgaW5jbHVkaW5nIGJlbmNobWFya2luZywgdG8gYWNoaWV2ZSB0aGUgZXhwZWN0ZWQgcGVyZm9ybWFuY2U6XG5cbjEuIFNldCB0aGUgdGVtcGVyYXR1cmUgd2l0aGluIHRoZSByYW5nZSBvZiAwLjUtMC43ICgwLjYgaXMgcmVjb21tZW5kZWQpIHRvIHByZXZlbnQgZW5kbGVzcyByZXBldGl0aW9ucyBvciBpbmNvaGVyZW50IG91dHB1dHMuXG4yLiAqKkF2b2lkIGFkZGluZyBhIHN5c3RlbSBwcm9tcHQ7IGFsbCBpbnN0cnVjdGlvbnMgc2hvdWxkIGJlIGNvbnRhaW5lZCB3aXRoaW4gdGhlIHVzZXIgcHJvbXB0LioqXG4zLiBGb3IgbWF0aGVtYXRpY2FsIHByb2JsZW1zLCBpdCBpcyBhZHZpc2FibGUgdG8gaW5jbHVkZSBhIGRpcmVjdGl2ZSBpbiB5b3VyIHByb21wdCBzdWNoIGFzOiBcIlBsZWFzZSByZWFzb24gc3RlcCBieSBzdGVwLCBhbmQgcHV0IHlvdXIgZmluYWwgYW5zd2VyIHdpdGhpbiBcXGJveGVke30uXCJcbjQuIFdoZW4gZXZhbHVhdGluZyBtb2RlbCBwZXJmb3JtYW5jZSwgaXQgaXMgcmVjb21tZW5kZWQgdG8gY29uZHVjdCBtdWx0aXBsZSB0ZXN0cyBhbmQgYXZlcmFnZSB0aGUgcmVzdWx0cy5cblxuIyMgT3V0cHV0OlxuXG4qKk91dHB1dCBUeXBlKHMpOioqIFRleHQgPGJyPlxuKipPdXRwdXQgRm9ybWF0OioqIFN0cmluZyA8YnI+XG4qKk91dHB1dCBQYXJhbWV0ZXJzOioqICgxRCkgPGJyPlxuXG4jIyBTb2Z0d2FyZSBJbnRlZ3JhdGlvbjpcblxuKipSdW50aW1lIEVuZ2luZShzKToqKiBUZW5zb3JSVC1MTE0gPGJyPlxuKipTdXBwb3J0ZWQgSGFyZHdhcmUgTWljcm9hcmNoaXRlY3R1cmUgQ29tcGF0aWJpbGl0eToqKiBOVklESUEgQW1wZXJlLCBOVklESUEgQmxhY2t3ZWxsLCBOVklESUEgSmV0c29uLCBOVklESUEgSG9wcGVyLCBOVklESUEgTG92ZWxhY2UsIE5WSURJQSBQYXNjYWwsIE5WSURJQSBUdXJpbmcsIGFuZCBOVklESUEgVm9sdGEgYXJjaGl0ZWN0dXJlcyA8YnI+XG4qKltQcmVmZXJyZWQvU3VwcG9ydGVkXSBPcGVyYXRpbmcgU3lzdGVtKHMpOioqIExpbnV4XG5cbiMjIE1vZGVsIFZlcnNpb24ocyk6XG5cbkRlZXBTZWVrLVIxLURpc3RpbGwtTGxhbWEtOEJcblxuIyBUcmFpbmluZywgVGVzdGluZywgYW5kIEV2YWx1YXRpb24gRGF0YXNldHM6XG5cbiMjIFRyYWluaW5nIERhdGFzZXQ6XG5cbioqRGF0YSBDb2xsZWN0aW9uIE1ldGhvZCBieSBkYXRhc2V0OioqIEh5YnJpZDogSHVtYW4sIEF1dG9tYXRlZCA8YnI+XG4qKkxhYmVsaW5nIE1ldGhvZCBieSBkYXRhc2V0OioqIEh5YnJpZDogSHVtYW4sIEF1dG9tYXRlZCA8YnI+XG5cbiMjIFRlc3RpbmcgRGF0YXNldDpcblxuKipEYXRhIENvbGxlY3Rpb24gTWV0aG9kIGJ5IGRhdGFzZXQ6KiogSHlicmlkOiBIdW1hbiwgQXV0b21hdGVkIDxicj5cbioqTGFiZWxpbmcgTWV0aG9kIGJ5IGRhdGFzZXQ6KiogSHlicmlkOiBIdW1hbiwgQXV0b21hdGVkIDxicj5cblxuIyMgRXZhbHVhdGlvbiBEYXRhc2V0OlxuXG4qKkRhdGEgQ29sbGVjdGlvbiBNZXRob2QgYnkgZGF0YXNldDoqKiBIeWJyaWQ6IEh1bWFuLCBBdXRvbWF0ZWQgPGJyPlxuKipMYWJlbGluZyBNZXRob2QgYnkgZGF0YXNldDoqKiBIeWJyaWQ6IEh1bWFuLCBBdXRvbWF0ZWQgPGJyPlxuXG4jIyBJbmZlcmVuY2U6XG5cbioqRW5naW5lOioqIFRlbnNvclJULUxMTSA8YnI+XG4qKlRlc3QgSGFyZHdhcmU6KiogTlZJRElBIEhvcHBlclxuXG4jIyBFdGhpY2FsIENvbnNpZGVyYXRpb25zOlxuXG5OVklESUEgYmVsaWV2ZXMgVHJ1c3R3b3J0aHkgQUkgaXMgYSBzaGFyZWQgcmVzcG9uc2liaWxpdHkgYW5kIHdlIGhhdmUgZXN0YWJsaXNoZWQgcG9saWNpZXMgYW5kIHByYWN0aWNlcyB0byBlbmFibGUgZGV2ZWxvcG1lbnQgZm9yIGEgd2lkZSBhcnJheSBvZiBBSSBhcHBsaWNhdGlvbnMuIFdoZW4gZG93bmxvYWRlZCBvciB1c2VkIGluIGFjY29yZGFuY2Ugd2l0aCBvdXIgdGVybXMgb2Ygc2VydmljZSwgZGV2ZWxvcGVycyBzaG91bGQgd29yayB3aXRoIHRoZWlyIGludGVybmFsIG1vZGVsIHRlYW0gdG8gZW5zdXJlIHRoaXMgbW9kZWwgbWVldHMgcmVxdWlyZW1lbnRzIGZvciB0aGUgcmVsZXZhbnQgaW5kdXN0cnkgYW5kIHVzZSBjYXNlIGFuZCBhZGRyZXNzZXMgdW5mb3Jlc2VlbiBwcm9kdWN0IG1pc3VzZS4gUGxlYXNlIHJlcG9ydCBzZWN1cml0eSB2dWxuZXJhYmlsaXRpZXMgb3IgTlZJRElBIEFJIENvbmNlcm5zIFtoZXJlXShodHRwczovL3d3dy5udmlkaWEuY29tL2VuLXVzL3N1cHBvcnQvc3VibWl0LXNlY3VyaXR5LXZ1bG5lcmFiaWxpdHkvKS5cblxuIyMgTW9kZWwgTGltaXRhdGlvbnM6XG5UaGUgYmFzZSBtb2RlbCB3YXMgdHJhaW5lZCBvbiBkYXRhIHRoYXQgY29udGFpbnMgdG94aWMgbGFuZ3VhZ2UgYW5kIHNvY2lldGFsIGJpYXNlcyBvcmlnaW5hbGx5IGNyYXdsZWQgZnJvbSB0aGUgaW50ZXJuZXQuIFRoZXJlZm9yZSwgdGhlIG1vZGVsIG1heSBhbXBsaWZ5IHRob3NlIGJpYXNlcyBhbmQgcmV0dXJuIHRveGljIHJlc3BvbnNlcyBlc3BlY2lhbGx5IHdoZW4gcHJvbXB0ZWQgd2l0aCB0b3hpYyBwcm9tcHRzLiBUaGUgbW9kZWwgbWF5IGdlbmVyYXRlIGFuc3dlcnMgdGhhdCBtYXkgYmUgaW5hY2N1cmF0ZSwgb21pdCBrZXkgaW5mb3JtYXRpb24sIG9yIGluY2x1ZGUgaXJyZWxldmFudCBvciByZWR1bmRhbnQgdGV4dCBwcm9kdWNpbmcgc29jaWFsbHkgdW5hY2NlcHRhYmxlIG9yIHVuZGVzaXJhYmxlIHRleHQsIGV2ZW4gaWYgdGhlIHByb21wdCBpdHNlbGYgZG9lcyBub3QgaW5jbHVkZSBhbnl0aGluZyBleHBsaWNpdGx5IG9mZmVuc2l2ZS5cblxuKipZb3UgYXJlIHJlc3BvbnNpYmxlIGZvciBlbnN1cmluZyB0aGF0IHlvdXIgdXNlIG9mIE5WSURJQSBBSSBGb3VuZGF0aW9uIE1vZGVscyBjb21wbGllcyB3aXRoIGFsbCBhcHBsaWNhYmxlIGxhd3MuKioiLAogICAgImRpc3BsYXlOYW1lIjogIkRlZXBTZWVrLVIxLURpc3RpbGwtTGxhbWEtOEIiLAogICAgImV4cGxhaW5hYmlsaXR5IjogIiIsCiAgICAiZnJhbWV3b3JrIjogIk90aGVyIiwKICAgICJoYXNQbGF5Z3JvdW5kIjogZmFsc2UsCiAgICAiaGFzU2lnbmVkVmVyc2lvbiI6IHRydWUsCiAgICAiaXNQbGF5Z3JvdW5kRW5hYmxlZCI6IGZhbHNlLAogICAgImlzUHVibGljIjogZmFsc2UsCiAgICAiaXNSZWFkT25seSI6IHRydWUsCiAgICAibGFiZWxzIjogWwogICAgICAgICJOU1BFQ1QtSDMxQy1QT0JQIiwKICAgICAgICAibnZhaWU6bW9kZWw6bnZhaWVfc3VwcG9ydGVkIiwKICAgICAgICAibnZpZGlhX25pbTptb2RlbDpuaW1tY3JvX252aWRpYV9uaW0iLAogICAgICAgICJwcm9kdWN0TmFtZXM6bmltLWRldiIsCiAgICAgICAgInByb2R1Y3ROYW1lczpudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJsYXRlc3RWZXJzaW9uSWRTdHIiOiAicnVudGltZV9wYXJhbXNfcnR4X01TTDE2Mzg0IiwKICAgICJsYXRlc3RWZXJzaW9uU2l6ZUluQnl0ZXMiOiAxNzYsCiAgICAibG9nbyI6ICJodHRwczovL2Fzc2V0cy5uZ2MubnZpZGlhLmNvbS9wcm9kdWN0cy9hcGktY2F0YWxvZy9pbWFnZXMvZGVlcHNlZWstcjEtZGlzdGlsbC1sbGFtYS03MGIuanBnIiwKICAgICJtb2RlbEZvcm1hdCI6ICJOL0EiLAogICAgIm5hbWUiOiAiZGVlcHNlZWstcjEtZGlzdGlsbC1sbGFtYS04YiIsCiAgICAib3JnTmFtZSI6ICJuaW0iLAogICAgInByZWNpc2lvbiI6ICJOL0EiLAogICAgInByaXZhY3kiOiAiIiwKICAgICJwcm9kdWN0TmFtZXMiOiBbCiAgICAgICAgIm5pbS1kZXYiLAogICAgICAgICJudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJwdWJsaWNEYXRhc2V0VXNlZCI6IHt9LAogICAgInB1Ymxpc2hlciI6ICJEZWVwU2Vlay1BSSIsCiAgICAic2FmZXR5QW5kU2VjdXJpdHkiOiAiIiwKICAgICJzaG9ydERlc2NyaXB0aW9uIjogIkRlZXBTZWVrLVIxLURpc3RpbGwtTGxhbWEtOEIgaXMgYSBkaXN0aWxsZWQgdmVyc2lvbiBvZiB0aGUgRGVlcFNlZWstUjEgc2VyaWVzLCBidWlsdCB1cG9uIHRoZSBMbGFtYTMuMS04Qi1JbnN0cnVjdCBhcmNoaXRlY3R1cmUuIFRoaXMgbW9kZWwgaXMgZGVzaWduZWQgdG8gZGVsaXZlciBlZmZpY2llbnQgcGVyZm9ybWFuY2UgZm9yIHJlYXNvbmluZywgbWF0aCwgYW5kIGNvZGUgdGFza3Mgd2hpbGUgbWFpbnRhaW5pbmcgaGlnaCBhY2N1cmFjeSIsCiAgICAidGVhbU5hbWUiOiAiZGVlcHNlZWstYWkiLAogICAgInVwZGF0ZWREYXRlIjogIjIwMjUtMDItMjZUMjA6NTA6MDYuOTQ5WiIKfQ==
+    source:
+          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/deepseek-ai/containers/deepseek-r1-distill-llama-8b
+    optimizationProfiles:
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:l40sx1-throughput-fp8-vbqc0btoqg
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B L40Sx1 FP8 Throughput
+      ngcMetadata:
+        d968c663c710e56275088096bc0dcf823560aaf7dca910bfcb41f5056063ab02:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 9GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:h100x1-throughput-fp8-d9grrq-lka
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B H100x1 FP8 Throughput
+      ngcMetadata:
+        0bdec027404c16d6ca96e159079082f9630a24a277ff519d0c8fea71007222ec:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 9GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:h100x2-latency-bf16-7ztok5r0dg
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B H100x2 BF16 Latency
+      ngcMetadata:
+        0ce355335e6c3aec54e49ab53822e628fa1227091d0326da962bcc4f95b5f602:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 17GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:a10gx4-latency-bf16-aiejrysrlw
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B A10Gx4 BF16 Latency
+      ngcMetadata:
+        1dfac8e12042573dc93536a393902478e1a6a46d1cd742cf0a4251c11f77e253:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2237:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 19GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:l40sx2-latency-fp8-fmuoxfbb0q
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B L40Sx2 FP8 Latency
+      ngcMetadata:
+        c2d4efce2d553c3aa78109b6d5dff0fd34b86bbb3b765aa8afdf12e9d13e8e83:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 9GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:h100x1-throughput-bf16-4jcstzx27q
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B H100x1 BF16 Throughput
+      ngcMetadata:
+        4f6dba657c08280bdb419cbc1c60d265e82731b807ee2ae3c111cb9a91571aa1:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 16GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:h100x2-latency-fp8-q8xwzp22aa
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B H100x2 FP8 Latency
+      ngcMetadata:
+        518edac01f731b63676743a1860fe21861d1399b19cb2e584de3d9a6a3ea6d8e:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 9GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:l40sx1-throughput-bf16-yvbnwvfzew
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B L40Sx1 BF16 Throughput
+      ngcMetadata:
+        9bc8e8aa12847674fa2840b9c03cbdb0246d7f144a5257510fd53eacc2a9d62f:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 16GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:a100x1-throughput-bf16-iq9maz9nkw
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B A100x1 BF16 Throughput
+      ngcMetadata:
+        c959aa89b69ad9295ccc99a34546819d16bb0e2566a6cfed0985eecf37bcc14b:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 16GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:l40sx2-latency-bf16-tlmx3sgrdw
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B L40Sx2 BF16 Latency
+      ngcMetadata:
+        20d6bb61a1ee5160c0baed3721f8b580525a0aaaaa3b1333e9a882d4c61b1ed7:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 17GB
+    - profileId: nim/deepseek-ai/deepseek-r1-distill-llama-8b:a10gx2-throughput-bf16-uv8ptkf8-g
+      framework: TensorRT-LLM
+      displayName: Deepseek R1 Distill Llama 8B A10Gx2 BF16 Throughput
+      ngcMetadata:
+        edbb37d3ef94a5cc38919ab86694b835307c0668ca6d41ea746796b34ced78f1:
+          model: deepseek-ai/deepseek-r1-distill-llama-8b
+          release: 1.5.2
+          tags:
+            feat_lora: 'false'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2237:10DE
+      - key: NIM VERSION
+        value: 1.5.2
+      - key: DOWNLOAD SIZE
+        value: 17GB
+  labels:
+  - Deepseek
+  - Distill
+  - Llama
+  - Meta
+  - Chat
+  - Large Language Model
+  - NVIDIA Validated
+  config:
+    architectures:
+    - Other
+    modelType: llama
+  license: NVIDIA AI Foundation Models Community License

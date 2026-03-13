@@ -19,7 +19,7 @@ models:
     optimizationProfiles:
     - profileId: nim/mit/boltz2:1.3.0-gpuh100_sm90_v1
       framework: TensorRT-LLM
-      displayName: Boltz2 H100x1 SM90 V1 FP16 TRT
+      displayName: Boltz2 H100x1 SM90 V1 FP16 Trt
       ngcMetadata:
         0901e344383119d8d4a5160d4d63933fd350e6aa92a56b925a77ecc32378d4a5:
           model: mit/boltz2
@@ -58,7 +58,7 @@ models:
         value: '1'
     - profileId: nim/mit/boltz2:1.3.0-gpua100_sm80_v1
       framework: TensorRT-LLM
-      displayName: Boltz2 A100x1 SM80 V1 FP16 TRT
+      displayName: Boltz2 A100x1 SM80 V1 FP16 Trt
       ngcMetadata:
         3fbc1c2eb885b24f631f8a1d0c58704cca1c7cf1cd2db4b791c7e6d7201aaa5c:
           model: mit/boltz2
@@ -95,9 +95,48 @@ models:
         value: '80'
       - key: V
         value: '1'
+    - profileId: nim/mit/boltz2:1.3.0-gpurtx6000_ada_sm86_v1
+      framework: TensorRT-LLM
+      displayName: Boltz2 RTX6000_ADAx1 SM86 V1 FP16 Trt
+      ngcMetadata:
+        a49907753de80032ade9659c95ef20be5e93af4166b4451531ecac61247ae4b3:
+          model: mit/boltz2
+          release: 1.3.0
+          tags:
+            feat_lora: 'False'
+            gpu: RTX6000_ADA
+            gpu_device: 26b1:10de
+            nim_workspace_hash_v1: 8d2989817b603a609a1da17a59010e28c15dd22b51a047d48596d892ff4a1d1a
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: trt
+            sm: '86'
+            tp: '1'
+            v: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: TRT
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: RTX6000_ADA
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B1:10DE
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: SM
+        value: '86'
+      - key: V
+        value: '1'
     - profileId: nim/mit/boltz2:1.3.0-gpul40s_sm89_v1
       framework: TensorRT-LLM
-      displayName: Boltz2 L40Sx1 SM89 V1 FP16 TRT
+      displayName: Boltz2 L40Sx1 SM89 V1 FP16 Trt
       ngcMetadata:
         baffed15a6e497b2a6a18437bca323a2f9c42f269d3f733a1b7fba0020eb9b02:
           model: mit/boltz2
@@ -132,6 +171,84 @@ models:
         value: 13GB
       - key: SM
         value: '89'
+      - key: V
+        value: '1'
+    - profileId: nim/mit/boltz2:1.3.0-gpub200_sm100_v1
+      framework: TensorRT-LLM
+      displayName: Boltz2 B200x1 SM100 V1 FP16 Trt
+      ngcMetadata:
+        ca0fa87fc9c52aea7475339eab9fbcec7637a304b261b4ba4450c085a7af4c4d:
+          model: mit/boltz2
+          release: 1.3.0
+          tags:
+            feat_lora: 'False'
+            gpu: B200
+            gpu_device: 2901:10de
+            nim_workspace_hash_v1: 9bf86f1e8426e435b6319e0e0d1b6e0a954aced6b59aaa4ed5075de4a7fc52d0
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: trt
+            sm: '100'
+            tp: '1'
+            v: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: TRT
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: SM
+        value: '100'
+      - key: V
+        value: '1'
+    - profileId: nim/mit/boltz2:1.3.0-gpugb200_sm100_v1
+      framework: TensorRT-LLM
+      displayName: Boltz2 GB200x1 SM100 V1 FP16 Trt
+      ngcMetadata:
+        f27c6b6a5dc860324bcc06dcc0ae502d9840546188e69238ebf58376d26f0539:
+          model: mit/boltz2
+          release: 1.3.0
+          tags:
+            feat_lora: 'False'
+            gpu: GB200
+            gpu_device: 2941:10de
+            nim_workspace_hash_v1: 9b199cebb2c954abbc94f5ebf37b0052988a7aa8987617c9271605d5e2e2f0b5
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: trt
+            sm: '100'
+            tp: '1'
+            v: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: TRT
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.3.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: SM
+        value: '100'
       - key: V
         value: '1'
   labels:

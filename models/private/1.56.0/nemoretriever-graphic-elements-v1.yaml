@@ -45,6 +45,34 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:b200x1-trt-fp16-jtagdygnhq
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Graphic Elements V1 B200x1 FP16
+      ngcMetadata:
+        0f3b150544da8a053048c1e2a37a282b2c43f09a99253882578d12bc1f2cfca6:
+          model: nvidia/nemoretriever-graphic-elements-v1
+          release: 1.6.0
+          tags:
+            backend: triton
+            compute_capability: '10.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.6.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
     - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:h100x1-trt-fp16-jswckvqtmq
       framework: TensorRT-LLM
       displayName: Nemoretriever Graphic Elements V1 H100x1 FP16
@@ -63,6 +91,34 @@ models:
         value: FP16
       - key: GPU
         value: H100
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.6.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:rtx6000-blackwell-svx1-trt-fp16-1ted4cchma
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Graphic Elements V1 RTX6000x1 FP16
+      ngcMetadata:
+        b4cc2f8b3d2dcf1afdcafbee8ea694c53aeee642d76f709ed0e79477b68a8dde:
+          model: nvidia/nemoretriever-graphic-elements-v1
+          release: 1.6.0
+          tags:
+            backend: triton
+            compute_capability: '12.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: RTX6000
       - key: COUNT
         value: 1
       - key: NIM VERSION
