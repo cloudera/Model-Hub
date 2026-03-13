@@ -12,6 +12,78 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/mistralai/containers/mistral-7b-instruct-v0.3
     optimizationProfiles:
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 H200_NVLx1 BF16 Throughput
+      ngcMetadata:
+        090aed9ae0f4312f525a15003626f36dd30aded5cabb5bfd580cfb88510f7175:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200_NVL
+            gpu_device: 233b:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 713cc9e4be3d70c5a99ac45e46c5cd2cb271b5c16228561f1daf992f8feac8ff
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x2-latency-fp8-6ewdxacbyg
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GB200x2 FP8 Latency
+      ngcMetadata:
+        0c430e8114b7d75876e040eb9e57f94f8780339c06d2afd7d52b8b520fe7d002:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 783069b3e78233c4649dfbd4031e5e32109f7eda1e54e623f39afa6771f69812
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx2-latency-fp8-werjmjtilg
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 L40Sx2 FP8 Latency
@@ -46,6 +118,42 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 H200_NVLx2 BF16 Latency
+      ngcMetadata:
+        1c8d8380b88e5e0b9dfa9bd7d9808e7b44533516e015e085121a17bec9f2803a:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200_NVL
+            gpu_device: 233b:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 9a8267f26d4614a846205cc91d2282acd830762361507abc23e58dfe78cd412c
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200_NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x2-latency-fp8-nnktn87ayw
@@ -84,6 +192,42 @@ models:
         value: 8GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 BF16 Latency
+      ngcMetadata:
+        21d116fd5db9b38ae613c9ec2117e796e0aeec6d8f24e92928ca1171b5f0db8a:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: c78a84fee0362ed61ba62a668240cb6619c459e8c105ba274e13c186512f846d
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x1-throughput-bf16-fii9d12dng
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 H200x1 BF16 Throughput
@@ -118,6 +262,42 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 A100_SXM4_40GBx2 BF16 Latency
+      ngcMetadata:
+        31f3565f323b25fb739b4319a054db75e52ad21e1e3adb93de0b7f932de6e954:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: A100_SXM4_40GB
+            gpu_device: 20b0:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: b84730aefe89d65c679b93ea096271ba583373eca30f081c680bed7dcff8f7c1
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100_SXM4_40GB
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 20B0:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x1-throughput-bf16-p8aaj1ui3a
@@ -156,6 +336,114 @@ models:
         value: 14GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GH200_144GBx1 BF16 Throughput
+      ngcMetadata:
+        3822e73f5b87aab36b8fa7f67f06b027ee79f259d4a6f6149d6e6e8834e15694:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200_144GB
+            gpu_device: 2348:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 99355664e85deab8cef6bcda9b64b62eae3e6cb4fb72654992701318971d9cab
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200_144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GH200_144GBx1 BF16 Latency
+      ngcMetadata:
+        3929f189d9fe09ced84378d555047f329e9b5d22ea05a84dfc27bf4e423ab2ab:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200_144GB
+            gpu_device: 2348:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: a01faf2c27412adcdcc908764085b24d58398d230a42ecc86b4d0241886d55b6
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200_144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GH200_144GBx1 FP8 Throughput
+      ngcMetadata:
+        3d2e4a566abec5fdab7016cf1ee4b9f0a28c0bbaf1ab5ba1fbcb739b9fbbfab6:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200_144GB
+            gpu_device: 2348:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: dcbbb88340365f3a3ce5006101441492476ef83235d14fb9d2eaf245868f6e51
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx1-throughput-bf16-wgortubrfa
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 L40Sx1 BF16 Throughput
@@ -190,6 +478,330 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x2-latency-bf16-k0zyvwltfq
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 B200x2 BF16 Latency
+      ngcMetadata:
+        4369fb715f1d8a01cec62d750cbea038af0b5f5f032a372236fe6cb7ecaad891:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: b41d026216b5cc343dc386982bc593595899581dd03e2e608bc13a7d7fe1fb71
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 H100_NVLx1 FP8 Throughput
+      ngcMetadata:
+        4c9a845c4a8037390a5d87a8e2db4a9ef8c7cc5c5e613960b771adce3e548deb:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 00ae490b209e488c85835da5990d77b81c03bd111838c6ab188f5b3c1084f5f0
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x2-latency-bf16-wkgtx84w0q
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GB200x2 BF16 Latency
+      ngcMetadata:
+        514f55258d4cffc08411144a8709add1d6dfda7563894feee671bad11a2be79c:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 054261eb6e99db9b73dd8ff0146b8748e4676c27344512bb070ffd471c54002d
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 H100_NVLx2 FP8 Latency
+      ngcMetadata:
+        5165a3e3a29e9d6717869d3960133151f93437c8c34a297c2b6080763bfdcf32:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 20bd7371c735a556fea27dd89285a4bc2bb8cc5630c912da7ba9bdfd4fe0f149
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x1-throughput-bf16-bzgxd7omcg
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 B200x1 BF16 Throughput
+      ngcMetadata:
+        5a9eef29a1519f40178baec3444a0133990c5ed49ebd6e0ee5de5391f403c25f:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 99677dd60c3849da7d5daab13e7094c8f15c1ed0b324691dcfeb07c340748155
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x1-throughput-fp8-1kujysl0bw
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 B200x1 FP8 Throughput
+      ngcMetadata:
+        61a13f62e79b27cd7c69c32477b58857196ccc914a1b9f526fb9715238ceaddd:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: f9ef3850321d85a46a3267f358c73bc62479d5fd3bd077bfbaa54968926284ab
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GH200_144GBx1 FP8 Latency
+      ngcMetadata:
+        6bdad363d842f0dc7b89c0bcdbfce49ab7ff3c77a7f1aaf741e10b5a8cfc7b65:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200_144GB
+            gpu_device: 2348:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 05684b1b6aeb72f02bd8422d6f4bd2c193e2409465575f3b01fd7fe0ca606056
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GH200_480GBx1 BF16 Latency
+      ngcMetadata:
+        6e083975f86a7bd245f26d412ca4c0d99bed4a05e85eb516c7bf23d4a8dbc635:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 01c793b12ef404fe8d3d97f17a5851e07af0ce3e1ed7028940203e38020cff5b
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 FP8 Throughput
+      ngcMetadata:
+        6f9107642dc7198eb0084ba462da560fe696b28a74dc9bd5747f58b2229c0833:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 60a40aa9dddaddacb1f4f7ebbb536b33494d4a252b563fb321152125c6e5be1d
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a10gx1-throughput-bf16-dbarntjrxg
@@ -262,6 +874,114 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 H200_NVLx1 FP8 Throughput
+      ngcMetadata:
+        8e60a02116ccc9ed3587946a5b2ad0c431826d89e36be714dfa92044e84579de:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200_NVL
+            gpu_device: 233b:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: e395395c3d17874ecbc16978f25f851e3a8e4b08e6f107f8d1e00dc1f485aad2
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 H100_NVLx1 BF16 Throughput
+      ngcMetadata:
+        8f1c5ed6338e2517b1db9987ca4a9cab78ad17acca14801eb301cd52fb60a4e2:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 7b2c3bc5c67da0408b365dcde48b64e5ac4c4b316e7061e4da026d8ebfa23c60
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GH200_480GBx1 BF16 Throughput
+      ngcMetadata:
+        a049a483413cc9fcf09502fb199582de0948a105c7d58ed41023f74fcf46a84a:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 6fd41902191734a0e6c6105beef1c9eaec18a21786868ec1f5cf9876f924709f
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x2-latency-bf16-utfzkvbx7q
@@ -408,6 +1128,114 @@ models:
         value: 14GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 A100_SXM4_40GBx1 BF16 Throughput
+      ngcMetadata:
+        c30c03b6c527e5bbc13c9024db7888bd3ef1f81f5437dd5eeb639963e7f956c0:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: A100_SXM4_40GB
+            gpu_device: 20b0:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 1b85347f49cd97c7a43491a4065364128a860973559d1fbb418436cf1d22071f
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100_SXM4_40GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20B0:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GH200_480GBx1 FP8 Latency
+      ngcMetadata:
+        c5440e61e502d2bde9d8182735ec4b3cb5dc07386768b22e3fd11afb8f9123e1:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: c1481c7a0c16fafd6097a18868e47f96bdb3e9bfef14223ed63d4c58b0b41046
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 FP8 Latency
+      ngcMetadata:
+        c6298bc319a27d0b8ce68b6ff2ee478f4503a532f85281db4e58e09bdc1e828d:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: bb8fc0519d6e093698164f6283010687e2acf7b28c240faeebcb9f6d04f3bdfd
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a100x2-latency-bf16-eao98qqyaq
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 A100x2 BF16 Latency
@@ -438,6 +1266,42 @@ models:
         value: 2
       - key: GPU DEVICE
         value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x1-throughput-bf16-b7lzpmozrg
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GB200x1 BF16 Throughput
+      ngcMetadata:
+        d3e771cdfdccfc6685afb1749f581cbd723b3f4a7180453c366e49fe02201035:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 36332f865d9e636409ef1d780e1e129a7958c56612e251e991090198a71ecca2
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
       - key: NIM VERSION
         value: 1.12.0
       - key: DOWNLOAD SIZE
@@ -478,6 +1342,150 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x2-latency-fp8-dmol-yoeqa
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 B200x2 FP8 Latency
+      ngcMetadata:
+        d772d81834faf0d0f3021ff92ea6893131a28c7b1eacedff9586b5304c768e16:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: d21056b60d5e01083565a8671683b54e86879aa36a36475318838deec4613666
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GH200_480GBx1 FP8 Throughput
+      ngcMetadata:
+        e2392b25430a3f1fcec000a51661f633d36450438db8b09765dffaced7fac7e7:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 5ae57ff46795ac07b5bb351fafc5f767a4c62e864a2c283d982e92c8d82273e8
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 BF16 Throughput
+      ngcMetadata:
+        e2698f06fe02b17f4ac157fb39bd9ae75282d96e0a618c96ca9472a04bd3679b:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: e8b647653354c51429e61400d7e38ea59531989d0808b570fa5755b7d6bfe130
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 H200_NVLx2 FP8 Latency
+      ngcMetadata:
+        e7014f30a669dca5d114ee37df6385a5453b02a23614832ef7bdb0e7f1622d11:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200_NVL
+            gpu_device: 233b:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 43c16ff7a8e64039006342b0ba5d0067d7b3e49f7a913f06e67128585266aa67
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200_NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx2-latency-bf16--dooucx8xw
@@ -550,6 +1558,78 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x1-throughput-fp8-ndgj2enqyq
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 GB200x1 FP8 Throughput
+      ngcMetadata:
+        f76535fba1856c95ce15f11a3228fcb0469242f4921644d94fa682220c518c3f:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: c0ef6863d68dbd3c3fdb7f3a0e8f2da9daf77c94757f228736a335de4a1ae628
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 H100_NVLx2 BF16 Latency
+      ngcMetadata:
+        f97a97adc7e9ca1ae225535ac8949af0f306846b429f079946fcc43cf0346f20:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 620affc99411e713b97069819f83de5bb626bf16dcb1d064492ad50dfc9641b7
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x1-throughput-fp8-ez1figc57w

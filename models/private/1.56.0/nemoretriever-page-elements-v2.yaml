@@ -45,6 +45,34 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:b200x1-trt-fp16-ayukzqdapq
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Page Elements V2 B200x1 FP16
+      ngcMetadata:
+        0f3b150544da8a053048c1e2a37a282b2c43f09a99253882578d12bc1f2cfca6:
+          model: nvidia/nemoretriever-page-elements-v2
+          release: 1.6.0
+          tags:
+            backend: triton
+            compute_capability: '10.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.6.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
     - profileId: nim/nvidia/nemoretriever-page-elements-v2:h100x1-trt-fp16-nuq3ijukrw
       framework: TensorRT-LLM
       displayName: Nemoretriever Page Elements V2 H100x1 FP16
@@ -63,6 +91,34 @@ models:
         value: FP16
       - key: GPU
         value: H100
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.6.0
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: BACKEND
+        value: TRITON
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/nemoretriever-page-elements-v2:rtx6000-blackwell-svx1-trt-fp16-xd1wfged5w
+      framework: TensorRT-LLM
+      displayName: Nemoretriever Page Elements V2 RTX6000x1 FP16
+      ngcMetadata:
+        b4cc2f8b3d2dcf1afdcafbee8ea694c53aeee642d76f709ed0e79477b68a8dde:
+          model: nvidia/nemoretriever-page-elements-v2
+          release: 1.6.0
+          tags:
+            backend: triton
+            compute_capability: '12.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: RTX6000
       - key: COUNT
         value: 1
       - key: NIM VERSION
@@ -162,5 +218,5 @@ models:
   config:
     architectures:
     - Other
-    modelType: nim
+    modelType: NIM
   license: NVIDIA AI Foundation Models Community License
