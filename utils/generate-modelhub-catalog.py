@@ -9,7 +9,7 @@
 #
 #  High level overview:
 #  Contract - https://docs.google.com/document/d/1GJoefhPx1bPH1hQYG6PZjlzgqDofJWEsbJ_0LIQ5whc/edit?tab=t.0
-#  --include-vllm - has been used for OpenAI models - 20B & 120B; And also for nemotron-3-nano  (same scenario in both public and private). Also, all models starting NIM 2.0 will need this and thus at that time, maybe we can make this flag default
+#  --include-vllm - has been used for OpenAI models - 20B & 120B; nemotron-3-nano & nemotron-3-super-120b-a12b (same scenario in both public and private). Also, all models starting NIM 2.0 will need this and thus at that time, maybe we can make this flag default
 #  ONNX profiles: included by default; use "--no-include-onnx" to disable but they have never been disabled across form factors
 #  in public, we have a whilelist of GPUs alongwith supported gpu_device. At the same time, min/max counts for each GPU are also supported in public cloud. 
 #       --- in private, all gpus with any gpu_device, min/max counts are supported are supported (after top level filtering with feat_lora: true and vllm profiles unless --include-vllm is set)
@@ -1038,7 +1038,7 @@ def main():
             # Only process generic profiles
             if not is_generic_profile(tags):
                 # If include_vllm is set and this is a VLLM generic profile (no GPU), include as-is
-                if args.include_vllm and tags.get("llm_engine", "").lower() == "vllm" and not tags.get("gpu", "").strip():
+                if args.include_vllm and tags.get("llm_engine", "").lower() == "vllm" and not tags.get("gpu", "").strip() and tags.get("feat_lora", "").lower() != "true":
                     profile_id_uri = profile_id_from_workspace(profile, "")  # No specific GPU
                     if profile_id_uri:
                         display_name = generate_display_name_private(model, tags)
