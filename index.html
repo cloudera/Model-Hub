@@ -248,6 +248,26 @@
       padding: 2px 7px;
     }
 
+    /* ── Recommended badge ── */
+    .recommended-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      color: #FF550D;
+      border: 1px solid #FF550D;
+      border-radius: 4px;
+      padding: 1px 6px;
+      white-space: nowrap;
+    }
+    .card.recommended {
+      border-color: #FF550D;
+      box-shadow: 0 0 0 1px #FF550D22, var(--shadow);
+    }
+    .card.recommended:hover {
+      box-shadow: 0 0 0 1px #FF550D44, var(--shadow-lg);
+    }
+
     /* ── Category badge colors ── */
     .cat-badge {
       display: inline-block;
@@ -753,6 +773,11 @@
   let activeSource = 'All';
   let searchQuery = '';
 
+  // ── Recommended models (matched by displayName) ───────────────────
+  const RECOMMENDED = new Set([
+    'Nemotron 3 Super 120B A12B',
+  ]);
+
   // ── Category → CSS class ──────────────────────────────────────────
   const CATEGORY_META = {
     'Language':           { cls: 'cat-language' },
@@ -829,8 +854,10 @@
       .map(v => { const m = v.id.match(/\d+(\.\d+)?[BMKT](?=\b)/i); return m ? m[0].toUpperCase() : null; })
       .filter(Boolean))];
 
+    const displayName = m.displayName || m.name || '';
     return {
-      displayName: m.displayName || m.name || '',
+      displayName,
+      recommended: RECOMMENDED.has(displayName),
       category: m.category || '',
       modelType: m.type || 'NGC',
       description: m.description || '',
@@ -855,7 +882,7 @@
                !m.description.toLowerCase().includes(q) &&
                !m.category.toLowerCase().includes(q)) return false;
       return true;
-    });
+    }).sort((a, b) => (b.recommended ? 1 : 0) - (a.recommended ? 1 : 0));
   }
 
   // ── Render helpers ────────────────────────────────────────────────
@@ -885,7 +912,7 @@
 
   function buildCard(model) {
     const { cls } = catMeta(model.category);
-    const card = h('div', { class: 'card' });
+    const card = h('div', { class: `card${model.recommended ? ' recommended' : ''}` });
     card.addEventListener('click', () => openModal(model));
 
     const header = h('div', { class: 'card-header' });
@@ -893,6 +920,8 @@
     tw.appendChild(h('div', { class: 'card-name', title: model.displayName }, model.displayName));
     const catBadge = h('div', { class: 'card-category' });
     catBadge.appendChild(h('span', { class: `cat-badge ${cls}` }, model.category || 'NVIDIA NIM'));
+    if (model.recommended)
+      catBadge.appendChild(h('span', { class: 'recommended-badge' }, '★ Recommended'));
     if (model.sizeLabels.length > 1)
       catBadge.appendChild(h('span', { class: 'card-sizes' }, model.sizeLabels.join(' · ')));
     tw.appendChild(catBadge);
