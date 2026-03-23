@@ -850,7 +850,7 @@
     return allModels.filter(m => {
       if (activeSource !== 'All' && m.modelType !== activeSource) return false;
       if (activeCategory !== 'All' && m.category !== activeCategory) return false;
-      if (activeGPU !== 'All' && !m.availableGPUs.includes(activeGPU)) return false;
+      if (activeGPU !== 'All' && m.availableGPUs.length > 0 && !m.availableGPUs.includes(activeGPU)) return false;
       if (q && !m.displayName.toLowerCase().includes(q) &&
                !m.description.toLowerCase().includes(q) &&
                !m.category.toLowerCase().includes(q)) return false;
