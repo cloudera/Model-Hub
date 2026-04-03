@@ -84,12 +84,12 @@
     .profile-chip { font-size: 11px; font-weight: 500; background: #fff8e6; color: #92500a; border: 1px solid #fcd87e; border-radius: 4px; padding: 2px 7px; }
 
     /* ── Recommended ── */
-    .recommended-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: #FF550D; border: 1px solid #FF550D; border-radius: 4px; padding: 1px 6px; white-space: nowrap; }
+    .rec-banner { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #fff; background: #FF550D; padding: 3px 14px; margin: -14px -14px 0; border-radius: 6px 6px 0 0; display: block; }
     .card.recommended { border-color: #FF550D; box-shadow: 0 0 0 1px #FF550D22, var(--shadow); }
     .card.recommended:hover { box-shadow: 0 0 0 1px #FF550D44, var(--shadow-lg); }
 
     /* ── Category badges ── */
-    .cat-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: .2px; }
+    .cat-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: .2px; border: 1px solid transparent; line-height: 1.4; }
     .cat-language  { background: #e8f0fe; color: #1558d6; }
     .cat-code      { background: #f3e8ff; color: #7c3aed; }
     .cat-retrieval { background: #fff3e0; color: #c45c00; }
@@ -105,6 +105,13 @@
     .source-icon::after { content: attr(data-tooltip); position: absolute; bottom: calc(100% + 6px); right: 0; background: #1b2329; color: #fff; font-size: 11px; font-weight: 500; white-space: nowrap; padding: 4px 8px; border-radius: 4px; pointer-events: none; opacity: 0; transition: opacity .15s; }
     .source-icon:hover::after { opacity: 1; }
     .source-badge-inline { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
+
+    /* ── Artificial Analysis intelligence score ── */
+    .aa-score { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f1f3f4; color: #555e6a; white-space: nowrap; text-decoration: none; cursor: pointer; font-family: inherit; line-height: 1.4; border: 1px solid transparent; }
+    .aa-score:hover { filter: brightness(.92); }
+    .aa-attribution { font-size: 11px; color: var(--text-muted); }
+    .aa-attribution a { color: var(--text-muted); text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 2px; transition: color .15s, text-decoration-color .15s; }
+    .aa-attribution a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
     /* ── Empty / Loading ── */
     .state-center { text-align: center; padding: 60px 20px; color: var(--text-muted); }
@@ -302,7 +309,7 @@
         <p>Loading models…</p>
       </div>
     </div>
-    <div style="text-align:right;margin-top:12px">
+    <div style="margin-top:12px">
       <span class="results-bar" id="results-bar"></span>
     </div>
   </div>
@@ -328,6 +335,7 @@
             <th data-col="profile">Profile</th>
             <th data-col="precision">Precision</th>
             <th data-col="count">GPUs</th>
+            <th data-col="intelligence">Intelligence</th>
             <th data-col="download">Download Size</th>
           </tr>
         </thead>
@@ -350,11 +358,13 @@
     <div class="modal-tabs">
       <button class="tab-btn active" data-tab="overview">Overview</button>
       <button class="tab-btn" data-tab="profiles">Profiles</button>
+      <button class="tab-btn" data-tab="evaluations">Evaluations</button>
       <button class="tab-btn" data-tab="model-card">Model Card</button>
     </div>
     <div class="modal-body">
       <div class="tab-panel active" id="tab-overview"></div>
       <div class="tab-panel" id="tab-profiles"></div>
+      <div class="tab-panel" id="tab-evaluations"></div>
       <div class="tab-panel" id="tab-model-card"></div>
     </div>
   </div>
@@ -430,51 +440,60 @@
     const models = [];
     results.forEach((r, i) => {
       if (r.status === 'rejected') { console.warn(`Failed to load ${mergeOrder.merge_order[i]}:`, r.reason); return; }
-      (r.value.models || []).forEach(m => models.push(processModel(m)));
+      (r.value.models || []).forEach(m => processModel(m).forEach(entry => models.push(entry)));
     });
     return models;
   }
 
+  // Returns one model object per variant so each size gets its own tile/row
+  // and can be matched independently to AA intelligence scores.
   function processModel(m) {
-    const variants = [];
-    const gpus = new Set();
-    const precisions = new Set();
-    const optProfiles = new Set();
-    let modelCardMarkdown = '';
-    let sourceURL = '';
+    const rawVariants = m.modelVariants || [];
+    const multiVariant = rawVariants.length > 1;
 
-    (m.modelVariants || []).forEach((v, i) => {
-      if (i === 0) {
-        sourceURL = v.source?.URL || '';
-        try { modelCardMarkdown = JSON.parse(atob(v.modelCard || '')).description || ''; } catch (_) {}
-      }
+    return rawVariants.map(v => {
+      const gpus = new Set();
+      const precisions = new Set();
+      const optProfiles = new Set();
+      let modelId = '';
+      let sourceURL = v.source?.URL || '';
+      let modelCardMarkdown = '';
+      try { modelCardMarkdown = JSON.parse(atob(v.modelCard || '')).description || ''; } catch (_) {}
+
       const variantProfiles = [];
       (v.optimizationProfiles || []).forEach(p => {
         const spec = Object.fromEntries((p.spec || []).map(s => [s.key, s.value]));
         if (spec.GPU) gpus.add(spec.GPU);
         if (spec.PRECISION) precisions.add(spec.PRECISION.toUpperCase());
         if (spec.PROFILE) optProfiles.add(spec.PROFILE.toUpperCase());
+        if (!modelId && p.ngcMetadata) {
+          const firstMeta = Object.values(p.ngcMetadata)[0];
+          if (firstMeta?.model) modelId = firstMeta.model;
+        }
         variantProfiles.push({ displayName: p.displayName || '', framework: p.framework || '', modelFormat: p.modelFormat || '', spec });
       });
-      variants.push({ id: v.variantId || '', profiles: variantProfiles });
+
+      const variant = { id: v.variantId || '', profiles: variantProfiles };
+      const sizeMatch = variant.id.match(/\d+(\.\d+)?[BMKT](?=\b)/i);
+      const sizeLabels = sizeMatch ? [sizeMatch[0].toUpperCase()] : [];
+
+      // For multi-variant YAMLs use the variantId as displayName so 120B and 20B
+      // get separate tiles with correct names; single-variant keeps the model-level name.
+      const displayName = multiVariant ? (v.variantId || m.displayName || m.name || '') : (m.displayName || m.name || '');
+      return {
+        displayName, modelId,
+        recommended: RECOMMENDED.has(displayName),
+        category: m.category || '',
+        modelType: m.type || 'NGC',
+        description: m.description || '',
+        sourceURL, modelCardMarkdown,
+        variants: [variant],
+        sizeLabels,
+        availableGPUs: [...gpus].sort(),
+        precisions: [...precisions].sort(),
+        optProfiles: [...optProfiles].sort(),
+      };
     });
-
-    const sizeLabels = [...new Set(variants
-      .map(v => { const m = v.id.match(/\d+(\.\d+)?[BMKT](?=\b)/i); return m ? m[0].toUpperCase() : null; })
-      .filter(Boolean))];
-
-    const displayName = m.displayName || m.name || '';
-    return {
-      displayName,
-      recommended: RECOMMENDED.has(displayName),
-      category: m.category || '',
-      modelType: m.type || 'NGC',
-      description: m.description || '',
-      sourceURL, modelCardMarkdown, variants, sizeLabels,
-      availableGPUs: [...gpus].sort(),
-      precisions: [...precisions].sort(),
-      optProfiles: [...optProfiles].sort(),
-    };
   }
 
   // ── Tile view ──────────────────────────────────────────────────────────────
@@ -517,15 +536,21 @@
   function buildCard(model) {
     const { cls } = catMeta(model.category);
     const card = h('div', { class: `card${model.recommended ? ' recommended' : ''}` });
-    card.addEventListener('click', () => openModal(model));
+    card.addEventListener('click', e => {
+      const tab = e.target.closest('.aa-badge-btn') ? 'evaluations' : null;
+      if (tab) e.stopPropagation();
+      openModal(model, null, tab);
+    });
 
     const header = h('div', { class: 'card-header' });
     const tw = h('div', { class: 'card-title-wrap' });
     tw.appendChild(h('div', { class: 'card-name', title: model.displayName }, model.displayName));
+    if (model.recommended)
+      card.appendChild(h('span', { class: 'rec-banner' }, '★ Recommended'));
     const catBadge = h('div', { class: 'card-category' });
     catBadge.appendChild(h('span', { class: `cat-badge ${cls}` }, model.category || 'NVIDIA NIM'));
-    if (model.recommended)
-      catBadge.appendChild(h('span', { class: 'recommended-badge' }, '★ Recommended'));
+    const aaBadgeHtml = aaScoreBadge(model.displayName, model.modelId);
+    if (aaBadgeHtml) catBadge.appendChild(h('span', { html: aaBadgeHtml }));
     if (model.sizeLabels.length > 1)
       catBadge.appendChild(h('span', { class: 'card-sizes' }, model.sizeLabels.join(' · ')));
     tw.appendChild(catBadge);
@@ -657,6 +682,11 @@
         case 'profile':   return dir * String(a.profile.spec['PROFILE'] || '').localeCompare(String(b.profile.spec['PROFILE'] || ''));
         case 'precision': return dir * (precisionRank(a.profile.spec['PRECISION']) - precisionRank(b.profile.spec['PRECISION']));
         case 'count':     return dir * (a.gpuCount - b.gpuCount);
+        case 'intelligence': {
+          const sa = aaMatch(a.model.displayName, a.model.modelId)?.score ?? -1;
+          const sb = aaMatch(b.model.displayName, b.model.modelId)?.score ?? -1;
+          return dir * (sa - sb);
+        }
         case 'download':  return dir * (a.downloadMB - b.downloadMB);
         default:          return 0;
       }
@@ -762,16 +792,20 @@
         <span class="source-icon ${isHF ? 'source-icon-hf' : 'source-icon-nim'}" data-tooltip="${isHF ? 'Hugging Face' : 'NVIDIA NIM'}">${isHF ? '🤗' : 'N'}</span>
       </td>
       <td>
-        <div class="col-model-name">${escapeHtml(model.displayName)}${model.recommended ? '<span class="recommended-badge" style="margin-left:6px;vertical-align:middle">★ Recommended</span>' : ''}</div>
+        <div class="col-model-name">${escapeHtml(model.displayName)}</div>
         <div class="col-model-cat"><span class="cat-badge ${cls}">${escapeHtml(model.category || 'NIM')}</span></div>
       </td>
       <td class="col-size">${sizeLabel ? escapeHtml(sizeLabel) : '<span class="col-empty">—</span>'}</td>
       <td>${mode ? escapeHtml(mode) : '<span class="col-empty">—</span>'}</td>
       <td>${precision ? escapeHtml(precision) : '<span class="col-empty">—</span>'}</td>
       <td>${gpuCell}</td>
+      <td>${aaScoreBadge(model.displayName, model.modelId) || '<span class="col-empty">—</span>'}</td>
       <td>${dlSize ? escapeHtml(dlSize) : '<span class="col-empty">—</span>'}</td>
     `;
-    tr.addEventListener('click', () => openModal(model, profile));
+    tr.addEventListener('click', e => {
+      const tab = e.target.closest('.aa-badge-btn') ? 'evaluations' : null;
+      openModal(model, profile, tab);
+    });
     return tr;
   }
 
@@ -839,7 +873,7 @@
   }
 
   // ── Modal ──────────────────────────────────────────────────────────────────
-  function openModal(model, clickedProfile = null) {
+  function openModal(model, clickedProfile = null, openTab = null) {
     document.getElementById('modal-title').textContent = model.displayName;
 
     const meta = document.getElementById('modal-meta');
@@ -893,6 +927,8 @@
           ${model.optProfiles.map(p => `<span class="profile-chip">${escapeHtml(p)}</span>`).join('')}
         </div>
       </div>` : ''}`;
+
+    const aaEntry = aaMatch(model.displayName, model.modelId);
 
     document.getElementById('tab-overview').innerHTML = `
       <div class="overview-section">
@@ -952,15 +988,72 @@
         '<p style="color:var(--text-muted);font-size:13px">No model card available.</p>';
     }
 
+    // Evaluations tab
+    const tabEval = document.getElementById('tab-evaluations');
+    if (aaEntry) {
+      const aaUrl = aaEntry.slug
+        ? `https://artificialanalysis.ai/models/${aaEntry.slug}`
+        : 'https://artificialanalysis.ai/';
+      const mainScore = Math.round(aaEntry.score);
+      const mainCls = mainScore >= 45 ? 'aa-high' : mainScore < 30 ? 'aa-low' : '';
+      const evals = aaEntry.evaluations || {};
+      const evalRows = Object.entries(evals)
+        .filter(([k]) => k !== 'artificial_analysis_intelligence_index')
+        .map(([k, v]) => {
+          const label = EVAL_LABELS[k] || k;
+          const isIndex = k.startsWith('artificial_analysis_');
+          const display = isIndex ? v.toFixed(1) : `${(v * 100).toFixed(1)}%`;
+          return `<tr>
+            <td style="padding:7px 16px 7px 0;font-size:13px;color:var(--text-primary)">${escapeHtml(label)}</td>
+            <td style="padding:7px 0;font-size:13px;font-weight:600;color:var(--text-primary);text-align:right">${display}</td>
+          </tr>`;
+        }).join('');
+
+      tabEval.innerHTML = `
+        <div class="overview-section" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <span class="aa-score ${mainCls}" style="font-size:16px;padding:6px 14px;cursor:default">⚡ ${mainScore}</span>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text-primary)">${escapeHtml(aaEntry.name)}</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:2px">
+              ${aaEntry.creator_name ? escapeHtml(aaEntry.creator_name) + ' · ' : ''}
+              ${aaEntry.release_date ? 'Released ' + escapeHtml(aaEntry.release_date) : ''}
+            </div>
+          </div>
+          <a href="${aaUrl}" target="_blank" rel="noopener" style="margin-left:auto;font-size:12px;color:var(--accent);display:flex;align-items:center;gap:4px;text-decoration:none">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View on Artificial Analysis
+          </a>
+        </div>
+        <div class="overview-section">
+          <div class="section-label">Artificial Analysis Intelligence Index</div>
+          <table style="border-collapse:collapse;width:100%;margin-top:4px">${evalRows}</table>
+        </div>
+        <div style="padding:0 24px 8px;font-size:11px;color:var(--text-muted)">
+          Scores sourced from <a href="https://artificialanalysis.ai/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Artificial Analysis</a>.
+          Proportion-based benchmarks shown as percentages; index scores shown as raw values.
+        </div>`;
+    } else {
+      tabEval.innerHTML = '<p style="color:var(--text-muted);font-size:13px">No Artificial Analysis data available for this model.</p>';
+    }
+
     // Hide the Profiles tab when coming from Fit Finder (a specific profile is already shown inline)
     document.querySelector('.tab-btn[data-tab="profiles"]').style.display = clickedProfile ? 'none' : '';
+    // Show Evaluations tab only when AA data is available
+    document.querySelector('.tab-btn[data-tab="evaluations"]').style.display = aaEntry ? '' : 'none';
 
-    const defaultTab = 'overview';
+    const defaultTab = openTab || 'overview';
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === defaultTab));
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === `tab-${defaultTab}`));
 
+
+
     document.getElementById('overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
+  }
+
+  function switchModalTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === `tab-${tab}`));
   }
 
   function closeModal() {
@@ -1004,8 +1097,104 @@
     });
   });
 
+  // ── Artificial Analysis intelligence scores ────────────────────────────────
+  let aaScores = new Map(); // key → { score, name }
+
+  function aaNorm(s) {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+
+  // modelId e.g. "openai/gpt-oss-120b"; falls back to name-based token matching.
+  // AA slugs may use dashes instead of dots and reorder tokens vs YAML modelIds,
+  // so we do token-overlap matching on the slug portion after normalization.
+  function aaMatch(displayName, modelId = '') {
+    if (modelId && aaScores.has(modelId)) return aaScores.get(modelId);
+    if (aaScores.has(displayName)) return aaScores.get(displayName);
+
+    if (modelId) {
+      // Normalize dots to dashes and lowercase for comparison
+      const normId = modelId.toLowerCase().replace(/\./g, '-');
+      const slashIdx = normId.indexOf('/');
+      const yamlCreator = slashIdx >= 0 ? normId.slice(0, slashIdx) : '';
+      const yamlSlug    = slashIdx >= 0 ? normId.slice(slashIdx + 1) : normId;
+      const yamlTokens  = yamlSlug.split('-').filter(t => t.length > 1);
+      let best = null, bestScore = 0;
+      for (const [key, val] of aaScores) {
+        if (!key.includes('/')) continue;
+        const aaSlashIdx = key.indexOf('/');
+        const aaCreator  = key.slice(0, aaSlashIdx).toLowerCase();
+        const aaSlug     = key.slice(aaSlashIdx + 1).toLowerCase().replace(/\./g, '-');
+        const aaTokens   = aaSlug.split('-').filter(t => t.length > 1);
+        const overlap    = aaTokens.filter(t => yamlTokens.includes(t)).length;
+        const sc         = overlap / Math.max(yamlTokens.length, aaTokens.length);
+        // Boost score for same/similar creator (deepseek-ai ≈ deepseek, no-creator ≈ slug prefix)
+        const sameCreator = aaCreator === yamlCreator ||
+          (yamlCreator === '' && aaSlug.startsWith(yamlSlug.split('-')[0]));
+        const adjusted = sameCreator ? sc + 0.1 : sc;
+        if (adjusted > bestScore && sc >= 0.6) { bestScore = adjusted; best = val; }
+      }
+      if (best) return best;
+    }
+
+    // Display name token fallback (non-creator/slug keys only)
+    const norm = aaNorm(displayName);
+    const tokens = norm.split(' ').filter(t => t.length > 2);
+    let best = null, bestScore = 0;
+    for (const [key, val] of aaScores) {
+      if (key.includes('/')) continue;
+      const kt = aaNorm(key).split(' ').filter(t => t.length > 2);
+      const overlap = kt.filter(t => tokens.includes(t)).length;
+      const sc = overlap / Math.max(tokens.length, kt.length);
+      if (sc > bestScore && sc >= 0.5) { bestScore = sc; best = val; }
+    }
+    return best;
+  }
+
+  const EVAL_LABELS = {
+    artificial_analysis_intelligence_index: 'Intelligence Index',
+    artificial_analysis_coding_index:       'Coding Index',
+    artificial_analysis_math_index:         'Math Index',
+    mmlu_pro:          'MMLU Pro',
+    gpqa:              'GPQA Diamond',
+    hle:               "Humanity's Last Exam",
+    livecodebench:     'LiveCodeBench',
+    scicode:           'SciCode',
+    aime:              'AIME 2024',
+    aime_25:           'AIME 2025',
+    ifbench:           'IFBench',
+    lcr:               'AA-LCR',
+    terminalbench_hard:'Terminal-Bench Hard',
+    tau2:              'τ²-Bench Telecom',
+  };
+
+  // Returns a <button> — clicking it opens the modal's Evaluations tab
+  function aaScoreBadge(displayName, modelId = '') {
+    const m = aaMatch(displayName, modelId);
+    if (!m) return '';
+    const s = Math.round(m.score);
+    return `<button class="aa-score aa-badge-btn" title="Artificial Analysis Intelligence Index">⚡ ${s}</button>`;
+  }
+
+  async function loadAAScores() {
+    try {
+      const res = await fetch('aa-scores.json');
+      if (!res.ok) return false;
+      const data = await res.json();
+      // data is { "creator/slug": {score, name}, "Full Name": {score, name}, ... }
+      Object.entries(data).forEach(([k, v]) => aaScores.set(k, v));
+      return true;
+    } catch (e) {
+      console.warn('AA scores unavailable:', e.message);
+      return false;
+    }
+  }
+
+  function showAAAttribution() {
+    document.getElementById('aa-attribution').style.display = '';
+  }
+
   // ── Boot ───────────────────────────────────────────────────────────────────
-  loadModels().then(models => {
+  loadModels().then(async models => {
     allModels = models;
     document.getElementById('header-count').textContent = `${allModels.length} models`;
     readState();
@@ -1016,6 +1205,13 @@
       document.getElementById('btn-tile').classList.add('active');
       renderGrid();
     }
+    // Load AA scores in background and re-render once available
+    const ok = await loadAAScores();
+    if (ok && aaScores.size > 0) {
+      showAAAttribution();
+      if (viewMode === 'row') renderRowTable();
+      else renderGrid();
+    }
   }).catch(err => {
     document.getElementById('grid').innerHTML =
       `<div class="state-center"><p>Failed to load models: ${escapeHtml(err.message)}</p></div>`;
@@ -1023,5 +1219,8 @@
   });
 })();
 </script>
+<footer style="text-align:center;padding:24px 0 16px;margin-top:8px">
+  <span class="aa-attribution" id="aa-attribution" style="display:none">Intelligence scores by <a href="https://artificialanalysis.ai/" target="_blank" rel="noopener">Artificial Analysis</a> &nbsp;·&nbsp; </span><span class="aa-attribution">© 2026 Cloudera, Inc. All rights reserved.</span>
+</footer>
 </body>
 </html>
