@@ -19,7 +19,6 @@
       --text-muted: #8a95a2;
       --accent: #0066cc;
       --header-bg: #1a2639;
-      --header-text: #ffffff;
       --gpu-bg: #f0faf4;
       --gpu-text: #1a7340;
       --gpu-border: #b7e2c8;
@@ -28,255 +27,69 @@
       --shadow-lg: 0 10px 25px rgba(0,0,0,.15), 0 4px 10px rgba(0,0,0,.08);
     }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text-primary);
-      min-height: 100vh;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
 
     /* ── Header ── */
-    header {
-      background: var(--header-bg);
-      color: var(--header-text);
-      padding: 0 24px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,.3);
-    }
-    .header-logo {
-      width: 28px;
-      height: 28px;
-      flex-shrink: 0;
-    }
-    header h1 {
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: .3px;
-    }
-    header .header-sub {
-      font-size: 13px;
-      color: rgba(255,255,255,.55);
-      margin-left: 4px;
-    }
+    header { background: var(--header-bg); color: #fff; padding: 0 24px; height: 56px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+    .header-logo { width: 28px; height: 28px; flex-shrink: 0; }
+    header h1 { font-size: 17px; font-weight: 600; letter-spacing: .3px; }
+    header .header-sub { font-size: 13px; color: rgba(255,255,255,.55); margin-left: 4px; }
     .header-spacer { flex: 1; }
-    .header-count {
-      font-size: 13px;
-      color: rgba(255,255,255,.65);
-    }
+    .header-count { font-size: 13px; color: rgba(255,255,255,.65); }
 
     /* ── Toolbar ── */
-    .toolbar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 5%;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .search-wrap {
-      position: relative;
-      flex: 0 0 280px;
-    }
-    .search-wrap svg {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
-      pointer-events: none;
-    }
-    #search {
-      width: 100%;
-      padding: 7px 10px 7px 34px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: 13px;
-      color: var(--text-primary);
-      background: var(--bg);
-      outline: none;
-      transition: border-color .15s;
-    }
+    .toolbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 5%; display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .search-wrap { position: relative; flex: 0 0 280px; }
+    .search-wrap svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+    #search { width: 100%; padding: 7px 10px 7px 34px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 13px; color: var(--text-primary); background: var(--bg); outline: none; transition: border-color .15s; }
     #search:focus { border-color: var(--accent); background: #fff; }
-
-    .filter-group {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .filter-label {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      white-space: nowrap;
-    }
-    .pill {
-      padding: 4px 12px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      background: var(--surface);
-      color: var(--text-secondary);
-      transition: all .15s;
-      white-space: nowrap;
-      user-select: none;
-    }
+    .filter-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .filter-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; white-space: nowrap; }
+    .toolbar-sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+    .pill { padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border); font-size: 12px; font-weight: 500; cursor: pointer; background: var(--surface); color: var(--text-secondary); transition: all .15s; white-space: nowrap; user-select: none; }
     .pill:hover { border-color: var(--accent); color: var(--accent); }
     .pill.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-    .toolbar-sep {
-      width: 1px;
-      height: 20px;
-      background: var(--border);
-      flex-shrink: 0;
-    }
+    /* ── View toggle ── */
+    .view-toggle { display: flex; gap: 0; margin-left: auto; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+    .view-btn { padding: 5px 12px; border: none; border-radius: 0; background: var(--surface); color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; transition: all .15s; white-space: nowrap; }
+    .view-btn + .view-btn { border-left: 1px solid var(--border); }
+    .view-btn:hover { background: var(--bg); color: var(--text-primary); }
+    .view-btn.active { background: var(--accent); color: #fff; }
 
-    /* ── Grid ── */
-    .content { padding: 14px 5% 24px; }
+    /* ── Row-view filter bar ── */
+    .row-filterbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 5%; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .results-bar { font-size: 13px; color: var(--text-muted); }
     .results-bar strong { color: var(--text-primary); }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 14px;
-    }
+    /* ── Grid ── */
+    .content { padding: 14px 5% 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+    .grid .state-center { grid-column: 1 / -1; }
 
     /* ── Card ── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 14px;
-      cursor: pointer;
-      transition: box-shadow .15s, transform .15s, border-color .15s;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      box-shadow: var(--shadow);
-    }
-    .card:hover {
-      box-shadow: var(--shadow-lg);
-      border-color: #b8c8e8;
-      transform: translateY(-1px);
-    }
-
-    .card-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; cursor: pointer; transition: box-shadow .15s, transform .15s, border-color .15s; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow); }
+    .card:hover { box-shadow: var(--shadow-lg); border-color: #b8c8e8; transform: translateY(-1px); }
+    .card-header { display: flex; align-items: flex-start; gap: 10px; }
     .card-title-wrap { flex: 1; min-width: 0; }
-    .card-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.3;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .card-category {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 2px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .card-sizes {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: .2px;
-    }
+    .card-name { font-size: 14px; font-weight: 600; color: var(--text-primary); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .card-category { font-size: 11px; color: var(--text-muted); margin-top: 2px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .card-sizes { font-size: 11px; font-weight: 600; color: var(--text-muted); letter-spacing: .2px; }
+    .card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
+    .card-footer { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px; }
 
-    .card-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      flex: 1;
-    }
+    /* ── Chips ── */
+    .gpu-chip { font-size: 11px; font-weight: 500; background: var(--gpu-bg); color: var(--gpu-text); border: 1px solid var(--gpu-border); border-radius: 4px; padding: 2px 7px; }
+    .precision-chip { font-size: 11px; font-weight: 500; background: #f3f0ff; color: #5b21b6; border: 1px solid #ddd6fe; border-radius: 4px; padding: 2px 7px; }
+    .profile-chip { font-size: 11px; font-weight: 500; background: #fff8e6; color: #92500a; border: 1px solid #fcd87e; border-radius: 4px; padding: 2px 7px; }
 
-    .card-footer {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-top: 2px;
-    }
-    .gpu-chip {
-      font-size: 11px;
-      font-weight: 500;
-      background: var(--gpu-bg);
-      color: var(--gpu-text);
-      border: 1px solid var(--gpu-border);
-      border-radius: 4px;
-      padding: 2px 7px;
-    }
-    .precision-chip {
-      font-size: 11px;
-      font-weight: 500;
-      background: #f3f0ff;
-      color: #5b21b6;
-      border: 1px solid #ddd6fe;
-      border-radius: 4px;
-      padding: 2px 7px;
-    }
-    .profile-chip {
-      font-size: 11px;
-      font-weight: 500;
-      background: #fff8e6;
-      color: #92500a;
-      border: 1px solid #fcd87e;
-      border-radius: 4px;
-      padding: 2px 7px;
-    }
+    /* ── Recommended ── */
+    .recommended-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: #FF550D; border: 1px solid #FF550D; border-radius: 4px; padding: 1px 6px; white-space: nowrap; }
+    .card.recommended { border-color: #FF550D; box-shadow: 0 0 0 1px #FF550D22, var(--shadow); }
+    .card.recommended:hover { box-shadow: 0 0 0 1px #FF550D44, var(--shadow-lg); }
 
-    /* ── Recommended badge ── */
-    .recommended-badge {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .6px;
-      color: #FF550D;
-      border: 1px solid #FF550D;
-      border-radius: 4px;
-      padding: 1px 6px;
-      white-space: nowrap;
-    }
-    .card.recommended {
-      border-color: #FF550D;
-      box-shadow: 0 0 0 1px #FF550D22, var(--shadow);
-    }
-    .card.recommended:hover {
-      box-shadow: 0 0 0 1px #FF550D44, var(--shadow-lg);
-    }
-
-    /* ── Category badge colors ── */
-    .cat-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 4px;
-      letter-spacing: .2px;
-    }
+    /* ── Category badges ── */
+    .cat-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: .2px; }
     .cat-language  { background: #e8f0fe; color: #1558d6; }
     .cat-code      { background: #f3e8ff; color: #7c3aed; }
     .cat-retrieval { background: #fff3e0; color: #c45c00; }
@@ -286,374 +99,107 @@
     .cat-default   { background: #f1f3f4; color: #555e6a; }
 
     /* ── Source icon ── */
-    .source-icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 800;
-      flex-shrink: 0;
-      line-height: 1;
-      position: relative;
-      cursor: default;
-    }
+    .source-icon { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0; line-height: 1; position: relative; cursor: default; }
     .source-icon-nim { background: #76b900; color: #fff; }
     .source-icon-hf  { background: #FFD21E; color: #1a1a1a; font-size: 13px; }
-    .source-icon::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: calc(100% + 6px);
-      right: 0;
-      background: #1b2329;
-      color: #fff;
-      font-size: 11px;
-      font-weight: 500;
-      white-space: nowrap;
-      padding: 4px 8px;
-      border-radius: 4px;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity .15s;
-    }
+    .source-icon::after { content: attr(data-tooltip); position: absolute; bottom: calc(100% + 6px); right: 0; background: #1b2329; color: #fff; font-size: 11px; font-weight: 500; white-space: nowrap; padding: 4px 8px; border-radius: 4px; pointer-events: none; opacity: 0; transition: opacity .15s; }
     .source-icon:hover::after { opacity: 1; }
-    .source-badge-inline {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
+    .source-badge-inline { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
 
     /* ── Empty / Loading ── */
-    .state-center {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-muted);
-    }
-    .state-center .spinner {
-      width: 36px;
-      height: 36px;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin .7s linear infinite;
-      margin: 0 auto 16px;
-    }
+    .state-center { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+    .state-center .spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 16px; }
     @keyframes spin { to { transform: rotate(360deg); } }
+    .state-center h3 { font-size: 17px; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; }
     .state-center p { font-size: 14px; }
 
+    /* ── Fit table (row view) ── */
+    .table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); overflow-x: auto; }
+    .fit-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .fit-table thead th { background: var(--bg); padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); border-bottom: 2px solid var(--border); white-space: nowrap; cursor: pointer; user-select: none; transition: color .15s; }
+    .fit-table thead th:hover { color: var(--accent); }
+    .fit-table thead th.sort-asc::after  { content: ' ▲'; color: var(--accent); }
+    .fit-table thead th.sort-desc::after { content: ' ▼'; color: var(--accent); }
+    .fit-table thead th.no-sort { cursor: default; width: 44px; padding: 10px 8px; text-align: center; }
+    .fit-table thead th.no-sort:hover { color: var(--text-muted); }
+    .fit-table tbody tr { cursor: pointer; transition: background .1s; }
+    .fit-table tbody tr:hover td { background: #f0f4ff; }
+    .fit-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; color: var(--text-secondary); }
+    .fit-table tbody tr:last-child td { border-bottom: none; }
+    .fit-table td.col-icon { padding: 10px 8px; text-align: center; width: 44px; }
+    .fit-table tbody tr.recommended td:first-child { border-left: 3px solid #FF550D; }
+    .fit-table tbody tr.recommended td { background: #fffaf8; }
+    .fit-table tbody tr.recommended:hover td { background: #fff0ea; }
+    .col-model-name { font-size: 13px; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+    .col-model-cat { margin-top: 3px; }
+    .col-size { font-size: 12px; font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+    .col-empty { color: var(--text-muted); }
+
     /* ── Modal ── */
-    .overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.45);
-      z-index: 200;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 200; align-items: center; justify-content: center; padding: 16px; }
     .overlay.open { display: flex; }
-
-    .modal {
-      background: var(--surface);
-      border-radius: 10px;
-      width: 100%;
-      max-width: 860px;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-    }
-
-    .modal-header {
-      padding: 20px 24px 16px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
+    .modal { background: var(--surface); border-radius: 10px; width: 100%; max-width: 860px; max-height: 90vh; display: flex; flex-direction: column; box-shadow: var(--shadow-lg); overflow: hidden; }
+    .modal-header { padding: 20px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 16px; }
     .modal-title-wrap { flex: 1; min-width: 0; }
-    .modal-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.3;
-    }
-    .modal-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 4px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .modal-meta a {
-      color: var(--accent);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 3px;
-    }
+    .modal-title { font-size: 18px; font-weight: 700; color: var(--text-primary); line-height: 1.3; }
+    .modal-meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .modal-meta a { color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 3px; }
     .modal-meta a:hover { text-decoration: underline; }
-    .modal-close {
-      width: 32px;
-      height: 32px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: none;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      flex-shrink: 0;
-      transition: all .15s;
-    }
+    .modal-close { width: 32px; height: 32px; border: 1px solid var(--border); border-radius: 6px; background: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); flex-shrink: 0; transition: all .15s; }
     .modal-close:hover { background: var(--bg); color: var(--text-primary); }
-
-    .modal-body {
-      overflow-y: auto;
-      flex: 1;
-      padding: 0;
-    }
-
-    .modal-tabs {
-      display: flex;
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      gap: 0;
-      background: var(--surface);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .tab-btn {
-      padding: 12px 16px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      cursor: pointer;
-      border: none;
-      background: none;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-      transition: all .15s;
-    }
+    .modal-body { overflow-y: auto; flex: 1; padding: 0; }
+    .modal-tabs { display: flex; border-bottom: 1px solid var(--border); padding: 0 24px; background: var(--surface); position: sticky; top: 0; z-index: 10; }
+    .tab-btn { padding: 12px 16px; font-size: 13px; font-weight: 500; color: var(--text-secondary); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .15s; }
     .tab-btn:hover { color: var(--accent); }
     .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-
     .tab-panel { display: none; padding: 20px 24px; }
     .tab-panel.active { display: block; }
-
-    /* ── Overview tab ── */
     .overview-section { margin-bottom: 20px; }
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .7px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-    .overview-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* ── Profiles table ── */
-    .profiles-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-    .profiles-table th {
-      text-align: left;
-      padding: 8px 12px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      color: var(--text-muted);
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-    .profiles-table td {
-      padding: 9px 12px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
-      vertical-align: middle;
-    }
+    .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px; color: var(--text-muted); margin-bottom: 8px; }
+    .overview-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .profiles-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .profiles-table th { text-align: left; padding: 8px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); background: var(--bg); border-bottom: 1px solid var(--border); }
+    .profiles-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: middle; }
     .profiles-table tr:last-child td { border-bottom: none; }
     .profiles-table tr:hover td { background: var(--bg); }
+    .profiles-table tr.match td { background: #f0faf4; }
+    .profiles-table tr.match td:first-child { border-left: 3px solid var(--gpu-text); padding-left: 9px; }
     .profile-name { color: var(--text-primary); font-weight: 500; }
-    .tag-sm {
-      display: inline-block;
-      padding: 1px 6px;
-      border-radius: 3px;
-      font-size: 11px;
-      font-weight: 500;
-    }
-    .tag-trt  { background: #e8f0fe; color: #1558d6; }
-    .tag-vllm { background: #e6f4ea; color: #1a7340; }
-    .tag-onnx { background: #fff3e0; color: #c45c00; }
-
-
-    /* ── Model Card tab ── */
-    .model-card-content {
-      font-size: 13.5px;
-      line-height: 1.7;
-      color: var(--text-secondary);
-    }
-    .model-card-content h1, .model-card-content h2 {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin: 20px 0 8px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid var(--border);
-    }
-    .model-card-content h3 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin: 14px 0 6px;
-    }
+    .model-card-content { font-size: 13.5px; line-height: 1.7; color: var(--text-secondary); }
+    .model-card-content h1, .model-card-content h2 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin: 20px 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+    .model-card-content h3 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin: 14px 0 6px; }
     .model-card-content p { margin-bottom: 10px; }
-    .model-card-content ul, .model-card-content ol {
-      margin: 6px 0 10px 20px;
-    }
+    .model-card-content ul, .model-card-content ol { margin: 6px 0 10px 20px; }
     .model-card-content li { margin-bottom: 3px; }
-    .model-card-content code {
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: 1px 5px;
-    }
-    .model-card-content pre {
-      background: #1e2732;
-      color: #e6edf3;
-      border-radius: 6px;
-      padding: 14px 16px;
-      overflow-x: auto;
-      margin: 10px 0;
-    }
-    .model-card-content pre code {
-      background: none;
-      border: none;
-      padding: 0;
-      color: inherit;
-      font-size: 12px;
-    }
-    .model-card-content table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-      margin: 10px 0;
-    }
-    .model-card-content th, .model-card-content td {
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      text-align: left;
-    }
+    .model-card-content code { font-family: "SFMono-Regular", Consolas, monospace; font-size: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; }
+    .model-card-content pre { background: #1e2732; color: #e6edf3; border-radius: 6px; padding: 14px 16px; overflow-x: auto; margin: 10px 0; }
+    .model-card-content pre code { background: none; border: none; padding: 0; color: inherit; font-size: 12px; }
+    .model-card-content table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 10px 0; }
+    .model-card-content th, .model-card-content td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
     .model-card-content th { background: var(--bg); font-weight: 600; }
     .model-card-content a { color: var(--accent); }
     .model-card-content img { max-width: 100%; height: auto; border-radius: 4px; }
 
-    /* ── Hero banner ── */
-    .hero {
-      background: linear-gradient(135deg, #1a2639 0%, #0d3259 60%, #0a4a7a 100%);
-      color: #fff;
-      padding: 28px 5% 24px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 24px;
-    }
+    /* ── Hero ── */
+    .hero { background: linear-gradient(135deg, #1a2639 0%, #0d3259 60%, #0a4a7a 100%); color: #fff; padding: 28px 5% 24px; display: flex; flex-direction: row; align-items: center; gap: 24px; }
     .hero-text { flex: 0 0 42%; }
-    .hero-eyebrow {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: #FF550D;
-      margin-bottom: 6px;
-    }
-    .hero h2 {
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 8px;
-      letter-spacing: -.2px;
-    }
-    .hero p {
-      font-size: 13.5px;
-      line-height: 1.6;
-      color: rgba(255,255,255,.75);
-      max-width: 640px;
-    }
-    .hero-steps {
-      display: flex;
-      flex-direction: row;
-      gap: 8px;
-      flex: 1;
-    }
-    .hero-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 10px 14px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius);
-      flex: 1;
-    }
-    .step-num {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #FF550D;
-      color: #fff;
-      font-size: 10px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .step-body strong {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 2px;
-    }
-    .step-body span {
-      font-size: 11.5px;
-      color: rgba(255,255,255,.6);
-      line-height: 1.4;
-    }
+    .hero-eyebrow { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #FF550D; margin-bottom: 6px; }
+    .hero h2 { font-size: 22px; font-weight: 700; line-height: 1.25; margin-bottom: 8px; letter-spacing: -.2px; }
+    .hero p { font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,.75); max-width: 640px; }
+    .hero-steps { display: flex; flex-direction: row; gap: 8px; flex: 1; }
+    .hero-step { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); flex: 1; }
+    .step-num { width: 20px; height: 20px; border-radius: 50%; background: #FF550D; color: #fff; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .step-body strong { display: block; font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+    .step-body span { font-size: 11.5px; color: rgba(255,255,255,.6); line-height: 1.4; }
 
     /* ── Responsive ── */
     @media (max-width: 600px) {
+      header { padding: 0 16px; }
       .toolbar { padding: 10px 16px; }
+      .row-filterbar { padding: 10px 16px; }
       .content { padding: 14px 16px 24px; }
       .modal-header { padding: 16px; }
       .tab-panel { padding: 16px; }
-      header { padding: 0 16px; }
       .search-wrap { flex: 1; }
       .hero { padding: 20px 16px 18px; flex-direction: column; gap: 14px; }
       .hero-text { max-width: 100%; }
@@ -675,23 +221,22 @@
 
 <div class="hero">
   <div class="hero-text">
-    <div class="hero-eyebrow">Cloudera AI · Model Hub</div>
+    <div class="hero-eyebrow">Cloudera AI</div>
     <h2>Production-ready AI models,<br>one click from deployment</h2>
     <p>
-      Model Hub gives you a curated catalog of NVIDIA NIM microservices — optimized,
-      enterprise-supported models spanning language, vision, speech, and more.
-      Import any model directly into the <strong style="color:#fff">Cloudera AI Registry</strong>
-      and deploy it instantly with
-      <a href="https://www.cloudera.com/products/machine-learning/ai-inference-service.html" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(255,255,255,.4)">Cloudera AI Inference Service</a>, with full GPU
-      optimization profiles selected for you.
+      Jumpstart your AI with Model Hub’s curated catalog of NVIDIA NIMs and Hugging Face 
+      models. Benefit from the turnkey, peak performance of fully optimized NIMs, or 
+      import any Hugging Face model for total flexibility. Once in the <strong style="color:#fff">Cloudera AI Registry</strong>, 
+      our <a href="https://www.cloudera.com/products/machine-learning/ai-inference-service.html" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(255,255,255,.4)">Inference Service</a>
+      takes over—deploying your models with a few clicks for immediate results.
     </p>
   </div>
   <div class="hero-steps">
     <div class="hero-step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <strong>Browse &amp; discover</strong>
-        <span>Find the right model for your use case</span>
+        <strong>Discover &amp; Fit</strong>
+        <span>Find the right model for your use case and GPU configuration</span>
       </div>
     </div>
     <div class="hero-step">
@@ -722,22 +267,73 @@
   <span class="filter-label">Category</span>
   <div id="category-filters" class="filter-group"></div>
   <div class="toolbar-sep"></div>
-  <span class="filter-label">GPU</span>
-  <div id="gpu-filters" class="filter-group"></div>
-  <div class="toolbar-sep"></div>
   <span class="filter-label">Source</span>
   <div id="source-filters" class="filter-group"></div>
+  <!-- View toggle -->
+  <div class="view-toggle">
+    <button class="view-btn" id="btn-tile">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Discover
+    </button>
+    <button class="view-btn" id="btn-row">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      Fit Finder
+    </button>
+  </div>
 </div>
 
+<!-- Row-view filter bar -->
+<div class="row-filterbar" id="row-filterbar" style="display:none">
+  <span class="filter-label">GPU</span>
+  <div id="gpu-selector" class="filter-group"></div>
+  <div class="toolbar-sep"></div>
+  <span class="filter-label">Count (up to)</span>
+  <div id="count-selector" class="filter-group"></div>
+  <span class="results-bar" id="row-results-bar" style="margin-left:auto"></span>
+</div>
+
+
 <div class="content">
-  <div class="grid" id="grid">
-    <div class="state-center">
-      <div class="spinner"></div>
-      <p>Loading models…</p>
+  <!-- Tile view -->
+  <div id="tile-view">
+    <div class="grid" id="grid">
+      <div class="state-center">
+        <div class="spinner"></div>
+        <p>Loading models…</p>
+      </div>
+    </div>
+    <div style="text-align:right;margin-top:12px">
+      <span class="results-bar" id="results-bar"></span>
     </div>
   </div>
-  <div style="text-align:right;margin-top:12px">
-    <span class="results-bar" id="results-bar"></span>
+
+  <!-- Row view -->
+  <div id="row-view" style="display:none">
+    <!-- Hint: shown when no GPU/count filter applied -->
+    <div id="fit-hint-b" style="display:none;margin-bottom:12px;padding:10px 16px;background:#e8f0fe;border:1px solid #aac4f5;border-radius:var(--radius);align-items:center;gap:10px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1558d6" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span style="font-size:13px;color:#1558d6;line-height:1.5">Each row is one optimization profile. Select a <strong>GPU</strong> and <strong>Count</strong> above to show only what fits your deployment.</span>
+    </div>
+    <div class="table-wrap">
+      <div class="state-center" id="row-state">
+        <div class="spinner"></div>
+        <p>Loading models…</p>
+      </div>
+      <table class="fit-table" id="fit-table" style="display:none">
+        <thead>
+          <tr>
+            <th class="no-sort"></th>
+            <th data-col="model">Model</th>
+            <th data-col="size">Size</th>
+            <th data-col="profile">Profile</th>
+            <th data-col="precision">Precision</th>
+            <th data-col="count">GPUs</th>
+            <th data-col="download">Download Size</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
   </div>
 </div>
 
@@ -766,31 +362,60 @@
 
 <script>
 (() => {
-  // ── State ──────────────────────────────────────────────────────────
+  // ── State ──────────────────────────────────────────────────────────────────
   let allModels = [];
-  let activeGPU = 'All';
+  let viewMode = 'tile';
+
+  // Shared
   let activeCategory = 'All';
-  let activeSource = 'All';
   let searchQuery = '';
 
-  // ── Recommended models (matched by displayName) ───────────────────
+  // Tile-only
+  let activeSource = 'All';
+
+  // Row-only
+  let flatRows = [];
+  let selectedGPU = null;
+  let selectedCount = null;
+  let sortKey = 'model';
+  let sortDir = 'asc';
+  let explicitSort = false;
+
   const RECOMMENDED = new Set([
     'Nemotron 3 Super 120B A12B',
+    'Nemotron 3 Super 120B',
   ]);
 
-  // ── Category → CSS class ──────────────────────────────────────────
   const CATEGORY_META = {
-    'Language':           { cls: 'cat-language' },
-    'Code':               { cls: 'cat-code' },
-    'Retrieval':          { cls: 'cat-retrieval' },
-    'Speech':             { cls: 'cat-speech' },
-    'Science':            { cls: 'cat-science' },
-    'Vision & Multimodal':{ cls: 'cat-vision' },
+    'Language':            { cls: 'cat-language' },
+    'Code':                { cls: 'cat-code' },
+    'Retrieval':           { cls: 'cat-retrieval' },
+    'Speech':              { cls: 'cat-speech' },
+    'Science':             { cls: 'cat-science' },
+    'Vision & Multimodal': { cls: 'cat-vision' },
   };
   const catMeta = c => CATEGORY_META[c] || { cls: 'cat-default' };
+  const CATEGORY_ORDER = ['Language', 'Code', 'Retrieval', 'Speech', 'Science', 'Vision & Multimodal'];
+  const GPU_ORDER = ['H200', 'H100', 'A100', 'L40S', 'A10G'];
+  const PRECISION_ORDER = ['FP32', 'BF16', 'FP16', 'FP8', 'INT8', 'INT4', 'MXFP4', 'FP4', 'INT3', 'INT2'];
 
+  // ── URL state ──────────────────────────────────────────────────────────────
+  function pushState() {
+    const params = new URLSearchParams();
+    if (viewMode === 'row') params.set('view', 'row');
+    if (selectedGPU) params.set('gpu', selectedGPU);
+    if (selectedCount !== null) params.set('count', selectedCount);
+    history.replaceState(null, '', location.pathname + (params.size ? '?' + params : ''));
+  }
 
-  // ── Fetch & parse all models ───────────────────────────────────────
+  function readState() {
+    const params = new URLSearchParams(location.search);
+    if (params.get('view') === 'row') viewMode = 'row';
+    selectedGPU = params.get('gpu') || null;
+    selectedCount = params.has('count') ? Number(params.get('count')) : null;
+  }
+
+  // ── Data loading ───────────────────────────────────────────────────────────
   async function fetchYaml(path) {
     const r = await fetch(path);
     if (!r.ok) throw new Error(`${r.status} ${path}`);
@@ -799,18 +424,12 @@
 
   async function loadModels() {
     const mergeOrder = await fetchYaml('models-order/public/merge-order.yaml');
-    const files = mergeOrder.merge_order;
-
     const results = await Promise.allSettled(
-      files.map(f => fetchYaml(`models/public/${f}`))
+      mergeOrder.merge_order.map(f => fetchYaml(`models/public/${f}`))
     );
-
     const models = [];
     results.forEach((r, i) => {
-      if (r.status === 'rejected') {
-        console.warn(`Failed to load ${files[i]}:`, r.reason);
-        return;
-      }
+      if (r.status === 'rejected') { console.warn(`Failed to load ${mergeOrder.merge_order[i]}:`, r.reason); return; }
       (r.value.models || []).forEach(m => models.push(processModel(m)));
     });
     return models;
@@ -827,11 +446,7 @@
     (m.modelVariants || []).forEach((v, i) => {
       if (i === 0) {
         sourceURL = v.source?.URL || '';
-        try {
-          const decoded = atob(v.modelCard || '');
-          const card = JSON.parse(decoded);
-          modelCardMarkdown = card.description || '';
-        } catch (_) {}
+        try { modelCardMarkdown = JSON.parse(atob(v.modelCard || '')).description || ''; } catch (_) {}
       }
       const variantProfiles = [];
       (v.optimizationProfiles || []).forEach(p => {
@@ -839,17 +454,11 @@
         if (spec.GPU) gpus.add(spec.GPU);
         if (spec.PRECISION) precisions.add(spec.PRECISION.toUpperCase());
         if (spec.PROFILE) optProfiles.add(spec.PROFILE.toUpperCase());
-        variantProfiles.push({
-          displayName: p.displayName || '',
-          framework: p.framework || '',
-          modelFormat: p.modelFormat || '',
-          spec,
-        });
+        variantProfiles.push({ displayName: p.displayName || '', framework: p.framework || '', modelFormat: p.modelFormat || '', spec });
       });
       variants.push({ id: v.variantId || '', profiles: variantProfiles });
     });
 
-    // Extract parameter-count label from variantId, e.g. "Llama 3.1 70B Instruct" → "70B"
     const sizeLabels = [...new Set(variants
       .map(v => { const m = v.id.match(/\d+(\.\d+)?[BMKT](?=\b)/i); return m ? m[0].toUpperCase() : null; })
       .filter(Boolean))];
@@ -861,23 +470,19 @@
       category: m.category || '',
       modelType: m.type || 'NGC',
       description: m.description || '',
-      sourceURL,
-      modelCardMarkdown,
-      variants,
-      sizeLabels,
+      sourceURL, modelCardMarkdown, variants, sizeLabels,
       availableGPUs: [...gpus].sort(),
       precisions: [...precisions].sort(),
       optProfiles: [...optProfiles].sort(),
     };
   }
 
-  // ── Filtering ─────────────────────────────────────────────────────
-  function filtered() {
+  // ── Tile view ──────────────────────────────────────────────────────────────
+  function filteredModels() {
     const q = searchQuery.toLowerCase();
     return allModels.filter(m => {
       if (activeSource !== 'All' && m.modelType !== activeSource) return false;
       if (activeCategory !== 'All' && m.category !== activeCategory) return false;
-      if (activeGPU !== 'All' && m.availableGPUs.length > 0 && !m.availableGPUs.includes(activeGPU)) return false;
       if (q && !m.displayName.toLowerCase().includes(q) &&
                !m.description.toLowerCase().includes(q) &&
                !m.category.toLowerCase().includes(q)) return false;
@@ -885,7 +490,6 @@
     }).sort((a, b) => (b.recommended ? 1 : 0) - (a.recommended ? 1 : 0));
   }
 
-  // ── Render helpers ────────────────────────────────────────────────
   function h(tag, attrs, ...children) {
     const el = document.createElement(tag);
     Object.entries(attrs || {}).forEach(([k, v]) => {
@@ -948,81 +552,296 @@
     return card;
   }
 
-  // ── Render grid ───────────────────────────────────────────────────
   function renderGrid() {
-    const models = filtered();
+    const models = filteredModels();
     const grid = document.getElementById('grid');
     grid.innerHTML = '';
 
     document.getElementById('results-bar').innerHTML =
       `Showing <strong>${models.length}</strong> of <strong>${allModels.length}</strong> models`;
-    document.getElementById('header-count').textContent =
-      `${allModels.length} models`;
 
     if (models.length === 0) {
-      const empty = h('div', { class: 'state-center' });
-      empty.appendChild(h('p', {}, 'No models match your filters.'));
-      grid.appendChild(empty);
+      grid.appendChild(h('div', { class: 'state-center' },
+        h('p', {}, 'No models match your filters.')));
       return;
     }
     models.forEach(m => grid.appendChild(buildCard(m)));
   }
 
-  // ── Build filter pills ────────────────────────────────────────────
-  const CATEGORY_ORDER = ['Language', 'Code', 'Retrieval', 'Speech', 'Science', 'Vision & Multimodal'];
-  const GPU_ORDER = ['H200', 'H100', 'A100', 'L40S', 'A10G'];
-
-  function buildFilters() {
-    const sourceContainer = document.getElementById('source-filters');
-    [{ value: 'All', label: 'All' }, { value: 'NGC', label: 'NVIDIA NIM' }, { value: 'HF', label: 'Hugging Face' }].forEach(({ value, label }) => {
-      const pill = h('button', { class: `pill ${value === activeSource ? 'active' : ''}` }, label);
-      pill.addEventListener('click', () => {
-        activeSource = value;
-        sourceContainer.querySelectorAll('.pill').forEach(p =>
-          p.classList.toggle('active', p.textContent === label));
-        renderGrid();
-      });
-      sourceContainer.appendChild(pill);
+  // ── Row view ───────────────────────────────────────────────────────────────
+  function allGPUs() {
+    const gpus = new Set();
+    let hasAgnostic = false;
+    allModels.forEach(m => {
+      m.availableGPUs.forEach(g => gpus.add(g));
+      m.variants.forEach(v => v.profiles.forEach(p => { if (!p.spec['GPU']) hasAgnostic = true; }));
     });
+    const list = [...GPU_ORDER.filter(g => gpus.has(g)), ...[...gpus].filter(g => !GPU_ORDER.includes(g)).sort()];
+    if (hasAgnostic) list.push('Other');
+    return list;
+  }
 
+  function availableCounts() {
+    const counts = new Set();
+    allModels.forEach(model => {
+      model.variants.forEach(variant => {
+        variant.profiles.forEach(profile => {
+          const pGPU = profile.spec['GPU'];
+          if (selectedGPU === null ||
+              pGPU === undefined ||
+              (selectedGPU === 'Other' ? !pGPU : pGPU === selectedGPU))
+            counts.add(profile.spec['COUNT'] !== undefined ? Number(profile.spec['COUNT']) : 1);
+        });
+      });
+    });
+    return [...counts].sort((a, b) => a - b);
+  }
+
+  function parseDownloadMB(str) {
+    const m = String(str || '').match(/^([\d.]+)\s*(TB|GB|MB)/i);
+    if (!m) return 0;
+    const n = parseFloat(m[1]);
+    return m[2].toUpperCase() === 'TB' ? n * 1e6 : m[2].toUpperCase() === 'GB' ? n * 1e3 : n;
+  }
+
+  function buildFlatRows() {
+    const rows = [];
+    allModels.forEach(model => {
+      model.variants.forEach(variant => {
+        const sizeLabel = variant.id.match(/\d+(\.\d+)?[BMKT](?=\b)/i)?.[0]?.toUpperCase() || '';
+        variant.profiles.forEach(profile => {
+          const pGPU = profile.spec['GPU'];
+          const pCount = profile.spec['COUNT'] !== undefined ? Number(profile.spec['COUNT']) : 1;
+          if (selectedGPU !== null && pGPU !== undefined) {
+            if (selectedGPU === 'Other' ? pGPU !== undefined : pGPU !== selectedGPU) return;
+          }
+          if (selectedCount !== null && pCount > selectedCount) return;
+          rows.push({ model, sizeLabel, profile,
+            gpuCount: pCount, gpuAgnostic: pGPU === undefined, gpuType: pGPU || null,
+            downloadMB: parseDownloadMB(profile.spec['DOWNLOAD SIZE'] || '') });
+        });
+      });
+    });
+    return rows;
+  }
+
+  function precisionRank(p) {
+    const idx = PRECISION_ORDER.indexOf((p || '').toUpperCase());
+    return idx === -1 ? 99 : idx;
+  }
+
+  function parseSizeMagnitude(label) {
+    if (!label) return -1;
+    const m = label.match(/^([\d.]+)([BMKT])$/i);
+    if (!m) return -1;
+    const n = parseFloat(m[1]);
+    switch (m[2].toUpperCase()) {
+      case 'T': return n * 1e12;
+      case 'B': return n * 1e9;
+      case 'M': return n * 1e6;
+      case 'K': return n * 1e3;
+      default:  return n;
+    }
+  }
+
+  function sortRows(rows) {
+    const dir = sortDir === 'asc' ? 1 : -1;
+    return [...rows].sort((a, b) => {
+      if (!explicitSort) {
+        const recDiff = (b.model.recommended ? 1 : 0) - (a.model.recommended ? 1 : 0);
+        if (recDiff !== 0) return recDiff;
+      }
+      switch (sortKey) {
+        case 'model':     return dir * a.model.displayName.localeCompare(b.model.displayName);
+        case 'size':      return dir * (parseSizeMagnitude(a.sizeLabel) - parseSizeMagnitude(b.sizeLabel));
+        case 'profile':   return dir * String(a.profile.spec['PROFILE'] || '').localeCompare(String(b.profile.spec['PROFILE'] || ''));
+        case 'precision': return dir * (precisionRank(a.profile.spec['PRECISION']) - precisionRank(b.profile.spec['PRECISION']));
+        case 'count':     return dir * (a.gpuCount - b.gpuCount);
+        case 'download':  return dir * (a.downloadMB - b.downloadMB);
+        default:          return 0;
+      }
+    });
+  }
+
+  function getDisplayedRows() {
+    let rows = flatRows;
+    if (activeCategory !== 'All')
+      rows = rows.filter(r => r.model.category === activeCategory);
+    if (activeSource !== 'All')
+      rows = rows.filter(r => r.model.modelType === activeSource);
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      rows = rows.filter(r => r.model.displayName.toLowerCase().includes(q) ||
+                              r.profile.displayName.toLowerCase().includes(q));
+    }
+    return sortRows(rows);
+  }
+
+  function renderGPUSelector() {
+    const c = document.getElementById('gpu-selector');
+    c.innerHTML = '';
+    allGPUs().forEach(gpu => {
+      const pill = h('button', { class: `pill${gpu === selectedGPU ? ' active' : ''}` }, gpu);
+      pill.addEventListener('click', () => {
+        selectedGPU = selectedGPU === gpu ? null : gpu;
+        selectedCount = null;
+        pushState();
+        renderGPUSelector();
+        renderCountSelector();
+        rebuildRows();
+      });
+      c.appendChild(pill);
+    });
+  }
+
+  function renderCountSelector() {
+    const c = document.getElementById('count-selector');
+    c.innerHTML = '';
+    availableCounts().forEach(count => {
+      const pill = h('button', { class: `pill${count === selectedCount ? ' active' : ''}` }, `${count}×`);
+      pill.addEventListener('click', () => {
+        selectedCount = selectedCount === count ? null : count;
+        pushState();
+        renderCountSelector();
+        rebuildRows();
+      });
+      c.appendChild(pill);
+    });
+  }
+
+  function rebuildRows() {
+    flatRows = buildFlatRows();
+    explicitSort = false;
+    renderRowTable();
+  }
+
+  function renderRowTable() {
+    const state = document.getElementById('row-state');
+    const table = document.getElementById('fit-table');
+    const tbody = document.getElementById('table-body');
+    const resultsBar = document.getElementById('row-results-bar');
+
+    const rows = getDisplayedRows();
+
+    if (rows.length === 0) {
+      table.style.display = 'none';
+      state.style.display = '';
+      state.innerHTML = `<h3>No profiles found</h3><p>Try a different GPU, count, or filter.</p>`;
+      resultsBar.innerHTML = '';
+      return;
+    }
+
+    state.style.display = 'none';
+    table.style.display = '';
+    document.getElementById('fit-hint-b').style.display = (!selectedGPU && !selectedCount) ? 'flex' : 'none';
+
+    let label = `<strong>${rows.length}</strong> profile${rows.length !== 1 ? 's' : ''}`;
+    if (selectedGPU) label += selectedCount ? ` · up to ${selectedCount}× ${selectedGPU}` : ` · ${selectedGPU}`;
+    if (selectedCount && !selectedGPU) label += ` · up to ${selectedCount}×`;
+    resultsBar.innerHTML = label;
+
+    tbody.innerHTML = '';
+    rows.forEach(row => tbody.appendChild(buildTableRow(row)));
+    updateSortIndicators();
+  }
+
+  function buildTableRow(row) {
+    const { model, sizeLabel, profile, gpuCount, gpuAgnostic, gpuType } = row;
+    const { cls } = catMeta(model.category);
+    const isHF = model.modelType === 'HF';
+    const mode = profile.spec['PROFILE'] || '';
+    const precision = profile.spec['PRECISION'] || '';
+    const dlSize = profile.spec['DOWNLOAD SIZE'] || '';
+    const gpuSubLabel = gpuAgnostic ? 'any GPU' : escapeHtml(gpuType);
+    const gpuCell = `<div style="line-height:1.3">${escapeHtml(String(gpuCount))}</div><div style="font-size:10px;color:var(--text-muted)">${gpuSubLabel}</div>`;
+
+    const tr = document.createElement('tr');
+    if (model.recommended) tr.classList.add('recommended');
+    tr.innerHTML = `
+      <td class="col-icon">
+        <span class="source-icon ${isHF ? 'source-icon-hf' : 'source-icon-nim'}" data-tooltip="${isHF ? 'Hugging Face' : 'NVIDIA NIM'}">${isHF ? '🤗' : 'N'}</span>
+      </td>
+      <td>
+        <div class="col-model-name">${escapeHtml(model.displayName)}${model.recommended ? '<span class="recommended-badge" style="margin-left:6px;vertical-align:middle">★ Recommended</span>' : ''}</div>
+        <div class="col-model-cat"><span class="cat-badge ${cls}">${escapeHtml(model.category || 'NIM')}</span></div>
+      </td>
+      <td class="col-size">${sizeLabel ? escapeHtml(sizeLabel) : '<span class="col-empty">—</span>'}</td>
+      <td>${mode ? escapeHtml(mode) : '<span class="col-empty">—</span>'}</td>
+      <td>${precision ? escapeHtml(precision) : '<span class="col-empty">—</span>'}</td>
+      <td>${gpuCell}</td>
+      <td>${dlSize ? escapeHtml(dlSize) : '<span class="col-empty">—</span>'}</td>
+    `;
+    tr.addEventListener('click', () => openModal(model, profile));
+    return tr;
+  }
+
+  function updateSortIndicators() {
+    document.querySelectorAll('.fit-table thead th[data-col]').forEach(th => {
+      th.classList.remove('sort-asc', 'sort-desc');
+      if (th.dataset.col === sortKey) th.classList.add(sortDir === 'asc' ? 'sort-asc' : 'sort-desc');
+    });
+  }
+
+  // ── View management ────────────────────────────────────────────────────────
+  function setViewMode(mode) {
+    viewMode = mode;
+    selectedGPU = null;
+    selectedCount = null;
+    pushState();
+
+    const isRow = mode === 'row';
+    document.querySelectorAll('.tile-only').forEach(el => el.style.display = isRow ? 'none' : '');
+    document.getElementById('row-filterbar').style.display = isRow ? '' : 'none';
+    document.getElementById('tile-view').style.display = isRow ? 'none' : '';
+    document.getElementById('row-view').style.display = isRow ? '' : 'none';
+    document.getElementById('btn-tile').classList.toggle('active', !isRow);
+    document.getElementById('btn-row').classList.toggle('active', isRow);
+
+    if (isRow) {
+      renderGPUSelector();
+      renderCountSelector();
+      rebuildRows();
+    } else {
+      renderGrid();
+    }
+  }
+
+  // ── Filters ────────────────────────────────────────────────────────────────
+  function buildFilters() {
+    // Category (shared)
     const catSet = new Set(allModels.map(m => m.category).filter(Boolean));
-    const cats = ['All', ...CATEGORY_ORDER.filter(c => catSet.has(c)),
-                  ...[...catSet].filter(c => !CATEGORY_ORDER.includes(c)).sort()];
-
+    const cats = ['All', ...CATEGORY_ORDER.filter(c => catSet.has(c)), ...[...catSet].filter(c => !CATEGORY_ORDER.includes(c)).sort()];
     const catContainer = document.getElementById('category-filters');
     cats.forEach(cat => {
-      const pill = h('button', { class: `pill ${cat === activeCategory ? 'active' : ''}` }, cat);
+      const pill = h('button', { class: `pill${cat === activeCategory ? ' active' : ''}` }, cat);
       pill.addEventListener('click', () => {
         activeCategory = cat;
-        catContainer.querySelectorAll('.pill').forEach(p =>
-          p.classList.toggle('active', p.textContent === cat));
-        renderGrid();
+        catContainer.querySelectorAll('.pill').forEach(p => p.classList.toggle('active', p.textContent === cat));
+        if (viewMode === 'row') renderRowTable();
+        else renderGrid();
       });
       catContainer.appendChild(pill);
     });
 
-    const gpuSet = new Set(allModels.flatMap(m => m.availableGPUs));
-    const gpus = ['All', ...GPU_ORDER.filter(g => gpuSet.has(g)),
-                  ...[...gpuSet].filter(g => !GPU_ORDER.includes(g)).sort()];
-
-    const gpuContainer = document.getElementById('gpu-filters');
-    gpus.forEach(gpu => {
-      const pill = h('button', { class: `pill ${gpu === activeGPU ? 'active' : ''}` }, gpu);
-      pill.addEventListener('click', () => {
-        activeGPU = gpu;
-        gpuContainer.querySelectorAll('.pill').forEach(p =>
-          p.classList.toggle('active', p.textContent === gpu));
-        renderGrid();
+    // Source (shared)
+    const sourceContainer = document.getElementById('source-filters');
+    [{ value: 'All', label: 'All' }, { value: 'NGC', label: 'NVIDIA NIM' }, { value: 'HF', label: 'Hugging Face' }]
+      .forEach(({ value, label }) => {
+        const pill = h('button', { class: `pill${value === activeSource ? ' active' : ''}` }, label);
+        pill.addEventListener('click', () => {
+          activeSource = value;
+          sourceContainer.querySelectorAll('.pill').forEach(p => p.classList.toggle('active', p.textContent === label));
+          if (viewMode === 'row') renderRowTable();
+          else renderGrid();
+        });
+        sourceContainer.appendChild(pill);
       });
-      gpuContainer.appendChild(pill);
-    });
   }
 
-  // ── Modal ─────────────────────────────────────────────────────────
-  function openModal(model) {
+  // ── Modal ──────────────────────────────────────────────────────────────────
+  function openModal(model, clickedProfile = null) {
     document.getElementById('modal-title').textContent = model.displayName;
 
-    // Meta line
     const meta = document.getElementById('modal-meta');
     meta.innerHTML = '';
     const { cls } = catMeta(model.category);
@@ -1033,17 +852,28 @@
     meta.appendChild(srcLabel);
     if (model.sourceURL) {
       const a = h('a', { href: model.sourceURL, target: '_blank', rel: 'noopener' });
-      const linkLabel = isHF ? 'View on Hugging Face' : 'View on NGC';
-      a.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> ${linkLabel}`;
+      a.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> ${isHF ? 'View on Hugging Face' : 'View on NGC'}`;
       meta.appendChild(a);
     }
 
     // Overview tab
-    document.getElementById('tab-overview').innerHTML = `
+    const profileSection = clickedProfile ? (() => {
+      const preferredOrder = ['GPU', 'COUNT', 'PRECISION', 'PROFILE', 'DOWNLOAD SIZE', 'NIM VERSION'];
+      const specKeys = Object.keys(clickedProfile.spec);
+      const orderedKeys = [...preferredOrder.filter(k => specKeys.includes(k)), ...specKeys.filter(k => !preferredOrder.includes(k))];
+      const rows = orderedKeys.map(k => `
+        <tr>
+          <td style="padding:6px 12px 6px 0;font-size:12px;font-weight:600;color:var(--text-muted);white-space:nowrap;vertical-align:top">${escapeHtml(k)}</td>
+          <td style="padding:6px 0;font-size:13px;color:var(--text-primary)">${escapeHtml(String(clickedProfile.spec[k]))}</td>
+        </tr>`).join('');
+      return `
       <div class="overview-section">
-        <div class="section-label">Description</div>
-        <p class="overview-desc">${escapeHtml(model.description)}</p>
-      </div>
+        <div class="section-label">Selected Profile · ${escapeHtml(clickedProfile.displayName)}</div>
+        <table style="border-collapse:collapse;margin-top:4px">${rows}</table>
+      </div>`;
+    })() : '';
+
+    const gpuPrecisionSections = clickedProfile ? '' : `
       <div class="overview-section">
         <div class="section-label">Available GPUs</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
@@ -1062,80 +892,72 @@
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
           ${model.optProfiles.map(p => `<span class="profile-chip">${escapeHtml(p)}</span>`).join('')}
         </div>
-      </div>` : ''}
+      </div>` : ''}`;
+
+    document.getElementById('tab-overview').innerHTML = `
+      <div class="overview-section">
+        <div class="section-label">Description</div>
+        <p class="overview-desc">${escapeHtml(model.description)}</p>
+      </div>
+      ${profileSection}
+      ${gpuPrecisionSections}
     `;
 
-    // Profiles tab — with per-variant selector
+    // Profiles tab
     const tabProfiles = document.getElementById('tab-profiles');
     tabProfiles.innerHTML = '';
-
     const allVariants = model.variants.filter(v => v.profiles.length > 0);
     if (allVariants.length === 0) {
       tabProfiles.innerHTML = '<p style="color:var(--text-muted);font-size:13px">No optimization profiles available.</p>';
     } else {
       const selectorWrap = document.createElement('div');
       selectorWrap.style.cssText = 'display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px';
-
       const tableWrap = document.createElement('div');
       tableWrap.style.overflowX = 'auto';
 
       function renderVariantTable(idx) {
         selectorWrap.querySelectorAll('.variant-btn').forEach((b, i) =>
           b.classList.toggle('active', i === idx));
-
         const profiles = allVariants[idx].profiles;
         const specKeys = [...new Set(profiles.flatMap(p => Object.keys(p.spec)))];
         const preferredOrder = ['GPU', 'COUNT', 'PRECISION', 'PROFILE', 'DOWNLOAD SIZE', 'NIM VERSION'];
-        const orderedKeys = [
-          ...preferredOrder.filter(k => specKeys.includes(k)),
-          ...specKeys.filter(k => !preferredOrder.includes(k)),
-        ];
-
-        let html = `<table class="profiles-table">
-          <thead><tr>
-            <th>Profile</th>
-            <th>Framework</th>
-            ${orderedKeys.map(k => `<th>${escapeHtml(k)}</th>`).join('')}
-          </tr></thead><tbody>`;
-
+        const orderedKeys = [...preferredOrder.filter(k => specKeys.includes(k)), ...specKeys.filter(k => !preferredOrder.includes(k))];
+        let html = `<table class="profiles-table"><thead><tr><th>Profile</th><th>Framework</th>${orderedKeys.map(k => `<th>${escapeHtml(k)}</th>`).join('')}</tr></thead><tbody>`;
         profiles.forEach(p => {
-          html += `<tr>
-            <td class="profile-name">${escapeHtml(p.displayName)}</td>
-            <td>${escapeHtml(p.framework)}</td>
-            ${orderedKeys.map(k => `<td>${escapeHtml(p.spec[k] || '—')}</td>`).join('')}
-          </tr>`;
+          const isSelected = clickedProfile && p.displayName === clickedProfile.displayName;
+          html += `<tr${isSelected ? ' class="match"' : ''}><td class="profile-name">${escapeHtml(p.displayName)}</td><td>${escapeHtml(p.framework)}</td>${orderedKeys.map(k => `<td>${escapeHtml(p.spec[k] !== undefined ? String(p.spec[k]) : '—')}</td>`).join('')}</tr>`;
         });
-        html += '</tbody></table>';
-        tableWrap.innerHTML = html;
+        tableWrap.innerHTML = html + '</tbody></table>';
       }
 
       if (allVariants.length > 1) {
         allVariants.forEach((v, i) => {
           const label = v.id.match(/\d+(\.\d+)?[BMKT](?=\b)/i)?.[0]?.toUpperCase() || v.id;
-          const btn = h('button', { class: `pill variant-btn ${i === 0 ? 'active' : ''}` }, label);
+          const btn = h('button', { class: `pill variant-btn${i === 0 ? ' active' : ''}` }, label);
           btn.addEventListener('click', () => renderVariantTable(i));
           selectorWrap.appendChild(btn);
         });
         tabProfiles.appendChild(selectorWrap);
       }
-
       tabProfiles.appendChild(tableWrap);
       renderVariantTable(0);
     }
 
-    // Model Card tab
+    // Model card tab
     if (model.modelCardMarkdown) {
-      const rendered = marked.parse(model.modelCardMarkdown);
       document.getElementById('tab-model-card').innerHTML =
-        `<div class="model-card-content">${rendered}</div>`;
+        `<div class="model-card-content">${marked.parse(model.modelCardMarkdown)}</div>`;
     } else {
       document.getElementById('tab-model-card').innerHTML =
         '<p style="color:var(--text-muted);font-size:13px">No model card available.</p>';
     }
 
-    // Reset to first tab
-    document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
-    document.querySelectorAll('.tab-panel').forEach((p, i) => p.classList.toggle('active', i === 0));
+    // Hide the Profiles tab when coming from Fit Finder (a specific profile is already shown inline)
+    document.querySelector('.tab-btn[data-tab="profiles"]').style.display = clickedProfile ? 'none' : '';
+
+    const defaultTab = 'overview';
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === defaultTab));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === `tab-${defaultTab}`));
 
     document.getElementById('overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1147,41 +969,53 @@
   }
 
   function escapeHtml(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  // ── Wire up events ────────────────────────────────────────────────
+  // ── Events ─────────────────────────────────────────────────────────────────
   document.getElementById('modal-close').addEventListener('click', closeModal);
-  document.getElementById('overlay').addEventListener('click', e => {
-    if (e.target === e.currentTarget) closeModal();
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  document.getElementById('search').addEventListener('input', e => {
-    searchQuery = e.target.value.trim();
-    renderGrid();
-  });
+  document.getElementById('overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const tab = btn.dataset.tab;
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
-      document.querySelectorAll('.tab-panel').forEach(p =>
-        p.classList.toggle('active', p.id === `tab-${tab}`));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === `tab-${tab}`));
     });
   });
 
-  // ── Boot ──────────────────────────────────────────────────────────
+  document.getElementById('search').addEventListener('input', e => {
+    searchQuery = e.target.value.trim();
+    if (viewMode === 'row') renderRowTable();
+    else renderGrid();
+  });
+
+  document.getElementById('btn-tile').addEventListener('click', () => { if (viewMode !== 'tile') setViewMode('tile'); });
+  document.getElementById('btn-row').addEventListener('click', () => { if (viewMode !== 'row') setViewMode('row'); });
+
+  document.querySelectorAll('.fit-table thead th[data-col]').forEach(th => {
+    th.addEventListener('click', () => {
+      const col = th.dataset.col;
+      sortDir = sortKey === col && sortDir === 'asc' ? 'desc' : 'asc';
+      sortKey = col;
+      explicitSort = true;
+      renderRowTable();
+    });
+  });
+
+  // ── Boot ───────────────────────────────────────────────────────────────────
   loadModels().then(models => {
     allModels = models;
+    document.getElementById('header-count').textContent = `${allModels.length} models`;
+    readState();
     buildFilters();
-    renderGrid();
+    if (viewMode === 'row') {
+      setViewMode('row');
+    } else {
+      document.getElementById('btn-tile').classList.add('active');
+      renderGrid();
+    }
   }).catch(err => {
     document.getElementById('grid').innerHTML =
       `<div class="state-center"><p>Failed to load models: ${escapeHtml(err.message)}</p></div>`;
