@@ -194,7 +194,19 @@ def generate_display_name_private(model, tags):
         suffix = " ".join(part for part in [f"Generic NVIDIA GPUx{count}", sm_part, v_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
-def profile_id_from_workspace(profile, gpu):
+def profile_id_from_workspace(profile, gpu, return_base_uri=False):
+    """
+    Extract profileId from workspace files.
+    
+    Args:
+        profile: Profile dict containing workspace files
+        gpu: GPU type to match in URI
+        return_base_uri: If True, return tuple of (base_uri, unique_profile_id)
+                        If False, return only unique_profile_id (backward compatible)
+    
+    Returns:
+        str or tuple: Unique profileId, or (base_uri, unique_profile_id) if return_base_uri=True
+    """
     files = profile.get("workspace", {}).get("files", {})
 
     def extract_clean_uri(uri):
@@ -206,15 +218,55 @@ def profile_id_from_workspace(profile, gpu):
     for fdata in files.values():
         uri = fdata.get("uri", "")
         if gpu and gpu.lower() in uri.lower():
-            return extract_clean_uri(uri)
+            base_uri = extract_clean_uri(uri)
+            if return_base_uri:
+                return (base_uri, base_uri)
+            return base_uri
 
     # Fallback: return the first valid URI
+    base_uri = None
     for fdata in files.values():
         uri = fdata.get("uri", "")
         if uri:
-            return extract_clean_uri(uri)
-
-    return None
+            base_uri = extract_clean_uri(uri)
+            break
+    
+    if not base_uri:
+        return None if not return_base_uri else (None, None)
+    
+    # Make profileId unique by appending GPU/TP/PP if they exist and GPU is not in the URI
+    tags = profile.get("tags", {})
+    tp = tags.get("tp", "")
+    pp = tags.get("pp", "")
+    
+    unique_profile_id = base_uri
+    # Only append suffix if the base_uri doesn't already contain GPU-specific info
+    if not gpu or gpu.lower() not in base_uri.lower():
+        tp_val = int(tp) if tp else 1
+        pp_val = int(pp) if pp else 1
+        
+        # Build suffix with GPU and/or TP/PP
+        suffix_parts = []
+        
+        # Add GPU to suffix if provided (for GPU-specific profiles)
+        if gpu:
+            suffix_parts.append(gpu.lower())
+        
+        # Add TP/PP if greater than 1
+        if tp_val > 1 or pp_val > 1:
+            tp_pp_suffix = f"tp{tp_val}"
+            if pp_val > 1:
+                tp_pp_suffix += f"pp{pp_val}"
+            suffix_parts.append(tp_pp_suffix)
+        
+        # Combine suffix parts
+        if suffix_parts:
+            suffix = "-" + "-".join(suffix_parts)
+            unique_profile_id = base_uri + suffix
+    
+    if return_base_uri:
+        return (base_uri, unique_profile_id)
+    return unique_profile_id
 
 def _get_gpu_tag(tags):
     """Return canonical uppercase GPU from tags['gpu_key'] (preferred) or tags['gpu'].
@@ -519,13 +571,14 @@ def create_gpu_specific_profile(base_profile, model, release, target_gpu, api_ke
     if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
         tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
 
-    profile_id_uri = profile_id_from_workspace(base_profile, target_gpu)
-    if not profile_id_uri:
+    result = profile_id_from_workspace(base_profile, target_gpu, return_base_uri=True)
+    if not result or not result[0]:
         return None
+    base_uri, profile_id_uri = result
 
     display_name = generate_display_name(model, tags)
     count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
-    download_size = get_download_size_gb(str(profile_id_uri), api_key)
+    download_size = get_download_size_gb(str(base_uri), api_key)
 
     # Build spec list, skipping empty values
     spec_list = []
@@ -590,13 +643,14 @@ def create_gpu_specific_profile_vllm(base_profile, model, release, target_gpu, a
     if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
         tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
 
-    profile_id_uri = profile_id_from_workspace(base_profile, target_gpu)
-    if not profile_id_uri:
+    result = profile_id_from_workspace(base_profile, target_gpu, return_base_uri=True)
+    if not result or not result[0]:
         return None
+    base_uri, profile_id_uri = result
 
     display_name = generate_display_name(model, tags)
     count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
-    download_size = get_download_size_gb(str(profile_id_uri), api_key)
+    download_size = get_download_size_gb(str(base_uri), api_key)
 
     spec_list = []
     profile_value = tags.get("profile", "").upper()
@@ -746,8 +800,9 @@ def main():
             if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                 tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"]) 
             gpu_for_uri = tags.get("gpu", "") or ""
-            profile_id_uri = profile_id_from_workspace(profile, gpu_for_uri)
-            if profile_id_uri:
+            result = profile_id_from_workspace(profile, gpu_for_uri, return_base_uri=True)
+            if result and result[0]:
+                base_uri, profile_id_uri = result
                 # Do not mutate tags['gpu']; keep original value if present
                 # Choose display name generator based on platform and GPU presence
                 if args.platform == "private" and not tags.get("gpu"):
@@ -756,7 +811,7 @@ def main():
                     display_name = generate_display_name(model, tags)
                 tp_val = int(tags.get("tp", "1")); pp_val = int(tags.get("pp", "1"))
                 count = tp_val * pp_val
-                download_size = get_download_size_gb(str(profile_id_uri), args.ngc_api_key)
+                download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
                 spec_list = []
                 profile_value = str(tags.get("profile", "")).upper()
                 if profile_value:
@@ -867,9 +922,10 @@ def main():
             if effective_gpu == "H200" and gpu_device_actual and gpu_device_actual not in ("2335", "2335:10de"):
                 continue
 
-        profile_id_uri = profile_id_from_workspace(profile, effective_gpu)
-        if not profile_id_uri:
+        result = profile_id_from_workspace(profile, effective_gpu, return_base_uri=True)
+        if not result or not result[0]:
             continue
+        base_uri, profile_id_uri = result
 
         # Prefer extracted TP/PP for COUNT when available
         tp_eff = parsed_tp if parsed_tp is not None else int(tags.get("tp", "1"))
@@ -880,7 +936,7 @@ def main():
             display_name = build_display_name_with_overrides(model, tags, override_gpu=effective_gpu, override_count=count)
         else:
             display_name = generate_display_name(model, tags)
-        download_size = get_download_size_gb(str(profile_id_uri), args.ngc_api_key)
+        download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
         # Build spec list, skipping empty values
         spec_list = []
@@ -968,9 +1024,10 @@ def main():
                     if should_skip_gpu_count(gpu_upper, count, args):
                         continue
                     # Capacity check: skip if download size exceeds total GPU memory for this combo
-                    profile_id_uri_tmp = profile_id_from_workspace(profile, target_gpu)
-                    if profile_id_uri_tmp:
-                        dl_str = get_download_size_gb(str(profile_id_uri_tmp), args.ngc_api_key)
+                    result_tmp = profile_id_from_workspace(profile, target_gpu, return_base_uri=True)
+                    if result_tmp and result_tmp[0]:
+                        base_uri_tmp, _ = result_tmp
+                        dl_str = get_download_size_gb(str(base_uri_tmp), args.ngc_api_key)
                         dl_gb = _parse_gb(dl_str)
                         per_mem = GPU_SPECS.get(target_gpu.upper(), {}).get("memory_gb")
                         if dl_gb is not None and per_mem is not None:
@@ -1014,9 +1071,10 @@ def main():
                     continue
 
                 # Capacity check: skip if download size exceeds total GPU memory for this combo
-                profile_id_uri_tmp = profile_id_from_workspace(profile, target_gpu)
-                if profile_id_uri_tmp:
-                    dl_str = get_download_size_gb(str(profile_id_uri_tmp), args.ngc_api_key)
+                result_tmp = profile_id_from_workspace(profile, target_gpu, return_base_uri=True)
+                if result_tmp and result_tmp[0]:
+                    base_uri_tmp, _ = result_tmp
+                    dl_str = get_download_size_gb(str(base_uri_tmp), args.ngc_api_key)
                     dl_gb = _parse_gb(dl_str)
                     per_mem = GPU_SPECS.get(target_gpu.upper(), {}).get("memory_gb")
                     if dl_gb is not None and per_mem is not None:
@@ -1039,11 +1097,12 @@ def main():
             if not is_generic_profile(tags):
                 # If include_vllm is set and this is a VLLM generic profile (no GPU), include as-is
                 if args.include_vllm and tags.get("llm_engine", "").lower() == "vllm" and not tags.get("gpu", "").strip() and tags.get("feat_lora", "").lower() != "true":
-                    profile_id_uri = profile_id_from_workspace(profile, "")  # No specific GPU
-                    if profile_id_uri:
+                    result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
+                    if result and result[0]:
+                        base_uri, profile_id_uri = result
                         display_name = generate_display_name_private(model, tags)
                         count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
-                        download_size = get_download_size_gb(str(profile_id_uri), args.ngc_api_key)
+                        download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
                         spec_list = []
                         profile_value = tags.get("profile", "").upper()
@@ -1069,16 +1128,17 @@ def main():
                         print(f"Added generic VLLM profile {profile.get('id', 'unknown')} without GPU details for private platform")
                 continue
 
-            profile_id_uri = profile_id_from_workspace(profile, "")  # No specific GPU
-            if not profile_id_uri:
+            result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
+            if not result or not result[0]:
                 continue
+            base_uri, profile_id_uri = result
             # Ensure nim_workspace_hash_v1 stays single line
             if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                 tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
 
             display_name = generate_display_name_private(model, tags)
             count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
-            download_size = get_download_size_gb(str(profile_id_uri), args.ngc_api_key)
+            download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
             # Build spec list, skipping empty values
             spec_list = []
