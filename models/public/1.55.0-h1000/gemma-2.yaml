@@ -1,69 +1,69 @@
 models:
-  - name: Gemma 2
-    displayName: Gemma 2
-    modelHubID: gemma-2
-    category: Language
-    type: HF
-    description: Google's open-weight language model family optimized for text generation, question answering, summarization, and reasoning. Improved performance and safety over its predecessor.
-    modelVariants:
-      - variantId: Gemma 2 9B
-        displayName: Gemma 2 9B
-        source:
-          URL: https://huggingface.co/google/gemma-2-9b
-        requireToken: true
-        requireLicense: true
-        licenseAgreements:
-        - label: License Agreement
-          url: https://ai.google.dev/gemma/terms
-        - label: Use Policy
-          url: https://ai.google.dev/gemma/prohibited_use_policy
-        optimizationProfiles:
-        - profileId: google/gemma-2-9b
-          displayName: Gemma 2 9b A10G
-          framework: vllm
-          sha: vllm
-          modelFormat: vllm
-          hfMetadata:
-            gpu: A10G
-            count: 1
-          spec:
-          - key: GPU
-            value: A10G
-          - key: COUNT
-            value: 1
-        - profileId: google/gemma-2-9b
-          displayName: Gemma 2 A100
-          framework: vllm
-          sha: vllm
-          modelFormat: vllm
-          hfMetadata:
-            gpu: A100
-            count: 1
-          spec:
-          - key: GPU
-            value: A100
-          - key: COUNT
-            value: 1
-        - profileId: google/gemma-2-9b
-          displayName: Gemma 2 9b L40S
-          framework: vllm
-          sha: vllm
-          modelFormat: vllm
-          hfMetadata:
-            gpu: L40S
-            count: 1
-          spec:
-          - key: GPU
-            value: L40S
-          - key: COUNT
-            value: 1
-    labels:
-      - google
-      - Gemma
-      - "Text Generation"
-      - "Multilingual support"
-    config:
-      architectures:
-        - Gemma2ForCausalLM
-      modelType: Gemma2
-    license: gemma
+- name: Gemma 2
+  displayName: Gemma 2
+  modelHubID: gemma-2
+  category: Language
+  type: HF
+  description: Google's open-weight language model family optimized for text generation, question answering, summarization, and reasoning. Improved performance and safety over its predecessor.
+  modelVariants:
+  - variantId: Gemma 2 9B
+    displayName: Gemma 2 9B
+    source:
+      URL: https://huggingface.co/google/gemma-2-9b
+    requireToken: true
+    requireLicense: true
+    licenseAgreements:
+    - label: License Agreement
+      url: https://ai.google.dev/gemma/terms
+    - label: Use Policy
+      url: https://ai.google.dev/gemma/prohibited_use_policy
+    optimizationProfiles:
+    - profileId: google/gemma-2-9b-a10g
+      displayName: Gemma 2 9b A10G
+      framework: vllm
+      sha: vllm
+      modelFormat: vllm
+      hfMetadata:
+        gpu: A10G
+        count: 1
+      spec:
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+    - profileId: google/gemma-2-9b-a100
+      displayName: Gemma 2 A100
+      framework: vllm
+      sha: vllm
+      modelFormat: vllm
+      hfMetadata:
+        gpu: A100
+        count: 1
+      spec:
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+    - profileId: google/gemma-2-9b-l40s
+      displayName: Gemma 2 9b L40S
+      framework: vllm
+      sha: vllm
+      modelFormat: vllm
+      hfMetadata:
+        gpu: L40S
+        count: 1
+      spec:
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+  labels:
+  - google
+  - Gemma
+  - "Text Generation"
+  - "Multilingual support"
+  config:
+    architectures:
+    - Gemma2ForCausalLM
+    modelType: Gemma2
+  license: gemma
