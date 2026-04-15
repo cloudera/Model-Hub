@@ -18,33 +18,7 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemotron-3-nano?version=1.7.0-variant
     optimizationProfiles:
-    - profileId: nim/nvidia/nemotron-3-nano:hf-tp1-k134efcdb08f4
-      framework: VLLM
-      displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 NVFP4
-      ngcMetadata:
-        134efcdb08f4e86d05ae8d7ecdc93c7bf52c3564fb86f7d779ec799b37fcc57c:
-          model: nvidia/nemotron-3-nano
-          release: 1.7.0
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 25763d8e98dd01686b7cfc15b391a0c13f961ce090dbcf1b5f7f1acc1edb80d3
-            pp: '1'
-            precision: nvfp4
-            tp: '1'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: NVFP4
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.7.0
-      - key: DOWNLOAD SIZE
-        value: 19GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-tp1-k2d9b8aac4a16
+    - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a
       framework: VLLM
       displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 FP8
       ngcMetadata:
@@ -96,7 +70,7 @@ models:
         value: 59GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-tp2-k3f553fb62de4
+    - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp2
       framework: VLLM
       displayName: Nemotron 3 Nano Generic NVIDIA GPUx2 FP8
       ngcMetadata:
@@ -122,7 +96,7 @@ models:
         value: 31GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp1
+    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad
       framework: VLLM
       displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 BF16
       ngcMetadata:
@@ -148,7 +122,7 @@ models:
         value: 59GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-tp8
+    - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp8
       framework: VLLM
       displayName: Nemotron 3 Nano Generic NVIDIA GPUx8 FP8
       ngcMetadata:
@@ -226,7 +200,7 @@ models:
         value: 59GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-tp4
+    - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp4
       framework: VLLM
       displayName: Nemotron 3 Nano Generic NVIDIA GPUx4 FP8
       ngcMetadata:
@@ -250,32 +224,6 @@ models:
         value: 1.7.0
       - key: DOWNLOAD SIZE
         value: 31GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-tp2-kd39c21b47bb4
-      framework: VLLM
-      displayName: Nemotron 3 Nano Generic NVIDIA GPUx2 NVFP4
-      ngcMetadata:
-        d39c21b47bb462bc142af34dce012471ef80ca0102eed1a9f1d3a54448bea931:
-          model: nvidia/nemotron-3-nano
-          release: 1.7.0
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 25763d8e98dd01686b7cfc15b391a0c13f961ce090dbcf1b5f7f1acc1edb80d3
-            pp: '1'
-            precision: nvfp4
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: NVFP4
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.7.0
-      - key: DOWNLOAD SIZE
-        value: 19GB
       - key: LLM ENGINE
         value: VLLM
   labels:
