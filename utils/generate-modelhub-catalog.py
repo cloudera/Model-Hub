@@ -66,6 +66,7 @@
 #           a) Recognized forms include "<gpu>x<count>", explicit "tp<d>" and "pp<d>", and generic segments like "rtx6000-blackwell-svx1".
 #           b) When inferred, GPU/COUNT/TP/PP are added only to spec (not to tags). TP/PP are added to spec only if explicitly present in the URI.
 #           c) Whitelist and A100 limits apply to inferred GPUs/count. H100/H200 device ID enforcement applies only when `tags.gpu_device` is present.
+#       - Riva/ASR: profiles with tags.mode 'str' or 'str-thr' are excluded (public and private), including generic RMIR synthesis.
 #       - Regular profiles are ignored when:
 #           a) tags.feat_lora == 'true'
 #           b) public and llm_engine == 'vllm' and --include-vllm is NOT set
@@ -308,6 +309,11 @@ def should_skip_gpu_count(gpu_upper, count, args):
         if count > args.a100_max_count:
             return True
     return False
+
+def should_exclude_riva_streaming_mode(tags):
+    """Exclude Riva/ASR manifest profiles with streaming modes (not offline / all / etc.)."""
+    mode = str(tags.get("mode", "")).strip().lower()
+    return mode in ("str", "str-thr")
 
 def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vllm=False, a100_max_count=1, 
                          a10g_min_count=None, a10g_max_count=None, l40s_min_count=None, l40s_max_count=None, 
@@ -793,6 +799,8 @@ def main():
     # First pass: Process regular profiles (those with specific GPUs)
     for profile in profiles:
         tags = profile.get("tags", {})
+        if should_exclude_riva_streaming_mode(tags):
+            continue
 
         # Include ONNX profiles as-is when requested (regardless of GPU presence)
         if args.include_onnx and str(tags.get("model_type", "")).lower() == "onnx":
@@ -1002,6 +1010,8 @@ def main():
         # Public platform: Generate GPU-specific profiles from generic ones to fill missing combinations
         for profile in profiles:
             tags = profile.get("tags", {})
+            if should_exclude_riva_streaming_mode(tags):
+                continue
 
             # Handle generic VLLM synthesis when requested
             if args.include_vllm and not tags.get("gpu", "").strip() and tags.get("llm_engine", "").lower() == "vllm":
@@ -1092,6 +1102,8 @@ def main():
         # Private platform: Include generic profiles as-is without GPU details
         for profile in profiles:
             tags = profile.get("tags", {})
+            if should_exclude_riva_streaming_mode(tags):
+                continue
 
             # Only process generic profiles
             if not is_generic_profile(tags):
