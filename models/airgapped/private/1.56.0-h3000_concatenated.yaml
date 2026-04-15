@@ -361,33 +361,7 @@ models:
       source:
         URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemotron-3-nano?version=1.7.0-variant
       optimizationProfiles:
-        - profileId: nim/nvidia/nemotron-3-nano:hf-tp1-k134efcdb08f4
-          framework: VLLM
-          displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 NVFP4
-          ngcMetadata:
-            134efcdb08f4e86d05ae8d7ecdc93c7bf52c3564fb86f7d779ec799b37fcc57c:
-              model: nvidia/nemotron-3-nano
-              release: 1.7.0
-              tags:
-                feat_lora: 'false'
-                llm_engine: vllm
-                nim_workspace_hash_v1: 25763d8e98dd01686b7cfc15b391a0c13f961ce090dbcf1b5f7f1acc1edb80d3
-                pp: '1'
-                precision: nvfp4
-                tp: '1'
-          modelFormat: vllm
-          spec:
-            - key: PRECISION
-              value: NVFP4
-            - key: COUNT
-              value: 1
-            - key: NIM VERSION
-              value: 1.7.0
-            - key: DOWNLOAD SIZE
-              value: 19GB
-            - key: LLM ENGINE
-              value: VLLM
-        - profileId: nim/nvidia/nemotron-3-nano:hf-tp1-k2d9b8aac4a16
+        - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a
           framework: VLLM
           displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 FP8
           ngcMetadata:
@@ -439,7 +413,7 @@ models:
               value: 59GB
             - key: LLM ENGINE
               value: VLLM
-        - profileId: nim/nvidia/nemotron-3-nano:hf-tp2-k3f553fb62de4
+        - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp2
           framework: VLLM
           displayName: Nemotron 3 Nano Generic NVIDIA GPUx2 FP8
           ngcMetadata:
@@ -465,7 +439,7 @@ models:
               value: 31GB
             - key: LLM ENGINE
               value: VLLM
-        - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp1
+        - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad
           framework: VLLM
           displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 BF16
           ngcMetadata:
@@ -491,7 +465,7 @@ models:
               value: 59GB
             - key: LLM ENGINE
               value: VLLM
-        - profileId: nim/nvidia/nemotron-3-nano:hf-tp8
+        - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp8
           framework: VLLM
           displayName: Nemotron 3 Nano Generic NVIDIA GPUx8 FP8
           ngcMetadata:
@@ -569,7 +543,7 @@ models:
               value: 59GB
             - key: LLM ENGINE
               value: VLLM
-        - profileId: nim/nvidia/nemotron-3-nano:hf-tp4
+        - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp4
           framework: VLLM
           displayName: Nemotron 3 Nano Generic NVIDIA GPUx4 FP8
           ngcMetadata:
@@ -593,32 +567,6 @@ models:
               value: 1.7.0
             - key: DOWNLOAD SIZE
               value: 31GB
-            - key: LLM ENGINE
-              value: VLLM
-        - profileId: nim/nvidia/nemotron-3-nano:hf-tp2-kd39c21b47bb4
-          framework: VLLM
-          displayName: Nemotron 3 Nano Generic NVIDIA GPUx2 NVFP4
-          ngcMetadata:
-            d39c21b47bb462bc142af34dce012471ef80ca0102eed1a9f1d3a54448bea931:
-              model: nvidia/nemotron-3-nano
-              release: 1.7.0
-              tags:
-                feat_lora: 'false'
-                llm_engine: vllm
-                nim_workspace_hash_v1: 25763d8e98dd01686b7cfc15b391a0c13f961ce090dbcf1b5f7f1acc1edb80d3
-                pp: '1'
-                precision: nvfp4
-                tp: '2'
-          modelFormat: vllm
-          spec:
-            - key: PRECISION
-              value: NVFP4
-            - key: COUNT
-              value: 2
-            - key: NIM VERSION
-              value: 1.7.0
-            - key: DOWNLOAD SIZE
-              value: 19GB
             - key: LLM ENGINE
               value: VLLM
   labels:
@@ -1040,67 +988,7 @@ models:
       source:
         URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/parakeet-1-1b-ctc-en-us
       optimizationProfiles:
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-25.12.5
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline H100x1 Str-thr Default
-          ngcMetadata:
-            0a0a59694a51970319b5102e359f4abb34254b969d96b1c20a508c5987862830:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: disabled
-                gpu: H100
-                gpu_device: '2330'
-                mode: str-thr
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: H100
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: '2330'
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline L40Sx1 Str Silero Sortformer
-          ngcMetadata:
-            0eb98597d835bd360ff323d6270fac97152414414393a95d98bccb86a4fa6a53:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: sortformer
-                gpu: L40S
-                gpu_device: 26b9
-                mode: str
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: L40S
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: 26B9
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline A100x1 All Silero Sortformer
           ngcMetadata:
@@ -1130,7 +1018,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-true-ofl-silero-25.12.4
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline A100x1 True-ofl Silero
           ngcMetadata:
@@ -1160,7 +1048,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-fp8-ldxrqwxnow
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline H100x1 Ofl Default
           ngcMetadata:
@@ -1190,7 +1078,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-fp16-ikylnwwcjg
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline A100x1 All Default
           ngcMetadata:
@@ -1220,7 +1108,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-fp16-ikylnwwcjg
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline A100x1 Ofl Default
           ngcMetadata:
@@ -1250,67 +1138,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-silero-sortformer-25.12.4-dgx_spark
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline DGX_SPARKx1 Str-thr Silero Sortformer
-          ngcMetadata:
-            4525de47a9634b0a24e6a255b98b0cd3d3c0ebb3b6d220c49ca257b24f06b8d1:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: sortformer
-                gpu: DGX_SPARK
-                gpu_device: '2e12'
-                mode: str-thr
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: DGX_SPARK
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: '2E12'
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-25.12.4-fp16--dgx_spark
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline DGX_SPARKx1 Str Default
-          ngcMetadata:
-            4b5513845956a47446cdd195b4420640b3cc6c2242cbf1b0779c161d05b2efe6:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: disabled
-                gpu: DGX_SPARK
-                gpu_device: '2e12'
-                mode: str
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: DGX_SPARK
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: '2E12'
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-dgx_spark-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw-dgx_spark
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline DGX_SPARKx1 All Silero Sortformer
           ngcMetadata:
@@ -1339,7 +1167,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline H100x1 All Silero Sortformer
           ngcMetadata:
@@ -1369,7 +1197,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-dgx_spark-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg-dgx_spark
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline DGX_SPARKx1 Ofl Default
           ngcMetadata:
@@ -1399,7 +1227,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-fp8-nh6vnluohw
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline L40Sx1 Ofl Default
           ngcMetadata:
@@ -1429,7 +1257,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-fp8-ldxrqwxnow
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline H100x1 All Default
           ngcMetadata:
@@ -1459,7 +1287,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline A100x1 Ofl Silero Sortformer
           ngcMetadata:
@@ -1489,187 +1317,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-silero-sortformer-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline H100x1 Str Silero Sortformer
-          ngcMetadata:
-            6f17f8024bdc441722dd89f159d043c10b5f0b2520151555237c7d976c5893e0:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: sortformer
-                gpu: H100
-                gpu_device: '2330'
-                mode: str
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: H100
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: '2330'
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-25.12.5
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline A100x1 Str-thr Default
-          ngcMetadata:
-            7019e9af238d7080f30b873adb7a1054423f3c27ac022feee3f3291fc5e99adb:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: disabled
-                gpu: A100
-                gpu_device: 20b2
-                mode: str-thr
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: A100
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: 20B2
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-silero-sortformer-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline H100x1 Str-thr Silero Sortformer
-          ngcMetadata:
-            7458e159cb472a758df6e242e1266843d3fa90b3827ff4181fefbb992447bf0e:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: sortformer
-                gpu: H100
-                gpu_device: '2330'
-                mode: str-thr
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: H100
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: '2330'
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-25.12.5
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline L40Sx1 Str-thr Default
-          ngcMetadata:
-            76d4bfaffd9d67fea185a5aa8851e9068a1bd0ce9c1127abe254617b1597307f:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: disabled
-                gpu: L40S
-                gpu_device: 26b9
-                mode: str-thr
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: L40S
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: 26B9
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-silero-sortformer-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline L40Sx1 Str-thr Silero Sortformer
-          ngcMetadata:
-            77ae9ad21fae5c53d4d47bb46bb3463e12616023de0f0df2d2327bc73d43a9d0:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: sortformer
-                gpu: L40S
-                gpu_device: 26b9
-                mode: str-thr
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: L40S
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: 26B9
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline A100x1 Str Default
-          ngcMetadata:
-            815bb625efbdf54b4dd6efdcf888f659c7e4e3e61b67f21b40c06f8e1877e7d9:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: disabled
-                gpu: A100
-                gpu_device: 20b2
-                mode: str
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: A100
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: 20B2
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-true-ofl-silero-25.12.4
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline H100x1 True-ofl Silero
           ngcMetadata:
@@ -1699,7 +1347,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline H100x1 Ofl Silero Sortformer
           ngcMetadata:
@@ -1729,7 +1377,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-dgx_spark-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg-dgx_spark
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline DGX_SPARKx1 All Default
           ngcMetadata:
@@ -1758,37 +1406,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-25.12.5-dgx_spark
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline DGX_SPARKx1 Str-thr Default
-          ngcMetadata:
-            a716082fbc0e5d3abe1ef72ccde508d8146a05e41b27a4f3611049e7de17e92b:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: disabled
-                gpu: DGX_SPARK
-                gpu_device: '2e12'
-                mode: str-thr
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: DGX_SPARK
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: '2E12'
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-true-ofl-silero-25.12.4-dgx_spark
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw-dgx_spark
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline DGX_SPARKx1 True-ofl Silero
           ngcMetadata:
@@ -1818,97 +1436,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-silero-sortformer-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline A100x1 Str-thr Silero Sortformer
-          ngcMetadata:
-            bbc1df7614375d0dc9d1a1d40dca646691f41ee87a63a430059af2e5901df113:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: sortformer
-                gpu: A100
-                gpu_device: 20b2
-                mode: str-thr
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: A100
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: 20B2
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-silero-sortformer-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline A100x1 Str Silero Sortformer
-          ngcMetadata:
-            bcb2fcb88eccd44da126aeac33ef62e691693db8693c8b606c95718b44ba8d92:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: sortformer
-                gpu: A100
-                gpu_device: 20b2
-                mode: str
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: A100
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: 20B2
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline L40Sx1 Str Default
-          ngcMetadata:
-            c5b3bb509b851ecd56dd489588ec689edc8493f2a63d3aaa42dec1050ed0cd3e:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: disabled
-                gpu: L40S
-                gpu_device: 26b9
-                mode: str
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: L40S
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: 26B9
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-true-ofl-silero-25.12.4
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline L40Sx1 True-ofl Silero
           ngcMetadata:
@@ -1938,7 +1466,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline L40Sx1 All Silero Sortformer
           ngcMetadata:
@@ -1968,37 +1496,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq-dgx_spark
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline DGX_SPARKx1 Str Silero Sortformer
-          ngcMetadata:
-            e48ada80aead95c5fdcccc3b302d07d406d1d0b25858e4994f3cc34338002572:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: sortformer
-                gpu: DGX_SPARK
-                gpu_device: '2e12'
-                mode: str
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: DGX_SPARK
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: '2E12'
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-fp8-nh6vnluohw
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline L40Sx1 All Default
           ngcMetadata:
@@ -2028,7 +1526,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline L40Sx1 Ofl Silero Sortformer
           ngcMetadata:
@@ -2058,37 +1556,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline H100x1 Str Default
-          ngcMetadata:
-            f142541db13a3ec148ce1b9a9851f172d6c128ad5ba145bbc89a590efa6415eb:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                ampereplus: disabled
-                diarizer: disabled
-                gpu: H100
-                gpu_device: '2330'
-                mode: str
-                model_type: prebuilt
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: GPU
-              value: H100
-            - key: COUNT
-              value: 1
-            - key: GPU DEVICE
-              value: '2330'
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 5GB
-            - key: MODEL TYPE
-              value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-dgx_spark-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw-dgx_spark
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline DGX_SPARKx1 Ofl Silero Sortformer
           ngcMetadata:
@@ -2118,7 +1586,7 @@ models:
               value: 5GB
             - key: MODEL TYPE
               value: PREBUILT
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:ofl-rmir-25.12.4-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:ofl-rmir-25.12.4
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline Generic NVIDIA GPUx1
           ngcMetadata:
@@ -2164,7 +1632,7 @@ models:
               value: 3GB
             - key: MODEL TYPE
               value: RMIR
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:ofl-rmir-25.12.4-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:ofl-rmir-25.12.4
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline Generic NVIDIA GPUx1
           ngcMetadata:
@@ -2187,76 +1655,7 @@ models:
               value: 3GB
             - key: MODEL TYPE
               value: RMIR
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:str-rmir-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline Generic NVIDIA GPUx1
-          ngcMetadata:
-            330b3d346ebcf50c2feb9cd5c24294c1181de97afce6159a524a3c7c09238059:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                diarizer: disabled
-                mode: str
-                model_type: rmir
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: COUNT
-              value: 1
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 3GB
-            - key: MODEL TYPE
-              value: RMIR
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:str-silero-sortformer-rmir-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline Generic NVIDIA GPUx1
-          ngcMetadata:
-            334305352282aca7702cd97b9e4cb95700576d121d3c210bfef7f736fb381a24:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                diarizer: sortformer
-                mode: str
-                model_type: rmir
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: COUNT
-              value: 1
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 4GB
-            - key: MODEL TYPE
-              value: RMIR
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:str-thr-silero-sortformer-rmir-25.12.4
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline Generic NVIDIA GPUx1
-          ngcMetadata:
-            3e7a812fe6fb7751a3ee8111e46f3856c808ac0a81459c24a89a6e428ad37733:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                diarizer: sortformer
-                mode: str-thr
-                model_type: rmir
-                name: parakeet-1-1b-ctc-en-us
-                vad: silero
-          modelFormat: trt-llm
-          spec:
-            - key: COUNT
-              value: 1
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 4GB
-            - key: MODEL TYPE
-              value: RMIR
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:ofl-silero-sortformer-rmir-25.12.4-mofl
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:ofl-silero-sortformer-rmir-25.12.4
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline Generic NVIDIA GPUx1
           ngcMetadata:
@@ -2279,7 +1678,7 @@ models:
               value: 4GB
             - key: MODEL TYPE
               value: RMIR
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:ofl-silero-sortformer-rmir-25.12.4-mall
+        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:ofl-silero-sortformer-rmir-25.12.4
           framework: TensorRT-LLM
           displayName: Parakeet 1 1B Ctc En Us Offline Generic NVIDIA GPUx1
           ngcMetadata:
@@ -2300,29 +1699,6 @@ models:
               value: 1.4.0
             - key: DOWNLOAD SIZE
               value: 4GB
-            - key: MODEL TYPE
-              value: RMIR
-        - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:str-thr-rmir-25.12.5
-          framework: TensorRT-LLM
-          displayName: Parakeet 1 1B Ctc En Us Offline Generic NVIDIA GPUx1
-          ngcMetadata:
-            c9ceb08ad58a7a95595fbef01e5892f7421157f26ad98bbc18b05d76e1c6ff40:
-              model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
-              release: 1.4.0
-              tags:
-                diarizer: disabled
-                mode: str-thr
-                model_type: rmir
-                name: parakeet-1-1b-ctc-en-us
-                vad: default
-          modelFormat: trt-llm
-          spec:
-            - key: COUNT
-              value: 1
-            - key: NIM VERSION
-              value: 1.4.0
-            - key: DOWNLOAD SIZE
-              value: 3GB
             - key: MODEL TYPE
               value: RMIR
   labels:
