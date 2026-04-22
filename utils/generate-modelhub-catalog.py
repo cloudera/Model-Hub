@@ -748,6 +748,22 @@ def append_optional_spec_fields(spec_list, tags):
         # No special unquoting; just uppercase string representation
         spec_list.append({"key": spec_key, "value": str(raw).upper()})
 
+def append_optimization_profile(optimization_profiles, profile_id_counts, profile_dict):
+    """Append one profile. Duplicate NIM profileId values get suffixes __2, __3, …"""
+    pid = profile_dict.get("profileId")
+    if not isinstance(pid, str) or not str(pid).strip():
+        optimization_profiles.append(profile_dict)
+        return
+    base = str(pid).strip()
+    n = profile_id_counts.get(base, 0) + 1
+    profile_id_counts[base] = n
+    if n == 1:
+        optimization_profiles.append(profile_dict)
+        return
+    final_id = f"{base}__{n}"
+    print(f"Disambiguating profileId: {base} -> {final_id}")
+    optimization_profiles.append({**profile_dict, "profileId": final_id})
+
 def main():
     parser = argparse.ArgumentParser(description="Generate modelhub catalog YAML file using manifest YAML and base model YAML")
     parser.add_argument(
@@ -793,6 +809,7 @@ def main():
     profiles = profile_data.get("profiles", [])
 
     optimization_profiles = []
+    profile_id_counts = {}
     covered_gpu_combinations = set()  # Track which GPU-TP*PP-PRECISION-PROFILE combinations already have profiles
     target_gpus = ["A10G", "L40S", "H100", "H200", "A100"]  # GPUs to generate from generic profiles
 
@@ -848,7 +865,7 @@ def main():
                 metadata_tags = dict(tags)
                 if "gpu" in metadata_tags and isinstance(metadata_tags["gpu"], str):
                     metadata_tags["gpu"] = metadata_tags["gpu"].upper()
-                optimization_profiles.append({
+                append_optimization_profile(optimization_profiles, profile_id_counts, {
                     "profileId": profile_id_uri,
                     "framework": "ONNX",
                     "displayName": display_name,
@@ -998,7 +1015,7 @@ def main():
             "spec": spec_list
         }
 
-        optimization_profiles.append(optimization_profile)
+        append_optimization_profile(optimization_profiles, profile_id_counts, optimization_profile)
         # Track GPU-TP*PP-PRECISION-PROFILE combination as covered
         comb_tp = str(tp_eff)
         comb_pp = str(pp_eff)
@@ -1046,7 +1063,7 @@ def main():
                                 continue
                     vllm_profile = create_gpu_specific_profile_vllm(profile, model, release, target_gpu, args.ngc_api_key)
                     if vllm_profile:
-                        optimization_profiles.append(vllm_profile)
+                        append_optimization_profile(optimization_profiles, profile_id_counts, vllm_profile)
                         covered_gpu_combinations.add(comb)
                         print(f"Generated VLLM profile for {target_gpu} (TP={tp}, PP={pp}, Precision={precision.upper()}, Profile={profile_type.upper()}) from generic profile {profile.get('id', 'unknown')}")
                 continue
@@ -1094,7 +1111,7 @@ def main():
 
                 gpu_profile = create_gpu_specific_profile(profile, model, release, target_gpu, args.ngc_api_key)
                 if gpu_profile:
-                    optimization_profiles.append(gpu_profile)
+                    append_optimization_profile(optimization_profiles, profile_id_counts, gpu_profile)
                     covered_gpu_combinations.add(gpu_combination)
                     print(f"Generated profile for {target_gpu} (TP={tp}, PP={pp}, Precision={precision.upper()}, Profile={profile_type.upper()}) from generic profile {profile.get('id', 'unknown')}")
 
@@ -1129,7 +1146,7 @@ def main():
                             {"key": "DOWNLOAD SIZE", "value": download_size}
                         ])
                         append_optional_spec_fields(spec_list, tags)
-                        optimization_profiles.append({
+                        append_optimization_profile(optimization_profiles, profile_id_counts, {
                             "profileId": profile_id_uri,
                             "framework": "VLLM",
                             "displayName": display_name,
@@ -1186,11 +1203,14 @@ def main():
                 "spec": spec_list
             }
 
-            optimization_profiles.append(optimization_profile)
+            append_optimization_profile(optimization_profiles, profile_id_counts, optimization_profile)
             print(f"Added generic profile {profile.get('id', 'unknown')} without GPU details for private platform")
 
     if optimization_profiles:
-        model_data['models'][0]['modelVariants'][0].setdefault('optimizationProfiles', []).extend(optimization_profiles)
+        variant0 = model_data['models'][0]['modelVariants'][0]
+        if not isinstance(variant0.get('optimizationProfiles'), list):
+            variant0['optimizationProfiles'] = []
+        variant0['optimizationProfiles'].extend(optimization_profiles)
 
     with open(args.output_yaml, 'w') as f:
         yaml.dump(model_data, f)
