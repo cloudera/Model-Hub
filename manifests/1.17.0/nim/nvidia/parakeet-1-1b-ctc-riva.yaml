@@ -1,0 +1,1114 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
+release: 1.4.0
+profiles:
+- id: 040608a7452b327bb803a2e9ba8f34eed7521a0e6323599c262bc8a5f8460d2e
+  tags:
+    diarizer: disabled
+    mode: ofl
+    model_type: rmir
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-ofl-rmir-25.12.4/asr-parakeet-1.1b-en-US-offline-flashlight.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:ofl-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-offline-flashlight.rmir
+      punctuation-model-punctuation-en-us-rmir-25.08.1/asr-punctuation-en-US.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:punctuation-en-us-rmir-25.08.1?file=asr-punctuation-en-US.rmir
+- id: 0a0a59694a51970319b5102e359f4abb34254b969d96b1c20a508c5987862830
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: h100
+    gpu_device: '2330'
+    mode: str-thr
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-25.12.5-fp8-duruavbbwq/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-25.12.5-fp8-duruavbbwq?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-25.12.5-fp8-duruavbbwq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-25.12.5-fp8-duruavbbwq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-25.12.5-fp8-duruavbbwq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-25.12.5-fp8-duruavbbwq?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 0eb98597d835bd360ff323d6270fac97152414414393a95d98bccb86a4fa6a53
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: l40s
+    gpu_device: 26b9
+    mode: str
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 10b68c1c4d3b930d95e4ef3b1e813d032c5002e89101ded3c6efed7e0f7cd9f4
+  tags:
+    diarizer: disabled
+    mode: true-ofl
+    model_type: rmir
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-true-ofl-silero-rmir-25.12.4/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:true-ofl-silero-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.rmir
+      punctuation-model-punctuation-en-us-rmir-25.08.1/asr-punctuation-en-US.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:punctuation-en-us-rmir-25.08.1?file=asr-punctuation-en-US.rmir
+- id: 1257341741c39ad4666b554cb08f7dcb1c8fc481ed674718da97bf9408c87523
+  tags:
+    diarizer: disabled
+    mode: all
+    model_type: rmir
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-ofl-rmir-25.12.4/asr-parakeet-1.1b-en-US-offline-flashlight.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:ofl-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-offline-flashlight.rmir
+      parakeet-1-1b-ctc-en-us-str-rmir-25.12.4/asr-parakeet-1.1b-en-US-streaming-flashlight.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:str-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-streaming-flashlight.rmir
+      parakeet-1-1b-ctc-en-us-str-thr-rmir-25.12.5/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:str-thr-rmir-25.12.5?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.rmir
+      punctuation-model-punctuation-en-us-rmir-25.08.1/asr-punctuation-en-US.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:punctuation-en-us-rmir-25.08.1?file=asr-punctuation-en-US.rmir
+- id: 18ca5f45c6d78705429e5461623871ac338378d844fcf538b8df8ccf525ea115
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: a100
+    gpu_device: 20b2
+    mode: all
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 1cc140aed9e5652c265a303d93dcadcf4483e931c8d345ec0ea4da89e4be28e2
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: a100
+    gpu_device: 20b2
+    mode: true-ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-true-ofl-silero-25.12.4-fp16-hpqukbrhra?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 26475638eeb7bc6d8a4e81619bcf95702e4dc6875c355aa16aecbb755fbf6813
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: h100
+    gpu_device: '2330'
+    mode: ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-25.12.4-fp8-ldxrqwxnow/asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-fp8-ldxrqwxnow?file=asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-25.12.4-fp8-ldxrqwxnow/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-fp8-ldxrqwxnow?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-25.12.4-fp8-ldxrqwxnow/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-fp8-ldxrqwxnow?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 330b3d346ebcf50c2feb9cd5c24294c1181de97afce6159a524a3c7c09238059
+  tags:
+    diarizer: disabled
+    mode: str
+    model_type: rmir
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-str-rmir-25.12.4/asr-parakeet-1.1b-en-US-streaming-flashlight.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:str-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-streaming-flashlight.rmir
+      punctuation-model-punctuation-en-us-rmir-25.08.1/asr-punctuation-en-US.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:punctuation-en-us-rmir-25.08.1?file=asr-punctuation-en-US.rmir
+- id: 334305352282aca7702cd97b9e4cb95700576d121d3c210bfef7f736fb381a24
+  tags:
+    diarizer: sortformer
+    mode: str
+    model_type: rmir
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-str-silero-sortformer-rmir-25.12.4/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.rmir
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:str-silero-sortformer-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.rmir
+      punctuation-model-punctuation-en-us-rmir-25.08.1/asr-punctuation-en-US.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:punctuation-en-us-rmir-25.08.1?file=asr-punctuation-en-US.rmir
+- id: 3506c8e5dd8f62f057477d0326c384958d6d69373958371339e1e42f303c277b
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: a100
+    gpu_device: 20b2
+    mode: all
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-25.12.4-fp16-ikylnwwcjg/asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-fp16-ikylnwwcjg?file=asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-25.12.4-fp16-ikylnwwcjg/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-fp16-ikylnwwcjg?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-25.12.4-fp16-ikylnwwcjg/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-fp16-ikylnwwcjg?file=metadata.json
+      parakeet-1-1b-ctc-en-us-a100x1-str-25.12.4-fp16-poahzcugjw/asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-25.12.4-fp16-poahzcugjw?file=asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-str-25.12.4-fp16-poahzcugjw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-25.12.4-fp16-poahzcugjw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-str-25.12.4-fp16-poahzcugjw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-25.12.4-fp16-poahzcugjw?file=metadata.json
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-25.12.5-fp16-zangshw88q/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-25.12.5-fp16-zangshw88q?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-25.12.5-fp16-zangshw88q/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-25.12.5-fp16-zangshw88q?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-25.12.5-fp16-zangshw88q/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-25.12.5-fp16-zangshw88q?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 3e7a812fe6fb7751a3ee8111e46f3856c808ac0a81459c24a89a6e428ad37733
+  tags:
+    diarizer: sortformer
+    mode: str-thr
+    model_type: rmir
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-str-thr-silero-sortformer-rmir-25.12.4/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.rmir
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:str-thr-silero-sortformer-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.rmir
+      punctuation-model-punctuation-en-us-rmir-25.08.1/asr-punctuation-en-US.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:punctuation-en-us-rmir-25.08.1?file=asr-punctuation-en-US.rmir
+- id: 41f1d4dbd520128e81db48127abcc5808e98d6175c53cfc06d38da27cc682bc7
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: a100
+    gpu_device: 20b2
+    mode: ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-25.12.4-fp16-ikylnwwcjg/asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-fp16-ikylnwwcjg?file=asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-25.12.4-fp16-ikylnwwcjg/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-fp16-ikylnwwcjg?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-25.12.4-fp16-ikylnwwcjg/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-25.12.4-fp16-ikylnwwcjg?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 4525de47a9634b0a24e6a255b98b0cd3d3c0ebb3b6d220c49ca257b24f06b8d1
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    mode: str-thr
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya?file=metadata.json
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=checksums.blake3
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=metadata.json
+- id: 45ff8bb5ee72bcc1f198c2e02024dbf839f2b48d366ffa25a1f916a7f9c14f57
+  tags:
+    diarizer: sortformer
+    mode: ofl
+    model_type: rmir
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-ofl-silero-sortformer-rmir-25.12.4/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:ofl-silero-sortformer-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.rmir
+      punctuation-model-punctuation-en-us-rmir-25.08.1/asr-punctuation-en-US.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:punctuation-en-us-rmir-25.08.1?file=asr-punctuation-en-US.rmir
+- id: 4b5513845956a47446cdd195b4420640b3cc6c2242cbf1b0779c161d05b2efe6
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    mode: str
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-25.12.4-fp16--yplglocmq/asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-25.12.4-fp16--yplglocmq?file=asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-25.12.4-fp16--yplglocmq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-25.12.4-fp16--yplglocmq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-25.12.4-fp16--yplglocmq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-25.12.4-fp16--yplglocmq?file=metadata.json
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=checksums.blake3
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=metadata.json
+- id: 4e5789c0d6b29ecc7a5dbfa293a85e4443ec6cfd5d7ee14a32767d3956e7779f
+  tags:
+    diarizer: sortformer
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    mode: all
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-silero-sortformer-25.12.4-fp16-luva6wcxya?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw?file=metadata.json
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=checksums.blake3
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=metadata.json
+- id: 5390a3902bdf16f9c11b2da513fa8ab59dcff4719293d165038f369df1f0a616
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: h100
+    gpu_device: '2330'
+    mode: all
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 580826da1526bb86d2dc1ad50f4c4da8104f24619b53d16ac0d2392172c98148
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    mode: ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg/asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg?file=asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg?file=metadata.json
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=checksums.blake3
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=metadata.json
+- id: 5aaf35b58b24e742ae091d9759cf2751dd278f865af1fc8fa71db88afcdcb9f0
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: l40s
+    gpu_device: 26b9
+    mode: ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-25.12.4-fp8-nh6vnluohw/asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-fp8-nh6vnluohw?file=asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-25.12.4-fp8-nh6vnluohw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-fp8-nh6vnluohw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-25.12.4-fp8-nh6vnluohw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-fp8-nh6vnluohw?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 5b585aa20f352d1715960e583f75cff3bf824ecb955e8bfd14e8ee40a70d6ce4
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: h100
+    gpu_device: '2330'
+    mode: all
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-25.12.4-fp8-ldxrqwxnow/asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-fp8-ldxrqwxnow?file=asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-25.12.4-fp8-ldxrqwxnow/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-fp8-ldxrqwxnow?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-25.12.4-fp8-ldxrqwxnow/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-25.12.4-fp8-ldxrqwxnow?file=metadata.json
+      parakeet-1-1b-ctc-en-us-h100x1-str-25.12.4-fp8-irt-f6qd-g/asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-25.12.4-fp8-irt-f6qd-g?file=asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-str-25.12.4-fp8-irt-f6qd-g/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-25.12.4-fp8-irt-f6qd-g?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-str-25.12.4-fp8-irt-f6qd-g/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-25.12.4-fp8-irt-f6qd-g?file=metadata.json
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-25.12.5-fp8-duruavbbwq/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-25.12.5-fp8-duruavbbwq?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-25.12.5-fp8-duruavbbwq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-25.12.5-fp8-duruavbbwq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-25.12.5-fp8-duruavbbwq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-25.12.5-fp8-duruavbbwq?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 5cdc247ecf3eabe3ab6d7e6018d507d6efb0ebc0c21c8e7b2cd9e23059175ffe
+  tags:
+    diarizer: sortformer
+    mode: all
+    model_type: rmir
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-ofl-silero-sortformer-rmir-25.12.4/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:ofl-silero-sortformer-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.rmir
+      ? parakeet-1-1b-ctc-en-us-str-silero-sortformer-rmir-25.12.4/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.rmir
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:str-silero-sortformer-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.rmir
+      ? parakeet-1-1b-ctc-en-us-str-thr-silero-sortformer-rmir-25.12.4/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.rmir
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:str-thr-silero-sortformer-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.rmir
+      parakeet-1-1b-ctc-en-us-true-ofl-silero-rmir-25.12.4/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:true-ofl-silero-rmir-25.12.4?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.rmir
+      punctuation-model-punctuation-en-us-rmir-25.08.1/asr-punctuation-en-US.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:punctuation-en-us-rmir-25.08.1?file=asr-punctuation-en-US.rmir
+- id: 6261207d00b1a159214eb3fa41398f4dab7bd0470fdae0e88d81fe9a376d6e85
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: a100
+    gpu_device: 20b2
+    mode: ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-ofl-silero-sortformer-25.12.4-fp16-irxmvxkjzq?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 6f17f8024bdc441722dd89f159d043c10b5f0b2520151555237c7d976c5893e0
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: h100
+    gpu_device: '2330'
+    mode: str
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-silero-sortformer-25.12.4-fp8-wmlajketpq?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 7019e9af238d7080f30b873adb7a1054423f3c27ac022feee3f3291fc5e99adb
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: a100
+    gpu_device: 20b2
+    mode: str-thr
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-25.12.5-fp16-zangshw88q/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-25.12.5-fp16-zangshw88q?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-25.12.5-fp16-zangshw88q/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-25.12.5-fp16-zangshw88q?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-25.12.5-fp16-zangshw88q/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-25.12.5-fp16-zangshw88q?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 7458e159cb472a758df6e242e1266843d3fa90b3827ff4181fefbb992447bf0e
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: h100
+    gpu_device: '2330'
+    mode: str-thr
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-thr-silero-sortformer-25.12.4-fp8-jgzoy3cj3a?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 76d4bfaffd9d67fea185a5aa8851e9068a1bd0ce9c1127abe254617b1597307f
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: l40s
+    gpu_device: 26b9
+    mode: str-thr
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 77ae9ad21fae5c53d4d47bb46bb3463e12616023de0f0df2d2327bc73d43a9d0
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: l40s
+    gpu_device: 26b9
+    mode: str-thr
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 815bb625efbdf54b4dd6efdcf888f659c7e4e3e61b67f21b40c06f8e1877e7d9
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: a100
+    gpu_device: 20b2
+    mode: str
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-a100x1-str-25.12.4-fp16-poahzcugjw/asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-25.12.4-fp16-poahzcugjw?file=asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-str-25.12.4-fp16-poahzcugjw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-25.12.4-fp16-poahzcugjw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-str-25.12.4-fp16-poahzcugjw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-25.12.4-fp16-poahzcugjw?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 952cebb152c81fcf82cf6818fe08ac9f09cc972c74a8862dfa975e6d32112f49
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: h100
+    gpu_device: '2330'
+    mode: true-ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-true-ofl-silero-25.12.4-fp8-zzg0jldvoa?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 9c8ba8223f53cd8d73c6482f2d07bcd34466343ce2629859e16fe92a297cf78a
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: h100
+    gpu_device: '2330'
+    mode: ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-ofl-silero-sortformer-25.12.4-fp8-r1t-vaoajq?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: 9d4661af95694a43bcc2d0b6636e6c2f574453c108ec8c83501f65370b34b78d
+  tags:
+    diarizer: disabled
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    mode: all
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg/asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg?file=asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-25.12.4-fp16-vt0bruwfdg?file=metadata.json
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-25.12.4-fp16--yplglocmq/asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-25.12.4-fp16--yplglocmq?file=asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-25.12.4-fp16--yplglocmq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-25.12.4-fp16--yplglocmq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-25.12.4-fp16--yplglocmq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-25.12.4-fp16--yplglocmq?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw?file=metadata.json
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=checksums.blake3
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=metadata.json
+- id: a716082fbc0e5d3abe1ef72ccde508d8146a05e41b27a4f3611049e7de17e92b
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    mode: str-thr
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-thr-25.12.5-fp16-mma6ois6hw?file=metadata.json
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=checksums.blake3
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=metadata.json
+- id: b99bec5d98f33832e78ba47961b720702fa424dd6062644064d7c0d0951c0ed9
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    mode: true-ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-true-ofl-silero-25.12.4-fp16-kcdfbvwdhw?file=metadata.json
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=checksums.blake3
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=metadata.json
+- id: bbc1df7614375d0dc9d1a1d40dca646691f41ee87a63a430059af2e5901df113
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: a100
+    gpu_device: 20b2
+    mode: str-thr
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-thr-silero-sortformer-25.12.4-fp16-enwmpxdpmg?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: bcb2fcb88eccd44da126aeac33ef62e691693db8693c8b606c95718b44ba8d92
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: a100
+    gpu_device: 20b2
+    mode: str
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-str-silero-sortformer-25.12.4-fp16-evo37diapa?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: c5b3bb509b851ecd56dd489588ec689edc8493f2a63d3aaa42dec1050ed0cd3e
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: l40s
+    gpu_device: 26b9
+    mode: str
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-l40sx1-str-25.12.4-fp8-g7nsywle7a/asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-25.12.4-fp8-g7nsywle7a?file=asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-str-25.12.4-fp8-g7nsywle7a/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-25.12.4-fp8-g7nsywle7a?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-str-25.12.4-fp8-g7nsywle7a/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-25.12.4-fp8-g7nsywle7a?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: c9ceb08ad58a7a95595fbef01e5892f7421157f26ad98bbc18b05d76e1c6ff40
+  tags:
+    diarizer: disabled
+    mode: str-thr
+    model_type: rmir
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-str-thr-rmir-25.12.5/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:str-thr-rmir-25.12.5?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.rmir
+      punctuation-model-punctuation-en-us-rmir-25.08.1/asr-punctuation-en-US.rmir:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:punctuation-en-us-rmir-25.08.1?file=asr-punctuation-en-US.rmir
+- id: cfa24374558583f217e57cc2d0bec133c436762903dc9fe539dc6a5b2df5bc26
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: l40s
+    gpu_device: 26b9
+    mode: true-ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: df498bf301af2ef17c3e0e61c006764afec46a6b4565606d6bf90f6a36f6d836
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: l40s
+    gpu_device: 26b9
+    mode: all
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-silero-sortformer-25.12.4-fp8-8udv5uwp8a?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-silero-sortformer-25.12.4-fp8-u56cvahx-a?file=metadata.json
+      ? parakeet-1-1b-ctc-en-us-l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg/asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg?file=asr-parakeet-1.1b-en-US-true-offline-flashlight-silero-vad.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-true-ofl-silero-25.12.4-fp8-g-uuc-amtg?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: e48ada80aead95c5fdcccc3b302d07d406d1d0b25858e4994f3cc34338002572
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    mode: str
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq/asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq?file=asr-parakeet-1.1b-en-US-streaming-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-str-silero-sortformer-25.12.4-fp16-6b0kquqngq?file=metadata.json
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=checksums.blake3
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=metadata.json
+- id: e998c37b62b8c8b14edb4cfb2a1e3a356d654aee999fb71275989bbfff969b21
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: l40s
+    gpu_device: 26b9
+    mode: all
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-25.12.4-fp8-nh6vnluohw/asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-fp8-nh6vnluohw?file=asr-parakeet-1.1b-en-US-offline-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-25.12.4-fp8-nh6vnluohw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-fp8-nh6vnluohw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-25.12.4-fp8-nh6vnluohw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-25.12.4-fp8-nh6vnluohw?file=metadata.json
+      parakeet-1-1b-ctc-en-us-l40sx1-str-25.12.4-fp8-g7nsywle7a/asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-25.12.4-fp8-g7nsywle7a?file=asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-str-25.12.4-fp8-g7nsywle7a/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-25.12.4-fp8-g7nsywle7a?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-str-25.12.4-fp8-g7nsywle7a/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-25.12.4-fp8-g7nsywle7a?file=metadata.json
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw/asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw?file=asr-parakeet-1.1b-en-US-streaming-throughput-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-str-thr-25.12.5-fp8-hxayt7rgvw?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: ed3ba52966660e7641e554ec1349adcaa57e59afcdb9d2fadf01c89f50e26315
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: l40s
+    gpu_device: 26b9
+    mode: ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:l40sx1-ofl-silero-sortformer-25.12.4-fp8-18k-jihwrw?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: f142541db13a3ec148ce1b9a9851f172d6c128ad5ba145bbc89a590efa6415eb
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    gpu: h100
+    gpu_device: '2330'
+    mode: str
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: default
+  workspace:
+    files:
+      parakeet-1-1b-ctc-en-us-h100x1-str-25.12.4-fp8-irt-f6qd-g/asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-25.12.4-fp8-irt-f6qd-g?file=asr-parakeet-1.1b-en-US-streaming-flashlight.tar.gz
+      parakeet-1-1b-ctc-en-us-h100x1-str-25.12.4-fp8-irt-f6qd-g/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-25.12.4-fp8-irt-f6qd-g?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-h100x1-str-25.12.4-fp8-irt-f6qd-g/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:h100x1-str-25.12.4-fp8-irt-f6qd-g?file=metadata.json
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=checksums.blake3
+      punctuation-model-a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:a100x1-punctuation-en-us-25.12.1-fp16-uvaqd6w4xw?file=metadata.json
+- id: ff330c491df0d3a5db8f36c6e5e3084c29134858bb716f4b32cceb3da72b8b1a
+  tags:
+    ampereplus: disabled
+    diarizer: sortformer
+    gpu: dgx_spark
+    gpu_device: '2e12'
+    mode: ofl
+    model_type: prebuilt
+    name: parakeet-1-1b-ctc-en-us
+    vad: silero
+  workspace:
+    files:
+      ? parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw/asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      : uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw?file=asr-parakeet-1.1b-en-US-offline-flashlight-silero-vad-sortformer.tar.gz
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw?file=checksums.blake3
+      parakeet-1-1b-ctc-en-us-dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-25.12.4-fp16-by3cdocosw?file=metadata.json
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/asr-punctuation-en-US.tar.gz:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=asr-punctuation-en-US.tar.gz
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/checksums.blake3:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=checksums.blake3
+      punctuation-model-dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq/metadata.json:
+        uri: ngc://nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-punctuation-en-us-25.12.1-fp16-8mif5jsclq?file=metadata.json
