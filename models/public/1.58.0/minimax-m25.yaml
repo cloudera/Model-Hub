@@ -1,0 +1,660 @@
+models:
+- name: MINIMAX-M25
+  displayName: MINIMAX-M25
+  modelHubID: minimax-m25
+  category: Language
+  type: NGC
+  description: MiniMax-M2.5 is a text generation model trained to perform complex agentic tasks, including software engineering, tool use, search, and office-work style workflows. It is extensively trained with reinforcement learning in hundreds of thousands of complex real-world environments, M2.5 is SOTA in coding, agentic tool use and search, office work, and a range of other economically valuable tasks, boasting scores of 80.2% in SWE-Bench Verified, 51.3% in Multi-SWE-Bench, and 76.3% in BrowseComp (with context management). Trained to reason efficiently and decompose tasks optimally, M2.5 exhibits tremendous speed in performing complicated agentic tasks, completing the SWE-Bench Verified evaluation 37% faster than M2.1, matching the speed of Claude Opus 4.6.
+  requireLicense: true
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+  modelVariants:
+  - variantId: MINIMAX-M25
+    modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJjYW5HdWVzdERvd25sb2FkIjogZmFsc2UsCiAgICAiY3JlYXRlZERhdGUiOiAiMjAyNi0wMi0yNlQwMTo1Njo1Ny40MjNaIiwKICAgICJkZXNjcmlwdGlvbiI6ICIjIE1pbmlNYXgtTTIuNSBPdmVydmlld1xuXG4jIyBEZXNjcmlwdGlvbjpcbk1pbmlNYXgtTTIuNSBpcyBhIHRleHQgZ2VuZXJhdGlvbiBtb2RlbCB0cmFpbmVkIHRvIHBlcmZvcm0gY29tcGxleCBhZ2VudGljIHRhc2tzLCBpbmNsdWRpbmcgc29mdHdhcmUgZW5naW5lZXJpbmcsIHRvb2wgdXNlLCBzZWFyY2gsIGFuZCBvZmZpY2Utd29yayBzdHlsZSB3b3JrZmxvd3MuIEl0IGlzIGV4dGVuc2l2ZWx5IHRyYWluZWQgd2l0aCByZWluZm9yY2VtZW50IGxlYXJuaW5nIGluIGh1bmRyZWRzIG9mIHRob3VzYW5kcyBvZiBjb21wbGV4IHJlYWwtd29ybGQgZW52aXJvbm1lbnRzLCBNMi41IGlzIFNPVEEgaW4gY29kaW5nLCBhZ2VudGljIHRvb2wgdXNlIGFuZCBzZWFyY2gsIG9mZmljZSB3b3JrLCBhbmQgYSByYW5nZSBvZiBvdGhlciBlY29ub21pY2FsbHkgdmFsdWFibGUgdGFza3MsIGJvYXN0aW5nIHNjb3JlcyBvZiA4MC4yJSBpbiBTV0UtQmVuY2ggVmVyaWZpZWQsIDUxLjMlIGluIE11bHRpLVNXRS1CZW5jaCwgYW5kIDc2LjMlIGluIEJyb3dzZUNvbXAgKHdpdGggY29udGV4dCBtYW5hZ2VtZW50KS4gVHJhaW5lZCB0byByZWFzb24gZWZmaWNpZW50bHkgYW5kIGRlY29tcG9zZSB0YXNrcyBvcHRpbWFsbHksIE0yLjUgZXhoaWJpdHMgdHJlbWVuZG91cyBzcGVlZCBpbiBwZXJmb3JtaW5nIGNvbXBsaWNhdGVkIGFnZW50aWMgdGFza3MsIGNvbXBsZXRpbmcgdGhlIFNXRS1CZW5jaCBWZXJpZmllZCBldmFsdWF0aW9uIDM3JSBmYXN0ZXIgdGhhbiBNMi4xLCBtYXRjaGluZyB0aGUgc3BlZWQgb2YgQ2xhdWRlIE9wdXMgNC42LiAgXG5NaW5pTWF4LU0yLjUgd2FzIGRldmVsb3BlZCBieSBNaW5pTWF4QUkuICBcbl9UaGlzIG1vZGVsIGlzIHJlYWR5IGZvciBjb21tZXJjaWFsL25vbi1jb21tZXJjaWFsIHVzZS5fXG5cbiMjIFRoaXJkLVBhcnR5IENvbW11bml0eSBDb25zaWRlcmF0aW9uOlxuVGhpcyBtb2RlbCBpcyBub3Qgb3duZWQgb3IgZGV2ZWxvcGVkIGJ5IE5WSURJQS4gVGhpcyBtb2RlbCBoYXMgYmVlbiBkZXZlbG9wZWQgYW5kIGJ1aWx0IHRvIGEgdGhpcmQtcGFydHkncyByZXF1aXJlbWVudHMgZm9yIHRoaXMgYXBwbGljYXRpb24gYW5kIHVzZSBjYXNlOyBzZWUgbGluayB0byBOb24tTlZJRElBIFtNaW5pTWF4LU0yLjUgTW9kZWwgQ2FyZF0oaHR0cHM6Ly9odWdnaW5nZmFjZS5jby9NaW5pTWF4QUkvTWluaU1heC1NMi41KS5cblxuIyMgTGljZW5zZSBhbmQgVGVybXMgb2YgVXNlOlxuR09WRVJOSU5HIFRFUk1TOiBVc2Ugb2YgdGhpcyBtb2RlbCBpcyBnb3Zlcm5lZCBieSB0aGUgW05WSURJQSBPcGVuIE1vZGVsIExpY2Vuc2VdKGh0dHBzOi8vd3d3Lm52aWRpYS5jb20vZW4tdXMvYWdyZWVtZW50cy9lbnRlcnByaXNlLXNvZnR3YXJlL252aWRpYS1vcGVuLW1vZGVsLWxpY2Vuc2UvKS4gQURESVRJT05BTCBJTkZPUk1BVElPTjogW01vZGlmaWVkIE1JVCBMaWNlbnNlXShodHRwczovL2dpdGh1Yi5jb20vTWluaU1heC1BSS9NaW5pTWF4LU0yLjUvYmxvYi9tYWluL0xJQ0VOU0UpLiBbTWluaU1heCBNMi41XShodHRwczovL2h1Z2dpbmdmYWNlLmNvL01pbmlNYXhBSS9NaW5pTWF4LU0yLjUpLlxuXG4jIyBEZXBsb3ltZW50IEdlb2dyYXBoeTpcbkdsb2JhbFxuXG5cbioqR2V0IEhlbHAqKlxuXG4jIyMgRW50ZXJwcmlzZSBTdXBwb3J0XG5HZXQgYWNjZXNzIHRvIGtub3dsZWRnZSBiYXNlIGFydGljbGVzIGFuZCBzdXBwb3J0IGNhc2VzIG9yIFtzdWJtaXQgYSB0aWNrZXRdKGh0dHBzOi8vd3d3Lm52aWRpYS5jb20vZW4tdXMvZGF0YS1jZW50ZXIvcHJvZHVjdHMvYWktZW50ZXJwcmlzZS1zdWl0ZS9zdXBwb3J0LykuXG5cbiMjIFVzZSBDYXNlOlxuRW50ZXJwcmlzZXMgYW5kIGRldmVsb3BlcnMgYnVpbGRpbmcgQUkgYWdlbnRzLCBjaGF0Ym90cywgYW5kIHRvb2wtdXNpbmcgYXBwbGljYXRpb25zIGFjcm9zcyBjb2RpbmcsIG9mZmljZSB3b3JrLCBhbmQgaW5mb3JtYXRpb24tcmV0cmlldmFsIHRhc2tzLiBUaGUgbW9kZWwgaXMgc3VpdGVkIGZvciBOTFAgd29ya2xvYWRzIHRoYXQgcmVxdWlyZSBhZHZhbmNlZCByZWFzb25pbmcsIGxvbmctY29udGV4dCBoYW5kbGluZywgYW5kIGFnZW50aWMgdG9vbCB1c2UsIGluY2x1ZGluZzpcbiogQ29kaW5nIGFuZCBzb2Z0d2FyZSBlbmdpbmVlcmluZyBhc3Npc3RhbmNlIChlLmcuLCBTV0UtYmVuY2ggc3R5bGUgdGFza3MpXG4qIFNlYXJjaCBhbmQgdG9vbCBjYWxsaW5nIHdvcmtmbG93c1xuKiBPZmZpY2UgcHJvZHVjdGl2aXR5IHRhc2tzIChlLmcuLCBkb2N1bWVudC9zcHJlYWRzaGVldCBvcmllbnRlZCB3b3JrZmxvd3MpXG4qIEdlbmVyYWwgY29udmVyc2F0aW9uYWwgYXNzaXN0YW50IHVzZVxuXG4jIyBSZWxlYXNlIERhdGU6XG4qKkh1Z2dpbmdGYWNlKiogMDIvMTIvMjAyNiB2aWEgW01pbmlNYXhBSS9NaW5pTWF4LU0yLjVdKGh0dHBzOi8vaHVnZ2luZ2ZhY2UuY28vTWluaU1heEFJL01pbmlNYXgtTTIuNSkgIFxuKipOR0MqKiAwMi8yNi8yMDI2IHZpYSBbTWluaU1heC1NMi41IG9uIE5HQ10oaHR0cHM6Ly9jYXRhbG9nLm5nYy5udmlkaWEuY29tL29yZ3MvbmltL3RlYW1zL21pbmltYXgtYWkvbW9kZWxzL21pbmltYXgtbTI1KSAgXG4qKk5HQyAoUmVmcmVzaCkqKiAwMy8wNS8yMDI2IFx1MjAxNCB2aWEgW01pbmlNYXgtTTIuNSBvbiBOR0NdKGh0dHBzOi8vY2F0YWxvZy5uZ2MubnZpZGlhLmNvbS9vcmdzL25pbS90ZWFtcy9taW5pbWF4LWFpL21vZGVscy9taW5pbWF4LW0yNSkgIFxuXG4jIyBSZWZlcmVuY2Uocyk6XG4qIFtNaW5pTWF4QUkgTW9kZWwgQ2FyZF0oaHR0cHM6Ly9odWdnaW5nZmFjZS5jby9NaW5pTWF4QUkvTWluaU1heC1NMi41KVxuKiBbTWluaU1heCBHaXRIdWIgUmVwb10oaHR0cHM6Ly9naXRodWIuY29tL01pbmlNYXgtQUkvTWluaU1heC1NMi41KVxuXG4jIyBNb2RlbCBBcmNoaXRlY3R1cmU6XG4qKkFyY2hpdGVjdHVyZSBUeXBlOioqIFRyYW5zZm9ybWVyICBcbioqTmV0d29yayBBcmNoaXRlY3R1cmU6KiogTWl4dHVyZSBvZiBFeHBlcnRzIChNb0UpIHdpdGggTGlnaHRuaW5nIEF0dGVudGlvbiwgOCBleHBlcnRzIHBlciB0b2tlbiAoTWluaU1heE0yRm9yQ2F1c2FsTE0pICBcbioqVG90YWwgUGFyYW1ldGVyczoqKiBVbmRpc2Nsb3NlZCAgXG4qKkFjdGl2ZSBQYXJhbWV0ZXJzOioqIFVuZGlzY2xvc2VkICBcbioqVm9jYWJ1bGFyeSBTaXplOioqIFVuZGlzY2xvc2VkICBcbioqQmFzZSBNb2RlbDoqKiBNaW5pTWF4IE0yLXNlcmllcyAoZS5nLiwgTWluaU1heC1NMi4xKVxuXG4jIyMgSW5wdXQ6XG4qKklucHV0IFR5cGVzOioqIFRleHQgIFxuKipJbnB1dCBGb3JtYXRzOioqIFN0cmluZyAgXG4qKklucHV0IFBhcmFtZXRlcnM6KiogT25lIERpbWVuc2lvbmFsICgxRCkgIFxuKipPdGhlciBJbnB1dCBQcm9wZXJ0aWVzOioqIENvbnRleHQgbGVuZ3RoIHVwIHRvIDIwNCw4MDAgdG9rZW5zLlxuXG4jIyMgT3V0cHV0OlxuKipPdXRwdXQgVHlwZXM6KiogVGV4dCAgXG4qKk91dHB1dCBGb3JtYXQ6KiogU3RyaW5nICBcbioqT3V0cHV0IFBhcmFtZXRlcnM6KiogT25lIERpbWVuc2lvbmFsICgxRCkgIFxuKipPdGhlciBPdXRwdXQgUHJvcGVydGllczoqKiBBdXRvcmVncmVzc2l2ZSB0ZXh0IGdlbmVyYXRpb24gKG1heSBpbmNsdWRlIHRvb2wtY2FsbGluZyBzdHJ1Y3R1cmVkIG91dHB1dHMgZGVwZW5kaW5nIG9uIHNlcnZpbmcgc3RhY2spLlxuXG5fX091ciBBSSBtb2RlbHMgYXJlIGRlc2lnbmVkIGFuZC9vciBvcHRpbWl6ZWQgdG8gcnVuIG9uIE5WSURJQSBHUFUtYWNjZWxlcmF0ZWQgc3lzdGVtcy4gQnkgbGV2ZXJhZ2luZyBOVklESUEncyBoYXJkd2FyZSAoZS5nLiBHUFUgY29yZXMpIGFuZCBzb2Z0d2FyZSBmcmFtZXdvcmtzIChlLmcuLCBDVURBIGxpYnJhcmllcyksIHRoZSBtb2RlbCBhY2hpZXZlcyBmYXN0ZXIgdHJhaW5pbmcgYW5kIGluZmVyZW5jZSB0aW1lcyBjb21wYXJlZCB0byBDUFUtb25seSBzb2x1dGlvbnMuX19cblxuIyMgU29mdHdhcmUgSW50ZWdyYXRpb246XG4qKlJ1bnRpbWUgRW5naW5lczoqKlxuLSAqKlNHTGFuZzoqKiB2aWEgTlZJRElBIE5JTVxuXG4qKlN1cHBvcnRlZCBIYXJkd2FyZToqKlxuLSAqKk5WSURJQSBCbGFja3dlbGw6KiogQjIwMCwgR0IyMDAsIEdCMzAwLCBHQjEwLCBER1ggU3BhcmsgKHR3by1ub2RlKVxuLSAqKk5WSURJQSBIb3BwZXI6KiogSDEwMCwgSDIwMCwgSDIwLCBIMjAtM2VcblxuKipDVURBIFZlcnNpb246KiogMTMuMFxuXG4qKlByZWNpc2lvbjoqKiBGUDgsIE5WRlA0XG5cbioqT3BlcmF0aW5nIFN5c3RlbXM6KiogTGludXhcblxuX19UaGUgaW50ZWdyYXRpb24gb2YgZm91bmRhdGlvbiBhbmQgZmluZS10dW5lZCBtb2RlbHMgaW50byBBSSBzeXN0ZW1zIHJlcXVpcmVzIGFkZGl0aW9uYWwgdGVzdGluZyB1c2luZyB1c2UtY2FzZS1zcGVjaWZpYyBkYXRhIHRvIGVuc3VyZSBzYWZlIGFuZCBlZmZlY3RpdmUgZGVwbG95bWVudC4gRm9sbG93aW5nIHRoZSBWLW1vZGVsIG1ldGhvZG9sb2d5LCBpdGVyYXRpdmUgdGVzdGluZyBhbmQgdmFsaWRhdGlvbiBhdCBib3RoIHVuaXQgYW5kIHN5c3RlbSBsZXZlbHMgYXJlIGVzc2VudGlhbCB0byBtaXRpZ2F0ZSByaXNrcywgbWVldCB0ZWNobmljYWwgYW5kIGZ1bmN0aW9uYWwgcmVxdWlyZW1lbnRzLCBhbmQgZW5zdXJlIGNvbXBsaWFuY2Ugd2l0aCBzYWZldHkgYW5kIGV0aGljYWwgc3RhbmRhcmRzIGJlZm9yZSBkZXBsb3ltZW50Ll9fXG5cbiMjIE1vZGVsIFZlcnNpb24ocylcbk1pbmlNYXhBSS9NaW5pTWF4LU0yLjVcblxuIyMgVHJhaW5pbmcsIFRlc3RpbmcsIGFuZCBFdmFsdWF0aW9uIERhdGFzZXRzOlxuXG4jIyMgVHJhaW5pbmcgRGF0YXNldFxuKipEYXRhIE1vZGFsaXR5OioqIFRleHQgIFxuKipUZXh0IFRyYWluaW5nIERhdGEgU2l6ZToqKiBVbmRpc2Nsb3NlZCAgXG4qKkRhdGEgQ29sbGVjdGlvbiBNZXRob2QgYnkgZGF0YXNldDoqKiBVbmRpc2Nsb3NlZCAgXG4qKkxhYmVsaW5nIE1ldGhvZCBieSBkYXRhc2V0OioqIFVuZGlzY2xvc2VkICBcbioqUHJvcGVydGllcyAoUXVhbnRpdHksIERhdGFzZXQgRGVzY3JpcHRpb25zLCBTZW5zb3IocykpOioqIFRoZSBtb2RlbCBpcyBkZXNjcmliZWQgYXMgdHJhaW5lZCBhY3Jvc3MgMTArIHByb2dyYW1taW5nIGxhbmd1YWdlcyBhbmQgMjAwLDAwMCsgcmVhbC13b3JsZCBlbnZpcm9ubWVudHMsIHdpdGggZXh0ZW5zaXZlIHJlaW5mb3JjZW1lbnQgbGVhcm5pbmcgb3ZlciBjb21wbGV4IGVudmlyb25tZW50cy5cblxuIyMjIFRlc3RpbmcgRGF0YXNldFxuKipEYXRhIENvbGxlY3Rpb24gTWV0aG9kIGJ5IGRhdGFzZXQ6KiogVW5kaXNjbG9zZWQgIFxuKipMYWJlbGluZyBNZXRob2QgYnkgZGF0YXNldDoqKiBVbmRpc2Nsb3NlZCAgXG4qKlByb3BlcnRpZXMgKFF1YW50aXR5LCBEYXRhc2V0IERlc2NyaXB0aW9ucywgU2Vuc29yKHMpKToqKiBVbmRpc2Nsb3NlZFxuXG4jIyMgRXZhbHVhdGlvbiBEYXRhc2V0XG4qKkJlbmNobWFyayBTY29yZToqKiBTV0UtQmVuY2ggVmVyaWZpZWQgKDgwLjIlKSwgTXVsdGktU1dFLUJlbmNoICg1MS4zJSksIEJyb3dzZUNvbXAgKDc2LjMlKSAgXG4qKkRhdGEgQ29sbGVjdGlvbiBNZXRob2QgYnkgZGF0YXNldDoqKiBBdXRvbWF0ZWQgIFxuKipMYWJlbGluZyBNZXRob2QgYnkgZGF0YXNldDoqKiBBdXRvbWF0ZWQgIFxuKipQcm9wZXJ0aWVzIChRdWFudGl0eSwgRGF0YXNldCBEZXNjcmlwdGlvbnMsIFNlbnNvcihzKSk6KiogRXZhbHVhdGVkIG9uIGEgbWl4IG9mIGNvZGluZywgdG9vbC11c2UsIHdlYi1icm93c2luZywgYW5kIG11bHRpLXN0ZXAgcmVhc29uaW5nIGJlbmNobWFya3Mgc3VjaCBhcyBTV0UtQmVuY2gsIFRlcm1pbmFsIEJlbmNoIDIsIFZJQkUtUHJvLCBCcm93c2VDb21wLCBXaWRlIFNlYXJjaCwgUklTRSwgR0RQdmFsLU1NLCBNRVdDLCBGaW5hbmNlIE1vZGVsaW5nLCBhcyB3ZWxsIGFzIHN0YW5kYXJkIGFjYWRlbWljIGJlbmNobWFya3MgKEFJTUUyNSwgR1BRQS1ELCBITEUgdy9vIHRvb2xzLCBTY2lDb2RlLCBJRkJlbmNoLCBBQS1MQ1IpLlxuXG58IEJlbmNobWFyayB8IE1pbmlNYXgtTTIuNSB8XG58LS0tfC0tLXxcbnwgQUlNRTI1IHwgODYuMyB8XG58IEdQUUEtRCB8IDg1LjIgfFxufCBITEUgdy9vIHRvb2xzIHwgMTkuNCB8XG58IFNjaUNvZGUgfCA0NC40IHxcbnwgSUZCZW5jaCB8IDcwLjAgfFxufCBBQS1MQ1IgfCA2OS41IHxcblxufCBCZW5jaG1hcmsgfCBEZXNjcmlwdGlvbiB8XG58LS0tfC0tLXxcbnwgU1dFLWJlbmNoIFZlcmlmaWVkIHwgQ29kaW5nIGFnZW50IGJlbmNobWFyayB8XG58IFNXRS1iZW5jaCBNdWx0aWxpbmd1YWwgfCBNdWx0aWxpbmd1YWwgY29kaW5nIGJlbmNobWFyayB8XG58IFNXRS1iZW5jaC1wcm8gfCBQcm9mZXNzaW9uYWwgY29kaW5nIGJlbmNobWFyayB8XG58IE11bHRpLVNXRS1iZW5jaCB8IENvbWJpbmVkIGNvZGluZyBiZW5jaG1hcmsgfFxufCBUZXJtaW5hbCBCZW5jaCAyIHwgVGVybWluYWwgdG9vbC11c2UgYmVuY2htYXJrIHxcbnwgVklCRS1Qcm8gfCBWaXN1YWwtaW50ZXJhY3RpdmUgYmVuY2htYXJrIHxcbnwgQnJvd3NlQ29tcCB8IFdlYi1icm93c2luZyBiZW5jaG1hcmsgfFxufCBXaWRlIFNlYXJjaCB8IFNlYXJjaCBiZW5jaG1hcmsgfFxufCBSSVNFIHwgTXVsdGktc3RlcCBpbmZvcm1hdGlvbi1yZXRyaWV2YWwgYmVuY2htYXJrIHxcbnwgR0RQdmFsLU1NIHwgTXVsdGktbW9kYWwgZXZhbHVhdGlvbiBiZW5jaG1hcmsgfFxufCBNRVdDIHwgRXhjZWwtd29ybGQtY2hhbXBpb25zaGlwIGJlbmNobWFyayB8XG58IEZpbmFuY2UgTW9kZWxpbmcgfCBGaW5hbmNpYWwgbW9kZWxpbmcgYmVuY2htYXJrIHxcblxuIyMgSW5mZXJlbmNlXG4qKkFjY2VsZXJhdGlvbiBFbmdpbmU6KiogU0dMYW5nICBcbioqVGVzdCBIYXJkd2FyZToqKlxuKiBOVklESUEgQjIwMFxuKiBOVklESUEgR0IyMDBcbiogTlZJRElBIEdCMzAwXG4qIE5WSURJQSBHQjEwXG4qIE5WSURJQSBER1ggU3BhcmsgKHR3by1ub2RlKVxuKiBOVklESUEgSDEwMFxuKiBOVklESUEgSDIwMFxuKiBOVklESUEgSDIwXG4qIE5WSURJQSBIMjAtM2VcblxuIyMgQWRkaXRpb25hbCBEZXRhaWxzXG5UaGUgbW9kZWwgY2FuIGJlIGludGVncmF0ZWQgdmlhIG11bHRpcGxlIHJ1bnRpbWVzOiBUcmFuc2Zvcm1lcnMgKGxvYWRpbmcgZnJvbSBIdWdnaW5nIEZhY2Ugd2l0aCBgdHJ1c3RfcmVtb3RlX2NvZGU9VHJ1ZWApLCB2TExNLCBTR0xhbmcsIEtUcmFuc2Zvcm1lcnMsIGFuZCBvdGhlciBzdXBwb3J0ZWQgZW5naW5lcy5cblxuIyMgRXRoaWNhbCBDb25zaWRlcmF0aW9uc1xuTlZJRElBIGJlbGlldmVzIFRydXN0d29ydGh5IEFJIGlzIGEgc2hhcmVkIHJlc3BvbnNpYmlsaXR5IGFuZCB3ZSBoYXZlIGVzdGFibGlzaGVkIHBvbGljaWVzIGFuZCBwcmFjdGljZXMgdG8gZW5hYmxlIGRldmVsb3BtZW50IGZvciBhIHdpZGUgYXJyYXkgb2YgQUkgYXBwbGljYXRpb25zLiBXaGVuIGRvd25sb2FkZWQgb3IgdXNlZCBpbiBhY2NvcmRhbmNlIHdpdGggb3VyIHRlcm1zIG9mIHNlcnZpY2UsIGRldmVsb3BlcnMgc2hvdWxkIHdvcmsgd2l0aCB0aGVpciBpbnRlcm5hbCBtb2RlbCB0ZWFtIHRvIGVuc3VyZSB0aGlzIG1vZGVsIG1lZXRzIHJlcXVpcmVtZW50cyBmb3IgdGhlIHJlbGV2YW50IGluZHVzdHJ5IGFuZCB1c2UgY2FzZSBhbmQgYWRkcmVzc2VzIHVuZm9yZXNlZW4gcHJvZHVjdCBtaXN1c2UuICBcblBsZWFzZSByZXBvcnQgbW9kZWwgcXVhbGl0eSwgcmlzaywgc2VjdXJpdHkgdnVsbmVyYWJpbGl0aWVzIG9yIE5WSURJQSBBSSBDb25jZXJucyBbaGVyZV0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9zdXBwb3J0L3N1Ym1pdC1zZWN1cml0eS12dWxuZXJhYmlsaXR5LykuIiwKICAgICJkaXNwbGF5TmFtZSI6ICJNaW5pTWF4LU0yLjUiLAogICAgImV4cGxhaW5hYmlsaXR5IjogIiIsCiAgICAiZnJhbWV3b3JrIjogIk90aGVyIiwKICAgICJoYXNQbGF5Z3JvdW5kIjogZmFsc2UsCiAgICAiaGFzU2lnbmVkVmVyc2lvbiI6IHRydWUsCiAgICAiaXNQbGF5Z3JvdW5kRW5hYmxlZCI6IGZhbHNlLAogICAgImlzUHVibGljIjogZmFsc2UsCiAgICAiaXNSZWFkT25seSI6IHRydWUsCiAgICAibGFiZWxzIjogWwogICAgICAgICJGYWxzZSIsCiAgICAgICAgIk5TUEVDVC0xT1NYLTVaUEoiLAogICAgICAgICJudmFpZTptb2RlbDpudmFpZV9zdXBwb3J0ZWQiLAogICAgICAgICJudmlkaWFfbmltOm1vZGVsOm5pbW1jcm9fbnZpZGlhX25pbSIsCiAgICAgICAgInByb2R1Y3ROYW1lczpuaW0tZGV2IiwKICAgICAgICAicHJvZHVjdE5hbWVzOm52LWFpLWVudGVycHJpc2UiLAogICAgICAgICJ0ZWNobm9sb2d5Om1vZGVsOnNvbG5fbnZpZGlhX2FpIgogICAgXSwKICAgICJsYXRlc3RWZXJzaW9uSWRTdHIiOiAiaGYtNTgwZjg0MS1udmZwNCIsCiAgICAibGF0ZXN0VmVyc2lvblNpemVJbkJ5dGVzIjogMTM0NDU0NzY4MTkzLAogICAgImxpY2Vuc2VUZXJtcyI6IFsKICAgICAgICB7CiAgICAgICAgICAgICJnb3Zlcm5pbmdUZXJtcyI6ICI8cD48c3Ryb25nPkdPVkVSTklORyBURVJNUzo8L3N0cm9uZz48c3Bhbj5UaGUgTklNIGNvbnRhaW5lciBpcyBnb3Zlcm5lZCBieSB0aGU8L3NwYW4+PHU+PGEgaHJlZj1cImh0dHBzOi8vbmFtMTEuc2FmZWxpbmtzLnByb3RlY3Rpb24ub3V0bG9vay5jb20vP3VybD1odHRwcyUzQSUyRiUyRnd3dy5udmlkaWEuY29tJTJGZW4tdXMlMkZhZ3JlZW1lbnRzJTJGZW50ZXJwcmlzZS1zb2Z0d2FyZSUyRm52aWRpYS1zb2Z0d2FyZS1saWNlbnNlLWFncmVlbWVudCUyRiZhbXA7ZGF0YT0wNSU3QzAyJTdDY2hhbnRhbGglNDBudmlkaWEuY29tJTdDNWRhMzFmOWNkZjRhNDBkOWEwMzkwOGRlNzQ4YTI4YzglN0M0MzA4M2QxNTcyNzM0MGMxYjdkYjM5ZWZkOWNjYzE3YSU3QzAlN0MwJTdDNjM5MDc2MzMzOTE0OTU4ODA2JTdDVW5rbm93biU3Q1RXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRJTNEJTNEJTdDMCU3QyU3QyU3QyZhbXA7c2RhdGE9a1BoTXolMkZEWUt4Vk5EQWp0emh0ZXdQV0hOaFQ2Z1ZCU1UlMkZ3bXdzNVlxaUklM0QmYW1wO3Jlc2VydmVkPTBcIj5OVklESUEgU29mdHdhcmUgTGljZW5zZSBBZ3JlZW1lbnQ8L2E+PC91PjxzcGFuPmFuZDwvc3Bhbj48dT48YSBocmVmPVwiaHR0cHM6Ly9uYW0xMS5zYWZlbGlua3MucHJvdGVjdGlvbi5vdXRsb29rLmNvbS8/dXJsPWh0dHBzJTNBJTJGJTJGd3d3Lm52aWRpYS5jb20lMkZlbi11cyUyRmFncmVlbWVudHMlMkZlbnRlcnByaXNlLXNvZnR3YXJlJTJGcHJvZHVjdC1zcGVjaWZpYy10ZXJtcy1mb3ItYWktcHJvZHVjdHMlMkYmYW1wO2RhdGE9MDUlN0MwMiU3Q2NoYW50YWxoJTQwbnZpZGlhLmNvbSU3QzVkYTMxZjljZGY0YTQwZDlhMDM5MDhkZTc0OGEyOGM4JTdDNDMwODNkMTU3MjczNDBjMWI3ZGIzOWVmZDljY2MxN2ElN0MwJTdDMCU3QzYzOTA3NjMzMzkxNDk5MDAzMyU3Q1Vua25vd24lN0NUV0ZwYkdac2IzZDhleUpGYlhCMGVVMWhjR2tpT25SeWRXVXNJbFlpT2lJd0xqQXVNREF3TUNJc0lsQWlPaUpYYVc0ek1pSXNJa0ZPSWpvaVRXRnBiQ0lzSWxkVUlqb3lmUSUzRCUzRCU3QzAlN0MlN0MlN0MmYW1wO3NkYXRhPUFxbllWcGZqc1NtV0hBSlFrWGU4SldmTW51QXdNYjd6aG9qSVh1N0VHMXMlM0QmYW1wO3Jlc2VydmVkPTBcIj5Qcm9kdWN0LVNwZWNpZmljIFRlcm1zIGZvciBOVklESUEgQUkgUHJvZHVjdHM8L2E+OzwvdT48c3Bhbj5Vc2Ugb2YgdGhpcyBtb2RlbCBpcyBnb3Zlcm5lZCBieSB0aGU8L3NwYW4+PHU+PGEgaHJlZj1cImh0dHBzOi8vbmFtMTEuc2FmZWxpbmtzLnByb3RlY3Rpb24ub3V0bG9vay5jb20vP3VybD1odHRwcyUzQSUyRiUyRnd3dy5udmlkaWEuY29tJTJGZW4tdXMlMkZhZ3JlZW1lbnRzJTJGZW50ZXJwcmlzZS1zb2Z0d2FyZSUyRm52aWRpYS1vcGVuLW1vZGVsLWxpY2Vuc2UlMkYmYW1wO2RhdGE9MDUlN0MwMiU3Q2NoYW50YWxoJTQwbnZpZGlhLmNvbSU3QzVkYTMxZjljZGY0YTQwZDlhMDM5MDhkZTc0OGEyOGM4JTdDNDMwODNkMTU3MjczNDBjMWI3ZGIzOWVmZDljY2MxN2ElN0MwJTdDMCU3QzYzOTA3NjMzMzkxNTAyMTU3MSU3Q1Vua25vd24lN0NUV0ZwYkdac2IzZDhleUpGYlhCMGVVMWhjR2tpT25SeWRXVXNJbFlpT2lJd0xqQXVNREF3TUNJc0lsQWlPaUpYYVc0ek1pSXNJa0ZPSWpvaVRXRnBiQ0lzSWxkVUlqb3lmUSUzRCUzRCU3QzAlN0MlN0MlN0MmYW1wO3NkYXRhPXJxcEU5bHlUVyUyQlN4TUlOJTJGSEt5WGxVbzdkM3ZISTlsQ0pCY05mVTludkRNJTNEJmFtcDtyZXNlcnZlZD0wXCI+TlZJRElBIE9wZW4gTW9kZWwgTGljZW5zZTwvYT48L3U+PHNwYW4+Ljwvc3Bhbj48c3Ryb25nPkFERElUSU9OQUwgSU5GT1JNQVRJT048L3N0cm9uZz48c3Bhbj46PC9zcGFuPjx1PjxhIGhyZWY9XCJodHRwczovL25hbTExLnNhZmVsaW5rcy5wcm90ZWN0aW9uLm91dGxvb2suY29tLz91cmw9aHR0cHMlM0ElMkYlMkZnaXRodWIuY29tJTJGTWluaU1heC1BSSUyRk1pbmlNYXgtTTIuNSUyRmJsb2IlMkZtYWluJTJGTElDRU5TRSZhbXA7ZGF0YT0wNSU3QzAyJTdDY2hhbnRhbGglNDBudmlkaWEuY29tJTdDNWRhMzFmOWNkZjRhNDBkOWEwMzkwOGRlNzQ4YTI4YzglN0M0MzA4M2QxNTcyNzM0MGMxYjdkYjM5ZWZkOWNjYzE3YSU3QzAlN0MwJTdDNjM5MDc2MzMzOTE1MDUyNDg4JTdDVW5rbm93biU3Q1RXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRJTNEJTNEJTdDMCU3QyU3QyU3QyZhbXA7c2RhdGE9VHVUT1NsU3FYd1pqUDI2QmEwQzJ6UE5YQThNZFFYbklSemdTNTNWU1Y1YyUzRCZhbXA7cmVzZXJ2ZWQ9MFwiPk1vZGlmaWVkIE1JVCBMaWNlbnNlPC9hPjwvdT48c3Bhbj4uPC9zcGFuPjxzdHJvbmc+TWluaU1heCBNMi41Ljwvc3Ryb25nPjwvcD4iLAogICAgICAgICAgICAibGljZW5zZUlkIjogIk5WSURJQSBwcm9wcmlldGFyeSIsCiAgICAgICAgICAgICJsaWNlbnNlVmVyc2lvbiI6ICJ2MS4wIiwKICAgICAgICAgICAgIm5lZWRzQWNjZXB0YW5jZSI6IGZhbHNlCiAgICAgICAgfQogICAgXSwKICAgICJsb2dvIjogIiIsCiAgICAibW9kZWxGb3JtYXQiOiAiTi9BIiwKICAgICJuYW1lIjogIm1pbmltYXgtbTI1IiwKICAgICJvcmdOYW1lIjogIm5pbSIsCiAgICAicG9saWN5TGFiZWxzIjogW10sCiAgICAicHJlY2lzaW9uIjogIk4vQSIsCiAgICAicHJpdmFjeSI6ICIiLAogICAgInByb2R1Y3ROYW1lcyI6IFsKICAgICAgICAibmltLWRldiIsCiAgICAgICAgIm52LWFpLWVudGVycHJpc2UiCiAgICBdLAogICAgInB1YmxpY0RhdGFzZXRVc2VkIjoge30sCiAgICAicHVibGlzaGVyIjogIk5WSURJQSIsCiAgICAic2FmZXR5QW5kU2VjdXJpdHkiOiAiIiwKICAgICJzaG9ydERlc2NyaXB0aW9uIjogIk1pbmlNYXgtTTIuNSBpcyBhIHRleHQgZ2VuZXJhdGlvbiBtb2RlbCB0cmFpbmVkIHRvIHBlcmZvcm0gY29tcGxleCBhZ2VudGljIHRhc2tzLCBpbmNsdWRpbmcgc29mdHdhcmUgZW5naW5lZXJpbmcsIHRvb2wgdXNlLCBzZWFyY2gsIGFuZCBvZmZpY2Utd29yayBzdHlsZSB3b3JrZmxvd3MuIiwKICAgICJ0ZWFtTmFtZSI6ICJtaW5pbWF4LWFpIiwKICAgICJ1cGRhdGVkRGF0ZSI6ICIyMDI2LTAzLTA5VDIzOjM4OjE1LjQ2MFoiCn0=
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/minimax-ai/containers/minimax-m25
+    optimizationProfiles:
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b100-tp2
+      framework: SGLang
+      displayName: Minimax M25 B100x2 FP8 Fallback
+      ngcMetadata:
+        2605f42cb4d0b90a89f44cfc23971278d95665b988d6d94b7e9b06326c21598f:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '2'
+            vram: 300GiB
+            gpu: B100
+            gpu_device: ''
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B100
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b100-tp4
+      framework: SGLang
+      displayName: Minimax M25 B100x4 FP8 Fallback
+      ngcMetadata:
+        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '4'
+            vram: 300GiB
+            gpu: B100
+            gpu_device: ''
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B100
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b100-tp8
+      framework: SGLang
+      displayName: Minimax M25 B100x8 FP8 Fallback
+      ngcMetadata:
+        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '8'
+            vram: 300GiB
+            gpu: B100
+            gpu_device: ''
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B100
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp2__2
+      framework: SGLang
+      displayName: Minimax M25 B200x2 FP8 Fallback
+      ngcMetadata:
+        2605f42cb4d0b90a89f44cfc23971278d95665b988d6d94b7e9b06326c21598f:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '2'
+            vram: 300GiB
+            gpu: B200
+            gpu_device: ''
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp2
+      framework: TensorRT-LLM
+      displayName: Minimax M25 B200x2 FP8 Throughput
+      ngcMetadata:
+        fcc884b7a50ec7e942fa3914b7dd98d64a1c8fb70f769ba459d856eea930a3ce:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp4__2
+      framework: SGLang
+      displayName: Minimax M25 B200x4 FP8 Fallback
+      ngcMetadata:
+        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '4'
+            vram: 300GiB
+            gpu: B200
+            gpu_device: ''
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp4
+      framework: TensorRT-LLM
+      displayName: Minimax M25 B200x4 FP8 Throughput
+      ngcMetadata:
+        faa02ddc84aed0c2c55917462cb4ac08a22ac0335b723cb923346a04e6a96e06:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp8__2
+      framework: SGLang
+      displayName: Minimax M25 B200x8 FP8 Fallback
+      ngcMetadata:
+        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '8'
+            vram: 300GiB
+            gpu: B200
+            gpu_device: ''
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp8
+      framework: TensorRT-LLM
+      displayName: Minimax M25 B200x8 FP8 Throughput
+      ngcMetadata:
+        9a7568b04fabb0940fdfb14ec89594ae16f4012a7ff7c83f8b56f118b3dbcd3c:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h100-tp4
+      framework: SGLang
+      displayName: Minimax M25 H100x4 FP8 Fallback
+      ngcMetadata:
+        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '4'
+            vram: 300GiB
+            gpu: H100
+            gpu_device: 2330:10de
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h100-tp8__2
+      framework: SGLang
+      displayName: Minimax M25 H100x8 FP8 Fallback
+      ngcMetadata:
+        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '8'
+            vram: 300GiB
+            gpu: H100
+            gpu_device: 2330:10de
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h100-tp8
+      framework: TensorRT-LLM
+      displayName: Minimax M25 H100x8 FP8 Throughput
+      ngcMetadata:
+        6d4aa895f75f194626efb3b28f50065c30a1b1b346d3cd6cdded4fcee44d8618:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp2
+      framework: SGLang
+      displayName: Minimax M25 H200x2 FP8 Fallback
+      ngcMetadata:
+        2605f42cb4d0b90a89f44cfc23971278d95665b988d6d94b7e9b06326c21598f:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '2'
+            vram: 300GiB
+            gpu: H200
+            gpu_device: 2335:10de
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp4__2
+      framework: SGLang
+      displayName: Minimax M25 H200x4 FP8 Fallback
+      ngcMetadata:
+        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '4'
+            vram: 300GiB
+            gpu: H200
+            gpu_device: 2335:10de
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp4
+      framework: TensorRT-LLM
+      displayName: Minimax M25 H200x4 FP8 Throughput
+      ngcMetadata:
+        dcb84136615550ab512ce2d898b6284b2bc834ebdded86562e121f6c0b1a980e:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp8__2
+      framework: SGLang
+      displayName: Minimax M25 H200x8 FP8 Fallback
+      ngcMetadata:
+        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '8'
+            vram: 300GiB
+            gpu: H200
+            gpu_device: 2335:10de
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp8
+      framework: TensorRT-LLM
+      displayName: Minimax M25 H200x8 FP8 Throughput
+      ngcMetadata:
+        fb06a79efa26a5191663c2535e374bbbd23bd0a05f71f875c117acde75979740:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-l40s-tp8
+      framework: SGLang
+      displayName: Minimax M25 L40Sx8 FP8 Fallback
+      ngcMetadata:
+        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '8'
+            vram: 300GiB
+            gpu: L40S
+            gpu_device: 26b9:10de
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+  labels:
+  - MULTIMODAL
+  - MINIMAX
+  - INSTRUCTION-FOLLOWING
+  - NVIDIA AI Enterprise Supported
+  - NVIDIA NIM
+  config:
+    architectures:
+    - Other
+    modelType: NIM
+  license: NVIDIA AI Foundation Models Community License
