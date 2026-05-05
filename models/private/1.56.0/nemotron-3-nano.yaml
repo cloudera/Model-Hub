@@ -18,17 +18,43 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemotron-3-nano?version=1.7.0-variant
     optimizationProfiles:
+    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad
+      framework: VLLM
+      displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 BF16
+      ngcMetadata:
+        352d88f8021d0ce396a61d10e929d1d4b45f75038b593595d0d92f80a398a032:
+          model: nvidia/nemotron-3-nano
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '63.0'
+            pp: '1'
+            precision: bf16
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 59GB
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a
       framework: VLLM
       displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 FP8
       ngcMetadata:
-        2d9b8aac4a16d01e22e86db6b130e32889dcf73a2b28a996495c0904b9773453:
+        8c91cce84b9b032ff4af489cb1a20395e223af35623010df9155390ab2284b7a:
           model: nvidia/nemotron-3-nano
-          release: 1.7.0
+          release: 2.0.3
           tags:
             feat_lora: 'false'
             llm_engine: vllm
-            nim_workspace_hash_v1: 652db43370b6b5658785c1f334b0fd7ecc0bb7b8581a2a6cb0a1576290b723af
+            min_vram_per_device_gb: '34.0'
             pp: '1'
             precision: fp8
             tp: '1'
@@ -39,33 +65,59 @@ models:
       - key: COUNT
         value: 1
       - key: NIM VERSION
-        value: 1.7.0
+        value: 2.0.3
       - key: DOWNLOAD SIZE
         value: 31GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp4
+    - profileId: nim/nvidia/nemotron-3-nano:hf-nvfp4-bd1ffb1
       framework: VLLM
-      displayName: Nemotron 3 Nano Generic NVIDIA GPUx4 BF16
+      displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 NVFP4
       ngcMetadata:
-        348d84f18cd5cfbec7999f87d2b0f61d1de0bdfe018d37ba7fecf654de969025:
+        1fba9ecfcfb4cde28d4ce3fd55c40bca89a5a613e25e98f057befe6a7e99eada:
           model: nvidia/nemotron-3-nano
-          release: 1.7.0
+          release: 2.0.3
           tags:
             feat_lora: 'false'
             llm_engine: vllm
-            nim_workspace_hash_v1: 6303b8767cbc4d12ace1473dfaee17f021c6fd7784f7da8f14a85f285ed546f6
+            min_vram_per_device_gb: '21.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 19GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp2
+      framework: VLLM
+      displayName: Nemotron 3 Nano Generic NVIDIA GPUx2 BF16
+      ngcMetadata:
+        004cb37f8eab12f30a94f183e0d9b0b1ab2858b17ab80de45138644c2e7007c1:
+          model: nvidia/nemotron-3-nano
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '34.0'
             pp: '1'
             precision: bf16
-            tp: '4'
+            tp: '2'
       modelFormat: vllm
       spec:
       - key: PRECISION
         value: BF16
       - key: COUNT
-        value: 4
+        value: 2
       - key: NIM VERSION
-        value: 1.7.0
+        value: 2.0.3
       - key: DOWNLOAD SIZE
         value: 59GB
       - key: LLM ENGINE
@@ -74,13 +126,13 @@ models:
       framework: VLLM
       displayName: Nemotron 3 Nano Generic NVIDIA GPUx2 FP8
       ngcMetadata:
-        3f553fb62de4dd3bee2f38c25a8fc5af69d0947ab79b78226993424038c815bd:
+        49b534e3f90332a7af2d5c9932056e4482ce15fdfe19a596dfd9d662c63309ac:
           model: nvidia/nemotron-3-nano
-          release: 1.7.0
+          release: 2.0.3
           tags:
             feat_lora: 'false'
             llm_engine: vllm
-            nim_workspace_hash_v1: 652db43370b6b5658785c1f334b0fd7ecc0bb7b8581a2a6cb0a1576290b723af
+            min_vram_per_device_gb: '19.0'
             pp: '1'
             precision: fp8
             tp: '2'
@@ -91,111 +143,59 @@ models:
       - key: COUNT
         value: 2
       - key: NIM VERSION
-        value: 1.7.0
+        value: 2.0.3
       - key: DOWNLOAD SIZE
         value: 31GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad
+    - profileId: nim/nvidia/nemotron-3-nano:hf-nvfp4-bd1ffb1-tp2
       framework: VLLM
-      displayName: Nemotron 3 Nano Generic NVIDIA GPUx1 BF16
+      displayName: Nemotron 3 Nano Generic NVIDIA GPUx2 NVFP4
       ngcMetadata:
-        5f89f01a0af587fd8bae50c611b1f358f92effdb9fb29362e1af0a986e5561c3:
+        c7c492a20a88cb3ca9617f5de293ffabc6f382acd0e57daab70f8cf8f659231c:
           model: nvidia/nemotron-3-nano
-          release: 1.7.0
+          release: 2.0.3
           tags:
             feat_lora: 'false'
             llm_engine: vllm
-            nim_workspace_hash_v1: 6303b8767cbc4d12ace1473dfaee17f021c6fd7784f7da8f14a85f285ed546f6
+            min_vram_per_device_gb: '13.0'
             pp: '1'
-            precision: bf16
-            tp: '1'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.7.0
-      - key: DOWNLOAD SIZE
-        value: 59GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp8
-      framework: VLLM
-      displayName: Nemotron 3 Nano Generic NVIDIA GPUx8 FP8
-      ngcMetadata:
-        729650736cf052ef0fd0361a1a16cc76bebd720aae2d69fcab53631864fbd3d3:
-          model: nvidia/nemotron-3-nano
-          release: 1.7.0
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 652db43370b6b5658785c1f334b0fd7ecc0bb7b8581a2a6cb0a1576290b723af
-            pp: '1'
-            precision: fp8
-            tp: '8'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 1.7.0
-      - key: DOWNLOAD SIZE
-        value: 31GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp2
-      framework: VLLM
-      displayName: Nemotron 3 Nano Generic NVIDIA GPUx2 BF16
-      ngcMetadata:
-        7cbe1181600064c6e10ebaf843497acae35aacff2ab96fe8247ae541ae0ac28a:
-          model: nvidia/nemotron-3-nano
-          release: 1.7.0
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 6303b8767cbc4d12ace1473dfaee17f021c6fd7784f7da8f14a85f285ed546f6
-            pp: '1'
-            precision: bf16
+            precision: nvfp4
             tp: '2'
       modelFormat: vllm
       spec:
       - key: PRECISION
-        value: BF16
+        value: NVFP4
       - key: COUNT
         value: 2
       - key: NIM VERSION
-        value: 1.7.0
+        value: 2.0.3
       - key: DOWNLOAD SIZE
-        value: 59GB
+        value: 19GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp8
+    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp4
       framework: VLLM
-      displayName: Nemotron 3 Nano Generic NVIDIA GPUx8 BF16
+      displayName: Nemotron 3 Nano Generic NVIDIA GPUx4 BF16
       ngcMetadata:
-        b5d6f935d5818e7a19449b0e6806504b9f8c74645545b0f950d900989e671455:
+        7c15a5935e32cad80808a37dbb3bb8de4e3eb8231eec55842866d4cfa11db426:
           model: nvidia/nemotron-3-nano
-          release: 1.7.0
+          release: 2.0.3
           tags:
             feat_lora: 'false'
             llm_engine: vllm
-            nim_workspace_hash_v1: 6303b8767cbc4d12ace1473dfaee17f021c6fd7784f7da8f14a85f285ed546f6
+            min_vram_per_device_gb: '19.0'
             pp: '1'
             precision: bf16
-            tp: '8'
+            tp: '4'
       modelFormat: vllm
       spec:
       - key: PRECISION
         value: BF16
       - key: COUNT
-        value: 8
+        value: 4
       - key: NIM VERSION
-        value: 1.7.0
+        value: 2.0.3
       - key: DOWNLOAD SIZE
         value: 59GB
       - key: LLM ENGINE
@@ -204,13 +204,13 @@ models:
       framework: VLLM
       displayName: Nemotron 3 Nano Generic NVIDIA GPUx4 FP8
       ngcMetadata:
-        c3a7b55b1d3971ea31fdfe5210836a6ff7f3d8d6b6e9ae33de4f83a48bb46b23:
+        9412ea9de9fdffb496984fc03b83a95f10e8d23cd019253f60283a7beeaf6a15:
           model: nvidia/nemotron-3-nano
-          release: 1.7.0
+          release: 2.0.3
           tags:
             feat_lora: 'false'
             llm_engine: vllm
-            nim_workspace_hash_v1: 652db43370b6b5658785c1f334b0fd7ecc0bb7b8581a2a6cb0a1576290b723af
+            min_vram_per_device_gb: '12.0'
             pp: '1'
             precision: fp8
             tp: '4'
@@ -221,9 +221,113 @@ models:
       - key: COUNT
         value: 4
       - key: NIM VERSION
-        value: 1.7.0
+        value: 2.0.3
       - key: DOWNLOAD SIZE
         value: 31GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-nano:hf-nvfp4-bd1ffb1-tp4
+      framework: VLLM
+      displayName: Nemotron 3 Nano Generic NVIDIA GPUx4 NVFP4
+      ngcMetadata:
+        f49cfb0dd09f937b0515b57b5439c72694059c34af07281b41f1a83f438cbd20:
+          model: nvidia/nemotron-3-nano
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '9.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 19GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp8
+      framework: VLLM
+      displayName: Nemotron 3 Nano Generic NVIDIA GPUx8 BF16
+      ngcMetadata:
+        c4360e990fe29363cddc4588704948a60153060e878159bca67b247206613a5a:
+          model: nvidia/nemotron-3-nano
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '12.0'
+            pp: '1'
+            precision: bf16
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 59GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp8
+      framework: VLLM
+      displayName: Nemotron 3 Nano Generic NVIDIA GPUx8 FP8
+      ngcMetadata:
+        65c92a9795f322676e4e02fd12ee5c7298647d10895b135beb412187371a8626:
+          model: nvidia/nemotron-3-nano
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '8.0'
+            pp: '1'
+            precision: fp8
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 31GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-nano:hf-nvfp4-bd1ffb1-tp8
+      framework: VLLM
+      displayName: Nemotron 3 Nano Generic NVIDIA GPUx8 NVFP4
+      ngcMetadata:
+        b5654c68ac107bc904007487ffe71ede6cb9a560e281929377b623d678f613b6:
+          model: nvidia/nemotron-3-nano
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '7.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 19GB
       - key: LLM ENGINE
         value: VLLM
   labels:

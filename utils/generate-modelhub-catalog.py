@@ -315,9 +315,9 @@ def should_exclude_riva_streaming_mode(tags):
     mode = str(tags.get("mode", "")).strip().lower()
     return mode in ("str", "str-thr")
 
-def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vllm=False, a100_max_count=1, 
-                         a10g_min_count=None, a10g_max_count=None, l40s_min_count=None, l40s_max_count=None, 
-                         h100_min_count=None, h100_max_count=None, h200_min_count=None, h200_max_count=None, 
+def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vllm=False, include_sglang=False, a100_max_count=1,
+                         a10g_min_count=None, a10g_max_count=None, l40s_min_count=None, l40s_max_count=None,
+                         h100_min_count=None, h100_max_count=None, h200_min_count=None, h200_max_count=None,
                          a100_min_count=None):
     gpu = _get_gpu_tag(tags)
     tp = int(tags.get("tp", "1"))
@@ -328,6 +328,8 @@ def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vll
     if tags.get("feat_lora", "").lower() == "true":
         return True
     if tags.get("llm_engine", "").lower() == "vllm" and not include_vllm:
+        return True
+    if tags.get("llm_engine", "").lower() == "sglang" and not include_sglang:
         return True
     # If whitelisted_gpus is specified and GPU is not in the whitelist, ignore it
     # Case-insensitive comparison: both manifest GPU and whitelist entries are converted to uppercase
@@ -439,6 +441,7 @@ def extract_gpu_from_uri(profile):
         "rtx6000": "RTX6000",
         "gb200": "GB200",
         "b200": "B200",
+        "b100": "B100",
         "h200": "H200",
         "h100": "H100",
         "l40s": "L40S",
@@ -703,6 +706,77 @@ def create_gpu_specific_profile_vllm(base_profile, model, release, target_gpu, a
         "spec": spec_list
     }
 
+def create_gpu_specific_profile_sglang(base_profile, model, release, target_gpu, api_key):
+    """Create a GPU-specific optimization profile from a generic SGLang profile"""
+    gpu_device_mapping = {
+        "L40S": "26b9:10de",
+        "A10G": "2237:10de",
+        "H100": "2330:10de",
+        "H200": "2335:10de",
+        "A100": "20b2:10de"
+    }
+
+    tags = base_profile.get("tags", {}).copy()
+    tags["gpu"] = target_gpu.upper()
+    tags["gpu_device"] = gpu_device_mapping.get(target_gpu, "")
+    # Ensure nim_workspace_hash_v1 stays single line
+    if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
+        tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
+
+    result = profile_id_from_workspace(base_profile, target_gpu, return_base_uri=True)
+    if not result or not result[0]:
+        return None
+    base_uri, profile_id_uri = result
+
+    display_name = generate_display_name(model, tags)
+    count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
+    download_size = get_download_size_gb(str(base_uri), api_key)
+
+    spec_list = []
+    profile_value = tags.get("profile", "").upper()
+    if profile_value:
+        spec_list.append({"key": "PROFILE", "value": profile_value})
+
+    # Add PRECISION only if non-empty
+    precision_value = tags.get("precision", "").upper()
+    if precision_value:
+        spec_list.append({"key": "PRECISION", "value": precision_value})
+
+    spec_list.extend([
+        {"key": "GPU", "value": target_gpu.upper()},
+        {"key": "COUNT", "value": count}
+    ])
+
+    gpu_device_value = tags.get("gpu_device", "").upper()
+    if gpu_device_value:
+        spec_list.append({"key": "GPU DEVICE", "value": gpu_device_value})
+
+    spec_list.extend([
+        {"key": "NIM VERSION", "value": release},
+        {"key": "DOWNLOAD SIZE", "value": download_size}
+    ])
+
+    append_optional_spec_fields(spec_list, tags)
+
+    metadata_tags = dict(tags)
+    if "gpu" in metadata_tags and isinstance(metadata_tags["gpu"], str):
+        metadata_tags["gpu"] = metadata_tags["gpu"].upper()
+
+    return {
+        "profileId": profile_id_uri,
+        "framework": "SGLang",
+        "displayName": display_name,
+        "ngcMetadata": {
+            base_profile.get("id", ""): {
+                "model": model,
+                "release": release,
+                "tags": metadata_tags
+            }
+        },
+        "modelFormat": "sglang",
+        "spec": spec_list
+    }
+
 def get_download_size_gb(profile_id, api_key):
     try:
         env = os.environ.copy()
@@ -777,6 +851,7 @@ def main():
     parser.add_argument("--ngc-api-key", required=True, help="NGC CLI API Key")
     parser.add_argument("--platform", choices=["public", "private"], default="public", help="Platform type: 'public' (default) or 'private'. Affects filtering and generic profile handling.")
     parser.add_argument("--include-vllm", action="store_true", help="Include VLLM profiles. Public: only GPU-defined VLLM profiles are included. Private: also includes generic (no-GPU) VLLM profiles as-is.")
+    parser.add_argument("--include-sglang", action="store_true", help="Include SGLang profiles. Public: only GPU-defined SGLang profiles are included. Private: also includes generic (no-GPU) SGLang profiles as-is.")
     parser.add_argument("--a10g-min-count", type=int, default=None, help="Public only: Exclude A10G profiles where TP*PP < this value (default: no limit).")
     parser.add_argument("--a10g-max-count", type=int, default=None, help="Public only: Exclude A10G profiles where TP*PP > this value (default: no limit).")
     parser.add_argument("--l40s-min-count", type=int, default=None, help="Public only: Exclude L40S profiles where TP*PP < this value (default: no limit).")
@@ -913,9 +988,9 @@ def main():
         # - If GPU present in tags, reuse existing helper
         # - If GPU extracted from URI, apply equivalent checks using extracted GPU and TP/PP/count
         if gpu_tag:
-            if should_ignore_profile(tags, args.whitelisted_gpus, args.platform, args.include_vllm, args.a100_max_count,
-                                   args.a10g_min_count, args.a10g_max_count, args.l40s_min_count, args.l40s_max_count, 
-                                   args.h100_min_count, args.h100_max_count, args.h200_min_count, args.h200_max_count, 
+            if should_ignore_profile(tags, args.whitelisted_gpus, args.platform, args.include_vllm, args.include_sglang, args.a100_max_count,
+                                   args.a10g_min_count, args.a10g_max_count, args.l40s_min_count, args.l40s_max_count,
+                                   args.h100_min_count, args.h100_max_count, args.h200_min_count, args.h200_max_count,
                                    args.a100_min_count):
                 continue
         else:
@@ -1068,6 +1143,44 @@ def main():
                         print(f"Generated VLLM profile for {target_gpu} (TP={tp}, PP={pp}, Precision={precision.upper()}, Profile={profile_type.upper()}) from generic profile {profile.get('id', 'unknown')}")
                 continue
 
+            # Handle generic SGLang synthesis when requested
+            if args.include_sglang and not tags.get("gpu", "").strip() and tags.get("llm_engine", "").lower() == "sglang":
+                if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
+                    tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
+                tp = tags.get("tp", "1")
+                pp = tags.get("pp", "1")
+                precision = tags.get("precision", "")
+                profile_type = tags.get("profile", "")
+                # choose GPUs based on whitelist if provided
+                gpu_list = [g for g in (args.whitelisted_gpus or ["A10G","L40S","H100","H200","A100"]) ]
+                for target_gpu in gpu_list:
+                    comb = f"{target_gpu.upper()}-TP{tp}-PP{pp}-{precision.upper()}-{profile_type.upper()}"
+                    if comb in covered_gpu_combinations:
+                        continue
+
+                    gpu_upper = target_gpu.upper()
+                    count = int(tp) * int(pp)
+
+                    if should_skip_gpu_count(gpu_upper, count, args):
+                        continue
+                    # Capacity check: skip if download size exceeds total GPU memory for this combo
+                    result_tmp = profile_id_from_workspace(profile, target_gpu, return_base_uri=True)
+                    if result_tmp and result_tmp[0]:
+                        base_uri_tmp, _ = result_tmp
+                        dl_str = get_download_size_gb(str(base_uri_tmp), args.ngc_api_key)
+                        dl_gb = _parse_gb(dl_str)
+                        per_mem = GPU_SPECS.get(target_gpu.upper(), {}).get("memory_gb")
+                        if dl_gb is not None and per_mem is not None:
+                            total_mem = int(tp) * int(pp) * per_mem
+                            if dl_gb > total_mem:
+                                continue
+                    sglang_profile = create_gpu_specific_profile_sglang(profile, model, release, target_gpu, args.ngc_api_key)
+                    if sglang_profile:
+                        append_optimization_profile(optimization_profiles, profile_id_counts, sglang_profile)
+                        covered_gpu_combinations.add(comb)
+                        print(f"Generated SGLang profile for {target_gpu} (TP={tp}, PP={pp}, Precision={precision.upper()}, Profile={profile_type.upper()}) from generic profile {profile.get('id', 'unknown')}")
+                continue
+
             # Only process TRT-LLM generics for standard synthesis
             if not is_generic_profile(tags):
                 continue
@@ -1155,6 +1268,37 @@ def main():
                             "spec": spec_list
                         })
                         print(f"Added generic VLLM profile {profile.get('id', 'unknown')} without GPU details for private platform")
+                # If include_sglang is set and this is a SGLang generic profile (no GPU), include as-is
+                elif args.include_sglang and tags.get("llm_engine", "").lower() == "sglang" and not tags.get("gpu", "").strip() and tags.get("feat_lora", "").lower() != "true":
+                    result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
+                    if result and result[0]:
+                        base_uri, profile_id_uri = result
+                        display_name = generate_display_name_private(model, tags)
+                        count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
+                        download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
+
+                        spec_list = []
+                        profile_value = tags.get("profile", "").upper()
+                        if profile_value:
+                            spec_list.append({"key": "PROFILE", "value": profile_value})
+                        precision_value = tags.get("precision", "").upper()
+                        if precision_value:
+                            spec_list.append({"key": "PRECISION", "value": precision_value})
+                        spec_list.extend([
+                            {"key": "COUNT", "value": count},
+                            {"key": "NIM VERSION", "value": release},
+                            {"key": "DOWNLOAD SIZE", "value": download_size}
+                        ])
+                        append_optional_spec_fields(spec_list, tags)
+                        append_optimization_profile(optimization_profiles, profile_id_counts, {
+                            "profileId": profile_id_uri,
+                            "framework": "SGLang",
+                            "displayName": display_name,
+                            "ngcMetadata": {profile.get("id", ""): {"model": model, "release": release, "tags": tags}},
+                            "modelFormat": "sglang",
+                            "spec": spec_list
+                        })
+                        print(f"Added generic SGLang profile {profile.get('id', 'unknown')} without GPU details for private platform")
                 continue
 
             result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
@@ -1207,6 +1351,9 @@ def main():
             print(f"Added generic profile {profile.get('id', 'unknown')} without GPU details for private platform")
 
     if optimization_profiles:
+        # Sort profiles alphabetically by displayName (case-insensitive)
+        optimization_profiles.sort(key=lambda p: p.get('displayName', '').lower())
+
         variant0 = model_data['models'][0]['modelVariants'][0]
         if not isinstance(variant0.get('optimizationProfiles'), list):
             variant0['optimizationProfiles'] = []

@@ -1,0 +1,39 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: nvidia/nemotron-parse
+release: 1.5.0
+profiles:
+- id: a3d5f5727f27e898fc27658d0c11ff97a7de9edeff6c6065c2c838906f00dbd6
+  tags:
+    llm_engine: tensorrt_llm
+    pp: '1'
+    precision: bf16
+    tllm_engine_config_json_str: '{"max_batch_size": 32}'
+    tp: '1'
+    trtllm_buildable: 'true'
+  workspace:
+    files:
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-parse:hf-v5?file=config.json
+        checksum: blake3:9cd7431d21caa5dad0957867374158859f090f3d7730a0a13d57ae44c21bd970
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-parse:hf-v5?file=generation_config.json
+        checksum: blake3:c6717095f2a1db9d0f553ebf8d2d98ad4287565c6b624ca013b76e6e5f1dbf83
+      model.safetensors:
+        uri: ngc://nim/nvidia/nemotron-parse:hf-v5?file=model.safetensors
+        checksum: blake3:6782c3efdcf911ad01816802bdd07f5e1f439f8db345d22024c5a14849a8ff61
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-parse:hf-v5?file=preprocessor_config.json
+        checksum: blake3:835848af7484560dddf3abccf34a8e18aa0844e87bd803abce54489d65a196f5
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-parse:hf-v5?file=special_tokens_map.json
+        checksum: blake3:19868c1f1e6947b57a689db621fcfab07baa3d6d9775219f86a8ef68ba8d9474
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-parse:hf-v5?file=tokenizer.json
+        checksum: blake3:9eb2b9324f31621e3b3f4ae7e19bd143bfaea15f2ceaff3fd4216f86d5f57c10
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-parse:hf-v5?file=tokenizer_config.json
+        checksum: blake3:3e6fc5cf32353b069f707bbdb420c0b51d87306fd3bfd50e0d1e197b6a6932af
+      tool_use_config.json:
+        uri: ngc://nim/nvidia/nemotron-parse:hf-v5?file=tool_use_config.json
+        checksum: blake3:ef3406bda6d6e3cdadf1c7812671269cb44a0fbec95b3afc399dfa6cd6246a5a
