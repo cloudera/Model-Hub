@@ -1,15 +1,125 @@
-schema_version: '2.0'
-profile_selection_criteria: auto
 model: bigcode/starcoder2-7b # fixed by cloudera; was: `starcoder2-7b`
-release: 1.14.1
+release: 1.15.3
 profiles:
-- id: 0f40318708a05837c5517a80f06974ff2c353c11bc6e04eb10baabe4436a7522
+- id: 183cf3b8fa17a15736b7588aaa3e5a304f7d879a88f4920fd5bb77e2d6adbec5
+  tags:
+    feat_lora: 'false'
+    gpu: h200
+    gpu_device: 2335:10de
+    llm_engine: tensorrt_llm
+    nim_workspace_hash_v1: 78ab402d577ca42e0fadc06a4c0f39a4b2c51a614eb7021adb03f5a6546d6f8f
+    number_of_gpus: '2'
+    pp: '1'
+    precision: bf16
+    profile: latency
+    tp: '2'
+  workspace:
+    files:
+      README.md:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=README.md
+        checksum: blake3:e9bf87d7e83609223f088d28e56d95294cab00f70e7486454cded19e0764547e
+      checksums.blake3:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=checksums.blake3
+        checksum: blake3:659ccda194ae585f7ea933b472e107668ad774071c20987fd92747c36a42d14c
+      config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=config.json
+        checksum: blake3:e106501d20495f529bf445edff727052421b866c29a8b32407842e04d1a1e2e2
+      generation_config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=generation_config.json
+        checksum: blake3:0eabfd74eadf78de29cbd3eca93e156d3bb3f6ce0b9b626261c180f98a1f5ff7
+      merges.txt:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=merges.txt
+        checksum: blake3:b750bf03acc71bd1e239f51e19feaa4ed3b87e162eb0c4ab97e52818afbeb0a9
+      special_tokens_map.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=special_tokens_map.json
+        checksum: blake3:527a3072583e92663ab7a7bbde12cfb138a8b3aa31d5fbc1d7b7d275af291199
+      tokenizer.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer.json
+        checksum: blake3:8994b2ad8a01e7ac61355f774ced73c660950f16dc1ee7b544f41ced91513d03
+      tokenizer_config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
+        checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
+      trtllm_engine/checksums.blake3:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-qv8ul5ritg?file=checksums.blake3
+        checksum: blake3:7151b726fcc0f3c6580afe6471b6ae451a3a8707dc253f0a2ff6e14db6c0a9ea
+      trtllm_engine/config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-qv8ul5ritg?file=config.json
+        checksum: blake3:878ecc43ac1e53b65eafdfeac58c984f2f2e79abc05f99a11722a6126a811e46
+      trtllm_engine/metadata.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-qv8ul5ritg?file=metadata.json
+        checksum: blake3:5c37faad0453c0ce8b3f4cea108f83c51e3c1b1a4b0931e39f99c2c8c96e52f3
+      trtllm_engine/rank0.engine:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-qv8ul5ritg?file=rank0.engine
+        checksum: blake3:3dbe62eebbc3c0c3d3a49ed5705c405f38c372672c81170e513ace89431cf737
+      trtllm_engine/rank1.engine:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-qv8ul5ritg?file=rank1.engine
+        checksum: blake3:e05586aee077573bf45f7c9dfa129dcbe64d2bdbd59241a15fb7c6d41c8b515a
+      vocab.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
+        checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
+- id: 236504007dc81f9210714e0f827e9a96604094e17e71c37d682f970014c6ad0b
   tags:
     feat_lora: 'false'
     gpu: h100
     gpu_device: 2330:10de
     llm_engine: tensorrt_llm
-    nim_workspace_hash_v1: 7ffe6beb932b6f649191382b440a2ae6a18a3a7c1a883a5c47cb0de89b812266
+    nim_workspace_hash_v1: 4dfe19cbba420f187ab62f890fae376415d0fc7452a90f880566b1a044490759
+    number_of_gpus: '2'
+    pp: '1'
+    precision: bf16
+    profile: throughput
+    tp: '2'
+  workspace:
+    files:
+      README.md:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=README.md
+        checksum: blake3:e9bf87d7e83609223f088d28e56d95294cab00f70e7486454cded19e0764547e
+      checksums.blake3:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=checksums.blake3
+        checksum: blake3:659ccda194ae585f7ea933b472e107668ad774071c20987fd92747c36a42d14c
+      config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=config.json
+        checksum: blake3:e106501d20495f529bf445edff727052421b866c29a8b32407842e04d1a1e2e2
+      generation_config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=generation_config.json
+        checksum: blake3:0eabfd74eadf78de29cbd3eca93e156d3bb3f6ce0b9b626261c180f98a1f5ff7
+      merges.txt:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=merges.txt
+        checksum: blake3:b750bf03acc71bd1e239f51e19feaa4ed3b87e162eb0c4ab97e52818afbeb0a9
+      special_tokens_map.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=special_tokens_map.json
+        checksum: blake3:527a3072583e92663ab7a7bbde12cfb138a8b3aa31d5fbc1d7b7d275af291199
+      tokenizer.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer.json
+        checksum: blake3:8994b2ad8a01e7ac61355f774ced73c660950f16dc1ee7b544f41ced91513d03
+      tokenizer_config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
+        checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
+      trtllm_engine/checksums.blake3:
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-uvg4m8g9ug?file=checksums.blake3
+        checksum: blake3:3b6f3c0589aafe0e4813bba5acf6ac4b46b0fae0f380f928ee545aa6f59e0ee5
+      trtllm_engine/config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-uvg4m8g9ug?file=config.json
+        checksum: blake3:7a6288ec7d572c01d4804678bf7b1bb7a4971989f42d52e20aade9262d3193b9
+      trtllm_engine/metadata.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-uvg4m8g9ug?file=metadata.json
+        checksum: blake3:4c427648e056bfd1be85108ceb6d541283bfb62f8f2a00494b28160697a30492
+      trtllm_engine/rank0.engine:
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-uvg4m8g9ug?file=rank0.engine
+        checksum: blake3:f425aac796085982d8ebd371d0727a92bc5c66626c75f88e4fff761dda1099de
+      trtllm_engine/rank1.engine:
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-uvg4m8g9ug?file=rank1.engine
+        checksum: blake3:49a23368b7547157bab1aa9854e9187567b11167329d593fde376b005c94fc72
+      vocab.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
+        checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
+- id: 3b9873d56449d90d5bd68c930d3a08ffe64d16759635322334da5b41be3b46ca
+  tags:
+    feat_lora: 'false'
+    gpu: h200
+    gpu_device: 2335:10de
+    llm_engine: tensorrt_llm
+    nim_workspace_hash_v1: 8cab4efb894ee54eb184a279b8a4354e1ffa2c228aec6aeb9968fe442b1d7fd7
     number_of_gpus: '1'
     pp: '1'
     precision: bf16
@@ -42,26 +152,136 @@ profiles:
         uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
         checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
       trtllm_engine/checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x1-throughput-bf16-wqtdmrjeda?file=checksums.blake3
-        checksum: blake3:8e34314b6d83d82ef0225e73d7c329d26d0463795a35895b87cc225300de4b20
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x1-throughput-bf16-9p2k3xcrdg?file=checksums.blake3
+        checksum: blake3:b5324ff37b2cbc690adeb66ba0be42570daa2718d560728f09f237357d062ad8
       trtllm_engine/config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x1-throughput-bf16-wqtdmrjeda?file=config.json
-        checksum: blake3:8b35fc31635e53a785f5e90b41d47a6f1484beda2cb18b96b57eebc1fd6259f9
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x1-throughput-bf16-9p2k3xcrdg?file=config.json
+        checksum: blake3:b69a23949da6b5be374f0708c702b6b4e80222e2e4af6dfdc25883563bb63161
       trtllm_engine/metadata.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x1-throughput-bf16-wqtdmrjeda?file=metadata.json
-        checksum: blake3:e74d5c39e3cc928b829ab63d51eb8cae043d825e5b43b887f1622e3dd02dccc6
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x1-throughput-bf16-9p2k3xcrdg?file=metadata.json
+        checksum: blake3:96a7eaa2606e84894986180221fcac48f8a206a8abca8a3539ed8c6d8a839b16
       trtllm_engine/rank0.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x1-throughput-bf16-wqtdmrjeda?file=rank0.engine
-        checksum: blake3:8093b3b4fe58d8fc3cb353e7dd3a868bd78d0c40f02dd50f8d2a4cd339d16f3c
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x1-throughput-bf16-9p2k3xcrdg?file=rank0.engine
+        checksum: blake3:d3be4429dd3875d8c7e46ceb95278df33315519ab264e145353c4cf07ca1d175
       vocab.json:
         uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
         checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
-- id: 1d76bac39d2ca5f44c35735c615e4758bee6f6964c6db099577cb9000ecb6447
+- id: 908c3e659bdcb68b462a285da4fdba20c4b299fd3c81479751c3267485fd6cda
+  tags:
+    feat_lora: 'false'
+    gpu: h100
+    gpu_device: 2330:10de
+    llm_engine: tensorrt_llm
+    nim_workspace_hash_v1: 953cdde783d70dcfd2915d8df1975e494d263f539bd1fcb77aa790064270c840
+    number_of_gpus: '1'
+    pp: '1'
+    precision: bf16
+    profile: throughput
+    tp: '1'
+  workspace:
+    files:
+      README.md:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=README.md
+        checksum: blake3:e9bf87d7e83609223f088d28e56d95294cab00f70e7486454cded19e0764547e
+      checksums.blake3:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=checksums.blake3
+        checksum: blake3:659ccda194ae585f7ea933b472e107668ad774071c20987fd92747c36a42d14c
+      config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=config.json
+        checksum: blake3:e106501d20495f529bf445edff727052421b866c29a8b32407842e04d1a1e2e2
+      generation_config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=generation_config.json
+        checksum: blake3:0eabfd74eadf78de29cbd3eca93e156d3bb3f6ce0b9b626261c180f98a1f5ff7
+      merges.txt:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=merges.txt
+        checksum: blake3:b750bf03acc71bd1e239f51e19feaa4ed3b87e162eb0c4ab97e52818afbeb0a9
+      special_tokens_map.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=special_tokens_map.json
+        checksum: blake3:527a3072583e92663ab7a7bbde12cfb138a8b3aa31d5fbc1d7b7d275af291199
+      tokenizer.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer.json
+        checksum: blake3:8994b2ad8a01e7ac61355f774ced73c660950f16dc1ee7b544f41ced91513d03
+      tokenizer_config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
+        checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
+      trtllm_engine/checksums.blake3:
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x1-throughput-bf16-qymuc6emfg?file=checksums.blake3
+        checksum: blake3:c0417b605d60c352a06cf2f20bc19af7448fc99c0bc249fa00712a057620a329
+      trtllm_engine/config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x1-throughput-bf16-qymuc6emfg?file=config.json
+        checksum: blake3:3bc0846544c089834e6df1cd920f231fee3a08a7dba4b6777fae37909268e7ab
+      trtllm_engine/metadata.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x1-throughput-bf16-qymuc6emfg?file=metadata.json
+        checksum: blake3:df999213a46cef62fdef2868af5253ea4fe9f128953738528546caf35bdbef76
+      trtllm_engine/rank0.engine:
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x1-throughput-bf16-qymuc6emfg?file=rank0.engine
+        checksum: blake3:5912e38bc69565c91b875d26c0baf41938c47379a4d641e646664505896fac0a
+      vocab.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
+        checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
+- id: cc1c467fce5bc2b920e3315ab2ea8b40428697f50c6864c298ccb65134168599
+  tags:
+    feat_lora: 'false'
+    gpu: h200
+    gpu_device: 2335:10de
+    llm_engine: tensorrt_llm
+    nim_workspace_hash_v1: 4228c448d848a2d38ded6a6065949b737667241d22d790f3f934aa26ffb75026
+    number_of_gpus: '2'
+    pp: '1'
+    precision: bf16
+    profile: throughput
+    tp: '2'
+  workspace:
+    files:
+      README.md:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=README.md
+        checksum: blake3:e9bf87d7e83609223f088d28e56d95294cab00f70e7486454cded19e0764547e
+      checksums.blake3:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=checksums.blake3
+        checksum: blake3:659ccda194ae585f7ea933b472e107668ad774071c20987fd92747c36a42d14c
+      config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=config.json
+        checksum: blake3:e106501d20495f529bf445edff727052421b866c29a8b32407842e04d1a1e2e2
+      generation_config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=generation_config.json
+        checksum: blake3:0eabfd74eadf78de29cbd3eca93e156d3bb3f6ce0b9b626261c180f98a1f5ff7
+      merges.txt:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=merges.txt
+        checksum: blake3:b750bf03acc71bd1e239f51e19feaa4ed3b87e162eb0c4ab97e52818afbeb0a9
+      special_tokens_map.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=special_tokens_map.json
+        checksum: blake3:527a3072583e92663ab7a7bbde12cfb138a8b3aa31d5fbc1d7b7d275af291199
+      tokenizer.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer.json
+        checksum: blake3:8994b2ad8a01e7ac61355f774ced73c660950f16dc1ee7b544f41ced91513d03
+      tokenizer_config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
+        checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
+      trtllm_engine/checksums.blake3:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-2yu77crgzg?file=checksums.blake3
+        checksum: blake3:2d47225ac7a7318f9163c04caf4d600d7c532626fa8e5a0506382442ae3f997f
+      trtllm_engine/config.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-2yu77crgzg?file=config.json
+        checksum: blake3:878ecc43ac1e53b65eafdfeac58c984f2f2e79abc05f99a11722a6126a811e46
+      trtllm_engine/metadata.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-2yu77crgzg?file=metadata.json
+        checksum: blake3:9151d8702a2250c8438b4ce6605fcce1fc9c8543069b93b1db03961f566ddb87
+      trtllm_engine/rank0.engine:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-2yu77crgzg?file=rank0.engine
+        checksum: blake3:98898b624221ff464f037099d8286638b287780f52490daad22b8d2ca4298192
+      trtllm_engine/rank1.engine:
+        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-2yu77crgzg?file=rank1.engine
+        checksum: blake3:a466d66fa358dc03fc7c4f405fbb16f3316ed2f9f5f8e4e767bd022d68bb7ed7
+      vocab.json:
+        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
+        checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
+- id: de71c59001bc42679b37ecddfd95ab7b759cfde4308071750dcf5e3558726c9b
   tags:
     feat_lora: 'false'
     llm_engine: tensorrt_llm
     nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
     pp: '1'
+    precision: bf16
     tp: '1'
     trtllm_buildable: 'true'
   workspace:
@@ -105,69 +325,13 @@ profiles:
       vocab.json:
         uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
         checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
-- id: 4753e2649bd3f25d4742969ccea5bb7e6ac2e469ebe811d194565decbb7c91d7
+- id: f1012ff52c6e85dad222b3fe299efed3373215b8a5ba4c63e4d45f27a4537ad9
   tags:
     feat_lora: 'false'
     gpu: h100
     gpu_device: 2330:10de
     llm_engine: tensorrt_llm
-    nim_workspace_hash_v1: 6de32383a825dc6ff1128099c218896c3fa72b897e3ea0cd559ef2133b20d6c2
-    number_of_gpus: '2'
-    pp: '1'
-    precision: bf16
-    profile: throughput
-    tp: '2'
-  workspace:
-    files:
-      README.md:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=README.md
-        checksum: blake3:e9bf87d7e83609223f088d28e56d95294cab00f70e7486454cded19e0764547e
-      checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=checksums.blake3
-        checksum: blake3:659ccda194ae585f7ea933b472e107668ad774071c20987fd92747c36a42d14c
-      config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=config.json
-        checksum: blake3:e106501d20495f529bf445edff727052421b866c29a8b32407842e04d1a1e2e2
-      generation_config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=generation_config.json
-        checksum: blake3:0eabfd74eadf78de29cbd3eca93e156d3bb3f6ce0b9b626261c180f98a1f5ff7
-      merges.txt:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=merges.txt
-        checksum: blake3:b750bf03acc71bd1e239f51e19feaa4ed3b87e162eb0c4ab97e52818afbeb0a9
-      special_tokens_map.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=special_tokens_map.json
-        checksum: blake3:527a3072583e92663ab7a7bbde12cfb138a8b3aa31d5fbc1d7b7d275af291199
-      tokenizer.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer.json
-        checksum: blake3:8994b2ad8a01e7ac61355f774ced73c660950f16dc1ee7b544f41ced91513d03
-      tokenizer_config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
-        checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
-      trtllm_engine/checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-pag8ayfq7a?file=checksums.blake3
-        checksum: blake3:8865115ffdb0ce7d8eaaf266b07785bd64dd087c6b95faa4c15154521f86397f
-      trtllm_engine/config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-pag8ayfq7a?file=config.json
-        checksum: blake3:7640392e9dc34c076bef734e9a3fe94b29482a862ab6d09c8d66ea0e4b7e4d93
-      trtllm_engine/metadata.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-pag8ayfq7a?file=metadata.json
-        checksum: blake3:fbf802b47a34a92af445563124def49347edcfa02bb86b667e911fe87b230c37
-      trtllm_engine/rank0.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-pag8ayfq7a?file=rank0.engine
-        checksum: blake3:ad022ce49400300d6b6af2f1effb9317022568624b64e57b73f668c1d5dbb349
-      trtllm_engine/rank1.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-throughput-bf16-pag8ayfq7a?file=rank1.engine
-        checksum: blake3:6d75191f58aa3d63f15aa0b44ddbe55664bbc325b0bfa128969b5afdc5d2c47f
-      vocab.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
-        checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
-- id: 57280e7f84736bfd89a5fc38bc51f5ef6c0d92ed77ad66c60d897ccd7165ac98
-  tags:
-    feat_lora: 'false'
-    gpu: h100
-    gpu_device: 2330:10de
-    llm_engine: tensorrt_llm
-    nim_workspace_hash_v1: 4f122733d53833b661fddc7ab39bb1b0c188779f2dd945241a7868b1e968dd1d
+    nim_workspace_hash_v1: db5f0fe771ebd1ac8a2c526021d5df5fdd4589baeb61b8c45d61388e5357064a
     number_of_gpus: '2'
     pp: '1'
     precision: bf16
@@ -200,194 +364,30 @@ profiles:
         uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
         checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
       trtllm_engine/checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-bcq-c0ggmw?file=checksums.blake3
-        checksum: blake3:7c5e69541f42ea40906aa2283a37d48390f3c9c1b914f99a9106dff63e4111e9
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-xw70bcyscg?file=checksums.blake3
+        checksum: blake3:370784935259f04dab30383938297b7c3e4cb29760edf93601e87cd3ffadb6a3
       trtllm_engine/config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-bcq-c0ggmw?file=config.json
-        checksum: blake3:1701516269135900e3aba0d70c9acf3eb02083d53f368f0d0437f82c282a97fd
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-xw70bcyscg?file=config.json
+        checksum: blake3:34553bcaf5d741628c2e64823097f180d52390a1133d06ee32b619df8aa2f142
       trtllm_engine/metadata.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-bcq-c0ggmw?file=metadata.json
-        checksum: blake3:6964b73b806b218fb306ba1a2b911756081e224dc648f27c618154f70acb99f5
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-xw70bcyscg?file=metadata.json
+        checksum: blake3:ab2cf51c8ee6d5bf2c1ad26b3668e2897f85ed04224f001009ac9babc1271db5
       trtllm_engine/rank0.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-bcq-c0ggmw?file=rank0.engine
-        checksum: blake3:f9e5eb69351402208b932b7f93b5674134f618a6934878881a58e73f1ae9c626
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-xw70bcyscg?file=rank0.engine
+        checksum: blake3:b82eb423b0512e515cecfd8cea7b290dd0efdbcc3d89b661cd36d417e9d38501
       trtllm_engine/rank1.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-bcq-c0ggmw?file=rank1.engine
-        checksum: blake3:49870fdd7d5e83f0bd3bb5341d323c2b78be46dcad7c6838de48d6cca6ed3b8e
+        uri: ngc://nim/bigcode/starcoder2-7b:h100x2-latency-bf16-xw70bcyscg?file=rank1.engine
+        checksum: blake3:a0454b3a392e55ee0ae28f2c4561c744e176b3b812d97f57243ba11731291812
       vocab.json:
         uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
         checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
-- id: 6f7097713b9a9c9e8553347ee7cf28f0c4c7c2bd913166dcb36c666ecc48dad1
-  tags:
-    feat_lora: 'false'
-    gpu: h200
-    gpu_device: 2335:10de
-    llm_engine: tensorrt_llm
-    nim_workspace_hash_v1: d1b221b1fd69a8f1b0dcd11b964dbf589518034edacf353953316bf9548f5de3
-    number_of_gpus: '1'
-    pp: '1'
-    precision: bf16
-    profile: throughput
-    tp: '1'
-  workspace:
-    files:
-      README.md:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=README.md
-        checksum: blake3:e9bf87d7e83609223f088d28e56d95294cab00f70e7486454cded19e0764547e
-      checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=checksums.blake3
-        checksum: blake3:659ccda194ae585f7ea933b472e107668ad774071c20987fd92747c36a42d14c
-      config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=config.json
-        checksum: blake3:e106501d20495f529bf445edff727052421b866c29a8b32407842e04d1a1e2e2
-      generation_config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=generation_config.json
-        checksum: blake3:0eabfd74eadf78de29cbd3eca93e156d3bb3f6ce0b9b626261c180f98a1f5ff7
-      merges.txt:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=merges.txt
-        checksum: blake3:b750bf03acc71bd1e239f51e19feaa4ed3b87e162eb0c4ab97e52818afbeb0a9
-      special_tokens_map.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=special_tokens_map.json
-        checksum: blake3:527a3072583e92663ab7a7bbde12cfb138a8b3aa31d5fbc1d7b7d275af291199
-      tokenizer.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer.json
-        checksum: blake3:8994b2ad8a01e7ac61355f774ced73c660950f16dc1ee7b544f41ced91513d03
-      tokenizer_config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
-        checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
-      trtllm_engine/checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x1-throughput-bf16-yir1bzdhja?file=checksums.blake3
-        checksum: blake3:910a6b173f76338d3977e754fc507b443227a7c04360e253bf311fd6f9d388c2
-      trtllm_engine/config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x1-throughput-bf16-yir1bzdhja?file=config.json
-        checksum: blake3:47a65026dc7d035818b1a159b950a56fcc9b2789f552c0249166c2b7f5a0d7c6
-      trtllm_engine/metadata.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x1-throughput-bf16-yir1bzdhja?file=metadata.json
-        checksum: blake3:6ef59da9cf19d422296ab4b330c87ebdd913ec41b392e3dec753ddd2a168d275
-      trtllm_engine/rank0.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x1-throughput-bf16-yir1bzdhja?file=rank0.engine
-        checksum: blake3:8478c808918adff75afd8b233a9875d47c73aae78e7cdca1a37e02a3128b739c
-      vocab.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
-        checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
-- id: 70d88d7152538c95bc0dc059470e9f00656d8431c56ed11743d267c1dfccd433
-  tags:
-    feat_lora: 'false'
-    gpu: h200
-    gpu_device: 2335:10de
-    llm_engine: tensorrt_llm
-    nim_workspace_hash_v1: 2758237c2bfa7e1f02183efb7432a82b677b8a29331fe65b97d8e09c2075b51e
-    number_of_gpus: '2'
-    pp: '1'
-    precision: bf16
-    profile: latency
-    tp: '2'
-  workspace:
-    files:
-      README.md:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=README.md
-        checksum: blake3:e9bf87d7e83609223f088d28e56d95294cab00f70e7486454cded19e0764547e
-      checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=checksums.blake3
-        checksum: blake3:659ccda194ae585f7ea933b472e107668ad774071c20987fd92747c36a42d14c
-      config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=config.json
-        checksum: blake3:e106501d20495f529bf445edff727052421b866c29a8b32407842e04d1a1e2e2
-      generation_config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=generation_config.json
-        checksum: blake3:0eabfd74eadf78de29cbd3eca93e156d3bb3f6ce0b9b626261c180f98a1f5ff7
-      merges.txt:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=merges.txt
-        checksum: blake3:b750bf03acc71bd1e239f51e19feaa4ed3b87e162eb0c4ab97e52818afbeb0a9
-      special_tokens_map.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=special_tokens_map.json
-        checksum: blake3:527a3072583e92663ab7a7bbde12cfb138a8b3aa31d5fbc1d7b7d275af291199
-      tokenizer.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer.json
-        checksum: blake3:8994b2ad8a01e7ac61355f774ced73c660950f16dc1ee7b544f41ced91513d03
-      tokenizer_config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
-        checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
-      trtllm_engine/checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-a8shrirgma?file=checksums.blake3
-        checksum: blake3:d238c4a48f2c903357616da70c2eec50b19139e599312639ebd7fd3a792c4e8b
-      trtllm_engine/config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-a8shrirgma?file=config.json
-        checksum: blake3:82fa314a84b87d65da412154e2465df9cb9f62566755c4b8afce594cfd464788
-      trtllm_engine/metadata.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-a8shrirgma?file=metadata.json
-        checksum: blake3:16dc479b2ba14ee0fdcd0b5868b3df55937da2805057d738bb3ed9cb8339435a
-      trtllm_engine/rank0.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-a8shrirgma?file=rank0.engine
-        checksum: blake3:8ce9794e874327e0cfd0e8e53de27f87e9eee8ab527f31325b36661fcdccb405
-      trtllm_engine/rank1.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-latency-bf16-a8shrirgma?file=rank1.engine
-        checksum: blake3:f46e7a5626ab5b994d255828c679e28f364a30f62adb143541ed7da702aea2e7
-      vocab.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
-        checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
-- id: e496963dfd535acf3104a4040e5d0b4a73ab564f0f1c583d3ad153a28200f266
-  tags:
-    feat_lora: 'false'
-    gpu: h200
-    gpu_device: 2335:10de
-    llm_engine: tensorrt_llm
-    nim_workspace_hash_v1: 3e06b5f5b48d0b152e1a73bea3a346274e602f8d4ed0d3151ea215c3f9cbf8fc
-    number_of_gpus: '2'
-    pp: '1'
-    precision: bf16
-    profile: throughput
-    tp: '2'
-  workspace:
-    files:
-      README.md:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=README.md
-        checksum: blake3:e9bf87d7e83609223f088d28e56d95294cab00f70e7486454cded19e0764547e
-      checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=checksums.blake3
-        checksum: blake3:659ccda194ae585f7ea933b472e107668ad774071c20987fd92747c36a42d14c
-      config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=config.json
-        checksum: blake3:e106501d20495f529bf445edff727052421b866c29a8b32407842e04d1a1e2e2
-      generation_config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=generation_config.json
-        checksum: blake3:0eabfd74eadf78de29cbd3eca93e156d3bb3f6ce0b9b626261c180f98a1f5ff7
-      merges.txt:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=merges.txt
-        checksum: blake3:b750bf03acc71bd1e239f51e19feaa4ed3b87e162eb0c4ab97e52818afbeb0a9
-      special_tokens_map.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=special_tokens_map.json
-        checksum: blake3:527a3072583e92663ab7a7bbde12cfb138a8b3aa31d5fbc1d7b7d275af291199
-      tokenizer.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer.json
-        checksum: blake3:8994b2ad8a01e7ac61355f774ced73c660950f16dc1ee7b544f41ced91513d03
-      tokenizer_config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=tokenizer_config.json
-        checksum: blake3:63dc3a8535f97a752996cbf1fcb8cccbff7f4324231bdc35aaa707efb756b788
-      trtllm_engine/checksums.blake3:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-lspznbyceg?file=checksums.blake3
-        checksum: blake3:ac54ef175785f68ecbe7b9f34e16072a083ae263434ff2b2db174485cc668e20
-      trtllm_engine/config.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-lspznbyceg?file=config.json
-        checksum: blake3:82fa314a84b87d65da412154e2465df9cb9f62566755c4b8afce594cfd464788
-      trtllm_engine/metadata.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-lspznbyceg?file=metadata.json
-        checksum: blake3:5af249da482c7983ecd21124f4a78c181ec2bcad5053eabf99b139ae0f1ea26e
-      trtllm_engine/rank0.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-lspznbyceg?file=rank0.engine
-        checksum: blake3:fcf85085087a1136f5f535be585e74387cf91a528bdae38331baf6b44439ff61
-      trtllm_engine/rank1.engine:
-        uri: ngc://nim/bigcode/starcoder2-7b:h200x2-throughput-bf16-lspznbyceg?file=rank1.engine
-        checksum: blake3:092b05bb2d096e867fd45ca23cd03b29022a9afd314399bc9c3404abc000f6ce
-      vocab.json:
-        uri: ngc://nim/bigcode/starcoder2-7b:hf-bb9afde?file=vocab.json
-        checksum: blake3:a327e657fc21900a287d4ee27b3c5640b48d19e639571af5d43836e9051fa460
-- id: ef596a550ec0d61b427e3f7ff26fd21d49b5b1caff72b5bc8f3a5affc2a1d7b9
+- id: fe652f0f0ef911e255f1ff710d522d112ffda7856fe58824a9a5ef963960c909
   tags:
     feat_lora: 'false'
     llm_engine: tensorrt_llm
     nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
     pp: '1'
+    precision: bf16
     tp: '2'
     trtllm_buildable: 'true'
   workspace:

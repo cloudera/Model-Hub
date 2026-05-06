@@ -17,18 +17,241 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.2-nv-embedqa-1b-v2
     optimizationProfiles:
-    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:onnx-precision.fp16-7c7a1c17
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:a100x1-trt-fp16-tam0jnxubg
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 A100x1 FP16
+      ngcMetadata:
+        ac9898291cd6590f16956c43779ee8a191bd9ff1c091cf2ddecf51ea13f72877:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.11.3-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '8.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.11.3-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: BACKEND
+        value: TRT
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:a10gx1-trt-fp16-t60iaxtpaq
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 A10Gx1 FP16
+      ngcMetadata:
+        448d9749eede748c122f71cb0d0ad009557b5f6d7c1599cce7dfe24af4474d83:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.11.3-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '8.6'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.11.3-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: BACKEND
+        value: TRT
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:b200x1-trt-fp16-v-msjlcyja
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 B200x1 FP16
+      ngcMetadata:
+        c3caccfe9fcbc6c3d8d911cfa19992e6bf3398d38298cfa97da79ad8f5f35723:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.11.3-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '10.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.11.3-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: BACKEND
+        value: TRT
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:b200x1-trt-fp8-v1bvpk-mga
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 B200x1 FP8
+      ngcMetadata:
+        44d1f6e283eb0365efb617f8c255e42f9d8c97fe039774c2837cdfcef54296ce:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.11.3-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '10.0'
+            model_type: tensorrt
+            precision: fp8
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.11.3-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: BACKEND
+        value: TRT
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:h100x1-trt-fp16-td9i48e6ow
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 H100x1 FP16
+      ngcMetadata:
+        8f04bf773931e5b983e6812a1bae11bbccf68f4cb62644421c42c3174c0ae143:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.11.3-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '9.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.11.3-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: BACKEND
+        value: TRT
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:h100x1-trt-fp8-830iefgcvw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 H100x1 FP8
+      ngcMetadata:
+        91b1800959ef14ba7340038e06e3ac51d7fa71975ba6e89c580affaf3cce7788:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.11.3-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '9.0'
+            model_type: tensorrt
+            precision: fp8
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.11.3-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: BACKEND
+        value: TRT
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:l40sx1-trt-fp16-j5yjlw8y7q
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 L40Sx1 FP16
+      ngcMetadata:
+        30deb3f6ab82ce062835b4e97894ad0ea76b5459ecd7f1f113ee7f4a920f81e9:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.11.3-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '8.9'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.11.3-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: BACKEND
+        value: TRT
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:l40sx1-trt-fp8-qrxpajfzug
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 L40Sx1 FP8
+      ngcMetadata:
+        a2a98d9d648d970f17ebca4b8ddacf96aaf7266ec66c74c83c6b42e3f5f5b97c:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.11.3-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '8.9'
+            model_type: tensorrt
+            precision: fp8
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.11.3-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: BACKEND
+        value: TRT
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:extra-240ef905
       framework: ONNX
-      displayName: Llama 3.2 NV Embedqa 1B V2 ONNX FP16
+      displayName: Llama 3.2 Nv Embedqa 1B V2 ONNX FP16
       ngcMetadata:
         f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f:
           model: nvidia/llama-3.2-nv-embedqa-1b-v2
-          release: 1.10.0
+          release: 1.11.3-stig-fips-x86
           tags:
             backend: onnx
             model_type: onnx
             precision: fp16
-            tp: '1'
       modelFormat: onnx
       spec:
       - key: PRECISION
@@ -36,19 +259,13 @@ models:
       - key: COUNT
         value: 1
       - key: NIM VERSION
-        value: 1.10.0
+        value: 1.11.3-stig-fips-x86
       - key: DOWNLOAD SIZE
-        value: 3GB
+        value: 1GB
       - key: BACKEND
         value: ONNX
       - key: MODEL TYPE
         value: ONNX
-      - key: MAX TOKENS
-        value: 8192
-      - key: TOTAL PARAMETERS (MILLIONS)
-        value: 1236
-      - key: Embedding Dimension
-        value: 2048
   labels:
   - Llama
   - Embedding
