@@ -2017,6 +2017,366 @@ models:
         value: 40GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx1 BF16
+      ngcMetadata:
+        120f37d15ce21955b951e9acef346dcdcc0ebb17b9e09c1eef15e803a8b87665:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '174.0'
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 132GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx1 FP8
+      ngcMetadata:
+        9dad49c0ef76f964e9295d8071045f0c6a2b52ffdc9cb11b8887adced9370554:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '111.0'
+            pp: '1'
+            precision: fp8
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 68GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx1 NVFP4
+      ngcMetadata:
+        13b2cabe93f6e3d81e056b10d747d4baffc8dc6708977963dbc02c378fe6e7fd:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '82.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 40GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx2 BF16
+      ngcMetadata:
+        314bf2e552c132bc56ed8503d5bd9f3c159abe5c9ca8a694e5e2081eb7c04649:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '89.0'
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 132GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx2 FP8
+      ngcMetadata:
+        74dc099acf027ca44ed08bf7f182582f4f20bef8c9be768908a3a11f55a4803d:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '57.0'
+            pp: '1'
+            precision: fp8
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 68GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx2 NVFP4
+      ngcMetadata:
+        313ac0ae8b3d63007c5c3af22b90e3371d99332aff7a8d19162c0a5dfaaeade5:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '43.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 40GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx4 BF16
+      ngcMetadata:
+        128b00593671377d1f538c52b7c83d57f6d0bee57b32af3143368a7fe246afea:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '47.0'
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 132GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx4 FP8
+      ngcMetadata:
+        16bb57d5dfa4bd677567955d1d4d6977b8bd1f9260139a5cce29ea7a7299b85f:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '31.0'
+            pp: '1'
+            precision: fp8
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 68GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx4 NVFP4
+      ngcMetadata:
+        b99f21d2c604622d124cbd2f922f523bd695690693f43b9dbd0937d43e43922c:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '24.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 40GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx8 BF16
+      ngcMetadata:
+        2914d34f4fa4833f89591ad3d5f92257d2167acb8ddb298a7ea0ad69629dbb16:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '25.0'
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 132GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx8 FP8
+      ngcMetadata:
+        639213f8d80b20fddf456aa7c2e456b3d175b4043d1d5f1694a680757a25dad3:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '18.0'
+            pp: '1'
+            precision: fp8
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 68GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct RTX6000_BLACKWELL_SVx8 NVFP4
+      ngcMetadata:
+        218de288d43ccaf69332f22c8826ead532723b7de3fbdd294b61051a3f1c83c6:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '15.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 40GB
+      - key: LLM ENGINE
+        value: VLLM
   labels:
   - Llama
   - Meta

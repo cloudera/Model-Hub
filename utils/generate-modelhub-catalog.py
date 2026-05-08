@@ -132,6 +132,9 @@ GPU_SPECS = {
     "H100": {"memory_gb": 80, "device_id": "2330:10de"},
     "H200": {"memory_gb": 141, "device_id": "2335:10de"},
     "A100": {"memory_gb": 80, "device_id": "20b2:10de"},
+    "B100": {},
+    "B200": {},
+    "RTX6000_BLACKWELL_SV": {},
 }
 
 def _parse_gb(size_str: str):
@@ -308,6 +311,21 @@ def should_skip_gpu_count(gpu_upper, count, args):
             return True
         if count > args.a100_max_count:
             return True
+    elif gpu_upper == "B100":
+        if args.b100_min_count is not None and count < args.b100_min_count:
+            return True
+        if args.b100_max_count is not None and count > args.b100_max_count:
+            return True
+    elif gpu_upper == "B200":
+        if args.b200_min_count is not None and count < args.b200_min_count:
+            return True
+        if args.b200_max_count is not None and count > args.b200_max_count:
+            return True
+    elif gpu_upper == "RTX6000_BLACKWELL_SV":
+        if args.rtx6000_blackwell_sv_min_count is not None and count < args.rtx6000_blackwell_sv_min_count:
+            return True
+        if args.rtx6000_blackwell_sv_max_count is not None and count > args.rtx6000_blackwell_sv_max_count:
+            return True
     return False
 
 def should_exclude_riva_streaming_mode(tags):
@@ -318,7 +336,8 @@ def should_exclude_riva_streaming_mode(tags):
 def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vllm=False, include_sglang=False, a100_max_count=1,
                          a10g_min_count=None, a10g_max_count=None, l40s_min_count=None, l40s_max_count=None,
                          h100_min_count=None, h100_max_count=None, h200_min_count=None, h200_max_count=None,
-                         a100_min_count=None):
+                         a100_min_count=None, b100_min_count=None, b100_max_count=None,
+                         b200_min_count=None, b200_max_count=None, rtx6000_blackwell_sv_min_count=None, rtx6000_blackwell_sv_max_count=None):
     gpu = _get_gpu_tag(tags)
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
@@ -354,6 +373,12 @@ def should_ignore_profile(tags, whitelisted_gpus, platform="public", include_vll
         args_obj.h200_max_count = h200_max_count
         args_obj.a100_min_count = a100_min_count
         args_obj.a100_max_count = a100_max_count
+        args_obj.b100_min_count = b100_min_count
+        args_obj.b100_max_count = b100_max_count
+        args_obj.b200_min_count = b200_min_count
+        args_obj.b200_max_count = b200_max_count
+        args_obj.rtx6000_blackwell_sv_min_count = rtx6000_blackwell_sv_min_count
+        args_obj.rtx6000_blackwell_sv_max_count = rtx6000_blackwell_sv_max_count
         
         if should_skip_gpu_count(gpu.upper(), count, args_obj):
             return True
@@ -862,6 +887,12 @@ def main():
     parser.add_argument("--h200-max-count", type=int, default=None, help="Public only: Exclude H200 profiles where TP*PP > this value (default: no limit).")
     parser.add_argument("--a100-min-count", type=int, default=None, help="Public only: Exclude A100 profiles where TP*PP < this value (default: no limit).")
     parser.add_argument("--a100-max-count", type=int, default=1, help="Public only: Exclude A100 profiles where TP*PP > this value (default: 1). Use 4 to allow up to 4 GPUs.")
+    parser.add_argument("--b100-min-count", type=int, default=None, help="Public only: Exclude B100 profiles where TP*PP < this value (default: no limit).")
+    parser.add_argument("--b100-max-count", type=int, default=None, help="Public only: Exclude B100 profiles where TP*PP > this value (default: no limit).")
+    parser.add_argument("--b200-min-count", type=int, default=None, help="Public only: Exclude B200 profiles where TP*PP < this value (default: no limit).")
+    parser.add_argument("--b200-max-count", type=int, default=None, help="Public only: Exclude B200 profiles where TP*PP > this value (default: no limit).")
+    parser.add_argument("--rtx6000-blackwell-sv-min-count", type=int, default=None, help="Public only: Exclude RTX6000_BLACKWELL_SV profiles where TP*PP < this value (default: no limit).")
+    parser.add_argument("--rtx6000-blackwell-sv-max-count", type=int, default=None, help="Public only: Exclude RTX6000_BLACKWELL_SV profiles where TP*PP > this value (default: no limit).")
     parser.add_argument("--create-manifest-path", help="Base directory to write a copy of --profiles-yaml using path derived from first profileId (prefix before ':') with .yaml extension, preserving folder structure under this base directory.")
     # ONNX handling: included by default; allow explicit opt-out
     parser.add_argument("--include-onnx", dest="include_onnx", action="store_true", help="Include ONNX profiles as-is when tags.model_type: onnx (framework/modelFormat = ONNX/onnx). (default)")
@@ -886,7 +917,7 @@ def main():
     optimization_profiles = []
     profile_id_counts = {}
     covered_gpu_combinations = set()  # Track which GPU-TP*PP-PRECISION-PROFILE combinations already have profiles
-    target_gpus = ["A10G", "L40S", "H100", "H200", "A100"]  # GPUs to generate from generic profiles
+    target_gpus = ["A10G", "L40S", "H100", "H200", "A100", "B100", "B200", "RTX6000_BLACKWELL_SV"]  # GPUs to generate from generic profiles
 
     # First pass: Process regular profiles (those with specific GPUs)
     for profile in profiles:
@@ -991,7 +1022,8 @@ def main():
             if should_ignore_profile(tags, args.whitelisted_gpus, args.platform, args.include_vllm, args.include_sglang, args.a100_max_count,
                                    args.a10g_min_count, args.a10g_max_count, args.l40s_min_count, args.l40s_max_count,
                                    args.h100_min_count, args.h100_max_count, args.h200_min_count, args.h200_max_count,
-                                   args.a100_min_count):
+                                   args.a100_min_count, args.b100_min_count, args.b100_max_count,
+                                   args.b200_min_count, args.b200_max_count, args.rtx6000_blackwell_sv_min_count, args.rtx6000_blackwell_sv_max_count):
                 continue
         else:
             # Basic tag-based filters

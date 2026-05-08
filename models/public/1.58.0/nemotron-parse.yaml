@@ -85,6 +85,70 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
+    - profileId: nim/nvidia/nemotron-parse:hf-v5-b100
+      framework: TensorRT-LLM
+      displayName: Nemotron Parse B100x1 BF16
+      ngcMetadata:
+        a3d5f5727f27e898fc27658d0c11ff97a7de9edeff6c6065c2c838906f00dbd6:
+          model: nvidia/nemotron-parse
+          release: 1.5.0
+          tags:
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tllm_engine_config_json_str: '{"max_batch_size": 32}'
+            tp: '1'
+            trtllm_buildable: 'true'
+            gpu: B100
+            gpu_device: ''
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B100
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/nvidia/nemotron-parse:hf-v5-b200
+      framework: TensorRT-LLM
+      displayName: Nemotron Parse B200x1 BF16
+      ngcMetadata:
+        a3d5f5727f27e898fc27658d0c11ff97a7de9edeff6c6065c2c838906f00dbd6:
+          model: nvidia/nemotron-parse
+          release: 1.5.0
+          tags:
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tllm_engine_config_json_str: '{"max_batch_size": 32}'
+            tp: '1'
+            trtllm_buildable: 'true'
+            gpu: B200
+            gpu_device: ''
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
     - profileId: nim/nvidia/nemotron-parse:hf-v5-h100
       framework: TensorRT-LLM
       displayName: Nemotron Parse H100x1 BF16
@@ -179,6 +243,38 @@ models:
         value: 1
       - key: GPU DEVICE
         value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+      - key: TRTLLM BUILDABLE
+        value: 'TRUE'
+    - profileId: nim/nvidia/nemotron-parse:hf-v5-rtx6000_blackwell_sv
+      framework: TensorRT-LLM
+      displayName: Nemotron Parse RTX6000_BLACKWELL_SVx1 BF16
+      ngcMetadata:
+        a3d5f5727f27e898fc27658d0c11ff97a7de9edeff6c6065c2c838906f00dbd6:
+          model: nvidia/nemotron-parse
+          release: 1.5.0
+          tags:
+            llm_engine: tensorrt_llm
+            pp: '1'
+            precision: bf16
+            tllm_engine_config_json_str: '{"max_batch_size": 32}'
+            tp: '1'
+            trtllm_buildable: 'true'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
       - key: NIM VERSION
         value: 1.5.0
       - key: DOWNLOAD SIZE

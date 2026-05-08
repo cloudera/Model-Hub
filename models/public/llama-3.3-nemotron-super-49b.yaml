@@ -2081,6 +2081,366 @@ models:
         value: 29GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:hf-checkpoint-bf16-jetart-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx1 BF16
+      ngcMetadata:
+        8c3925b338d0bda8a4c95533c8c39e8ba9d38c2c7d4c687dd9fbc091186fccc1:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '120.0'
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 93GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx1 FP8
+      ngcMetadata:
+        442b97776dbd568ef529479d866b000c7bd16b5f5d2422c213a0b3b1624c9281:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '76.0'
+            pp: '1'
+            precision: fp8
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 49GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx1 NVFP4
+      ngcMetadata:
+        50e2f862b5fe96cba5e45e2092d38845fa54104dcc03f4c0b2bdb23b4d05b6aa:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '56.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 29GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:hf-checkpoint-bf16-jetart-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx2 BF16
+      ngcMetadata:
+        1146f49f84dff5dea09f5aa633cc70b92d7d972223d67878c841cd0fbccad4fb:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '62.0'
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 93GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx2 FP8
+      ngcMetadata:
+        539eab4f3514e65516789d3bd11e4102aae5065a86e7cfb7688950bb456ce239:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '40.0'
+            pp: '1'
+            precision: fp8
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 49GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx2 NVFP4
+      ngcMetadata:
+        1952dc27de2122a4aadff950e4f7c6f7f383cdc63500c6bb483cc4d7fc930196:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '30.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 29GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:hf-checkpoint-bf16-jetart-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx4 BF16
+      ngcMetadata:
+        6ffcc333dec0c7f62e8589513d5682d1268f47c552f6fc978080dd2c30389ba8:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '33.0'
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 93GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx4 FP8
+      ngcMetadata:
+        18c1c9566d039d78881db55dd30907348afd73ff75f4e262aa1af824e320aa55:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '22.0'
+            pp: '1'
+            precision: fp8
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 49GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx4 NVFP4
+      ngcMetadata:
+        5122caf75c64b197b8d2170464500fd2aab69aa4d66c278629f7894271ca3ab9:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '17.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 29GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:hf-checkpoint-bf16-jetart-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx8 BF16
+      ngcMetadata:
+        c7e34d09ffb6939d600faab0b43370ae4527cb008f2635464a53d9b46a368b27:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '19.0'
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 93GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx8 FP8
+      ngcMetadata:
+        651f21dff2c1193dd7e606701ad1e18d5e35fe0cdc597f0b08a4af2609824af1:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '13.0'
+            pp: '1'
+            precision: fp8
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 49GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 RTX6000_BLACKWELL_SVx8 NVFP4
+      ngcMetadata:
+        32dcea516a998a70f3069cdfbcc781de6c492c344cb38a29780f249fdb190e4d:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '11.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 29GB
+      - key: LLM ENGINE
+        value: VLLM
   labels:
   - Llama
   - Meta

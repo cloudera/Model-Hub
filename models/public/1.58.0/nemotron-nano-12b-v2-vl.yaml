@@ -649,6 +649,66 @@ models:
         value: 15GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Nemotron Nano 12B V2 Vl RTX6000_BLACKWELL_SVx1 BF16
+      ngcMetadata:
+        06a217a1099a72e5d86a12a31fd39eaba9d7c00d3d311589557d2dc720b59358:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: d943a0e2491f1abaae2e3c2532bc3b70535b0d8637d7b1aeed4e686f0e3e0f61
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 25GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Nemotron Nano 12B V2 Vl RTX6000_BLACKWELL_SVx2 BF16
+      ngcMetadata:
+        97aae95b218c9838fea29548ebaa771a922a8c9781c8450e542e323e2a76a937:
+          model: nvidia/nemotron-nano-12b-v2-vl
+          release: 1.5.0
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: d943a0e2491f1abaae2e3c2532bc3b70535b0d8637d7b1aeed4e686f0e3e0f61
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.5.0
+      - key: DOWNLOAD SIZE
+        value: 25GB
+      - key: LLM ENGINE
+        value: VLLM
   labels:
   - Multimodal Vision Language Model
   - Visual Reasoning
