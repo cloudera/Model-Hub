@@ -867,6 +867,247 @@ models:
         value: 9GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv__5
+      framework: VLLM
+      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 BF16
+      ngcMetadata:
+        925771095bbfd8bca1cc2a1ea4a91ecba85b2d68493f0dad3b85bb6c209d8730:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 30GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 BF16 Throughput
+      ngcMetadata:
+        010bb9e16e9322ddce6db6e6a7d8c844c0ec2ed3d8358a0127dc4cf1114c724a:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 555b1cabcde42da61eb1cb14883d71f6e921dd1f171183f7ad27680f45c0412f
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 30GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv__2
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 FP8 Latency
+      ngcMetadata:
+        0a929ddd7dadd0bed6a633e6b2ec1e6a90a92ccb60fbe3dd36be97f17328e965:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: d61e398017263380bfabf947395e155a35ea873a0a95e468fcf30fdfcb2274fd
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 30GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv__3
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 FP8 Throughput
+      ngcMetadata:
+        31b9c56ca65e6e6e74b3b95dc2233994b78b309c6733a84a485d4cdf8eccc44f:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 1f65528a87318fc0ba52aff1a6bed8ea2f986c187e1c3b04c83c5de589b08510
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 30GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv__4
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 NVFP4 Throughput
+      ngcMetadata:
+        c7fdb92819af3784195c1be4fd64e2b005281bbf16ad0735c1485050676d4709:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 7d02d59a43df163111196b1b019050502069e6c7444fbc65daaf51558bc28f45
+            number_of_gpus: '1'
+            pp: '1'
+            precision: nvfp4
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 30GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv-tp2__2
+      framework: VLLM
+      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx2 BF16
+      ngcMetadata:
+        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 30GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv-tp2
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx2 BF16 Latency
+      ngcMetadata:
+        742e4dd3cab8b08be915776df631f67b3a52aea40c4466e009e0fc457b7c137b:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: f0073ef6d193a4fd768a55cd04fbc9fbcd949546c2e94010f2ed11e08d299c91
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 30GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
   - variantId: Llama 3.1 70B Instruct
     modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJjYW5HdWVzdERvd25sb2FkIjogZmFsc2UsCiAgICAiY3JlYXRlZERhdGUiOiAiMjAyNS0wNS0yMFQxODoxNzowOS4xMDdaIiwKICAgICJkZXNjcmlwdGlvbiI6ICIjICoqTGxhbWEtMy4xLTcwQi1JbnN0cnVjdCBPdmVydmlldyoqXG5cbiMjICoqRGVzY3JpcHRpb246KipcblxuKipMbGFtYS0zLjEtNzBCLUluc3RydWN0KiogaXMgYSBtdWx0aWxpbmd1YWwgbGFyZ2UgbGFuZ3VhZ2UgbW9kZWwgZnJvbSB0aGUgTWV0YSBMbGFtYSAzLjEgY29sbGVjdGlvbiBvZiBwcmV0cmFpbmVkIGFuZCBpbnN0cnVjdGlvbi10dW5lZCBnZW5lcmF0aXZlIG1vZGVscy4gVGhpcyBtb2RlbCBpcyBvcHRpbWl6ZWQgZm9yIG11bHRpbGluZ3VhbCBkaWFsb2d1ZSB1c2UgY2FzZXMgYW5kIG91dHBlcmZvcm1zIG1hbnkgYXZhaWxhYmxlIG9wZW4tc291cmNlIGFuZCBjbG9zZWQtc291cmNlIGNoYXQgbW9kZWxzIG9uIGNvbW1vbiBpbmR1c3RyeSBiZW5jaG1hcmtzLiBMbGFtYSAzLjEgaXMgYW4gYXV0by1yZWdyZXNzaXZlIGxhbmd1YWdlIG1vZGVsIHRoYXQgdXNlcyBhbiBvcHRpbWl6ZWQgdHJhbnNmb3JtZXIgYXJjaGl0ZWN0dXJlOyB0aGUgdHVuZWQgdmVyc2lvbnMgdXNlIHN1cGVydmlzZWQgZmluZS10dW5pbmcgKFNGVCkgYW5kIHJlaW5mb3JjZW1lbnQgbGVhcm5pbmcgd2l0aCBodW1hbiBmZWVkYmFjayAoUkxIRikgdG8gYWxpZ24gd2l0aCBodW1hbiBwcmVmZXJlbmNlcyBmb3IgaGVscGZ1bG5lc3MgYW5kIHNhZmV0eS5cblxuVGhpcyBtb2RlbCBpcyByZWFkeSBmb3IgY29tbWVyY2lhbC9ub24tY29tbWVyY2lhbCB1c2UuXG5cblRoaXMgdmVyc2lvbiBpbnRyb2R1Y2VzIHN1cHBvcnQgZm9yIEdCMjAwIE5WTDcyLCBHSDIwMCBOVkwyLCBCMjAwIGFuZCBOVkZQNC4gQ1VEQSB1cGRhdGVkIHRvIHZlcnNpb24gMTIuOS4gRm9yIGRldGFpbGVkIGluZm9ybWF0aW9uLCByZWZlciB0byBSZWxlYXNlIFtOb3RlcyBmb3IgTlZJRElBIE5JTSBmb3IgTExNcyBMTE0gMS4xMl0oaHR0cHM6Ly9kb2NzLm52aWRpYS5jb20vbmltL2xhcmdlLWxhbmd1YWdlLW1vZGVscy9sYXRlc3QvcmVsZWFzZS1ub3Rlcy5odG1sKS4gXG5cbiMjICoqVGhpcmQtUGFydHkgQ29tbXVuaXR5IENvbnNpZGVyYXRpb24qKlxuXG5UaGlzIG1vZGVsIGlzIG5vdCBvd25lZCBvciBkZXZlbG9wZWQgYnkgTlZJRElBLiBUaGlzIG1vZGVsIGhhcyBiZWVuIGRldmVsb3BlZCBhbmQgYnVpbHQgdG8gYSB0aGlyZC1wYXJ0eSdzIHJlcXVpcmVtZW50cyBmb3IgdGhpcyBhcHBsaWNhdGlvbiBhbmQgdXNlIGNhc2U7IHNlZSBsaW5rIHRvIE5vbi1OVklESUFcXFttZXRhLWxsYW1hL0xsYW1hLTMuMS03MEItSW5zdHJ1Y3RcXF0gIFxuKFtodHRwczovL2h1Z2dpbmdmYWNlLmNvL21ldGEtbGxhbWEvTGxhbWEtMy4xLTcwQi1JbnN0cnVjdF0oaHR0cHM6Ly9odWdnaW5nZmFjZS5jby9tZXRhLWxsYW1hL0xsYW1hLTMuMS03MEItSW5zdHJ1Y3QpKS4gXG5cbiMjICoqTGljZW5zZS9UZXJtcyBvZiBVc2U6KipcblxuKipHT1ZFUk5JTkcgVEVSTVM6KiogVGhlIE5JTSBjb250YWluZXIgaXMgZ292ZXJuZWQgYnkgdGhlIFtOVklESUEgU29mdHdhcmUgTGljZW5zZSBBZ3JlZW1lbnRdKGh0dHBzOi8vd3d3Lm52aWRpYS5jb20vZW4tdXMvYWdyZWVtZW50cy9lbnRlcnByaXNlLXNvZnR3YXJlL252aWRpYS1zb2Z0d2FyZS1saWNlbnNlLWFncmVlbWVudC8pIGFuZCB0aGUgW1Byb2R1Y3QtU3BlY2lmaWMgVGVybXMgZm9yIE5WSURJQSBBSSBQcm9kdWN0c10oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9hZ3JlZW1lbnRzL2VudGVycHJpc2Utc29mdHdhcmUvcHJvZHVjdC1zcGVjaWZpYy10ZXJtcy1mb3ItYWktcHJvZHVjdHMvKTsgYW5kIHRoZSB1c2Ugb2YgdGhlIG1vZGVsIGlzIGdvdmVybmVkIGJ5IHRoZSBbTlZJRElBIENvbW11bml0eSBNb2RlbCBMaWNlbnNlIEFncmVlbWVudF0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9hZ3JlZW1lbnRzL2VudGVycHJpc2Utc29mdHdhcmUvbnZpZGlhLWNvbW11bml0eS1tb2RlbHMtbGljZW5zZS8uKS5cblxuKipBRERJVElPTkFMIElORk9STUFUSU9OOioqIFtMbGFtYSAzLjEgQ29tbXVuaXR5IExpY2Vuc2UgQWdyZWVtZW50XShodHRwczovL3d3dy5sbGFtYS5jb20vbGxhbWEzXzMvbGljZW5zZS8pLiBCdWlsdCB3aXRoIExsYW1hLlxuXG4jIyBHZXQgSGVscFxuXG4jIyMgRW50ZXJwcmlzZSBTdXBwb3J0XG5cbkdldCBhY2Nlc3MgdG8ga25vd2xlZGdlIGJhc2UgYXJ0aWNsZXMgYW5kIHN1cHBvcnQgY2FzZXMgb3IgW3N1Ym1pdCBhIHRpY2tldF0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9kYXRhLWNlbnRlci9wcm9kdWN0cy9haS1lbnRlcnByaXNlLXN1aXRlL3N1cHBvcnQvKS5cblxuKipZb3UgYXJlIHJlc3BvbnNpYmxlIGZvciBlbnN1cmluZyB0aGF0IHlvdXIgdXNlIG9mIE5WSURJQSBwcm92aWRlZCBtb2RlbHMgY29tcGxpZXMgd2l0aCBhbGwgYXBwbGljYWJsZSBsYXdzLioqXG5cbiMjICoqRGVwbG95bWVudCBHZW9ncmFwaHk6KipcblxuR2xvYmFsIFxuXG4jIyAqKlVzZSBDYXNlOioqXG5cbkRldmVsb3BlcnMsIEFJIHJlc2VhcmNoZXJzLCBhbmQgYnVzaW5lc3NlcyB3b3VsZCBiZSBleHBlY3RlZCB0byB1c2UgdGhpcyBzeXN0ZW0gdG8gYnVpbGQgYW5kIHBvd2VyIGEgd2lkZSByYW5nZSBvZiBhcHBsaWNhdGlvbnMgdGhhdCByZXF1aXJlIGFkdmFuY2VkIHJlYXNvbmluZywgaW5zdHJ1Y3Rpb24tZm9sbG93aW5nLCBhbmQgbXVsdGlsaW5ndWFsIGRpYWxvZ3VlIGNhcGFiaWxpdGllcy4gU3BlY2lmaWMgYXBwbGljYXRpb25zIGluY2x1ZGUgY3JlYXRpbmcgc29waGlzdGljYXRlZCBjaGF0Ym90cyBhbmQgdmlydHVhbCBhc3Npc3RhbnRzLCBkZXZlbG9waW5nIHBvd2VyZnVsIGNvbnRlbnQgY3JlYXRpb24gYW5kIHN1bW1hcml6YXRpb24gdG9vbHMsIGJ1aWxkaW5nIGNvbXBsZXggcXVlc3Rpb24tYW5zd2VyaW5nIHN5c3RlbXMsIGFuZCBwb3dlcmluZyBtdWx0aWxpbmd1YWwgY3VzdG9tZXIgc3VwcG9ydCBwbGF0Zm9ybXMuXG5cbiMjICoqUmVsZWFzZSBEYXRlOioqXG5cbkJ1aWxkLk52aWRpYS5jb20gMDcvMjMvMjAyNCB2aWEgIFxuW2xsYW1hLTMuMS03MGItaW5zdHJ1Y3QgTW9kZWwgYnkgTWV0YSB8IE5WSURJQSBOSU1dKGh0dHBzOi8vYnVpbGQubnZpZGlhLmNvbS9tZXRhL2xsYW1hLTNfMS03MGItaW5zdHJ1Y3QpXG5cbkdpdGh1YiAwNy8yMy8yMDI0IHZpYSAgIFxuW2h0dHBzOi8vZ2l0aHViLmNvbS9tZXRhLWxsYW1hL2xsYW1hLW1vZGVscy9ibG9iL21haW4vbW9kZWxzL2xsYW1hM1xcXzEvTElDRU5TRV0oaHR0cHM6Ly9naXRodWIuY29tL21ldGEtbGxhbWEvbGxhbWEtbW9kZWxzL2Jsb2IvbWFpbi9tb2RlbHMvbGxhbWEzXzEvTElDRU5TRSlcblxuSHVnZ2luZ2ZhY2UgMDcvMjMvMjAyNCB2aWEgICBcbltodHRwczovL2h1Z2dpbmdmYWNlLmNvL21ldGEtbGxhbWEvTGxhbWEtMy4xLTcwQi1JbnN0cnVjdF0oaHR0cHM6Ly9odWdnaW5nZmFjZS5jby9tZXRhLWxsYW1hL0xsYW1hLTMuMS03MEItSW5zdHJ1Y3QpXG5cbioqUmVmZXJlbmNlKHMpOioqIFxuXG5baHR0cHM6Ly9odWdnaW5nZmFjZS5jby9tZXRhLWxsYW1hL0xsYW1hLTMuMS03MEItSW5zdHJ1Y3RdKGh0dHBzOi8vaHVnZ2luZ2ZhY2UuY28vbWV0YS1sbGFtYS9MbGFtYS0zLjEtNzBCLUluc3RydWN0KVxuXG4jIyAqKk1vZGVsIEFyY2hpdGVjdHVyZToqKiBcblxuQXJjaGl0ZWN0dXJlIFR5cGU6IFRyYW5zZm9ybWVyICBcbk5ldHdvcmsgQXJjaGl0ZWN0dXJlOiBMbGFtYS0zLjEtNzBCXG5cblRoaXMgbW9kZWwgd2FzIGRldmVsb3BlZCBiYXNlZCBvbiBNZXRhLUxsYW1hLTMuMS03MEIgIFxuW2h0dHBzOi8vaHVnZ2luZ2ZhY2UuY28vbWV0YS1sbGFtYS9MbGFtYS0zLjEtNzBCLUluc3RydWN0XShodHRwczovL2h1Z2dpbmdmYWNlLmNvL21ldGEtbGxhbWEvTGxhbWEtMy4xLTcwQi1JbnN0cnVjdClcblxuTnVtYmVyIG9mIG1vZGVsIHBhcmFtZXRlcnM6IDcuMDYqMTBeMTBcblxuIyMgKipJbnB1dDoqKlxuXG5JbnB1dCBUeXBlKHMpOiBUZXh0IFxuXG5JbnB1dCBGb3JtYXQocyk6IFN0cmluZyBcblxuSW5wdXQgUGFyYW1ldGVyczogT25lLURpbWVuc2lvbmFsICgxRClcblxuT3RoZXIgUHJvcGVydGllcyBSZWxhdGVkIHRvIElucHV0OiBUaGUgbW9kZWwgYWNjZXB0cyBhIHN0cmluZyBvZiB0ZXh0IHdoaWNoIGlzIGNvbnZlcnRlZCBpbnRvIHRva2VucyB1c2luZyB0aGUgbW9kZWwncyBzcGVjaWZpYyB0b2tlbml6ZXIuIFRoZSB0b3RhbCBsZW5ndGggb2YgdGhlIGlucHV0IHByb21wdCBhbmQgdGhlIGdlbmVyYXRlZCBvdXRwdXQgY2Fubm90IGV4Y2VlZCB0aGUgbW9kZWwncyBjb250ZXh0IHdpbmRvdyBvZiAxMjgsMDAwIHRva2Vucy5cblxuIyMgKipPdXRwdXQ6KipcblxuT3V0cHV0IFR5cGUocyk6IFRleHQgXG5cbk91dHB1dCBGb3JtYXQocyk6IFN0cmluZ1xuXG5PdXRwdXQgUGFyYW1ldGVyczogT25lLURpbWVuc2lvbmFsICgxRClcblxuT3RoZXIgUHJvcGVydGllcyBSZWxhdGVkIHRvIE91dHB1dDogVGhlIG1vZGVsIGdlbmVyYXRlcyBhIHN0cmluZyBvZiB0ZXh0LCBwcm9kdWNlZCB0b2tlbiBieSB0b2tlbi4gVGhlIG1heGltdW0gbGVuZ3RoIG9mIHRoZSBvdXRwdXQgaXMgbGltaXRlZCBieSB0aGUgbW9kZWwncyAxMjgsMDAwLXRva2VuIGNvbnRleHQgd2luZG93LCBsZXNzIHRoZSBsZW5ndGggb2YgdGhlIGlucHV0IHByb21wdC4gUG9zdC1wcm9jZXNzaW5nIGlzIHJlcXVpcmVkIHRvIGRlY29kZSB0aGUgbW9kZWwncyB0b2tlbi1iYXNlZCBvdXRwdXQgaW50byBhIHJlYWRhYmxlIHN0cmluZy5cblxuT3VyIEFJIG1vZGVscyBhcmUgZGVzaWduZWQgYW5kL29yIG9wdGltaXplZCB0byBydW4gb24gTlZJRElBIEdQVS1hY2NlbGVyYXRlZCBzeXN0ZW1zLiBCeSBsZXZlcmFnaW5nIE5WSURJQSdzIGhhcmR3YXJlIChlLmcuIEdQVSBjb3JlcykgYW5kIHNvZnR3YXJlIGZyYW1ld29ya3MgKGUuZy4sIENVREEgbGlicmFyaWVzKSwgdGhlIG1vZGVsIGFjaGlldmVzIGZhc3RlciB0cmFpbmluZyBhbmQgaW5mZXJlbmNlIHRpbWVzIGNvbXBhcmVkIHRvIENQVS1vbmx5IHNvbHV0aW9ucy5cblxuIyMgKipTb2Z0d2FyZSBJbnRlZ3JhdGlvbjoqKlxuXG5SdW50aW1lIEVuZ2luZTogdkxMTSwgVGVuc29yUlRcblxuU3VwcG9ydGVkIEhhcmR3YXJlIE1pY3JvYXJjaGl0ZWN0dXJlIENvbXBhdGliaWxpdHk6XG5cbk5WSURJQSBBbXBlcmUgIFxuTlZJRElBIEJsYWNrd2VsbCAgXG5OVklESUEgSG9wcGVyICBcbk5WSURJQSBMb3ZlbGFjZSBcblxuUHJlZmVycmVkIE9wZXJhdGluZyBTeXN0ZW0ocyk6XG5cbkxpbnV4ICAgXG5XaW5kb3dzXG5cblRoZSBpbnRlZ3JhdGlvbiBvZiBmb3VuZGF0aW9uIGFuZCBmaW5lLXR1bmVkIG1vZGVscyBpbnRvIEFJIHN5c3RlbXMgcmVxdWlyZXMgYWRkaXRpb25hbCB0ZXN0aW5nIHVzaW5nIHVzZS1jYXNlLXNwZWNpZmljIGRhdGEgdG8gZW5zdXJlIHNhZmUgYW5kIGVmZmVjdGl2ZSBkZXBsb3ltZW50LiBGb2xsb3dpbmcgdGhlIFYtbW9kZWwgbWV0aG9kb2xvZ3ksIGl0ZXJhdGl2ZSB0ZXN0aW5nIGFuZCB2YWxpZGF0aW9uIGF0IGJvdGggdW5pdCBhbmQgc3lzdGVtIGxldmVscyBhcmUgZXNzZW50aWFsIHRvIG1pdGlnYXRlIHJpc2tzLCBtZWV0IHRlY2huaWNhbCBhbmQgZnVuY3Rpb25hbCByZXF1aXJlbWVudHMsIGFuZCBlbnN1cmUgY29tcGxpYW5jZSB3aXRoIHNhZmV0eSBhbmQgZXRoaWNhbCBzdGFuZGFyZHMgYmVmb3JlIGRlcGxveW1lbnQuXG5cbiMjICoqTW9kZWwgVmVyc2lvbihzKToqKlxuXG5MbGFtYS0zLjEtNzBCLUluc3RydWN0XG5cbiMjICoqVXNhZ2UqKlxuXG4qKlVzZSB3aXRoIHRyYW5zZm9ybWVycyoqXG5cblN0YXJ0aW5nIHdpdGggdHJhbnNmb3JtZXJzIFxcPj0gNC40NS4wIG9ud2FyZCwgeW91IGNhbiBydW4gY29udmVyc2F0aW9uYWwgaW5mZXJlbmNlIHVzaW5nIHRoZSBUcmFuc2Zvcm1lcnMgcGlwZWxpbmUgYWJzdHJhY3Rpb24gb3IgYnkgbGV2ZXJhZ2luZyB0aGUgQXV0byBjbGFzc2VzIHdpdGggdGhlIGdlbmVyYXRlKCkgZnVuY3Rpb24uXG5cbk1ha2Ugc3VyZSB0byB1cGRhdGUgeW91ciB0cmFuc2Zvcm1lcnMgaW5zdGFsbGF0aW9uIHZpYSBwaXAgaW5zdGFsbCBcXC0tdXBncmFkZSB0cmFuc2Zvcm1lcnMuXG5cblNlZSB0aGUgc25pcHBldCBiZWxvdyBmb3IgdXNhZ2Ugd2l0aCBUcmFuc2Zvcm1lcnM6XG5cbmBgYFxuaW1wb3J0IHRyYW5zZm9ybWVyc1xuaW1wb3J0IHRvcmNoXG5cbm1vZGVsX2lkID0gXCJtZXRhLWxsYW1hL01ldGEtTGxhbWEtMy4xLTcwQi1JbnN0cnVjdFwiXG5cbnBpcGVsaW5lID0gdHJhbnNmb3JtZXJzLnBpcGVsaW5lKFxuICAgIFwidGV4dC1nZW5lcmF0aW9uXCIsXG4gICAgbW9kZWw9bW9kZWxfaWQsXG4gICAgbW9kZWxfa3dhcmdzPXtcInRvcmNoX2R0eXBlXCI6IHRvcmNoLmJmbG9hdDE2fSxcbiAgICBkZXZpY2VfbWFwPVwiYXV0b1wiLFxuKVxuXG5tZXNzYWdlcyA9IFtcbiAgICB7XCJyb2xlXCI6IFwic3lzdGVtXCIsIFwiY29udGVudFwiOiBcIllvdSBhcmUgYSBwaXJhdGUgY2hhdGJvdCB3aG8gYWx3YXlzIHJlc3BvbmRzIGluIHBpcmF0ZSBzcGVhayFcIn0sXG4gICAge1wicm9sZVwiOiBcInVzZXJcIiwgXCJjb250ZW50XCI6IFwiV2hvIGFyZSB5b3U/XCJ9LFxuXVxuXG5vdXRwdXRzID0gcGlwZWxpbmUoXG4gICAgbWVzc2FnZXMsXG4gICAgbWF4X25ld190b2tlbnM9MjU2LFxuKVxucHJpbnQob3V0cHV0c1swXVtcImdlbmVyYXRlZF90ZXh0XCJdWy0xXSlcbmBgYFxuXG4qKlRvb2wgdXNlIHdpdGggdHJhbnNmb3JtZXJzKipcblxuTExhTUEtMy4zIHN1cHBvcnRzIG11bHRpcGxlIHRvb2wgdXNlIGZvcm1hdHMuIFlvdSBjYW4gc2VlIGEgZnVsbCBndWlkZSB0byBwcm9tcHQgZm9ybWF0dGluZyBbaGVyZV0oaHR0cHM6Ly9sbGFtYS5tZXRhLmNvbS9kb2NzL21vZGVsLWNhcmRzLWFuZC1wcm9tcHQtZm9ybWF0cy9sbGFtYTNfMS8pLlxuXG5Ub29sIHVzZSBpcyBhbHNvIHN1cHBvcnRlZCB0aHJvdWdoIFtjaGF0IHRlbXBsYXRlc10oaHR0cHM6Ly9odWdnaW5nZmFjZS5jby9kb2NzL3RyYW5zZm9ybWVycy9tYWluL2NoYXRfdGVtcGxhdGluZyNhZHZhbmNlZC10b29sLXVzZS0tZnVuY3Rpb24tY2FsbGluZykgaW4gVHJhbnNmb3JtZXJzLiBIZXJlIGlzIGEgcXVpY2sgZXhhbXBsZSBzaG93aW5nIGEgc2luZ2xlIHNpbXBsZSB0b29sOlxuXG5gYGBcbiMgRmlyc3QsIGRlZmluZSBhIHRvb2xcbmRlZiBnZXRfY3VycmVudF90ZW1wZXJhdHVyZShsb2NhdGlvbjogc3RyKSAtPiBmbG9hdDpcbiAgICBcIlwiXCJcbiAgICBHZXQgdGhlIGN1cnJlbnQgdGVtcGVyYXR1cmUgYXQgYSBsb2NhdGlvbi5cbiAgICBcbiAgICBBcmdzOlxuICAgICAgICBsb2NhdGlvbjogVGhlIGxvY2F0aW9uIHRvIGdldCB0aGUgdGVtcGVyYXR1cmUgZm9yLCBpbiB0aGUgZm9ybWF0IFwiQ2l0eSwgQ291bnRyeVwiXG4gICAgUmV0dXJuczpcbiAgICAgICAgVGhlIGN1cnJlbnQgdGVtcGVyYXR1cmUgYXQgdGhlIHNwZWNpZmllZCBsb2NhdGlvbiBpbiB0aGUgc3BlY2lmaWVkIHVuaXRzLCBhcyBhIGZsb2F0LlxuICAgIFwiXCJcIlxuICAgIHJldHVybiAyMi4gICMgQSByZWFsIGZ1bmN0aW9uIHNob3VsZCBwcm9iYWJseSBhY3R1YWxseSBnZXQgdGhlIHRlbXBlcmF0dXJlIVxuXG4jIE5leHQsIGNyZWF0ZSBhIGNoYXQgYW5kIGFwcGx5IHRoZSBjaGF0IHRlbXBsYXRlXG5tZXNzYWdlcyA9IFtcbiAge1wicm9sZVwiOiBcInN5c3RlbVwiLCBcImNvbnRlbnRcIjogXCJZb3UgYXJlIGEgYm90IHRoYXQgcmVzcG9uZHMgdG8gd2VhdGhlciBxdWVyaWVzLlwifSxcbiAge1wicm9sZVwiOiBcInVzZXJcIiwgXCJjb250ZW50XCI6IFwiSGV5LCB3aGF0J3MgdGhlIHRlbXBlcmF0dXJlIGluIFBhcmlzIHJpZ2h0IG5vdz9cIn1cbl1cblxuaW5wdXRzID0gdG9rZW5pemVyLmFwcGx5X2NoYXRfdGVtcGxhdGUobWVzc2FnZXMsIHRvb2xzPVtnZXRfY3VycmVudF90ZW1wZXJhdHVyZV0sIGFkZF9nZW5lcmF0aW9uX3Byb21wdD1UcnVlKVxuYGBgXG5cbllvdSBjYW4gdGhlbiBnZW5lcmF0ZSB0ZXh0IGZyb20gdGhpcyBpbnB1dCBhcyBub3JtYWwuIElmIHRoZSBtb2RlbCBnZW5lcmF0ZXMgYSB0b29sIGNhbGwsIHlvdSBzaG91bGQgYWRkIGl0IHRvIHRoZSBjaGF0IGxpa2Ugc286XG5cbmBgYFxudG9vbF9jYWxsID0ge1wibmFtZVwiOiBcImdldF9jdXJyZW50X3RlbXBlcmF0dXJlXCIsIFwiYXJndW1lbnRzXCI6IHtcImxvY2F0aW9uXCI6IFwiUGFyaXMsIEZyYW5jZVwifX1cbm1lc3NhZ2VzLmFwcGVuZCh7XCJyb2xlXCI6IFwiYXNzaXN0YW50XCIsIFwidG9vbF9jYWxsc1wiOiBbe1widHlwZVwiOiBcImZ1bmN0aW9uXCIsIFwiZnVuY3Rpb25cIjogdG9vbF9jYWxsfV19KVxuYGBgXG5cbmFuZCB0aGVuIGNhbGwgdGhlIHRvb2wgYW5kIGFwcGVuZCB0aGUgcmVzdWx0LCB3aXRoIHRoZSB0b29sIHJvbGUsIGxpa2Ugc286XG5cbmBgYFxubWVzc2FnZXMuYXBwZW5kKHtcInJvbGVcIjogXCJ0b29sXCIsIFwibmFtZVwiOiBcImdldF9jdXJyZW50X3RlbXBlcmF0dXJlXCIsIFwiY29udGVudFwiOiBcIjIyLjBcIn0pXG5gYGBcblxuQWZ0ZXIgdGhhdCwgeW91IGNhbiBnZW5lcmF0ZSgpIGFnYWluIHRvIGxldCB0aGUgbW9kZWwgdXNlIHRoZSB0b29sIHJlc3VsdCBpbiB0aGUgY2hhdC4gTm90ZSB0aGF0IHRoaXMgd2FzIGEgdmVyeSBicmllZiBpbnRyb2R1Y3Rpb24gdG8gdG9vbCBjYWxsaW5nIFxcLSBmb3IgbW9yZSBpbmZvcm1hdGlvbiwgc2VlIHRoZSBbTExhTUEgcHJvbXB0IGZvcm1hdCBkb2NzXShodHRwczovL2xsYW1hLm1ldGEuY29tL2RvY3MvbW9kZWwtY2FyZHMtYW5kLXByb21wdC1mb3JtYXRzL2xsYW1hM18xLykgYW5kIHRoZSBUcmFuc2Zvcm1lcnMgW3Rvb2wgdXNlIGRvY3VtZW50YXRpb25dKGh0dHBzOi8vaHVnZ2luZ2ZhY2UuY28vZG9jcy90cmFuc2Zvcm1lcnMvbWFpbi9jaGF0X3RlbXBsYXRpbmcjYWR2YW5jZWQtdG9vbC11c2UtLWZ1bmN0aW9uLWNhbGxpbmcpLlxuXG4qKlVzZSB3aXRoIGJpdHNhbmRieXRlcyoqXG5cblRoZSBtb2RlbCBjaGVja3BvaW50cyBjYW4gYmUgdXNlZCBpbiA4LWJpdCBhbmQgNC1iaXQgZm9yIGZ1cnRoZXIgbWVtb3J5IG9wdGltaXNhdGlvbnMgdXNpbmcgYml0c2FuZGJ5dGVzIGFuZCB0cmFuc2Zvcm1lcnNcblxuU2VlIHRoZSBzbmlwcGV0IGJlbG93IGZvciB1c2FnZTpcblxuYGBgXG5pbXBvcnQgdG9yY2hcbmZyb20gdHJhbnNmb3JtZXJzIGltcG9ydCBBdXRvTW9kZWxGb3JDYXVzYWxMTSwgQXV0b1Rva2VuaXplclxuXG5tb2RlbF9pZCA9IFwibWV0YS1sbGFtYS9NZXRhLUxsYW1hLTMuMS03MEItSW5zdHJ1Y3RcIlxucXVhbnRpemF0aW9uX2NvbmZpZyA9IEJpdHNBbmRCeXRlc0NvbmZpZyhsb2FkX2luXzhiaXQ9VHJ1ZSlcblxucXVhbnRpemVkX21vZGVsID0gQXV0b01vZGVsRm9yQ2F1c2FsTE0uZnJvbV9wcmV0cmFpbmVkKFxuICAgIG1vZGVsX2lkLCBkZXZpY2VfbWFwPVwiYXV0b1wiLCB0b3JjaF9kdHlwZT10b3JjaC5iZmxvYXQxNiwgcXVhbnRpemF0aW9uX2NvbmZpZz1xdWFudGl6YXRpb25fY29uZmlnKVxuXG50b2tlbml6ZXIgPSBBdXRvVG9rZW5pemVyLmZyb21fcHJldHJhaW5lZChtb2RlbF9pZClcbmlucHV0X3RleHQgPSBcIldoYXQgYXJlIHdlIGhhdmluZyBmb3IgZGlubmVyP1wiXG5pbnB1dF9pZHMgPSB0b2tlbml6ZXIoaW5wdXRfdGV4dCwgcmV0dXJuX3RlbnNvcnM9XCJwdFwiKS50byhcImN1ZGFcIilcblxub3V0cHV0ID0gcXVhbnRpemVkX21vZGVsLmdlbmVyYXRlKCoqaW5wdXRfaWRzLCBtYXhfbmV3X3Rva2Vucz0xMClcblxucHJpbnQodG9rZW5pemVyLmRlY29kZShvdXRwdXRbMF0sIHNraXBfc3BlY2lhbF90b2tlbnM9VHJ1ZSkpXG5gYGBcblxuVG8gbG9hZCBpbiA0LWJpdCBzaW1wbHkgcGFzcyBsb2FkXFxfaW5cXF80Yml0PVRydWVcblxuKipVc2Ugd2l0aCBsbGFtYSoqXG5cblBsZWFzZSwgZm9sbG93IHRoZSBpbnN0cnVjdGlvbnMgaW4gdGhlIFtyZXBvc2l0b3J5XShodHRwczovL2dpdGh1Yi5jb20vbWV0YS1sbGFtYS9sbGFtYSkuXG5cblRvIGRvd25sb2FkIE9yaWdpbmFsIGNoZWNrcG9pbnRzLCBzZWUgdGhlIGV4YW1wbGUgY29tbWFuZCBiZWxvdyBsZXZlcmFnaW5nIGh1Z2dpbmdmYWNlLWNsaTpcblxuYGBgXG5odWdnaW5nZmFjZS1jbGkgZG93bmxvYWQgbWV0YS1sbGFtYS9NZXRhLUxsYW1hLTMuMS03MEItSW5zdHJ1Y3QgLS1pbmNsdWRlIFwib3JpZ2luYWwvKlwiIC0tbG9jYWwtZGlyIE1ldGEtTGxhbWEtMy4xLTcwQi1JbnN0cnVjdFxuYGBgXG5cbiMjICoqVHJhaW5pbmcsIFRlc3RpbmcsIGFuZCBFdmFsdWF0aW9uIERhdGFzZXRzOioqXG5cbiMjIyAqKlRyYWluaW5nIERhdGFzZXQqKlxuXG4qKkRhdGEgTW9kYWxpdHk6KiogVGV4dCBcblxuKipMaW5rOioqIFVuZGlzY2xvc2VkXG5cbioqRGF0YSBDb2xsZWN0aW9uIE1ldGhvZDoqKiBIeWJyaWQ6IEh1bWFuLCBTeW50aGV0aWMsIEF1dG9tYXRlZFxuXG4qKkxhYmVsaW5nIE1ldGhvZDoqKiBIeWJyaWQ6IEF1dG9tYXRlZCwgSHVtYW5cblxuKipQcm9wZXJ0aWVzOioqIFxuXG5UaGUgcHJldHJhaW5pbmcgZGF0YXNldCBjb250YWlucyBvdmVyIDE1IHRyaWxsaW9uIHRva2Vucy4gSXQgaXMgYSBtdWx0aWxpbmd1YWwgZGF0YXNldCBjb3ZlcmluZyBvdmVyIDMwIGxhbmd1YWdlcyBhbmQgd2FzIGZpbHRlcmVkIGhlYXZpbHkgZm9yIHF1YWxpdHkgdXNpbmcgdmFyaW91cyB0ZWNobmlxdWVzLCBpbmNsdWRpbmcgaGV1cmlzdGljIGZpbHRlcnMsIE5TRlcgZmlsdGVycywgYW5kIHRleHQgY2xhc3NpZmllcnMuIFRoZSBtb2RlbCdzIGtub3dsZWRnZSB3YXMgdHJhaW5lZCBvbiBkYXRhIHdpdGggYSBjdXRvZmYgb2YgRGVjZW1iZXIgMjAyM1xcLiBcblxuIyMjICoqVGVzdGluZyBEYXRhc2V0KipcblxuKipMaW5rOioqIFVuZGlzY2xvc2VkXG5cbioqRGF0YSBDb2xsZWN0aW9uIE1ldGhvZDoqKiBIeWJyaWQ6IEh1bWFuLCBTeW50aGV0aWMsIEF1dG9tYXRlZFxuXG4qKkxhYmVsaW5nIE1ldGhvZDoqKiBIeWJyaWQ6IEF1dG9tYXRlZCwgSHVtYW5cblxuKipQcm9wZXJ0aWVzOioqIFxuXG4qKkRlc2NyaXB0aW9uOioqXG5cblRoZSBtb2RlbCB3YXMgdGVzdGVkIG9uIGEgZGl2ZXJzZSBzZXQgb2YgZXZhbHVhdGlvbiBkYXRhLlxuXG4qIFB1YmxpYyBCZW5jaG1hcmtzOiBUaGVzZSB0ZXN0IGEgd2lkZSByYW5nZSBvZiBjYXBhYmlsaXRpZXMsIGZyb20gZ2VuZXJhbCBrbm93bGVkZ2UgYW5kIHJlYXNvbmluZyAoTU1MVSwgSGVsbGFTd2FnKSB0byBleHBlcnQtbGV2ZWwgcHJvYmxlbS1zb2x2aW5nIChHUFFBKSBhbmQgcHJvZ3JhbW1pbmcgKEh1bWFuRXZhbCwgd2hpY2ggY29udGFpbnMgMTY0IHByb2dyYW1taW5nIHByb2JsZW1zKS4gIFxuKiBJbnRlcm5hbCBFdmFsdWF0aW9uIFNldDogTWV0YSBjcmVhdGVkIGEgbmV3IGhpZ2gtcXVhbGl0eSB0ZXN0IHNldCBvZiAyLDAwMCBwcm9tcHRzIGNvdmVyaW5nIDEyIGtleSB1c2UgY2FzZXMgKGUuZy4sIGNvZGluZywgcmVhc29uaW5nLCBjcmVhdGl2ZSB3cml0aW5nLCBpbnN0cnVjdGlvbiBmb2xsb3dpbmcpLiBUaGlzIHNldCBpcyB1c2VkIGZvciBodW1hbiBldmFsdWF0aW9uIHRvIGFzc2VzcyBwZXJmb3JtYW5jZSBvbiByZWFsLXdvcmxkLCBudWFuY2VkIHRhc2tzLiBcblxuIyMjICoqRXZhbHVhdGlvbiBEYXRhc2V0KipcblxuKipMaW5rOioqIFVuZGlzY2xvc2VkXG5cbioqRGF0YSBDb2xsZWN0aW9uIE1ldGhvZDoqKiBIeWJyaWQ6IEF1dG9tYXRlZCwgSHVtYW4sIFN5bnRoZXRpY1xuXG4qKkxhYmVsaW5nIE1ldGhvZDoqKiBIeWJyaWQ6IEh1bWFuLCBBdXRvbWF0ZWRcblxuKipQcm9wZXJ0aWVzOioqIFxuXG5UaGUgZXZhbHVhdGlvbiBkYXRhc2V0cyBhcmUgZGl2ZXJzZSBhbmQgdGVzdCBhIHdpZGUgc3BlY3RydW0gb2YgY2FwYWJpbGl0aWVzLiBNTUxVIG1lYXN1cmVzIGJyb2FkIG11bHRpdGFzayBrbm93bGVkZ2UuIEdQUUEgYXNzZXNzZXMgYWR2YW5jZWQgcmVhc29uaW5nIHdpdGggZGlmZmljdWx0LCBleHBlcnQtbGV2ZWwgcXVlc3Rpb25zLiBIdW1hbkV2YWwgYW5kIE1BVEggc3BlY2lmaWNhbGx5IHRlc3QgY29kZSBnZW5lcmF0aW9uIGFuZCBtYXRoZW1hdGljYWwgcmVhc29uaW5nIGFiaWxpdGllcywgcmVzcGVjdGl2ZWx5LiBNZXRhIGFsc28gdXRpbGl6ZXMgYSBsYXJnZSwgcHJpdmF0ZSwgaHVtYW4tYW5ub3RhdGVkIGV2YWx1YXRpb24gc2V0IGRlc2lnbmVkIHRvIGFzc2VzcyBtb2RlbCBwZXJmb3JtYW5jZSBpbiByZWFsLXdvcmxkLCBudWFuY2VkIHNjZW5hcmlvcy4gXG5cbioqQmFzZSBwcmV0cmFpbmVkIG1vZGVscyoqXG5cbnwgQ2F0ZWdvcnkgfCBCZW5jaG1hcmsgfCBcXCMgU2hvdHMgfCBNZXRyaWMgfCBMbGFtYSAzIDhCIHwgTGxhbWEgMy4xIDhCIHwgTGxhbWEgMyA3MEIgfCBMbGFtYSAzLjEgNzBCIHwgTGxhbWEgMy4xIDQwNUIgfFxufCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfFxufCBHZW5lcmFsIHwgTU1MVSB8IDUgfCBtYWNyb1xcX2F2Zy9hY2NcXF9jaGFyIHwgNjYuNyB8IDY2LjcgfCA3OS41IHwgNzkuMyB8IDg1LjIgfFxufCAgfCBNTUxVLVBybyAoQ29UKSB8IDUgfCBtYWNyb1xcX2F2Zy9hY2NcXF9jaGFyIHwgMzYuMiB8IDM3LjEgfCA1NS4wIHwgNTMuOCB8IDYxLjYgfFxufCAgfCBBR0lFdmFsIEVuZ2xpc2ggfCAzLTUgfCBhdmVyYWdlL2FjY1xcX2NoYXIgfCA0Ny4xIHwgNDcuOCB8IDYzLjAgfCA2NC42IHwgNzEuNiB8XG58ICB8IENvbW1vblNlbnNlUUEgfCA3IHwgYWNjXFxfY2hhciB8IDcyLjYgfCA3NS4wIHwgODMuOCB8IDg0LjEgfCA4NS44IHxcbnwgIHwgV2lub2dyYW5kZSB8IDUgfCBhY2NcXF9jaGFyIHwgXFwtIHwgNjAuNSB8IFxcLSB8IDgzLjMgfCA4Ni43IHxcbnwgIHwgQklHLUJlbmNoIEhhcmQgKENvVCkgfCAzIHwgYXZlcmFnZS9lbSB8IDYxLjEgfCA2NC4yIHwgODEuMyB8IDgxLjYgfCA4NS45IHxcbnwgIHwgQVJDLUNoYWxsZW5nZSB8IDI1IHwgYWNjXFxfY2hhciB8IDc5LjQgfCA3OS43IHwgOTMuMSB8IDkyLjkgfCA5Ni4xIHxcbnwgS25vd2xlZGdlIHJlYXNvbmluZyB8IFRyaXZpYVFBLVdpa2kgfCA1IHwgZW0gfCA3OC41IHwgNzcuNiB8IDg5LjcgfCA4OS44IHwgOTEuOCB8XG58IFJlYWRpbmcgY29tcHJlaGVuc2lvbiB8IFNRdUFEIHwgMSB8IGVtIHwgNzYuNCB8IDc3LjAgfCA4NS42IHwgODEuOCB8IDg5LjMgfFxufCAgfCBRdUFDIChGMSkgfCAxIHwgZjEgfCA0NC40IHwgNDQuOSB8IDUxLjEgfCA1MS4xIHwgNTMuNiB8XG58ICB8IEJvb2xRIHwgMCB8IGFjY1xcX2NoYXIgfCA3NS43IHwgNzUuMCB8IDc5LjAgfCA3OS40IHwgODAuMCB8XG58ICB8IERST1AgKEYxKSB8IDMgfCBmMSB8IDU4LjQgfCA1OS41IHwgNzkuNyB8IDc5LjYgfCA4NC44IHxcblxuKipJbnN0cnVjdGlvbiB0dW5lZCBtb2RlbHMqKlxuXG58IENhdGVnb3J5IHwgQmVuY2htYXJrIHwgXFwjIFNob3RzIHwgTWV0cmljIHwgTGxhbWEgMyA4QiBJbnN0cnVjdCB8IExsYW1hIDMuMSA4QiBJbnN0cnVjdCB8IExsYW1hIDMgNzBCIEluc3RydWN0IHwgTGxhbWEgMy4xIDcwQiBJbnN0cnVjdCB8IExsYW1hIDMuMSA0MDVCIEluc3RydWN0IHxcbnwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHxcbnwgR2VuZXJhbCB8IE1NTFUgfCA1IHwgbWFjcm9cXF9hdmcvYWNjIHwgNjguNSB8IDY5LjQgfCA4Mi4wIHwgODMuNiB8IDg3LjMgfFxufCAgfCBNTUxVIChDb1QpIHwgMCB8IG1hY3JvXFxfYXZnL2FjYyB8IDY1LjMgfCA3My4wIHwgODAuOSB8IDg2LjAgfCA4OC42IHxcbnwgIHwgTU1MVS1Qcm8gKENvVCkgfCA1IHwgbWljcm9cXF9hdmcvYWNjXFxfY2hhciB8IDQ1LjUgfCA0OC4zIHwgNjMuNCB8IDY2LjQgfCA3My4zIHxcbnwgIHwgSUZFdmFsIHwgIHwgIHwgNzYuOCB8IDgwLjQgfCA4Mi45IHwgODcuNSB8IDg4LjYgfFxufCBSZWFzb25pbmcgfCBBUkMtQyB8IDAgfCBhY2MgfCA4Mi40IHwgODMuNCB8IDk0LjQgfCA5NC44IHwgOTYuOSB8XG58ICB8IEdQUUEgfCAwIHwgZW0gfCAzNC42IHwgMzAuNCB8IDM5LjUgfCA0Ni43IHwgNTAuNyB8XG58IENvZGUgfCBIdW1hbkV2YWwgfCAwIHwgcGFzc0AxIHwgNjAuNCB8IDcyLjYgfCA4MS43IHwgODAuNSB8IDg5LjAgfFxufCAgfCBNQlBQIFxcKysgYmFzZSB2ZXJzaW9uIHwgMCB8IHBhc3NAMSB8IDcwLjYgfCA3Mi44IHwgODIuNSB8IDg2LjAgfCA4OC42IHxcbnwgIHwgTXVsdGlwbC1FIEh1bWFuRXZhbCB8IDAgfCBwYXNzQDEgfCBcXC0gfCA1MC44IHwgXFwtIHwgNjUuNSB8IDc1LjIgfFxufCAgfCBNdWx0aXBsLUUgTUJQUCB8IDAgfCBwYXNzQDEgfCBcXC0gfCA1Mi40IHwgXFwtIHwgNjIuMCB8IDY1LjcgfFxufCBNYXRoIHwgR1NNLThLIChDb1QpIHwgOCB8IGVtXFxfbWFqMUAxIHwgODAuNiB8IDg0LjUgfCA5My4wIHwgOTUuMSB8IDk2LjggfFxufCAgfCBNQVRIIChDb1QpIHwgMCB8IGZpbmFsXFxfZW0gfCAyOS4xIHwgNTEuOSB8IDUxLjAgfCA2OC4wIHwgNzMuOCB8XG58IFRvb2wgVXNlIHwgQVBJLUJhbmsgfCAwIHwgYWNjIHwgNDguMyB8IDgyLjYgfCA4NS4xIHwgOTAuMCB8IDkyLjAgfFxufCAgfCBCRkNMIHwgMCB8IGFjYyB8IDYwLjMgfCA3Ni4xIHwgODMuMCB8IDg0LjggfCA4OC41IHxcbnwgIHwgR29yaWxsYSBCZW5jaG1hcmsgQVBJIEJlbmNoIHwgMCB8IGFjYyB8IDEuNyB8IDguMiB8IDE0LjcgfCAyOS43IHwgMzUuMyB8XG58ICB8IE5leHVzICgwLXNob3QpIHwgMCB8IG1hY3JvXFxfYXZnL2FjYyB8IDE4LjEgfCAzOC41IHwgNDcuOCB8IDU2LjcgfCA1OC43IHxcbnwgTXVsdGlsaW5ndWFsIHwgTXVsdGlsaW5ndWFsIE1HU00gKENvVCkgfCAwIHwgZW0gfCBcXC0gfCA2OC45IHwgXFwtIHwgODYuOSB8IDkxLjYgfFxuXG4qKk11bHRpbGluZ3VhbCBiZW5jaG1hcmtzKipcblxufCBDYXRlZ29yeSB8IEJlbmNobWFyayB8IExhbmd1YWdlIHwgTGxhbWEgMy4xIDhCIHwgTGxhbWEgMy4xIDcwQiB8IExsYW1hIDMuMSA0MDVCIHxcbnwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHxcbnwgR2VuZXJhbCB8IE1NTFUgKDUtc2hvdCwgbWFjcm9cXF9hdmcvYWNjKSB8IFBvcnR1Z3Vlc2UgfCA2Mi4xMiB8IDgwLjEzIHwgODQuOTUgfFxufCAgfCAgfCBTcGFuaXNoIHwgNjIuNDUgfCA4MC4wNSB8IDg1LjA4IHxcbnwgIHwgIHwgSXRhbGlhbiB8IDYxLjYzIHwgODAuNCB8IDg1LjA0IHxcbnwgIHwgIHwgR2VybWFuIHwgNjAuNTkgfCA3OS4yNyB8IDg0LjM2IHxcbnwgIHwgIHwgRnJlbmNoIHwgNjIuMzQgfCA3OS44MiB8IDg0LjY2IHxcbnwgIHwgIHwgSGluZGkgfCA1MC44OCB8IDc0LjUyIHwgODAuMzEgfFxufCAgfCAgfCBUaGFpIHwgNTAuMzIgfCA3Mi45NSB8IDc4LjIxIHxcblxuIyMgKipUZWNobmljYWwgTGltaXRhdGlvbnMqKiBcblxuVGVzdGluZyBjb25kdWN0ZWQgdG8gZGF0ZSBoYXMgbm90IGNvdmVyZWQsIG5vciBjb3VsZCBpdCBjb3ZlciwgYWxsIHNjZW5hcmlvcy4gRm9yIHRoZXNlIHJlYXNvbnMsIGFzIHdpdGggYWxsIExMTXMsIHRoZSBtb2RlbCdzIHBvdGVudGlhbCBvdXRwdXRzIGNhbm5vdCBiZSBwcmVkaWN0ZWQgaW4gYWR2YW5jZSwgYW5kIHRoZSBtb2RlbCBtYXkgaW4gc29tZSBpbnN0YW5jZXMgcHJvZHVjZSBpbmFjY3VyYXRlLCBiaWFzZWQgb3Igb3RoZXIgb2JqZWN0aW9uYWJsZSByZXNwb25zZXMgdG8gdXNlciBwcm9tcHRzLiBUaGVyZWZvcmUsIGJlZm9yZSBkZXBsb3lpbmcgdGhpcyBtb2RlbCBpbiBhbnkgYXBwbGljYXRpb25zLCBkZXZlbG9wZXJzIHNob3VsZCBwZXJmb3JtIHNhZmV0eSB0ZXN0aW5nIGFuZCB0dW5pbmcgdGFpbG9yZWQgdG8gdGhlaXIgc3BlY2lmaWMgYXBwbGljYXRpb25zLiBQbGVhc2UgcmVmZXIgdG8gYXZhaWxhYmxlIHJlc291cmNlcyBpbmNsdWRpbmcgdGhlIFtSZXNwb25zaWJsZSBVc2UgR3VpZGVdKGh0dHBzOi8vbGxhbWEubWV0YS5jb20vcmVzcG9uc2libGUtdXNlLWd1aWRlKSwgW1RydXN0IGFuZCBTYWZldHldKGh0dHBzOi8vbGxhbWEubWV0YS5jb20vdHJ1c3QtYW5kLXNhZmV0eS8pIHNvbHV0aW9ucywgYW5kIG90aGVyIFtyZXNvdXJjZXNdKGh0dHBzOi8vbGxhbWEubWV0YS5jb20vZG9jcy9nZXQtc3RhcnRlZC8pIHRvIGxlYXJuIG1vcmUgYWJvdXQgcmVzcG9uc2libGUgZGV2ZWxvcG1lbnQuIFxuXG4jIyAqKkluZmVyZW5jZToqKlxuXG4qKkFjY2VsZXJhdGlvbiBFbmdpbmU6KiogdkxMTSwgVGVuc29yUlQgXG5cbioqVGVzdCBIYXJkd2FyZToqKiBcblxuICBCMjAwIFNYTSAgIFxuICBIMjAwIFNYTSAgXG4gIEgxMDAgU1hNICBcbiAgQTEwMCBTWE0gODBHQiAgXG4gIEExMDAgU1hNIDQwR0IgIFxuICBMNDBTIFBDSWUgIFxuICBBMTBHICBcbiAgSDEwMCBOVkwgIFxuICBIMjAwIE5WTCAgXG4gIEdIMjAwIDk2R0IgIFxuICBHQjIwMCBOVkw3MiAgIFxuICBHSDIwMCBOVkwyICAgICBcbiAgUlRYIDUwOTAgIFxuICBSVFggNDA5MCAgXG4gIFJUWCA2MDAwIEFkYVxuXG4jIyAqKkV0aGljYWwgQ29uc2lkZXJhdGlvbnM6KipcblxuTlZJRElBIGJlbGlldmVzIFRydXN0d29ydGh5IEFJIGlzIGEgc2hhcmVkIHJlc3BvbnNpYmlsaXR5IGFuZCB3ZSBoYXZlIGVzdGFibGlzaGVkIHBvbGljaWVzIGFuZCBwcmFjdGljZXMgdG8gZW5hYmxlIGRldmVsb3BtZW50IGZvciBhIHdpZGUgYXJyYXkgb2YgQUkgYXBwbGljYXRpb25zLiBXaGVuIGRvd25sb2FkZWQgb3IgdXNlZCBpbiBhY2NvcmRhbmNlIHdpdGggb3VyIHRlcm1zIG9mIHNlcnZpY2UsIGRldmVsb3BlcnMgc2hvdWxkIHdvcmsgd2l0aCB0aGVpciBpbnRlcm5hbCBtb2RlbCB0ZWFtIHRvIGVuc3VyZSB0aGlzIG1vZGVsIG1lZXRzIHJlcXVpcmVtZW50cyBmb3IgdGhlIHJlbGV2YW50IGluZHVzdHJ5IGFuZCB1c2UgY2FzZSBhbmQgYWRkcmVzc2VzIHVuZm9yZXNlZW4gcHJvZHVjdCBtaXN1c2UuIFBsZWFzZSByZXBvcnQgc2VjdXJpdHkgdnVsbmVyYWJpbGl0aWVzIG9yIE5WSURJQSBBSSBDb25jZXJucyBbaGVyZV0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9zdXBwb3J0L3N1Ym1pdC1zZWN1cml0eS12dWxuZXJhYmlsaXR5LykuXG5cbllvdSBhcmUgcmVzcG9uc2libGUgZm9yIGVuc3VyaW5nIHRoYXQgeW91ciB1c2Ugb2YgTlZJRElBIHByb3ZpZGVkIG1vZGVscyBjb21wbGllcyB3aXRoIGFsbCBhcHBsaWNhYmxlIGxhd3MuIiwKICAgICJkaXNwbGF5TmFtZSI6ICJMbGFtYS0zLjEtNzBiLWluc3RydWN0IiwKICAgICJleHBsYWluYWJpbGl0eSI6ICIiLAogICAgImZyYW1ld29yayI6ICJPdGhlciIsCiAgICAiaGFzUGxheWdyb3VuZCI6IGZhbHNlLAogICAgImhhc1NpZ25lZFZlcnNpb24iOiB0cnVlLAogICAgImlzUGxheWdyb3VuZEVuYWJsZWQiOiBmYWxzZSwKICAgICJpc1B1YmxpYyI6IGZhbHNlLAogICAgImlzUmVhZE9ubHkiOiB0cnVlLAogICAgImxhYmVscyI6IFsKICAgICAgICAiTGxhbWEzLjEiLAogICAgICAgICJMbGFtYTMuMS03MGItaW5zdHJ1Y3QiLAogICAgICAgICJOSU0iLAogICAgICAgICJOU1BFQ1QtN1MzRi1RRkc4IiwKICAgICAgICAibnZhaWU6bW9kZWw6bnZhaWVfc3VwcG9ydGVkIiwKICAgICAgICAibnZpZGlhX25pbTptb2RlbDpuaW1tY3JvX252aWRpYV9uaW0iLAogICAgICAgICJwcm9kdWN0TmFtZXM6bmltLWRldiIsCiAgICAgICAgInByb2R1Y3ROYW1lczpudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJsYXRlc3RWZXJzaW9uSWRTdHIiOiAicnR4NjAwMC1ibGFja3dlbGwtc3Z4OC1sYXRlbmN5LWJmMTYtYnhpYWdoNGpnZyIsCiAgICAibGF0ZXN0VmVyc2lvblNpemVJbkJ5dGVzIjogMTU3MzU3MjY3OTI3LAogICAgImxvZ28iOiAiaHR0cHM6Ly9hc3NldHMubmdjLm52aWRpYS5jb20vcHJvZHVjdHMvYXBpLWNhdGFsb2cvaW1hZ2VzL2xsYW1hLTNfMS03MGItaW5zdHJ1Y3QuanBnIiwKICAgICJtb2RlbEZvcm1hdCI6ICJTYXZlZE1vZGVsIiwKICAgICJuYW1lIjogImxsYW1hLTMuMS03MGItaW5zdHJ1Y3QiLAogICAgIm9yZ05hbWUiOiAibmltIiwKICAgICJwcmVjaXNpb24iOiAiT1RIRVIiLAogICAgInByaXZhY3kiOiAiIiwKICAgICJwcm9kdWN0TmFtZXMiOiBbCiAgICAgICAgIm5pbS1kZXYiLAogICAgICAgICJudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJwdWJsaWNEYXRhc2V0VXNlZCI6IHt9LAogICAgInB1Ymxpc2hlciI6ICJNZXRhIiwKICAgICJzYWZldHlBbmRTZWN1cml0eSI6ICIiLAogICAgInNob3J0RGVzY3JpcHRpb24iOiAiVGhlIE1ldGEgTGxhbWEgMy4xIGNvbGxlY3Rpb24gb2YgbXVsdGlsaW5ndWFsIGxhcmdlIGxhbmd1YWdlIG1vZGVscyAoTExNcykgaXMgYSBjb2xsZWN0aW9uIG9mIHByZXRyYWluZWQgYW5kIGluc3RydWN0aW9uIHR1bmVkIGdlbmVyYXRpdmUgbW9kZWxzIGluIDhCLCA3MEIgYW5kIDQwNUIgc2l6ZXMgKHRleHQgaW4vdGV4dCBvdXQpLiIsCiAgICAidGVhbU5hbWUiOiAibWV0YSIsCiAgICAidXBkYXRlZERhdGUiOiAiMjAyNS0xMC0xNVQxNzo0OToxNS42MDVaIgp9
     source:
@@ -1616,6 +1857,315 @@ models:
         value: 263GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp2__3
+      framework: VLLM
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx2 BF16
+      ngcMetadata:
+        39194b5f5858f2dde376844651af70e4471874a29935142320b972a2e3ca0ac5:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp2
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx2 FP8 Throughput
+      ngcMetadata:
+        bc57e25851a04ff1f855d632d2f656c8eb1a137e55eba2063adcb8ce1116069d:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 43974cb445b2cc0a952d77e6a01d557c0fe4f2a3cc1c35796a1043c57518d3cf
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp2__2
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx2 NVFP4 Throughput
+      ngcMetadata:
+        cab042186e90569e93c02348e34628537983e52ab710d3a4fdf42fc9fa4c569b:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 6e54117bf7b0c8b928a004a7b02ae040230bdf0fb2670a5499a6b86de772bf59
+            number_of_gpus: '2'
+            pp: '1'
+            precision: nvfp4
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp4__4
+      framework: VLLM
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx4 BF16
+      ngcMetadata:
+        006abfcad3d12cfc6571d2e55f09a58957a0e3a5cd39c2df8c10e78f4ce10978:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp4__3
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx4 BF16 Throughput
+      ngcMetadata:
+        d917ec97b8b2584fe655c03e9152f33e1e1a485c90b8ced5098787bbcf196c7b:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 8dc56a001e709d604284f145342698a414d54dc087b26f2fd39628b586819e8a
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp4
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx4 FP8 Latency
+      ngcMetadata:
+        64bc125ba10664e556b2e4203702c2be799df905a26f16724dc5a5933dbad919:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: eab1d9b2ac2520726f1218f41491e57157abcd21ba738a45b37deaa206384073
+            number_of_gpus: '4'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp4__2
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx4 NVFP4 Latency
+      ngcMetadata:
+        6a59fd6976eb5dc3d7c05f45c35f5aa5de00174b41957767c73c0034d91122e1:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: bcb143d582f4a6c76551d735a1b403a716abe7d0bc20cf00d98d8c86ceb2dfe0
+            number_of_gpus: '4'
+            pp: '1'
+            precision: nvfp4
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp8__2
+      framework: VLLM
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx8 BF16
+      ngcMetadata:
+        3dcc4db7b5b522f47bf5c344038e6c8cad918617f954a0b751c9b7fcc5bb4d3f:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp8
+      framework: TensorRT-LLM
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx8 BF16 Latency
+      ngcMetadata:
+        9eb233c7c0ee4da16616a30996ab9a65e9b5405708df3a19a06da04ac8a78495:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: b84e4f23dec2af9146539c7f2865430fe42d7359aa1b3877c6beb286f0ef8558
+            number_of_gpus: '8'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
   labels:
   - Llama
   - Meta

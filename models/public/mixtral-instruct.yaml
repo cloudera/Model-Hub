@@ -1303,6 +1303,274 @@ models:
         value: 87GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv__5
+      framework: VLLM
+      displayName: Mixtral 8x7b Instruct V0.1 RTX6000_BLACKWELL_SVx1 BF16
+      ngcMetadata:
+        61c1479f4e611effdbb853dbf3723f9f483f9261a16d05e67e8f122906bc9f05:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1143086cd34eaa9e23556534ece80597734ec4653acf4ed38fc87f993b235371
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 RTX6000_BLACKWELL_SVx1 BF16 Latency
+      ngcMetadata:
+        4de3615de4e17a52204267aa491eece5e2bf262b7e206e575629192e29905484:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 8746b88809968532d4e89e87a889301feb51db53963c629d5c8641f25cab7ef8
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv__4
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 RTX6000_BLACKWELL_SVx1 BF16 Throughput
+      ngcMetadata:
+        ffb72dbc582c757889db80e92ff451fbb41b7e2e282095011570664203059860:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: f3cadd31e5c7952a0e0240064b0a5d92eec6807465cc361c823f182252cd5e76
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv__3
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 RTX6000_BLACKWELL_SVx1 FP8 Latency
+      ngcMetadata:
+        eb79c173819637a1b1c609f26b732082affb7825871d5a6ba39eaa5ec516d18f:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 150c4a7f8276d0eeb355246dc21158e063c51d61015b972d77aed5189d9a62ec
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: latency
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv__2
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 RTX6000_BLACKWELL_SVx1 FP8 Throughput
+      ngcMetadata:
+        9aa79b2cd14b16a6960827e7ec013a024d6236e6927ea63b276c7a4dc3b72964:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 1488c81eba6320033b07ded410dd4a688968e7233608309e434678488ab533f3
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Mixtral 8x7b Instruct V0.1 RTX6000_BLACKWELL_SVx2 BF16
+      ngcMetadata:
+        3d73091fd6b66d810cbb9dd011fd842d2a1482a02258ff05f31cd9b00d91f3db:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1143086cd34eaa9e23556534ece80597734ec4653acf4ed38fc87f993b235371
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Mixtral 8x7b Instruct V0.1 RTX6000_BLACKWELL_SVx4 BF16
+      ngcMetadata:
+        dd8ce8a7f1a9025f007275f451a6e8b289f4e7b4fea07ac9664ad04b10d1e030:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1143086cd34eaa9e23556534ece80597734ec4653acf4ed38fc87f993b235371
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Mixtral 8x7b Instruct V0.1 RTX6000_BLACKWELL_SVx8 BF16
+      ngcMetadata:
+        b85a412ddf8383e654e9be84de4a2697b5096e5e0f9ca33b43bd1d61968552e8:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1143086cd34eaa9e23556534ece80597734ec4653acf4ed38fc87f993b235371
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LLM ENGINE
+        value: VLLM
   labels:
   - Mistral
   - Instruct

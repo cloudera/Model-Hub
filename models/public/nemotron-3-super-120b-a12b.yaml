@@ -1698,6 +1698,366 @@ models:
         value: 75GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx1 BF16
+      ngcMetadata:
+        9489f6f6de7ac7c9571b123c30b47a89e80b7881882d3124ab811388d7426ddb:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '237.0'
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 231GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx1 FP8
+      ngcMetadata:
+        5a1a326f51f49bebc8b6e374b1a71e242169e5eb88ef34ab781d0109c7eb7768:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '125.0'
+            pp: '1'
+            precision: fp8
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 120GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-nvfp4-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx1 NVFP4
+      ngcMetadata:
+        3b37a659a22c9390abe7b16aeb29c301c2e9c0e12e5b0fa76171681df31930e0:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '80.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 75GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx2 BF16
+      ngcMetadata:
+        37fe705735f5e860db323d70e43a6e31d1274ba4cf92401c8f3ff7e8a84f093c:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '121.0'
+            pp: '1'
+            precision: bf16
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 231GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx2 FP8
+      ngcMetadata:
+        57d42cc7d33914933427e7f8d8cb1773bc11e5c96826c92095820a8776e6a4f6:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '65.0'
+            pp: '1'
+            precision: fp8
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 120GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-nvfp4-rtx6000_blackwell_sv-tp2
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx2 NVFP4
+      ngcMetadata:
+        7cbcde87a4f6ae47e4ed6a12d236e84672f718a418b3eeb66b1249dec74c7109:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '42.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '2'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 75GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx4 BF16
+      ngcMetadata:
+        2f4c50e34aec6bc548c85c8341eda99896c990dd777efb2afc658ecec6f08e30:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '63.0'
+            pp: '1'
+            precision: bf16
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 231GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx4 FP8
+      ngcMetadata:
+        2ed42dc23f8e95f1fc0d2b50658a309344c3892bb99eea5c992679084a3ad52f:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '35.0'
+            pp: '1'
+            precision: fp8
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 120GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-nvfp4-rtx6000_blackwell_sv-tp4
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx4 NVFP4
+      ngcMetadata:
+        d08504a72861c984173b37188d78c7150a69570afdc56ca5a585edc9226115e2:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '24.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '4'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 75GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx8 BF16
+      ngcMetadata:
+        4a05267a2849aa326117676f55ae1a436e3a59f275d4c4e8ea8fed2190b5dea6:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '35.0'
+            pp: '1'
+            precision: bf16
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 231GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx8 FP8
+      ngcMetadata:
+        5791516f97ec7c748456aebee86f8bb9ce618dab40055a71ab40852c09787a4c:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '21.0'
+            pp: '1'
+            precision: fp8
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 120GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-nvfp4-rtx6000_blackwell_sv-tp8
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b RTX6000_BLACKWELL_SVx8 NVFP4
+      ngcMetadata:
+        f8aa408323c38e25046ee87549a5847d666d02de45a029a40b34719dd3fb88c9:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '15.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '8'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 75GB
+      - key: LLM ENGINE
+        value: VLLM
   labels:
   - Chatbots
   - Virtual Assistants

@@ -534,6 +534,35 @@ models:
         value: 10GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303-rtx6000_blackwell_sv
+      framework: VLLM
+      displayName: Cosmos Reason2 8B RTX6000_BLACKWELL_SVx1 BF16
+      ngcMetadata:
+        438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
+          model: nvidia/cosmos-reason2-8b
+          release: '1.7.0'
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: e905c7b3c8f807e05968ea232cda81e59f27545f1a24e07edad14d003935ee13
+            precision: bf16
+            tp: '1'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: ''
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: '1.7.0'
+      - key: DOWNLOAD SIZE
+        value: 17GB
+      - key: LLM ENGINE
+        value: VLLM
   labels:
   - Multimodal
   - Vision-Language
