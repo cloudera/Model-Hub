@@ -654,6 +654,9 @@ def get_repo_info(repo_id, token, repo_type, download_path, ngc_spec):
             output_file = os.path.join(metadata_path, "modelmetadata.json")
             with open(output_file, 'w') as f:
                 json.dump(modelmetadata, f, indent=2)
+            logging.info(f"Successfully saved modelmetadata to {output_file}")
+        else:
+            logging.warning(f"No modelmetadata available for {repo_id}")
     print("finish downloading metadata file")
 
         # Implement NGC repository metadata fetching if needed
@@ -990,6 +993,12 @@ def configure_interactive():
 
 
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[logging.StreamHandler(sys.stdout)]
+    )
+
     # Load configuration first to get defaults
     config = load_config()
     

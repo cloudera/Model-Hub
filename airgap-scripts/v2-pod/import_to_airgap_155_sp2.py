@@ -7,6 +7,7 @@ import base64
 import subprocess
 import sys
 import logging
+import tempfile
 from pathlib import Path
 from datetime import datetime
 
@@ -419,7 +420,7 @@ def show_help():
       -do, --download         Download the model repository
       -ri, --repo-id          Repository ID to download (required with --download)
       -rt, --repo-type        Repository type: hf (HuggingFace) or ngc (NVIDIA GPU Cloud) [default: hf]
-      -p, --path              Path to download model files [default: from config or ~/.airgap/model]
+      -p, --path              Path to download model files [default: from config or <airgap dir>/model; use AIRGAP_CONFIG_DIR if ~/.airgap is not writable]
       -t, --token             Token for authentication
       -ns, --ngc-spec         NGC spec file for downloading (required for NGC downloads)
     Upload Options:
@@ -625,9 +626,7 @@ def get_repo_info_ngc(repo_id, spec_file):
     repo_id=repo_id.split(':')
     try:
         modelMetadata = json.loads(base64.b64decode(modelCard).decode('utf-8'))
-        logging.info(f"Successfully decoded modelCard for {repo_id[0]}")
-    except Exception as e:
-        logging.warning(f"Could not decode modelCard for {repo_id[0]}: {str(e)}")
+    except Exception:
         modelMetadata = {}
     return ngcMetadata, modelMetadata
 
@@ -656,9 +655,9 @@ def get_repo_info(repo_id, token, repo_type, download_path, ngc_spec):
             output_file = os.path.join(metadata_path, "modelmetadata.json")
             with open(output_file, 'w') as f:
                 json.dump(modelmetadata, f, indent=2)
-            logging.info(f"Saved modelmetadata to {output_file}")
+            logging.info(f"Successfully saved modelmetadata to {output_file}")
         else:
-            logging.warning(f"No modelmetadata available for {metadata.get('found', False)}")
+            logging.warning(f"No modelmetadata available for {repo_id}")
     print("finish downloading metadata file")
 
         # Implement NGC repository metadata fetching if needed
@@ -787,12 +786,35 @@ def print_detailed_model(model_data: Dict, model_name: str):
                     print(f"          Framework: {framework}")
 
 
+def get_airgap_config_dir():
+    """
+    Writable directory for config.json (parent of default model path).
+    Uses AIRGAP_CONFIG_DIR if set; otherwise ~/.airgap, then $TMPDIR/airgap
+    if $HOME is read-only (common in containers / CDSW).
+    """
+    explicit = os.environ.get("AIRGAP_CONFIG_DIR", "").strip()
+    if explicit:
+        d = Path(explicit).expanduser()
+        d.mkdir(parents=True, exist_ok=True)
+        return d
+    home_dir = Path.home() / ".airgap"
+    tmp_dir = Path(os.environ.get("TMPDIR", tempfile.gettempdir())) / "airgap"
+    last_err = None
+    for d in (home_dir, tmp_dir):
+        try:
+            d.mkdir(parents=True, exist_ok=True)
+            return d
+        except OSError as e:
+            last_err = e
+    raise OSError(
+        f"Could not create airgap config directory ({last_err}). "
+        "Set AIRGAP_CONFIG_DIR to a writable path."
+    ) from last_err
+
+
 def get_config_path():
     """Get the path to the configuration file."""
-    home = Path.home()
-    config_dir = home / ".airgap"
-    config_dir.mkdir(parents=True, exist_ok=True)
-    return config_dir / "config.json"
+    return get_airgap_config_dir() / "config.json"
 
 
 def get_metadata_file_path(download_path):
@@ -913,7 +935,7 @@ def configure_interactive():
     config = load_config()
     
     # Get default model path
-    default_path = str(Path.home() / ".airgap" / "model")
+    default_path = str(get_airgap_config_dir() / "model")
     current_path = config.get('path', default_path)
     path_input = input(f"Enter default model download/source path [{current_path}]: ").strip()
     config['path'] = path_input if path_input else current_path
@@ -1005,7 +1027,7 @@ def main():
     config = load_config()
     
     # Set up default values from config
-    default_path = config.get('path', str(Path.home() / ".airgap" / "model"))
+    default_path = config.get('path', str(get_airgap_config_dir() / "model"))
     default_token = config.get('token', '')
     default_cloud = config.get('cloud', 'aws')
     default_dst = config.get('dst', '')
