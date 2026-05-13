@@ -642,58 +642,8 @@ def upload_to_cloud(src, dst, cloud, token=None, recursive=False, endpoint=None,
     """Upload files to cloud storage."""
 
     print(f"Start uploading  {repo_type} repository: {repo_id}")
-    print(f"Error during upload: {str(e)}")
+    print(f"Error during upload: DANGER DANGER DANGER")
     return False
-    try:
-        if repo_type == "ngc":
-            repo_id = extract_last_part(repo_id)
-        src = os.path.join(src, repo_type, repo_id)
-        dst = dst +"/"+ repo_type +"/"+ repo_id
-        if cloud == "aws":
-            cmd = ["aws", "s3", "cp", src, f"{dst}/", "--recursive"]
-            
-            print(" ".join(cmd))
-            subprocess.run(cmd, check=True)
-            
-        elif cloud == "azure":
-            cmd = [
-                "az", "storage", "blob", "upload-batch",
-                "--account-name", account,
-                "--destination", container,
-                "--destination-path", dst,
-                "--source", src
-            ]
-            if token:
-                cmd.extend(["--sas-token", token])
-            
-            subprocess.run(cmd, check=True)
-            
-        elif cloud == "pvc":
-            cmd = ["aws", "s3"]
-            
-            if endpoint:
-                cmd.extend(["--endpoint", endpoint])
-            
-            if insecure:
-                cmd.append("--no-verify-ssl")
-            elif ca_bundle:
-                cmd.extend(["--ca-bundle", ca_bundle])
-            
-            cmd.extend(["cp", src, dst, "--recursive"])
-            
-            subprocess.run(cmd, check=True)
-            
-        else:
-            print(f"Unsupported cloud provider: {cloud}")
-            return False
-        
-        print(f"Uploaded: {src} -> {dst}")
-        print(f"Finish uploading  {repo_type} repository: {repo_id} to {cloud}")
-        return True
-    
-    except subprocess.SubprocessError as e:
-        print(f"Error during upload: {str(e)}")
-        return False
 
 
 def print_models(models: List[Dict[str, str]], title: str = "Models"):
