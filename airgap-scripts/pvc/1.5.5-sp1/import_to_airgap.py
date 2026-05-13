@@ -6,7 +6,6 @@ import os
 import subprocess
 import sys
 import logging
-
 import yaml
 from typing import List, Dict, Optional, Tuple
 
@@ -625,6 +624,9 @@ def get_repo_info(repo_id, token, repo_type, download_path, ngc_spec):
             output_file = os.path.join(metadata_path, "modelmetadata.json")
             with open(output_file, 'w') as f:
                 json.dump(modelmetadata, f, indent=2)
+            logging.info(f"Successfully saved modelmetadata to {output_file}")
+        else:
+            logging.warning(f"No modelmetadata available for {repo_id}")
     print("finish downloading metadata file")
 
         # Implement NGC repository metadata fetching if needed
@@ -754,10 +756,16 @@ def print_detailed_model(model_data: Dict, model_name: str):
 
 
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[logging.StreamHandler(sys.stdout)]
+    )
+
     parser = argparse.ArgumentParser(description="Hugging Face model management script")
-    
+
     # Help option
-    
+
     # Download options
     parser.add_argument("-t", "--token", default="", help="Token for authentication")
     parser.add_argument("-j", "--json", action="store_true", help="Output raw JSON")

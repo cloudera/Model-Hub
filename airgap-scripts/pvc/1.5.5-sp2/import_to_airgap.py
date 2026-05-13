@@ -625,7 +625,9 @@ def get_repo_info_ngc(repo_id, spec_file):
     repo_id=repo_id.split(':')
     try:
         modelMetadata = json.loads(base64.b64decode(modelCard).decode('utf-8'))
-    except Exception:
+        logging.info(f"Successfully decoded modelCard for {repo_id[0]}")
+    except Exception as e:
+        logging.warning(f"Could not decode modelCard for {repo_id[0]}: {str(e)}")
         modelMetadata = {}
     return ngcMetadata, modelMetadata
 
@@ -654,6 +656,9 @@ def get_repo_info(repo_id, token, repo_type, download_path, ngc_spec):
             output_file = os.path.join(metadata_path, "modelmetadata.json")
             with open(output_file, 'w') as f:
                 json.dump(modelmetadata, f, indent=2)
+            logging.info(f"Saved modelmetadata to {output_file}")
+        else:
+            logging.warning(f"No modelmetadata available for {metadata.get('found', False)}")
     print("finish downloading metadata file")
 
         # Implement NGC repository metadata fetching if needed
@@ -990,6 +995,12 @@ def configure_interactive():
 
 
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[logging.StreamHandler(sys.stdout)]
+    )
+
     # Load configuration first to get defaults
     config = load_config()
     
