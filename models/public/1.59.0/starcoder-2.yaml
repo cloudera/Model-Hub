@@ -17,9 +17,9 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/bigcode/containers/starcoder2-7b
     optimizationProfiles:
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-a100
+    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde
       framework: TensorRT-LLM
-      displayName: Starcoder2 7B A100x1 BF16
+      displayName: Starcoder2 7B BF16
       ngcMetadata:
         de71c59001bc42679b37ecddfd95ab7b759cfde4308071750dcf5e3558726c9b:
           model: bigcode/starcoder2-7b
@@ -32,18 +32,12 @@ models:
             precision: bf16
             tp: '1'
             trtllm_buildable: 'true'
-            gpu: A100
-            gpu_device: 20b2:10de
       modelFormat: trt-llm
       spec:
       - key: PRECISION
         value: BF16
-      - key: GPU
-        value: A100
       - key: COUNT
         value: 1
-      - key: GPU DEVICE
-        value: 20B2:10DE
       - key: NIM VERSION
         value: 1.15.3
       - key: DOWNLOAD SIZE
@@ -52,44 +46,9 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-a10g
+    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-tp2
       framework: TensorRT-LLM
-      displayName: Starcoder2 7B A10Gx1 BF16
-      ngcMetadata:
-        de71c59001bc42679b37ecddfd95ab7b759cfde4308071750dcf5e3558726c9b:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            trtllm_buildable: 'true'
-            gpu: A10G
-            gpu_device: 2237:10de
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: A10G
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2237:10DE
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-a10g-tp2
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B A10Gx2 BF16
+      displayName: Starcoder2 7B BF16
       ngcMetadata:
         fe652f0f0ef911e255f1ff710d522d112ffda7856fe58824a9a5ef963960c909:
           model: bigcode/starcoder2-7b
@@ -102,185 +61,12 @@ models:
             precision: bf16
             tp: '2'
             trtllm_buildable: 'true'
-            gpu: A10G
-            gpu_device: 2237:10de
       modelFormat: trt-llm
       spec:
       - key: PRECISION
         value: BF16
-      - key: GPU
-        value: A10G
       - key: COUNT
         value: 2
-      - key: GPU DEVICE
-        value: 2237:10DE
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-b100
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B B100x1 BF16
-      ngcMetadata:
-        de71c59001bc42679b37ecddfd95ab7b759cfde4308071750dcf5e3558726c9b:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            trtllm_buildable: 'true'
-            gpu: B100
-            gpu_device: ''
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-b100-tp2
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B B100x2 BF16
-      ngcMetadata:
-        fe652f0f0ef911e255f1ff710d522d112ffda7856fe58824a9a5ef963960c909:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            trtllm_buildable: 'true'
-            gpu: B100
-            gpu_device: ''
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-b200
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B B200x1 BF16
-      ngcMetadata:
-        de71c59001bc42679b37ecddfd95ab7b759cfde4308071750dcf5e3558726c9b:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            trtllm_buildable: 'true'
-            gpu: B200
-            gpu_device: ''
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-b200-tp2
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B B200x2 BF16
-      ngcMetadata:
-        fe652f0f0ef911e255f1ff710d522d112ffda7856fe58824a9a5ef963960c909:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            trtllm_buildable: 'true'
-            gpu: B200
-            gpu_device: ''
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-h100
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B H100x1 BF16
-      ngcMetadata:
-        de71c59001bc42679b37ecddfd95ab7b759cfde4308071750dcf5e3558726c9b:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            trtllm_buildable: 'true'
-            gpu: H100
-            gpu_device: 2330:10de
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H100
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2330:10DE
       - key: NIM VERSION
         value: 1.15.3
       - key: DOWNLOAD SIZE
@@ -325,41 +111,6 @@ models:
         value: 14GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-h100-tp2
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B H100x2 BF16
-      ngcMetadata:
-        fe652f0f0ef911e255f1ff710d522d112ffda7856fe58824a9a5ef963960c909:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            trtllm_buildable: 'true'
-            gpu: H100
-            gpu_device: 2330:10de
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H100
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 2330:10DE
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
     - profileId: nim/bigcode/starcoder2-7b:h100x2-latency-bf16-xw70bcyscg
       framework: TensorRT-LLM
       displayName: Starcoder2 7B H100x2 BF16 Latency
@@ -432,41 +183,6 @@ models:
         value: 15GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-h200
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B H200x1 BF16
-      ngcMetadata:
-        de71c59001bc42679b37ecddfd95ab7b759cfde4308071750dcf5e3558726c9b:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            trtllm_buildable: 'true'
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
     - profileId: nim/bigcode/starcoder2-7b:h200x1-throughput-bf16-9p2k3xcrdg
       framework: TensorRT-LLM
       displayName: Starcoder2 7B H200x1 BF16 Throughput
@@ -503,41 +219,6 @@ models:
         value: 14GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-h200-tp2
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B H200x2 BF16
-      ngcMetadata:
-        fe652f0f0ef911e255f1ff710d522d112ffda7856fe58824a9a5ef963960c909:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            trtllm_buildable: 'true'
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
     - profileId: nim/bigcode/starcoder2-7b:h200x2-latency-bf16-qv8ul5ritg
       framework: TensorRT-LLM
       displayName: Starcoder2 7B H200x2 BF16 Latency
@@ -610,142 +291,6 @@ models:
         value: 15GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-l40s
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B L40Sx1 BF16
-      ngcMetadata:
-        de71c59001bc42679b37ecddfd95ab7b759cfde4308071750dcf5e3558726c9b:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            trtllm_buildable: 'true'
-            gpu: L40S
-            gpu_device: 26b9:10de
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 26B9:10DE
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-l40s-tp2
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B L40Sx2 BF16
-      ngcMetadata:
-        fe652f0f0ef911e255f1ff710d522d112ffda7856fe58824a9a5ef963960c909:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            trtllm_buildable: 'true'
-            gpu: L40S
-            gpu_device: 26b9:10de
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 26B9:10DE
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-rtx6000_blackwell_sv
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B RTX6000_BLACKWELL_SVx1 BF16
-      ngcMetadata:
-        de71c59001bc42679b37ecddfd95ab7b759cfde4308071750dcf5e3558726c9b:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            trtllm_buildable: 'true'
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
-    - profileId: nim/bigcode/starcoder2-7b:hf-bb9afde-rtx6000_blackwell_sv-tp2
-      framework: TensorRT-LLM
-      displayName: Starcoder2 7B RTX6000_BLACKWELL_SVx2 BF16
-      ngcMetadata:
-        fe652f0f0ef911e255f1ff710d522d112ffda7856fe58824a9a5ef963960c909:
-          model: bigcode/starcoder2-7b
-          release: 1.15.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 43ab4fbb30e1beedda3de8df4244c9fc44fb8fbd8ba0ac23b028abf822bbf637
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            trtllm_buildable: 'true'
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: trt-llm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.15.3
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
-      - key: TRTLLM BUILDABLE
-        value: 'TRUE'
   labels:
   - bigCode
   - StarCoder
