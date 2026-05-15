@@ -17,39 +17,6 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_1-8b-instruct-nemo
     optimizationProfiles:
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-a100
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct A100x1 BF16
-      ngcMetadata:
-        925771095bbfd8bca1cc2a1ea4a91ecba85b2d68493f0dad3b85bb6c209d8730:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            gpu: A100
-            gpu_device: 20b2:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: A100
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 20B2:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:a100x1-throughput-bf16-rwijcojgfw
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct A100x1 BF16 Throughput
@@ -86,130 +53,6 @@ models:
         value: 16GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-a10g-tp2
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct A10Gx2 BF16
-      ngcMetadata:
-        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: A10G
-            gpu_device: 2237:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: A10G
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 2237:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-b100
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct B100x1 BF16
-      ngcMetadata:
-        925771095bbfd8bca1cc2a1ea4a91ecba85b2d68493f0dad3b85bb6c209d8730:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            gpu: B100
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-b100-tp2
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct B100x2 BF16
-      ngcMetadata:
-        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: B100
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-b200
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct B200x1 BF16
-      ngcMetadata:
-        925771095bbfd8bca1cc2a1ea4a91ecba85b2d68493f0dad3b85bb6c209d8730:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            gpu: B200
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:b200x1-throughput-bf16-4gdhapunqg
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct B200x1 BF16 Throughput
@@ -318,36 +161,6 @@ models:
         value: 6GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-b200-tp2
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct B200x2 BF16
-      ngcMetadata:
-        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: B200
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:b200x2-latency-bf16-mp-e1cxd1a
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct B200x2 BF16 Latency
@@ -384,33 +197,52 @@ models:
         value: 17GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-h100
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-tp2
       framework: VLLM
-      displayName: Llama 3.1 8B Instruct H100x1 BF16
+      displayName: Llama 3.1 8B Instruct BF16
       ngcMetadata:
-        925771095bbfd8bca1cc2a1ea4a91ecba85b2d68493f0dad3b85bb6c209d8730:
+        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
           model: meta/llama-3.1-8b-instruct
           release: 1.14.0-pb5.5-stig-fips-x86-64
           tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 30GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2
+      framework: VLLM
+      displayName: Llama 3.1 8B Instruct BF16
+      ngcMetadata:
+        a7660c906643dd2c90fbc05f264eb9521d6ebc7466266509aa6f89bb1d994e0c:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
             llm_engine: vllm
             nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
             pp: '1'
             precision: bf16
             tp: '1'
-            gpu: H100
-            gpu_device: 2330:10de
       modelFormat: vllm
       spec:
       - key: PRECISION
         value: BF16
-      - key: GPU
-        value: H100
       - key: COUNT
         value: 1
-      - key: GPU DEVICE
-        value: 2330:10DE
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
@@ -489,38 +321,6 @@ models:
         value: 9GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-h100-tp2
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct H100x2 BF16
-      ngcMetadata:
-        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: H100
-            gpu_device: 2330:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H100
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 2330:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:h100x2-latency-bf16-9ds5vguvva
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct H100x2 BF16 Latency
@@ -593,104 +393,6 @@ models:
         value: 9GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-h200
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct H200x1 BF16
-      ngcMetadata:
-        925771095bbfd8bca1cc2a1ea4a91ecba85b2d68493f0dad3b85bb6c209d8730:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-h200-tp2
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct H200x2 BF16
-      ngcMetadata:
-        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-l40s
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct L40Sx1 BF16
-      ngcMetadata:
-        925771095bbfd8bca1cc2a1ea4a91ecba85b2d68493f0dad3b85bb6c209d8730:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            gpu: L40S
-            gpu_device: 26b9:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 26B9:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:l40sx1-throughput-bf16-pbdqhgjoaw
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct L40Sx1 BF16 Throughput
@@ -763,38 +465,6 @@ models:
         value: 9GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-l40s-tp2
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct L40Sx2 BF16
-      ngcMetadata:
-        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: L40S
-            gpu_device: 26b9:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 26B9:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:l40sx2-latency-bf16-4bshi-bpka
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct L40Sx2 BF16 Latency
@@ -867,37 +537,6 @@ models:
         value: 9GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv__5
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 BF16
-      ngcMetadata:
-        925771095bbfd8bca1cc2a1ea4a91ecba85b2d68493f0dad3b85bb6c209d8730:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '1'
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 BF16 Throughput
@@ -1042,36 +681,6 @@ models:
         value: 30GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv-tp2__2
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx2 BF16
-      ngcMetadata:
-        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv-tp2
       framework: TensorRT-LLM
       displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx2 BF16 Latency
@@ -1113,99 +722,6 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_1-70b-instruct-nemo
     optimizationProfiles:
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-b100-tp2
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct B100x2 BF16
-      ngcMetadata:
-        39194b5f5858f2dde376844651af70e4471874a29935142320b972a2e3ca0ac5:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: B100
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-b100-tp4
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct B100x4 BF16
-      ngcMetadata:
-        006abfcad3d12cfc6571d2e55f09a58957a0e3a5cd39c2df8c10e78f4ce10978:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '4'
-            gpu: B100
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-b100-tp8
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct B100x8 BF16
-      ngcMetadata:
-        3dcc4db7b5b522f47bf5c344038e6c8cad918617f954a0b751c9b7fcc5bb4d3f:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '8'
-            gpu: B100
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:b200x1-throughput-fp8-nnyqqllrra
       framework: TensorRT-LLM
       displayName: Llama 3.1 70B Instruct B200x1 FP8 Throughput
@@ -1278,37 +794,6 @@ models:
         value: 41GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-b200-tp2
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct B200x2 BF16
-      ngcMetadata:
-        39194b5f5858f2dde376844651af70e4471874a29935142320b972a2e3ca0ac5:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: B200
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:b200x2-throughput-bf16-ii2nbwfkiw
       framework: TensorRT-LLM
       displayName: Llama 3.1 70B Instruct B200x2 BF16 Throughput
@@ -1417,37 +902,6 @@ models:
         value: 41GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-b200-tp4
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct B200x4 BF16
-      ngcMetadata:
-        006abfcad3d12cfc6571d2e55f09a58957a0e3a5cd39c2df8c10e78f4ce10978:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '4'
-            gpu: B200
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:b200x4-latency-bf16-ze44umimsq
       framework: TensorRT-LLM
       displayName: Llama 3.1 70B Instruct B200x4 BF16 Latency
@@ -1484,31 +938,78 @@ models:
         value: 138GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-b200-tp8
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp4
       framework: VLLM
-      displayName: Llama 3.1 70B Instruct B200x8 BF16
+      displayName: Llama 3.1 70B Instruct BF16
       ngcMetadata:
-        3dcc4db7b5b522f47bf5c344038e6c8cad918617f954a0b751c9b7fcc5bb4d3f:
+        7c42ae2590667fd28839c8121dfdc31796228a991645831b28f105e9bc137d72:
           model: meta/llama-3.1-70b-instruct
           release: 1.14.0-pb5.5-stig-fips-x86-64
           tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
+            pp: '1'
+            precision: bf16
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp8
+      framework: VLLM
+      displayName: Llama 3.1 70B Instruct BF16
+      ngcMetadata:
+        c78884603b87c9c52161bf59d8ca93c7ae2ccc46bcf8132826ebd1e2b30da325:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
             llm_engine: vllm
             nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
             pp: '1'
             precision: bf16
             tp: '8'
-            gpu: B200
-            gpu_device: ''
       modelFormat: vllm
       spec:
       - key: PRECISION
         value: BF16
-      - key: GPU
-        value: B200
       - key: COUNT
         value: 8
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp2
+      framework: VLLM
+      displayName: Llama 3.1 70B Instruct BF16
+      ngcMetadata:
+        fc40ff7cc1ebbe459322adbf18e3fe858a2e65aae3f81a0921f83dccbcfde71e:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
@@ -1587,72 +1088,6 @@ models:
         value: 69GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-h100-tp4
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct H100x4 BF16
-      ngcMetadata:
-        006abfcad3d12cfc6571d2e55f09a58957a0e3a5cd39c2df8c10e78f4ce10978:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '4'
-            gpu: H100
-            gpu_device: 2330:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H100
-      - key: COUNT
-        value: 4
-      - key: GPU DEVICE
-        value: 2330:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-h100-tp8
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct H100x8 BF16
-      ngcMetadata:
-        3dcc4db7b5b522f47bf5c344038e6c8cad918617f954a0b751c9b7fcc5bb4d3f:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '8'
-            gpu: H100
-            gpu_device: 2330:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H100
-      - key: COUNT
-        value: 8
-      - key: GPU DEVICE
-        value: 2330:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:h100x8-latency-bf16-jn-g6xh6yw
       framework: TensorRT-LLM
       displayName: Llama 3.1 70B Instruct H100x8 BF16 Latency
@@ -1689,105 +1124,6 @@ models:
         value: 147GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-h200-tp2
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct H200x2 BF16
-      ngcMetadata:
-        39194b5f5858f2dde376844651af70e4471874a29935142320b972a2e3ca0ac5:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-h200-tp4
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct H200x4 BF16
-      ngcMetadata:
-        006abfcad3d12cfc6571d2e55f09a58957a0e3a5cd39c2df8c10e78f4ce10978:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '4'
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 4
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-h200-tp8
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct H200x8 BF16
-      ngcMetadata:
-        3dcc4db7b5b522f47bf5c344038e6c8cad918617f954a0b751c9b7fcc5bb4d3f:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '8'
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 8
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:l40sx4-latency-fp8-bsrjajj9lw
       framework: TensorRT-LLM
       displayName: Llama 3.1 70B Instruct L40Sx4 FP8 Latency
@@ -1824,70 +1160,6 @@ models:
         value: 69GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-l40s-tp8
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct L40Sx8 BF16
-      ngcMetadata:
-        3dcc4db7b5b522f47bf5c344038e6c8cad918617f954a0b751c9b7fcc5bb4d3f:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '8'
-            gpu: L40S
-            gpu_device: 26b9:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 8
-      - key: GPU DEVICE
-        value: 26B9:10DE
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp2__3
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx2 BF16
-      ngcMetadata:
-        39194b5f5858f2dde376844651af70e4471874a29935142320b972a2e3ca0ac5:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '2'
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp2
       framework: TensorRT-LLM
       displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx2 FP8 Throughput
@@ -1960,37 +1232,6 @@ models:
         value: 263GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp4__4
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx4 BF16
-      ngcMetadata:
-        006abfcad3d12cfc6571d2e55f09a58957a0e3a5cd39c2df8c10e78f4ce10978:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '4'
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp4__3
       framework: TensorRT-LLM
       displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx4 BF16 Throughput
@@ -2099,37 +1340,6 @@ models:
         value: 263GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp8__2
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx8 BF16
-      ngcMetadata:
-        3dcc4db7b5b522f47bf5c344038e6c8cad918617f954a0b751c9b7fcc5bb4d3f:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'true'
-            feat_lora_max_rank: '32'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '8'
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp8
       framework: TensorRT-LLM
       displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx8 BF16 Latency

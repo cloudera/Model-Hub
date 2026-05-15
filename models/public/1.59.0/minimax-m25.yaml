@@ -17,142 +17,6 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/minimax-ai/containers/minimax-m25
     optimizationProfiles:
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b100-tp2
-      framework: SGLang
-      displayName: Minimax M25 B100x2 FP8 Fallback
-      ngcMetadata:
-        2605f42cb4d0b90a89f44cfc23971278d95665b988d6d94b7e9b06326c21598f:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '1'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '2'
-            vram: 300GiB
-            gpu: B100
-            gpu_device: ''
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b100-tp4
-      framework: SGLang
-      displayName: Minimax M25 B100x4 FP8 Fallback
-      ngcMetadata:
-        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '1'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '4'
-            vram: 300GiB
-            gpu: B100
-            gpu_device: ''
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b100-tp8
-      framework: SGLang
-      displayName: Minimax M25 B100x8 FP8 Fallback
-      ngcMetadata:
-        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '8'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '8'
-            vram: 300GiB
-            gpu: B100
-            gpu_device: ''
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp2__2
-      framework: SGLang
-      displayName: Minimax M25 B200x2 FP8 Fallback
-      ngcMetadata:
-        2605f42cb4d0b90a89f44cfc23971278d95665b988d6d94b7e9b06326c21598f:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '1'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '2'
-            vram: 300GiB
-            gpu: B200
-            gpu_device: ''
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
     - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp2
       framework: TensorRT-LLM
       displayName: Minimax M25 B200x2 FP8 Throughput
@@ -182,40 +46,6 @@ models:
         value: 2
       - key: GPU DEVICE
         value: 2901:10DE
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp4__2
-      framework: SGLang
-      displayName: Minimax M25 B200x4 FP8 Fallback
-      ngcMetadata:
-        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '1'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '4'
-            vram: 300GiB
-            gpu: B200
-            gpu_device: ''
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 4
       - key: NIM VERSION
         value: 1.7.1
       - key: DOWNLOAD SIZE
@@ -257,40 +87,6 @@ models:
         value: 215GB
       - key: LLM ENGINE
         value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp8__2
-      framework: SGLang
-      displayName: Minimax M25 B200x8 FP8 Fallback
-      ngcMetadata:
-        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '8'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '8'
-            vram: 300GiB
-            gpu: B200
-            gpu_device: ''
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
     - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-b200-tp8
       framework: TensorRT-LLM
       displayName: Minimax M25 B200x8 FP8 Throughput
@@ -326,9 +122,9 @@ models:
         value: 215GB
       - key: LLM ENGINE
         value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h100-tp4
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-tp4
       framework: SGLang
-      displayName: Minimax M25 H100x4 FP8 Fallback
+      displayName: Minimax M25 FP8 Fallback
       ngcMetadata:
         15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
           model: minimax-ai/minimax-m25
@@ -342,29 +138,53 @@ models:
             profile: fallback
             tp: '4'
             vram: 300GiB
-            gpu: H100
-            gpu_device: 2330:10de
       modelFormat: sglang
       spec:
       - key: PROFILE
         value: FALLBACK
       - key: PRECISION
         value: FP8
-      - key: GPU
-        value: H100
       - key: COUNT
         value: 4
-      - key: GPU DEVICE
-        value: 2330:10DE
       - key: NIM VERSION
         value: 1.7.1
       - key: DOWNLOAD SIZE
         value: 215GB
       - key: LLM ENGINE
         value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h100-tp8__2
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-tp2
       framework: SGLang
-      displayName: Minimax M25 H100x8 FP8 Fallback
+      displayName: Minimax M25 FP8 Fallback
+      ngcMetadata:
+        2605f42cb4d0b90a89f44cfc23971278d95665b988d6d94b7e9b06326c21598f:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '2'
+            vram: 300GiB
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-tp8
+      framework: SGLang
+      displayName: Minimax M25 FP8 Fallback
       ngcMetadata:
         ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
           model: minimax-ai/minimax-m25
@@ -378,20 +198,14 @@ models:
             profile: fallback
             tp: '8'
             vram: 300GiB
-            gpu: H100
-            gpu_device: 2330:10de
       modelFormat: sglang
       spec:
       - key: PROFILE
         value: FALLBACK
       - key: PRECISION
         value: FP8
-      - key: GPU
-        value: H100
       - key: COUNT
         value: 8
-      - key: GPU DEVICE
-        value: 2330:10DE
       - key: NIM VERSION
         value: 1.7.1
       - key: DOWNLOAD SIZE
@@ -433,78 +247,6 @@ models:
         value: 215GB
       - key: LLM ENGINE
         value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp2
-      framework: SGLang
-      displayName: Minimax M25 H200x2 FP8 Fallback
-      ngcMetadata:
-        2605f42cb4d0b90a89f44cfc23971278d95665b988d6d94b7e9b06326c21598f:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '1'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '2'
-            vram: 300GiB
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp4__2
-      framework: SGLang
-      displayName: Minimax M25 H200x4 FP8 Fallback
-      ngcMetadata:
-        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '1'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '4'
-            vram: 300GiB
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 4
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
     - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp4
       framework: TensorRT-LLM
       displayName: Minimax M25 H200x4 FP8 Throughput
@@ -532,42 +274,6 @@ models:
         value: H200
       - key: COUNT
         value: 4
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp8__2
-      framework: SGLang
-      displayName: Minimax M25 H200x8 FP8 Fallback
-      ngcMetadata:
-        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '8'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '8'
-            vram: 300GiB
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 8
       - key: GPU DEVICE
         value: 2335:10DE
       - key: NIM VERSION
@@ -605,144 +311,6 @@ models:
         value: 8
       - key: GPU DEVICE
         value: 2335:10DE
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-l40s-tp8
-      framework: SGLang
-      displayName: Minimax M25 L40Sx8 FP8 Fallback
-      ngcMetadata:
-        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '8'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '8'
-            vram: 300GiB
-            gpu: L40S
-            gpu_device: 26b9:10de
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 8
-      - key: GPU DEVICE
-        value: 26B9:10DE
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-rtx6000_blackwell_sv-tp2
-      framework: SGLang
-      displayName: Minimax M25 RTX6000_BLACKWELL_SVx2 FP8 Fallback
-      ngcMetadata:
-        2605f42cb4d0b90a89f44cfc23971278d95665b988d6d94b7e9b06326c21598f:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '1'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '2'
-            vram: 300GiB
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-rtx6000_blackwell_sv-tp4
-      framework: SGLang
-      displayName: Minimax M25 RTX6000_BLACKWELL_SVx4 FP8 Fallback
-      ngcMetadata:
-        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '1'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '4'
-            vram: 300GiB
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-rtx6000_blackwell_sv-tp8
-      framework: SGLang
-      displayName: Minimax M25 RTX6000_BLACKWELL_SVx8 FP8 Fallback
-      ngcMetadata:
-        ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '8'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '8'
-            vram: 300GiB
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 8
       - key: NIM VERSION
         value: 1.7.1
       - key: DOWNLOAD SIZE

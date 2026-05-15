@@ -17,126 +17,6 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/cosmos-reason2-8b
     optimizationProfiles:
-    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303-a100
-      framework: VLLM
-      displayName: Cosmos Reason2 8B A100x1 BF16
-      ngcMetadata:
-        438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
-          model: nvidia/cosmos-reason2-8b
-          release: '1.7.0'
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e905c7b3c8f807e05968ea232cda81e59f27545f1a24e07edad14d003935ee13
-            precision: bf16
-            tp: '1'
-            gpu: A100
-            gpu_device: 20b2:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: A100
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 20B2:10DE
-      - key: NIM VERSION
-        value: '1.7.0'
-      - key: DOWNLOAD SIZE
-        value: 17GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303-a10g
-      framework: VLLM
-      displayName: Cosmos Reason2 8B A10Gx1 BF16
-      ngcMetadata:
-        438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
-          model: nvidia/cosmos-reason2-8b
-          release: '1.7.0'
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e905c7b3c8f807e05968ea232cda81e59f27545f1a24e07edad14d003935ee13
-            precision: bf16
-            tp: '1'
-            gpu: A10G
-            gpu_device: 2237:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: A10G
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2237:10DE
-      - key: NIM VERSION
-        value: '1.7.0'
-      - key: DOWNLOAD SIZE
-        value: 17GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303-b100
-      framework: VLLM
-      displayName: Cosmos Reason2 8B B100x1 BF16
-      ngcMetadata:
-        438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
-          model: nvidia/cosmos-reason2-8b
-          release: '1.7.0'
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e905c7b3c8f807e05968ea232cda81e59f27545f1a24e07edad14d003935ee13
-            precision: bf16
-            tp: '1'
-            gpu: B100
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B100
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: '1.7.0'
-      - key: DOWNLOAD SIZE
-        value: 17GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303-b200
-      framework: VLLM
-      displayName: Cosmos Reason2 8B B200x1 BF16
-      ngcMetadata:
-        438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
-          model: nvidia/cosmos-reason2-8b
-          release: '1.7.0'
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e905c7b3c8f807e05968ea232cda81e59f27545f1a24e07edad14d003935ee13
-            precision: bf16
-            tp: '1'
-            gpu: B200
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: B200
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: '1.7.0'
-      - key: DOWNLOAD SIZE
-        value: 17GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-b200
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B B200x1 FP8
@@ -237,9 +117,9 @@ models:
         value: 8GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303-h100
+    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303
       framework: VLLM
-      displayName: Cosmos Reason2 8B H100x1 BF16
+      displayName: Cosmos Reason2 8B BF16
       ngcMetadata:
         438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
           model: nvidia/cosmos-reason2-8b
@@ -250,18 +130,41 @@ models:
             nim_workspace_hash_v1: e905c7b3c8f807e05968ea232cda81e59f27545f1a24e07edad14d003935ee13
             precision: bf16
             tp: '1'
-            gpu: H100
-            gpu_device: 2330:10de
       modelFormat: vllm
       spec:
       - key: PRECISION
         value: BF16
-      - key: GPU
-        value: H100
       - key: COUNT
         value: 1
-      - key: GPU DEVICE
-        value: 2330:10DE
+      - key: NIM VERSION
+        value: '1.7.0'
+      - key: DOWNLOAD SIZE
+        value: 17GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303__2
+      framework: VLLM
+      displayName: Cosmos Reason2 8B BF16
+      ngcMetadata:
+        c395ab104f98f6b9dd0d753622e705f618d6f3d09316fa90c3f0528ef822c9cc:
+          model: nvidia/cosmos-reason2-8b
+          release: '1.7.0'
+          tags:
+            draft_model_dir: eagle
+            draft_tensor_parallel_size: '1'
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 110b1a2ad4ff8f1069d15e1d680fc28b373bd8c328dd5d81bf4cdc350f16ab06
+            precision: bf16
+            speculative_algorithm: EAGLE
+            speculative_num_steps: '3'
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 1
       - key: NIM VERSION
         value: '1.7.0'
       - key: DOWNLOAD SIZE
@@ -336,37 +239,6 @@ models:
         value: 10GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303-h200
-      framework: VLLM
-      displayName: Cosmos Reason2 8B H200x1 BF16
-      ngcMetadata:
-        438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
-          model: nvidia/cosmos-reason2-8b
-          release: '1.7.0'
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e905c7b3c8f807e05968ea232cda81e59f27545f1a24e07edad14d003935ee13
-            precision: bf16
-            tp: '1'
-            gpu: H200
-            gpu_device: 2335:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: H200
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 2335:10DE
-      - key: NIM VERSION
-        value: '1.7.0'
-      - key: DOWNLOAD SIZE
-        value: 17GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B H200x1 FP8
@@ -435,37 +307,6 @@ models:
         value: 10GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303-l40s
-      framework: VLLM
-      displayName: Cosmos Reason2 8B L40Sx1 BF16
-      ngcMetadata:
-        438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
-          model: nvidia/cosmos-reason2-8b
-          release: '1.7.0'
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e905c7b3c8f807e05968ea232cda81e59f27545f1a24e07edad14d003935ee13
-            precision: bf16
-            tp: '1'
-            gpu: L40S
-            gpu_device: 26b9:10de
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: L40S
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: 26B9:10DE
-      - key: NIM VERSION
-        value: '1.7.0'
-      - key: DOWNLOAD SIZE
-        value: 17GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-l40s
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B L40Sx1 FP8
@@ -532,35 +373,6 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303-rtx6000_blackwell_sv
-      framework: VLLM
-      displayName: Cosmos Reason2 8B RTX6000_BLACKWELL_SVx1 BF16
-      ngcMetadata:
-        438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
-          model: nvidia/cosmos-reason2-8b
-          release: '1.7.0'
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e905c7b3c8f807e05968ea232cda81e59f27545f1a24e07edad14d003935ee13
-            precision: bf16
-            tp: '1'
-            gpu: RTX6000_BLACKWELL_SV
-            gpu_device: ''
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: RTX6000_BLACKWELL_SV
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: '1.7.0'
-      - key: DOWNLOAD SIZE
-        value: 17GB
       - key: LLM ENGINE
         value: VLLM
   labels:
