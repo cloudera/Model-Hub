@@ -19,7 +19,7 @@ models:
     optimizationProfiles:
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-b200
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B B200x1 FP8
+      displayName: Cosmos Reason2 8B B200x1 FP8 EAGLE
       ngcMetadata:
         26c672995dee8f88d38484fe4dce59a3593043da7766fc18717c450dfc34eefb:
           model: nvidia/cosmos-reason2-8b
@@ -51,8 +51,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-b200__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B B200x1 FP8
@@ -119,7 +123,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-b300
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B B300x1 FP8
+      displayName: Cosmos Reason2 8B B300x1 FP8 EAGLE
       ngcMetadata:
         bc3ddc12ca058f5d93e0dd82e880be070539ee9e86c69b2721695f08d8ee5267:
           model: nvidia/cosmos-reason2-8b
@@ -150,8 +154,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-b300__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B B300x1 FP8
@@ -280,7 +288,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303
       framework: VLLM
-      displayName: Cosmos Reason2 8B Generic NVIDIA GPUx1 BF16
+      displayName: Cosmos Reason2 8B GENERICx1 VLLM BF16
       ngcMetadata:
         438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
           model: nvidia/cosmos-reason2-8b
@@ -305,7 +313,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303__2
       framework: VLLM
-      displayName: Cosmos Reason2 8B Generic NVIDIA GPUx1 BF16
+      displayName: Cosmos Reason2 8B GENERICx1 VLLM BF16 EAGLE
       ngcMetadata:
         c395ab104f98f6b9dd0d753622e705f618d6f3d09316fa90c3f0528ef822c9cc:
           model: nvidia/cosmos-reason2-8b
@@ -330,8 +338,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 17GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-gh200-144gb
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B GH200-144GBx1 FP8
@@ -366,7 +378,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-gh200-144gb__2
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B GH200-144GBx1 FP8
+      displayName: Cosmos Reason2 8B GH200-144GBx1 FP8 EAGLE
       ngcMetadata:
         f5af5f2875b1d0e238966f6dd9e2945c343e25e8c18dfd183452bada06f7ee39:
           model: nvidia/cosmos-reason2-8b
@@ -398,11 +410,15 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-gh200
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B GH200x1 FP8
+      displayName: Cosmos Reason2 8B GH200x1 FP8 EAGLE
       ngcMetadata:
         32c45047962f939f5f25df45baad488f8520645bff1dd54823bcbbeac625afe3:
           model: nvidia/cosmos-reason2-8b
@@ -434,8 +450,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-gh200__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B GH200x1 FP8
@@ -470,7 +490,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100-nvl
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B H100-NVLx1 FP8
+      displayName: Cosmos Reason2 8B H100-NVLx1 FP8 EAGLE
       ngcMetadata:
         3fa747255489afc2bc15264cd532bf688e7a9e2cd0a5cd7de9c034024296f8f3:
           model: nvidia/cosmos-reason2-8b
@@ -502,8 +522,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100-nvl__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B H100-NVLx1 FP8
@@ -570,7 +594,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100-pcie__2
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B H100-PCIEx1 FP8
+      displayName: Cosmos Reason2 8B H100-PCIEx1 FP8 EAGLE
       ngcMetadata:
         8bdf1bb26ebd00baa442343c1aff4a951633060fc0eb1120b92f482e1778f738:
           model: nvidia/cosmos-reason2-8b
@@ -602,8 +626,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B H100x1 FP8
@@ -638,7 +666,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100__2
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B H100x1 FP8
+      displayName: Cosmos Reason2 8B H100x1 FP8 EAGLE
       ngcMetadata:
         8cb3c925447c3eb7697b2f915a501383bafbf7109632dae287ac5e93e22644d6:
           model: nvidia/cosmos-reason2-8b
@@ -670,11 +698,15 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200-nvl
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B H200-NVLx1 FP8
+      displayName: Cosmos Reason2 8B H200-NVLx1 FP8 EAGLE
       ngcMetadata:
         30221c1dbfd3c48e42cda84fd42cfd74cb3e1715d6d0a55c8de8a34578f36686:
           model: nvidia/cosmos-reason2-8b
@@ -706,8 +738,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200-nvl__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B H200-NVLx1 FP8
@@ -742,7 +778,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B H200x1 FP8
+      displayName: Cosmos Reason2 8B H200x1 FP8 EAGLE
       ngcMetadata:
         2c665f3ce21560eb4d5ecf13b2055340bf9fb1e64feb9fe274f242a223943c82:
           model: nvidia/cosmos-reason2-8b
@@ -774,8 +810,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B H200x1 FP8
@@ -842,7 +882,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h20__2
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B H20x1 FP8
+      displayName: Cosmos Reason2 8B H20x1 FP8 EAGLE
       ngcMetadata:
         44929dcccd75f996e2e8ea8136f601db47c6c340a2d688d563c351c9a9a68b49:
           model: nvidia/cosmos-reason2-8b
@@ -874,11 +914,15 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-l40s
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B L40Sx1 FP8
+      displayName: Cosmos Reason2 8B L40Sx1 FP8 EAGLE
       ngcMetadata:
         4b49a35c0f0979a4b0b957aacb5d68cbaf49dbdb4da13235ec59289ceb69589f:
           model: nvidia/cosmos-reason2-8b
@@ -910,8 +954,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-l40s__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B L40Sx1 FP8
