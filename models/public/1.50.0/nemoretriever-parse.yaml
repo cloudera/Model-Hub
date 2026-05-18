@@ -4,7 +4,9 @@ models:
   modelHubID: nemoretriever-parse
   category: Retrieval
   type: NGC
-  description: Document text extraction model that converts document images into structured text with bounding boxes and semantic classes. Improves retrieval accuracy and supports LLM training data generation.
+  description: Document text extraction model that converts document images into
+    structured text with bounding boxes and semantic classes. Improves retrieval
+    accuracy and supports LLM training data generation.
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -16,9 +18,10 @@ models:
     source:
       URL: https://build.nvidia.com/nvidia/nemoretriever-parse
     optimizationProfiles:
-    - profileId: nim/nvidia/nemoretriever-parse:a100x1-throughput-bf16-e9wjao-enw
+    - profileId: 
+        nim/nvidia/nemoretriever-parse:a100x1-throughput-bf16-e9wjao-enw
       framework: TensorRT-LLM
-      displayName: nemoretriever-parse A100 BF16 Throughput
+      displayName: Nemoretriever Parse TensorRT-LLM Generic x1 BF16 Throughput
       ngcMetadata:
         19c68819d9428cfa494e977f4d2be6378215a8f610cce9bdfc0aa3cdd7d66aa9:
           model: nvidia/nemoretriever-parse
@@ -47,9 +50,10 @@ models:
         value: 1.2.0
       - key: DOWNLOAD SIZE
         value: 600MB
-    - profileId: nim/nvidia/nemoretriever-parse:h100x1-throughput-bf16-2apiazbpma
+    - profileId: 
+        nim/nvidia/nemoretriever-parse:h100x1-throughput-bf16-2apiazbpma
       framework: TensorRT-LLM
-      displayName: nemoretriever-parse H100 BF16 Throughput
+      displayName: Nemoretriever Parse TensorRT-LLM Generic x1 BF16 Throughput
       ngcMetadata:
         8db6dcd816ca1ce8d07e72d8b9c4682120b3c50799422361e35b4ab87820efd6:
           model: nvidia/nemoretriever-parse
@@ -78,9 +82,10 @@ models:
         value: 1.2.0
       - key: DOWNLOAD SIZE
         value: 600MB
-    - profileId: nim/nvidia/nemoretriever-parse:l40sx1-throughput-bf16-r98ogb1a1a
+    - profileId: 
+        nim/nvidia/nemoretriever-parse:l40sx1-throughput-bf16-r98ogb1a1a
       framework: TensorRT-LLM
-      displayName: nemoretriever-parse L40S BF16 Throughput
+      displayName: Nemoretriever Parse TensorRT-LLM Generic x1 BF16 Throughput
       ngcMetadata:
         00c8a43783e7acf3d59a0d773cd78d3d29eaa71fa4412af7af2fbaf20e196a8b:
           model: nvidia/nemoretriever-parse

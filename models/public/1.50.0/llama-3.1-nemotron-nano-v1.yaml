@@ -4,7 +4,10 @@ models:
   modelHubID: llama-3.1-nemotron-nano-8b-v1
   category: Language
   type: NGC
-  description: Llama-3.1-Nemotron-Nano-8B-v1 is a language model that can follow instructions, complete requests, and generate creative text formats. The Llama-3.1-Nemotron-Nano-8B-v1 Large Language Model (LLM) is an instruct fine-tuned version of the Nemotron-Nano.
+  description: Llama-3.1-Nemotron-Nano-8B-v1 is a language model that can follow
+    instructions, complete requests, and generate creative text formats. The 
+    Llama-3.1-Nemotron-Nano-8B-v1 Large Language Model (LLM) is an instruct 
+    fine-tuned version of the Nemotron-Nano.
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,11 +17,12 @@ models:
   modelVariants:
   - variantId: Llama 3.1 Nemotron Nano 8b V1
     source:
-          URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.1-nemotron-nano-8b-v1
+      URL: 
+        https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.1-nemotron-nano-8b-v1
     optimizationProfiles:
     - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17
       framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 8B V1 A10Gx2 BF16
+      displayName: Llama 3.1 Nemotron Nano 8B V1 TensorRT-LLM Generic x2 BF16
       ngcMetadata:
         375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
           model: nvidia/llama-3.1-nemotron-nano-8b-v1
@@ -48,7 +52,7 @@ models:
         value: 16GB
     - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17
       framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 8B V1 L40S BF16
+      displayName: Llama 3.1 Nemotron Nano 8B V1 TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: nvidia/llama-3.1-nemotron-nano-8b-v1
@@ -78,7 +82,7 @@ models:
         value: 16GB
     - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17
       framework: TensorRT-LLM
-      displayName: Llama 3.1 Nemotron Nano 8B V1 H100 BF16
+      displayName: Llama 3.1 Nemotron Nano 8B V1 TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: nvidia/llama-3.1-nemotron-nano-8b-v1

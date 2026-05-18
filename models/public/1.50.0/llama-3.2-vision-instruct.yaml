@@ -4,7 +4,9 @@ models:
   modelHubID: llama-3.2-vision-instruct
   category: Vision & Multimodal
   type: NGC
-  description: The Llama 3.2 Vision instruction-tuned models are optimized for visual recognition, image reasoning, captioning, and answering general questions about an image.
+  description: The Llama 3.2 Vision instruction-tuned models are optimized for 
+    visual recognition, image reasoning, captioning, and answering general 
+    questions about an image.
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,11 +16,14 @@ models:
   modelVariants:
   - variantId: Llama 3.2 11B  Vision Instruct
     source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/meta/containers/llama-3.2-11b-vision-instruct
+      URL: 
+        https://catalog.ngc.nvidia.com/orgs/nim/teams/meta/containers/llama-3.2-11b-vision-instruct
     optimizationProfiles:
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-bf16-latency.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-bf16-latency.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct H100 BF16 Latency
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x2 BF16 
+        Latency
       sha: 126d5a664ba4b6b4557d5e0225b51a5e2ffbf9e9909bfe25ed203bec421ea2e5
       ngcMetadata:
         126d5a664ba4b6b4557d5e0225b51a5e2ffbf9e9909bfe25ed203bec421ea2e5:
@@ -47,7 +52,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-bf16-latency.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-bf16-latency.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -61,17 +67,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -88,9 +97,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 20GB
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a10gx4-bf16-throughput.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a10gx4-bf16-throughput.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct A10G BF16 Throughput
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x4 BF16 
+        Throughput
       sha: 417611b3f9e2c25db671083acfcfd4c2340f511f3533838fc6366bb47960915c
       ngcMetadata:
         417611b3f9e2c25db671083acfcfd4c2340f511f3533838fc6366bb47960915c:
@@ -121,7 +132,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a10gx4-bf16-throughput.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a10gx4-bf16-throughput.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -135,17 +147,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -162,9 +177,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 20GB
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a10gx8-bf16-latency.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a10gx8-bf16-latency.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct A10G BF16 Latency
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x8 BF16 
+        Latency
       sha: 5a9f2d4459908cf6c5b5222e31b8df053c00354b5866f6ee3b8de7552a695524
       ngcMetadata:
         5a9f2d4459908cf6c5b5222e31b8df053c00354b5866f6ee3b8de7552a695524:
@@ -199,7 +216,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a10gx8-bf16-latency.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a10gx8-bf16-latency.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -213,17 +231,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -240,9 +261,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 20GB
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-fp8-latency.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-fp8-latency.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct H100 FP8 Latency
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x2 FP8 
+        Latency
       sha: ab89f816413848c86e311123d2ed98af7bcda0c3624b0a6c4d43704b720585d5
       ngcMetadata:
         ab89f816413848c86e311123d2ed98af7bcda0c3624b0a6c4d43704b720585d5:
@@ -271,7 +294,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-fp8-latency.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-fp8-latency.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -285,17 +309,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -312,9 +339,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 12GB
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x2-bf16-latency.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x2-bf16-latency.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct A100 BF16 Latency
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x2 BF16 
+        Latency
       sha: ad16e693a234cf8eee85c43dd66ab4502c51ab0bc553af1644477a4f966bf5c6
       ngcMetadata:
         ad16e693a234cf8eee85c43dd66ab4502c51ab0bc553af1644477a4f966bf5c6:
@@ -343,7 +372,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x2-bf16-latency.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x2-bf16-latency.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -357,17 +387,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -384,9 +417,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 20GB
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx2-bf16-throughput.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx2-bf16-throughput.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct L40S BF16 Throughput
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x2 BF16 
+        Throughput
       sha: b16d5969212a8cea632fd6f70928ab514aab835cf217281899564933e6cafa5b
       ngcMetadata:
         b16d5969212a8cea632fd6f70928ab514aab835cf217281899564933e6cafa5b:
@@ -415,7 +450,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx2-bf16-throughput.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx2-bf16-throughput.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -429,17 +465,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -456,9 +495,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 20GB
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x1-bf16-throughput.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x1-bf16-throughput.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct H100 BF16 Throughput
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x1 BF16 
+        Throughput
       sha: b7aa6bf9d9946de665480a5669bb73f981eab7c4fe43ddf7217b672eb11a003a
       ngcMetadata:
         b7aa6bf9d9946de665480a5669bb73f981eab7c4fe43ddf7217b672eb11a003a:
@@ -486,7 +527,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x1-bf16-throughput.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x1-bf16-throughput.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -500,17 +542,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -527,9 +572,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 20GB
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx4-bf16-latency.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx4-bf16-latency.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct L40S BF16 Latency
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x4 BF16 
+        Latency
       sha: be5af3c968ce6bc45e740edc985fa05dffd3695abb7cc5723407e1f5e3f12c70
       ngcMetadata:
         be5af3c968ce6bc45e740edc985fa05dffd3695abb7cc5723407e1f5e3f12c70:
@@ -560,7 +607,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx4-bf16-latency.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx4-bf16-latency.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -574,17 +622,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -601,9 +652,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 20GB
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x1-bf16-throughput.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x1-bf16-throughput.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct A100 BF16 Throughput
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x1 BF16 
+        Throughput
       sha: ee1e936b878082dee74574deae5064cc7fba3e11ba155de1198ee544d7c3468a
       ngcMetadata:
         ee1e936b878082dee74574deae5064cc7fba3e11ba155de1198ee544d7c3468a:
@@ -631,7 +684,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x1-bf16-throughput.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-a100x1-bf16-throughput.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -645,17 +699,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -672,9 +729,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 20GB
-    - profileId: nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x1-fp8-throughput.0.3.20143152
+    - profileId: 
+        nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x1-fp8-throughput.0.3.20143152
       framework: TensorRT-LLM
-      displayName: Llama 3.2 11B Vision Instruct H100 FP8 Throughput
+      displayName: Llama 3.2 11B Vision Instruct TensorRT-LLM Generic x1 FP8 
+        Throughput
       sha: fa1e1cbf698be85c0cc56d707f8bc5b17044e091136dae3f8e4be694af727c87
       ngcMetadata:
         fa1e1cbf698be85c0cc56d707f8bc5b17044e091136dae3f8e4be694af727c87:
@@ -702,7 +761,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x1-fp8-throughput.0.3.20143152
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x1-fp8-throughput.0.3.20143152
             - dst: ''
               src:
                 files:
@@ -716,17 +776,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:hf-cee5b78-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-11b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -745,11 +808,14 @@ models:
         value: 12GB
   - variantId: Llama 3.2 90B  Vision Instruct
     source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/meta/containers/llama-3.2-90b-vision-instruct
+      URL: 
+        https://catalog.ngc.nvidia.com/orgs/nim/teams/meta/containers/llama-3.2-90b-vision-instruct
     optimizationProfiles:
-    - profileId: nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-bf16-throughput.0.3.20194742
+    - profileId: 
+        nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-bf16-throughput.0.3.20194742
       framework: TensorRT-LLM
-      displayName: Llama 3.2 90B Vision Instruct H100 BF16 Throughput
+      displayName: Llama 3.2 90B Vision Instruct TensorRT-LLM Generic x4 BF16 
+        Throughput
       sha: 42c91902414bc5ea7f4ef4e9a34ef382165b8b65f9adcc5d1abaf195ade2d8fc
       ngcMetadata:
         42c91902414bc5ea7f4ef4e9a34ef382165b8b65f9adcc5d1abaf195ade2d8fc:
@@ -780,7 +846,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-bf16-throughput.0.3.20194742
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-bf16-throughput.0.3.20194742
             - dst: ''
               src:
                 files:
@@ -794,17 +861,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -821,9 +891,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 166GB
-    - profileId: nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-fp8-throughput.0.3.20194742
+    - profileId: 
+        nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-fp8-throughput.0.3.20194742
       framework: TensorRT-LLM
-      displayName: Llama 3.2 90B Vision Instruct H100 FP8 Throughput
+      displayName: Llama 3.2 90B Vision Instruct TensorRT-LLM Generic x2 FP8 
+        Throughput
       sha: 6b24bf2e19c23b85f9d2651efdc2de08cd179a03c50f942b1dcd856fa4d4074b
       ngcMetadata:
         6b24bf2e19c23b85f9d2651efdc2de08cd179a03c50f942b1dcd856fa4d4074b:
@@ -852,7 +924,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-fp8-throughput.0.3.20194742
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x2-fp8-throughput.0.3.20194742
             - dst: ''
               src:
                 files:
@@ -866,17 +939,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -893,9 +969,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 85GB
-    - profileId: nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx8-bf16-throughput.0.3.1342
+    - profileId: 
+        nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx8-bf16-throughput.0.3.1342
       framework: TensorRT-LLM
-      displayName: Llama 3.2 90B Vision Instruct L40S BF16 Throughput
+      displayName: Llama 3.2 90B Vision Instruct TensorRT-LLM Generic x8 BF16 
+        Throughput
       sha: 7bb72cbd19b5eab69ed21b2e031e4ea18909ff034255471c25b29ab45a99cc8b
       ngcMetadata:
         7bb72cbd19b5eab69ed21b2e031e4ea18909ff034255471c25b29ab45a99cc8b:
@@ -930,7 +1008,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx8-bf16-throughput.0.3.1342
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-l40sx8-bf16-throughput.0.3.1342
             - dst: ''
               src:
                 files:
@@ -944,17 +1023,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -971,9 +1053,11 @@ models:
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 166GB
-    - profileId: nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-fp8-latency.0.3.20194742
+    - profileId: 
+        nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-fp8-latency.0.3.20194742
       framework: TensorRT-LLM
-      displayName: Llama 3.2 90B Vision Instruct H100 FP8 Latency
+      displayName: Llama 3.2 90B Vision Instruct TensorRT-LLM Generic x4 FP8 
+        Latency
       sha: a6e9fde5c1edfb4ab4c0b206a536693a6f9b1f95cde1448ddd679fb880fcef71
       ngcMetadata:
         a6e9fde5c1edfb4ab4c0b206a536693a6f9b1f95cde1448ddd679fb880fcef71:
@@ -1004,7 +1088,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-fp8-latency.0.3.20194742
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x4-fp8-latency.0.3.20194742
             - dst: ''
               src:
                 files:
@@ -1018,17 +1103,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE
@@ -1040,14 +1128,16 @@ models:
       - key: COUNT
         value: 4
       - key: GPU DEVICE
-        value: null
+        value:
       - key: NIM VERSION
         value: 1.1.1
       - key: DOWNLOAD SIZE
         value: 87GB
-    - profileId: nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x8-bf16-latency.0.3.20194742
+    - profileId: 
+        nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x8-bf16-latency.0.3.20194742
       framework: TensorRT-LLM
-      displayName: Llama 3.2 90B Vision Instruct H100 BF16 Latency
+      displayName: Llama 3.2 90B Vision Instruct TensorRT-LLM Generic x8 BF16 
+        Latency
       sha: e994500d8b0e10f63a08e6a90143a60c360d004f6d5ea8bdb4d38d215eb3fa83
       ngcMetadata:
         e994500d8b0e10f63a08e6a90143a60c360d004f6d5ea8bdb4d38d215eb3fa83:
@@ -1082,7 +1172,8 @@ models:
                 - !name 'visual_engine/config.json'
                 - !name 'visual_engine/metadata.json'
                 - !name 'visual_engine/visual_encoder.engine'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x8-bf16-latency.0.3.20194742
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:0.15.0.dev2024102300+ea8391c56-h100x8-bf16-latency.0.3.20194742
             - dst: ''
               src:
                 files:
@@ -1096,17 +1187,20 @@ models:
                 - !name 'special_tokens_map.json'
                 - !name 'tokenizer.json'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:hf-0a6d69b-tok
             - dst: visual_engine
               src:
                 files:
                 - !name 'vision_processor.py'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:vision-processor
             - dst: ''
               src:
                 files:
                 - !name 'runtime_params.json'
-                repo_id: ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
+                repo_id: 
+                  ngc://nim/meta/llama-3.2-90b-vision-instruct:runtime-params-trtllm
       modelFormat: trt-llm
       spec:
       - key: PROFILE

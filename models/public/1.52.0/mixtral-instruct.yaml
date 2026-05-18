@@ -4,15 +4,20 @@ models:
   modelHubID: mixtral-instruct
   category: Language
   type: NGC
-  description: Sparse Mixture-of-Experts model fine-tuned for instruction following with a 32K token context window. Matches or outperforms much larger dense models on standard benchmarks.
+  description: Sparse Mixture-of-Experts model fine-tuned for instruction 
+    following with a 32K token context window. Matches or outperforms much 
+    larger dense models on standard benchmarks.
   modelVariants:
   - variantId: Mixtral 8x7B Instruct
     displayName: Mixtral 8x7B Instruct
     source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/mistralai/containers/mixtral-8x7b-instruct-v01
+      URL: 
+        https://catalog.ngc.nvidia.com/orgs/nim/teams/mistralai/containers/mixtral-8x7b-instruct-v01
     optimizationProfiles:
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-a10gx8-fp16-throughput.1.3.18301798
-      displayName: Mixtral 8x7B Instruct A10Gx8 FP16 Throughput
+    - profileId: 
+        nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-a10gx8-fp16-throughput.1.3.18301798
+      displayName: Mixtral 8x7b Instruct V0.1 TensorRT-LLM Generic x8 FP16 
+        Throughput
       framework: TensorRT-LLM
       ngcMetadata:
         03501a01c138dcfc63fc672c20053e3fca8d7bdae1f448165d7bed3f241973cf:
@@ -43,8 +48,10 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 89GB
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x2-int8wo-throughput.1.3.18301798
-      displayName: Mixtral 8x7B Instruct H100x2 int8wo Throughput
+    - profileId: 
+        nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x2-int8wo-throughput.1.3.18301798
+      displayName: Mixtral 8x7b Instruct V0.1 TensorRT-LLM Generic x2 INT8WO 
+        Throughput
       framework: TensorRT-LLM
       ngcMetadata:
         208d53be878cb4d31c9019a80637c54e441e4a4edbee17754d1fc1b0b31b1cc1:
@@ -75,8 +82,10 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 48GB
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x2-fp16-throughput.1.3.18301798
-      displayName: Mixtral 8x7B Instruct H100x2 FP16 Throughput
+    - profileId: 
+        nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x2-fp16-throughput.1.3.18301798
+      displayName: Mixtral 8x7b Instruct V0.1 TensorRT-LLM Generic x2 FP16 
+        Throughput
       framework: TensorRT-LLM
       ngcMetadata:
         bbaccf5c5f059943db905cfcb4e9f2e4e83f0da3617abd244b693103d13005f4:
@@ -108,8 +117,10 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 94GB
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-l40sx4-fp8-throughput.1.3.18301798
-      displayName: Mixtral 8x7B Instruct L40Sx4 FP8 Throughput
+    - profileId: 
+        nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-l40sx4-fp8-throughput.1.3.18301798
+      displayName: Mixtral 8x7b Instruct V0.1 TensorRT-LLM Generic x4 FP8 
+        Throughput
       framework: TensorRT-LLM
       ngcMetadata:
         4a7fcddcd723f52264e0a9b90b3a17674d1ceb11000aa6dfa50e8a9f1d7c4c8e:
@@ -140,8 +151,10 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 94GB
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-l40sx4-fp16-throughput.1.3.18301798
-      displayName: Mixtral 8x7B Instruct L40Sx4 FP16 Throughput
+    - profileId: 
+        nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-l40sx4-fp16-throughput.1.3.18301798
+      displayName: Mixtral 8x7b Instruct V0.1 TensorRT-LLM Generic x4 FP16 
+        Throughput
       framework: TensorRT-LLM
       ngcMetadata:
         536502b5ba23293b7a9bd6dfabd9b93d2d82c8436d0788cc748b28aefd4adf79:
@@ -172,8 +185,10 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 95GB
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x4-int8wo-latency.1.3.18301798
-      displayName: Mixtral 8x7B Instruct H100 INT8WO Latency
+    - profileId: 
+        nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x4-int8wo-latency.1.3.18301798
+      displayName: Mixtral 8x7b Instruct V0.1 TensorRT-LLM Generic x4 INT8WO 
+        Latency
       framework: TensorRT-LLM
       ngcMetadata:
         5cf31967505bc7d4e792563c5521545703cee2be36714b6944e0e33adb70409a:
@@ -204,8 +219,10 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 48GB
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x4-fp16-latency.1.3.18301798
-      displayName: Mixtral 8x7B Instruct H100x4 FP16 Latency
+    - profileId: 
+        nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x4-fp16-latency.1.3.18301798
+      displayName: Mixtral 8x7b Instruct V0.1 TensorRT-LLM Generic x4 FP16 
+        Latency
       framework: TensorRT-LLM
       ngcMetadata:
         ed45c32307812aa9b45ef8b3f73d635a4ed8af4ee46ffa09253fc529fbfd55db:
@@ -236,8 +253,10 @@ models:
         value: 1.3.0
       - key: DOWNLOAD SIZE
         value: 95GB
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x4-fp8-latency.1.3.18301798
-      displayName: Mixtral 8x7B Instruct H100x4 FP8 Latency
+    - profileId: 
+        nim/mistralai/mixtral-8x7b-instruct-v01:0.12.0+2333135a3-h100x4-fp8-latency.1.3.18301798
+      displayName: Mixtral 8x7b Instruct V0.1 TensorRT-LLM Generic x4 FP8 
+        Latency
       framework: TensorRT-LLM
       ngcMetadata:
         f255f2c7d6787f8b436aa1a74280ebb1a736fa21ae39fd56aeef92f10f7c9c81:
@@ -271,10 +290,13 @@ models:
   - variantId: Mixtral 8x22B Instruct
     displayName: Mixtral 8x22B Instruct
     source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/mistralai/containers/mixtral-8x22b-instruct-v01
+      URL: 
+        https://catalog.ngc.nvidia.com/orgs/nim/teams/mistralai/containers/mixtral-8x22b-instruct-v01
     optimizationProfiles:
-    - profileId: nim/mistralai/mixtral-8x22b-instruct-v01:0.10.1+79a76176-h100x8-int8wo-throughput.1.2.2.16140417
-      displayName: Mixtral 8x22B Instruct H100 int8wo Throughput
+    - profileId: 
+        nim/mistralai/mixtral-8x22b-instruct-v01:0.10.1+79a76176-h100x8-int8wo-throughput.1.2.2.16140417
+      displayName: Mixtral 8x22b Instruct V0.1 TensorRT-LLM Generic x8 INT8WO 
+        Throughput
       framework: TensorRT-LLM
       ngcMetadata:
         4ad9a208ce0f8ec41cd6b8681cd0ddf6fbeb406efb3d9baf6847a3fb8bac5863:
@@ -305,7 +327,8 @@ models:
                 - !name 'tokenizer.json'
                 - !name 'tokenizer.model'
                 - !name 'tokenizer_config.json'
-                repo_id: ngc://nim/mistralai/mixtral-8x22b-instruct-v01:hf-52572b2
+                repo_id: 
+                  ngc://nim/mistralai/mixtral-8x22b-instruct-v01:hf-52572b2
             - dst: trtllm_engine
               src:
                 files:
@@ -323,7 +346,8 @@ models:
                 - !name 'rank6.engine'
                 - !name 'rank7.engine'
                 - !name 'trt_llm_config.yaml'
-                repo_id: ngc://nim/mistralai/mixtral-8x22b-instruct-v01:0.10.1+79a76176-h100x8-int8wo-throughput.1.0.0.16140417
+                repo_id: 
+                  ngc://nim/mistralai/mixtral-8x22b-instruct-v01:0.10.1+79a76176-h100x8-int8wo-throughput.1.0.0.16140417
       sha: 4ad9a208ce0f8ec41cd6b8681cd0ddf6fbeb406efb3d9baf6847a3fb8bac5863
       modelFormat: trt-llm
       latestVersionSizeInBytes: 144762798586
@@ -342,8 +366,10 @@ models:
         value: 1.2.2
       - key: DOWNLOAD SIZE
         value: 144GB
-    - profileId: nim/mistralai/mixtral-8x22b-instruct-v01:0.11.1+14957bf8-h100x8-fp16-throughput.1.1.2.17572569
-      displayName: Mixtral 8x22B Instruct H100 FP16 Throughput
+    - profileId: 
+        nim/mistralai/mixtral-8x22b-instruct-v01:0.11.1+14957bf8-h100x8-fp16-throughput.1.1.2.17572569
+      displayName: Mixtral 8x22b Instruct V0.1 TensorRT-LLM Generic x8 FP16 
+        Throughput
       framework: TensorRT-LLM
       ngcMetadata:
         e44c755ef6628cccb74ccf58af4a6efa039f7e49e07a9dd7a27eb17f6500964e:
@@ -374,7 +400,8 @@ models:
                 - !name 'tokenizer.model'
                 - !name 'tokenizer_config.json'
                 - !name 'tool_use_config.json'
-                repo_id: ngc://nim/mistralai/mixtral-8x22b-instruct-v01:hf-1702b01-tool-calling
+                repo_id: 
+                  ngc://nim/mistralai/mixtral-8x22b-instruct-v01:hf-1702b01-tool-calling
             - dst: trtllm_engine
               src:
                 files:
@@ -391,7 +418,8 @@ models:
                 - !name 'rank5.engine'
                 - !name 'rank6.engine'
                 - !name 'rank7.engine'
-                repo_id: ngc://nim/mistralai/mixtral-8x22b-instruct-v01:0.11.1+14957bf8-h100x8-fp16-throughput.1.1.2.17572569
+                repo_id: 
+                  ngc://nim/mistralai/mixtral-8x22b-instruct-v01:0.11.1+14957bf8-h100x8-fp16-throughput.1.1.2.17572569
       sha: e44c755ef6628cccb74ccf58af4a6efa039f7e49e07a9dd7a27eb17f6500964e
       modelFormat: trt-llm
       latestVersionSizeInBytes: 285170977174

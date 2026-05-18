@@ -152,20 +152,51 @@ def generate_display_name(model, tags):
     sm_part = f"SM{sm_val}" if sm_val else ""
     v_part = f"V{v_val}" if v_val else ""
     onnx_part = "ONNX" if str(tags.get("model_type", "")).lower() == "onnx" else ""
-    
+
     mode_val = str(tags.get("mode", "")).strip()
     mode_part = mode_val.capitalize() if mode_val else ""
-    
+
     vad_val = str(tags.get("vad", "")).strip()
     vad_part = vad_val.capitalize() if vad_val else ""
-    
+
     diarizer_val = str(tags.get("diarizer", "")).strip().lower()
     diarizer_part = diarizer_val.capitalize() if diarizer_val and diarizer_val != "disabled" else ""
-    
+
     batch_size_val = str(tags.get("batch_size", "")).strip()
     batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
-    
+
     suffix = " ".join(part for part in [gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
+    return f"{base_name} {suffix}".strip()
+
+def generate_display_name_generic(model, tags, llm_engine):
+    """Generate display name for generic profiles with llm_engine and GPU count info."""
+    model_name = model.split('/')[-1]
+    base_name = format_model_base_name(model_name)
+    tp = int(tags.get("tp", "1"))
+    pp = int(tags.get("pp", "1"))
+    precision = tags.get("precision", "").upper()
+    profile = tags.get("profile", "").capitalize()
+    count = tp * pp
+
+    sm_val = str(tags.get("sm", "")).strip()
+    v_val = str(tags.get("v", "")).strip()
+    sm_part = f"SM{sm_val}" if sm_val else ""
+    v_part = f"V{v_val}" if v_val else ""
+
+    # Normalize engine name: tensorrt_llm -> TensorRT-LLM, vllm -> VLLM, sglang -> SGLang
+    engine_lower = llm_engine.lower()
+    if engine_lower == "tensorrt_llm":
+        engine_display = "TensorRT-LLM"
+    elif engine_lower == "vllm":
+        engine_display = "VLLM"
+    elif engine_lower == "sglang":
+        engine_display = "SGLang"
+    else:
+        engine_display = llm_engine.upper()
+
+    generic_part = f"{engine_display} Generic x{count}"
+
+    suffix = " ".join(part for part in [generic_part, sm_part, v_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def generate_display_name_private(model, tags):
@@ -1134,7 +1165,7 @@ def main():
                 result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                 if result and result[0]:
                     base_uri, profile_id_uri = result
-                    display_name = generate_display_name(model, tags)
+                    display_name = generate_display_name_generic(model, tags, "vllm")
                     tp_val = int(tags.get("tp", "1"))
                     pp_val = int(tags.get("pp", "1"))
                     count = tp_val * pp_val
@@ -1176,7 +1207,7 @@ def main():
                 result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                 if result and result[0]:
                     base_uri, profile_id_uri = result
-                    display_name = generate_display_name(model, tags)
+                    display_name = generate_display_name_generic(model, tags, "sglang")
                     tp_val = int(tags.get("tp", "1"))
                     pp_val = int(tags.get("pp", "1"))
                     count = tp_val * pp_val
@@ -1214,7 +1245,7 @@ def main():
                 result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                 if result and result[0]:
                     base_uri, profile_id_uri = result
-                    display_name = generate_display_name(model, tags)
+                    display_name = generate_display_name_generic(model, tags, "tensorrt-llm")
                     tp_val = int(tags.get("tp", "1"))
                     pp_val = int(tags.get("pp", "1"))
                     count = tp_val * pp_val
@@ -1258,7 +1289,7 @@ def main():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
-                        display_name = generate_display_name_private(model, tags)
+                        display_name = generate_display_name_generic(model, tags, "vllm")
                         count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
                         download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
@@ -1289,7 +1320,7 @@ def main():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
-                        display_name = generate_display_name_private(model, tags)
+                        display_name = generate_display_name_generic(model, tags, "sglang")
                         count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
                         download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
@@ -1325,7 +1356,7 @@ def main():
             if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                 tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
 
-            display_name = generate_display_name_private(model, tags)
+            display_name = generate_display_name_generic(model, tags, "tensorrt-llm")
             count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
             download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 

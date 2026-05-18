@@ -4,7 +4,9 @@ models:
   modelHubID: meta/llama-3.2-instruct
   category: Language
   type: NGC
-  description: Lightweight multilingual models optimized for dialogue, agentic retrieval, and summarization. Strong benchmark performance in a compact footprint.
+  description: Lightweight multilingual models optimized for dialogue, agentic 
+    retrieval, and summarization. Strong benchmark performance in a compact 
+    footprint.
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -14,11 +16,13 @@ models:
   modelVariants:
   - variantId: Llama 3.2 1B Instruct
     source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_2-1b-instruct
+      URL: 
+        https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_2-1b-instruct
     optimizationProfiles:
-    - profileId: nim/meta/llama-3.2-1b-instruct:a100x1-throughput-bf16-a2zlotpozq
+    - profileId: 
+        nim/meta/llama-3.2-1b-instruct:a100x1-throughput-bf16-a2zlotpozq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct A100x1 BF16 Throughput
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16 Throughput
       ngcMetadata:
         222d1729a785201e8a021b226d74d227d01418c41b556283ee1bdbf0a818bd94:
           model: meta/llama-3.2-1b-instruct
@@ -51,9 +55,10 @@ models:
         value: 3GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-bf16-pkk6mlb47w
+    - profileId: 
+        nim/meta/llama-3.2-1b-instruct:h200x1-throughput-bf16-pkk6mlb47w
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H200x1 BF16 Throughput
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16 Throughput
       ngcMetadata:
         434e8d336fa23cbe151748d32b71e196d69f20d319ee8b59852a1ca31a48d311:
           model: meta/llama-3.2-1b-instruct
@@ -86,9 +91,10 @@ models:
         value: 3GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:a10gx1-throughput-bf16-orfmmsdx5a
+    - profileId: 
+        nim/meta/llama-3.2-1b-instruct:a10gx1-throughput-bf16-orfmmsdx5a
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct A10Gx1 BF16 Throughput
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16 Throughput
       ngcMetadata:
         74bfd8b2df5eafe452a9887637eef4820779fb4e1edb72a4a7a2a1a2d1e6480b:
           model: meta/llama-3.2-1b-instruct
@@ -123,7 +129,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h100x1-throughput-fp8-u882rrmxeg
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H100x1 FP8 Throughput
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 FP8 Throughput
       ngcMetadata:
         7b508014e846234db3cabe5c9f38568b4ee96694b60600a0b71c621dc70cacf3:
           model: meta/llama-3.2-1b-instruct
@@ -156,9 +162,10 @@ models:
         value: 2GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:l40sx1-throughput-bf16-vpk2vn8hrg
+    - profileId: 
+        nim/meta/llama-3.2-1b-instruct:l40sx1-throughput-bf16-vpk2vn8hrg
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct L40Sx1 BF16 Throughput
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16 Throughput
       ngcMetadata:
         ac5071bbd91efcc71dc486fcd5210779570868b3b8328b4abf7a408a58b5e57c:
           model: meta/llama-3.2-1b-instruct
@@ -193,7 +200,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:l40sx1-throughput-fp8-dngq15ocbg
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct L40Sx1 FP8 Throughput
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 FP8 Throughput
       ngcMetadata:
         ad17776f4619854fccd50354f31132a558a1ca619930698fd184d6ccf5fe3c99:
           model: meta/llama-3.2-1b-instruct
@@ -228,7 +235,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-fp8-ajzq-idegq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H200x1 FP8 Throughput
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 FP8 Throughput
       ngcMetadata:
         af876a179190d1832143f8b4f4a71f640f3df07b0503259cedee3e3a8363aa96:
           model: meta/llama-3.2-1b-instruct
@@ -261,9 +268,10 @@ models:
         value: 2GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:h100x1-throughput-bf16-ns5-dcqtwq
+    - profileId: 
+        nim/meta/llama-3.2-1b-instruct:h100x1-throughput-bf16-ns5-dcqtwq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H100x1 BF16 Throughput
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16 Throughput
       ngcMetadata:
         e7dbd9a8ce6270d2ec649a0fecbcae9b5336566113525f20aee3809ba5e63856:
           model: meta/llama-3.2-1b-instruct
@@ -298,7 +306,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-e9f8eff-nim1.5+
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct A10Gx1 BF16
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-1b-instruct
@@ -332,7 +340,7 @@ models:
         value: 'TRUE'
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-e9f8eff-nim1.5+
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct L40Sx1 BF16
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-1b-instruct
@@ -366,7 +374,7 @@ models:
         value: 'TRUE'
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-e9f8eff-nim1.5+
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H100x1 BF16
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-1b-instruct
@@ -400,7 +408,7 @@ models:
         value: 'TRUE'
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-e9f8eff-nim1.5+
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H200x1 BF16
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-1b-instruct
@@ -434,7 +442,7 @@ models:
         value: 'TRUE'
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-e9f8eff-nim1.5+
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct A100x1 BF16
+      displayName: Llama 3.2 1B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-1b-instruct
@@ -468,11 +476,13 @@ models:
         value: 'TRUE'
   - variantId: Llama 3.2 3B Instruct
     source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_2-3b-instruct
+      URL: 
+        https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_2-3b-instruct
     optimizationProfiles:
-    - profileId: nim/meta/llama-3.2-3b-instruct:a100x1-throughput-fp16-6m5dnxceua
+    - profileId: 
+        nim/meta/llama-3.2-3b-instruct:a100x1-throughput-fp16-6m5dnxceua
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct A100x1 FP16 Throughput
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 FP16 Throughput
       ngcMetadata:
         34e8e5d0b7ac366e5247473de1ac4a6620fa6000e13f1a256735129d0db23761:
           model: meta/llama-3.2-3b-instruct
@@ -505,9 +515,10 @@ models:
         value: 7GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:h200x1-throughput-fp16-ylknhtupda
+    - profileId: 
+        nim/meta/llama-3.2-3b-instruct:h200x1-throughput-fp16-ylknhtupda
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H200x1 FP16 Throughput
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 FP16 Throughput
       ngcMetadata:
         5fbbb278b341858164183716ee8e04eb41e0d5283d6faedfba8aed4180535b53:
           model: meta/llama-3.2-3b-instruct
@@ -542,7 +553,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h100x1-throughput-fp8-cehb8f0o2q
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H100x1 FP8 Throughput
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 FP8 Throughput
       ngcMetadata:
         7b508014e846234db3cabe5c9f38568b4ee96694b60600a0b71c621dc70cacf3:
           model: meta/llama-3.2-3b-instruct
@@ -575,9 +586,10 @@ models:
         value: 5GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:a10gx1-throughput-fp16-ygf1h6yobw
+    - profileId: 
+        nim/meta/llama-3.2-3b-instruct:a10gx1-throughput-fp16-ygf1h6yobw
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct A10Gx1 FP16 Throughput
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 FP16 Throughput
       ngcMetadata:
         8ffb5cb4d82407de65b02eb9749fd1fa84084137e05593706f33466259df9f6b:
           model: meta/llama-3.2-3b-instruct
@@ -612,7 +624,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l40sx1-throughput-fp8-8ujyylyqww
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct L40Sx1 FP8 Throughput
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 FP8 Throughput
       ngcMetadata:
         ad17776f4619854fccd50354f31132a558a1ca619930698fd184d6ccf5fe3c99:
           model: meta/llama-3.2-3b-instruct
@@ -647,7 +659,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h200x1-throughput-fp8-nj2npsfa-w
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H200x1 FP8 Throughput
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 FP8 Throughput
       ngcMetadata:
         af876a179190d1832143f8b4f4a71f640f3df07b0503259cedee3e3a8363aa96:
           model: meta/llama-3.2-3b-instruct
@@ -680,9 +692,10 @@ models:
         value: 5GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:h100x1-throughput-fp16-m2qe4ioxxq
+    - profileId: 
+        nim/meta/llama-3.2-3b-instruct:h100x1-throughput-fp16-m2qe4ioxxq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H100x1 FP16 Throughput
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 FP16 Throughput
       ngcMetadata:
         d6e3e406c0b0eaeb76f21ee5c5a545edfe8031d3cfa302030f690f38126b0ab8:
           model: meta/llama-3.2-3b-instruct
@@ -715,9 +728,10 @@ models:
         value: 7GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:l40sx1-throughput-fp16-utfz33y-fg
+    - profileId: 
+        nim/meta/llama-3.2-3b-instruct:l40sx1-throughput-fp16-utfz33y-fg
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct L40Sx1 FP16 Throughput
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 FP16 Throughput
       ngcMetadata:
         e9674f56ec90347526f8edf1cf407cce1441972ef277dee7a15f5c768112d2bd:
           model: meta/llama-3.2-3b-instruct
@@ -752,7 +766,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-0508-tool-use-v2
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct A10Gx1 BF16
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-3b-instruct
@@ -786,7 +800,7 @@ models:
         value: 'TRUE'
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-0508-tool-use-v2
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct L40Sx1 BF16
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-3b-instruct
@@ -820,7 +834,7 @@ models:
         value: 'TRUE'
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-0508-tool-use-v2
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H100x1 BF16
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-3b-instruct
@@ -854,7 +868,7 @@ models:
         value: 'TRUE'
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-0508-tool-use-v2
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H200x1 BF16
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-3b-instruct
@@ -888,7 +902,7 @@ models:
         value: 'TRUE'
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-0508-tool-use-v2
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct A100x1 BF16
+      displayName: Llama 3.2 3B Instruct TensorRT-LLM Generic x1 BF16
       ngcMetadata:
         ac34857f8dcbd174ad524974248f2faf271bd2a0355643b2cf1490d0fe7787c2:
           model: meta/llama-3.2-3b-instruct

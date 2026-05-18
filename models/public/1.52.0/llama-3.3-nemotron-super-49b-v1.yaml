@@ -4,21 +4,29 @@ models:
   modelHubID: nvidia/llama-3.3-nemotron-super-49b-v1
   category: Language
   type: NGC
-  description: Llama-3.3-Nemotron-Super-49B-v1 is a language model that can follow instructions, complete requests, and generate creative text formats. The Llama-3.3-Nemotron-Super-49B-v1 Large Language Model (LLM) is an instruct fine-tuned version of the Llama-Nemotron.
+  description: Llama-3.3-Nemotron-Super-49B-v1 is a language model that can 
+    follow instructions, complete requests, and generate creative text formats. 
+    The Llama-3.3-Nemotron-Super-49B-v1 Large Language Model (LLM) is an 
+    instruct fine-tuned version of the Llama-Nemotron.
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
-    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
+    url: 
+      https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
   - label: License Agreement
-    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+    url: 
+      https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
   modelVariants:
   - variantId: Llama 3.3 Nemotron Super 49B V1
     source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.3-nemotron-super-49b-v1
+      URL: 
+        https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.3-nemotron-super-49b-v1
     optimizationProfiles:
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:a100x4-throughput-bf16--d40eserlg
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:a100x4-throughput-bf16--d40eserlg
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 A100x4 BF16 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 BF16 
+        Throughput
       ngcMetadata:
         00e6f59e1003f038ecee8e9aa3ab2d40745bef214c476a381b21886dd8383952:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -51,9 +59,11 @@ models:
         value: 101GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x8-latency-fp8-sfw5xn1oba
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x8-latency-fp8-sfw5xn1oba
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H100x8 FP8 Latency
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x8 FP8 
+        Latency
       ngcMetadata:
         233973ff86b33b1076b8d8dfbf1b1c292ad224ae2d9c8b18f28a44b6f6f42768:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -86,9 +96,11 @@ models:
         value: 51GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx4-throughput-fp8-dtuojeeekw
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx4-throughput-fp8-dtuojeeekw
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx4 FP8 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 FP8 
+        Throughput
       ngcMetadata:
         3d0e5989f2fbc23e7d4504cd69269c9636deb61d0efc12225d3d59d54afea297:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -121,9 +133,11 @@ models:
         value: 50GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx8-latency-bf16-9kyxnmiu9w
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx8-latency-bf16-9kyxnmiu9w
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx8 BF16 Latency
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x8 BF16 
+        Latency
       ngcMetadata:
         66341208a7bba7fdde341dcad4a654eecb27681d2e322ec10c4fde9970030c26:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -156,9 +170,11 @@ models:
         value: 111GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x8-latency-bf16-prto0dmpjw
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x8-latency-bf16-prto0dmpjw
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H100x8 BF16 Latency
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x8 BF16 
+        Latency
       ngcMetadata:
         758482618a1f166cc4e620228600410a6f05649a05c1838d5a93572d44289b95:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -191,9 +207,11 @@ models:
         value: 109GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x1-throughput-fp8-kjzavt-3zq
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x1-throughput-fp8-kjzavt-3zq
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H100x1 FP8 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x1 FP8 
+        Throughput
       ngcMetadata:
         7b508014e846234db3cabe5c9f38568b4ee96694b60600a0b71c621dc70cacf3:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -226,9 +244,11 @@ models:
         value: 49GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x4-throughput-fp8-slqbwxm0vq
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x4-throughput-fp8-slqbwxm0vq
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H100x4 FP8 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 FP8 
+        Throughput
       ngcMetadata:
         7d8a02f47911fb7ddf1a6f6b09438f621b6057cb21098999484f09d5a5bb7b23:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -261,9 +281,11 @@ models:
         value: 50GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x2-throughput-fp8-4ocry3irow
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x2-throughput-fp8-4ocry3irow
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H100x2 FP8 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x2 FP8 
+        Throughput
       ngcMetadata:
         7ee2258631ed9d51ebfe5ab44bd547ae5777217686d87cc89c15d06ccdca4047:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -296,9 +318,11 @@ models:
         value: 49GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x4-throughput-bf16-fzhqywxh-a
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h100x4-throughput-bf16-fzhqywxh-a
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H100x4 BF16 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 BF16 
+        Throughput
       ngcMetadata:
         7f99ed5107c79b938b0ef4fcf2dd21aac27281f71d41a0a7c46d649879d374f0:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -331,9 +355,11 @@ models:
         value: 100GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:a10gx8-throughput-bf16-ea3czux3aq
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:a10gx8-throughput-bf16-ea3czux3aq
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 A10Gx8 BF16 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x8 BF16 
+        Throughput
       ngcMetadata:
         935ec3ac922bf54106311dfc6b3214a1651a26033b4f5007b6351fffb4058b7a:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -366,9 +392,11 @@ models:
         value: 111GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x4-latency-bf16-2v7ziveceg
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x4-latency-bf16-2v7ziveceg
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H200x4 BF16 Latency
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 BF16 
+        Latency
       ngcMetadata:
         99142c13a095af184ae20945a208a81fae8d650ac0fd91747b03148383f882cf:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -401,9 +429,11 @@ models:
         value: 100GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx4-throughput-bf16-gt01zn8w7a
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx4-throughput-bf16-gt01zn8w7a
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx4 BF16 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 BF16 
+        Throughput
       ngcMetadata:
         ab8f2faec3bcafc32efaf05acada4df4d8a171a759b4fb5c44d2d9d43a348764:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -436,9 +466,11 @@ models:
         value: 101GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x1-throughput-fp8-bj-uzcumnq
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x1-throughput-fp8-bj-uzcumnq
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H200x1 FP8 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x1 FP8 
+        Throughput
       ngcMetadata:
         af876a179190d1832143f8b4f4a71f640f3df07b0503259cedee3e3a8363aa96:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -471,9 +503,11 @@ models:
         value: 49GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x2-throughput-bf16-cqdwimpbbw
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x2-throughput-bf16-cqdwimpbbw
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H200x2 BF16 Throughput
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x2 BF16 
+        Throughput
       ngcMetadata:
         b407d3df1db123ba8a4c98fb9f73790c01cd53a70fa0e0185814ad57a17cb72b:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -506,9 +540,11 @@ models:
         value: 96GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx8-latency-fp8-ataopkp21a
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:l40sx8-latency-fp8-ataopkp21a
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx8 FP8 Latency
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x8 FP8 
+        Latency
       ngcMetadata:
         e19c01f4cfb3b39ba19830f23fde73783d9c3044a5864bdee29e13c867a5382c:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -541,9 +577,11 @@ models:
         value: 51GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x2-latency-fp8-gljasu2ggw
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:h200x2-latency-fp8-gljasu2ggw
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H200x2 FP8 Latency
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x2 FP8 
+        Latency
       ngcMetadata:
         e4f217a5fb016b570e34b8a8eb06051ccfef9534ba43da973bb7f678242eaa5f:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -576,9 +614,10 @@ models:
         value: 49GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 A10Gx8 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x8 BF16
       ngcMetadata:
         1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -610,9 +649,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx8 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x8 BF16
       ngcMetadata:
         1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -644,9 +684,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H100x8 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x8 BF16
       ngcMetadata:
         1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -678,9 +719,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H200x8 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x8 BF16
       ngcMetadata:
         1d7b604f835f74791e6bfd843047fc00a5aef0f72954ca48ce963811fb6f3f09:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -712,9 +754,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx2 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x2 BF16
       ngcMetadata:
         375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -746,9 +789,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H100x2 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x2 BF16
       ngcMetadata:
         375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -780,9 +824,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H200x2 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x2 BF16
       ngcMetadata:
         375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -814,9 +859,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 A100x2 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x2 BF16
       ngcMetadata:
         375dc0ff86133c2a423fbe9ef46d8fdf12d6403b3caa3b8e70d7851a89fc90dd:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -848,9 +894,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 A10Gx4 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 BF16
       ngcMetadata:
         54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -882,9 +929,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 L40Sx4 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 BF16
       ngcMetadata:
         54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -916,9 +964,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H100x4 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 BF16
       ngcMetadata:
         54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -950,9 +999,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 H200x4 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 BF16
       ngcMetadata:
         54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
@@ -984,9 +1034,10 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
+    - profileId: 
+        nim/nvidia/llama-3.3-nemotron-super-49b-v1:hf-1a2cb80-nim-tool-use
       framework: TensorRT-LLM
-      displayName: Llama 3.3 Nemotron Super 49B V1 A100x4 BF16
+      displayName: Llama 3.3 Nemotron Super 49B V1 TensorRT-LLM Generic x4 BF16
       ngcMetadata:
         54946b08b79ecf9e7f2d5c000234bf2cce19c8fee21b243c1a084b03897e8c95:
           model: nvidia/llama-3.3-nemotron-super-49b-v1
