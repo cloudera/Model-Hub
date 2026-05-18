@@ -152,20 +152,58 @@ def generate_display_name(model, tags):
     sm_part = f"SM{sm_val}" if sm_val else ""
     v_part = f"V{v_val}" if v_val else ""
     onnx_part = "ONNX" if str(tags.get("model_type", "")).lower() == "onnx" else ""
-    
+
     mode_val = str(tags.get("mode", "")).strip()
     mode_part = mode_val.capitalize() if mode_val else ""
-    
+
     vad_val = str(tags.get("vad", "")).strip()
     vad_part = vad_val.capitalize() if vad_val else ""
-    
+
     diarizer_val = str(tags.get("diarizer", "")).strip().lower()
     diarizer_part = diarizer_val.capitalize() if diarizer_val and diarizer_val != "disabled" else ""
-    
+
     batch_size_val = str(tags.get("batch_size", "")).strip()
     batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
-    
+
     suffix = " ".join(part for part in [gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
+    return f"{base_name} {suffix}".strip()
+
+def generate_display_name_generic(model, tags, llm_engine):
+    """Generate display name for generic profiles with llm_engine and GPU/count info."""
+    model_name = model.split('/')[-1]
+    base_name = format_model_base_name(model_name)
+    tp = int(tags.get("tp", "1"))
+    pp = int(tags.get("pp", "1"))
+    precision = tags.get("precision", "").upper()
+    profile = tags.get("profile", "").capitalize()
+    count = tp * pp
+
+    sm_val = str(tags.get("sm", "")).strip()
+    v_val = str(tags.get("v", "")).strip()
+    sm_part = f"SM{sm_val}" if sm_val else ""
+    v_part = f"V{v_val}" if v_val else ""
+
+    # Normalize engine name: tensorrt_llm -> TensorRT-LLM, vllm -> VLLM, sglang -> SGLang
+    engine_lower = llm_engine.lower()
+    if engine_lower == "tensorrt_llm":
+        engine_display = "TensorRT-LLM"
+    elif engine_lower == "vllm":
+        engine_display = "VLLM"
+    elif engine_lower == "sglang":
+        engine_display = "SGLang"
+    else:
+        engine_display = llm_engine.upper()
+
+    # Include GPU if present, otherwise use GENERIC
+    gpu = tags.get("gpu", "").upper()
+    if gpu:
+        gpu_part = f"{gpu}x{count}"
+    else:
+        gpu_part = f"GENERICx{count}"
+
+    generic_part = f"{gpu_part} {engine_display}"
+
+    suffix = " ".join(part for part in [generic_part, sm_part, v_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def generate_display_name_private(model, tags):
@@ -574,221 +612,6 @@ def is_generic_profile(tags):
     
     return False
 
-def create_gpu_specific_profile(base_profile, model, release, target_gpu, api_key):
-    """Create a GPU-specific optimization profile from a generic profile"""
-    # GPU to device ID mapping
-    gpu_device_mapping = {
-        "L40S": "26b9:10de",
-        "A10G": "2237:10de",
-        "H100": "2330:10de",
-        "H200": "2335:10de",
-        "A100": "20b2:10de"
-    }
-
-    tags = base_profile.get("tags", {}).copy()
-    tags["gpu"] = target_gpu.upper()
-    tags["gpu_device"] = gpu_device_mapping.get(target_gpu, "")
-    # Ensure nim_workspace_hash_v1 stays single line
-    if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
-        tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
-
-    result = profile_id_from_workspace(base_profile, target_gpu, return_base_uri=True)
-    if not result or not result[0]:
-        return None
-    base_uri, profile_id_uri = result
-
-    display_name = generate_display_name(model, tags)
-    count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
-    download_size = get_download_size_gb(str(base_uri), api_key)
-
-    # Build spec list, skipping empty values
-    spec_list = []
-    profile_value = tags.get("profile", "").upper()
-    if profile_value:  # Only add PROFILE if it's not empty
-        spec_list.append({"key": "PROFILE", "value": profile_value})
-
-    # Add PRECISION only if non-empty
-    precision_value = tags.get("precision", "").upper()
-    if precision_value:
-        spec_list.append({"key": "PRECISION", "value": precision_value})
-
-    spec_list.extend([
-        {"key": "GPU", "value": target_gpu.upper()},
-        {"key": "COUNT", "value": count}
-    ])
-
-    gpu_device_value = tags.get("gpu_device", "").upper()
-    if gpu_device_value:  # Only add GPU DEVICE if it's not empty
-        spec_list.append({"key": "GPU DEVICE", "value": gpu_device_value})
-
-    spec_list.extend([
-        {"key": "NIM VERSION", "value": release},
-        {"key": "DOWNLOAD SIZE", "value": download_size}
-    ])
-
-    append_optional_spec_fields(spec_list, tags)
-
-    metadata_tags = dict(tags)
-    if "gpu" in metadata_tags and isinstance(metadata_tags["gpu"], str):
-        metadata_tags["gpu"] = metadata_tags["gpu"].upper()
-
-    return {
-        "profileId": profile_id_uri,
-        "framework": "TensorRT-LLM",
-        "displayName": display_name,
-        "ngcMetadata": {
-            base_profile.get("id", ""): {
-                "model": model,
-                "release": release,
-                "tags": metadata_tags
-            }
-        },
-        "modelFormat": "trt-llm",
-        "spec": spec_list
-    }
-
-def create_gpu_specific_profile_vllm(base_profile, model, release, target_gpu, api_key):
-    """Create a GPU-specific optimization profile from a generic VLLM profile"""
-    gpu_device_mapping = {
-        "L40S": "26b9:10de",
-        "A10G": "2237:10de",
-        "H100": "2330:10de",
-        "H200": "2335:10de",
-        "A100": "20b2:10de"
-    }
-
-    tags = base_profile.get("tags", {}).copy()
-    tags["gpu"] = target_gpu.upper()
-    tags["gpu_device"] = gpu_device_mapping.get(target_gpu, "")
-    # Ensure nim_workspace_hash_v1 stays single line
-    if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
-        tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
-
-    result = profile_id_from_workspace(base_profile, target_gpu, return_base_uri=True)
-    if not result or not result[0]:
-        return None
-    base_uri, profile_id_uri = result
-
-    display_name = generate_display_name(model, tags)
-    count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
-    download_size = get_download_size_gb(str(base_uri), api_key)
-
-    spec_list = []
-    profile_value = tags.get("profile", "").upper()
-    if profile_value:
-        spec_list.append({"key": "PROFILE", "value": profile_value})
-
-    # Add PRECISION only if non-empty
-    precision_value = tags.get("precision", "").upper()
-    if precision_value:
-        spec_list.append({"key": "PRECISION", "value": precision_value})
-
-    spec_list.extend([
-        {"key": "GPU", "value": target_gpu.upper()},
-        {"key": "COUNT", "value": count}
-    ])
-
-    gpu_device_value = tags.get("gpu_device", "").upper()
-    if gpu_device_value:
-        spec_list.append({"key": "GPU DEVICE", "value": gpu_device_value})
-
-    spec_list.extend([
-        {"key": "NIM VERSION", "value": release},
-        {"key": "DOWNLOAD SIZE", "value": download_size}
-    ])
-
-    append_optional_spec_fields(spec_list, tags)
-
-    metadata_tags = dict(tags)
-    if "gpu" in metadata_tags and isinstance(metadata_tags["gpu"], str):
-        metadata_tags["gpu"] = metadata_tags["gpu"].upper()
-
-    return {
-        "profileId": profile_id_uri,
-        "framework": "VLLM",
-        "displayName": display_name,
-        "ngcMetadata": {
-            base_profile.get("id", ""): {
-                "model": model,
-                "release": release,
-                "tags": metadata_tags
-            }
-        },
-        "modelFormat": "vllm",
-        "spec": spec_list
-    }
-
-def create_gpu_specific_profile_sglang(base_profile, model, release, target_gpu, api_key):
-    """Create a GPU-specific optimization profile from a generic SGLang profile"""
-    gpu_device_mapping = {
-        "L40S": "26b9:10de",
-        "A10G": "2237:10de",
-        "H100": "2330:10de",
-        "H200": "2335:10de",
-        "A100": "20b2:10de"
-    }
-
-    tags = base_profile.get("tags", {}).copy()
-    tags["gpu"] = target_gpu.upper()
-    tags["gpu_device"] = gpu_device_mapping.get(target_gpu, "")
-    # Ensure nim_workspace_hash_v1 stays single line
-    if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
-        tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
-
-    result = profile_id_from_workspace(base_profile, target_gpu, return_base_uri=True)
-    if not result or not result[0]:
-        return None
-    base_uri, profile_id_uri = result
-
-    display_name = generate_display_name(model, tags)
-    count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
-    download_size = get_download_size_gb(str(base_uri), api_key)
-
-    spec_list = []
-    profile_value = tags.get("profile", "").upper()
-    if profile_value:
-        spec_list.append({"key": "PROFILE", "value": profile_value})
-
-    # Add PRECISION only if non-empty
-    precision_value = tags.get("precision", "").upper()
-    if precision_value:
-        spec_list.append({"key": "PRECISION", "value": precision_value})
-
-    spec_list.extend([
-        {"key": "GPU", "value": target_gpu.upper()},
-        {"key": "COUNT", "value": count}
-    ])
-
-    gpu_device_value = tags.get("gpu_device", "").upper()
-    if gpu_device_value:
-        spec_list.append({"key": "GPU DEVICE", "value": gpu_device_value})
-
-    spec_list.extend([
-        {"key": "NIM VERSION", "value": release},
-        {"key": "DOWNLOAD SIZE", "value": download_size}
-    ])
-
-    append_optional_spec_fields(spec_list, tags)
-
-    metadata_tags = dict(tags)
-    if "gpu" in metadata_tags and isinstance(metadata_tags["gpu"], str):
-        metadata_tags["gpu"] = metadata_tags["gpu"].upper()
-
-    return {
-        "profileId": profile_id_uri,
-        "framework": "SGLang",
-        "displayName": display_name,
-        "ngcMetadata": {
-            base_profile.get("id", ""): {
-                "model": model,
-                "release": release,
-                "tags": metadata_tags
-            }
-        },
-        "modelFormat": "sglang",
-        "spec": spec_list
-    }
-
 def get_download_size_gb(profile_id, api_key):
     try:
         env = os.environ.copy()
@@ -815,24 +638,63 @@ def get_download_size_gb(profile_id, api_key):
         return "UNKNOWN"
 
 def append_optional_spec_fields(spec_list, tags):
-    mapping = {
-        "llm_engine": "LLM ENGINE",
-        "sm": "SM",
-        "v": "V",
-        "backend": "BACKEND",
-        "model_type": "MODEL TYPE",
-        "trtllm_buildable": "TRTLLM BUILDABLE",
+    # Whitelist of tags to include in spec (explicitly useful for users)
+    spec_whitelist = {
+        # 'backend',
+        # 'sm',
+        # 'v',
+        # 'kv_cache_precision',
+        'llm_engine',
+        'draft_model_dir',
+        'speculative_algorithm',
+        'trtllm_buildable',
     }
-    for tag_key, spec_key in mapping.items():
-        value = tags.get(tag_key, "")
-        if isinstance(value, str):
-            raw = value.strip()
-        else:
-            raw = value
-        if raw in (None, ""):
-            continue
-        # No special unquoting; just uppercase string representation
-        spec_list.append({"key": spec_key, "value": str(raw).upper()})
+
+    # Dynamically add whitelisted tags from manifest as spec fields
+    for tag_key in sorted(spec_whitelist):
+        if tag_key in tags:
+            tag_val = tags[tag_key]
+
+            # Normalize value
+            if isinstance(tag_val, str):
+                value = tag_val.strip()
+            else:
+                value = tag_val
+
+            if value and value not in (None, ""):
+                # Format: convert underscores to spaces, then uppercase
+                spec_key = tag_key.replace('_', ' ').upper()
+                spec_list.append({"key": spec_key, "value": str(value).upper()})
+
+def make_display_names_unique(model_data):
+    """Add suffixes to duplicate displayNames within each variant to make them unique."""
+    for model in model_data.get('models', []):
+        for variant in model.get('modelVariants', []):
+            profiles = variant.get('optimizationProfiles', [])
+            if len(profiles) == 0:
+                continue
+
+            # Count displayNames
+            display_name_counts = {}
+            display_name_indices = {}
+
+            for i, prof in enumerate(profiles):
+                dname = prof.get('displayName')
+                if dname:
+                    if dname not in display_name_counts:
+                        display_name_counts[dname] = 0
+                        display_name_indices[dname] = []
+                    display_name_counts[dname] += 1
+                    display_name_indices[dname].append(i)
+
+            # Add suffixes to duplicates
+            for dname, count in display_name_counts.items():
+                if count > 1:
+                    for idx, prof_idx in enumerate(display_name_indices[dname]):
+                        # Add " - 2", " - 3", etc. (skip first occurrence, start from 2)
+                        if idx > 0:
+                            suffix_num = idx + 1
+                            profiles[prof_idx]['displayName'] = f"{dname} - {suffix_num}"
 
 def append_optimization_profile(optimization_profiles, profile_id_counts, profile_dict):
     """Append one profile. Duplicate NIM profileId values get suffixes __2, __3, …"""
@@ -1134,7 +996,7 @@ def main():
                 result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                 if result and result[0]:
                     base_uri, profile_id_uri = result
-                    display_name = generate_display_name(model, tags)
+                    display_name = generate_display_name_generic(model, tags, "vllm")
                     tp_val = int(tags.get("tp", "1"))
                     pp_val = int(tags.get("pp", "1"))
                     count = tp_val * pp_val
@@ -1176,7 +1038,7 @@ def main():
                 result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                 if result and result[0]:
                     base_uri, profile_id_uri = result
-                    display_name = generate_display_name(model, tags)
+                    display_name = generate_display_name_generic(model, tags, "sglang")
                     tp_val = int(tags.get("tp", "1"))
                     pp_val = int(tags.get("pp", "1"))
                     count = tp_val * pp_val
@@ -1214,7 +1076,7 @@ def main():
                 result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                 if result and result[0]:
                     base_uri, profile_id_uri = result
-                    display_name = generate_display_name(model, tags)
+                    display_name = generate_display_name_generic(model, tags, "tensorrt-llm")
                     tp_val = int(tags.get("tp", "1"))
                     pp_val = int(tags.get("pp", "1"))
                     count = tp_val * pp_val
@@ -1258,7 +1120,7 @@ def main():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
-                        display_name = generate_display_name_private(model, tags)
+                        display_name = generate_display_name_generic(model, tags, "vllm")
                         count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
                         download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
@@ -1289,7 +1151,7 @@ def main():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
-                        display_name = generate_display_name_private(model, tags)
+                        display_name = generate_display_name_generic(model, tags, "sglang")
                         count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
                         download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
@@ -1325,7 +1187,7 @@ def main():
             if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                 tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
 
-            display_name = generate_display_name_private(model, tags)
+            display_name = generate_display_name_generic(model, tags, "tensorrt-llm")
             count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
             download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
@@ -1370,10 +1232,73 @@ def main():
         # Sort profiles alphabetically by displayName (case-insensitive)
         optimization_profiles.sort(key=lambda p: p.get('displayName', '').lower())
 
+        # Resolve display name conflicts by extracting meaningful tag differences
+        displayname_counts = {}
+        for profile in optimization_profiles:
+            display_name = profile.get('displayName', '')
+            if display_name not in displayname_counts:
+                displayname_counts[display_name] = []
+            displayname_counts[display_name].append(profile)
+
+        # Tags already represented in displayName format - skip these when finding differentiators
+        skip_tags = {
+            'gpu', 'tp', 'pp', 'llm_engine', 'precision',
+            'nim_workspace_hash_v1', 'feat_lora', 'min_vram_per_device_gb', 'release',
+            'gpu_device', 'draft_tensor_parallel_size', 'speculative_num_steps', 'draft_model_dir'
+        }
+
+        # For duplicates, dynamically extract tag differences
+        for display_name, profiles_with_same_name in displayname_counts.items():
+            if len(profiles_with_same_name) > 1:
+                # Collect all tags and their presence/values across profiles
+                all_tags_by_profile = []
+                for profile in profiles_with_same_name:
+                    metadata = profile.get('ngcMetadata', {})
+                    first_key = next(iter(metadata.keys()), None)
+                    if first_key:
+                        tags = metadata[first_key].get('tags', {})
+                        filtered_tags = {k: str(v).lower() for k, v in tags.items() if k not in skip_tags}
+                        all_tags_by_profile.append(filtered_tags)
+
+                # Identify differentiating tags: those that differ across profiles (either present/absent or different values)
+                all_possible_tags = set()
+                for tags_dict in all_tags_by_profile:
+                    all_possible_tags.update(tags_dict.keys())
+
+                differentiating_tags = set()
+                for tag_key in all_possible_tags:
+                    tag_values = set()
+                    for tags_dict in all_tags_by_profile:
+                        if tag_key in tags_dict:
+                            tag_values.add(tags_dict[tag_key])
+                        else:
+                            tag_values.add(None)  # Mark as absent
+                    if len(tag_values) > 1:
+                        differentiating_tags.add(tag_key)
+
+                # Add differentiators for each profile based on differentiating tags
+                for profile, tags_dict in zip(profiles_with_same_name, all_tags_by_profile):
+                    differentiators = []
+
+                    # Add values for tags that differ across duplicates
+                    for tag_key in sorted(differentiating_tags):
+                        tag_val = tags_dict.get(tag_key, '')
+                        if tag_val:
+                            formatted_val = tag_val.upper().replace('_', '-')
+                            differentiators.append(formatted_val)
+
+                    # Append differentiators if found
+                    if differentiators:
+                        suffix = " ".join(differentiators)
+                        profile['displayName'] = f"{display_name} {suffix}"
+
         variant0 = model_data['models'][0]['modelVariants'][0]
         if not isinstance(variant0.get('optimizationProfiles'), list):
             variant0['optimizationProfiles'] = []
         variant0['optimizationProfiles'].extend(optimization_profiles)
+
+    # Make display names unique by adding suffixes to duplicates
+    make_display_names_unique(model_data)
 
     with open(args.output_yaml, 'w') as f:
         yaml.dump(model_data, f)

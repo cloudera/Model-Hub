@@ -19,7 +19,7 @@ models:
     optimizationProfiles:
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-b200
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B B200x1 FP8
+      displayName: Cosmos Reason2 8B B200x1 FP8 EAGLE
       ngcMetadata:
         26c672995dee8f88d38484fe4dce59a3593043da7766fc18717c450dfc34eefb:
           model: nvidia/cosmos-reason2-8b
@@ -51,8 +51,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-b200__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B B200x1 FP8
@@ -119,7 +123,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303
       framework: VLLM
-      displayName: Cosmos Reason2 8B BF16
+      displayName: Cosmos Reason2 8B GENERICx1 VLLM BF16
       ngcMetadata:
         438f4f3c69868f7755b07d0a0e03396f2c8862a570e4603572578785b137d1c3:
           model: nvidia/cosmos-reason2-8b
@@ -144,7 +148,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303__2
       framework: VLLM
-      displayName: Cosmos Reason2 8B BF16
+      displayName: Cosmos Reason2 8B GENERICx1 VLLM BF16 EAGLE
       ngcMetadata:
         c395ab104f98f6b9dd0d753622e705f618d6f3d09316fa90c3f0528ef822c9cc:
           model: nvidia/cosmos-reason2-8b
@@ -169,8 +173,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 17GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B H100x1 FP8
@@ -205,7 +213,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100__2
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B H100x1 FP8
+      displayName: Cosmos Reason2 8B H100x1 FP8 EAGLE
       ngcMetadata:
         8cb3c925447c3eb7697b2f915a501383bafbf7109632dae287ac5e93e22644d6:
           model: nvidia/cosmos-reason2-8b
@@ -237,11 +245,15 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B H200x1 FP8
+      displayName: Cosmos Reason2 8B H200x1 FP8 EAGLE
       ngcMetadata:
         2c665f3ce21560eb4d5ecf13b2055340bf9fb1e64feb9fe274f242a223943c82:
           model: nvidia/cosmos-reason2-8b
@@ -273,8 +285,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B H200x1 FP8
@@ -309,7 +325,7 @@ models:
         value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-l40s
       framework: TensorRT-LLM
-      displayName: Cosmos Reason2 8B L40Sx1 FP8
+      displayName: Cosmos Reason2 8B L40Sx1 FP8 EAGLE
       ngcMetadata:
         4b49a35c0f0979a4b0b957aacb5d68cbaf49dbdb4da13235ec59289ceb69589f:
           model: nvidia/cosmos-reason2-8b
@@ -341,8 +357,12 @@ models:
         value: '1.7.0'
       - key: DOWNLOAD SIZE
         value: 10GB
+      - key: DRAFT MODEL DIR
+        value: EAGLE
       - key: LLM ENGINE
         value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-l40s__2
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B L40Sx1 FP8

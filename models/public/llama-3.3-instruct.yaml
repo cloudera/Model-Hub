@@ -19,7 +19,7 @@ models:
     optimizationProfiles:
     - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b
       framework: VLLM
-      displayName: Llama 3.3 70B Instruct BF16
+      displayName: Llama 3.3 70B Instruct GENERICx1 VLLM BF16
       ngcMetadata:
         120f37d15ce21955b951e9acef346dcdcc0ebb17b9e09c1eef15e803a8b87665:
           model: meta/llama-3.3-70b-instruct
@@ -43,165 +43,9 @@ models:
         value: 132GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-tp8
-      framework: VLLM
-      displayName: Llama 3.3 70B Instruct BF16
-      ngcMetadata:
-        2914d34f4fa4833f89591ad3d5f92257d2167acb8ddb298a7ea0ad69629dbb16:
-          model: meta/llama-3.3-70b-instruct
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '25.0'
-            pp: '1'
-            precision: bf16
-            tp: '8'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 132GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-tp4
-      framework: VLLM
-      displayName: Llama 3.3 70B Instruct BF16
-      ngcMetadata:
-        40793560717b0e01f87024bc409baa6e4721e5694ea36cfc950372adfc660345:
-          model: meta/llama-3.3-70b-instruct
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '47.0'
-            pp: '1'
-            precision: bf16
-            tp: '4'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 132GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-tp2
-      framework: VLLM
-      displayName: Llama 3.3 70B Instruct BF16
-      ngcMetadata:
-        681a363c147fa39b9926d59d165852ced8ee8b27b2d75dd744495fafa6fe2371:
-          model: meta/llama-3.3-70b-instruct
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '89.0'
-            pp: '1'
-            precision: bf16
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 132GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-tp4
-      framework: VLLM
-      displayName: Llama 3.3 70B Instruct FP8
-      ngcMetadata:
-        217c5d7ad9f75f7b104386d7cc01220123cb59b66ecf1d8cb84175a090fd655e:
-          model: meta/llama-3.3-70b-instruct
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '31.0'
-            pp: '1'
-            precision: fp8
-            tp: '4'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 68GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-tp2
-      framework: VLLM
-      displayName: Llama 3.3 70B Instruct FP8
-      ngcMetadata:
-        74dc099acf027ca44ed08bf7f182582f4f20bef8c9be768908a3a11f55a4803d:
-          model: meta/llama-3.3-70b-instruct
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '57.0'
-            pp: '1'
-            precision: fp8
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 68GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-tp8
-      framework: VLLM
-      displayName: Llama 3.3 70B Instruct FP8
-      ngcMetadata:
-        a8ef77d8aa131697af9cb42e93c38a3e8babd5de5837a68582946f6fba91ac0e:
-          model: meta/llama-3.3-70b-instruct
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '18.0'
-            pp: '1'
-            precision: fp8
-            tp: '8'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 68GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling
       framework: VLLM
-      displayName: Llama 3.3 70B Instruct FP8
+      displayName: Llama 3.3 70B Instruct GENERICx1 VLLM FP8
       ngcMetadata:
         ea45ff5a22cd15dc8aefe3ea86c3361058ea7a73e36d3f70185a2a1253274377:
           model: meta/llama-3.3-70b-instruct
@@ -227,7 +71,7 @@ models:
         value: VLLM
     - profileId: nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling
       framework: VLLM
-      displayName: Llama 3.3 70B Instruct NVFP4
+      displayName: Llama 3.3 70B Instruct GENERICx1 VLLM NVFP4
       ngcMetadata:
         13b2cabe93f6e3d81e056b10d747d4baffc8dc6708977963dbc02c378fe6e7fd:
           model: meta/llama-3.3-70b-instruct
@@ -251,9 +95,61 @@ models:
         value: 40GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-tp2
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct GENERICx2 VLLM BF16
+      ngcMetadata:
+        681a363c147fa39b9926d59d165852ced8ee8b27b2d75dd744495fafa6fe2371:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '89.0'
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 132GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-tp2
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct GENERICx2 VLLM FP8
+      ngcMetadata:
+        74dc099acf027ca44ed08bf7f182582f4f20bef8c9be768908a3a11f55a4803d:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '57.0'
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 68GB
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling-tp2
       framework: VLLM
-      displayName: Llama 3.3 70B Instruct NVFP4
+      displayName: Llama 3.3 70B Instruct GENERICx2 VLLM NVFP4
       ngcMetadata:
         85e1c37976d5acc0f25d33bde93e7d5dc404bbc61d087981e2892101d603a6c7:
           model: meta/llama-3.3-70b-instruct
@@ -277,9 +173,61 @@ models:
         value: 40GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-tp4
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct GENERICx4 VLLM BF16
+      ngcMetadata:
+        40793560717b0e01f87024bc409baa6e4721e5694ea36cfc950372adfc660345:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '47.0'
+            pp: '1'
+            precision: bf16
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 132GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-tp4
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct GENERICx4 VLLM FP8
+      ngcMetadata:
+        217c5d7ad9f75f7b104386d7cc01220123cb59b66ecf1d8cb84175a090fd655e:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '31.0'
+            pp: '1'
+            precision: fp8
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 68GB
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling-tp4
       framework: VLLM
-      displayName: Llama 3.3 70B Instruct NVFP4
+      displayName: Llama 3.3 70B Instruct GENERICx4 VLLM NVFP4
       ngcMetadata:
         d08504a72861c984173b37188d78c7150a69570afdc56ca5a585edc9226115e2:
           model: meta/llama-3.3-70b-instruct
@@ -303,9 +251,61 @@ models:
         value: 40GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b-tp8
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct GENERICx8 VLLM BF16
+      ngcMetadata:
+        2914d34f4fa4833f89591ad3d5f92257d2167acb8ddb298a7ea0ad69629dbb16:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '25.0'
+            pp: '1'
+            precision: bf16
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 132GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling-tp8
+      framework: VLLM
+      displayName: Llama 3.3 70B Instruct GENERICx8 VLLM FP8
+      ngcMetadata:
+        a8ef77d8aa131697af9cb42e93c38a3e8babd5de5837a68582946f6fba91ac0e:
+          model: meta/llama-3.3-70b-instruct
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '18.0'
+            pp: '1'
+            precision: fp8
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 68GB
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling-tp8
       framework: VLLM
-      displayName: Llama 3.3 70B Instruct NVFP4
+      displayName: Llama 3.3 70B Instruct GENERICx8 VLLM NVFP4
       ngcMetadata:
         f8aa408323c38e25046ee87549a5847d666d02de45a029a40b34719dd3fb88c9:
           model: meta/llama-3.3-70b-instruct

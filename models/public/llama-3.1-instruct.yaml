@@ -197,35 +197,9 @@ models:
         value: 17GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-tp2
-      framework: VLLM
-      displayName: Llama 3.1 8B Instruct BF16
-      ngcMetadata:
-        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
-          model: meta/llama-3.1-8b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
-            pp: '1'
-            precision: bf16
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 30GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2
       framework: VLLM
-      displayName: Llama 3.1 8B Instruct BF16
+      displayName: Llama 3.1 8B Instruct GENERICx1 VLLM BF16
       ngcMetadata:
         a7660c906643dd2c90fbc05f264eb9521d6ebc7466266509aa6f89bb1d994e0c:
           model: meta/llama-3.1-8b-instruct
@@ -243,6 +217,32 @@ models:
         value: BF16
       - key: COUNT
         value: 1
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 30GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-tp2
+      framework: VLLM
+      displayName: Llama 3.1 8B Instruct GENERICx2 VLLM BF16
+      ngcMetadata:
+        4bf63ad29ec25417108c5fe1f00ee86ea129334e3cd05c7f7e0d862146d2fc2d:
+          model: meta/llama-3.1-8b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: e6913c5e344dca0d1286eb01a7f7b0016bb14d50e0bca8fef5a30c08a0d75144
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
@@ -938,9 +938,35 @@ models:
         value: 138GB
       - key: LLM ENGINE
         value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp2
+      framework: VLLM
+      displayName: Llama 3.1 70B Instruct GENERICx2 VLLM BF16
+      ngcMetadata:
+        fc40ff7cc1ebbe459322adbf18e3fe858a2e65aae3f81a0921f83dccbcfde71e:
+          model: meta/llama-3.1-70b-instruct
+          release: 1.14.0-pb5.5-stig-fips-x86-64
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.14.0-pb5.5-stig-fips-x86-64
+      - key: DOWNLOAD SIZE
+        value: 263GB
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp4
       framework: VLLM
-      displayName: Llama 3.1 70B Instruct BF16
+      displayName: Llama 3.1 70B Instruct GENERICx4 VLLM BF16
       ngcMetadata:
         7c42ae2590667fd28839c8121dfdc31796228a991645831b28f105e9bc137d72:
           model: meta/llama-3.1-70b-instruct
@@ -966,7 +992,7 @@ models:
         value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp8
       framework: VLLM
-      displayName: Llama 3.1 70B Instruct BF16
+      displayName: Llama 3.1 70B Instruct GENERICx8 VLLM BF16
       ngcMetadata:
         c78884603b87c9c52161bf59d8ca93c7ae2ccc46bcf8132826ebd1e2b30da325:
           model: meta/llama-3.1-70b-instruct
@@ -984,32 +1010,6 @@ models:
         value: BF16
       - key: COUNT
         value: 8
-      - key: NIM VERSION
-        value: 1.14.0-pb5.5-stig-fips-x86-64
-      - key: DOWNLOAD SIZE
-        value: 263GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp2
-      framework: VLLM
-      displayName: Llama 3.1 70B Instruct BF16
-      ngcMetadata:
-        fc40ff7cc1ebbe459322adbf18e3fe858a2e65aae3f81a0921f83dccbcfde71e:
-          model: meta/llama-3.1-70b-instruct
-          release: 1.14.0-pb5.5-stig-fips-x86-64
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: 299821baf3058c03febd8fbfe6422d1342d72bee844f4d66ca27c24a3b190c0d
-            pp: '1'
-            precision: bf16
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 2
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE

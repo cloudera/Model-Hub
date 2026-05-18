@@ -18,87 +18,9 @@ models:
     source:
       URL: hhttps://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemotron-3-super-120b-a12b
     optimizationProfiles:
-    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-tp4
-      framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b BF16
-      ngcMetadata:
-        2f4c50e34aec6bc548c85c8341eda99896c990dd777efb2afc658ecec6f08e30:
-          model: nvidia/nemotron-3-super-120b-a12b
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '63.0'
-            pp: '1'
-            precision: bf16
-            tp: '4'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 231GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-tp2
-      framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b BF16
-      ngcMetadata:
-        8b696af175827802ace2847dc7eda71d60a2fdbe48d01e0fcdbb9309a20d08e9:
-          model: nvidia/nemotron-3-super-120b-a12b
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '121.0'
-            pp: '1'
-            precision: bf16
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 231GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-tp8
-      framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b BF16
-      ngcMetadata:
-        c98e972346fe0405e9ebd472eb0788759e0ef3c9d42e8b2b721f313a20649252:
-          model: nvidia/nemotron-3-super-120b-a12b
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '35.0'
-            pp: '1'
-            precision: bf16
-            tp: '8'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 231GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16
       framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b BF16
+      displayName: Nemotron 3 Super 120B A12b GENERICx1 VLLM BF16
       ngcMetadata:
         e121c6529e4e6f6f2dc7cfef16677f68b83cd64c40320c2e3df439ade72397e0:
           model: nvidia/nemotron-3-super-120b-a12b
@@ -122,61 +44,9 @@ models:
         value: 231GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-tp8
-      framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b FP8
-      ngcMetadata:
-        5791516f97ec7c748456aebee86f8bb9ce618dab40055a71ab40852c09787a4c:
-          model: nvidia/nemotron-3-super-120b-a12b
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '21.0'
-            pp: '1'
-            precision: fp8
-            tp: '8'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 120GB
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-tp2
-      framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b FP8
-      ngcMetadata:
-        57d42cc7d33914933427e7f8d8cb1773bc11e5c96826c92095820a8776e6a4f6:
-          model: nvidia/nemotron-3-super-120b-a12b
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '65.0'
-            pp: '1'
-            precision: fp8
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 120GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8
       framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b FP8
+      displayName: Nemotron 3 Super 120B A12b GENERICx1 VLLM FP8
       ngcMetadata:
         929c6303b397a5ef7c1472230fcc8b940d7e78d230d6c3051f2f1837146c767b:
           model: nvidia/nemotron-3-super-120b-a12b
@@ -200,35 +70,9 @@ models:
         value: 120GB
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-tp4
-      framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b FP8
-      ngcMetadata:
-        fc9b0b640d449380959eb3609c2fbb9c579739a04308b88c10c90abe2a2f71f0:
-          model: nvidia/nemotron-3-super-120b-a12b
-          release: 2.0.3
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            min_vram_per_device_gb: '35.0'
-            pp: '1'
-            precision: fp8
-            tp: '4'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 120GB
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-nvfp4
       framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b NVFP4
+      displayName: Nemotron 3 Super 120B A12b GENERICx1 VLLM NVFP4
       ngcMetadata:
         3b37a659a22c9390abe7b16aeb29c301c2e9c0e12e5b0fa76171681df31930e0:
           model: nvidia/nemotron-3-super-120b-a12b
@@ -252,9 +96,61 @@ models:
         value: 75GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-tp2
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b GENERICx2 VLLM BF16
+      ngcMetadata:
+        8b696af175827802ace2847dc7eda71d60a2fdbe48d01e0fcdbb9309a20d08e9:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '121.0'
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 231GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-tp2
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b GENERICx2 VLLM FP8
+      ngcMetadata:
+        57d42cc7d33914933427e7f8d8cb1773bc11e5c96826c92095820a8776e6a4f6:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '65.0'
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 120GB
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-nvfp4-tp2
       framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b NVFP4
+      displayName: Nemotron 3 Super 120B A12b GENERICx2 VLLM NVFP4
       ngcMetadata:
         7cbcde87a4f6ae47e4ed6a12d236e84672f718a418b3eeb66b1249dec74c7109:
           model: nvidia/nemotron-3-super-120b-a12b
@@ -278,9 +174,61 @@ models:
         value: 75GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-tp4
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b GENERICx4 VLLM BF16
+      ngcMetadata:
+        2f4c50e34aec6bc548c85c8341eda99896c990dd777efb2afc658ecec6f08e30:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '63.0'
+            pp: '1'
+            precision: bf16
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 231GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-tp4
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b GENERICx4 VLLM FP8
+      ngcMetadata:
+        fc9b0b640d449380959eb3609c2fbb9c579739a04308b88c10c90abe2a2f71f0:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '35.0'
+            pp: '1'
+            precision: fp8
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 120GB
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-nvfp4-tp4
       framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b NVFP4
+      displayName: Nemotron 3 Super 120B A12b GENERICx4 VLLM NVFP4
       ngcMetadata:
         d08504a72861c984173b37188d78c7150a69570afdc56ca5a585edc9226115e2:
           model: nvidia/nemotron-3-super-120b-a12b
@@ -304,9 +252,61 @@ models:
         value: 75GB
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-bf16-tp8
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b GENERICx8 VLLM BF16
+      ngcMetadata:
+        c98e972346fe0405e9ebd472eb0788759e0ef3c9d42e8b2b721f313a20649252:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '35.0'
+            pp: '1'
+            precision: bf16
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 231GB
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-fp8-tp8
+      framework: VLLM
+      displayName: Nemotron 3 Super 120B A12b GENERICx8 VLLM FP8
+      ngcMetadata:
+        5791516f97ec7c748456aebee86f8bb9ce618dab40055a71ab40852c09787a4c:
+          model: nvidia/nemotron-3-super-120b-a12b
+          release: 2.0.3
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            min_vram_per_device_gb: '21.0'
+            pp: '1'
+            precision: fp8
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 120GB
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/nvidia/nemotron-3-super-120b-a12b:rl-030326-nvfp4-tp8
       framework: VLLM
-      displayName: Nemotron 3 Super 120B A12b NVFP4
+      displayName: Nemotron 3 Super 120B A12b GENERICx8 VLLM NVFP4
       ngcMetadata:
         f8aa408323c38e25046ee87549a5847d666d02de45a029a40b34719dd3fb88c9:
           model: nvidia/nemotron-3-super-120b-a12b

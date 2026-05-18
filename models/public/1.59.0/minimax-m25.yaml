@@ -122,39 +122,9 @@ models:
         value: 215GB
       - key: LLM ENGINE
         value: SGLANG
-    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-tp4
-      framework: SGLang
-      displayName: Minimax M25 FP8 Fallback
-      ngcMetadata:
-        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
-          model: minimax-ai/minimax-m25
-          release: 1.7.1
-          tags:
-            ep: '1'
-            feat_lora: 'false'
-            llm_engine: sglang
-            pp: '1'
-            precision: fp8
-            profile: fallback
-            tp: '4'
-            vram: 300GiB
-      modelFormat: sglang
-      spec:
-      - key: PROFILE
-        value: FALLBACK
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 1.7.1
-      - key: DOWNLOAD SIZE
-        value: 215GB
-      - key: LLM ENGINE
-        value: SGLANG
     - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-tp2
       framework: SGLang
-      displayName: Minimax M25 FP8 Fallback
+      displayName: Minimax M25 GENERICx2 SGLang FP8 Fallback
       ngcMetadata:
         2605f42cb4d0b90a89f44cfc23971278d95665b988d6d94b7e9b06326c21598f:
           model: minimax-ai/minimax-m25
@@ -182,9 +152,39 @@ models:
         value: 215GB
       - key: LLM ENGINE
         value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-tp4
+      framework: SGLang
+      displayName: Minimax M25 GENERICx4 SGLang FP8 Fallback
+      ngcMetadata:
+        15ebdb7833a74321359ccb332924083139a63677c5f16193f36f82874133b46a:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: fallback
+            tp: '4'
+            vram: 300GiB
+      modelFormat: sglang
+      spec:
+      - key: PROFILE
+        value: FALLBACK
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: DOWNLOAD SIZE
+        value: 215GB
+      - key: LLM ENGINE
+        value: SGLANG
     - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-tp8
       framework: SGLang
-      displayName: Minimax M25 FP8 Fallback
+      displayName: Minimax M25 GENERICx8 SGLang FP8 Fallback
       ngcMetadata:
         ecc4f617f49bfa40d40c24eb3f0550233071bb62c387001be3155ee63c1a1ac0:
           model: minimax-ai/minimax-m25
