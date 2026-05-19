@@ -4,7 +4,8 @@ models:
   modelHubID: nemoretriever-table-structure-v1
   category: Retrieval
   type: NGC
-  description: Object detection model that identifies the internal structure of complex tables, delineating individual cells — including merged cells — rows, and columns.
+  description: Object detection model that identifies the internal structure of complex
+    tables, delineating individual cells — including merged cells — rows, and columns.
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -76,7 +77,7 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
-    - profileId: nim/nvidia/nemoretriever-table-structure-v1:h100x1-trt-fp16-ujymwllaaq
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:h100x1-trt-fp16-ujymwllaaq__1
       framework: TensorRT-LLM
       displayName: Nemoretriever Table Structure V1 H100-HBM3-80GBx1 FP16
       ngcMetadata:
@@ -252,7 +253,7 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: ONNX
-    - profileId: nim/nvidia/nemoretriever-table-structure-v1:a100x1-trt-fp16-sdugvfnmmg
+    - profileId: nim/nvidia/nemoretriever-table-structure-v1:a100x1-trt-fp16-sdugvfnmmg__1
       framework: TensorRT-LLM
       displayName: Nemoretriever Table Structure V1 A100-SXM4-40GBx1 FP16
       ngcMetadata:
