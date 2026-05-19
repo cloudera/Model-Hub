@@ -4,7 +4,9 @@ models:
   modelHubID: nemoretriever-graphic-elements-v1
   category: Retrieval
   type: NGC
-  description: Specialized object detection model that extracts elements from charts and graphs — titles, axis labels, legends, and data annotations. Purpose-built for document understanding pipelines.
+  description: Specialized object detection model that extracts elements from charts
+    and graphs — titles, axis labels, legends, and data annotations. Purpose-built
+    for document understanding pipelines.
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -16,7 +18,7 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/nemoretriever-graphic-elements-v1
     optimizationProfiles:
-    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:a100x1-trt-fp16-7lfmwoem-q
+    - profileId: nim/nvidia/nemoretriever-graphic-elements-v1:a100x1-trt-fp16-7lfmwoem-q__1
       framework: TensorRT-LLM
       displayName: Nemoretriever Graphic Elements V1 A100-SXM4-80GBx1 FP16
       ngcMetadata:

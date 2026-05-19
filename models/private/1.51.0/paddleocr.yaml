@@ -4,7 +4,9 @@ models:
   modelHubID: paddleocr
   category: Retrieval
   type: NGC
-  description: Ultra-lightweight OCR system developed by Baidu with broad support for diverse OCR algorithms. Covers the full pipeline from text detection through recognition across document types.
+  description: Ultra-lightweight OCR system developed by Baidu with broad support
+    for diverse OCR algorithms. Covers the full pipeline from text detection through
+    recognition across document types.
   requireLicense: true
   licenseAgreements:
   - label: Use Policy
@@ -46,7 +48,7 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
-    - profileId: nim/baidu/paddleocr:2_TRT_python_2
+    - profileId: nim/baidu/paddleocr:2_TRT_python_2__1
       framework: TensorRT-LLM
       displayName: Paddleocr H100-NVLx1 FP16
       ngcMetadata:
@@ -76,7 +78,7 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: TENSORRT
-    - profileId: nim/baidu/paddleocr:2_TRT_python_2
+    - profileId: nim/baidu/paddleocr:2_TRT_python_2__2
       framework: TensorRT-LLM
       displayName: Paddleocr H100-HBM3-80GBx1 FP16
       ngcMetadata:
@@ -252,7 +254,7 @@ models:
         value: TRITON
       - key: MODEL TYPE
         value: ONNX
-    - profileId: nim/baidu/paddleocr:2_TRT_python_2
+    - profileId: nim/baidu/paddleocr:2_TRT_python_2__3
       framework: TensorRT-LLM
       displayName: Paddleocr A100-SXM4-40GBx1 FP16
       ngcMetadata:
