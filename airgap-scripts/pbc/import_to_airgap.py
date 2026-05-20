@@ -455,22 +455,24 @@ def show_help():
     sys.exit(1)
 
 
-def check_requirements(download_model, cloud):
+def check_requirements(download_model, cloud, repo_type=None):
     """Check if the required tools are installed."""
     if download_model:
-        try:
-            subprocess.run(["hf", "version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        except (subprocess.SubprocessError, FileNotFoundError):
-            print("Error: huggingface-cli is required for downloading but not installed.")
-            print("Please install it using pip:")
-            print("pip install --upgrade huggingface_hub")
-            return False
-        try:
-            subprocess.run(["ngc", "version", "info"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        except (subprocess.SubprocessError, FileNotFoundError):
-            print("Error: NGC CLI is required for downloading but not installed.")
-            print("Please install it ngc cli : https://org.ngc.nvidia.com/setup/installers/cli")
-            return False
+        if repo_type != 'ngc':
+            try:
+                subprocess.run(["hf", "version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            except (subprocess.SubprocessError, FileNotFoundError):
+                print("Error: huggingface-cli is required for downloading but not installed.")
+                print("Please install it using pip:")
+                print("pip install --upgrade huggingface_hub")
+                return False
+        if repo_type == 'ngc':
+            try:
+                subprocess.run(["ngc", "--version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            except (subprocess.SubprocessError, FileNotFoundError):
+                print("Error: NGC CLI is required for downloading but not installed.")
+                print("Please install it ngc cli : https://org.ngc.nvidia.com/setup/installers/cli")
+                return False
     if cloud:
         if cloud == "aws" or cloud == "pvc":
             try:
@@ -1092,7 +1094,7 @@ def main():
         show_help()
     
     # Check requirements
-    if not check_requirements(args.download, args.cloud if args.src else None):
+    if not check_requirements(args.download, args.cloud if args.src else None, args.repo_type):
         sys.exit(1)
     
     # Handle list-local-models command
