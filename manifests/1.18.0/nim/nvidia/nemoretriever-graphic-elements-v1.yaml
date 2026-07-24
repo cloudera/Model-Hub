@@ -1,0 +1,123 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: nvidia/nemoretriever-graphic-elements-v1
+release: 1.6.0
+profiles:
+- id: 09231248dff89cf8859d9206931342e468fbddfe469df56334fbe00df7fda1da
+  tags:
+    backend: triton
+    compute_capability: '8.6'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/checksums.blake3:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:a10gx1-trt-fp16-nwnqycg0xg?file=checksums.blake3
+        checksum: blake3:fdef30aed0e1758cb6159fcf31d465992eb4b2ce0e9f62c107c41a205317fc82
+      yolox/1/metadata.json:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:a10gx1-trt-fp16-nwnqycg0xg?file=metadata.json
+        checksum: blake3:f33354fd34d49a4f641f9368f5ca4a158090ba23972404127818072cd1b7344e
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:a10gx1-trt-fp16-nwnqycg0xg?file=model.plan
+        checksum: blake3:42cc61028775b6a07c245f0eae5674d3c523c7aa5b206eb541265fa45661751a
+- id: 0f3b150544da8a053048c1e2a37a282b2c43f09a99253882578d12bc1f2cfca6
+  tags:
+    backend: triton
+    compute_capability: '10.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/checksums.blake3:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:b200x1-trt-fp16-jtagdygnhq?file=checksums.blake3
+        checksum: blake3:39b7674df60b975c87287183409793d2efaeb72b0836f50fbe3d0173bb8345ca
+      yolox/1/metadata.json:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:b200x1-trt-fp16-jtagdygnhq?file=metadata.json
+        checksum: blake3:8f47780e55a3915536b11071cd7bab5733225ad77f016c96452ea91e6fed00d0
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:b200x1-trt-fp16-jtagdygnhq?file=model.plan
+        checksum: blake3:8951fe31bf2fb140ec550a96c0a9f9b205de3d3c57b7e01852005ac83c0dade7
+- id: 58adeef41afa742e753314ae51818e9f017f2c92ba0bfdc01befe6234703a54c
+  tags:
+    backend: triton
+    compute_capability: '9.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/checksums.blake3:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:h100x1-trt-fp16-jswckvqtmq?file=checksums.blake3
+        checksum: blake3:53bbe248cbf410a85139c3596aa11a5261c88b05d9eedb600774a82a28234b29
+      yolox/1/metadata.json:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:h100x1-trt-fp16-jswckvqtmq?file=metadata.json
+        checksum: blake3:f520de387fe3203f1e4cbbedffeac4ef706e7b59cb21173f9232b5d8d572e6ff
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:h100x1-trt-fp16-jswckvqtmq?file=model.plan
+        checksum: blake3:950a5a7dee4e97d810ca430cfd0866afcde602a609979019e5af2fb809a3f7d1
+- id: b4cc2f8b3d2dcf1afdcafbee8ea694c53aeee642d76f709ed0e79477b68a8dde
+  tags:
+    backend: triton
+    compute_capability: '12.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/checksums.blake3:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:rtx6000-blackwell-svx1-trt-fp16-1ted4cchma?file=checksums.blake3
+        checksum: blake3:a46b885af64f32cebe910c4d56a375bd0c8feeef0e717fbbcb8983d201de027b
+      yolox/1/metadata.json:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:rtx6000-blackwell-svx1-trt-fp16-1ted4cchma?file=metadata.json
+        checksum: blake3:22bcb8d0e1c2a38c8cfff1a55596bf20f6a80214ba82ed3e8e0ee4a95e2719fe
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:rtx6000-blackwell-svx1-trt-fp16-1ted4cchma?file=model.plan
+        checksum: blake3:2bdba54d6a181991fe44ae6c45133934cafe9d5eb85389d30cbdbf07bc217ffc
+- id: bc1487bf0ec3430f17595fff029c1bc50668344c7a30f9e5d64ee061c6e2d5fa
+  tags:
+    backend: triton
+    compute_capability: '8.9'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/checksums.blake3:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:l40sx1-trt-fp16-cwnvuqbbna?file=checksums.blake3
+        checksum: blake3:27dbbac0d2eafcb08ae019a904e9cbf7936e0f8df8351f6104853a3468826119
+      yolox/1/metadata.json:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:l40sx1-trt-fp16-cwnvuqbbna?file=metadata.json
+        checksum: blake3:ee557e61b4fb4da3fe600b1c4199d39f7a0d994102d57530155d5cc2b4da5286
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:l40sx1-trt-fp16-cwnvuqbbna?file=model.plan
+        checksum: blake3:71acd04cd1e85d09f34fc5edddf4a2b1f7f5e946b3206fffc439ae50138cf65f
+- id: edc693c6fccd68d266622eace04225421e353d7ce31e3b207afc5ff35124127b
+  tags:
+    backend: triton
+    model_type: onnx
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/checksums.blake3:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:2_ONNX_FP16_1024?file=checksums.blake3
+        checksum: blake3:281c38dc7e9d38d66883c848cce621b0e48f388e82de698c0ec1f9f35c4ea8f3
+      yolox/1/model.cfg:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:2_ONNX_FP16_1024?file=model.cfg
+        checksum: blake3:a86d5e0518d58de3ba7e711aa56c30f65ccb0f28a5915eacd76461180757a6d7
+      yolox/1/model.onnx:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:2_ONNX_FP16_1024?file=model.onnx
+        checksum: blake3:485cf0034edc9f169ed3c8a523f39addd8f06b32f7c99def6cdbc1e09a59383b
+- id: f0fb2f72a66230096c40fc3307872ebb9bce69816cbfc6e2918695ca824bd284
+  tags:
+    backend: triton
+    compute_capability: '8.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/checksums.blake3:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:a100x1-trt-fp16-qpwy-4niaa?file=checksums.blake3
+        checksum: blake3:154bb22790247d6befefa43a45994d933b3e5ceefc51d822610a55a8bbe2a0b0
+      yolox/1/metadata.json:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:a100x1-trt-fp16-qpwy-4niaa?file=metadata.json
+        checksum: blake3:412918869569f752ce8c3a8348484db02f3643de5bf6e932b42e2edcf7c254bb
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemoretriever-graphic-elements-v1:a100x1-trt-fp16-qpwy-4niaa?file=model.plan
+        checksum: blake3:b87053866c7d08764ebe0c675e5d2cd13ac8ea753c52a19a89d296dbfa5a0640
