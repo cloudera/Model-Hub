@@ -1,0 +1,1513 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: nvidia/nemotron-nano-12b-v2-vl
+release: 1.5.0
+profiles:
+- id: 04571f2160949a968ef4d55573010bb4937adb3055565383e4975d6b579eabb5
+  tags:
+    feat_lora: 'false'
+    gpu: h200
+    gpu_device: 2335:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 06a217a1099a72e5d86a12a31fd39eaba9d7c00d3d311589557d2dc720b59358
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    nim_workspace_hash_v1: d943a0e2491f1abaae2e3c2532bc3b70535b0d8637d7b1aeed4e686f0e3e0f61
+    pp: '1'
+    precision: bf16
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=config.json
+        checksum: blake3:7f3eaf3e51cfa408ba5bb4ffb1270264f8dcf1a6affdd6303c7aa10f6ba9b338
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      model-00001-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00001-of-00007.safetensors
+        checksum: blake3:5ae37eb7306e894795c079be353412fa0e6906469eb8a0c49017489d3c6f9573
+      model-00002-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00002-of-00007.safetensors
+        checksum: blake3:947997c0e87d0c256f67ce4ca9b98e61b343f16adbf7f6cb7628f566ef0a99d5
+      model-00003-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00003-of-00007.safetensors
+        checksum: blake3:33e02dccb85d9cdd6c1ec3b272e49e121d89acf6db0c924ed6900e7dcf112f22
+      model-00004-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00004-of-00007.safetensors
+        checksum: blake3:bc62911bd9df273375b4fb36771ca2e427c1aab63f3b5adfd42f31ce1d58b152
+      model-00005-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00005-of-00007.safetensors
+        checksum: blake3:b9177bf33de75a4ee4c282ebff571fd4e15f8be60904ba882e0eb82a1b33ce45
+      model-00006-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00006-of-00007.safetensors
+        checksum: blake3:3bdabeaf9ed5c8ca1014f283878080325a56db576b09c26dd49d243f7f9c3046
+      model-00007-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00007-of-00007.safetensors
+        checksum: blake3:c9ada8b6ffe70dedec7cf32966f69744fe14f740321e42ff2b8b257cc1855238
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model.safetensors.index.json
+        checksum: blake3:ff6a183454660411d820b3a58a887b20aeab0991b4336827520de2664f7f7d37
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 124606e1502807f80b51d1bb02eac73130f5f0772333e954cce58e983b51cd8f
+  tags:
+    feat_lora: 'false'
+    gpu: rtx-pro-6k-bwe-maxq
+    gpu_device: 2bb4:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 2319f3a24597d85e3997ea5d7904bde6a3172d77ec0f3caf4dd51db4989e8ee0
+  tags:
+    feat_lora: 'false'
+    gpu: b200
+    gpu_device: 2901:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 23237e540f5d6eed2e0cbd82ffa671324113254452ff6d2a8de4f525ba119d16
+  tags:
+    feat_lora: 'false'
+    gpu: gb200
+    gpu_device: 2941:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 2589b47cefde8493906f5134017b790cc08b2d2be613f11ef9597b3915664de5
+  tags:
+    feat_lora: 'false'
+    gpu: gb200
+    gpu_device: 2941:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 260e0af1b99e6283a0a76895b5d5e4909f0b22f24f92a837fdfd0b52f85bdbaf
+  tags:
+    feat_lora: 'false'
+    gpu: gh200-144gb
+    gpu_device: 2348:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 38c33abf967522c8e7b944244d4ed8b13eb338a3123ae0b258b19ea93ee0af63
+  tags:
+    feat_lora: 'false'
+    gpu: rtx-pro-6k-bse
+    gpu_device: 2bb5:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 44a56408cfe76bc50ee3c1ed96f06cd267d1248512ad9a865e534e80b190c019
+  tags:
+    feat_lora: 'false'
+    gpu: h100-pcie
+    gpu_device: 2331:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 46b31dbe7ba6d101c01faea3c7c9ccdba6480461aa410ca775ddb6250320943f
+  tags:
+    feat_lora: 'false'
+    gpu: h100-nvl
+    gpu_device: 2321:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 6f14f519be3c8fc26ce3f419659df86e271cbb3c1db94293fb975e1f1fd58ee5
+  tags:
+    feat_lora: 'false'
+    gpu: h100-pcie
+    gpu_device: 2331:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 7188e938073f73e7012da9c0b769a567de69b5f5203dfe8ba36769ce179cb822
+  tags:
+    feat_lora: 'false'
+    gpu: rtx-pro-6k-bwe
+    gpu_device: 2bb1:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 76775139c252ddbaaf9fd191e94036e43402bc15b87639d3216602eb39eb6463
+  tags:
+    feat_lora: 'false'
+    gpu: l40s
+    gpu_device: 26b9:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 7a520b8c8ea2b8a7caee81f2c5fd1e4d9c6d88106d2f3152507a9a8164c4a525
+  tags:
+    feat_lora: 'false'
+    gpu: h200-nvl
+    gpu_device: 233b:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 8cc85ddc49fb35402b2bc813804467366404ffad5a1f25e0dd96a9707d797851
+  tags:
+    feat_lora: 'false'
+    gpu: h200-nvl
+    gpu_device: 233b:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 97aae95b218c9838fea29548ebaa771a922a8c9781c8450e542e323e2a76a937
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    nim_workspace_hash_v1: d943a0e2491f1abaae2e3c2532bc3b70535b0d8637d7b1aeed4e686f0e3e0f61
+    pp: '1'
+    precision: bf16
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=config.json
+        checksum: blake3:7f3eaf3e51cfa408ba5bb4ffb1270264f8dcf1a6affdd6303c7aa10f6ba9b338
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      model-00001-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00001-of-00007.safetensors
+        checksum: blake3:5ae37eb7306e894795c079be353412fa0e6906469eb8a0c49017489d3c6f9573
+      model-00002-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00002-of-00007.safetensors
+        checksum: blake3:947997c0e87d0c256f67ce4ca9b98e61b343f16adbf7f6cb7628f566ef0a99d5
+      model-00003-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00003-of-00007.safetensors
+        checksum: blake3:33e02dccb85d9cdd6c1ec3b272e49e121d89acf6db0c924ed6900e7dcf112f22
+      model-00004-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00004-of-00007.safetensors
+        checksum: blake3:bc62911bd9df273375b4fb36771ca2e427c1aab63f3b5adfd42f31ce1d58b152
+      model-00005-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00005-of-00007.safetensors
+        checksum: blake3:b9177bf33de75a4ee4c282ebff571fd4e15f8be60904ba882e0eb82a1b33ce45
+      model-00006-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00006-of-00007.safetensors
+        checksum: blake3:3bdabeaf9ed5c8ca1014f283878080325a56db576b09c26dd49d243f7f9c3046
+      model-00007-of-00007.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model-00007-of-00007.safetensors
+        checksum: blake3:c9ada8b6ffe70dedec7cf32966f69744fe14f740321e42ff2b8b257cc1855238
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=model.safetensors.index.json
+        checksum: blake3:ff6a183454660411d820b3a58a887b20aeab0991b4336827520de2664f7f7d37
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-bf16-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: 9a9699699ec75d96159bc6978e1139fd254403458b15656a5e57e7fbc20acf07
+  tags:
+    feat_lora: 'false'
+    gpu: gh200
+    gpu_device: 2342:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: c5fb44b0cf08feb8bf8efb547071ee22df4d552ad5a901bc352ded2de38946fd
+  tags:
+    feat_lora: 'false'
+    gpu: b200
+    gpu_device: 2901:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: d53f04f82506d15b2d6d22b3e9d9380a125ae9f198d7fc2b93947549ae647128
+  tags:
+    feat_lora: 'false'
+    gpu: h100-nvl
+    gpu_device: 2321:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: d70d4c3bafd1f00ad715ac59c361616460e6eb728669c292cd52f40734badd10
+  tags:
+    feat_lora: 'false'
+    gpu: h100
+    gpu_device: 2330:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: dc1ef5d2e9342285671a8e28c1f04b5cffe3e8fcc929c58557fb563f8c71600a
+  tags:
+    feat_lora: 'false'
+    gpu: h200
+    gpu_device: 2335:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: e278c7e2ab8238ef2f75762356e587052e3a743fa768d40f372f60aac3532a4b
+  tags:
+    feat_lora: 'false'
+    gpu: rtx-pro-6k-bse
+    gpu_device: 2bb5:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: e2cb05e0c0218d13be144321bbf58817ae680d9b1a9fc7f0e8c619aeb19d19b7
+  tags:
+    feat_lora: 'false'
+    gpu: l40s
+    gpu_device: 26b9:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: e93d865568e4f60dd391994e84fe298808dadf3aa0e03f928618e6d5f9c14fe6
+  tags:
+    feat_lora: 'false'
+    gpu: h100
+    gpu_device: 2330:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
+- id: f1274100b8089ab334a01209d6d9d59e10d7f998eeb476602d6c0c2073a5e84f
+  tags:
+    feat_lora: 'false'
+    gpu: gh200-144gb
+    gpu_device: 2348:10de
+    llm_engine: vllm
+    nim_workspace_hash_v1: e8c7512e9b274dafd93c1f5e7a120e47ffb424c6806463769c2365dfc998eed1
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=chat_template.jinja
+        checksum: blake3:7416eae40119706032aa023a47facdfe21df47faa726a13d8ef2c491db388710
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=config.json
+        checksum: blake3:c71667569d6f8d53cc1ed73492ab474b0908c09e6c90fdc07d4a676bc382b0b2
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration.py
+        checksum: blake3:1583bbbc4b4af293d3eb575f471e76b6893c4bcf82c58373defb8a10064784ce
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_nemotron_h.py
+        checksum: blake3:9d115645ecf437b1eab919e73a40b5c300fc1944e9bd76cc4b27046a7a22e17b
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=generation_config.json
+        checksum: blake3:59621335b6c4359834b1ca2b46339790941be0a993bfa38f424ef1c08d7d7430
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=hf_quant_config.json
+        checksum: blake3:1e2172e136489d6a8089305baaa06d85391d3a08168e9a5e34aa514603529671
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00001-of-00004.safetensors
+        checksum: blake3:365002aaad1a57a1550c3b7d0ac65d01baaee6389bc0ef7848bdde2bf7967676
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00002-of-00004.safetensors
+        checksum: blake3:eaf5556c6dc14afb101f6b8691747fefe7d3afa2baa3684c6309d14723c8b5c5
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00003-of-00004.safetensors
+        checksum: blake3:d35cfab684ec4c18f53a82f4ac41a49cf19d722dcf2bbbea89bc57c33e483408
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model-00004-of-00004.safetensors
+        checksum: blake3:f8710b997ba2f6adc71ab6b80021d68d8e185a1ab363b7a2a6591d8219da9fda
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=model.safetensors.index.json
+        checksum: blake3:261c3ff588a0c6d42121e5b9fe31f345ce4c64d5ae47abb0ac31c68324733329
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=preprocessor_config.json
+        checksum: blake3:e7775900028a412ecfafa5ec3ad2d562c4e9bfe2b530c706f7d356cf1764b1de
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=special_tokens_map.json
+        checksum: blake3:1795005d42e5bd7cc13d1bd0cf5e2fa52976bd58f2e7213da4f096d6847083a8
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer.json
+        checksum: blake3:dcccfbfd850ecc5fee49dc85d2afb6c8871737b673cacb51cac6172df4263804
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-nano-12b-v2-vl:1.5.0-fp8-hf?file=tokenizer_config.json
+        checksum: blake3:17c3282c3db84add6f4cf61f767c58e9ed7b6e599047a2e49ef4ae982f8011c1
