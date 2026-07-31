@@ -11,9 +11,9 @@
 #  Contract - https://docs.google.com/document/d/1GJoefhPx1bPH1hQYG6PZjlzgqDofJWEsbJ_0LIQ5whc/edit?tab=t.0
 #  VLLM/SGLang: always included (no flag needed); ONNX profiles: included by default; use "--no-include-onnx" to disable
 #  in public, we have a whilelist of GPUs alongwith supported gpu_device. At the same time, min/max counts for each GPU are also supported in public cloud.
-#       --- in private, all gpus with any gpu_device, min/max counts are supported are supported (after top level filtering with feat_lora: true)
+#       --- in private, all gpus with any gpu_device, min/max counts are supported
 #  is_generic_profile condition is - no GPU and either:
-#       --- (llm_engine: tensorrt_llm, trtllm_buildable: 'true', feat_lora: 'false') OR (model_type: rmir)
+#       --- (llm_engine: tensorrt_llm, trtllm_buildable: 'true') OR (model_type: rmir)
 #       --- in public, generic_profile is transformed to gpu specific optimization profiles while in private, it is included as it is
 #  
 #
@@ -62,13 +62,11 @@
 #           c) Whitelist and A100 limits apply to inferred GPUs/count. H100/H200 device ID enforcement applies only when `tags.gpu_device` is present.
 #       - Riva/ASR: profiles with tags.mode 'str' or 'str-thr' are excluded (public and private), including generic RMIR synthesis.
 #       - Regular profiles are ignored when:
-#           a) tags.feat_lora == 'true'
-#           b) public and GPU not in --whitelisted-gpus
-#           c) public and GPU with TP*PP outside GPU-specific min/max range (--<gpu>-min-count, --<gpu>-max-count; A100 max default: 1, others: no limits)
-#           d) public and H100 with gpu_device != 2330:10de; public and H200 with gpu_device != 2335:10de (enforced only if gpu_device is present in tags)
+#           a) public and GPU not in --whitelisted-gpus
+#           b) public and GPU with TP*PP outside GPU-specific min/max range (--<gpu>-min-count, --<gpu>-max-count; A100 max default: 1, others: no limits)
+#           c) public and H100 with gpu_device != 2330:10de; public and H200 with gpu_device != 2335:10de (enforced only if gpu_device is present in tags)
 #       - Generic profile inclusion (public and private):
-#           a) TRT-LLM, VLLM, SGLang generics (llm_engine: tensorrt_llm/vllm/sglang with appropriate flags, feat_lora: 'false') are included as-is without GPU synthesis.
-#           b) All exclude feat_lora: 'true'.
+#           a) TRT-LLM, VLLM, SGLang generics (llm_engine: tensorrt_llm/vllm/sglang with appropriate flags) are included as-is without GPU synthesis.
 #       - Private platform: generic profiles included as-is without GPU details.
 #       - ONNX profiles: included by default; use --no-include-onnx to disable.
 #       - Combination tracking ensures we only create missing GPU-TP*PP-PRECISION-PROFILE combinations.
@@ -373,8 +371,6 @@ def should_ignore_profile(tags, whitelisted_gpus, platform="public", a100_max_co
 
     if not gpu:
         return True
-    if tags.get("feat_lora", "").lower() == "true":
-        return True
     # If whitelisted_gpus is specified and GPU is not in the whitelist, ignore it
     # Case-insensitive comparison: both manifest GPU and whitelist entries are converted to uppercase
     if whitelisted_gpus:
@@ -595,16 +591,15 @@ def is_generic_profile(tags):
     gpu = tags.get("gpu", "").strip()
     llm_engine = tags.get("llm_engine", "").lower()
     trtllm_buildable = tags.get("trtllm_buildable", "").lower()
-    feat_lora = tags.get("feat_lora", "").lower()
     model_type = tags.get("model_type", "").lower()
 
     # Generic profile criteria: no GPU and one of:
-    # 1. tensorrt_llm engine, buildable, not lora
+    # 1. tensorrt_llm engine, buildable
     # 2. model_type is rmir or vllm (for Riva ASR models)
     if gpu:
         return False
-    
-    if llm_engine == "tensorrt_llm" and trtllm_buildable == "true" and feat_lora != "true":
+
+    if llm_engine == "tensorrt_llm" and trtllm_buildable == "true":
         return True
     
     if model_type == "rmir":
@@ -771,9 +766,6 @@ def main():
         tags = profile.get("tags", {})
         if should_exclude_riva_streaming_mode(tags):
             continue
-        # Always exclude feat_lora: 'true' regardless of other parameters
-        if tags.get("feat_lora", "").lower() == "true":
-            continue
 
         # Include ONNX profiles as-is when requested (regardless of GPU presence)
         if args.include_onnx and str(tags.get("model_type", "")).lower() == "onnx":
@@ -877,8 +869,6 @@ def main():
                 continue
         else:
             # Basic tag-based filters
-            if tags.get("feat_lora", "").lower() == "true":
-                continue
             # Whitelist check
             if args.whitelisted_gpus:
                 if effective_gpu.upper() not in [g.upper() for g in args.whitelisted_gpus]:
@@ -985,11 +975,10 @@ def main():
             if should_exclude_riva_streaming_mode(tags):
                 continue
 
-            # Handle generic VLLM inclusion (skip LoRA generics)
+            # Handle generic VLLM inclusion
             if (
                 not tags.get("gpu", "").strip()
                 and tags.get("llm_engine", "").lower() == "vllm"
-                and tags.get("feat_lora", "").lower() != "true"
             ):
                 if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                     tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
@@ -1027,11 +1016,10 @@ def main():
                     print(f"Added generic VLLM profile {profile.get('id', 'unknown')} without GPU details for public platform")
                 continue
 
-            # Handle generic SGLang inclusion (skip LoRA generics)
+            # Handle generic SGLang inclusion
             if (
                 not tags.get("gpu", "").strip()
                 and tags.get("llm_engine", "").lower() == "sglang"
-                and tags.get("feat_lora", "").lower() != "true"
             ):
                 if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                     tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
@@ -1116,7 +1104,7 @@ def main():
             # Only process generic profiles
             if not is_generic_profile(tags):
                 # If this is a VLLM generic profile (no GPU), include as-is
-                if tags.get("llm_engine", "").lower() == "vllm" and not tags.get("gpu", "").strip() and tags.get("feat_lora", "").lower() != "true":
+                if tags.get("llm_engine", "").lower() == "vllm" and not tags.get("gpu", "").strip():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
@@ -1147,7 +1135,7 @@ def main():
                         })
                         print(f"Added generic VLLM profile {profile.get('id', 'unknown')} without GPU details for private platform")
                 # If this is a SGLang generic profile (no GPU), include as-is
-                elif tags.get("llm_engine", "").lower() == "sglang" and not tags.get("gpu", "").strip() and tags.get("feat_lora", "").lower() != "true":
+                elif tags.get("llm_engine", "").lower() == "sglang" and not tags.get("gpu", "").strip():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
