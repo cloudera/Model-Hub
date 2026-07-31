@@ -646,6 +646,10 @@ def append_optional_spec_fields(spec_list, tags):
         'trtllm_buildable',
     }
 
+    spec_key_overrides = {
+        'feat_lora': 'LORA',
+    }
+
     # Dynamically add whitelisted tags from manifest as spec fields
     for tag_key in sorted(spec_whitelist):
         if tag_key in tags:
@@ -658,8 +662,7 @@ def append_optional_spec_fields(spec_list, tags):
                 value = tag_val
 
             if value and value not in (None, ""):
-                # Format: convert underscores to spaces, then uppercase
-                spec_key = tag_key.replace('_', ' ').upper()
+                spec_key = spec_key_overrides.get(tag_key, tag_key.replace('_', ' ').upper())
                 spec_list.append({"key": spec_key, "value": str(value).upper()})
 
 def make_display_names_unique(model_data):
