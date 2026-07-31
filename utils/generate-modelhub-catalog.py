@@ -639,6 +639,7 @@ def append_optional_spec_fields(spec_list, tags):
         # 'sm',
         # 'v',
         # 'kv_cache_precision',
+        'feat_lora',
         'llm_engine',
         'draft_model_dir',
         'speculative_algorithm',
