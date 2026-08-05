@@ -246,7 +246,7 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/openai/containers/gpt-oss-120b
     optimizationProfiles:
-    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim
+    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim__lora
       framework: VLLM
       displayName: GPT-OSS 120B GENERICx1 VLLM MXFP4 LORA
       ngcMetadata:
@@ -274,7 +274,7 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim__2
+    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim
       framework: VLLM
       displayName: GPT-OSS 120B GENERICx1 VLLM MXFP4 - 2
       ngcMetadata:
@@ -358,7 +358,7 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp4
+    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp4__lora
       framework: VLLM
       displayName: GPT-OSS 120B GENERICx4 VLLM MXFP4 LORA
       ngcMetadata:
@@ -386,7 +386,7 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp4__2
+    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp4
       framework: VLLM
       displayName: GPT-OSS 120B GENERICx4 VLLM MXFP4 - 2
       ngcMetadata:
@@ -414,7 +414,7 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp8
+    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp8__lora
       framework: VLLM
       displayName: GPT-OSS 120B GENERICx8 VLLM MXFP4 LORA
       ngcMetadata:
@@ -442,7 +442,7 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp8__2
+    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp8
       framework: VLLM
       displayName: GPT-OSS 120B GENERICx8 VLLM MXFP4 - 2
       ngcMetadata:

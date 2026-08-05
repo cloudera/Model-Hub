@@ -17,7 +17,7 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama3.1-nemotron-nano-4b-v1.1
     optimizationProfiles:
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum-a100_sxm4_40gb__2
+    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum-a100_sxm4_40gb
       framework: TensorRT-LLM
       displayName: Llama 3.1 Nemotron Nano 4B V1.1 A100_SXM4_40GBx1 BF16 Throughput
       ngcMetadata:
@@ -54,7 +54,7 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum-a100_sxm4_40gb
+    - profileId: nim/nvidia/llama3.1-nemotron-nano-4b-v1.1:hf-9f834a8-fix-checksum-a100_sxm4_40gb__lora
       framework: TensorRT-LLM
       displayName: Llama 3.1 Nemotron Nano 4B V1.1 A100_SXM4_40GBx1 BF16 Throughput-lora LORA
       ngcMetadata:
@@ -1127,7 +1127,7 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17-0508-tool-use-v2-tp4
+    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17-0508-tool-use-v2-tp4__lora
       framework: TensorRT-LLM
       displayName: Llama 3.1 Nemotron Nano 8B V1 GENERICx4 TENSORRT-LLM BF16 32 LORA
       ngcMetadata:
@@ -1158,7 +1158,7 @@ models:
         value: TENSORRT_LLM
       - key: TRTLLM BUILDABLE
         value: 'TRUE'
-    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17-0508-tool-use-v2-tp4__2
+    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17-0508-tool-use-v2-tp4
       framework: TensorRT-LLM
       displayName: Llama 3.1 Nemotron Nano 8B V1 GENERICx4 TENSORRT-LLM BF16
       ngcMetadata:
@@ -1243,7 +1243,7 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17-0508-tool-use-v2-h100_nvl__2
+    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17-0508-tool-use-v2-h100_nvl
       framework: TensorRT-LLM
       displayName: Llama 3.1 Nemotron Nano 8B V1 H100_NVLx1 BF16 Throughput
       ngcMetadata:
@@ -1354,7 +1354,7 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17-0508-tool-use-v2-h100_nvl
+    - profileId: nim/nvidia/llama-3.1-nemotron-nano-8b-v1:hf-25.03.17-0508-tool-use-v2-h100_nvl__lora
       framework: TensorRT-LLM
       displayName: Llama 3.1 Nemotron Nano 8B V1 H100_NVLx1 FP8 Throughput-lora LORA
       ngcMetadata:

@@ -711,7 +711,13 @@ def make_display_names_unique(model_data):
                             profiles[prof_idx]['displayName'] = f"{dname} - {suffix_num}"
 
 def append_optimization_profile(optimization_profiles, profile_id_counts, profile_dict):
-    """Append one profile. Duplicate NIM profileId values get suffixes __lora or __2, __3, …"""
+    """Append one profile. Duplicate NIM profileId values get suffixes __lora or __2, __3, …
+
+    When a feat_lora=true profile collides with a feat_lora=false profile on the
+    same base URI, the LoRA variant always receives the __lora suffix regardless
+    of processing order: if the LoRA variant was seen first, it is retroactively
+    renamed and the non-LoRA variant takes the base ID.
+    """
     pid = profile_dict.get("profileId")
     if not isinstance(pid, str) or not str(pid).strip():
         optimization_profiles.append(profile_dict)
@@ -722,18 +728,43 @@ def append_optimization_profile(optimization_profiles, profile_id_counts, profil
     if n == 1:
         optimization_profiles.append(profile_dict)
         return
-    # Use __lora suffix when the duplicate is a feat_lora=true variant
+    # Determine feat_lora for the incoming profile
     metadata = profile_dict.get("ngcMetadata", {})
     tags = {}
     for meta in metadata.values():
         tags = meta.get("tags", {})
         break
-    if str(tags.get("feat_lora", "")).lower() == "true":
+    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
+
+    if is_lora:
+        # Incoming is LoRA — give it __lora suffix
         final_id = f"{base}__lora"
+        print(f"Disambiguating profileId: {base} -> {final_id}")
+        optimization_profiles.append({**profile_dict, "profileId": final_id})
     else:
-        final_id = f"{base}__{n}"
-    print(f"Disambiguating profileId: {base} -> {final_id}")
-    optimization_profiles.append({**profile_dict, "profileId": final_id})
+        # Incoming is non-LoRA but the first-seen profile holds the base ID.
+        # Check if the first-seen was LoRA; if so, swap: rename it to __lora
+        # and give the base ID to this non-LoRA profile.
+        first = None
+        for p in optimization_profiles:
+            if p.get("profileId") == base:
+                first = p
+                break
+        first_is_lora = False
+        if first:
+            first_meta = first.get("ngcMetadata", {})
+            for fm in first_meta.values():
+                first_is_lora = str(fm.get("tags", {}).get("feat_lora", "")).lower() == "true"
+                break
+        if first_is_lora and first:
+            # Rename first-seen LoRA to __lora, give base ID to this non-LoRA
+            first["profileId"] = f"{base}__lora"
+            print(f"Disambiguating profileId: {base} -> {base}__lora (retroactive)")
+            optimization_profiles.append({**profile_dict, "profileId": base})
+        else:
+            final_id = f"{base}__{n}"
+            print(f"Disambiguating profileId: {base} -> {final_id}")
+            optimization_profiles.append({**profile_dict, "profileId": final_id})
 
 def main():
     parser = argparse.ArgumentParser(description="Generate modelhub catalog YAML file using manifest YAML and base model YAML")
