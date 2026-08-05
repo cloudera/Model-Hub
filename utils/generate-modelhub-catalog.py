@@ -711,7 +711,7 @@ def make_display_names_unique(model_data):
                             profiles[prof_idx]['displayName'] = f"{dname} - {suffix_num}"
 
 def append_optimization_profile(optimization_profiles, profile_id_counts, profile_dict):
-    """Append one profile. Duplicate NIM profileId values get suffixes __2, __3, …"""
+    """Append one profile. Duplicate NIM profileId values get suffixes __lora or __2, __3, …"""
     pid = profile_dict.get("profileId")
     if not isinstance(pid, str) or not str(pid).strip():
         optimization_profiles.append(profile_dict)
@@ -722,7 +722,16 @@ def append_optimization_profile(optimization_profiles, profile_id_counts, profil
     if n == 1:
         optimization_profiles.append(profile_dict)
         return
-    final_id = f"{base}__{n}"
+    # Use __lora suffix when the duplicate is a feat_lora=true variant
+    metadata = profile_dict.get("ngcMetadata", {})
+    tags = {}
+    for meta in metadata.values():
+        tags = meta.get("tags", {})
+        break
+    if str(tags.get("feat_lora", "")).lower() == "true":
+        final_id = f"{base}__lora"
+    else:
+        final_id = f"{base}__{n}"
     print(f"Disambiguating profileId: {base} -> {final_id}")
     optimization_profiles.append({**profile_dict, "profileId": final_id})
 
