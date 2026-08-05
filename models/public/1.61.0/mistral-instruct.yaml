@@ -52,7 +52,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a100x1-throughput-lora-bf16-jaig2gptww
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 A100x1 BF16 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 A100x1 BF16 Throughput-lora LORA
       ngcMetadata:
         e7f80011f4618894213af87dce59beba30f4e31ab738f2fbb7fc24ce29981faf:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -128,7 +128,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a10gx1-throughput-lora-bf16-xv7qcnggdg
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 A10Gx1 BF16 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 A10Gx1 BF16 Throughput-lora LORA
       ngcMetadata:
         fd3e2790bf748b3d744a021bc36f56d6df2c7529ab2aebec892ebe5a1c921c3b:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -242,7 +242,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x1-throughput-lora-bf16-j0tc1lf68a
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 B200x1 BF16 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 B200x1 BF16 Throughput-lora LORA
       ngcMetadata:
         84f04ff50e00c8e7813e3ac54d4e89e6b2a4dae9a96efea745099c7311089db6:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -318,7 +318,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x1-throughput-lora-fp8-8chr9ls0na
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 B200x1 FP8 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 B200x1 FP8 Throughput-lora LORA
       ngcMetadata:
         43c248430a7abb764f6bcee82eae1813ec4934dcc367b9908e926f76fbcf0529:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -460,7 +460,7 @@ models:
         value: VLLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16__2
       framework: VLLM
-      displayName: Mistral 7B Instruct V0.3 GENERICx1 VLLM BF16 32
+      displayName: Mistral 7B Instruct V0.3 GENERICx1 VLLM BF16 32 LORA
       ngcMetadata:
         e514a0189674a9493d8911a195eb8dbca8bd73e6baee417811a63b1981588b0a:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -489,7 +489,7 @@ models:
         value: VLLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-tp2
       framework: VLLM
-      displayName: Mistral 7B Instruct V0.3 GENERICx2 VLLM BF16 32
+      displayName: Mistral 7B Instruct V0.3 GENERICx2 VLLM BF16 32 LORA
       ngcMetadata:
         6dca161d36100bb3946bdb8d3ba7b15e674408ed71d578bdc6dc13223268b6e5:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -584,7 +584,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x1-throughput-lora-bf16-h9bi6hfecg
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 H100x1 BF16 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 H100x1 BF16 Throughput-lora LORA
       ngcMetadata:
         b5cffc8c0e15588ac5eb32f394dcf80173b5f0103158d27c3f822c355b84e59e:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -660,7 +660,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x1-throughput-lora-fp8-gygxar7hza
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 H100x1 FP8 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 H100x1 FP8 Throughput-lora LORA
       ngcMetadata:
         ac8c9432ed6a513511e1b974085a79504b402c51336c1116731c7f0619c81c57:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -812,7 +812,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x1-throughput-lora-bf16-mmhkugzzaq
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 H200x1 BF16 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 H200x1 BF16 Throughput-lora LORA
       ngcMetadata:
         379219c10ec6f01addc199abd277392193901883b65ea4b63482faf46c9bb37a:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -888,7 +888,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x1-throughput-lora-fp8-wpzyf5ho-w
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 H200x1 FP8 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 H200x1 FP8 Throughput-lora LORA
       ngcMetadata:
         4cc8746fc65532a219db592167f113e29bb93ba9a9f60963b803f684be94969b:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -1040,7 +1040,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx1-throughput-lora-bf16-tgc6jwyh1q
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 L40Sx1 BF16 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 L40Sx1 BF16 Throughput-lora LORA
       ngcMetadata:
         692bb58e22197d496e4a9dc7fa506c8638fa393621abdab1e1b377931b212115:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -1116,7 +1116,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx1-throughput-lora-fp8-nd4c6hyqua
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 L40Sx1 FP8 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 L40Sx1 FP8 Throughput-lora LORA
       ngcMetadata:
         f55556817874306140b103159f9fa315a289974513a1a66f28cdff5995215b62:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -1306,7 +1306,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__4
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 BF16 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 BF16 Throughput-lora LORA
       ngcMetadata:
         8f08c2ab901f3c3dbd65251dda4ed97e646988612118551c585a5a069fc32adc:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -1420,7 +1420,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__2
       framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 FP8 Throughput-lora
+      displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 FP8 Throughput-lora LORA
       ngcMetadata:
         53feaea67592a1194e641bfff5f472f655e40100ed8d60c3d92dbe6588279570:
           model: mistralai/mistral-7b-instruct-v0.3

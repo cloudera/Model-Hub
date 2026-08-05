@@ -163,7 +163,9 @@ def generate_display_name(model, tags):
     batch_size_val = str(tags.get("batch_size", "")).strip()
     batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
 
-    suffix = " ".join(part for part in [gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
+    lora_part = "LORA" if tags.get("feat_lora") else ""
+
+    suffix = " ".join(part for part in [gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile, lora_part] if part)
     return f"{base_name} {suffix}".strip()
 
 def generate_display_name_generic(model, tags, llm_engine):
@@ -201,7 +203,9 @@ def generate_display_name_generic(model, tags, llm_engine):
 
     generic_part = f"{gpu_part} {engine_display}"
 
-    suffix = " ".join(part for part in [generic_part, sm_part, v_part, precision, profile] if part)
+    lora_part = "LORA" if tags.get("feat_lora") else ""
+
+    suffix = " ".join(part for part in [generic_part, sm_part, v_part, precision, profile, lora_part] if part)
     return f"{base_name} {suffix}".strip()
 
 def generate_display_name_private(model, tags):
@@ -217,12 +221,14 @@ def generate_display_name_private(model, tags):
     sm_part = f"SM{sm_val}" if sm_val else ""
     v_part = f"V{v_val}" if v_val else ""
     onnx_part = "ONNX" if str(tags.get("model_type", "")).lower() == "onnx" else ""
+    lora_part = "LORA" if tags.get("feat_lora") else ""
+
     # For ONNX on private, omit Generic GPUx<count>
     if onnx_part:
-        suffix = " ".join(part for part in [onnx_part, precision, profile] if part)
+        suffix = " ".join(part for part in [onnx_part, precision, profile, lora_part] if part)
     else:
         # Always include count even without GPU to disambiguate private generics
-        suffix = " ".join(part for part in [f"Generic NVIDIA GPUx{count}", sm_part, v_part, precision, profile] if part)
+        suffix = " ".join(part for part in [f"Generic NVIDIA GPUx{count}", sm_part, v_part, precision, profile, lora_part] if part)
     return f"{base_name} {suffix}".strip()
 
 def profile_id_from_workspace(profile, gpu, return_base_uri=False):
@@ -537,7 +543,9 @@ def build_display_name_with_overrides(model: str, tags: dict, override_gpu: str 
     batch_size_val = str(tags.get("batch_size", "")).strip()
     batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
 
-    suffix = " ".join(part for part in [gpu_part, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
+    lora_part = "LORA" if tags.get("feat_lora") else ""
+
+    suffix = " ".join(part for part in [gpu_part, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile, lora_part] if part)
     return f"{base_name} {suffix}".strip()
 
 def format_model_base_name(model_name: str) -> str:
@@ -612,8 +620,15 @@ def get_download_size_gb(profile_id, api_key):
         env = os.environ.copy()
         env["NGC_CLI_API_KEY"] = api_key
 
+        cmd = ["ngc", "registry", "model", "info", profile_id, "--format_type", "json"]
+        parts = profile_id.split("/")
+        if len(parts) >= 2:
+            cmd.extend(["--org", parts[0]])
+        if len(parts) >= 3:
+            cmd.extend(["--team", parts[1]])
+
         result = subprocess.run(
-            ["ngc", "registry", "model", "info", profile_id, "--format_type", "json"],
+            cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             check=True,

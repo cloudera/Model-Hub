@@ -50,14 +50,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 16GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:a100x1-throughput-lora-bf16-gvjsztmgda
       framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct A100x1 BF16 Throughput-lora
+      displayName: Llama 3.1 8B Instruct A100x1 BF16 Throughput-lora LORA
       ngcMetadata:
         bbf77a3eda1f9cf4f30d9e6229430c4b36da5e1973924485bfb13bab04206bbd:
           model: meta/llama-3.1-8b-instruct
@@ -88,7 +88,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 16GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -126,14 +126,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 16GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:b200x1-throughput-lora-bf16-id-ophjvtw
       framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct B200x1 BF16 Throughput-lora
+      displayName: Llama 3.1 8B Instruct B200x1 BF16 Throughput-lora LORA
       ngcMetadata:
         7b651cf13000aec6327ad4be445349850a5aaae3637cd38577c84a2fb6312404:
           model: meta/llama-3.1-8b-instruct
@@ -164,7 +164,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 16GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -202,14 +202,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 9GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:b200x1-throughput-lora-fp8-vbukiy2unq
       framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct B200x1 FP8 Throughput-lora
+      displayName: Llama 3.1 8B Instruct B200x1 FP8 Throughput-lora LORA
       ngcMetadata:
         7ad9a6a88c6525713ebeb851a750443120e256c322e63ec63ae9c3094721c426:
           model: meta/llama-3.1-8b-instruct
@@ -240,7 +240,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 9GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -278,7 +278,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 6GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -316,14 +316,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 17GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2
       framework: VLLM
-      displayName: Llama 3.1 8B Instruct GENERICx1 VLLM BF16 32
+      displayName: Llama 3.1 8B Instruct GENERICx1 VLLM BF16 32 LORA
       ngcMetadata:
         925771095bbfd8bca1cc2a1ea4a91ecba85b2d68493f0dad3b85bb6c209d8730:
           model: meta/llama-3.1-8b-instruct
@@ -345,7 +345,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -373,7 +373,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -401,14 +401,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-tp2__2
       framework: VLLM
-      displayName: Llama 3.1 8B Instruct GENERICx2 VLLM BF16 32
+      displayName: Llama 3.1 8B Instruct GENERICx2 VLLM BF16 32 LORA
       ngcMetadata:
         5aa454e2b5a292aef085ef9cb55fb2167cf577a9712efaaaf71d124cc7285ea4:
           model: meta/llama-3.1-8b-instruct
@@ -430,7 +430,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -468,14 +468,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 16GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:h100x1-throughput-lora-bf16-m0btlmvqug
       framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct H100x1 BF16 Throughput-lora
+      displayName: Llama 3.1 8B Instruct H100x1 BF16 Throughput-lora LORA
       ngcMetadata:
         239eefefff56964404c9b1f5e5e09a7be241492df866b270d95114df04e4fee5:
           model: meta/llama-3.1-8b-instruct
@@ -506,7 +506,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 16GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -544,14 +544,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 9GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:h100x1-throughput-lora-fp8-bmk8vjwlva
       framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct H100x1 FP8 Throughput-lora
+      displayName: Llama 3.1 8B Instruct H100x1 FP8 Throughput-lora LORA
       ngcMetadata:
         4ef5f603fabb90d011443ddeac967445e6ba3c0ad4a462ffcc3726ca6f141a2d:
           model: meta/llama-3.1-8b-instruct
@@ -582,7 +582,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 9GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -620,7 +620,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 17GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -658,7 +658,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 9GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -696,14 +696,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 16GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:l40sx1-throughput-lora-bf16-ai3inadaig
       framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct L40Sx1 BF16 Throughput-lora
+      displayName: Llama 3.1 8B Instruct L40Sx1 BF16 Throughput-lora LORA
       ngcMetadata:
         0e4ff6bc3085f8b055b2d448f80e3d4d5b60350ae724a229ce86acbef3a5f5e2:
           model: meta/llama-3.1-8b-instruct
@@ -734,7 +734,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 16GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -772,14 +772,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 9GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:l40sx1-throughput-lora-fp8-temw-dsm9a
       framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct L40Sx1 FP8 Throughput-lora
+      displayName: Llama 3.1 8B Instruct L40Sx1 FP8 Throughput-lora LORA
       ngcMetadata:
         3b0fd301f00e3f00132c30fc579303e3b31b8386515cc6e54002d811f4fc0c0a:
           model: meta/llama-3.1-8b-instruct
@@ -810,7 +810,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 9GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -848,7 +848,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 17GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -886,7 +886,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 9GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -924,14 +924,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv__5
       framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 BF16 Throughput-lora
+      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 BF16 Throughput-lora LORA
       ngcMetadata:
         ab59515f500b24f0f3606899dc15e58e12bf2fe70bd35315b6726483993d9063:
           model: meta/llama-3.1-8b-instruct
@@ -962,7 +962,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -1000,7 +1000,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -1038,14 +1038,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-8b-instruct-pb25h2:8c22764a7e3675c50d4c7c9a4edb474456022b16_pb25h2-rtx6000_blackwell_sv__2
       framework: TensorRT-LLM
-      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 FP8 Throughput-lora
+      displayName: Llama 3.1 8B Instruct RTX6000_BLACKWELL_SVx1 FP8 Throughput-lora LORA
       ngcMetadata:
         08cd0792585680e92d3899d699bb04c8347e8758010b0dbd47de25ed09e33230:
           model: meta/llama-3.1-8b-instruct
@@ -1076,7 +1076,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -1114,7 +1114,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -1152,7 +1152,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 30GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -1195,14 +1195,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 68GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:b200x1-throughput-lora-fp8-ntjjml7jea
       framework: TensorRT-LLM
-      displayName: Llama 3.1 70B Instruct B200x1 FP8 Throughput-lora
+      displayName: Llama 3.1 70B Instruct B200x1 FP8 Throughput-lora LORA
       ngcMetadata:
         98cf9c41d77920648be236fac9fa8adecd467d08781b3be77054a0c5258830d3:
           model: meta/llama-3.1-70b-instruct
@@ -1233,7 +1233,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 68GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -1271,7 +1271,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 41GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -1309,14 +1309,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 134GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:b200x2-throughput-lora-bf16-9ve4zfuctg
       framework: TensorRT-LLM
-      displayName: Llama 3.1 70B Instruct B200x2 BF16 Throughput-lora
+      displayName: Llama 3.1 70B Instruct B200x2 BF16 Throughput-lora LORA
       ngcMetadata:
         e0699900e40e5f8af1d433478c3e988566dce4b59eb021f0bb1a5356aa9f85c7:
           model: meta/llama-3.1-70b-instruct
@@ -1347,7 +1347,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 134GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -1385,7 +1385,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 69GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -1423,7 +1423,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 41GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -1461,14 +1461,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 138GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp2
       framework: VLLM
-      displayName: Llama 3.1 70B Instruct GENERICx2 VLLM BF16 32
+      displayName: Llama 3.1 70B Instruct GENERICx2 VLLM BF16 32 LORA
       ngcMetadata:
         39194b5f5858f2dde376844651af70e4471874a29935142320b972a2e3ca0ac5:
           model: meta/llama-3.1-70b-instruct
@@ -1490,7 +1490,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -1518,14 +1518,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp4
       framework: VLLM
-      displayName: Llama 3.1 70B Instruct GENERICx4 VLLM BF16 32
+      displayName: Llama 3.1 70B Instruct GENERICx4 VLLM BF16 32 LORA
       ngcMetadata:
         006abfcad3d12cfc6571d2e55f09a58957a0e3a5cd39c2df8c10e78f4ce10978:
           model: meta/llama-3.1-70b-instruct
@@ -1547,7 +1547,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -1575,14 +1575,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-tp8
       framework: VLLM
-      displayName: Llama 3.1 70B Instruct GENERICx8 VLLM BF16 32
+      displayName: Llama 3.1 70B Instruct GENERICx8 VLLM BF16 32 LORA
       ngcMetadata:
         3dcc4db7b5b522f47bf5c344038e6c8cad918617f954a0b751c9b7fcc5bb4d3f:
           model: meta/llama-3.1-70b-instruct
@@ -1604,7 +1604,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -1632,7 +1632,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -1670,7 +1670,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 134GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -1708,14 +1708,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 69GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:h100x2-throughput-lora-fp8-rhevkb8vzq
       framework: TensorRT-LLM
-      displayName: Llama 3.1 70B Instruct H100x2 FP8 Throughput-lora
+      displayName: Llama 3.1 70B Instruct H100x2 FP8 Throughput-lora LORA
       ngcMetadata:
         cf61379470f565ae414fa49195d1d26df892f24981e1d1f6eafb7fcc529fa24c:
           model: meta/llama-3.1-70b-instruct
@@ -1746,14 +1746,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 69GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:h100x4-throughput-lora-bf16-gmjw-ytleq
       framework: TensorRT-LLM
-      displayName: Llama 3.1 70B Instruct H100x4 BF16 Throughput-lora
+      displayName: Llama 3.1 70B Instruct H100x4 BF16 Throughput-lora LORA
       ngcMetadata:
         ce137b792d5a7bd80cca28c1399c7562a280505dd1de95ced8a9ab08c742f0e3:
           model: meta/llama-3.1-70b-instruct
@@ -1784,7 +1784,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 139GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -1822,14 +1822,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 147GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:l40sx4-throughput-lora-bf16-yyunxp9lya
       framework: TensorRT-LLM
-      displayName: Llama 3.1 70B Instruct L40Sx4 BF16 Throughput-lora
+      displayName: Llama 3.1 70B Instruct L40Sx4 BF16 Throughput-lora LORA
       ngcMetadata:
         54b238589cb203b461daf8f90cf59bba2bd547448d2bb76c57ccbca98f4ea0ed:
           model: meta/llama-3.1-70b-instruct
@@ -1860,7 +1860,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 139GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -1898,7 +1898,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 69GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -1936,14 +1936,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp2
       framework: TensorRT-LLM
-      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx2 FP8 Throughput-lora
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx2 FP8 Throughput-lora LORA
       ngcMetadata:
         7106fda50c70d9404e1cb2877ba167ca47c7d476823a47dd9a41916289dea0f0:
           model: meta/llama-3.1-70b-instruct
@@ -1974,7 +1974,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -2012,7 +2012,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -2050,14 +2050,14 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.1-70b-instruct-pb25h2:1d54af340dc8906a2d21146191a9c184c35e47bd-rtx6000_blackwell_sv-tp4__3
       framework: TensorRT-LLM
-      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx4 BF16 Throughput-lora
+      displayName: Llama 3.1 70B Instruct RTX6000_BLACKWELL_SVx4 BF16 Throughput-lora LORA
       ngcMetadata:
         7d60c1867c1b401617c817d9260786c0d59ebc528a710b8f7797c33fdd3bdbb8:
           model: meta/llama-3.1-70b-instruct
@@ -2088,7 +2088,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -2126,7 +2126,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -2164,7 +2164,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -2202,7 +2202,7 @@ models:
       - key: NIM VERSION
         value: 1.14.0-pb5.5-stig-fips-x86-64
       - key: DOWNLOAD SIZE
-        value: UNKNOWN
+        value: 263GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE

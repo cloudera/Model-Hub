@@ -57,7 +57,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:a100x1-throughput-lora-bf16-x6u4sw3thg
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct A100x1 BF16 Throughput-lora
+      displayName: Llama 3.2 1B Instruct A100x1 BF16 Throughput-lora LORA
       ngcMetadata:
         5f0d32447b5a5d1b15fa7b636b8818c180b06ec4202eafe4cc2dd3f9ca877b7c:
           model: meta/llama-3.2-1b-instruct
@@ -133,7 +133,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:a10gx1-throughput-lora-bf16-bzi9n-6xwg
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct A10Gx1 BF16 Throughput-lora
+      displayName: Llama 3.2 1B Instruct A10Gx1 BF16 Throughput-lora LORA
       ngcMetadata:
         e01d20f3bc16e18bbdcaa73d1e1679d4aef0946227b469c6b95408cefb0f9d06:
           model: meta/llama-3.2-1b-instruct
@@ -247,7 +247,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:b200x1-throughput-lora-bf16-fybzmmebea
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct B200x1 BF16 Throughput-lora
+      displayName: Llama 3.2 1B Instruct B200x1 BF16 Throughput-lora LORA
       ngcMetadata:
         2f9534868041634e0d1d2e5892eed5f96799d21476e6d1749a1ab36196cbbd56:
           model: meta/llama-3.2-1b-instruct
@@ -323,7 +323,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:b200x1-throughput-lora-fp8-f3hf01kykw
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct B200x1 FP8 Throughput-lora
+      displayName: Llama 3.2 1B Instruct B200x1 FP8 Throughput-lora LORA
       ngcMetadata:
         2d4f1dbd7d44dc71edde3f6115e57ce90036eb76f2deb0a030375749495955ee:
           model: meta/llama-3.2-1b-instruct
@@ -399,7 +399,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling
       framework: VLLM
-      displayName: Llama 3.2 1B Instruct GENERICx1 VLLM BF16 32
+      displayName: Llama 3.2 1B Instruct GENERICx1 VLLM BF16 32 LORA
       ngcMetadata:
         591cad8b29c318cab606c47cace880d404ca3fe590c1d5e4440f4d3cd8387637:
           model: meta/llama-3.2-1b-instruct
@@ -522,7 +522,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h100x1-throughput-lora-bf16-jutwgrpizg
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H100x1 BF16 Throughput-lora
+      displayName: Llama 3.2 1B Instruct H100x1 BF16 Throughput-lora LORA
       ngcMetadata:
         c20374b81737b46815168ea281b7069831e840f58f5a1f325de16b16f608f876:
           model: meta/llama-3.2-1b-instruct
@@ -598,7 +598,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h100x1-throughput-lora-fp8-e4x5ewcs-a
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H100x1 FP8 Throughput-lora
+      displayName: Llama 3.2 1B Instruct H100x1 FP8 Throughput-lora LORA
       ngcMetadata:
         6af40d51e4a37c63e67a46ce90c8736fe53769af3ee77b779c0d144b0192102b:
           model: meta/llama-3.2-1b-instruct
@@ -750,7 +750,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-lora-bf16-m-xtgsp0zw
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H200x1 BF16 Throughput-lora
+      displayName: Llama 3.2 1B Instruct H200x1 BF16 Throughput-lora LORA
       ngcMetadata:
         8c92af1b1ba8be9fdece562b32165ecc546b6cc80f66737bbbd3f412cf13b3ba:
           model: meta/llama-3.2-1b-instruct
@@ -864,7 +864,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-lora-fp8-nl7qeylo2a
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H200x1 FP8 Throughput-lora
+      displayName: Llama 3.2 1B Instruct H200x1 FP8 Throughput-lora LORA
       ngcMetadata:
         1216791fc2e6d04ed5805df4a82e0052899c154249fd7a541a680871c64e59ad:
           model: meta/llama-3.2-1b-instruct
@@ -902,7 +902,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-lora-fp8-ghubzluzkw
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct H200x1 FP8 Throughput-lora - 2
+      displayName: Llama 3.2 1B Instruct H200x1 FP8 Throughput-lora - 2 LORA
       ngcMetadata:
         76d0d4d5b323e7cbd76cc083ffdf55d57739ebd2a6da2566309626285a0c4d2d:
           model: meta/llama-3.2-1b-instruct
@@ -1092,7 +1092,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:l40sx1-throughput-lora-bf16-hsr87uf9pa
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct L40Sx1 BF16 Throughput-lora
+      displayName: Llama 3.2 1B Instruct L40Sx1 BF16 Throughput-lora LORA
       ngcMetadata:
         6453678b168f64d8df1510d420d648e73d3215cc58cd7e72d4b2ecb7a1c69cee:
           model: meta/llama-3.2-1b-instruct
@@ -1168,7 +1168,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:l40sx1-throughput-lora-fp8-8rronbbmjq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct L40Sx1 FP8 Throughput-lora
+      displayName: Llama 3.2 1B Instruct L40Sx1 FP8 Throughput-lora LORA
       ngcMetadata:
         168a108e2ff64d884ef7bb1654b0f93994ae7003c7414ce99dcd0274234bccf6:
           model: meta/llama-3.2-1b-instruct
@@ -1358,7 +1358,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-rtx6000_blackwell_sv__5
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct RTX6000_BLACKWELL_SVx1 BF16 Throughput-lora
+      displayName: Llama 3.2 1B Instruct RTX6000_BLACKWELL_SVx1 BF16 Throughput-lora LORA
       ngcMetadata:
         8b0aadfdda9f71c8cd9f4b835cfe1b3a95528ef41457959009741981f5649a7c:
           model: meta/llama-3.2-1b-instruct
@@ -1472,7 +1472,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-rtx6000_blackwell_sv__6
       framework: TensorRT-LLM
-      displayName: Llama 3.2 1B Instruct RTX6000_BLACKWELL_SVx1 FP8 Throughput-lora
+      displayName: Llama 3.2 1B Instruct RTX6000_BLACKWELL_SVx1 FP8 Throughput-lora LORA
       ngcMetadata:
         d42a9812c364ea1f476f7eff44a1d7d00c41d52999a9a4d9ab13556a5969a37c:
           model: meta/llama-3.2-1b-instruct
@@ -1552,7 +1552,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:a100x1-throughput-lora-bf16-kxsmexeueg
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct A100x1 BF16 Throughput-lora
+      displayName: Llama 3.2 3B Instruct A100x1 BF16 Throughput-lora LORA
       ngcMetadata:
         74eedaea9082525093f8346646709dc91efa7fd7ef2bc72d595feefaab94cf6f:
           model: meta/llama-3.2-3b-instruct
@@ -1626,7 +1626,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:a10gx1-throughput-lora-bf16-79hztaz-5a
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct A10Gx1 BF16 Throughput-lora
+      displayName: Llama 3.2 3B Instruct A10Gx1 BF16 Throughput-lora LORA
       ngcMetadata:
         0c85a1fe1aa38fa0f635a4c77bf25f7c94bfb9022564a929580415093f5b97d0:
           model: meta/llama-3.2-3b-instruct
@@ -1737,7 +1737,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:b200x1-throughput-lora-bf16-txtin7dmxq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct B200x1 BF16 Throughput-lora
+      displayName: Llama 3.2 3B Instruct B200x1 BF16 Throughput-lora LORA
       ngcMetadata:
         a7baab3661c8376231396bf5529a78365892a33cc3416a11986fc2d96afcbcd8:
           model: meta/llama-3.2-3b-instruct
@@ -1811,7 +1811,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:b200x1-throughput-lora-fp8-gbh9yuxv0w
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct B200x1 FP8 Throughput-lora
+      displayName: Llama 3.2 3B Instruct B200x1 FP8 Throughput-lora LORA
       ngcMetadata:
         bae7cf0b51c21f0e6f697593ee58dc8a555559b4b81903502a9e0ffbdc1b67a9:
           model: meta/llama-3.2-3b-instruct
@@ -2013,7 +2013,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h100x1-throughput-lora-bf16-ciuttye2fq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H100x1 BF16 Throughput-lora
+      displayName: Llama 3.2 3B Instruct H100x1 BF16 Throughput-lora LORA
       ngcMetadata:
         6e29cf433044b5a90f50d4cd1ca2e48d1ecb62eb5fa6fa9fb6f8317da61eebb3:
           model: meta/llama-3.2-3b-instruct
@@ -2087,7 +2087,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h100x1-throughput-lora-fp8-hofrxtvmbq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H100x1 FP8 Throughput-lora
+      displayName: Llama 3.2 3B Instruct H100x1 FP8 Throughput-lora LORA
       ngcMetadata:
         018942e9a37a69b58ed514d7006ed851f57a1b2501ec4d39e3d862d8718893e5:
           model: meta/llama-3.2-3b-instruct
@@ -2235,7 +2235,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h200x1-throughput-lora-bf16-zbvgvklubw
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H200x1 BF16 Throughput-lora
+      displayName: Llama 3.2 3B Instruct H200x1 BF16 Throughput-lora LORA
       ngcMetadata:
         f603fd56445cfe4f9448dfef2d9d1507465af46f1a0e60e9fb9796850bdbd7e6:
           model: meta/llama-3.2-3b-instruct
@@ -2309,7 +2309,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h200x1-throughput-lora-fp8-jxgk1n6ufq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct H200x1 FP8 Throughput-lora
+      displayName: Llama 3.2 3B Instruct H200x1 FP8 Throughput-lora LORA
       ngcMetadata:
         083e56197c3078f2932fc8d3d0e6d0d5b88d29ab8dbe154097deb322f227be07:
           model: meta/llama-3.2-3b-instruct
@@ -2457,7 +2457,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l40sx1-throughput-lora-bf16-rrg1agqi2a
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct L40Sx1 BF16 Throughput-lora
+      displayName: Llama 3.2 3B Instruct L40Sx1 BF16 Throughput-lora LORA
       ngcMetadata:
         08662fae791cb76c40899ed539a7cbfdac61cad60d042220a3c321abd34a8a87:
           model: meta/llama-3.2-3b-instruct
@@ -2531,7 +2531,7 @@ models:
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l40sx1-throughput-lora-fp8--rtzzilvdq
       framework: TensorRT-LLM
-      displayName: Llama 3.2 3B Instruct L40Sx1 FP8 Throughput-lora
+      displayName: Llama 3.2 3B Instruct L40Sx1 FP8 Throughput-lora LORA
       ngcMetadata:
         0782f55dcd12ec36d6126d9768fd364182986eecd25526eb206553df388057b7:
           model: meta/llama-3.2-3b-instruct
