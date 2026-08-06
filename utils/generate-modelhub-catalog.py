@@ -167,7 +167,7 @@ def generate_display_name(model, tags):
 
     lora_part = "LORA" if is_lora else ""
 
-    suffix = " ".join(part for part in [gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile, lora_part] if part)
+    suffix = " ".join(part for part in [lora_part, gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def generate_display_name_generic(model, tags, llm_engine):
@@ -209,7 +209,7 @@ def generate_display_name_generic(model, tags, llm_engine):
 
     lora_part = "LORA" if is_lora else ""
 
-    suffix = " ".join(part for part in [generic_part, sm_part, v_part, precision, profile, lora_part] if part)
+    suffix = " ".join(part for part in [lora_part, generic_part, sm_part, v_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def generate_display_name_private(model, tags):
@@ -231,10 +231,10 @@ def generate_display_name_private(model, tags):
 
     # For ONNX on private, omit Generic GPUx<count>
     if onnx_part:
-        suffix = " ".join(part for part in [onnx_part, precision, profile, lora_part] if part)
+        suffix = " ".join(part for part in [lora_part, onnx_part, precision, profile] if part)
     else:
         # Always include count even without GPU to disambiguate private generics
-        suffix = " ".join(part for part in [f"Generic NVIDIA GPUx{count}", sm_part, v_part, precision, profile, lora_part] if part)
+        suffix = " ".join(part for part in [lora_part, f"Generic NVIDIA GPUx{count}", sm_part, v_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def profile_id_from_workspace(profile, gpu, return_base_uri=False):
@@ -1146,7 +1146,7 @@ def main():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
-                        display_name = generate_display_name_generic(model, tags, "vllm")
+                        display_name = generate_display_name_private(model, tags)
                         count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
                         download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
@@ -1177,7 +1177,7 @@ def main():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
-                        display_name = generate_display_name_generic(model, tags, "sglang")
+                        display_name = generate_display_name_private(model, tags)
                         count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
                         download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
@@ -1213,7 +1213,7 @@ def main():
             if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                 tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
 
-            display_name = generate_display_name_generic(model, tags, "tensorrt-llm")
+            display_name = generate_display_name_private(model, tags)
             count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
             download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 

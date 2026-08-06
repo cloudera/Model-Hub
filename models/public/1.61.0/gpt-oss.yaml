@@ -45,34 +45,6 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim__2
-      framework: VLLM
-      displayName: GPT-OSS 20B GENERICx1 VLLM MXFP4 LORA
-      ngcMetadata:
-        9dd35140a6fa83cbb0dbe132885f2b22da0dc8082a124d7f65fad7328b374d9f:
-          model: openai/gpt-oss-20b
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '19.0'
-            pp: '1'
-            precision: mxfp4
-            tp: '1'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: MXFP4
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 13GB
-      - key: LORA
-        value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim-tp2
       framework: VLLM
       displayName: GPT-OSS 20B GENERICx2 VLLM MXFP4
@@ -99,34 +71,6 @@ models:
         value: 13GB
       - key: LORA
         value: 'FALSE'
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim-tp2__2
-      framework: VLLM
-      displayName: GPT-OSS 20B GENERICx2 VLLM MXFP4 LORA
-      ngcMetadata:
-        b067fc0e61b2b5a2c039dd8c57dbf0b614c3e32e34bae63d62303cb532a5b697:
-          model: openai/gpt-oss-20b
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '12.0'
-            pp: '1'
-            precision: mxfp4
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: MXFP4
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 13GB
-      - key: LORA
-        value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim-tp4
@@ -157,34 +101,6 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim-tp4__2
-      framework: VLLM
-      displayName: GPT-OSS 20B GENERICx4 VLLM MXFP4 LORA
-      ngcMetadata:
-        7cc8f0385877f441e7f5cd461202137b4bbf1508c8fbefb1ed619138575e0adc:
-          model: openai/gpt-oss-20b
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '8.0'
-            pp: '1'
-            precision: mxfp4
-            tp: '4'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: MXFP4
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 13GB
-      - key: LORA
-        value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim-tp8
       framework: VLLM
       displayName: GPT-OSS 20B GENERICx8 VLLM MXFP4
@@ -213,9 +129,93 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim__2
+      framework: VLLM
+      displayName: GPT-OSS 20B LORA GENERICx1 VLLM MXFP4
+      ngcMetadata:
+        9dd35140a6fa83cbb0dbe132885f2b22da0dc8082a124d7f65fad7328b374d9f:
+          model: openai/gpt-oss-20b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '19.0'
+            pp: '1'
+            precision: mxfp4
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim-tp2__2
+      framework: VLLM
+      displayName: GPT-OSS 20B LORA GENERICx2 VLLM MXFP4
+      ngcMetadata:
+        b067fc0e61b2b5a2c039dd8c57dbf0b614c3e32e34bae63d62303cb532a5b697:
+          model: openai/gpt-oss-20b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '12.0'
+            pp: '1'
+            precision: mxfp4
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim-tp4__2
+      framework: VLLM
+      displayName: GPT-OSS 20B LORA GENERICx4 VLLM MXFP4
+      ngcMetadata:
+        7cc8f0385877f441e7f5cd461202137b4bbf1508c8fbefb1ed619138575e0adc:
+          model: openai/gpt-oss-20b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '8.0'
+            pp: '1'
+            precision: mxfp4
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/openai/gpt-oss-20b:hf-d666cf3-nim-tp8__2
       framework: VLLM
-      displayName: GPT-OSS 20B GENERICx8 VLLM MXFP4 LORA
+      displayName: GPT-OSS 20B LORA GENERICx8 VLLM MXFP4
       ngcMetadata:
         d37b598a1d83c677133704c464f43871f60a35735b8982bea73090fa54c89bec:
           model: openai/gpt-oss-20b
@@ -269,34 +269,6 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim
-      framework: VLLM
-      displayName: GPT-OSS 120B GENERICx1 VLLM MXFP4 LORA
-      ngcMetadata:
-        7ee480d91bf63c0d1595758d3bd76d4aeaaa5395e8f049ea6893fa55a0cf1268:
-          model: openai/gpt-oss-120b
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '243.0'
-            pp: '1'
-            precision: mxfp4
-            tp: '1'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: MXFP4
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 61GB
-      - key: LORA
-        value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp2
       framework: VLLM
       displayName: GPT-OSS 120B GENERICx2 VLLM MXFP4
@@ -323,34 +295,6 @@ models:
         value: 61GB
       - key: LORA
         value: 'FALSE'
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp2__2
-      framework: VLLM
-      displayName: GPT-OSS 120B GENERICx2 VLLM MXFP4 LORA
-      ngcMetadata:
-        81980539d9994ede32524e89ef299d570b46e1db956c0a13ad606313192118aa:
-          model: openai/gpt-oss-120b
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '127.0'
-            pp: '1'
-            precision: mxfp4
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: MXFP4
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 61GB
-      - key: LORA
-        value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp4__2
@@ -381,34 +325,6 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp4
-      framework: VLLM
-      displayName: GPT-OSS 120B GENERICx4 VLLM MXFP4 LORA
-      ngcMetadata:
-        41b9c476d251bd06e92d98ffb8f22329059d878ce319e7c776ee51d3bacd153a:
-          model: openai/gpt-oss-120b
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '69.0'
-            pp: '1'
-            precision: mxfp4
-            tp: '4'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: MXFP4
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 61GB
-      - key: LORA
-        value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp8__2
       framework: VLLM
       displayName: GPT-OSS 120B GENERICx8 VLLM MXFP4
@@ -437,9 +353,93 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim
+      framework: VLLM
+      displayName: GPT-OSS 120B LORA GENERICx1 VLLM MXFP4
+      ngcMetadata:
+        7ee480d91bf63c0d1595758d3bd76d4aeaaa5395e8f049ea6893fa55a0cf1268:
+          model: openai/gpt-oss-120b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '243.0'
+            pp: '1'
+            precision: mxfp4
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 61GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp2__2
+      framework: VLLM
+      displayName: GPT-OSS 120B LORA GENERICx2 VLLM MXFP4
+      ngcMetadata:
+        81980539d9994ede32524e89ef299d570b46e1db956c0a13ad606313192118aa:
+          model: openai/gpt-oss-120b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '127.0'
+            pp: '1'
+            precision: mxfp4
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 61GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp4
+      framework: VLLM
+      displayName: GPT-OSS 120B LORA GENERICx4 VLLM MXFP4
+      ngcMetadata:
+        41b9c476d251bd06e92d98ffb8f22329059d878ce319e7c776ee51d3bacd153a:
+          model: openai/gpt-oss-120b
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '69.0'
+            pp: '1'
+            precision: mxfp4
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: MXFP4
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 61GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/openai/gpt-oss-120b:hf-8b193b0-nim-tp8
       framework: VLLM
-      displayName: GPT-OSS 120B GENERICx8 VLLM MXFP4 LORA
+      displayName: GPT-OSS 120B LORA GENERICx8 VLLM MXFP4
       ngcMetadata:
         1c82e31a9fdb6f8cad58b9a9fc561c23fd2074a183b47e51548335514f99a610:
           model: openai/gpt-oss-120b
