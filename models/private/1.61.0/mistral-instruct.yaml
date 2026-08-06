@@ -46,6 +46,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-a100_sxm4_40gb-tp2
@@ -82,6 +84,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a100x1-throughput-bf16-ug2ytdn9rq
@@ -118,6 +122,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a100x2-latency-bf16-eao98qqyaq
@@ -154,6 +160,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a10gx1-throughput-bf16-dbarntjrxg
@@ -190,6 +198,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a10gx2-latency-bf16-ultpn-z0fa
@@ -226,6 +236,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x1-throughput-bf16-bzgxd7omcg
@@ -262,6 +274,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x1-throughput-fp8-1kujysl0bw
@@ -298,6 +312,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x2-latency-bf16-k0zyvwltfq
@@ -334,6 +350,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x2-latency-fp8-dmol-yoeqa
@@ -370,6 +388,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x1-throughput-bf16-b7lzpmozrg
@@ -406,6 +426,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x1-throughput-fp8-ndgj2enqyq
@@ -442,6 +464,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x2-latency-bf16-wkgtx84w0q
@@ -478,6 +502,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x2-latency-fp8-6ewdxacbyg
@@ -514,11 +540,13 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16
       framework: VLLM
-      displayName: Mistral 7B Instruct V0.3 GENERICx1 VLLM BF16
+      displayName: Mistral 7B Instruct V0.3 Generic NVIDIA GPUx1 BF16
       ngcMetadata:
         3823608a044447f29442981564d8a2407f8ca2ef8265e3192065ff25c638d3b0:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -540,11 +568,13 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-tp2
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-tp2__2
       framework: VLLM
-      displayName: Mistral 7B Instruct V0.3 GENERICx2 VLLM BF16
+      displayName: Mistral 7B Instruct V0.3 Generic NVIDIA GPUx2 BF16
       ngcMetadata:
         f2b422e59e99892041782cce90533e0b46a58e66e5b42bc586b049ad33ba1251:
           model: mistralai/mistral-7b-instruct-v0.3
@@ -566,9 +596,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb__2
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb__3
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 GH200_144GBx1 BF16 Latency
       ngcMetadata:
@@ -602,9 +634,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb__2
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 GH200_144GBx1 BF16 Throughput
       ngcMetadata:
@@ -638,9 +672,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb__4
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb__5
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 GH200_144GBx1 FP8 Latency
       ngcMetadata:
@@ -674,9 +710,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb__3
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb__4
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 GH200_144GBx1 FP8 Throughput
       ngcMetadata:
@@ -710,6 +748,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_480gb
@@ -746,9 +786,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_480gb__2
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_480gb__3
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 GH200_480GBx1 BF16 Throughput
       ngcMetadata:
@@ -782,9 +824,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_480gb__3
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_480gb__4
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 GH200_480GBx1 FP8 Latency
       ngcMetadata:
@@ -818,9 +862,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_480gb__4
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_480gb__6
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 GH200_480GBx1 FP8 Throughput
       ngcMetadata:
@@ -854,9 +900,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h100_nvl__2
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h100_nvl__3
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 H100_NVLx1 BF16 Throughput
       ngcMetadata:
@@ -890,6 +938,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h100_nvl
@@ -926,6 +976,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h100_nvl-tp2__2
@@ -962,6 +1014,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h100_nvl-tp2
@@ -998,6 +1052,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x1-throughput-bf16-p8aaj1ui3a
@@ -1034,6 +1090,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x1-throughput-fp8-3zk3rahgzq
@@ -1070,6 +1128,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x2-latency-bf16-y5oxwbaufw
@@ -1106,6 +1166,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x2-latency-fp8-ubwp9icmag
@@ -1142,6 +1204,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h200_nvl
@@ -1178,9 +1242,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h200_nvl__2
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h200_nvl__4
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 H200_NVLx1 FP8 Throughput
       ngcMetadata:
@@ -1214,6 +1280,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h200_nvl-tp2
@@ -1250,6 +1318,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h200_nvl-tp2__2
@@ -1286,6 +1356,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x1-throughput-bf16-fii9d12dng
@@ -1322,6 +1394,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x1-throughput-fp8-ez1figc57w
@@ -1358,6 +1432,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x2-latency-bf16-utfzkvbx7q
@@ -1394,6 +1470,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x2-latency-fp8-nnktn87ayw
@@ -1430,6 +1508,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx1-throughput-bf16-wgortubrfa
@@ -1466,6 +1546,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx1-throughput-fp8-kegtu7-f8w
@@ -1502,6 +1584,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx2-latency-bf16--dooucx8xw
@@ -1538,6 +1622,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 14GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx2-latency-fp8-werjmjtilg
@@ -1574,6 +1660,940 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-a100_sxm4_40gb__2
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA A100_SXM4_40GBx1 BF16 Throughput
+      ngcMetadata:
+        f5ff049c6592b8328ea1973563b2f1b4636d4c509ad8a26c873b150bafd1c07d:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: A100_SXM4_40GB
+            gpu_device: 20b0:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: b7b5daa4e91d229441fe5351d95c4f7b86d4369160937484606704b8cbbe0507
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100_SXM4_40GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20B0:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a100x1-throughput-lora-bf16-jaig2gptww
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA A100x1 BF16 Throughput
+      ngcMetadata:
+        e7f80011f4618894213af87dce59beba30f4e31ab738f2fbb7fc24ce29981faf:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 51a1fbc247cc97a20e3fef8e2b2dae9192da383951602a353c1663ab15476975
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a10gx1-throughput-lora-bf16-xv7qcnggdg
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA A10Gx1 BF16 Throughput
+      ngcMetadata:
+        fd3e2790bf748b3d744a021bc36f56d6df2c7529ab2aebec892ebe5a1c921c3b:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 3e26b90a57aa94d158e84cf5434bbe9562da19836ccad590d348ad7b0e671f5d
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2237:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x1-throughput-lora-bf16-j0tc1lf68a
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA B200x1 BF16 Throughput
+      ngcMetadata:
+        84f04ff50e00c8e7813e3ac54d4e89e6b2a4dae9a96efea745099c7311089db6:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 8349ed77c15b75e1bfd75e79bd5b759680b5e930c46bb60602ae331e8b0a484b
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:b200x1-throughput-lora-fp8-8chr9ls0na
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA B200x1 FP8 Throughput
+      ngcMetadata:
+        43c248430a7abb764f6bcee82eae1813ec4934dcc367b9908e926f76fbcf0529:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: e90b5d4d65724f3cee2cc4451d0d5730ee88562dbe7cba7f399db9becf9602f7
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x1-throughput-lora-bf16-bb8ir8wb5a
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA GB200x1 BF16 Throughput
+      ngcMetadata:
+        4294bbd1be7e6721d7a1bae9dfdd9a6450e3082fc4f1baf46eb44ef1037d941d:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 00033f419db562d69f757f00d23ad75fe7fc9ab940039763bf4f7937a830e1b3
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:gb200x1-throughput-lora-fp8-wexfa0-hdg
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA GB200x1 FP8 Throughput
+      ngcMetadata:
+        412beafa9ad7d6a881bd76fbc1862022b6ee89763249934ef81012a2491e9a51:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 1379fd83f454c27c302a11ecc72988eb57063caa212403d5b5d94baac961028d
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16__2
+      framework: VLLM
+      displayName: Mistral 7B Instruct V0.3 LORA Generic NVIDIA GPUx1 BF16
+      ngcMetadata:
+        e514a0189674a9493d8911a195eb8dbca8bd73e6baee417811a63b1981588b0a:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: f727ebd04910d0e76cfca9a0bb59077c24deaca5017012badf9147d6a4d80690
+            pp: '1'
+            precision: bf16
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-tp2
+      framework: VLLM
+      displayName: Mistral 7B Instruct V0.3 LORA Generic NVIDIA GPUx2 BF16
+      ngcMetadata:
+        6dca161d36100bb3946bdb8d3ba7b15e674408ed71d578bdc6dc13223268b6e5:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: f727ebd04910d0e76cfca9a0bb59077c24deaca5017012badf9147d6a4d80690
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb__6
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA GH200_144GBx1 BF16 Throughput
+      ngcMetadata:
+        6c4708c105d9c0f3166d7b0189e267c420c7640bfb55b69f063e22742a0b2bf8:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_144GB
+            gpu_device: 2348:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 05b89e0562fc06cba057e570b34cbf5a76420ca46a7053b20835ba4edbb1442f
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200_144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_144gb
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA GH200_144GBx1 FP8 Throughput
+      ngcMetadata:
+        0c2858bdaa1a0012c8c7ea5427e548e475798b9bffd1bdc5e8a615ebed57a9f5:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_144GB
+            gpu_device: 2348:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: dff27b519a988fb8a7d8827e255e56dab93ccaf2fe638db8ca39e4b9c61e112e
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_480gb__2
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA GH200_480GBx1 BF16 Throughput
+      ngcMetadata:
+        98f3913ef19b7c4ff07b3a06920eb2b23aec05817d2ebbc4a4eeaff4fa1d8fac:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 59122d446309c80d33d2ad40f38e476ef2e4eae15a85431856887dccea7bbf74
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-gh200_480gb__5
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA GH200_480GBx1 FP8 Throughput
+      ngcMetadata:
+        dc64c74a9cb3f5dda9500271629549913cf7875b7f0d548f21055ecc70d75e2a:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 3e115dba1494bb912553a46bc484b2e449f64c825e95c5f4984afc5a4db21da2
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h100_nvl__4
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA H100_NVLx1 BF16 Throughput
+      ngcMetadata:
+        9e625de27df668c2b9fcda7b6fa29509bc874c242a00c8880a7ac61d51addb99:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: de3ef71158e1edbc4b7d8389f9d3a19e1fe1d5a93caa92dd881e8a6ec7d3ae3c
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h100_nvl__2
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA H100_NVLx1 FP8 Throughput
+      ngcMetadata:
+        50c4e45af67bcbddeba92eae08e7cbd89d720db1fd76d1b926494e57cc29d2c5:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: e492061bba03cc9846cbeea520cd81ca72554e473f0f9eddb4674f4cc53bd708
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x1-throughput-lora-bf16-h9bi6hfecg
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA H100x1 BF16 Throughput
+      ngcMetadata:
+        b5cffc8c0e15588ac5eb32f394dcf80173b5f0103158d27c3f822c355b84e59e:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 4f491f9cdc361b907f884549820d58cd646f330823123b979a679dd7cbe2d52b
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x1-throughput-lora-fp8-gygxar7hza
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA H100x1 FP8 Throughput
+      ngcMetadata:
+        ac8c9432ed6a513511e1b974085a79504b402c51336c1116731c7f0619c81c57:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: cd3defa8ac17ca13eeddb7e830681ed0226da10e1c313c5f454250744c64c6ae
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h200_nvl__3
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA H200_NVLx1 BF16 Throughput
+      ngcMetadata:
+        658e0737de572ba3f02ce89eb36dcbe39492ddff07dd01c0717a851991f6f011:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H200_NVL
+            gpu_device: 233b:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 7bae3219dc7ab141d98904d5af99f871529c7ca4ff7ec1548ccd97add6c14884
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-h200_nvl__2
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA H200_NVLx1 FP8 Throughput
+      ngcMetadata:
+        5fa67d8620f33102db123cfd80fd3b6d395bf668e4b8f1eab63f5999bffd00db:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H200_NVL
+            gpu_device: 233b:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: dfa6bfc69e22fe9f0c17c33467122b04e65767fd404dbacbbc4a9c16ed24e97a
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x1-throughput-lora-bf16-mmhkugzzaq
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA H200x1 BF16 Throughput
+      ngcMetadata:
+        379219c10ec6f01addc199abd277392193901883b65ea4b63482faf46c9bb37a:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 0daf5390ed8a24e16b174765bb56c8570aa5b9b3d7c9f6f66fc85cb756005b7e
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h200x1-throughput-lora-fp8-wpzyf5ho-w
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA H200x1 FP8 Throughput
+      ngcMetadata:
+        4cc8746fc65532a219db592167f113e29bb93ba9a9f60963b803f684be94969b:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 1839cb1a165b2f3db526e8e01594d67bce2faaa77a5ef4e8a33aa11c2b6bd059
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx1-throughput-lora-bf16-tgc6jwyh1q
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA L40Sx1 BF16 Throughput
+      ngcMetadata:
+        692bb58e22197d496e4a9dc7fa506c8638fa393621abdab1e1b377931b212115:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 256ee52322b8bd200fb2f7f5c8a6faac84fd8a82ed803c3825802168efe0ab8e
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 14GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:l40sx1-throughput-lora-fp8-nd4c6hyqua
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA L40Sx1 FP8 Throughput
+      ngcMetadata:
+        f55556817874306140b103159f9fa315a289974513a1a66f28cdff5995215b62:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 25bafa1ed2fc187f3f8ef585cdc41495c38e6aff98c9597131a1ae482dfe7839
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__4
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA RTX6000_BLACKWELL_SVx1 BF16 Throughput
+      ngcMetadata:
+        8f08c2ab901f3c3dbd65251dda4ed97e646988612118551c585a5a069fc32adc:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 4815aa663c208eddc596910110e3039e64089eb186e7464ce26478b1ebde9fea
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__2
+      framework: TensorRT-LLM
+      displayName: Mistral 7B Instruct V0.3 LORA RTX6000_BLACKWELL_SVx1 FP8 Throughput
+      ngcMetadata:
+        53feaea67592a1194e641bfff5f472f655e40100ed8d60c3d92dbe6588279570:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 1b7855981bfc50d9e109499ee2d4f3982738c4cfd9a4779aa06e68b449b2800e
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'TRUE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv
@@ -1610,9 +2630,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__4
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__6
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 BF16 Throughput
       ngcMetadata:
@@ -1646,9 +2668,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__3
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__5
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 FP8 Latency
       ngcMetadata:
@@ -1682,9 +2706,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__2
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__3
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 FP8 Throughput
       ngcMetadata:
@@ -1718,6 +2744,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 28GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
   labels:

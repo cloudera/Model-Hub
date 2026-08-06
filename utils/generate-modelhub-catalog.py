@@ -11,9 +11,9 @@
 #  Contract - https://docs.google.com/document/d/1GJoefhPx1bPH1hQYG6PZjlzgqDofJWEsbJ_0LIQ5whc/edit?tab=t.0
 #  VLLM/SGLang: always included (no flag needed); ONNX profiles: included by default; use "--no-include-onnx" to disable
 #  in public, we have a whilelist of GPUs alongwith supported gpu_device. At the same time, min/max counts for each GPU are also supported in public cloud.
-#       --- in private, all gpus with any gpu_device, min/max counts are supported are supported (after top level filtering with feat_lora: true)
+#       --- in private, all gpus with any gpu_device, min/max counts are supported
 #  is_generic_profile condition is - no GPU and either:
-#       --- (llm_engine: tensorrt_llm, trtllm_buildable: 'true', feat_lora: 'false') OR (model_type: rmir)
+#       --- (llm_engine: tensorrt_llm, trtllm_buildable: 'true') OR (model_type: rmir)
 #       --- in public, generic_profile is transformed to gpu specific optimization profiles while in private, it is included as it is
 #  
 #
@@ -62,13 +62,11 @@
 #           c) Whitelist and A100 limits apply to inferred GPUs/count. H100/H200 device ID enforcement applies only when `tags.gpu_device` is present.
 #       - Riva/ASR: profiles with tags.mode 'str' or 'str-thr' are excluded (public and private), including generic RMIR synthesis.
 #       - Regular profiles are ignored when:
-#           a) tags.feat_lora == 'true'
-#           b) public and GPU not in --whitelisted-gpus
-#           c) public and GPU with TP*PP outside GPU-specific min/max range (--<gpu>-min-count, --<gpu>-max-count; A100 max default: 1, others: no limits)
-#           d) public and H100 with gpu_device != 2330:10de; public and H200 with gpu_device != 2335:10de (enforced only if gpu_device is present in tags)
+#           a) public and GPU not in --whitelisted-gpus
+#           b) public and GPU with TP*PP outside GPU-specific min/max range (--<gpu>-min-count, --<gpu>-max-count; A100 max default: 1, others: no limits)
+#           c) public and H100 with gpu_device != 2330:10de; public and H200 with gpu_device != 2335:10de (enforced only if gpu_device is present in tags)
 #       - Generic profile inclusion (public and private):
-#           a) TRT-LLM, VLLM, SGLang generics (llm_engine: tensorrt_llm/vllm/sglang with appropriate flags, feat_lora: 'false') are included as-is without GPU synthesis.
-#           b) All exclude feat_lora: 'true'.
+#           a) TRT-LLM, VLLM, SGLang generics (llm_engine: tensorrt_llm/vllm/sglang with appropriate flags) are included as-is without GPU synthesis.
 #       - Private platform: generic profiles included as-is without GPU details.
 #       - ONNX profiles: included by default; use --no-include-onnx to disable.
 #       - Combination tracking ensures we only create missing GPU-TP*PP-PRECISION-PROFILE combinations.
@@ -144,7 +142,9 @@ def generate_display_name(model, tags):
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
     precision = tags.get("precision", "").upper()
-    profile = tags.get("profile", "").capitalize()
+    profile_raw = tags.get("profile", "")
+    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
+    profile = profile_raw.replace("-lora", "").capitalize() if is_lora else profile_raw.capitalize()
     count = tp * pp
     gpu_count = f"{gpu}x{count}" if gpu else ""
     sm_val = str(tags.get("sm", "")).strip()
@@ -165,7 +165,9 @@ def generate_display_name(model, tags):
     batch_size_val = str(tags.get("batch_size", "")).strip()
     batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
 
-    suffix = " ".join(part for part in [gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
+    lora_part = "LORA" if is_lora else ""
+
+    suffix = " ".join(part for part in [lora_part, gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def generate_display_name_generic(model, tags, llm_engine):
@@ -175,7 +177,9 @@ def generate_display_name_generic(model, tags, llm_engine):
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
     precision = tags.get("precision", "").upper()
-    profile = tags.get("profile", "").capitalize()
+    profile_raw = tags.get("profile", "")
+    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
+    profile = profile_raw.replace("-lora", "").capitalize() if is_lora else profile_raw.capitalize()
     count = tp * pp
 
     sm_val = str(tags.get("sm", "")).strip()
@@ -203,7 +207,9 @@ def generate_display_name_generic(model, tags, llm_engine):
 
     generic_part = f"{gpu_part} {engine_display}"
 
-    suffix = " ".join(part for part in [generic_part, sm_part, v_part, precision, profile] if part)
+    lora_part = "LORA" if is_lora else ""
+
+    suffix = " ".join(part for part in [lora_part, generic_part, sm_part, v_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def generate_display_name_private(model, tags):
@@ -212,19 +218,23 @@ def generate_display_name_private(model, tags):
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
     precision = tags.get("precision", "").upper()
-    profile = tags.get("profile", "").capitalize()
+    profile_raw = tags.get("profile", "")
+    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
+    profile = profile_raw.replace("-lora", "").capitalize() if is_lora else profile_raw.capitalize()
     count = tp * pp
     sm_val = str(tags.get("sm", "")).strip()
     v_val = str(tags.get("v", "")).strip()
     sm_part = f"SM{sm_val}" if sm_val else ""
     v_part = f"V{v_val}" if v_val else ""
     onnx_part = "ONNX" if str(tags.get("model_type", "")).lower() == "onnx" else ""
+    lora_part = "LORA" if is_lora else ""
+
     # For ONNX on private, omit Generic GPUx<count>
     if onnx_part:
-        suffix = " ".join(part for part in [onnx_part, precision, profile] if part)
+        suffix = " ".join(part for part in [lora_part, onnx_part, precision, profile] if part)
     else:
         # Always include count even without GPU to disambiguate private generics
-        suffix = " ".join(part for part in [f"Generic NVIDIA GPUx{count}", sm_part, v_part, precision, profile] if part)
+        suffix = " ".join(part for part in [lora_part, f"Generic NVIDIA GPUx{count}", sm_part, v_part, precision, profile] if part)
     return f"{base_name} {suffix}".strip()
 
 def profile_id_from_workspace(profile, gpu, return_base_uri=False):
@@ -373,8 +383,6 @@ def should_ignore_profile(tags, whitelisted_gpus, platform="public", a100_max_co
 
     if not gpu:
         return True
-    if tags.get("feat_lora", "").lower() == "true":
-        return True
     # If whitelisted_gpus is specified and GPU is not in the whitelist, ignore it
     # Case-insensitive comparison: both manifest GPU and whitelist entries are converted to uppercase
     if whitelisted_gpus:
@@ -516,7 +524,9 @@ def build_display_name_with_overrides(model: str, tags: dict, override_gpu: str 
     base_name = format_model_base_name(model_name)
 
     precision = str(tags.get("precision", "")).upper()
-    profile = str(tags.get("profile", "")).capitalize()
+    profile_raw = str(tags.get("profile", ""))
+    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
+    profile = profile_raw.replace("-lora", "").capitalize() if is_lora else profile_raw.capitalize()
     sm_val = str(tags.get("sm", "")).strip()
     v_val = str(tags.get("v", "")).strip()
     sm_part = f"SM{sm_val}" if sm_val else ""
@@ -531,17 +541,19 @@ def build_display_name_with_overrides(model: str, tags: dict, override_gpu: str 
 
     mode_val = str(tags.get("mode", "")).strip()
     mode_part = mode_val.capitalize() if mode_val else ""
-    
+
     vad_val = str(tags.get("vad", "")).strip()
     vad_part = vad_val.capitalize() if vad_val else ""
-    
+
     diarizer_val = str(tags.get("diarizer", "")).strip().lower()
     diarizer_part = diarizer_val.capitalize() if diarizer_val and diarizer_val != "disabled" else ""
-    
+
     batch_size_val = str(tags.get("batch_size", "")).strip()
     batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
 
-    suffix = " ".join(part for part in [gpu_part, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile] if part)
+    lora_part = "LORA" if is_lora else ""
+
+    suffix = " ".join(part for part in [gpu_part, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile, lora_part] if part)
     return f"{base_name} {suffix}".strip()
 
 def format_model_base_name(model_name: str) -> str:
@@ -595,16 +607,15 @@ def is_generic_profile(tags):
     gpu = tags.get("gpu", "").strip()
     llm_engine = tags.get("llm_engine", "").lower()
     trtllm_buildable = tags.get("trtllm_buildable", "").lower()
-    feat_lora = tags.get("feat_lora", "").lower()
     model_type = tags.get("model_type", "").lower()
 
     # Generic profile criteria: no GPU and one of:
-    # 1. tensorrt_llm engine, buildable, not lora
+    # 1. tensorrt_llm engine, buildable
     # 2. model_type is rmir or vllm (for Riva ASR models)
     if gpu:
         return False
-    
-    if llm_engine == "tensorrt_llm" and trtllm_buildable == "true" and feat_lora != "true":
+
+    if llm_engine == "tensorrt_llm" and trtllm_buildable == "true":
         return True
     
     if model_type == "rmir":
@@ -617,8 +628,15 @@ def get_download_size_gb(profile_id, api_key):
         env = os.environ.copy()
         env["NGC_CLI_API_KEY"] = api_key
 
+        cmd = ["ngc", "registry", "model", "info", profile_id, "--format_type", "json"]
+        parts = profile_id.split("/")
+        if len(parts) >= 2:
+            cmd.extend(["--org", parts[0]])
+        if len(parts) >= 3:
+            cmd.extend(["--team", parts[1]])
+
         result = subprocess.run(
-            ["ngc", "registry", "model", "info", profile_id, "--format_type", "json"],
+            cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             check=True,
@@ -644,10 +662,15 @@ def append_optional_spec_fields(spec_list, tags):
         # 'sm',
         # 'v',
         # 'kv_cache_precision',
+        'feat_lora',
         'llm_engine',
         'draft_model_dir',
         'speculative_algorithm',
         'trtllm_buildable',
+    }
+
+    spec_key_overrides = {
+        'feat_lora': 'LORA',
     }
 
     # Dynamically add whitelisted tags from manifest as spec fields
@@ -662,8 +685,7 @@ def append_optional_spec_fields(spec_list, tags):
                 value = tag_val
 
             if value and value not in (None, ""):
-                # Format: convert underscores to spaces, then uppercase
-                spec_key = tag_key.replace('_', ' ').upper()
+                spec_key = spec_key_overrides.get(tag_key, tag_key.replace('_', ' ').upper())
                 spec_list.append({"key": spec_key, "value": str(value).upper()})
 
 def make_display_names_unique(model_data):
@@ -697,20 +719,31 @@ def make_display_names_unique(model_data):
                             profiles[prof_idx]['displayName'] = f"{dname} - {suffix_num}"
 
 def append_optimization_profile(optimization_profiles, profile_id_counts, profile_dict):
-    """Append one profile. Duplicate NIM profileId values get suffixes __2, __3, …"""
+    """Append one profile. Duplicate NIM profileId values get numeric suffixes.
+
+    First occurrence keeps the bare base ID; subsequent duplicates get
+    base__2, base__3, etc. regardless of LoRA status.
+
+    profile_id_counts stores per-base state as:
+        {base: int}  (total count seen so far)
+    """
     pid = profile_dict.get("profileId")
     if not isinstance(pid, str) or not str(pid).strip():
         optimization_profiles.append(profile_dict)
         return
     base = str(pid).strip()
-    n = profile_id_counts.get(base, 0) + 1
-    profile_id_counts[base] = n
-    if n == 1:
+
+    if base not in profile_id_counts:
+        profile_id_counts[base] = 0
+    profile_id_counts[base] += 1
+    count = profile_id_counts[base]
+
+    if count == 1:
         optimization_profiles.append(profile_dict)
-        return
-    final_id = f"{base}__{n}"
-    print(f"Disambiguating profileId: {base} -> {final_id}")
-    optimization_profiles.append({**profile_dict, "profileId": final_id})
+    else:
+        final_id = f"{base}__{count}"
+        print(f"Disambiguating profileId: {base} -> {final_id}")
+        optimization_profiles.append({**profile_dict, "profileId": final_id})
 
 def main():
     parser = argparse.ArgumentParser(description="Generate modelhub catalog YAML file using manifest YAML and base model YAML")
@@ -770,9 +803,6 @@ def main():
     for profile in profiles:
         tags = profile.get("tags", {})
         if should_exclude_riva_streaming_mode(tags):
-            continue
-        # Always exclude feat_lora: 'true' regardless of other parameters
-        if tags.get("feat_lora", "").lower() == "true":
             continue
 
         # Include ONNX profiles as-is when requested (regardless of GPU presence)
@@ -877,8 +907,6 @@ def main():
                 continue
         else:
             # Basic tag-based filters
-            if tags.get("feat_lora", "").lower() == "true":
-                continue
             # Whitelist check
             if args.whitelisted_gpus:
                 if effective_gpu.upper() not in [g.upper() for g in args.whitelisted_gpus]:
@@ -985,11 +1013,10 @@ def main():
             if should_exclude_riva_streaming_mode(tags):
                 continue
 
-            # Handle generic VLLM inclusion (skip LoRA generics)
+            # Handle generic VLLM inclusion
             if (
                 not tags.get("gpu", "").strip()
                 and tags.get("llm_engine", "").lower() == "vllm"
-                and tags.get("feat_lora", "").lower() != "true"
             ):
                 if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                     tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
@@ -1027,11 +1054,10 @@ def main():
                     print(f"Added generic VLLM profile {profile.get('id', 'unknown')} without GPU details for public platform")
                 continue
 
-            # Handle generic SGLang inclusion (skip LoRA generics)
+            # Handle generic SGLang inclusion
             if (
                 not tags.get("gpu", "").strip()
                 and tags.get("llm_engine", "").lower() == "sglang"
-                and tags.get("feat_lora", "").lower() != "true"
             ):
                 if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                     tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
@@ -1116,11 +1142,11 @@ def main():
             # Only process generic profiles
             if not is_generic_profile(tags):
                 # If this is a VLLM generic profile (no GPU), include as-is
-                if tags.get("llm_engine", "").lower() == "vllm" and not tags.get("gpu", "").strip() and tags.get("feat_lora", "").lower() != "true":
+                if tags.get("llm_engine", "").lower() == "vllm" and not tags.get("gpu", "").strip():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
-                        display_name = generate_display_name_generic(model, tags, "vllm")
+                        display_name = generate_display_name_private(model, tags)
                         count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
                         download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
@@ -1147,11 +1173,11 @@ def main():
                         })
                         print(f"Added generic VLLM profile {profile.get('id', 'unknown')} without GPU details for private platform")
                 # If this is a SGLang generic profile (no GPU), include as-is
-                elif tags.get("llm_engine", "").lower() == "sglang" and not tags.get("gpu", "").strip() and tags.get("feat_lora", "").lower() != "true":
+                elif tags.get("llm_engine", "").lower() == "sglang" and not tags.get("gpu", "").strip():
                     result = profile_id_from_workspace(profile, "", return_base_uri=True)  # No specific GPU
                     if result and result[0]:
                         base_uri, profile_id_uri = result
-                        display_name = generate_display_name_generic(model, tags, "sglang")
+                        display_name = generate_display_name_private(model, tags)
                         count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
                         download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
@@ -1187,7 +1213,7 @@ def main():
             if "nim_workspace_hash_v1" in tags and isinstance(tags["nim_workspace_hash_v1"], str):
                 tags["nim_workspace_hash_v1"] = PlainScalarString(tags["nim_workspace_hash_v1"])
 
-            display_name = generate_display_name_generic(model, tags, "tensorrt-llm")
+            display_name = generate_display_name_private(model, tags)
             count = int(tags.get("tp", "1")) * int(tags.get("pp", "1"))
             download_size = get_download_size_gb(str(base_uri), args.ngc_api_key)
 
