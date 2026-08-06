@@ -142,7 +142,9 @@ def generate_display_name(model, tags):
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
     precision = tags.get("precision", "").upper()
-    profile = tags.get("profile", "").capitalize()
+    profile_raw = tags.get("profile", "")
+    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
+    profile = profile_raw.replace("-lora", "").capitalize() if is_lora else profile_raw.capitalize()
     count = tp * pp
     gpu_count = f"{gpu}x{count}" if gpu else ""
     sm_val = str(tags.get("sm", "")).strip()
@@ -163,7 +165,7 @@ def generate_display_name(model, tags):
     batch_size_val = str(tags.get("batch_size", "")).strip()
     batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
 
-    lora_part = "LORA" if tags.get("feat_lora") else ""
+    lora_part = "LORA" if is_lora else ""
 
     suffix = " ".join(part for part in [gpu_count, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile, lora_part] if part)
     return f"{base_name} {suffix}".strip()
@@ -175,7 +177,9 @@ def generate_display_name_generic(model, tags, llm_engine):
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
     precision = tags.get("precision", "").upper()
-    profile = tags.get("profile", "").capitalize()
+    profile_raw = tags.get("profile", "")
+    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
+    profile = profile_raw.replace("-lora", "").capitalize() if is_lora else profile_raw.capitalize()
     count = tp * pp
 
     sm_val = str(tags.get("sm", "")).strip()
@@ -203,7 +207,7 @@ def generate_display_name_generic(model, tags, llm_engine):
 
     generic_part = f"{gpu_part} {engine_display}"
 
-    lora_part = "LORA" if tags.get("feat_lora") else ""
+    lora_part = "LORA" if is_lora else ""
 
     suffix = " ".join(part for part in [generic_part, sm_part, v_part, precision, profile, lora_part] if part)
     return f"{base_name} {suffix}".strip()
@@ -214,14 +218,16 @@ def generate_display_name_private(model, tags):
     tp = int(tags.get("tp", "1"))
     pp = int(tags.get("pp", "1"))
     precision = tags.get("precision", "").upper()
-    profile = tags.get("profile", "").capitalize()
+    profile_raw = tags.get("profile", "")
+    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
+    profile = profile_raw.replace("-lora", "").capitalize() if is_lora else profile_raw.capitalize()
     count = tp * pp
     sm_val = str(tags.get("sm", "")).strip()
     v_val = str(tags.get("v", "")).strip()
     sm_part = f"SM{sm_val}" if sm_val else ""
     v_part = f"V{v_val}" if v_val else ""
     onnx_part = "ONNX" if str(tags.get("model_type", "")).lower() == "onnx" else ""
-    lora_part = "LORA" if tags.get("feat_lora") else ""
+    lora_part = "LORA" if is_lora else ""
 
     # For ONNX on private, omit Generic GPUx<count>
     if onnx_part:
@@ -518,7 +524,9 @@ def build_display_name_with_overrides(model: str, tags: dict, override_gpu: str 
     base_name = format_model_base_name(model_name)
 
     precision = str(tags.get("precision", "")).upper()
-    profile = str(tags.get("profile", "")).capitalize()
+    profile_raw = str(tags.get("profile", ""))
+    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
+    profile = profile_raw.replace("-lora", "").capitalize() if is_lora else profile_raw.capitalize()
     sm_val = str(tags.get("sm", "")).strip()
     v_val = str(tags.get("v", "")).strip()
     sm_part = f"SM{sm_val}" if sm_val else ""
@@ -533,17 +541,17 @@ def build_display_name_with_overrides(model: str, tags: dict, override_gpu: str 
 
     mode_val = str(tags.get("mode", "")).strip()
     mode_part = mode_val.capitalize() if mode_val else ""
-    
+
     vad_val = str(tags.get("vad", "")).strip()
     vad_part = vad_val.capitalize() if vad_val else ""
-    
+
     diarizer_val = str(tags.get("diarizer", "")).strip().lower()
     diarizer_part = diarizer_val.capitalize() if diarizer_val and diarizer_val != "disabled" else ""
-    
+
     batch_size_val = str(tags.get("batch_size", "")).strip()
     batch_size_part = f"BatchSizex{batch_size_val}" if batch_size_val else ""
 
-    lora_part = "LORA" if tags.get("feat_lora") else ""
+    lora_part = "LORA" if is_lora else ""
 
     suffix = " ".join(part for part in [gpu_part, sm_part, v_part, onnx_part, mode_part, vad_part, diarizer_part, batch_size_part, precision, profile, lora_part] if part)
     return f"{base_name} {suffix}".strip()
@@ -753,6 +761,28 @@ def append_optimization_profile(optimization_profiles, profile_id_counts, profil
         counts["lora"] += 1
         lora_n = counts["lora"]
         if lora_n == 1:
+            # First LoRA collision — check if the base holder is also LoRA
+            first = None
+            for p in optimization_profiles:
+                if p.get("profileId") == base:
+                    first = p
+                    break
+            if first:
+                first_meta = first.get("ngcMetadata", {})
+                first_is_lora = False
+                for fm in first_meta.values():
+                    first_is_lora = str(fm.get("tags", {}).get("feat_lora", "")).lower() == "true"
+                    break
+                if first_is_lora:
+                    # All-LoRA collision: rename first to __lora, this one gets __lora__2
+                    first["profileId"] = f"{base}__lora"
+                    counts["lora"] += 1
+                    lora_n = counts["lora"]
+                    final_id = f"{base}__lora__{lora_n}"
+                    print(f"Disambiguating profileId: {base} -> {base}__lora (retroactive)")
+                    print(f"Disambiguating profileId: {base} -> {final_id}")
+                    optimization_profiles.append({**profile_dict, "profileId": final_id})
+                    return
             final_id = f"{base}__lora"
         else:
             final_id = f"{base}__lora__{lora_n}"
