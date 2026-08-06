@@ -437,34 +437,6 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp8__lora
-      framework: VLLM
-      displayName: Nemotron 3 Nano GENERICx8 VLLM BF16 LORA
-      ngcMetadata:
-        2b28b859b310b857ac6cf272d42a2c984995ba0266f78725f4e26f73eb8ee5ba:
-          model: nvidia/nemotron-3-nano
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '12.0'
-            pp: '1'
-            precision: bf16
-            tp: '8'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 59GB
-      - key: LORA
-        value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp8
       framework: VLLM
       displayName: Nemotron 3 Nano GENERICx8 VLLM BF16
@@ -493,30 +465,30 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp8__lora
+    - profileId: nim/nvidia/nemotron-3-nano:hf-52469ad-tp8__lora
       framework: VLLM
-      displayName: Nemotron 3 Nano GENERICx8 VLLM FP8 LORA
+      displayName: Nemotron 3 Nano GENERICx8 VLLM BF16 LORA
       ngcMetadata:
-        12f8f7295a37cd1a9b6a3559b0d7449f6ca42ee7b5007de62208385ca1d75d0b:
+        2b28b859b310b857ac6cf272d42a2c984995ba0266f78725f4e26f73eb8ee5ba:
           model: nvidia/nemotron-3-nano
           release: 2.0.3
           tags:
             feat_lora: 'true'
             llm_engine: vllm
-            min_vram_per_device_gb: '8.0'
+            min_vram_per_device_gb: '12.0'
             pp: '1'
-            precision: fp8
+            precision: bf16
             tp: '8'
       modelFormat: vllm
       spec:
       - key: PRECISION
-        value: FP8
+        value: BF16
       - key: COUNT
         value: 8
       - key: NIM VERSION
         value: 2.0.3
       - key: DOWNLOAD SIZE
-        value: 31GB
+        value: 59GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -547,6 +519,34 @@ models:
         value: 31GB
       - key: LORA
         value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-nano:hf-fp8-f25a17a-tp8__lora
+      framework: VLLM
+      displayName: Nemotron 3 Nano GENERICx8 VLLM FP8 LORA
+      ngcMetadata:
+        12f8f7295a37cd1a9b6a3559b0d7449f6ca42ee7b5007de62208385ca1d75d0b:
+          model: nvidia/nemotron-3-nano
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '8.0'
+            pp: '1'
+            precision: fp8
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 31GB
+      - key: LORA
+        value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/nvidia/nemotron-3-nano:hf-nvfp4-bd1ffb1-tp8

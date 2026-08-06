@@ -75,34 +75,6 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling__lora
-      framework: VLLM
-      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx1 VLLM FP8 LORA
-      ngcMetadata:
-        442b97776dbd568ef529479d866b000c7bd16b5f5d2422c213a0b3b1624c9281:
-          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '76.0'
-            pp: '1'
-            precision: fp8
-            tp: '1'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 49GB
-      - key: LORA
-        value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling
       framework: VLLM
       displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx1 VLLM FP8
@@ -131,30 +103,30 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling__lora
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling__lora
       framework: VLLM
-      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx1 VLLM NVFP4 LORA
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx1 VLLM FP8 LORA
       ngcMetadata:
-        50e2f862b5fe96cba5e45e2092d38845fa54104dcc03f4c0b2bdb23b4d05b6aa:
+        442b97776dbd568ef529479d866b000c7bd16b5f5d2422c213a0b3b1624c9281:
           model: nvidia/llama-3.3-nemotron-super-49b-v1.5
           release: 2.0.3
           tags:
             feat_lora: 'true'
             llm_engine: vllm
-            min_vram_per_device_gb: '56.0'
+            min_vram_per_device_gb: '76.0'
             pp: '1'
-            precision: nvfp4
+            precision: fp8
             tp: '1'
       modelFormat: vllm
       spec:
       - key: PRECISION
-        value: NVFP4
+        value: FP8
       - key: COUNT
         value: 1
       - key: NIM VERSION
         value: 2.0.3
       - key: DOWNLOAD SIZE
-        value: 29GB
+        value: 49GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -185,6 +157,34 @@ models:
         value: 29GB
       - key: LORA
         value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling__lora
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx1 VLLM NVFP4 LORA
+      ngcMetadata:
+        50e2f862b5fe96cba5e45e2092d38845fa54104dcc03f4c0b2bdb23b4d05b6aa:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '56.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 29GB
+      - key: LORA
+        value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:hf-checkpoint-bf16-jetart-tp2
@@ -243,34 +243,6 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-tp2__lora
-      framework: VLLM
-      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx2 VLLM FP8 LORA
-      ngcMetadata:
-        539eab4f3514e65516789d3bd11e4102aae5065a86e7cfb7688950bb456ce239:
-          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '40.0'
-            pp: '1'
-            precision: fp8
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 49GB
-      - key: LORA
-        value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-tp2
       framework: VLLM
       displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx2 VLLM FP8
@@ -297,6 +269,34 @@ models:
         value: 49GB
       - key: LORA
         value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-tp2__lora
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx2 VLLM FP8 LORA
+      ngcMetadata:
+        539eab4f3514e65516789d3bd11e4102aae5065a86e7cfb7688950bb456ce239:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '40.0'
+            pp: '1'
+            precision: fp8
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 49GB
+      - key: LORA
+        value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling-tp2
@@ -411,34 +411,6 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-tp4__lora
-      framework: VLLM
-      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx4 VLLM FP8 LORA
-      ngcMetadata:
-        18c1c9566d039d78881db55dd30907348afd73ff75f4e262aa1af824e320aa55:
-          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '22.0'
-            pp: '1'
-            precision: fp8
-            tp: '4'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 4
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 49GB
-      - key: LORA
-        value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-tp4
       framework: VLLM
       displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx4 VLLM FP8
@@ -465,6 +437,34 @@ models:
         value: 49GB
       - key: LORA
         value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-tp4__lora
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx4 VLLM FP8 LORA
+      ngcMetadata:
+        18c1c9566d039d78881db55dd30907348afd73ff75f4e262aa1af824e320aa55:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '22.0'
+            pp: '1'
+            precision: fp8
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 49GB
+      - key: LORA
+        value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling-tp4
@@ -579,34 +579,6 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-tp8__lora
-      framework: VLLM
-      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx8 VLLM FP8 LORA
-      ngcMetadata:
-        651f21dff2c1193dd7e606701ad1e18d5e35fe0cdc597f0b08a4af2609824af1:
-          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
-          release: 2.0.3
-          tags:
-            feat_lora: 'true'
-            llm_engine: vllm
-            min_vram_per_device_gb: '13.0'
-            pp: '1'
-            precision: fp8
-            tp: '8'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: FP8
-      - key: COUNT
-        value: 8
-      - key: NIM VERSION
-        value: 2.0.3
-      - key: DOWNLOAD SIZE
-        value: 49GB
-      - key: LORA
-        value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
     - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-tp8
       framework: VLLM
       displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx8 VLLM FP8
@@ -635,30 +607,30 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling-tp8__lora
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:fp8-rmctserfba-tool-calling-tp8__lora
       framework: VLLM
-      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx8 VLLM NVFP4 LORA
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx8 VLLM FP8 LORA
       ngcMetadata:
-        32dcea516a998a70f3069cdfbcc781de6c492c344cb38a29780f249fdb190e4d:
+        651f21dff2c1193dd7e606701ad1e18d5e35fe0cdc597f0b08a4af2609824af1:
           model: nvidia/llama-3.3-nemotron-super-49b-v1.5
           release: 2.0.3
           tags:
             feat_lora: 'true'
             llm_engine: vllm
-            min_vram_per_device_gb: '11.0'
+            min_vram_per_device_gb: '13.0'
             pp: '1'
-            precision: nvfp4
+            precision: fp8
             tp: '8'
       modelFormat: vllm
       spec:
       - key: PRECISION
-        value: NVFP4
+        value: FP8
       - key: COUNT
         value: 8
       - key: NIM VERSION
         value: 2.0.3
       - key: DOWNLOAD SIZE
-        value: 29GB
+        value: 49GB
       - key: LORA
         value: 'TRUE'
       - key: LLM ENGINE
@@ -689,6 +661,34 @@ models:
         value: 29GB
       - key: LORA
         value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/llama-3.3-nemotron-super-49b-v1.5:nvfp4-biyprhc44a-tool-calling-tp8__lora
+      framework: VLLM
+      displayName: Llama 3.3 Nemotron Super 49B V1.5 GENERICx8 VLLM NVFP4 LORA
+      ngcMetadata:
+        32dcea516a998a70f3069cdfbcc781de6c492c344cb38a29780f249fdb190e4d:
+          model: nvidia/llama-3.3-nemotron-super-49b-v1.5
+          release: 2.0.3
+          tags:
+            feat_lora: 'true'
+            llm_engine: vllm
+            min_vram_per_device_gb: '11.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.3
+      - key: DOWNLOAD SIZE
+        value: 29GB
+      - key: LORA
+        value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
   labels:

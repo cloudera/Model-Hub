@@ -487,6 +487,34 @@ models:
         value: 'TRUE'
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-tp2
+      framework: VLLM
+      displayName: Mistral 7B Instruct V0.3 GENERICx2 VLLM BF16
+      ngcMetadata:
+        f2b422e59e99892041782cce90533e0b46a58e66e5b42bc586b049ad33ba1251:
+          model: mistralai/mistral-7b-instruct-v0.3
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            llm_engine: vllm
+            nim_workspace_hash_v1: f727ebd04910d0e76cfca9a0bb59077c24deaca5017012badf9147d6a4d80690
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 28GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-tp2__lora
       framework: VLLM
       displayName: Mistral 7B Instruct V0.3 GENERICx2 VLLM BF16 LORA
@@ -514,34 +542,6 @@ models:
         value: 28GB
       - key: LORA
         value: 'TRUE'
-      - key: LLM ENGINE
-        value: VLLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-tp2
-      framework: VLLM
-      displayName: Mistral 7B Instruct V0.3 GENERICx2 VLLM BF16
-      ngcMetadata:
-        f2b422e59e99892041782cce90533e0b46a58e66e5b42bc586b049ad33ba1251:
-          model: mistralai/mistral-7b-instruct-v0.3
-          release: 1.12.0
-          tags:
-            feat_lora: 'false'
-            llm_engine: vllm
-            nim_workspace_hash_v1: f727ebd04910d0e76cfca9a0bb59077c24deaca5017012badf9147d6a4d80690
-            pp: '1'
-            precision: bf16
-            tp: '2'
-      modelFormat: vllm
-      spec:
-      - key: PRECISION
-        value: BF16
-      - key: COUNT
-        value: 2
-      - key: NIM VERSION
-        value: 1.12.0
-      - key: DOWNLOAD SIZE
-        value: 28GB
-      - key: LORA
-        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:h100x1-throughput-bf16-p8aaj1ui3a
@@ -1266,7 +1266,7 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__2
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__4
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 BF16 Throughput
       ngcMetadata:
@@ -1304,7 +1304,7 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__lora
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__lora__2
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 BF16 Throughput LORA
       ngcMetadata:
@@ -1380,7 +1380,7 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__4
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__2
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 FP8 Throughput
       ngcMetadata:
@@ -1418,7 +1418,7 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__lora__2
+    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:hf-0d4b76e-tool_calling-bf16-rtx6000_blackwell_sv__lora
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 RTX6000_BLACKWELL_SVx1 FP8 Throughput LORA
       ngcMetadata:
