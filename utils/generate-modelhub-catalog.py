@@ -719,17 +719,13 @@ def make_display_names_unique(model_data):
                             profiles[prof_idx]['displayName'] = f"{dname} - {suffix_num}"
 
 def append_optimization_profile(optimization_profiles, profile_id_counts, profile_dict):
-    """Append one profile. Duplicate NIM profileId values get suffixes.
+    """Append one profile. Duplicate NIM profileId values get numeric suffixes.
 
-    Non-LoRA profiles: base, base__2, base__3, …
-    LoRA profiles: base__lora, base__lora__2, base__lora__3, …
-
-    When a feat_lora=true profile is the first seen for a base URI and a
-    non-LoRA profile arrives later, the LoRA profile is retroactively renamed
-    to __lora and the non-LoRA profile takes the base ID.
+    First occurrence keeps the bare base ID; subsequent duplicates get
+    base__2, base__3, etc. regardless of LoRA status.
 
     profile_id_counts stores per-base state as:
-        {base: {"total": N, "lora": M, "non_lora": K}}
+        {base: int}  (total count seen so far)
     """
     pid = profile_dict.get("profileId")
     if not isinstance(pid, str) or not str(pid).strip():
@@ -738,83 +734,16 @@ def append_optimization_profile(optimization_profiles, profile_id_counts, profil
     base = str(pid).strip()
 
     if base not in profile_id_counts:
-        profile_id_counts[base] = {"total": 0, "lora": 0, "non_lora": 0}
-    counts = profile_id_counts[base]
-    counts["total"] += 1
+        profile_id_counts[base] = 0
+    profile_id_counts[base] += 1
+    count = profile_id_counts[base]
 
-    metadata = profile_dict.get("ngcMetadata", {})
-    tags = {}
-    for meta in metadata.values():
-        tags = meta.get("tags", {})
-        break
-    is_lora = str(tags.get("feat_lora", "")).lower() == "true"
-
-    if counts["total"] == 1:
-        if is_lora:
-            counts["lora"] += 1
-        else:
-            counts["non_lora"] += 1
+    if count == 1:
         optimization_profiles.append(profile_dict)
-        return
-
-    if is_lora:
-        counts["lora"] += 1
-        lora_n = counts["lora"]
-        if lora_n == 1:
-            # First LoRA collision — check if the base holder is also LoRA
-            first = None
-            for p in optimization_profiles:
-                if p.get("profileId") == base:
-                    first = p
-                    break
-            if first:
-                first_meta = first.get("ngcMetadata", {})
-                first_is_lora = False
-                for fm in first_meta.values():
-                    first_is_lora = str(fm.get("tags", {}).get("feat_lora", "")).lower() == "true"
-                    break
-                if first_is_lora:
-                    # All-LoRA collision: rename first to __lora, this one gets __lora__2
-                    first["profileId"] = f"{base}__lora"
-                    counts["lora"] += 1
-                    lora_n = counts["lora"]
-                    final_id = f"{base}__lora__{lora_n}"
-                    print(f"Disambiguating profileId: {base} -> {base}__lora (retroactive)")
-                    print(f"Disambiguating profileId: {base} -> {final_id}")
-                    optimization_profiles.append({**profile_dict, "profileId": final_id})
-                    return
-            final_id = f"{base}__lora"
-        else:
-            final_id = f"{base}__lora__{lora_n}"
+    else:
+        final_id = f"{base}__{count}"
         print(f"Disambiguating profileId: {base} -> {final_id}")
         optimization_profiles.append({**profile_dict, "profileId": final_id})
-    else:
-        counts["non_lora"] += 1
-        non_lora_n = counts["non_lora"]
-        if non_lora_n == 1:
-            first = None
-            for p in optimization_profiles:
-                if p.get("profileId") == base:
-                    first = p
-                    break
-            if first:
-                first_meta = first.get("ngcMetadata", {})
-                first_is_lora = False
-                for fm in first_meta.values():
-                    first_is_lora = str(fm.get("tags", {}).get("feat_lora", "")).lower() == "true"
-                    break
-                if first_is_lora:
-                    first["profileId"] = f"{base}__lora"
-                    print(f"Disambiguating profileId: {base} -> {base}__lora (retroactive)")
-                    optimization_profiles.append({**profile_dict, "profileId": base})
-                    return
-            final_id = f"{base}__{counts['total']}"
-            print(f"Disambiguating profileId: {base} -> {final_id}")
-            optimization_profiles.append({**profile_dict, "profileId": final_id})
-        else:
-            final_id = f"{base}__{non_lora_n}"
-            print(f"Disambiguating profileId: {base} -> {final_id}")
-            optimization_profiles.append({**profile_dict, "profileId": final_id})
 
 def main():
     parser = argparse.ArgumentParser(description="Generate modelhub catalog YAML file using manifest YAML and base model YAML")
