@@ -51,6 +51,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-a100_sxm4_40gb-tp2
@@ -87,6 +89,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:a100x1-throughput-bf16-dohmk4psfa
@@ -123,6 +127,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:a100x2-latency-bf16-ezdh3qtgsw
@@ -159,6 +165,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 4GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:a10gx1-throughput-bf16-wmuh1shq9q
@@ -195,6 +203,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:a10gx2-latency-bf16-sdcegxqefa
@@ -231,6 +241,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 4GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:b200x1-throughput-bf16-olbx5u2wza
@@ -267,6 +279,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:b200x1-throughput-fp8-ys-xbyv-sg
@@ -303,6 +317,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 2GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:b200x2-latency-bf16-jvvom3lafg
@@ -339,6 +355,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 4GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:gb200x1-throughput-bf16-zyj-crhkzq
@@ -375,6 +393,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:gb200x1-throughput-fp8-nupr5gs2dw
@@ -411,6 +431,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 2GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:gb200x2-latency-bf16-2w1oa3-9bw
@@ -447,6 +469,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 4GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:gb200x2-latency-fp8-mj9h4xjlpw
@@ -483,11 +507,13 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling__2
       framework: VLLM
-      displayName: Llama 3.2 1B Instruct GENERICx1 VLLM BF16
+      displayName: Llama 3.2 1B Instruct Generic NVIDIA GPUx1 BF16
       ngcMetadata:
         72104c5b2318b83bb8dde1d255998243472158e48c236982c4974f5a1c693d8e:
           model: meta/llama-3.2-1b-instruct
@@ -509,11 +535,13 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-tp2
       framework: VLLM
-      displayName: Llama 3.2 1B Instruct GENERICx2 VLLM BF16
+      displayName: Llama 3.2 1B Instruct Generic NVIDIA GPUx2 BF16
       ngcMetadata:
         718f87658ae4967fc969adceab14d854ed1c69afe09b9becb91d70374c01f6a2:
           model: meta/llama-3.2-1b-instruct
@@ -535,9 +563,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_144gb__2
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_144gb__3
       framework: TensorRT-LLM
       displayName: Llama 3.2 1B Instruct GH200_144GBx1 BF16 Latency
       ngcMetadata:
@@ -571,9 +601,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_144gb__4
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_144gb__5
       framework: TensorRT-LLM
       displayName: Llama 3.2 1B Instruct GH200_144GBx1 BF16 Throughput
       ngcMetadata:
@@ -607,6 +639,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_144gb
@@ -643,9 +677,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_144gb__3
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_144gb__4
       framework: TensorRT-LLM
       displayName: Llama 3.2 1B Instruct GH200_144GBx1 FP8 Throughput
       ngcMetadata:
@@ -679,9 +715,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_480gb__2
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_480gb__3
       framework: TensorRT-LLM
       displayName: Llama 3.2 1B Instruct GH200_480GBx1 BF16 Throughput
       ngcMetadata:
@@ -715,9 +753,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_480gb
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_480gb__2
       framework: TensorRT-LLM
       displayName: Llama 3.2 1B Instruct GH200_480GBx1 FP8 Throughput
       ngcMetadata:
@@ -751,6 +791,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h100_nvl
@@ -787,6 +829,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h100_nvl__2
@@ -823,6 +867,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h100_nvl-tp2__2
@@ -859,6 +905,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h100_nvl-tp2
@@ -895,6 +943,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h100x1-throughput-bf16-coy0mruniw
@@ -931,6 +981,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h100x1-throughput-fp8-tfwwzbhdca
@@ -967,6 +1019,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 2GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h100x2-latency-bf16-kdm6hypmza
@@ -1003,6 +1057,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 4GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h100x2-latency-fp8-5cyndvc2za
@@ -1039,6 +1095,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h200_nvl__2
@@ -1075,6 +1133,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h200_nvl
@@ -1111,6 +1171,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h200_nvl-tp2__2
@@ -1147,6 +1209,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h200_nvl-tp2
@@ -1183,6 +1247,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-bf16-tsa8sfptpw
@@ -1219,6 +1285,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-fp8-q4ene2avnw
@@ -1255,6 +1323,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 2GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-fp8-b62hkfmx2a
@@ -1291,6 +1361,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 2GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x2-latency-bf16-itm2i3hlig
@@ -1327,6 +1399,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 4GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x2-latency-fp8--yymwnqgka
@@ -1363,6 +1437,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:h200x2-latency-fp8-qdlgs44zrw
@@ -1399,6 +1475,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:l40sx1-throughput-bf16-mr-zfjdk9w
@@ -1435,6 +1513,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:l40sx1-throughput-fp8-wocwu5pweq
@@ -1471,6 +1551,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 2GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:l40sx2-latency-bf16-wimz1alj0q
@@ -1507,6 +1589,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 4GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:l40sx2-latency-fp8-uvobdo54ig
@@ -1543,6 +1627,949 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 3GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-a100_sxm4_40gb__2
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA A100_SXM4_40GBx1 BF16 Throughput
+      ngcMetadata:
+        82d84f08ca0bf2c8bdab924f61c8de68216362d470a69958c3f103c42a9b9d65:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: A100_SXM4_40GB
+            gpu_device: 20b0:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 024a85b996095a7542db1a70595b091a91e48109860592f7a1a0152162cfaf86
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100_SXM4_40GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20B0:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:a100x1-throughput-lora-bf16-x6u4sw3thg
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA A100x1 BF16 Throughput
+      ngcMetadata:
+        5f0d32447b5a5d1b15fa7b636b8818c180b06ec4202eafe4cc2dd3f9ca877b7c:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: a3b17f33f13a9cfa14c5da5ba4e9e0a3e968454472fda82baaef6557b9555f5b
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:a10gx1-throughput-lora-bf16-bzi9n-6xwg
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA A10Gx1 BF16 Throughput
+      ngcMetadata:
+        e01d20f3bc16e18bbdcaa73d1e1679d4aef0946227b469c6b95408cefb0f9d06:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: fd174593ac8f02e114657a959fbebfa785d9e8c4e84aca1ea741d22cc1da8e63
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2237:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:b200x1-throughput-lora-bf16-fybzmmebea
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA B200x1 BF16 Throughput
+      ngcMetadata:
+        2f9534868041634e0d1d2e5892eed5f96799d21476e6d1749a1ab36196cbbd56:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: d54b45958a08ff84bf94ceebd7e62fd5d54edcd9adf6eac4da797bcd34f17791
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:b200x1-throughput-lora-fp8-f3hf01kykw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA B200x1 FP8 Throughput
+      ngcMetadata:
+        2d4f1dbd7d44dc71edde3f6115e57ce90036eb76f2deb0a030375749495955ee:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: d7235cdc5a0917e7ca06bbc5b02b29460e547a1649e5a0e7ab084d2e62cc99cd
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:gb200x1-throughput-lora-bf16-a2r7gb0khw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA GB200x1 BF16 Throughput
+      ngcMetadata:
+        74f3c768f8f1d6fad323700ec95e2e28319d99b11a4372c861c5f2441ae09f4b:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 698f1fa2f528a6eda5acde09b211a53e1190d9e08b1f844d2826bd82457b4469
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:gb200x1-throughput-lora-fp8-ftpyyxeiia
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA GB200x1 FP8 Throughput
+      ngcMetadata:
+        a7ed9c1b85f9eaf99e6cccee17945c447978e419113342202dc426f5012929a0:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 9c5ac627815c378cd90646c14a61eabaa40cf729285e5e3986c74277bc5c8bc4
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling
+      framework: VLLM
+      displayName: Llama 3.2 1B Instruct LORA Generic NVIDIA GPUx1 BF16
+      ngcMetadata:
+        591cad8b29c318cab606c47cace880d404ca3fe590c1d5e4440f4d3cd8387637:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 0a5c5035a5fc459cec1f9137dc49d774da0842e378d3ede1d68fb4e725b32622
+            pp: '1'
+            precision: bf16
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_144gb__6
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA GH200_144GBx1 BF16 Throughput
+      ngcMetadata:
+        d219baf808ce6451fe28da2a642c23706a0e4ab07f85d9d61576303695ea6406:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_144GB
+            gpu_device: 2348:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 7b0c71127cb9376e51036786ca3076f482341af614b2480acb8f3fa1a626d677
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200_144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_144gb__2
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA GH200_144GBx1 FP8 Throughput
+      ngcMetadata:
+        25c623f6db2741beb65c4f4ea09dc70018d7fcc104b3b7c6f3ef50123901f75f:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_144GB
+            gpu_device: 2348:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 9127b4374e76e86fc397771ca31636e6249a24c4e1efeda231e60d4b41f589a3
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_480gb__4
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA GH200_480GBx1 BF16 Throughput
+      ngcMetadata:
+        eb2c8e64898d63fc47a8e94879817cff26a24062e43b0a8c90740806c8d98027:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 63bd32fd259835a9093d2b39a3407320d71b50dc104b660c74d646fe869cf74d
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-gh200_480gb
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA GH200_480GBx1 FP8 Throughput
+      ngcMetadata:
+        6e718fb5fde9abbbc261b06071b3db97dde27ae7909068fbd905e5b126f985ce:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 8119e5ceb4ac8ea8f58bdb0a35d72f06a174ac94cd44e1b464b8591eb039c78d
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h100_nvl__3
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA H100_NVLx1 BF16 Throughput
+      ngcMetadata:
+        bfbc41e5cbd67c83bf93df60e5378db6812f2b721ee2c42eaa0cac501892d99f:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 6b727e3152f1a46430ae18bb16654ddfab254d0c7228be0436d805fcbf65f4c9
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h100_nvl__4
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA H100_NVLx1 FP8 Throughput
+      ngcMetadata:
+        c3a08aaa0a71e9bc489501a97a75b61e085f60711088c26849cb02af99c56a43:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: bb0b21db27c80ac109a831d10ca74f789f0c5b7e65fac402f8d961d4ff781767
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:h100x1-throughput-lora-bf16-jutwgrpizg
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA H100x1 BF16 Throughput
+      ngcMetadata:
+        c20374b81737b46815168ea281b7069831e840f58f5a1f325de16b16f608f876:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: ba3514a89df3b17fa5a6153abe5d2fe8ad618f5cdcc6a6c0dde6e928e34988d7
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:h100x1-throughput-lora-fp8-e4x5ewcs-a
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA H100x1 FP8 Throughput
+      ngcMetadata:
+        6af40d51e4a37c63e67a46ce90c8736fe53769af3ee77b779c0d144b0192102b:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 8058116dcaa75bf50b4335c778479e54d6069cf46a7256ac89bdb3a0be821978
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h200_nvl__4
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA H200_NVLx1 BF16 Throughput
+      ngcMetadata:
+        d00f9240fc4fa918657608f094987ca06b9322ebb6c7eb857e5cf34258deed7e:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H200_NVL
+            gpu_device: 233b:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: d6642c8907a6c3715343b1fac6a3ee9b2e0239300c5a90fab167ad3b816f322e
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-h200_nvl__3
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA H200_NVLx1 FP8 Throughput
+      ngcMetadata:
+        b9172f9cd624c1eb7cb75feb6b592f52b0dbd7090ab5f51a01936d0b347b8ea3:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H200_NVL
+            gpu_device: 233b:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: b70c10c5be7a58f8f774b8f0f0f7417888d38c8aafbd0a118abeb8e4ed4743f8
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-lora-bf16-m-xtgsp0zw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA H200x1 BF16 Throughput
+      ngcMetadata:
+        8c92af1b1ba8be9fdece562b32165ecc546b6cc80f66737bbbd3f412cf13b3ba:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: affee057793a821edf69b32af4dd03df6eccc1945c0fd46fa95bec61c5d73df7
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-lora-fp8-nl7qeylo2a
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA H200x1 FP8 Throughput
+      ngcMetadata:
+        1216791fc2e6d04ed5805df4a82e0052899c154249fd7a541a680871c64e59ad:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: f0e8eead4fdb0e617c7f2f9c8e42fc2f1cef4f0ba870c9c778da8a6f4e9de76a
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:h200x1-throughput-lora-fp8-ghubzluzkw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA H200x1 FP8 Throughput - 2
+      ngcMetadata:
+        76d0d4d5b323e7cbd76cc083ffdf55d57739ebd2a6da2566309626285a0c4d2d:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 2ba396f4398b7f98287e0e3e03bdd7ef027688262395351418a677d465187956
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:l40sx1-throughput-lora-bf16-hsr87uf9pa
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA L40Sx1 BF16 Throughput
+      ngcMetadata:
+        6453678b168f64d8df1510d420d648e73d3215cc58cd7e72d4b2ecb7a1c69cee:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: ea6ee1afd5d2b0cb2bd2021e5e30dfcb79083bdfb276b83f43f80752e7822674
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:l40sx1-throughput-lora-fp8-8rronbbmjq
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA L40Sx1 FP8 Throughput
+      ngcMetadata:
+        168a108e2ff64d884ef7bb1654b0f93994ae7003c7414ce99dcd0274234bccf6:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: 38c5545834cfcb1ad8e61d8a8f0a11907d900cf35b35468c5867fb1796677214
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-rtx6000_blackwell_sv__5
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA RTX6000_BLACKWELL_SVx1 BF16 Throughput
+      ngcMetadata:
+        8b0aadfdda9f71c8cd9f4b835cfe1b3a95528ef41457959009741981f5649a7c:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: c95fe8bc05226a308bcff5663a2fcb3b47a418e5565ec853f06874adb844da3c
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-rtx6000_blackwell_sv__6
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct LORA RTX6000_BLACKWELL_SVx1 FP8 Throughput
+      ngcMetadata:
+        d42a9812c364ea1f476f7eff44a1d7d00c41d52999a9a4d9ab13556a5969a37c:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            gpu: RTX6000_BLACKWELL_SV
+            gpu_device: 2bb5:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: ae4590c44ea025c60555dd8913c3b64d58b2b6dda6cd14fd4034da8464a8cf47
+            number_of_gpus: '2'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_BLACKWELL_SV
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2BB5:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-rtx6000_blackwell_sv
@@ -1579,6 +2606,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-rtx6000_blackwell_sv__3
@@ -1615,6 +2644,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-rtx6000_blackwell_sv__2
@@ -1651,6 +2682,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:hf-9213176-tool_calling-rtx6000_blackwell_sv__4
@@ -1687,14 +2720,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-  - variantId: Llama 3.2 3B Instruct
-    modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJjYW5HdWVzdERvd25sb2FkIjogZmFsc2UsCiAgICAiY3JlYXRlZERhdGUiOiAiMjAyNS0wMi0xOVQyMDo0MzoyMC41MzhaIiwKICAgICJkZXNjcmlwdGlvbiI6ICIjIyBNb2RlbCBJbmZvcm1hdGlvblxuXG5UaGUgTWV0YSBMbGFtYSAzLjIgY29sbGVjdGlvbiBvZiBtdWx0aWxpbmd1YWwgbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxzIChMTE1zKSBpcyBhIGNvbGxlY3Rpb24gb2YgcHJlLXRyYWluZWQgYW5kIGluc3RydWN0aW9uLXR1bmVkIGdlbmVyYXRpdmUgbW9kZWxzIGluIDFCIGFuZCAzQiBzaXplcyAodGV4dCBpbi90ZXh0IG91dCkuIFRoZSBMbGFtYSAzLjIgaW5zdHJ1Y3Rpb24tdHVuZWQgdGV4dCBvbmx5IG1vZGVscyBhcmUgb3B0aW1pemVkIGZvciBtdWx0aWxpbmd1YWwgZGlhbG9ndWUgdXNlIGNhc2VzLCBpbmNsdWRpbmcgYWdlbnRpYyByZXRyaWV2YWwgYW5kIHN1bW1hcml6YXRpb24gdGFza3MuIFRoZXkgb3V0cGVyZm9ybSBtYW55IG9mIHRoZSBhdmFpbGFibGUgb3BlbiBzb3VyY2UgYW5kIGNsb3NlZCBjaGF0IG1vZGVscyBvbiBjb21tb24gaW5kdXN0cnkgYmVuY2htYXJrcy4gXG5cbkxsYW1hIDMuMiBtb2RlbHMgYXJlIHJlYWR5IGZvciBjb21tZXJjaWFsIHVzZS5cblxuTW9kZWxzIGFyZSBhY2NlbGVyYXRlZCBieSBbVGVuc29yUlQtTExNXShodHRwczovL2dpdGh1Yi5jb20vTlZJRElBL1RlbnNvclJULUxMTSksIGEgbGlicmFyeSBmb3Igb3B0aW1pemluZyBMYXJnZSBMYW5ndWFnZSBNb2RlbCAoTExNKSBpbmZlcmVuY2Ugb24gTlZJRElBIEdQVXMuXG5cbioqTW9kZWxzIGluIHRoaXMgQ29sbGVjdGlvbjoqKiAgXG4tIExsYW1hLTMuMi0xQlxuLSBMbGFtYS0zLjItMUItSW5zdHJ1Y3Rcbi0gTGxhbWEtMy4yLTNCXG4tIExsYW1hLTMuMi0zQi1JbnN0cnVjdFxuXG4qKk1vZGVsIERldmVsb3BlcjoqKiBNZXRhXG5cbioqTW9kZWwgVmVyc2lvbjoqKiAzLjJcblxuKipNb2RlbCBSZWxlYXNlIERhdGU6KiogU2VwdGVtYmVyIDI1LCAyMDI0XG5cbioqVGhpcmQtUGFydHkgQ29tbXVuaXR5IENvbnNpZGVyYXRpb246KipcblRoaXMgbW9kZWwgaXMgbm90IG93bmVkIG9yIGRldmVsb3BlZCBieSBOVklESUEuIFRoaXMgbW9kZWwgaGFzIGJlZW4gZGV2ZWxvcGVkIGFuZCBidWlsdCB0byBhIHRoaXJkLXBhcnR5XHUyMDE5cyByZXF1aXJlbWVudHMgZm9yIHRoaXMgYXBwbGljYXRpb24gYW5kIHVzZSBjYXNlOyBzZWUgbGluayB0byBOb24tTlZJRElBIFtMbGFtYSAzLjIgTW9kZWwgQ2FyZF0oaHR0cHM6Ly9naXRodWIuY29tL21ldGEtbGxhbWEvbGxhbWEtbW9kZWxzL2Jsb2IvbWFpbi9tb2RlbHMvbGxhbWEzXzIvTU9ERUxfQ0FSRC5tZCkuXG5cbioqTGljZW5zZToqKiBVc2Ugb2YgTGxhbWEgMy4yIGlzIGdvdmVybmVkIGJ5IHRoZSBbTGxhbWEgMy4yIENvbW11bml0eSBMaWNlbnNlXShodHRwczovL2dpdGh1Yi5jb20vbWV0YS1sbGFtYS9sbGFtYS1tb2RlbHMvYmxvYi9tYWluL21vZGVscy9sbGFtYTNfMi9MSUNFTlNFKSAoYSBjdXN0b20sIGNvbW1lcmNpYWwgbGljZW5zZSBhZ3JlZW1lbnQpLlxuXG4qKk1vZGVsIEFyY2hpdGVjdHVyZToqKiBMbGFtYSAzLjIgaXMgYW4gYXV0by1yZWdyZXNzaXZlIGxhbmd1YWdlIG1vZGVsIHRoYXQgdXNlcyBhbiBvcHRpbWl6ZWQgdHJhbnNmb3JtZXIgYXJjaGl0ZWN0dXJlLiBUaGUgdHVuZWQgdmVyc2lvbnMgdXNlIHN1cGVydmlzZWQgZmluZS10dW5pbmcgKFNGVCkgYW5kIHJlaW5mb3JjZW1lbnQgbGVhcm5pbmcgd2l0aCBodW1hbiBmZWVkYmFjayAoUkxIRikgdG8gYWxpZ24gd2l0aCBodW1hbiBwcmVmZXJlbmNlcyBmb3IgaGVscGZ1bG5lc3MgYW5kIHNhZmV0eS5cblxufCAgfCBUcmFpbmluZyBEYXRhIHwgUGFyYW1zIHwgSW5wdXQgbW9kYWxpdGllcyB8IE91dHB1dCBtb2RhbGl0aWVzIHwgQ29udGV4dCBMZW5ndGggfCBHUUEgfCBTaGFyZWQgRW1iZWRkaW5ncyB8IFRva2VuIGNvdW50IHwgS25vd2xlZGdlIGN1dG9mZiB8XG58IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHxcbnwgTGxhbWEgMy4yICh0ZXh0IG9ubHkpICB8IEEgbmV3IG1peCBvZiBwdWJsaWNseSBhdmFpbGFibGUgb25saW5lIGRhdGEuIHwgMUIgKDEuMjNCKSB8IE11bHRpbGluZ3VhbCBUZXh0IHwgTXVsdGlsaW5ndWFsIFRleHQgYW5kIGNvZGUgIHwgMTI4ayB8IFllcyB8IFllcyB8IFVwIHRvIDlUIHRva2VucyB8IERlY2VtYmVyIDIwMjMgfFxufCAgfCAgfCAzQiAoMy4yMUIpIHwgTXVsdGlsaW5ndWFsIFRleHQgfCBNdWx0aWxpbmd1YWwgVGV4dCBhbmQgY29kZSAgfCAgfCAgfCAgfCAgfCAgfFxuXG4qKlN1cHBvcnRlZCBMYW5ndWFnZXM6KiogRW5nbGlzaCwgR2VybWFuLCBGcmVuY2gsIEl0YWxpYW4sIFBvcnR1Z3Vlc2UsIEhpbmRpLCBTcGFuaXNoLCBhbmQgVGhhaSBhcmUgb2ZmaWNpYWxseSBzdXBwb3J0ZWQuIExsYW1hIDMuMiBoYXMgYmVlbiB0cmFpbmVkIG9uIGEgYnJvYWRlciBjb2xsZWN0aW9uIG9mIGxhbmd1YWdlcyB0aGFuIHRoZXNlIDggc3VwcG9ydGVkIGxhbmd1YWdlcy4gRGV2ZWxvcGVycyBtYXkgZmluZS10dW5lIExsYW1hIDMuMiBtb2RlbHMgZm9yIGxhbmd1YWdlcyBiZXlvbmQgdGhlc2Ugc3VwcG9ydGVkIGxhbmd1YWdlcywgcHJvdmlkZWQgdGhleSBjb21wbHkgd2l0aCB0aGUgTGxhbWEgMy4yIENvbW11bml0eSBMaWNlbnNlIGFuZCB0aGUgQWNjZXB0YWJsZSBVc2UgUG9saWN5LiBEZXZlbG9wZXJzIGFyZSBhbHdheXMgZXhwZWN0ZWQgdG8gZW5zdXJlIHRoYXQgdGhlaXIgZGVwbG95bWVudHMsIGluY2x1ZGluZyB0aG9zZSB0aGF0IGludm9sdmUgYWRkaXRpb25hbCBsYW5ndWFnZXMsIGFyZSBjb21wbGV0ZWQgc2FmZWx5IGFuZCByZXNwb25zaWJseS5cblxuKipMbGFtYSAzLjIgTW9kZWwgRmFtaWx5OioqIFRva2VuIGNvdW50cyByZWZlciB0byBwcmUtdHJhaW5pbmcgZGF0YSBvbmx5LiBBbGwgbW9kZWwgdmVyc2lvbnMgdXNlIEdyb3VwZWQtUXVlcnkgQXR0ZW50aW9uIChHUUEpIGZvciBpbXByb3ZlZCBpbmZlcmVuY2Ugc2NhbGFiaWxpdHkuXG5cbioqU3RhdHVzOioqIFRoaXMgaXMgYSBzdGF0aWMgbW9kZWwgdHJhaW5lZCBvbiBhbiBvZmZsaW5lIGRhdGFzZXQuIEZ1dHVyZSB2ZXJzaW9ucyBtYXkgYmUgcmVsZWFzZWQgdGhhdCBpbXByb3ZlIG1vZGVsIGNhcGFiaWxpdGllcyBhbmQgc2FmZXR5LiBcblxuKipGZWVkYmFjazoqKiBXaGVyZSB0byBzZW5kIHF1ZXN0aW9ucyBvciBjb21tZW50cyBhYm91dCB0aGUgbW9kZWwgSW5zdHJ1Y3Rpb25zIG9uIGhvdyB0byBwcm92aWRlIGZlZWRiYWNrIG9yIGNvbW1lbnRzIG9uIHRoZSBtb2RlbCBjYW4gYmUgZm91bmQgaW4gdGhlIG1vZGVsIFtSRUFETUVdKGh0dHBzOi8vZ2l0aHViLmNvbS9tZXRhLWxsYW1hL2xsYW1hLW1vZGVscy90cmVlL21haW4vbW9kZWxzL2xsYW1hM18yKS4gRm9yIG1vcmUgdGVjaG5pY2FsIGluZm9ybWF0aW9uIGFib3V0IGdlbmVyYXRpb24gcGFyYW1ldGVycyBhbmQgcmVjaXBlcyBmb3IgaG93IHRvIHVzZSBMbGFtYSAzLjIgaW4gYXBwbGljYXRpb25zLCBwbGVhc2UgZ28gW2hlcmVdKGh0dHBzOi8vZ2l0aHViLmNvbS9tZXRhLWxsYW1hL2xsYW1hLXJlY2lwZXMpLiBcblxuIyMgSW50ZW5kZWQgVXNlXG5cbioqSW50ZW5kZWQgVXNlIENhc2VzOioqIExsYW1hIDMuMiBpcyBpbnRlbmRlZCBmb3IgY29tbWVyY2lhbCBhbmQgcmVzZWFyY2ggdXNlIGluIG11bHRpcGxlIGxhbmd1YWdlcy4gSW5zdHJ1Y3Rpb24gdHVuZWQgdGV4dCBvbmx5IG1vZGVscyBhcmUgaW50ZW5kZWQgZm9yIGFzc2lzdGFudC1saWtlIGNoYXQgYW5kIGFnZW50aWMgYXBwbGljYXRpb25zIGxpa2Uga25vd2xlZGdlIHJldHJpZXZhbCBhbmQgc3VtbWFyaXphdGlvbiwgbW9iaWxlIEFJIHBvd2VyZWQgd3JpdGluZyBhc3Npc3RhbnRzIGFuZCBxdWVyeSBhbmQgcHJvbXB0IHJld3JpdGluZy4gUHJlLXRyYWluZWQgbW9kZWxzIGNhbiBiZSBhZGFwdGVkIGZvciBhIHZhcmlldHkgb2YgYWRkaXRpb25hbCBuYXR1cmFsIGxhbmd1YWdlIGdlbmVyYXRpb24gdGFza3MuIFxuXG4qKk91dCBvZiBTY29wZToqKiBVc2UgaW4gYW55IG1hbm5lciB0aGF0IHZpb2xhdGVzIGFwcGxpY2FibGUgbGF3cyBvciByZWd1bGF0aW9ucyAoaW5jbHVkaW5nIHRyYWRlIGNvbXBsaWFuY2UgbGF3cykuIFVzZSBpbiBhbnkgb3RoZXIgd2F5IHRoYXQgaXMgcHJvaGliaXRlZCBieSB0aGUgQWNjZXB0YWJsZSBVc2UgUG9saWN5IGFuZCBMbGFtYSAzLjIgQ29tbXVuaXR5IExpY2Vuc2UuIFVzZSBpbiBsYW5ndWFnZXMgYmV5b25kIHRob3NlIGV4cGxpY2l0bHkgcmVmZXJlbmNlZCBhcyBzdXBwb3J0ZWQgaW4gdGhpcyBtb2RlbCBjYXJkLlxuXG4jIyBTb2Z0d2FyZSBJbnRlZ3JhdGlvblxuXG4qKlN1cHBvcnRlZCBIYXJkd2FyZSBNaWNyb2FyY2hpdGVjdHVyZSBDb21wYXRpYmlsaXR5OioqXG4tIE5WSURJQSBBbXBlcmVcbi0gTlZJRElBIEhvcHBlclxuLSBOVklESUEgTG92ZWxhY2Vcbi0gTlZJRElBIEpldHNvblxuXG4qKlN1cHBvcnRlZCBPcGVyYXRpbmcgU3lzdGVtKHMpOioqXG4tIExpbnV4IFxuLSBXaW5kb3dzXG5cbiMjIEhhcmR3YXJlIGFuZCBTb2Z0d2FyZVxuXG4qKlRyYWluaW5nIEZhY3RvcnM6KiogV2UgdXNlZCBjdXN0b20gdHJhaW5pbmcgbGlicmFyaWVzLCBNZXRhJ3MgY3VzdG9tIGJ1aWx0IEdQVSBjbHVzdGVyLCBhbmQgcHJvZHVjdGlvbiBpbmZyYXN0cnVjdHVyZSBmb3IgcHJlLXRyYWluaW5nLiBGaW5lLXR1bmluZywgYW5ub3RhdGlvbiwgYW5kIGV2YWx1YXRpb24gd2VyZSBhbHNvIHBlcmZvcm1lZCBvbiBwcm9kdWN0aW9uIGluZnJhc3RydWN0dXJlLlxuXG4qKlRyYWluaW5nIEVuZXJneSBVc2U6KiogVHJhaW5pbmcgdXRpbGl6ZWQgYSBjdW11bGF0aXZlIG9mICoqOTE2ayoqIEdQVSBob3VycyBvZiBjb21wdXRhdGlvbiBvbiBIMTAwLTgwR0IgKFREUCBvZiA3MDBXKSB0eXBlIGhhcmR3YXJlLCBwZXIgdGhlIHRhYmxlIGJlbG93LiBUcmFpbmluZyB0aW1lIGlzIHRoZSB0b3RhbCBHUFUgdGltZSByZXF1aXJlZCBmb3IgdHJhaW5pbmcgZWFjaCBtb2RlbCBhbmQgcG93ZXIgY29uc3VtcHRpb24gaXMgdGhlIHBlYWsgcG93ZXIgY2FwYWNpdHkgcGVyIEdQVSBkZXZpY2UgdXNlZCwgYWRqdXN0ZWQgZm9yIHBvd2VyIHVzYWdlIGVmZmljaWVuY3kuIFxuXG4jIyBcblxuKipUcmFpbmluZyBHcmVlbmhvdXNlIEdhcyBFbWlzc2lvbnM6KiogRXN0aW1hdGVkIHRvdGFsIGxvY2F0aW9uLWJhc2VkIGdyZWVuaG91c2UgZ2FzIGVtaXNzaW9ucyB3ZXJlICoqMjQwKiogdG9ucyBDTzJlcSBmb3IgdHJhaW5pbmcuIFNpbmNlIDIwMjAsIE1ldGEgaGFzIG1haW50YWluZWQgbmV0IHplcm8gZ3JlZW5ob3VzZSBnYXMgZW1pc3Npb25zIGluIGl0cyBnbG9iYWwgb3BlcmF0aW9ucyBhbmQgbWF0Y2hlZCAxMDAlIG9mIGl0cyBlbGVjdHJpY2l0eSB1c2Ugd2l0aCByZW5ld2FibGUgZW5lcmd5OyB0aGVyZWZvcmUsIHRoZSB0b3RhbCBtYXJrZXQtYmFzZWQgZ3JlZW5ob3VzZSBnYXMgZW1pc3Npb25zIGZvciB0cmFpbmluZyB3ZXJlIDAgdG9ucyBDTzJlcS5cblxufCAgfCBUcmFpbmluZyBUaW1lIChHUFUgaG91cnMpIHwgTG9naXQgR2VuZXJhdGlvbiBUaW1lIChHUFUgSG91cnMpIHwgVHJhaW5pbmcgUG93ZXIgQ29uc3VtcHRpb24gKFcpIHwgVHJhaW5pbmcgTG9jYXRpb24tQmFzZWQgR3JlZW5ob3VzZSBHYXMgRW1pc3Npb25zICh0b25zIENPMmVxKSB8IFRyYWluaW5nIE1hcmtldC1CYXNlZCBHcmVlbmhvdXNlIEdhcyBFbWlzc2lvbnMgKHRvbnMgQ08yZXEpIHxcbnwgOi0tLS0gfCA6LS0tOiB8IC0tLS0tIHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHxcbnwgTGxhbWEtMy4yLTFCIHwgMzcwayB8IFxcLSB8IDcwMCB8IDEwNyB8IDAgfFxufCBMbGFtYS0zLjItM0IgfCA0NjBrIHwgXFwtIHwgNzAwIHwgMTMzIHwgMCB8XG58IFRvdGFsIHwgODMwayB8ICAgICAgICAgODZrIHwgIHwgMjQwIHwgMCB8XG5cblRoZSBtZXRob2RvbG9neSB1c2VkIHRvIGRldGVybWluZSB0cmFpbmluZyBlbmVyZ3kgdXNlIGFuZCBncmVlbmhvdXNlIGdhcyBlbWlzc2lvbnMgY2FuIGJlIGZvdW5kIFtoZXJlXShodHRwczovL2FyeGl2Lm9yZy9wZGYvMjIwNC4wNTE0OSkuIFNpbmNlIE1ldGEgaXMgb3Blbmx5IHJlbGVhc2luZyB0aGVzZSBtb2RlbHMsIHRoZSB0cmFpbmluZyBlbmVyZ3kgdXNlIGFuZCBncmVlbmhvdXNlIGdhcyBlbWlzc2lvbnMgd2lsbCBub3QgYmUgaW5jdXJyZWQgYnkgb3RoZXJzLlxuXG4jIyBUcmFpbmluZyBEYXRhXG5cbioqRGF0YSBDb2xsZWN0aW9uIE1ldGhvZDoqKiBVbmtub3duICBcbioqTGFiZWxpbmcgTWV0aG9kOioqIFVua25vd25cblxuKipPdmVydmlldzoqKiBMbGFtYSAzLjIgd2FzIHByZS10cmFpbmVkIG9uIHVwIHRvIDkgdHJpbGxpb24gdG9rZW5zIG9mIGRhdGEgZnJvbSBwdWJsaWNseSBhdmFpbGFibGUgc291cmNlcy4gRm9yIHRoZSAxQiBhbmQgM0IgTGxhbWEgMy4yIG1vZGVscywgd2UgaW5jb3Jwb3JhdGVkIGxvZ2l0cyBmcm9tIHRoZSBMbGFtYSAzLjEgOEIgYW5kIDcwQiBtb2RlbHMgaW50byB0aGUgcHJlLXRyYWluaW5nIHN0YWdlIG9mIHRoZSBtb2RlbCBkZXZlbG9wbWVudCwgd2hlcmUgb3V0cHV0cyAobG9naXRzKSBmcm9tIHRoZXNlIGxhcmdlciBtb2RlbHMgd2VyZSB1c2VkIGFzIHRva2VuLWxldmVsIHRhcmdldHMuIEtub3dsZWRnZSBkaXN0aWxsYXRpb24gd2FzIHVzZWQgYWZ0ZXIgcHJ1bmluZyB0byByZWNvdmVyIHBlcmZvcm1hbmNlLiBJbiBwb3N0LXRyYWluaW5nIHdlIHVzZWQgYSBzaW1pbGFyIHJlY2lwZSBhcyBMbGFtYSAzLjEgYW5kIHByb2R1Y2VkIGZpbmFsIGNoYXQgbW9kZWxzIGJ5IGRvaW5nIHNldmVyYWwgcm91bmRzIG9mIGFsaWdubWVudCBvbiB0b3Agb2YgdGhlIHByZS10cmFpbmVkIG1vZGVsLiBFYWNoIHJvdW5kIGludm9sdmVkIFN1cGVydmlzZWQgRmluZS1UdW5pbmcgKFNGVCksIFJlamVjdGlvbiBTYW1wbGluZyAoUlMpLCBhbmQgRGlyZWN0IFByZWZlcmVuY2UgT3B0aW1pemF0aW9uIChEUE8pLlxuXG4qKkRhdGEgRnJlc2huZXNzOioqIFRoZSBwcmUtdHJhaW5pbmcgZGF0YSBoYXMgYSBjdXRvZmYgb2YgRGVjZW1iZXIgMjAyMy5cblxuIyMgQmVuY2htYXJrcyBcXC0gRW5nbGlzaCBUZXh0XG5cbkluIHRoaXMgc2VjdGlvbiwgd2UgcmVwb3J0IHRoZSByZXN1bHRzIGZvciBMbGFtYSAzLjIgbW9kZWxzIG9uIHN0YW5kYXJkIGF1dG9tYXRpYyBiZW5jaG1hcmtzLiBGb3IgYWxsIHRoZXNlIGV2YWx1YXRpb25zLCB3ZSB1c2VkIG91ciBpbnRlcm5hbCBldmFsdWF0aW9ucyBsaWJyYXJ5LiBcblxuIyMjIEJhc2UgUHJlLXRyYWluZWQgTW9kZWxzIFxuXG58IENhdGVnb3J5IHwgQmVuY2htYXJrIHwgXFwjIFNob3RzIHwgTWV0cmljIHwgTGxhbWEtMy4yLTFCIHwgTGxhbWEtMy4yLTNCIHwgTGxhbWEtMy4xLThCIHxcbnwgLS0tLS0gfCAtLS0tLSB8IDotLS06IHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfFxufCBHZW5lcmFsIHwgTU1MVSB8IDUgfCBtYWNyb1xcX2F2Zy9hY2NcXF9jaGFyIHwgMzIuMiB8IDU4IHwgNjYuNyB8XG58ICB8IEFHSUV2YWwgRW5nbGlzaCB8IDMtNSB8IGF2ZXJhZ2UvYWNjXFxfY2hhciB8IDIzLjMgfCAzOS4yIHwgNDcuOCB8XG58ICB8IEFSQy1DaGFsbGVuZ2UgfCAyNSB8IGFjY1xcX2NoYXIgfCAzMi44IHwgNjkuMSB8IDc5LjcgfFxufCBSZWFkaW5nIGNvbXByZWhlbnNpb24gfCBTUXVBRCB8IDEgfCBlbSB8IDQ5LjIgfCA2Ny43IHwgNzcgfFxufCAgfCBRdUFDIChGMSkgfCAxIHwgZjEgfCAzNy45IHwgNDIuOSB8IDQ0LjkgfFxufCAgfCBEUk9QIChGMSkgfCAzIHwgZjEgfCAyOC4wIHwgNDUuMiB8IDU5LjUgfFxufCBMb25nIENvbnRleHQgfCBOZWVkbGUgaW4gSGF5c3RhY2sgfCAwIHwgZW0gfCA5Ni44IHwgMSB8IDEgfFxuXG4jIyMgSW5zdHJ1Y3Rpb24tVHVuZWQgTW9kZWxzXG5cbnwgQ2FwYWJpbGl0eSB8ICB8IEJlbmNobWFyayB8IFxcIyBTaG90cyB8IE1ldHJpYyB8IExsYW1hLTMuMi0xQi1JbnN0cnVjdCB8IExsYW1hLTMuMi0zQi1JbnN0cnVjdCB8IExsYW1hLTMuMS04Qi1JbnN0cnVjdCB8XG58IDotLS06IHwgLS0tLS0gfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfFxufCBHZW5lcmFsIHwgIHwgTU1MVSB8IDUgfCBtYWNyb1xcX2F2Zy9hY2MgfCA0OS4zIHwgNjMuNCB8IDY5LjQgfFxufCBSZS13cml0aW5nIHwgIHwgT3Blbi1yZXdyaXRlIGV2YWwgfCAwIHwgbWljcm9cXF9hdmcvcm91Z2VMIHwgNDEuNiB8IDQwLjEgfCA0MC45IHxcbnwgU3VtbWFyaXphdGlvbiB8ICB8IFRMRFI5KyAodGVzdCkgfCAxIHwgcm91Z2VMIHwgMTYuOCB8IDE5LjAgfCAxNy4yIHxcbnwgSW5zdHJ1Y3Rpb24gZm9sbG93aW5nIHwgIHwgSUZFdmFsIHwgMCB8IEF2ZyhQcm9tcHQvSW5zdHJ1Y3Rpb24gYWNjIExvb3NlL1N0cmljdCkgfCA1OS41IHwgNzcuNCB8IDgwLjQgfFxufCBNYXRoIHwgIHwgR1NNOEsgKENvVCkgfCA4IHwgZW1cXF9tYWoxQDEgfCA0NC40IHwgNzcuNyB8IDg0LjUgfFxufCAgfCAgfCBNQVRIIChDb1QpIHwgMCB8IGZpbmFsXFxfZW0gfCAzMC42IHwgNDguMCB8IDUxLjkgfFxufCBSZWFzb25pbmcgfCAgfCBBUkMtQyB8IDAgfCBhY2MgfCA1OS40IHwgNzguNiB8IDgzLjQgfFxufCAgfCAgfCBHUFFBIHwgMCB8IGFjYyB8IDI3LjIgfCAzMi44IHwgMzIuOCB8XG58ICB8ICB8IEhlbGxhc3dhZyB8IDAgfCBhY2MgfCA0MS4yIHwgNjkuOCB8IDc4LjcgfFxufCBUb29sIFVzZSB8ICB8IEJGQ0wgVjIgfCAwIHwgYWNjIHwgMjUuNyB8IDY3LjAgfCA2Ny4xIHxcbnwgIHwgIHwgTmV4dXMgfCAwIHwgbWFjcm9cXF9hdmcvYWNjIHwgMTMuNSB8IDM0LjMgfCAzOC41IHxcbnwgTG9uZyBDb250ZXh0IHwgIHwgSW5maW5pdGVCZW5jaC9Fbi5RQSB8IDAgfCBsb25nYm9va1xcX3FhL2YxIHwgMjAuMyB8IDE5LjggfCAyNy4zIHxcbnwgIHwgIHwgSW5maW5pdGVCZW5jaC9Fbi5NQyB8IDAgfCBsb25nYm9va1xcX2Nob2ljZS9hY2MgfCAzOC4wIHwgNjMuMyB8IDcyLjIgfFxufCAgfCAgfCBOSUgvTXVsdGktbmVlZGxlIHwgMCB8IHJlY2FsbCB8IDc1LjAgfCA4NC43IHwgOTguOCB8XG58IE11bHRpbGluZ3VhbCB8ICB8IE1HU00gKENvVCkgfCAwIHwgZW0gfCAyNC41IHwgNTguMiB8IDY4LjkgfFxuXG4jIyMgTXVsdGlsaW5ndWFsIEJlbmNobWFya3NcblxufCBDYXRlZ29yeSB8IEJlbmNobWFyayB8IExhbmd1YWdlIHwgTGxhbWEtMy4yLTFCLUluc3RydWN0IHwgTGxhbWEtMy4yLTNCLUluc3RydWN0IHwgTGxhbWEtMy4xLThCLUluc3RydWN0IHxcbnwgOi0tLTogfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHxcbnwgR2VuZXJhbCB8IE1NTFUgKDUtc2hvdCwgbWFjcm9cXF9hdmcvYWNjKSB8IFBvcnR1Z3Vlc2UgfCAzOS44MiB8IDU0LjQ4IHwgNjIuMTIgfFxufCAgfCAgfCBTcGFuaXNoIHwgNDEuNTIgfCA1NS4wOSB8IDYyLjQ1IHxcbnwgIHwgIHwgSXRhbGlhbiB8IDM5Ljc5IHwgNTMuNzcgfCA2MS42MyB8XG58ICB8ICB8IEdlcm1hbiB8IDM5LjIwIHwgNTMuMjkgfCA2MC41OSB8XG58ICB8ICB8IEZyZW5jaCB8IDQwLjQ3IHwgNTQuNTkgfCA2Mi4zNCB8XG58ICB8ICB8IEhpbmRpIHwgMzMuNTEgfCA0My4zMSB8IDUwLjg4IHxcbnwgIHwgIHwgVGhhaSB8IDM0LjY3IHwgNDQuNTQgfCA1MC4zMiB8XG5cbiMjIFJlc3BvbnNpYmlsaXR5ICYgU2FmZXR5XG5cbkFzIHBhcnQgb2Ygb3VyIFJlc3BvbnNpYmxlIHJlbGVhc2UgYXBwcm9hY2gsIHdlIGZvbGxvd2VkIGEgdGhyZWUtcHJvbmdlZCBzdHJhdGVneSB0byBtYW5hZ2luZyB0cnVzdCAmIHNhZmV0eSByaXNrczpcblxuMS4gRW5hYmxlIGRldmVsb3BlcnMgdG8gZGVwbG95IGhlbHBmdWwsIHNhZmUgYW5kIGZsZXhpYmxlIGV4cGVyaWVuY2VzIGZvciB0aGVpciB0YXJnZXQgYXVkaWVuY2UgYW5kIGZvciB0aGUgdXNlIGNhc2VzIHN1cHBvcnRlZCBieSBMbGFtYSAgIFxuMi4gUHJvdGVjdCBkZXZlbG9wZXJzIGFnYWluc3QgYWR2ZXJzYXJpYWwgdXNlcnMgYWltaW5nIHRvIGV4cGxvaXQgTGxhbWEgY2FwYWJpbGl0aWVzIHRvIHBvdGVudGlhbGx5IGNhdXNlIGhhcm0gIFxuMy4gUHJvdmlkZSBwcm90ZWN0aW9ucyBmb3IgdGhlIGNvbW11bml0eSB0byBoZWxwIHByZXZlbnQgdGhlIG1pc3VzZSBvZiBvdXIgbW9kZWxzXG5cbiMjIyBSZXNwb25zaWJsZSBEZXBsb3ltZW50IFxuXG4qKkFwcHJvYWNoOioqIExsYW1hIGlzIGEgZm91bmRhdGlvbmFsIHRlY2hub2xvZ3kgZGVzaWduZWQgdG8gYmUgdXNlZCBpbiBhIHZhcmlldHkgb2YgdXNlIGNhc2VzLiBFeGFtcGxlcyBvbiBob3cgTWV0YVx1MjAxOXMgTGxhbWEgbW9kZWxzIGhhdmUgYmVlbiByZXNwb25zaWJseSBkZXBsb3llZCBjYW4gYmUgZm91bmQgaW4gb3VyIFtDb21tdW5pdHkgU3RvcmllcyB3ZWJwYWdlXShodHRwczovL2xsYW1hLm1ldGEuY29tL2NvbW11bml0eS1zdG9yaWVzLykuIE91ciBhcHByb2FjaCBpcyB0byBidWlsZCB0aGUgbW9zdCBoZWxwZnVsIG1vZGVscywgZW5hYmxpbmcgdGhlIHdvcmxkIHRvIGJlbmVmaXQgZnJvbSB0aGUgdGVjaG5vbG9neSBwb3dlciwgYnkgYWxpZ25pbmcgb3VyIG1vZGVsIHNhZmV0eSBmb3IgZ2VuZXJpYyB1c2UgY2FzZXMgYW5kIGFkZHJlc3NpbmcgYSBzdGFuZGFyZCBzZXQgb2YgaGFybXMuIERldmVsb3BlcnMgYXJlIHRoZW4gaW4gdGhlIGRyaXZlclx1MjAxOXMgc2VhdCB0byB0YWlsb3Igc2FmZXR5IGZvciB0aGVpciB1c2UgY2FzZXMsIGRlZmluaW5nIHRoZWlyIG93biBwb2xpY2llcyBhbmQgZGVwbG95aW5nIHRoZSBtb2RlbHMgd2l0aCB0aGUgbmVjZXNzYXJ5IHNhZmVndWFyZHMgaW4gdGhlaXIgTGxhbWEgc3lzdGVtcy4gTGxhbWEgMy4yIHdhcyBkZXZlbG9wZWQgZm9sbG93aW5nIHRoZSBiZXN0IHByYWN0aWNlcyBvdXRsaW5lZCBpbiBvdXIgW1Jlc3BvbnNpYmxlIFVzZSBHdWlkZV0oaHR0cHM6Ly9sbGFtYS5tZXRhLmNvbS9yZXNwb25zaWJsZS11c2UtZ3VpZGUvKS4gXG5cbiMjIyMgTGxhbWEgMy4yIEluc3RydWN0IFxuXG4qKk9iamVjdGl2ZToqKiBPdXIgbWFpbiBvYmplY3RpdmVzIGZvciBjb25kdWN0aW5nIHNhZmV0eSBmaW5lLXR1bmluZyBhcmUgdG8gcHJvdmlkZSB0aGUgcmVzZWFyY2ggY29tbXVuaXR5IHdpdGggYSB2YWx1YWJsZSByZXNvdXJjZSBmb3Igc3R1ZHlpbmcgdGhlIHJvYnVzdG5lc3Mgb2Ygc2FmZXR5IGZpbmUtdHVuaW5nLCBhcyB3ZWxsIGFzIHRvIG9mZmVyIGRldmVsb3BlcnMgYSByZWFkaWx5IGF2YWlsYWJsZSwgc2FmZSwgYW5kIHBvd2VyZnVsIG1vZGVsIGZvciB2YXJpb3VzIGFwcGxpY2F0aW9ucyB0byByZWR1Y2UgdGhlIGRldmVsb3BlciB3b3JrbG9hZCB0byBkZXBsb3kgc2FmZSBBSSBzeXN0ZW1zLiBXZSBpbXBsZW1lbnRlZCB0aGUgc2FtZSBzZXQgb2Ygc2FmZXR5IG1pdGlnYXRpb25zIGFzIGluIExsYW1hIDMsIGFuZCB5b3UgY2FuIGxlYXJuIG1vcmUgYWJvdXQgdGhlc2UgaW4gdGhlIExsYW1hIDMgW3BhcGVyXShodHRwczovL2FpLm1ldGEuY29tL3Jlc2VhcmNoL3B1YmxpY2F0aW9ucy90aGUtbGxhbWEtMy1oZXJkLW9mLW1vZGVscy8pLiBcblxuKipGaW5lLVR1bmluZyBEYXRhOioqIFdlIGVtcGxveSBhIG11bHRpLWZhY2V0ZWQgYXBwcm9hY2ggdG8gZGF0YSBjb2xsZWN0aW9uLCBjb21iaW5pbmcgaHVtYW4tZ2VuZXJhdGVkIGRhdGEgZnJvbSBvdXIgdmVuZG9ycyB3aXRoIHN5bnRoZXRpYyBkYXRhIHRvIG1pdGlnYXRlIHBvdGVudGlhbCBzYWZldHkgcmlza3MuIFdlXHUyMDE5dmUgZGV2ZWxvcGVkIG1hbnkgbGFyZ2UgbGFuZ3VhZ2UgbW9kZWwgKExMTSktYmFzZWQgY2xhc3NpZmllcnMgdGhhdCBlbmFibGUgdXMgdG8gdGhvdWdodGZ1bGx5IHNlbGVjdCBoaWdoLXF1YWxpdHkgcHJvbXB0cyBhbmQgcmVzcG9uc2VzLCBlbmhhbmNpbmcgZGF0YSBxdWFsaXR5IGNvbnRyb2wuIFxuXG4qKlJlZnVzYWxzIGFuZCBUb25lOioqIEJ1aWxkaW5nIG9uIHRoZSB3b3JrIHdlIHN0YXJ0ZWQgd2l0aCBMbGFtYSAzLCB3ZSBwdXQgYSBncmVhdCBlbXBoYXNpcyBvbiBtb2RlbCByZWZ1c2FscyB0byBiZW5pZ24gcHJvbXB0cyBhcyB3ZWxsIGFzIHJlZnVzYWwgdG9uZS4gV2UgaW5jbHVkZWQgYm90aCBib3JkZXJsaW5lIGFuZCBhZHZlcnNhcmlhbCBwcm9tcHRzIGluIG91ciBzYWZldHkgZGF0YSBzdHJhdGVneSwgYW5kIG1vZGlmaWVkIG91ciBzYWZldHkgZGF0YSByZXNwb25zZXMgdG8gZm9sbG93IHRvbmUgZ3VpZGVsaW5lcy4gXG5cbiMjIyMgTGxhbWEgMy4yIFN5c3RlbXNcblxuKipTYWZldHkgYXMgYSBTeXN0ZW06KiogTGFyZ2UgbGFuZ3VhZ2UgbW9kZWxzLCBpbmNsdWRpbmcgTGxhbWEgMy4yLCAqKmFyZSBub3QgZGVzaWduZWQgdG8gYmUgZGVwbG95ZWQgaW4gaXNvbGF0aW9uKiogYnV0IGluc3RlYWQgc2hvdWxkIGJlIGRlcGxveWVkIGFzIHBhcnQgb2YgYW4gb3ZlcmFsbCBBSSBzeXN0ZW0gd2l0aCBhZGRpdGlvbmFsIHNhZmV0eSBndWFyZHJhaWxzIGFzIHJlcXVpcmVkLiBEZXZlbG9wZXJzIGFyZSBleHBlY3RlZCB0byBkZXBsb3kgc3lzdGVtIHNhZmVndWFyZHMgd2hlbiBidWlsZGluZyBhZ2VudGljIHN5c3RlbXMuIFNhZmVndWFyZHMgYXJlIGtleSB0byBhY2hpZXZlIHRoZSByaWdodCBoZWxwZnVsbmVzcy1zYWZldHkgYWxpZ25tZW50IGFzIHdlbGwgYXMgbWl0aWdhdGluZyBzYWZldHkgYW5kIHNlY3VyaXR5IHJpc2tzIGluaGVyZW50IHRvIHRoZSBzeXN0ZW0gYW5kIGFueSBpbnRlZ3JhdGlvbiBvZiB0aGUgbW9kZWwgb3Igc3lzdGVtIHdpdGggZXh0ZXJuYWwgdG9vbHMuIEFzIHBhcnQgb2Ygb3VyIHJlc3BvbnNpYmxlIHJlbGVhc2UgYXBwcm9hY2gsIHdlIHByb3ZpZGUgdGhlIGNvbW11bml0eSB3aXRoIFtzYWZlZ3VhcmRzXShodHRwczovL2xsYW1hLm1ldGEuY29tL3RydXN0LWFuZC1zYWZldHkvKSB0aGF0IGRldmVsb3BlcnMgc2hvdWxkIGRlcGxveSB3aXRoIExsYW1hIG1vZGVscyBvciBvdGhlciBMTE1zLCBpbmNsdWRpbmcgTGxhbWEgR3VhcmQsIFByb21wdCBHdWFyZCBhbmQgQ29kZSBTaGllbGQuIEFsbCBvdXIgW3JlZmVyZW5jZSBpbXBsZW1lbnRhdGlvbnNdKGh0dHBzOi8vZ2l0aHViLmNvbS9tZXRhLWxsYW1hL2xsYW1hLWFnZW50aWMtc3lzdGVtKSBkZW1vcyBjb250YWluIHRoZXNlIHNhZmVndWFyZHMgYnkgZGVmYXVsdCBzbyBkZXZlbG9wZXJzIGNhbiBiZW5lZml0IGZyb20gc3lzdGVtLWxldmVsIHNhZmV0eSBvdXQtb2YtdGhlLWJveC4gXG5cbiMjIyBOZXcgQ2FwYWJpbGl0aWVzIGFuZCBVc2UgQ2FzZXNcblxuKipUZWNobm9sb2dpY2FsIEFkdmFuY2VtZW50OioqIExsYW1hIHJlbGVhc2VzIHVzdWFsbHkgaW50cm9kdWNlIG5ldyBjYXBhYmlsaXRpZXMgdGhhdCByZXF1aXJlIHNwZWNpZmljIGNvbnNpZGVyYXRpb25zIGluIGFkZGl0aW9uIHRvIHRoZSBiZXN0IHByYWN0aWNlcyB0aGF0IGdlbmVyYWxseSBhcHBseSBhY3Jvc3MgYWxsIEdlbmVyYXRpdmUgQUkgdXNlIGNhc2VzLiBGb3IgcHJpb3IgcmVsZWFzZSBjYXBhYmlsaXRpZXMgYWxzbyBzdXBwb3J0ZWQgYnkgTGxhbWEgMy4yLCBzZWUgW0xsYW1hIDMuMSBNb2RlbCBDYXJkXShodHRwczovL2dpdGh1Yi5jb20vbWV0YS1sbGFtYS9sbGFtYS1tb2RlbHMvYmxvYi9tYWluL21vZGVscy9sbGFtYTNfMS9NT0RFTF9DQVJELm1kKSwgYXMgdGhlIHNhbWUgY29uc2lkZXJhdGlvbnMgYXBwbHkgaGVyZSBhcyB3ZWxsLlxuXG4qKkNvbnN0cmFpbmVkIEVudmlyb25tZW50czoqKiBMbGFtYSAzLjIgMUIgYW5kIDNCIG1vZGVscyBhcmUgZXhwZWN0ZWQgdG8gYmUgZGVwbG95ZWQgaW4gaGlnaGx5IGNvbnN0cmFpbmVkIGVudmlyb25tZW50cywgc3VjaCBhcyBtb2JpbGUgZGV2aWNlcy4gTExNIFN5c3RlbXMgdXNpbmcgc21hbGxlciBtb2RlbHMgd2lsbCBoYXZlIGEgZGlmZmVyZW50IGFsaWdubWVudCBwcm9maWxlIGFuZCBzYWZldHkvaGVscGZ1bG5lc3MgdHJhZGVvZmYgdGhhbiBtb3JlIGNvbXBsZXgsIGxhcmdlciBzeXN0ZW1zLiBEZXZlbG9wZXJzIHNob3VsZCBlbnN1cmUgdGhlIHNhZmV0eSBvZiB0aGVpciBzeXN0ZW0gbWVldHMgdGhlIHJlcXVpcmVtZW50cyBvZiB0aGVpciB1c2UgY2FzZS4gV2UgcmVjb21tZW5kIHVzaW5nIGxpZ2h0ZXIgc3lzdGVtIHNhZmVndWFyZHMgZm9yIHN1Y2ggdXNlIGNhc2VzLCBsaWtlIExsYW1hIEd1YXJkIDMtMUIgb3IgaXRzIG1vYmlsZS1vcHRpbWl6ZWQgdmVyc2lvbi4gXG5cbiMjIyBFdmFsdWF0aW9uc1xuXG4qKlNjYWxlZCBFdmFsdWF0aW9uczoqKiBXZSBidWlsdCBkZWRpY2F0ZWQsIGFkdmVyc2FyaWFsIGV2YWx1YXRpb24gZGF0YXNldHMgYW5kIGV2YWx1YXRlZCBzeXN0ZW1zIGNvbXBvc2VkIG9mIExsYW1hIG1vZGVscyBhbmQgUHVycGxlIExsYW1hIHNhZmVndWFyZHMgdG8gZmlsdGVyIGlucHV0IHByb21wdCBhbmQgb3V0cHV0IHJlc3BvbnNlLiBJdCBpcyBpbXBvcnRhbnQgdG8gZXZhbHVhdGUgYXBwbGljYXRpb25zIGluIGNvbnRleHQsIGFuZCB3ZSByZWNvbW1lbmQgYnVpbGRpbmcgZGVkaWNhdGVkIGV2YWx1YXRpb24gZGF0YXNldCBmb3IgeW91ciB1c2UgY2FzZS5cblxuKipSZWQgVGVhbWluZzoqKiBXZSBjb25kdWN0ZWQgcmVjdXJyaW5nIHJlZCB0ZWFtaW5nIGV4ZXJjaXNlcyB3aXRoIHRoZSBnb2FsIG9mIGRpc2NvdmVyaW5nIHJpc2tzIHZpYSBhZHZlcnNhcmlhbCBwcm9tcHRpbmcgYW5kIHdlIHVzZWQgdGhlIGxlYXJuaW5ncyB0byBpbXByb3ZlIG91ciBiZW5jaG1hcmtzIGFuZCBzYWZldHkgdHVuaW5nIGRhdGFzZXRzLiBXZSBwYXJ0bmVyZWQgZWFybHkgd2l0aCBzdWJqZWN0LW1hdHRlciBleHBlcnRzIGluIGNyaXRpY2FsIHJpc2sgYXJlYXMgdG8gdW5kZXJzdGFuZCB0aGUgbmF0dXJlIG9mIHRoZXNlIHJlYWwtd29ybGQgaGFybXMgYW5kIGhvdyBzdWNoIG1vZGVscyBtYXkgbGVhZCB0byB1bmludGVuZGVkIGhhcm0gZm9yIHNvY2lldHkuIEJhc2VkIG9uIHRoZXNlIGNvbnZlcnNhdGlvbnMsIHdlIGRlcml2ZWQgYSBzZXQgb2YgYWR2ZXJzYXJpYWwgZ29hbHMgZm9yIHRoZSByZWQgdGVhbSB0byBhdHRlbXB0IHRvIGFjaGlldmUsIHN1Y2ggYXMgZXh0cmFjdGluZyBoYXJtZnVsIGluZm9ybWF0aW9uIG9yIHJlcHJvZ3JhbW1pbmcgdGhlIG1vZGVsIHRvIGFjdCBpbiBhIHBvdGVudGlhbGx5IGhhcm1mdWwgY2FwYWNpdHkuIFRoZSByZWQgdGVhbSBjb25zaXN0ZWQgb2YgZXhwZXJ0cyBpbiBjeWJlcnNlY3VyaXR5LCBhZHZlcnNhcmlhbCBtYWNoaW5lIGxlYXJuaW5nLCByZXNwb25zaWJsZSBBSSwgYW5kIGludGVncml0eSBpbiBhZGRpdGlvbiB0byBtdWx0aWxpbmd1YWwgY29udGVudCBzcGVjaWFsaXN0cyB3aXRoIGJhY2tncm91bmQgaW4gaW50ZWdyaXR5IGlzc3VlcyBpbiBzcGVjaWZpYyBnZW9ncmFwaGljIG1hcmtldHMuXG5cbiMjIyBDcml0aWNhbCBSaXNrcyBcblxuSW4gYWRkaXRpb24gdG8gb3VyIHNhZmV0eSB3b3JrIGFib3ZlLCB3ZSB0b29rIGV4dHJhIGNhcmUgb24gbWVhc3VyaW5nIGFuZC9vciBtaXRpZ2F0aW5nIHRoZSBmb2xsb3dpbmcgY3JpdGljYWwgcmlzayBhcmVhczpcblxuKioxXFwuIENCUk5FIChDaGVtaWNhbCwgQmlvbG9naWNhbCwgUmFkaW9sb2dpY2FsLCBOdWNsZWFyLCBhbmQgRXhwbG9zaXZlIFdlYXBvbnMpOioqIExsYW1hIDMuMiAxQiBhbmQgM0IgbW9kZWxzIGFyZSBzbWFsbGVyIGFuZCBsZXNzIGNhcGFibGUgZGVyaXZhdGl2ZXMgb2YgTGxhbWEgMy4xLiBGb3IgTGxhbWEgMy4xIDcwQiBhbmQgNDA1QiwgdG8gYXNzZXNzIHJpc2tzIHJlbGF0ZWQgdG8gcHJvbGlmZXJhdGlvbiBvZiBjaGVtaWNhbCBhbmQgYmlvbG9naWNhbCB3ZWFwb25zLCB3ZSBwZXJmb3JtZWQgdXBsaWZ0IHRlc3RpbmcgZGVzaWduZWQgdG8gYXNzZXNzIHdoZXRoZXIgdXNlIG9mIExsYW1hIDMuMSBtb2RlbHMgY291bGQgbWVhbmluZ2Z1bGx5IGluY3JlYXNlIHRoZSBjYXBhYmlsaXRpZXMgb2YgbWFsaWNpb3VzIGFjdG9ycyB0byBwbGFuIG9yIGNhcnJ5IG91dCBhdHRhY2tzIHVzaW5nIHRoZXNlIHR5cGVzIG9mIHdlYXBvbnMgYW5kIGhhdmUgZGV0ZXJtaW5lZCB0aGF0IHN1Y2ggdGVzdGluZyBhbHNvIGFwcGxpZXMgdG8gdGhlIHNtYWxsZXIgMUIgYW5kIDNCIG1vZGVscy4gXG5cbioqMlxcLiBDaGlsZCBTYWZldHk6KiogQ2hpbGQgU2FmZXR5IHJpc2sgYXNzZXNzbWVudHMgd2VyZSBjb25kdWN0ZWQgdXNpbmcgYSB0ZWFtIG9mIGV4cGVydHMsIHRvIGFzc2VzcyB0aGUgbW9kZWxcdTIwMTlzIGNhcGFiaWxpdHkgdG8gcHJvZHVjZSBvdXRwdXRzIHRoYXQgY291bGQgcmVzdWx0IGluIENoaWxkIFNhZmV0eSByaXNrcyBhbmQgaW5mb3JtIG9uIGFueSBuZWNlc3NhcnkgYW5kIGFwcHJvcHJpYXRlIHJpc2sgbWl0aWdhdGlvbnMgdmlhIGZpbmUgdHVuaW5nLiBXZSBsZXZlcmFnZWQgdGhvc2UgZXhwZXJ0IHJlZCB0ZWFtaW5nIHNlc3Npb25zIHRvIGV4cGFuZCB0aGUgY292ZXJhZ2Ugb2Ygb3VyIGV2YWx1YXRpb24gYmVuY2htYXJrcyB0aHJvdWdoIExsYW1hIDMgbW9kZWwgZGV2ZWxvcG1lbnQuIEZvciBMbGFtYSAzLCB3ZSBjb25kdWN0ZWQgbmV3IGluLWRlcHRoIHNlc3Npb25zIHVzaW5nIG9iamVjdGl2ZSBiYXNlZCBtZXRob2RvbG9naWVzIHRvIGFzc2VzcyB0aGUgbW9kZWwgcmlza3MgYWxvbmcgbXVsdGlwbGUgYXR0YWNrIHZlY3RvcnMgaW5jbHVkaW5nIHRoZSBhZGRpdGlvbmFsIGxhbmd1YWdlcyBMbGFtYSAzIGlzIHRyYWluZWQgb24uIFdlIGFsc28gcGFydG5lcmVkIHdpdGggY29udGVudCBzcGVjaWFsaXN0cyB0byBwZXJmb3JtIHJlZCB0ZWFtaW5nIGV4ZXJjaXNlcyBhc3Nlc3NpbmcgcG90ZW50aWFsbHkgdmlvbGF0aW5nIGNvbnRlbnQgd2hpbGUgdGFraW5nIGFjY291bnQgb2YgbWFya2V0IHNwZWNpZmljIG51YW5jZXMgb3IgZXhwZXJpZW5jZXMuIFxuXG4qKjNcXC4gQ3liZXIgQXR0YWNrczoqKiBPdXIgY3liZXIgYXR0YWNrIHVwbGlmdCBzdHVkeSBpbnZlc3RpZ2F0ZWQgd2hldGhlciBMTE1zIGNhbiBlbmhhbmNlIGh1bWFuIGNhcGFiaWxpdGllcyBpbiBoYWNraW5nIHRhc2tzLCBib3RoIGluIHRlcm1zIG9mIHNraWxsIGxldmVsIGFuZCBzcGVlZC4gT3VyIGF0dGFjayBhdXRvbWF0aW9uIHN0dWR5IGZvY3VzZWQgb24gZXZhbHVhdGluZyB0aGUgY2FwYWJpbGl0aWVzIG9mIExMTXMgd2hlbiB1c2VkIGFzIGF1dG9ub21vdXMgYWdlbnRzIGluIGN5YmVyIG9mZmVuc2l2ZSBvcGVyYXRpb25zLCBzcGVjaWZpY2FsbHkgaW4gdGhlIGNvbnRleHQgb2YgcmFuc29td2FyZSBhdHRhY2tzLiBUaGlzIGV2YWx1YXRpb24gd2FzIGRpc3RpbmN0IGZyb20gcHJldmlvdXMgc3R1ZGllcyB0aGF0IGNvbnNpZGVyZWQgTExNcyBhcyBpbnRlcmFjdGl2ZSBhc3Npc3RhbnRzLiBUaGUgcHJpbWFyeSBvYmplY3RpdmUgd2FzIHRvIGFzc2VzcyB3aGV0aGVyIHRoZXNlIG1vZGVscyBjb3VsZCBlZmZlY3RpdmVseSBmdW5jdGlvbiBhcyBpbmRlcGVuZGVudCBhZ2VudHMgaW4gZXhlY3V0aW5nIGNvbXBsZXggY3liZXItYXR0YWNrcyB3aXRob3V0IGh1bWFuIGludGVydmVudGlvbi5cblxuIyMjIENvbW11bml0eSBcblxuKipJbmR1c3RyeSBQYXJ0bmVyc2hpcHM6KiogR2VuZXJhdGl2ZSBBSSBzYWZldHkgcmVxdWlyZXMgZXhwZXJ0aXNlIGFuZCB0b29saW5nLCBhbmQgd2UgYmVsaWV2ZSBpbiB0aGUgc3RyZW5ndGggb2YgdGhlIG9wZW4gY29tbXVuaXR5IHRvIGFjY2VsZXJhdGUgaXRzIHByb2dyZXNzLiBXZSBhcmUgYWN0aXZlIG1lbWJlcnMgb2Ygb3BlbiBjb25zb3J0aXVtcywgaW5jbHVkaW5nIHRoZSBBSSBBbGxpYW5jZSwgUGFydG5lcnNoaXAgb24gQUkgYW5kIE1MQ29tbW9ucywgYWN0aXZlbHkgY29udHJpYnV0aW5nIHRvIHNhZmV0eSBzdGFuZGFyZGl6YXRpb24gYW5kIHRyYW5zcGFyZW5jeS4gV2UgZW5jb3VyYWdlIHRoZSBjb21tdW5pdHkgdG8gYWRvcHQgdGF4b25vbWllcyBsaWtlIHRoZSBNTENvbW1vbnMgUHJvb2Ygb2YgQ29uY2VwdCBldmFsdWF0aW9uIHRvIGZhY2lsaXRhdGUgY29sbGFib3JhdGlvbiBhbmQgdHJhbnNwYXJlbmN5IG9uIHNhZmV0eSBhbmQgY29udGVudCBldmFsdWF0aW9ucy4gT3VyIFB1cnBsZSBMbGFtYSB0b29scyBhcmUgb3BlbiBzb3VyY2VkIGZvciB0aGUgY29tbXVuaXR5IHRvIHVzZSBhbmQgd2lkZWx5IGRpc3RyaWJ1dGVkIGFjcm9zcyBlY29zeXN0ZW0gcGFydG5lcnMgaW5jbHVkaW5nIGNsb3VkIHNlcnZpY2UgcHJvdmlkZXJzLiBXZSBlbmNvdXJhZ2UgY29tbXVuaXR5IGNvbnRyaWJ1dGlvbnMgdG8gb3VyIFtHaXRodWIgcmVwb3NpdG9yeV0oaHR0cHM6Ly9naXRodWIuY29tL21ldGEtbGxhbWEvUHVycGxlTGxhbWEpLlxuXG4qKkdyYW50czoqKiBXZSBhbHNvIHNldCB1cCB0aGUgW0xsYW1hIEltcGFjdCBHcmFudHNdKGh0dHBzOi8vbGxhbWEubWV0YS5jb20vbGxhbWEtaW1wYWN0LWdyYW50cy8pIHByb2dyYW0gdG8gaWRlbnRpZnkgYW5kIHN1cHBvcnQgdGhlIG1vc3QgY29tcGVsbGluZyBhcHBsaWNhdGlvbnMgb2YgTWV0YVx1MjAxOXMgTGxhbWEgbW9kZWwgZm9yIHNvY2lldGFsIGJlbmVmaXQgYWNyb3NzIHRocmVlIGNhdGVnb3JpZXM6IGVkdWNhdGlvbiwgY2xpbWF0ZSBhbmQgb3BlbiBpbm5vdmF0aW9uLiBUaGUgMjAgZmluYWxpc3RzIGZyb20gdGhlIGh1bmRyZWRzIG9mIGFwcGxpY2F0aW9ucyBjYW4gYmUgZm91bmQgW2hlcmVdKGh0dHBzOi8vbGxhbWEubWV0YS5jb20vbGxhbWEtaW1wYWN0LWdyYW50cy8jZmluYWxpc3RzKS4gXG5cbioqUmVwb3J0aW5nOioqIEZpbmFsbHksIHdlIHB1dCBpbiBwbGFjZSBhIHNldCBvZiByZXNvdXJjZXMgaW5jbHVkaW5nIGFuIFtvdXRwdXQgcmVwb3J0aW5nIG1lY2hhbmlzbV0oaHR0cHM6Ly9kZXZlbG9wZXJzLmZhY2Vib29rLmNvbS9sbGFtYV9vdXRwdXRfZmVlZGJhY2spIGFuZCBbYnVnIGJvdW50eSBwcm9ncmFtXShodHRwczovL3d3dy5mYWNlYm9vay5jb20vd2hpdGVoYXQpIHRvIGNvbnRpbnVvdXNseSBpbXByb3ZlIHRoZSBMbGFtYSB0ZWNobm9sb2d5IHdpdGggdGhlIGhlbHAgb2YgdGhlIGNvbW11bml0eS5cblxuIyMgRXRoaWNhbCBDb25zaWRlcmF0aW9ucyBhbmQgTGltaXRhdGlvbnNcbk5WSURJQSBiZWxpZXZlcyBUcnVzdHdvcnRoeSBBSSBpcyBhIHNoYXJlZCByZXNwb25zaWJpbGl0eSBhbmQgd2UgaGF2ZSBlc3RhYmxpc2hlZCBwb2xpY2llcyBhbmQgcHJhY3RpY2VzIHRvIGVuYWJsZSBkZXZlbG9wbWVudCBmb3IgYSB3aWRlIGFycmF5IG9mIEFJIGFwcGxpY2F0aW9ucy4gIFdoZW4gZG93bmxvYWRlZCBvciB1c2VkIGluIGFjY29yZGFuY2Ugd2l0aCBvdXIgdGVybXMgb2Ygc2VydmljZSwgZGV2ZWxvcGVycyBzaG91bGQgd29yayB3aXRoIHRoZWlyIGludGVybmFsIG1vZGVsIHRlYW0gdG8gZW5zdXJlIHRoaXMgbW9kZWwgbWVldHMgcmVxdWlyZW1lbnRzIGZvciB0aGUgcmVsZXZhbnQgaW5kdXN0cnkgYW5kIHVzZSBjYXNlIGFuZCBhZGRyZXNzZXMgdW5mb3Jlc2VlbiBwcm9kdWN0IG1pc3VzZS5cblBsZWFzZSByZXBvcnQgc2VjdXJpdHkgdnVsbmVyYWJpbGl0aWVzIG9yIE5WSURJQSBBSSBDb25jZXJucyBbaGVyZV0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9zdXBwb3J0L3N1Ym1pdC1zZWN1cml0eS12dWxuZXJhYmlsaXR5LykuXG5cbioqVmFsdWVzOioqIFRoZSBjb3JlIHZhbHVlcyBvZiBMbGFtYSAzLjIgYXJlIG9wZW5uZXNzLCBpbmNsdXNpdml0eSBhbmQgaGVscGZ1bG5lc3MuIEl0IGlzIG1lYW50IHRvIHNlcnZlIGV2ZXJ5b25lLCBhbmQgdG8gd29yayBmb3IgYSB3aWRlIHJhbmdlIG9mIHVzZSBjYXNlcy4gSXQgaXMgdGh1cyBkZXNpZ25lZCB0byBiZSBhY2Nlc3NpYmxlIHRvIHBlb3BsZSBhY3Jvc3MgbWFueSBkaWZmZXJlbnQgYmFja2dyb3VuZHMsIGV4cGVyaWVuY2VzIGFuZCBwZXJzcGVjdGl2ZXMuIExsYW1hIDMuMiBhZGRyZXNzZXMgdXNlcnMgYW5kIHRoZWlyIG5lZWRzIGFzIHRoZXkgYXJlLCB3aXRob3V0IGluc2VydGlvbiB1bm5lY2Vzc2FyeSBqdWRnbWVudCBvciBub3JtYXRpdml0eSwgd2hpbGUgcmVmbGVjdGluZyB0aGUgdW5kZXJzdGFuZGluZyB0aGF0IGV2ZW4gY29udGVudCB0aGF0IG1heSBhcHBlYXIgcHJvYmxlbWF0aWMgaW4gc29tZSBjYXNlcyBjYW4gc2VydmUgdmFsdWFibGUgcHVycG9zZXMgaW4gb3RoZXJzLiBJdCByZXNwZWN0cyB0aGUgZGlnbml0eSBhbmQgYXV0b25vbXkgb2YgYWxsIHVzZXJzLCBlc3BlY2lhbGx5IGluIHRlcm1zIG9mIHRoZSB2YWx1ZXMgb2YgZnJlZSB0aG91Z2h0IGFuZCBleHByZXNzaW9uIHRoYXQgcG93ZXIgaW5ub3ZhdGlvbiBhbmQgcHJvZ3Jlc3MuIFxuXG4qKlRlc3Rpbmc6KiogTGxhbWEgMy4yIGlzIGEgbmV3IHRlY2hub2xvZ3ksIGFuZCBsaWtlIGFueSBuZXcgdGVjaG5vbG9neSwgdGhlcmUgYXJlIHJpc2tzIGFzc29jaWF0ZWQgd2l0aCBpdHMgdXNlLiBUZXN0aW5nIGNvbmR1Y3RlZCB0byBkYXRlIGhhcyBub3QgY292ZXJlZCwgbm9yIGNvdWxkIGl0IGNvdmVyLCBhbGwgc2NlbmFyaW9zLiBGb3IgdGhlc2UgcmVhc29ucywgYXMgd2l0aCBhbGwgTExNcywgTGxhbWEgMy4yXHUyMDE5cyBwb3RlbnRpYWwgb3V0cHV0cyBjYW5ub3QgYmUgcHJlZGljdGVkIGluIGFkdmFuY2UsIGFuZCB0aGUgbW9kZWwgbWF5IGluIHNvbWUgaW5zdGFuY2VzIHByb2R1Y2UgaW5hY2N1cmF0ZSwgYmlhc2VkIG9yIG90aGVyIG9iamVjdGlvbmFibGUgcmVzcG9uc2VzIHRvIHVzZXIgcHJvbXB0cy4gVGhlcmVmb3JlLCBiZWZvcmUgZGVwbG95aW5nIGFueSBhcHBsaWNhdGlvbnMgb2YgTGxhbWEgMy4yIG1vZGVscywgZGV2ZWxvcGVycyBzaG91bGQgcGVyZm9ybSBzYWZldHkgdGVzdGluZyBhbmQgdHVuaW5nIHRhaWxvcmVkIHRvIHRoZWlyIHNwZWNpZmljIGFwcGxpY2F0aW9ucyBvZiB0aGUgbW9kZWwuIFBsZWFzZSByZWZlciB0byBhdmFpbGFibGUgcmVzb3VyY2VzIGluY2x1ZGluZyBvdXIgW1Jlc3BvbnNpYmxlIFVzZSBHdWlkZV0oaHR0cHM6Ly9sbGFtYS5tZXRhLmNvbS9yZXNwb25zaWJsZS11c2UtZ3VpZGUpLCBbVHJ1c3QgYW5kIFNhZmV0eV0oaHR0cHM6Ly9sbGFtYS5tZXRhLmNvbS90cnVzdC1hbmQtc2FmZXR5Lykgc29sdXRpb25zLCBhbmQgb3RoZXIgW3Jlc291cmNlc10oaHR0cHM6Ly9sbGFtYS5tZXRhLmNvbS9kb2NzL2dldC1zdGFydGVkLykgdG8gbGVhcm4gbW9yZSBhYm91dCByZXNwb25zaWJsZSBkZXZlbG9wbWVudC5cblxuKipZb3UgYXJlIHJlc3BvbnNpYmxlIGZvciBlbnN1cmluZyB0aGF0IHlvdXIgdXNlIG9mIE5WSURJQSBBSSBGb3VuZGF0aW9uIE1vZGVscyBjb21wbGllcyB3aXRoIGFsbCBhcHBsaWNhYmxlIGxhd3MuKioiLAogICAgImRpc3BsYXlOYW1lIjogIkxsYW1hLTMuMi0zQi1JbnN0cnVjdCIsCiAgICAiZXhwbGFpbmFiaWxpdHkiOiAiIiwKICAgICJmcmFtZXdvcmsiOiAiT3RoZXIiLAogICAgImhhc1BsYXlncm91bmQiOiBmYWxzZSwKICAgICJoYXNTaWduZWRWZXJzaW9uIjogdHJ1ZSwKICAgICJpc1BsYXlncm91bmRFbmFibGVkIjogZmFsc2UsCiAgICAiaXNQdWJsaWMiOiBmYWxzZSwKICAgICJpc1JlYWRPbmx5IjogdHJ1ZSwKICAgICJsYWJlbHMiOiBbCiAgICAgICAgIkJ1bGsgQnVpbGQiLAogICAgICAgICJOU1BFQ1QtMTFaOC0xMThQIiwKICAgICAgICAibGxhbWEtMy4yLTNiLWluc3RydWN0IiwKICAgICAgICAibnZhaWU6bW9kZWw6bnZhaWVfc3VwcG9ydGVkIiwKICAgICAgICAibnZpZGlhX25pbTptb2RlbDpuaW1tY3JvX252aWRpYV9uaW0iLAogICAgICAgICJwcm9kdWN0TmFtZXM6bmltLWRldiIsCiAgICAgICAgInByb2R1Y3ROYW1lczpudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJsYXRlc3RWZXJzaW9uSWRTdHIiOiAicnR4NDA5MHgxLXRocm91Z2hwdXQtbG9yYS1mcDgtMGp1Z2hzbXJwdyIsCiAgICAibGF0ZXN0VmVyc2lvblNpemVJbkJ5dGVzIjogMzc3NjcyNTEyNCwKICAgICJsb2dvIjogImh0dHBzOi8vYXNzZXRzLm5nYy5udmlkaWEuY29tL3Byb2R1Y3RzL2FwaS1jYXRhbG9nL2ltYWdlcy9sbGFtYS0zXzItM2ItaW5zdHJ1Y3QuanBnIiwKICAgICJtb2RlbEZvcm1hdCI6ICJOL0EiLAogICAgIm5hbWUiOiAibGxhbWEtMy4yLTNiLWluc3RydWN0IiwKICAgICJvcmdOYW1lIjogIm5pbSIsCiAgICAicHJlY2lzaW9uIjogIk4vQSIsCiAgICAicHJpdmFjeSI6ICIiLAogICAgInByb2R1Y3ROYW1lcyI6IFsKICAgICAgICAibmltLWRldiIsCiAgICAgICAgIm52LWFpLWVudGVycHJpc2UiCiAgICBdLAogICAgInB1YmxpY0RhdGFzZXRVc2VkIjoge30sCiAgICAicHVibGlzaGVyIjogIk1ldGEiLAogICAgInNhZmV0eUFuZFNlY3VyaXR5IjogIiIsCiAgICAic2hvcnREZXNjcmlwdGlvbiI6ICJUaGUgTWV0YSBMbGFtYSAzLjIgY29sbGVjdGlvbiBvZiBtdWx0aWxpbmd1YWwgbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxzIChMTE1zKSBpcyBhIGNvbGxlY3Rpb24gb2YgcHJlLXRyYWluZWQgYW5kIGluc3RydWN0aW9uLXR1bmVkIGdlbmVyYXRpdmUgbW9kZWxzIGluIDFCIGFuZCAzQiBzaXplcyAodGV4dCBpbi90ZXh0IG91dCkuIiwKICAgICJ0ZWFtTmFtZSI6ICJtZXRhIiwKICAgICJ1cGRhdGVkRGF0ZSI6ICIyMDI1LTA3LTI0VDIyOjMxOjAzLjQ1MloiCn0=
-    source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_2-3b-instruct
-    optimizationProfiles:
-    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-a100_sxm4_40gb
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-a100_sxm4_40gb__2
       framework: TensorRT-LLM
       displayName: Llama 3.2 3B Instruct A100_SXM4_40GBx1 BF16 Throughput
       ngcMetadata:
@@ -1727,6 +2757,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-a100_sxm4_40gb-tp2
@@ -1762,6 +2794,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:a100x1-throughput-bf16-lblsxfeipq
@@ -1797,6 +2831,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:a100x2-latency-bf16-dbue0mkzcw
@@ -1832,6 +2868,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:a10gx1-throughput-bf16-r9bno-v4fw
@@ -1867,6 +2905,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:a10gx2-latency-bf16-0ksvrbt0ww
@@ -1902,6 +2942,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:b200x1-throughput-bf16-iwdccsjltw
@@ -1937,6 +2979,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:b200x1-throughput-fp8-pysymm95jq
@@ -1972,6 +3016,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:b200x2-latency-bf16-f-dquqynva
@@ -2007,6 +3053,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:b200x2-latency-fp8-04qswl5yla
@@ -2042,11 +3090,13 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2
       framework: VLLM
-      displayName: Llama 3.2 3B Instruct GENERICx1 VLLM BF16
+      displayName: Llama 3.2 3B Instruct Generic NVIDIA GPUx1 BF16
       ngcMetadata:
         4f904d571fe60ff24695b5ee2aa42da58cb460787a968f1e8a09f5a7e862728d:
           model: meta/llama-3.2-3b-instruct
@@ -2067,11 +3117,13 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-tp2
       framework: VLLM
-      displayName: Llama 3.2 3B Instruct GENERICx2 VLLM BF16
+      displayName: Llama 3.2 3B Instruct Generic NVIDIA GPUx2 BF16
       ngcMetadata:
         7fa4a5a68c0338f16aef61de94977acfdacb7cabd848d38c49c48d2f639f04b3:
           model: meta/llama-3.2-3b-instruct
@@ -2092,9 +3144,11 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-gh200_480gb__2
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-gh200_480gb__4
       framework: TensorRT-LLM
       displayName: Llama 3.2 3B Instruct GH200_480GBx1 BF16 Throughput
       ngcMetadata:
@@ -2127,9 +3181,11 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-gh200_480gb
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-gh200_480gb__3
       framework: TensorRT-LLM
       displayName: Llama 3.2 3B Instruct GH200_480GBx1 FP8 Throughput
       ngcMetadata:
@@ -2162,9 +3218,11 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-h100_nvl
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-h100_nvl__2
       framework: TensorRT-LLM
       displayName: Llama 3.2 3B Instruct H100_NVLx1 BF16 Throughput
       ngcMetadata:
@@ -2197,9 +3255,11 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-h100_nvl__2
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-h100_nvl__3
       framework: TensorRT-LLM
       displayName: Llama 3.2 3B Instruct H100_NVLx1 FP8 Throughput
       ngcMetadata:
@@ -2232,6 +3292,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-h100_nvl-tp2__2
@@ -2267,6 +3329,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-h100_nvl-tp2
@@ -2302,6 +3366,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h100x1-throughput-bf16--lfg89p-ew
@@ -2337,6 +3403,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h100x1-throughput-fp8-kc5b4ag-cg
@@ -2372,6 +3440,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h100x2-latency-bf16-0i4agi9azq
@@ -2407,6 +3477,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h100x2-latency-fp8-r2-4vhtqrq
@@ -2442,6 +3514,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h200x1-throughput-bf16-frc0n1b7nw
@@ -2477,6 +3551,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h200x1-throughput-fp8-r0-6osqtng
@@ -2512,6 +3588,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h200x2-latency-bf16--b69z90dgg
@@ -2547,6 +3625,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h200x2-latency-fp8-zzxu8dlxcw
@@ -2582,6 +3662,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h20x1-throughput-bf16-hnixelsq-q
@@ -2617,6 +3699,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h20x1-throughput-fp8-bmppgnfoeq
@@ -2652,6 +3736,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h20x2-latency-bf16-u-xo-smuuq
@@ -2687,6 +3773,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:h20x2-latency-fp8-icgplntjww
@@ -2722,6 +3810,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l20x1-throughput-bf16-rpqq5ggd-q
@@ -2757,6 +3847,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l20x1-throughput-fp8-fqsk6q2inq
@@ -2792,6 +3884,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l20x2-latency-bf16-acj72sjf5a
@@ -2827,6 +3921,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l20x2-latency-fp8-f2nzfrgyia
@@ -2862,6 +3958,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l40sx1-throughput-bf16-i09pxvzjbg
@@ -2897,6 +3995,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l40sx1-throughput-fp8-jnzgjqaxuw
@@ -2932,6 +4032,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l40sx2-latency-bf16-pb6dhqvrgw
@@ -2967,6 +4069,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 8GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:l40sx2-latency-fp8-44i4vvrorq
@@ -3002,6 +4106,859 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-a100_sxm4_40gb
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA A100_SXM4_40GBx1 BF16 Throughput
+      ngcMetadata:
+        47dbb6f7acda1fb4b1220d9462a66bda882e06e5d547e3b489c6bd7bf87df6e3:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: A100_SXM4_40GB
+            gpu_device: 20b0:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100_SXM4_40GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20B0:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 12GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:a100x1-throughput-lora-bf16-kxsmexeueg
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA A100x1 BF16 Throughput
+      ngcMetadata:
+        74eedaea9082525093f8346646709dc91efa7fd7ef2bc72d595feefaab94cf6f:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:a10gx1-throughput-lora-bf16-79hztaz-5a
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA A10Gx1 BF16 Throughput
+      ngcMetadata:
+        0c85a1fe1aa38fa0f635a4c77bf25f7c94bfb9022564a929580415093f5b97d0:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: A10G
+            gpu_device: 2237:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A10G
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2237:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:b200x1-throughput-lora-bf16-txtin7dmxq
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA B200x1 BF16 Throughput
+      ngcMetadata:
+        a7baab3661c8376231396bf5529a78365892a33cc3416a11986fc2d96afcbcd8:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:b200x1-throughput-lora-fp8-gbh9yuxv0w
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA B200x1 FP8 Throughput
+      ngcMetadata:
+        bae7cf0b51c21f0e6f697593ee58dc8a555559b4b81903502a9e0ffbdc1b67a9:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: B200
+            gpu_device: 2901:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-gh200_480gb__2
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA GH200_480GBx1 BF16 Throughput
+      ngcMetadata:
+        64805313062da153bf8d217f4ece622ed22e0fff2fdc55ff608809b8619d0b72:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 12GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-gh200_480gb
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA GH200_480GBx1 FP8 Throughput
+      ngcMetadata:
+        127fb415e55f30460b4c8c5ac108e133040dff57c13991d33893b61845ed26d6:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: GH200_480GB
+            gpu_device: 2342:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200_480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 12GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-h100_nvl__4
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA H100_NVLx1 BF16 Throughput
+      ngcMetadata:
+        86b3fade693f8139fd213d70622d87dd6919f9f22dc7e8bbdfd84f1b5601d044:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 12GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-h100_nvl
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA H100_NVLx1 FP8 Throughput
+      ngcMetadata:
+        22f2a8f33c93678bdfb831a62887f25642534525f1e0212f360b5490b03f99a2:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: H100_NVL
+            gpu_device: 2321:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100_NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 12GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:h100x1-throughput-lora-bf16-ciuttye2fq
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA H100x1 BF16 Throughput
+      ngcMetadata:
+        6e29cf433044b5a90f50d4cd1ca2e48d1ecb62eb5fa6fa9fb6f8317da61eebb3:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:h100x1-throughput-lora-fp8-hofrxtvmbq
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA H100x1 FP8 Throughput
+      ngcMetadata:
+        018942e9a37a69b58ed514d7006ed851f57a1b2501ec4d39e3d862d8718893e5:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: H100
+            gpu_device: 2330:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:h200x1-throughput-lora-bf16-zbvgvklubw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA H200x1 BF16 Throughput
+      ngcMetadata:
+        f603fd56445cfe4f9448dfef2d9d1507465af46f1a0e60e9fb9796850bdbd7e6:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:h200x1-throughput-lora-fp8-jxgk1n6ufq
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA H200x1 FP8 Throughput
+      ngcMetadata:
+        083e56197c3078f2932fc8d3d0e6d0d5b88d29ab8dbe154097deb322f227be07:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: H200
+            gpu_device: 2335:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:h20x1-throughput-lora-bf16-jjsv0pdhia
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA H20x1 BF16 Throughput
+      ngcMetadata:
+        93d06ccef585cc1183456a82b7de487e3d06aaf38f8ce8565f45f2ac208497eb:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: H20
+            gpu_device: 2329:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2329:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:h20x1-throughput-lora-fp8-b9h26grera
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA H20x1 FP8 Throughput
+      ngcMetadata:
+        866386a02e6940add23eecfac9b28ec1262a679bb8d099b2cda7fc7f78b3e976:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: H20
+            gpu_device: 2329:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2329:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:l20x1-throughput-lora-bf16-9oord-je6w
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA L20x1 BF16 Throughput
+      ngcMetadata:
+        55767f2574f5867d0b1eab6b08281a378e3662fab1f30922a1de7b0008995367:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: L20
+            gpu_device: 26ba:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L20
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26BA:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:l20x1-throughput-lora-fp8-mvtp4kudvw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA L20x1 FP8 Throughput
+      ngcMetadata:
+        0cd2e2aa21a4d0c4a08cdb2c1cd832d412fbb68258e8f9ba1049e535532b3e56:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: L20
+            gpu_device: 26ba:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L20
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26BA:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:l40sx1-throughput-lora-bf16-rrg1agqi2a
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA L40Sx1 BF16 Throughput
+      ngcMetadata:
+        08662fae791cb76c40899ed539a7cbfdac61cad60d042220a3c321abd34a8a87:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:l40sx1-throughput-lora-fp8--rtzzilvdq
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA L40Sx1 FP8 Throughput
+      ngcMetadata:
+        0782f55dcd12ec36d6126d9768fd364182986eecd25526eb206553df388057b7:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: L40S
+            gpu_device: 26b9:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: L40S
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:rtx4090x1-throughput-lora-bf16-aekzo2sjjg
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA RTX4090x1 BF16 Throughput
+      ngcMetadata:
+        aa46dbf1af9c617c325dafae008b5d72ca46898515908f30fb2e7b74fd1993f6:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: RTX4090
+            gpu_device: 2684:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX4090
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2684:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 7GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:rtx4090x1-throughput-lora-fp8-0jughsmrpw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA RTX4090x1 FP8 Throughput
+      ngcMetadata:
+        8c1080d58136020c5c2b2a1a1380dc7a3d8e7b73b3b77ddd126bc2f03086848b:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: RTX4090
+            gpu_device: 2684:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX4090
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2684:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada__2
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA RTX6000_ADAx1 BF16 Throughput
+      ngcMetadata:
+        4c350f6957277ca77d16cc837209ca96ab7205051ffac1d857b4002bbef0e45e:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: RTX6000_ADA
+            gpu_device: 26b1:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: bf16
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: RTX6000_ADA
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B1:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 12GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct LORA RTX6000_ADAx1 FP8 Throughput
+      ngcMetadata:
+        255e33ddadcde3794b506a296f185fae0b716f5788e30b1c837d076ff267039e:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'true'
+            gpu: RTX6000_ADA
+            gpu_device: 26b1:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp8
+            profile: throughput-lora
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT-LORA
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX6000_ADA
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B1:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 12GB
+      - key: LORA
+        value: 'TRUE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:rtx4090x1-latency-bf16-b25uxqlekg
@@ -3037,6 +4994,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:rtx4090x1-throughput-bf16-8m--uis3tg
@@ -3072,6 +5031,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:rtx4090x1-latency-fp8-cq5x62ffbg
@@ -3107,6 +5068,8 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-3b-instruct:rtx4090x1-throughput-fp8-jtgu5wt2yg
@@ -3142,9 +5105,11 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 4GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada__3
       framework: TensorRT-LLM
       displayName: Llama 3.2 3B Instruct RTX6000_ADAx1 BF16 Latency
       ngcMetadata:
@@ -3177,9 +5142,11 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada__4
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada__6
       framework: TensorRT-LLM
       displayName: Llama 3.2 3B Instruct RTX6000_ADAx1 BF16 Throughput
       ngcMetadata:
@@ -3212,9 +5179,11 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada__3
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada__5
       framework: TensorRT-LLM
       displayName: Llama 3.2 3B Instruct RTX6000_ADAx1 FP8 Latency
       ngcMetadata:
@@ -3247,9 +5216,11 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada__2
+    - profileId: nim/meta/llama-3.2-3b-instruct:hf-392a143-tool-use-v2-rtx6000_ada__4
       framework: TensorRT-LLM
       displayName: Llama 3.2 3B Instruct RTX6000_ADAx1 FP8 Throughput
       ngcMetadata:
@@ -3282,8 +5253,15 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 12GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
+  - variantId: Llama 3.2 3B Instruct
+    modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJjYW5HdWVzdERvd25sb2FkIjogZmFsc2UsCiAgICAiY3JlYXRlZERhdGUiOiAiMjAyNS0wMi0xOVQyMDo0MzoyMC41MzhaIiwKICAgICJkZXNjcmlwdGlvbiI6ICIjIyBNb2RlbCBJbmZvcm1hdGlvblxuXG5UaGUgTWV0YSBMbGFtYSAzLjIgY29sbGVjdGlvbiBvZiBtdWx0aWxpbmd1YWwgbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxzIChMTE1zKSBpcyBhIGNvbGxlY3Rpb24gb2YgcHJlLXRyYWluZWQgYW5kIGluc3RydWN0aW9uLXR1bmVkIGdlbmVyYXRpdmUgbW9kZWxzIGluIDFCIGFuZCAzQiBzaXplcyAodGV4dCBpbi90ZXh0IG91dCkuIFRoZSBMbGFtYSAzLjIgaW5zdHJ1Y3Rpb24tdHVuZWQgdGV4dCBvbmx5IG1vZGVscyBhcmUgb3B0aW1pemVkIGZvciBtdWx0aWxpbmd1YWwgZGlhbG9ndWUgdXNlIGNhc2VzLCBpbmNsdWRpbmcgYWdlbnRpYyByZXRyaWV2YWwgYW5kIHN1bW1hcml6YXRpb24gdGFza3MuIFRoZXkgb3V0cGVyZm9ybSBtYW55IG9mIHRoZSBhdmFpbGFibGUgb3BlbiBzb3VyY2UgYW5kIGNsb3NlZCBjaGF0IG1vZGVscyBvbiBjb21tb24gaW5kdXN0cnkgYmVuY2htYXJrcy4gXG5cbkxsYW1hIDMuMiBtb2RlbHMgYXJlIHJlYWR5IGZvciBjb21tZXJjaWFsIHVzZS5cblxuTW9kZWxzIGFyZSBhY2NlbGVyYXRlZCBieSBbVGVuc29yUlQtTExNXShodHRwczovL2dpdGh1Yi5jb20vTlZJRElBL1RlbnNvclJULUxMTSksIGEgbGlicmFyeSBmb3Igb3B0aW1pemluZyBMYXJnZSBMYW5ndWFnZSBNb2RlbCAoTExNKSBpbmZlcmVuY2Ugb24gTlZJRElBIEdQVXMuXG5cbioqTW9kZWxzIGluIHRoaXMgQ29sbGVjdGlvbjoqKiAgXG4tIExsYW1hLTMuMi0xQlxuLSBMbGFtYS0zLjItMUItSW5zdHJ1Y3Rcbi0gTGxhbWEtMy4yLTNCXG4tIExsYW1hLTMuMi0zQi1JbnN0cnVjdFxuXG4qKk1vZGVsIERldmVsb3BlcjoqKiBNZXRhXG5cbioqTW9kZWwgVmVyc2lvbjoqKiAzLjJcblxuKipNb2RlbCBSZWxlYXNlIERhdGU6KiogU2VwdGVtYmVyIDI1LCAyMDI0XG5cbioqVGhpcmQtUGFydHkgQ29tbXVuaXR5IENvbnNpZGVyYXRpb246KipcblRoaXMgbW9kZWwgaXMgbm90IG93bmVkIG9yIGRldmVsb3BlZCBieSBOVklESUEuIFRoaXMgbW9kZWwgaGFzIGJlZW4gZGV2ZWxvcGVkIGFuZCBidWlsdCB0byBhIHRoaXJkLXBhcnR5XHUyMDE5cyByZXF1aXJlbWVudHMgZm9yIHRoaXMgYXBwbGljYXRpb24gYW5kIHVzZSBjYXNlOyBzZWUgbGluayB0byBOb24tTlZJRElBIFtMbGFtYSAzLjIgTW9kZWwgQ2FyZF0oaHR0cHM6Ly9naXRodWIuY29tL21ldGEtbGxhbWEvbGxhbWEtbW9kZWxzL2Jsb2IvbWFpbi9tb2RlbHMvbGxhbWEzXzIvTU9ERUxfQ0FSRC5tZCkuXG5cbioqTGljZW5zZToqKiBVc2Ugb2YgTGxhbWEgMy4yIGlzIGdvdmVybmVkIGJ5IHRoZSBbTGxhbWEgMy4yIENvbW11bml0eSBMaWNlbnNlXShodHRwczovL2dpdGh1Yi5jb20vbWV0YS1sbGFtYS9sbGFtYS1tb2RlbHMvYmxvYi9tYWluL21vZGVscy9sbGFtYTNfMi9MSUNFTlNFKSAoYSBjdXN0b20sIGNvbW1lcmNpYWwgbGljZW5zZSBhZ3JlZW1lbnQpLlxuXG4qKk1vZGVsIEFyY2hpdGVjdHVyZToqKiBMbGFtYSAzLjIgaXMgYW4gYXV0by1yZWdyZXNzaXZlIGxhbmd1YWdlIG1vZGVsIHRoYXQgdXNlcyBhbiBvcHRpbWl6ZWQgdHJhbnNmb3JtZXIgYXJjaGl0ZWN0dXJlLiBUaGUgdHVuZWQgdmVyc2lvbnMgdXNlIHN1cGVydmlzZWQgZmluZS10dW5pbmcgKFNGVCkgYW5kIHJlaW5mb3JjZW1lbnQgbGVhcm5pbmcgd2l0aCBodW1hbiBmZWVkYmFjayAoUkxIRikgdG8gYWxpZ24gd2l0aCBodW1hbiBwcmVmZXJlbmNlcyBmb3IgaGVscGZ1bG5lc3MgYW5kIHNhZmV0eS5cblxufCAgfCBUcmFpbmluZyBEYXRhIHwgUGFyYW1zIHwgSW5wdXQgbW9kYWxpdGllcyB8IE91dHB1dCBtb2RhbGl0aWVzIHwgQ29udGV4dCBMZW5ndGggfCBHUUEgfCBTaGFyZWQgRW1iZWRkaW5ncyB8IFRva2VuIGNvdW50IHwgS25vd2xlZGdlIGN1dG9mZiB8XG58IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHwgOi0tLS0gfCA6LS0tLSB8IDotLS0tIHxcbnwgTGxhbWEgMy4yICh0ZXh0IG9ubHkpICB8IEEgbmV3IG1peCBvZiBwdWJsaWNseSBhdmFpbGFibGUgb25saW5lIGRhdGEuIHwgMUIgKDEuMjNCKSB8IE11bHRpbGluZ3VhbCBUZXh0IHwgTXVsdGlsaW5ndWFsIFRleHQgYW5kIGNvZGUgIHwgMTI4ayB8IFllcyB8IFllcyB8IFVwIHRvIDlUIHRva2VucyB8IERlY2VtYmVyIDIwMjMgfFxufCAgfCAgfCAzQiAoMy4yMUIpIHwgTXVsdGlsaW5ndWFsIFRleHQgfCBNdWx0aWxpbmd1YWwgVGV4dCBhbmQgY29kZSAgfCAgfCAgfCAgfCAgfCAgfFxuXG4qKlN1cHBvcnRlZCBMYW5ndWFnZXM6KiogRW5nbGlzaCwgR2VybWFuLCBGcmVuY2gsIEl0YWxpYW4sIFBvcnR1Z3Vlc2UsIEhpbmRpLCBTcGFuaXNoLCBhbmQgVGhhaSBhcmUgb2ZmaWNpYWxseSBzdXBwb3J0ZWQuIExsYW1hIDMuMiBoYXMgYmVlbiB0cmFpbmVkIG9uIGEgYnJvYWRlciBjb2xsZWN0aW9uIG9mIGxhbmd1YWdlcyB0aGFuIHRoZXNlIDggc3VwcG9ydGVkIGxhbmd1YWdlcy4gRGV2ZWxvcGVycyBtYXkgZmluZS10dW5lIExsYW1hIDMuMiBtb2RlbHMgZm9yIGxhbmd1YWdlcyBiZXlvbmQgdGhlc2Ugc3VwcG9ydGVkIGxhbmd1YWdlcywgcHJvdmlkZWQgdGhleSBjb21wbHkgd2l0aCB0aGUgTGxhbWEgMy4yIENvbW11bml0eSBMaWNlbnNlIGFuZCB0aGUgQWNjZXB0YWJsZSBVc2UgUG9saWN5LiBEZXZlbG9wZXJzIGFyZSBhbHdheXMgZXhwZWN0ZWQgdG8gZW5zdXJlIHRoYXQgdGhlaXIgZGVwbG95bWVudHMsIGluY2x1ZGluZyB0aG9zZSB0aGF0IGludm9sdmUgYWRkaXRpb25hbCBsYW5ndWFnZXMsIGFyZSBjb21wbGV0ZWQgc2FmZWx5IGFuZCByZXNwb25zaWJseS5cblxuKipMbGFtYSAzLjIgTW9kZWwgRmFtaWx5OioqIFRva2VuIGNvdW50cyByZWZlciB0byBwcmUtdHJhaW5pbmcgZGF0YSBvbmx5LiBBbGwgbW9kZWwgdmVyc2lvbnMgdXNlIEdyb3VwZWQtUXVlcnkgQXR0ZW50aW9uIChHUUEpIGZvciBpbXByb3ZlZCBpbmZlcmVuY2Ugc2NhbGFiaWxpdHkuXG5cbioqU3RhdHVzOioqIFRoaXMgaXMgYSBzdGF0aWMgbW9kZWwgdHJhaW5lZCBvbiBhbiBvZmZsaW5lIGRhdGFzZXQuIEZ1dHVyZSB2ZXJzaW9ucyBtYXkgYmUgcmVsZWFzZWQgdGhhdCBpbXByb3ZlIG1vZGVsIGNhcGFiaWxpdGllcyBhbmQgc2FmZXR5LiBcblxuKipGZWVkYmFjazoqKiBXaGVyZSB0byBzZW5kIHF1ZXN0aW9ucyBvciBjb21tZW50cyBhYm91dCB0aGUgbW9kZWwgSW5zdHJ1Y3Rpb25zIG9uIGhvdyB0byBwcm92aWRlIGZlZWRiYWNrIG9yIGNvbW1lbnRzIG9uIHRoZSBtb2RlbCBjYW4gYmUgZm91bmQgaW4gdGhlIG1vZGVsIFtSRUFETUVdKGh0dHBzOi8vZ2l0aHViLmNvbS9tZXRhLWxsYW1hL2xsYW1hLW1vZGVscy90cmVlL21haW4vbW9kZWxzL2xsYW1hM18yKS4gRm9yIG1vcmUgdGVjaG5pY2FsIGluZm9ybWF0aW9uIGFib3V0IGdlbmVyYXRpb24gcGFyYW1ldGVycyBhbmQgcmVjaXBlcyBmb3IgaG93IHRvIHVzZSBMbGFtYSAzLjIgaW4gYXBwbGljYXRpb25zLCBwbGVhc2UgZ28gW2hlcmVdKGh0dHBzOi8vZ2l0aHViLmNvbS9tZXRhLWxsYW1hL2xsYW1hLXJlY2lwZXMpLiBcblxuIyMgSW50ZW5kZWQgVXNlXG5cbioqSW50ZW5kZWQgVXNlIENhc2VzOioqIExsYW1hIDMuMiBpcyBpbnRlbmRlZCBmb3IgY29tbWVyY2lhbCBhbmQgcmVzZWFyY2ggdXNlIGluIG11bHRpcGxlIGxhbmd1YWdlcy4gSW5zdHJ1Y3Rpb24gdHVuZWQgdGV4dCBvbmx5IG1vZGVscyBhcmUgaW50ZW5kZWQgZm9yIGFzc2lzdGFudC1saWtlIGNoYXQgYW5kIGFnZW50aWMgYXBwbGljYXRpb25zIGxpa2Uga25vd2xlZGdlIHJldHJpZXZhbCBhbmQgc3VtbWFyaXphdGlvbiwgbW9iaWxlIEFJIHBvd2VyZWQgd3JpdGluZyBhc3Npc3RhbnRzIGFuZCBxdWVyeSBhbmQgcHJvbXB0IHJld3JpdGluZy4gUHJlLXRyYWluZWQgbW9kZWxzIGNhbiBiZSBhZGFwdGVkIGZvciBhIHZhcmlldHkgb2YgYWRkaXRpb25hbCBuYXR1cmFsIGxhbmd1YWdlIGdlbmVyYXRpb24gdGFza3MuIFxuXG4qKk91dCBvZiBTY29wZToqKiBVc2UgaW4gYW55IG1hbm5lciB0aGF0IHZpb2xhdGVzIGFwcGxpY2FibGUgbGF3cyBvciByZWd1bGF0aW9ucyAoaW5jbHVkaW5nIHRyYWRlIGNvbXBsaWFuY2UgbGF3cykuIFVzZSBpbiBhbnkgb3RoZXIgd2F5IHRoYXQgaXMgcHJvaGliaXRlZCBieSB0aGUgQWNjZXB0YWJsZSBVc2UgUG9saWN5IGFuZCBMbGFtYSAzLjIgQ29tbXVuaXR5IExpY2Vuc2UuIFVzZSBpbiBsYW5ndWFnZXMgYmV5b25kIHRob3NlIGV4cGxpY2l0bHkgcmVmZXJlbmNlZCBhcyBzdXBwb3J0ZWQgaW4gdGhpcyBtb2RlbCBjYXJkLlxuXG4jIyBTb2Z0d2FyZSBJbnRlZ3JhdGlvblxuXG4qKlN1cHBvcnRlZCBIYXJkd2FyZSBNaWNyb2FyY2hpdGVjdHVyZSBDb21wYXRpYmlsaXR5OioqXG4tIE5WSURJQSBBbXBlcmVcbi0gTlZJRElBIEhvcHBlclxuLSBOVklESUEgTG92ZWxhY2Vcbi0gTlZJRElBIEpldHNvblxuXG4qKlN1cHBvcnRlZCBPcGVyYXRpbmcgU3lzdGVtKHMpOioqXG4tIExpbnV4IFxuLSBXaW5kb3dzXG5cbiMjIEhhcmR3YXJlIGFuZCBTb2Z0d2FyZVxuXG4qKlRyYWluaW5nIEZhY3RvcnM6KiogV2UgdXNlZCBjdXN0b20gdHJhaW5pbmcgbGlicmFyaWVzLCBNZXRhJ3MgY3VzdG9tIGJ1aWx0IEdQVSBjbHVzdGVyLCBhbmQgcHJvZHVjdGlvbiBpbmZyYXN0cnVjdHVyZSBmb3IgcHJlLXRyYWluaW5nLiBGaW5lLXR1bmluZywgYW5ub3RhdGlvbiwgYW5kIGV2YWx1YXRpb24gd2VyZSBhbHNvIHBlcmZvcm1lZCBvbiBwcm9kdWN0aW9uIGluZnJhc3RydWN0dXJlLlxuXG4qKlRyYWluaW5nIEVuZXJneSBVc2U6KiogVHJhaW5pbmcgdXRpbGl6ZWQgYSBjdW11bGF0aXZlIG9mICoqOTE2ayoqIEdQVSBob3VycyBvZiBjb21wdXRhdGlvbiBvbiBIMTAwLTgwR0IgKFREUCBvZiA3MDBXKSB0eXBlIGhhcmR3YXJlLCBwZXIgdGhlIHRhYmxlIGJlbG93LiBUcmFpbmluZyB0aW1lIGlzIHRoZSB0b3RhbCBHUFUgdGltZSByZXF1aXJlZCBmb3IgdHJhaW5pbmcgZWFjaCBtb2RlbCBhbmQgcG93ZXIgY29uc3VtcHRpb24gaXMgdGhlIHBlYWsgcG93ZXIgY2FwYWNpdHkgcGVyIEdQVSBkZXZpY2UgdXNlZCwgYWRqdXN0ZWQgZm9yIHBvd2VyIHVzYWdlIGVmZmljaWVuY3kuIFxuXG4jIyBcblxuKipUcmFpbmluZyBHcmVlbmhvdXNlIEdhcyBFbWlzc2lvbnM6KiogRXN0aW1hdGVkIHRvdGFsIGxvY2F0aW9uLWJhc2VkIGdyZWVuaG91c2UgZ2FzIGVtaXNzaW9ucyB3ZXJlICoqMjQwKiogdG9ucyBDTzJlcSBmb3IgdHJhaW5pbmcuIFNpbmNlIDIwMjAsIE1ldGEgaGFzIG1haW50YWluZWQgbmV0IHplcm8gZ3JlZW5ob3VzZSBnYXMgZW1pc3Npb25zIGluIGl0cyBnbG9iYWwgb3BlcmF0aW9ucyBhbmQgbWF0Y2hlZCAxMDAlIG9mIGl0cyBlbGVjdHJpY2l0eSB1c2Ugd2l0aCByZW5ld2FibGUgZW5lcmd5OyB0aGVyZWZvcmUsIHRoZSB0b3RhbCBtYXJrZXQtYmFzZWQgZ3JlZW5ob3VzZSBnYXMgZW1pc3Npb25zIGZvciB0cmFpbmluZyB3ZXJlIDAgdG9ucyBDTzJlcS5cblxufCAgfCBUcmFpbmluZyBUaW1lIChHUFUgaG91cnMpIHwgTG9naXQgR2VuZXJhdGlvbiBUaW1lIChHUFUgSG91cnMpIHwgVHJhaW5pbmcgUG93ZXIgQ29uc3VtcHRpb24gKFcpIHwgVHJhaW5pbmcgTG9jYXRpb24tQmFzZWQgR3JlZW5ob3VzZSBHYXMgRW1pc3Npb25zICh0b25zIENPMmVxKSB8IFRyYWluaW5nIE1hcmtldC1CYXNlZCBHcmVlbmhvdXNlIEdhcyBFbWlzc2lvbnMgKHRvbnMgQ08yZXEpIHxcbnwgOi0tLS0gfCA6LS0tOiB8IC0tLS0tIHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHxcbnwgTGxhbWEtMy4yLTFCIHwgMzcwayB8IFxcLSB8IDcwMCB8IDEwNyB8IDAgfFxufCBMbGFtYS0zLjItM0IgfCA0NjBrIHwgXFwtIHwgNzAwIHwgMTMzIHwgMCB8XG58IFRvdGFsIHwgODMwayB8ICAgICAgICAgODZrIHwgIHwgMjQwIHwgMCB8XG5cblRoZSBtZXRob2RvbG9neSB1c2VkIHRvIGRldGVybWluZSB0cmFpbmluZyBlbmVyZ3kgdXNlIGFuZCBncmVlbmhvdXNlIGdhcyBlbWlzc2lvbnMgY2FuIGJlIGZvdW5kIFtoZXJlXShodHRwczovL2FyeGl2Lm9yZy9wZGYvMjIwNC4wNTE0OSkuIFNpbmNlIE1ldGEgaXMgb3Blbmx5IHJlbGVhc2luZyB0aGVzZSBtb2RlbHMsIHRoZSB0cmFpbmluZyBlbmVyZ3kgdXNlIGFuZCBncmVlbmhvdXNlIGdhcyBlbWlzc2lvbnMgd2lsbCBub3QgYmUgaW5jdXJyZWQgYnkgb3RoZXJzLlxuXG4jIyBUcmFpbmluZyBEYXRhXG5cbioqRGF0YSBDb2xsZWN0aW9uIE1ldGhvZDoqKiBVbmtub3duICBcbioqTGFiZWxpbmcgTWV0aG9kOioqIFVua25vd25cblxuKipPdmVydmlldzoqKiBMbGFtYSAzLjIgd2FzIHByZS10cmFpbmVkIG9uIHVwIHRvIDkgdHJpbGxpb24gdG9rZW5zIG9mIGRhdGEgZnJvbSBwdWJsaWNseSBhdmFpbGFibGUgc291cmNlcy4gRm9yIHRoZSAxQiBhbmQgM0IgTGxhbWEgMy4yIG1vZGVscywgd2UgaW5jb3Jwb3JhdGVkIGxvZ2l0cyBmcm9tIHRoZSBMbGFtYSAzLjEgOEIgYW5kIDcwQiBtb2RlbHMgaW50byB0aGUgcHJlLXRyYWluaW5nIHN0YWdlIG9mIHRoZSBtb2RlbCBkZXZlbG9wbWVudCwgd2hlcmUgb3V0cHV0cyAobG9naXRzKSBmcm9tIHRoZXNlIGxhcmdlciBtb2RlbHMgd2VyZSB1c2VkIGFzIHRva2VuLWxldmVsIHRhcmdldHMuIEtub3dsZWRnZSBkaXN0aWxsYXRpb24gd2FzIHVzZWQgYWZ0ZXIgcHJ1bmluZyB0byByZWNvdmVyIHBlcmZvcm1hbmNlLiBJbiBwb3N0LXRyYWluaW5nIHdlIHVzZWQgYSBzaW1pbGFyIHJlY2lwZSBhcyBMbGFtYSAzLjEgYW5kIHByb2R1Y2VkIGZpbmFsIGNoYXQgbW9kZWxzIGJ5IGRvaW5nIHNldmVyYWwgcm91bmRzIG9mIGFsaWdubWVudCBvbiB0b3Agb2YgdGhlIHByZS10cmFpbmVkIG1vZGVsLiBFYWNoIHJvdW5kIGludm9sdmVkIFN1cGVydmlzZWQgRmluZS1UdW5pbmcgKFNGVCksIFJlamVjdGlvbiBTYW1wbGluZyAoUlMpLCBhbmQgRGlyZWN0IFByZWZlcmVuY2UgT3B0aW1pemF0aW9uIChEUE8pLlxuXG4qKkRhdGEgRnJlc2huZXNzOioqIFRoZSBwcmUtdHJhaW5pbmcgZGF0YSBoYXMgYSBjdXRvZmYgb2YgRGVjZW1iZXIgMjAyMy5cblxuIyMgQmVuY2htYXJrcyBcXC0gRW5nbGlzaCBUZXh0XG5cbkluIHRoaXMgc2VjdGlvbiwgd2UgcmVwb3J0IHRoZSByZXN1bHRzIGZvciBMbGFtYSAzLjIgbW9kZWxzIG9uIHN0YW5kYXJkIGF1dG9tYXRpYyBiZW5jaG1hcmtzLiBGb3IgYWxsIHRoZXNlIGV2YWx1YXRpb25zLCB3ZSB1c2VkIG91ciBpbnRlcm5hbCBldmFsdWF0aW9ucyBsaWJyYXJ5LiBcblxuIyMjIEJhc2UgUHJlLXRyYWluZWQgTW9kZWxzIFxuXG58IENhdGVnb3J5IHwgQmVuY2htYXJrIHwgXFwjIFNob3RzIHwgTWV0cmljIHwgTGxhbWEtMy4yLTFCIHwgTGxhbWEtMy4yLTNCIHwgTGxhbWEtMy4xLThCIHxcbnwgLS0tLS0gfCAtLS0tLSB8IDotLS06IHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfFxufCBHZW5lcmFsIHwgTU1MVSB8IDUgfCBtYWNyb1xcX2F2Zy9hY2NcXF9jaGFyIHwgMzIuMiB8IDU4IHwgNjYuNyB8XG58ICB8IEFHSUV2YWwgRW5nbGlzaCB8IDMtNSB8IGF2ZXJhZ2UvYWNjXFxfY2hhciB8IDIzLjMgfCAzOS4yIHwgNDcuOCB8XG58ICB8IEFSQy1DaGFsbGVuZ2UgfCAyNSB8IGFjY1xcX2NoYXIgfCAzMi44IHwgNjkuMSB8IDc5LjcgfFxufCBSZWFkaW5nIGNvbXByZWhlbnNpb24gfCBTUXVBRCB8IDEgfCBlbSB8IDQ5LjIgfCA2Ny43IHwgNzcgfFxufCAgfCBRdUFDIChGMSkgfCAxIHwgZjEgfCAzNy45IHwgNDIuOSB8IDQ0LjkgfFxufCAgfCBEUk9QIChGMSkgfCAzIHwgZjEgfCAyOC4wIHwgNDUuMiB8IDU5LjUgfFxufCBMb25nIENvbnRleHQgfCBOZWVkbGUgaW4gSGF5c3RhY2sgfCAwIHwgZW0gfCA5Ni44IHwgMSB8IDEgfFxuXG4jIyMgSW5zdHJ1Y3Rpb24tVHVuZWQgTW9kZWxzXG5cbnwgQ2FwYWJpbGl0eSB8ICB8IEJlbmNobWFyayB8IFxcIyBTaG90cyB8IE1ldHJpYyB8IExsYW1hLTMuMi0xQi1JbnN0cnVjdCB8IExsYW1hLTMuMi0zQi1JbnN0cnVjdCB8IExsYW1hLTMuMS04Qi1JbnN0cnVjdCB8XG58IDotLS06IHwgLS0tLS0gfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfFxufCBHZW5lcmFsIHwgIHwgTU1MVSB8IDUgfCBtYWNyb1xcX2F2Zy9hY2MgfCA0OS4zIHwgNjMuNCB8IDY5LjQgfFxufCBSZS13cml0aW5nIHwgIHwgT3Blbi1yZXdyaXRlIGV2YWwgfCAwIHwgbWljcm9cXF9hdmcvcm91Z2VMIHwgNDEuNiB8IDQwLjEgfCA0MC45IHxcbnwgU3VtbWFyaXphdGlvbiB8ICB8IFRMRFI5KyAodGVzdCkgfCAxIHwgcm91Z2VMIHwgMTYuOCB8IDE5LjAgfCAxNy4yIHxcbnwgSW5zdHJ1Y3Rpb24gZm9sbG93aW5nIHwgIHwgSUZFdmFsIHwgMCB8IEF2ZyhQcm9tcHQvSW5zdHJ1Y3Rpb24gYWNjIExvb3NlL1N0cmljdCkgfCA1OS41IHwgNzcuNCB8IDgwLjQgfFxufCBNYXRoIHwgIHwgR1NNOEsgKENvVCkgfCA4IHwgZW1cXF9tYWoxQDEgfCA0NC40IHwgNzcuNyB8IDg0LjUgfFxufCAgfCAgfCBNQVRIIChDb1QpIHwgMCB8IGZpbmFsXFxfZW0gfCAzMC42IHwgNDguMCB8IDUxLjkgfFxufCBSZWFzb25pbmcgfCAgfCBBUkMtQyB8IDAgfCBhY2MgfCA1OS40IHwgNzguNiB8IDgzLjQgfFxufCAgfCAgfCBHUFFBIHwgMCB8IGFjYyB8IDI3LjIgfCAzMi44IHwgMzIuOCB8XG58ICB8ICB8IEhlbGxhc3dhZyB8IDAgfCBhY2MgfCA0MS4yIHwgNjkuOCB8IDc4LjcgfFxufCBUb29sIFVzZSB8ICB8IEJGQ0wgVjIgfCAwIHwgYWNjIHwgMjUuNyB8IDY3LjAgfCA2Ny4xIHxcbnwgIHwgIHwgTmV4dXMgfCAwIHwgbWFjcm9cXF9hdmcvYWNjIHwgMTMuNSB8IDM0LjMgfCAzOC41IHxcbnwgTG9uZyBDb250ZXh0IHwgIHwgSW5maW5pdGVCZW5jaC9Fbi5RQSB8IDAgfCBsb25nYm9va1xcX3FhL2YxIHwgMjAuMyB8IDE5LjggfCAyNy4zIHxcbnwgIHwgIHwgSW5maW5pdGVCZW5jaC9Fbi5NQyB8IDAgfCBsb25nYm9va1xcX2Nob2ljZS9hY2MgfCAzOC4wIHwgNjMuMyB8IDcyLjIgfFxufCAgfCAgfCBOSUgvTXVsdGktbmVlZGxlIHwgMCB8IHJlY2FsbCB8IDc1LjAgfCA4NC43IHwgOTguOCB8XG58IE11bHRpbGluZ3VhbCB8ICB8IE1HU00gKENvVCkgfCAwIHwgZW0gfCAyNC41IHwgNTguMiB8IDY4LjkgfFxuXG4jIyMgTXVsdGlsaW5ndWFsIEJlbmNobWFya3NcblxufCBDYXRlZ29yeSB8IEJlbmNobWFyayB8IExhbmd1YWdlIHwgTGxhbWEtMy4yLTFCLUluc3RydWN0IHwgTGxhbWEtMy4yLTNCLUluc3RydWN0IHwgTGxhbWEtMy4xLThCLUluc3RydWN0IHxcbnwgOi0tLTogfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHxcbnwgR2VuZXJhbCB8IE1NTFUgKDUtc2hvdCwgbWFjcm9cXF9hdmcvYWNjKSB8IFBvcnR1Z3Vlc2UgfCAzOS44MiB8IDU0LjQ4IHwgNjIuMTIgfFxufCAgfCAgfCBTcGFuaXNoIHwgNDEuNTIgfCA1NS4wOSB8IDYyLjQ1IHxcbnwgIHwgIHwgSXRhbGlhbiB8IDM5Ljc5IHwgNTMuNzcgfCA2MS42MyB8XG58ICB8ICB8IEdlcm1hbiB8IDM5LjIwIHwgNTMuMjkgfCA2MC41OSB8XG58ICB8ICB8IEZyZW5jaCB8IDQwLjQ3IHwgNTQuNTkgfCA2Mi4zNCB8XG58ICB8ICB8IEhpbmRpIHwgMzMuNTEgfCA0My4zMSB8IDUwLjg4IHxcbnwgIHwgIHwgVGhhaSB8IDM0LjY3IHwgNDQuNTQgfCA1MC4zMiB8XG5cbiMjIFJlc3BvbnNpYmlsaXR5ICYgU2FmZXR5XG5cbkFzIHBhcnQgb2Ygb3VyIFJlc3BvbnNpYmxlIHJlbGVhc2UgYXBwcm9hY2gsIHdlIGZvbGxvd2VkIGEgdGhyZWUtcHJvbmdlZCBzdHJhdGVneSB0byBtYW5hZ2luZyB0cnVzdCAmIHNhZmV0eSByaXNrczpcblxuMS4gRW5hYmxlIGRldmVsb3BlcnMgdG8gZGVwbG95IGhlbHBmdWwsIHNhZmUgYW5kIGZsZXhpYmxlIGV4cGVyaWVuY2VzIGZvciB0aGVpciB0YXJnZXQgYXVkaWVuY2UgYW5kIGZvciB0aGUgdXNlIGNhc2VzIHN1cHBvcnRlZCBieSBMbGFtYSAgIFxuMi4gUHJvdGVjdCBkZXZlbG9wZXJzIGFnYWluc3QgYWR2ZXJzYXJpYWwgdXNlcnMgYWltaW5nIHRvIGV4cGxvaXQgTGxhbWEgY2FwYWJpbGl0aWVzIHRvIHBvdGVudGlhbGx5IGNhdXNlIGhhcm0gIFxuMy4gUHJvdmlkZSBwcm90ZWN0aW9ucyBmb3IgdGhlIGNvbW11bml0eSB0byBoZWxwIHByZXZlbnQgdGhlIG1pc3VzZSBvZiBvdXIgbW9kZWxzXG5cbiMjIyBSZXNwb25zaWJsZSBEZXBsb3ltZW50IFxuXG4qKkFwcHJvYWNoOioqIExsYW1hIGlzIGEgZm91bmRhdGlvbmFsIHRlY2hub2xvZ3kgZGVzaWduZWQgdG8gYmUgdXNlZCBpbiBhIHZhcmlldHkgb2YgdXNlIGNhc2VzLiBFeGFtcGxlcyBvbiBob3cgTWV0YVx1MjAxOXMgTGxhbWEgbW9kZWxzIGhhdmUgYmVlbiByZXNwb25zaWJseSBkZXBsb3llZCBjYW4gYmUgZm91bmQgaW4gb3VyIFtDb21tdW5pdHkgU3RvcmllcyB3ZWJwYWdlXShodHRwczovL2xsYW1hLm1ldGEuY29tL2NvbW11bml0eS1zdG9yaWVzLykuIE91ciBhcHByb2FjaCBpcyB0byBidWlsZCB0aGUgbW9zdCBoZWxwZnVsIG1vZGVscywgZW5hYmxpbmcgdGhlIHdvcmxkIHRvIGJlbmVmaXQgZnJvbSB0aGUgdGVjaG5vbG9neSBwb3dlciwgYnkgYWxpZ25pbmcgb3VyIG1vZGVsIHNhZmV0eSBmb3IgZ2VuZXJpYyB1c2UgY2FzZXMgYW5kIGFkZHJlc3NpbmcgYSBzdGFuZGFyZCBzZXQgb2YgaGFybXMuIERldmVsb3BlcnMgYXJlIHRoZW4gaW4gdGhlIGRyaXZlclx1MjAxOXMgc2VhdCB0byB0YWlsb3Igc2FmZXR5IGZvciB0aGVpciB1c2UgY2FzZXMsIGRlZmluaW5nIHRoZWlyIG93biBwb2xpY2llcyBhbmQgZGVwbG95aW5nIHRoZSBtb2RlbHMgd2l0aCB0aGUgbmVjZXNzYXJ5IHNhZmVndWFyZHMgaW4gdGhlaXIgTGxhbWEgc3lzdGVtcy4gTGxhbWEgMy4yIHdhcyBkZXZlbG9wZWQgZm9sbG93aW5nIHRoZSBiZXN0IHByYWN0aWNlcyBvdXRsaW5lZCBpbiBvdXIgW1Jlc3BvbnNpYmxlIFVzZSBHdWlkZV0oaHR0cHM6Ly9sbGFtYS5tZXRhLmNvbS9yZXNwb25zaWJsZS11c2UtZ3VpZGUvKS4gXG5cbiMjIyMgTGxhbWEgMy4yIEluc3RydWN0IFxuXG4qKk9iamVjdGl2ZToqKiBPdXIgbWFpbiBvYmplY3RpdmVzIGZvciBjb25kdWN0aW5nIHNhZmV0eSBmaW5lLXR1bmluZyBhcmUgdG8gcHJvdmlkZSB0aGUgcmVzZWFyY2ggY29tbXVuaXR5IHdpdGggYSB2YWx1YWJsZSByZXNvdXJjZSBmb3Igc3R1ZHlpbmcgdGhlIHJvYnVzdG5lc3Mgb2Ygc2FmZXR5IGZpbmUtdHVuaW5nLCBhcyB3ZWxsIGFzIHRvIG9mZmVyIGRldmVsb3BlcnMgYSByZWFkaWx5IGF2YWlsYWJsZSwgc2FmZSwgYW5kIHBvd2VyZnVsIG1vZGVsIGZvciB2YXJpb3VzIGFwcGxpY2F0aW9ucyB0byByZWR1Y2UgdGhlIGRldmVsb3BlciB3b3JrbG9hZCB0byBkZXBsb3kgc2FmZSBBSSBzeXN0ZW1zLiBXZSBpbXBsZW1lbnRlZCB0aGUgc2FtZSBzZXQgb2Ygc2FmZXR5IG1pdGlnYXRpb25zIGFzIGluIExsYW1hIDMsIGFuZCB5b3UgY2FuIGxlYXJuIG1vcmUgYWJvdXQgdGhlc2UgaW4gdGhlIExsYW1hIDMgW3BhcGVyXShodHRwczovL2FpLm1ldGEuY29tL3Jlc2VhcmNoL3B1YmxpY2F0aW9ucy90aGUtbGxhbWEtMy1oZXJkLW9mLW1vZGVscy8pLiBcblxuKipGaW5lLVR1bmluZyBEYXRhOioqIFdlIGVtcGxveSBhIG11bHRpLWZhY2V0ZWQgYXBwcm9hY2ggdG8gZGF0YSBjb2xsZWN0aW9uLCBjb21iaW5pbmcgaHVtYW4tZ2VuZXJhdGVkIGRhdGEgZnJvbSBvdXIgdmVuZG9ycyB3aXRoIHN5bnRoZXRpYyBkYXRhIHRvIG1pdGlnYXRlIHBvdGVudGlhbCBzYWZldHkgcmlza3MuIFdlXHUyMDE5dmUgZGV2ZWxvcGVkIG1hbnkgbGFyZ2UgbGFuZ3VhZ2UgbW9kZWwgKExMTSktYmFzZWQgY2xhc3NpZmllcnMgdGhhdCBlbmFibGUgdXMgdG8gdGhvdWdodGZ1bGx5IHNlbGVjdCBoaWdoLXF1YWxpdHkgcHJvbXB0cyBhbmQgcmVzcG9uc2VzLCBlbmhhbmNpbmcgZGF0YSBxdWFsaXR5IGNvbnRyb2wuIFxuXG4qKlJlZnVzYWxzIGFuZCBUb25lOioqIEJ1aWxkaW5nIG9uIHRoZSB3b3JrIHdlIHN0YXJ0ZWQgd2l0aCBMbGFtYSAzLCB3ZSBwdXQgYSBncmVhdCBlbXBoYXNpcyBvbiBtb2RlbCByZWZ1c2FscyB0byBiZW5pZ24gcHJvbXB0cyBhcyB3ZWxsIGFzIHJlZnVzYWwgdG9uZS4gV2UgaW5jbHVkZWQgYm90aCBib3JkZXJsaW5lIGFuZCBhZHZlcnNhcmlhbCBwcm9tcHRzIGluIG91ciBzYWZldHkgZGF0YSBzdHJhdGVneSwgYW5kIG1vZGlmaWVkIG91ciBzYWZldHkgZGF0YSByZXNwb25zZXMgdG8gZm9sbG93IHRvbmUgZ3VpZGVsaW5lcy4gXG5cbiMjIyMgTGxhbWEgMy4yIFN5c3RlbXNcblxuKipTYWZldHkgYXMgYSBTeXN0ZW06KiogTGFyZ2UgbGFuZ3VhZ2UgbW9kZWxzLCBpbmNsdWRpbmcgTGxhbWEgMy4yLCAqKmFyZSBub3QgZGVzaWduZWQgdG8gYmUgZGVwbG95ZWQgaW4gaXNvbGF0aW9uKiogYnV0IGluc3RlYWQgc2hvdWxkIGJlIGRlcGxveWVkIGFzIHBhcnQgb2YgYW4gb3ZlcmFsbCBBSSBzeXN0ZW0gd2l0aCBhZGRpdGlvbmFsIHNhZmV0eSBndWFyZHJhaWxzIGFzIHJlcXVpcmVkLiBEZXZlbG9wZXJzIGFyZSBleHBlY3RlZCB0byBkZXBsb3kgc3lzdGVtIHNhZmVndWFyZHMgd2hlbiBidWlsZGluZyBhZ2VudGljIHN5c3RlbXMuIFNhZmVndWFyZHMgYXJlIGtleSB0byBhY2hpZXZlIHRoZSByaWdodCBoZWxwZnVsbmVzcy1zYWZldHkgYWxpZ25tZW50IGFzIHdlbGwgYXMgbWl0aWdhdGluZyBzYWZldHkgYW5kIHNlY3VyaXR5IHJpc2tzIGluaGVyZW50IHRvIHRoZSBzeXN0ZW0gYW5kIGFueSBpbnRlZ3JhdGlvbiBvZiB0aGUgbW9kZWwgb3Igc3lzdGVtIHdpdGggZXh0ZXJuYWwgdG9vbHMuIEFzIHBhcnQgb2Ygb3VyIHJlc3BvbnNpYmxlIHJlbGVhc2UgYXBwcm9hY2gsIHdlIHByb3ZpZGUgdGhlIGNvbW11bml0eSB3aXRoIFtzYWZlZ3VhcmRzXShodHRwczovL2xsYW1hLm1ldGEuY29tL3RydXN0LWFuZC1zYWZldHkvKSB0aGF0IGRldmVsb3BlcnMgc2hvdWxkIGRlcGxveSB3aXRoIExsYW1hIG1vZGVscyBvciBvdGhlciBMTE1zLCBpbmNsdWRpbmcgTGxhbWEgR3VhcmQsIFByb21wdCBHdWFyZCBhbmQgQ29kZSBTaGllbGQuIEFsbCBvdXIgW3JlZmVyZW5jZSBpbXBsZW1lbnRhdGlvbnNdKGh0dHBzOi8vZ2l0aHViLmNvbS9tZXRhLWxsYW1hL2xsYW1hLWFnZW50aWMtc3lzdGVtKSBkZW1vcyBjb250YWluIHRoZXNlIHNhZmVndWFyZHMgYnkgZGVmYXVsdCBzbyBkZXZlbG9wZXJzIGNhbiBiZW5lZml0IGZyb20gc3lzdGVtLWxldmVsIHNhZmV0eSBvdXQtb2YtdGhlLWJveC4gXG5cbiMjIyBOZXcgQ2FwYWJpbGl0aWVzIGFuZCBVc2UgQ2FzZXNcblxuKipUZWNobm9sb2dpY2FsIEFkdmFuY2VtZW50OioqIExsYW1hIHJlbGVhc2VzIHVzdWFsbHkgaW50cm9kdWNlIG5ldyBjYXBhYmlsaXRpZXMgdGhhdCByZXF1aXJlIHNwZWNpZmljIGNvbnNpZGVyYXRpb25zIGluIGFkZGl0aW9uIHRvIHRoZSBiZXN0IHByYWN0aWNlcyB0aGF0IGdlbmVyYWxseSBhcHBseSBhY3Jvc3MgYWxsIEdlbmVyYXRpdmUgQUkgdXNlIGNhc2VzLiBGb3IgcHJpb3IgcmVsZWFzZSBjYXBhYmlsaXRpZXMgYWxzbyBzdXBwb3J0ZWQgYnkgTGxhbWEgMy4yLCBzZWUgW0xsYW1hIDMuMSBNb2RlbCBDYXJkXShodHRwczovL2dpdGh1Yi5jb20vbWV0YS1sbGFtYS9sbGFtYS1tb2RlbHMvYmxvYi9tYWluL21vZGVscy9sbGFtYTNfMS9NT0RFTF9DQVJELm1kKSwgYXMgdGhlIHNhbWUgY29uc2lkZXJhdGlvbnMgYXBwbHkgaGVyZSBhcyB3ZWxsLlxuXG4qKkNvbnN0cmFpbmVkIEVudmlyb25tZW50czoqKiBMbGFtYSAzLjIgMUIgYW5kIDNCIG1vZGVscyBhcmUgZXhwZWN0ZWQgdG8gYmUgZGVwbG95ZWQgaW4gaGlnaGx5IGNvbnN0cmFpbmVkIGVudmlyb25tZW50cywgc3VjaCBhcyBtb2JpbGUgZGV2aWNlcy4gTExNIFN5c3RlbXMgdXNpbmcgc21hbGxlciBtb2RlbHMgd2lsbCBoYXZlIGEgZGlmZmVyZW50IGFsaWdubWVudCBwcm9maWxlIGFuZCBzYWZldHkvaGVscGZ1bG5lc3MgdHJhZGVvZmYgdGhhbiBtb3JlIGNvbXBsZXgsIGxhcmdlciBzeXN0ZW1zLiBEZXZlbG9wZXJzIHNob3VsZCBlbnN1cmUgdGhlIHNhZmV0eSBvZiB0aGVpciBzeXN0ZW0gbWVldHMgdGhlIHJlcXVpcmVtZW50cyBvZiB0aGVpciB1c2UgY2FzZS4gV2UgcmVjb21tZW5kIHVzaW5nIGxpZ2h0ZXIgc3lzdGVtIHNhZmVndWFyZHMgZm9yIHN1Y2ggdXNlIGNhc2VzLCBsaWtlIExsYW1hIEd1YXJkIDMtMUIgb3IgaXRzIG1vYmlsZS1vcHRpbWl6ZWQgdmVyc2lvbi4gXG5cbiMjIyBFdmFsdWF0aW9uc1xuXG4qKlNjYWxlZCBFdmFsdWF0aW9uczoqKiBXZSBidWlsdCBkZWRpY2F0ZWQsIGFkdmVyc2FyaWFsIGV2YWx1YXRpb24gZGF0YXNldHMgYW5kIGV2YWx1YXRlZCBzeXN0ZW1zIGNvbXBvc2VkIG9mIExsYW1hIG1vZGVscyBhbmQgUHVycGxlIExsYW1hIHNhZmVndWFyZHMgdG8gZmlsdGVyIGlucHV0IHByb21wdCBhbmQgb3V0cHV0IHJlc3BvbnNlLiBJdCBpcyBpbXBvcnRhbnQgdG8gZXZhbHVhdGUgYXBwbGljYXRpb25zIGluIGNvbnRleHQsIGFuZCB3ZSByZWNvbW1lbmQgYnVpbGRpbmcgZGVkaWNhdGVkIGV2YWx1YXRpb24gZGF0YXNldCBmb3IgeW91ciB1c2UgY2FzZS5cblxuKipSZWQgVGVhbWluZzoqKiBXZSBjb25kdWN0ZWQgcmVjdXJyaW5nIHJlZCB0ZWFtaW5nIGV4ZXJjaXNlcyB3aXRoIHRoZSBnb2FsIG9mIGRpc2NvdmVyaW5nIHJpc2tzIHZpYSBhZHZlcnNhcmlhbCBwcm9tcHRpbmcgYW5kIHdlIHVzZWQgdGhlIGxlYXJuaW5ncyB0byBpbXByb3ZlIG91ciBiZW5jaG1hcmtzIGFuZCBzYWZldHkgdHVuaW5nIGRhdGFzZXRzLiBXZSBwYXJ0bmVyZWQgZWFybHkgd2l0aCBzdWJqZWN0LW1hdHRlciBleHBlcnRzIGluIGNyaXRpY2FsIHJpc2sgYXJlYXMgdG8gdW5kZXJzdGFuZCB0aGUgbmF0dXJlIG9mIHRoZXNlIHJlYWwtd29ybGQgaGFybXMgYW5kIGhvdyBzdWNoIG1vZGVscyBtYXkgbGVhZCB0byB1bmludGVuZGVkIGhhcm0gZm9yIHNvY2lldHkuIEJhc2VkIG9uIHRoZXNlIGNvbnZlcnNhdGlvbnMsIHdlIGRlcml2ZWQgYSBzZXQgb2YgYWR2ZXJzYXJpYWwgZ29hbHMgZm9yIHRoZSByZWQgdGVhbSB0byBhdHRlbXB0IHRvIGFjaGlldmUsIHN1Y2ggYXMgZXh0cmFjdGluZyBoYXJtZnVsIGluZm9ybWF0aW9uIG9yIHJlcHJvZ3JhbW1pbmcgdGhlIG1vZGVsIHRvIGFjdCBpbiBhIHBvdGVudGlhbGx5IGhhcm1mdWwgY2FwYWNpdHkuIFRoZSByZWQgdGVhbSBjb25zaXN0ZWQgb2YgZXhwZXJ0cyBpbiBjeWJlcnNlY3VyaXR5LCBhZHZlcnNhcmlhbCBtYWNoaW5lIGxlYXJuaW5nLCByZXNwb25zaWJsZSBBSSwgYW5kIGludGVncml0eSBpbiBhZGRpdGlvbiB0byBtdWx0aWxpbmd1YWwgY29udGVudCBzcGVjaWFsaXN0cyB3aXRoIGJhY2tncm91bmQgaW4gaW50ZWdyaXR5IGlzc3VlcyBpbiBzcGVjaWZpYyBnZW9ncmFwaGljIG1hcmtldHMuXG5cbiMjIyBDcml0aWNhbCBSaXNrcyBcblxuSW4gYWRkaXRpb24gdG8gb3VyIHNhZmV0eSB3b3JrIGFib3ZlLCB3ZSB0b29rIGV4dHJhIGNhcmUgb24gbWVhc3VyaW5nIGFuZC9vciBtaXRpZ2F0aW5nIHRoZSBmb2xsb3dpbmcgY3JpdGljYWwgcmlzayBhcmVhczpcblxuKioxXFwuIENCUk5FIChDaGVtaWNhbCwgQmlvbG9naWNhbCwgUmFkaW9sb2dpY2FsLCBOdWNsZWFyLCBhbmQgRXhwbG9zaXZlIFdlYXBvbnMpOioqIExsYW1hIDMuMiAxQiBhbmQgM0IgbW9kZWxzIGFyZSBzbWFsbGVyIGFuZCBsZXNzIGNhcGFibGUgZGVyaXZhdGl2ZXMgb2YgTGxhbWEgMy4xLiBGb3IgTGxhbWEgMy4xIDcwQiBhbmQgNDA1QiwgdG8gYXNzZXNzIHJpc2tzIHJlbGF0ZWQgdG8gcHJvbGlmZXJhdGlvbiBvZiBjaGVtaWNhbCBhbmQgYmlvbG9naWNhbCB3ZWFwb25zLCB3ZSBwZXJmb3JtZWQgdXBsaWZ0IHRlc3RpbmcgZGVzaWduZWQgdG8gYXNzZXNzIHdoZXRoZXIgdXNlIG9mIExsYW1hIDMuMSBtb2RlbHMgY291bGQgbWVhbmluZ2Z1bGx5IGluY3JlYXNlIHRoZSBjYXBhYmlsaXRpZXMgb2YgbWFsaWNpb3VzIGFjdG9ycyB0byBwbGFuIG9yIGNhcnJ5IG91dCBhdHRhY2tzIHVzaW5nIHRoZXNlIHR5cGVzIG9mIHdlYXBvbnMgYW5kIGhhdmUgZGV0ZXJtaW5lZCB0aGF0IHN1Y2ggdGVzdGluZyBhbHNvIGFwcGxpZXMgdG8gdGhlIHNtYWxsZXIgMUIgYW5kIDNCIG1vZGVscy4gXG5cbioqMlxcLiBDaGlsZCBTYWZldHk6KiogQ2hpbGQgU2FmZXR5IHJpc2sgYXNzZXNzbWVudHMgd2VyZSBjb25kdWN0ZWQgdXNpbmcgYSB0ZWFtIG9mIGV4cGVydHMsIHRvIGFzc2VzcyB0aGUgbW9kZWxcdTIwMTlzIGNhcGFiaWxpdHkgdG8gcHJvZHVjZSBvdXRwdXRzIHRoYXQgY291bGQgcmVzdWx0IGluIENoaWxkIFNhZmV0eSByaXNrcyBhbmQgaW5mb3JtIG9uIGFueSBuZWNlc3NhcnkgYW5kIGFwcHJvcHJpYXRlIHJpc2sgbWl0aWdhdGlvbnMgdmlhIGZpbmUgdHVuaW5nLiBXZSBsZXZlcmFnZWQgdGhvc2UgZXhwZXJ0IHJlZCB0ZWFtaW5nIHNlc3Npb25zIHRvIGV4cGFuZCB0aGUgY292ZXJhZ2Ugb2Ygb3VyIGV2YWx1YXRpb24gYmVuY2htYXJrcyB0aHJvdWdoIExsYW1hIDMgbW9kZWwgZGV2ZWxvcG1lbnQuIEZvciBMbGFtYSAzLCB3ZSBjb25kdWN0ZWQgbmV3IGluLWRlcHRoIHNlc3Npb25zIHVzaW5nIG9iamVjdGl2ZSBiYXNlZCBtZXRob2RvbG9naWVzIHRvIGFzc2VzcyB0aGUgbW9kZWwgcmlza3MgYWxvbmcgbXVsdGlwbGUgYXR0YWNrIHZlY3RvcnMgaW5jbHVkaW5nIHRoZSBhZGRpdGlvbmFsIGxhbmd1YWdlcyBMbGFtYSAzIGlzIHRyYWluZWQgb24uIFdlIGFsc28gcGFydG5lcmVkIHdpdGggY29udGVudCBzcGVjaWFsaXN0cyB0byBwZXJmb3JtIHJlZCB0ZWFtaW5nIGV4ZXJjaXNlcyBhc3Nlc3NpbmcgcG90ZW50aWFsbHkgdmlvbGF0aW5nIGNvbnRlbnQgd2hpbGUgdGFraW5nIGFjY291bnQgb2YgbWFya2V0IHNwZWNpZmljIG51YW5jZXMgb3IgZXhwZXJpZW5jZXMuIFxuXG4qKjNcXC4gQ3liZXIgQXR0YWNrczoqKiBPdXIgY3liZXIgYXR0YWNrIHVwbGlmdCBzdHVkeSBpbnZlc3RpZ2F0ZWQgd2hldGhlciBMTE1zIGNhbiBlbmhhbmNlIGh1bWFuIGNhcGFiaWxpdGllcyBpbiBoYWNraW5nIHRhc2tzLCBib3RoIGluIHRlcm1zIG9mIHNraWxsIGxldmVsIGFuZCBzcGVlZC4gT3VyIGF0dGFjayBhdXRvbWF0aW9uIHN0dWR5IGZvY3VzZWQgb24gZXZhbHVhdGluZyB0aGUgY2FwYWJpbGl0aWVzIG9mIExMTXMgd2hlbiB1c2VkIGFzIGF1dG9ub21vdXMgYWdlbnRzIGluIGN5YmVyIG9mZmVuc2l2ZSBvcGVyYXRpb25zLCBzcGVjaWZpY2FsbHkgaW4gdGhlIGNvbnRleHQgb2YgcmFuc29td2FyZSBhdHRhY2tzLiBUaGlzIGV2YWx1YXRpb24gd2FzIGRpc3RpbmN0IGZyb20gcHJldmlvdXMgc3R1ZGllcyB0aGF0IGNvbnNpZGVyZWQgTExNcyBhcyBpbnRlcmFjdGl2ZSBhc3Npc3RhbnRzLiBUaGUgcHJpbWFyeSBvYmplY3RpdmUgd2FzIHRvIGFzc2VzcyB3aGV0aGVyIHRoZXNlIG1vZGVscyBjb3VsZCBlZmZlY3RpdmVseSBmdW5jdGlvbiBhcyBpbmRlcGVuZGVudCBhZ2VudHMgaW4gZXhlY3V0aW5nIGNvbXBsZXggY3liZXItYXR0YWNrcyB3aXRob3V0IGh1bWFuIGludGVydmVudGlvbi5cblxuIyMjIENvbW11bml0eSBcblxuKipJbmR1c3RyeSBQYXJ0bmVyc2hpcHM6KiogR2VuZXJhdGl2ZSBBSSBzYWZldHkgcmVxdWlyZXMgZXhwZXJ0aXNlIGFuZCB0b29saW5nLCBhbmQgd2UgYmVsaWV2ZSBpbiB0aGUgc3RyZW5ndGggb2YgdGhlIG9wZW4gY29tbXVuaXR5IHRvIGFjY2VsZXJhdGUgaXRzIHByb2dyZXNzLiBXZSBhcmUgYWN0aXZlIG1lbWJlcnMgb2Ygb3BlbiBjb25zb3J0aXVtcywgaW5jbHVkaW5nIHRoZSBBSSBBbGxpYW5jZSwgUGFydG5lcnNoaXAgb24gQUkgYW5kIE1MQ29tbW9ucywgYWN0aXZlbHkgY29udHJpYnV0aW5nIHRvIHNhZmV0eSBzdGFuZGFyZGl6YXRpb24gYW5kIHRyYW5zcGFyZW5jeS4gV2UgZW5jb3VyYWdlIHRoZSBjb21tdW5pdHkgdG8gYWRvcHQgdGF4b25vbWllcyBsaWtlIHRoZSBNTENvbW1vbnMgUHJvb2Ygb2YgQ29uY2VwdCBldmFsdWF0aW9uIHRvIGZhY2lsaXRhdGUgY29sbGFib3JhdGlvbiBhbmQgdHJhbnNwYXJlbmN5IG9uIHNhZmV0eSBhbmQgY29udGVudCBldmFsdWF0aW9ucy4gT3VyIFB1cnBsZSBMbGFtYSB0b29scyBhcmUgb3BlbiBzb3VyY2VkIGZvciB0aGUgY29tbXVuaXR5IHRvIHVzZSBhbmQgd2lkZWx5IGRpc3RyaWJ1dGVkIGFjcm9zcyBlY29zeXN0ZW0gcGFydG5lcnMgaW5jbHVkaW5nIGNsb3VkIHNlcnZpY2UgcHJvdmlkZXJzLiBXZSBlbmNvdXJhZ2UgY29tbXVuaXR5IGNvbnRyaWJ1dGlvbnMgdG8gb3VyIFtHaXRodWIgcmVwb3NpdG9yeV0oaHR0cHM6Ly9naXRodWIuY29tL21ldGEtbGxhbWEvUHVycGxlTGxhbWEpLlxuXG4qKkdyYW50czoqKiBXZSBhbHNvIHNldCB1cCB0aGUgW0xsYW1hIEltcGFjdCBHcmFudHNdKGh0dHBzOi8vbGxhbWEubWV0YS5jb20vbGxhbWEtaW1wYWN0LWdyYW50cy8pIHByb2dyYW0gdG8gaWRlbnRpZnkgYW5kIHN1cHBvcnQgdGhlIG1vc3QgY29tcGVsbGluZyBhcHBsaWNhdGlvbnMgb2YgTWV0YVx1MjAxOXMgTGxhbWEgbW9kZWwgZm9yIHNvY2lldGFsIGJlbmVmaXQgYWNyb3NzIHRocmVlIGNhdGVnb3JpZXM6IGVkdWNhdGlvbiwgY2xpbWF0ZSBhbmQgb3BlbiBpbm5vdmF0aW9uLiBUaGUgMjAgZmluYWxpc3RzIGZyb20gdGhlIGh1bmRyZWRzIG9mIGFwcGxpY2F0aW9ucyBjYW4gYmUgZm91bmQgW2hlcmVdKGh0dHBzOi8vbGxhbWEubWV0YS5jb20vbGxhbWEtaW1wYWN0LWdyYW50cy8jZmluYWxpc3RzKS4gXG5cbioqUmVwb3J0aW5nOioqIEZpbmFsbHksIHdlIHB1dCBpbiBwbGFjZSBhIHNldCBvZiByZXNvdXJjZXMgaW5jbHVkaW5nIGFuIFtvdXRwdXQgcmVwb3J0aW5nIG1lY2hhbmlzbV0oaHR0cHM6Ly9kZXZlbG9wZXJzLmZhY2Vib29rLmNvbS9sbGFtYV9vdXRwdXRfZmVlZGJhY2spIGFuZCBbYnVnIGJvdW50eSBwcm9ncmFtXShodHRwczovL3d3dy5mYWNlYm9vay5jb20vd2hpdGVoYXQpIHRvIGNvbnRpbnVvdXNseSBpbXByb3ZlIHRoZSBMbGFtYSB0ZWNobm9sb2d5IHdpdGggdGhlIGhlbHAgb2YgdGhlIGNvbW11bml0eS5cblxuIyMgRXRoaWNhbCBDb25zaWRlcmF0aW9ucyBhbmQgTGltaXRhdGlvbnNcbk5WSURJQSBiZWxpZXZlcyBUcnVzdHdvcnRoeSBBSSBpcyBhIHNoYXJlZCByZXNwb25zaWJpbGl0eSBhbmQgd2UgaGF2ZSBlc3RhYmxpc2hlZCBwb2xpY2llcyBhbmQgcHJhY3RpY2VzIHRvIGVuYWJsZSBkZXZlbG9wbWVudCBmb3IgYSB3aWRlIGFycmF5IG9mIEFJIGFwcGxpY2F0aW9ucy4gIFdoZW4gZG93bmxvYWRlZCBvciB1c2VkIGluIGFjY29yZGFuY2Ugd2l0aCBvdXIgdGVybXMgb2Ygc2VydmljZSwgZGV2ZWxvcGVycyBzaG91bGQgd29yayB3aXRoIHRoZWlyIGludGVybmFsIG1vZGVsIHRlYW0gdG8gZW5zdXJlIHRoaXMgbW9kZWwgbWVldHMgcmVxdWlyZW1lbnRzIGZvciB0aGUgcmVsZXZhbnQgaW5kdXN0cnkgYW5kIHVzZSBjYXNlIGFuZCBhZGRyZXNzZXMgdW5mb3Jlc2VlbiBwcm9kdWN0IG1pc3VzZS5cblBsZWFzZSByZXBvcnQgc2VjdXJpdHkgdnVsbmVyYWJpbGl0aWVzIG9yIE5WSURJQSBBSSBDb25jZXJucyBbaGVyZV0oaHR0cHM6Ly93d3cubnZpZGlhLmNvbS9lbi11cy9zdXBwb3J0L3N1Ym1pdC1zZWN1cml0eS12dWxuZXJhYmlsaXR5LykuXG5cbioqVmFsdWVzOioqIFRoZSBjb3JlIHZhbHVlcyBvZiBMbGFtYSAzLjIgYXJlIG9wZW5uZXNzLCBpbmNsdXNpdml0eSBhbmQgaGVscGZ1bG5lc3MuIEl0IGlzIG1lYW50IHRvIHNlcnZlIGV2ZXJ5b25lLCBhbmQgdG8gd29yayBmb3IgYSB3aWRlIHJhbmdlIG9mIHVzZSBjYXNlcy4gSXQgaXMgdGh1cyBkZXNpZ25lZCB0byBiZSBhY2Nlc3NpYmxlIHRvIHBlb3BsZSBhY3Jvc3MgbWFueSBkaWZmZXJlbnQgYmFja2dyb3VuZHMsIGV4cGVyaWVuY2VzIGFuZCBwZXJzcGVjdGl2ZXMuIExsYW1hIDMuMiBhZGRyZXNzZXMgdXNlcnMgYW5kIHRoZWlyIG5lZWRzIGFzIHRoZXkgYXJlLCB3aXRob3V0IGluc2VydGlvbiB1bm5lY2Vzc2FyeSBqdWRnbWVudCBvciBub3JtYXRpdml0eSwgd2hpbGUgcmVmbGVjdGluZyB0aGUgdW5kZXJzdGFuZGluZyB0aGF0IGV2ZW4gY29udGVudCB0aGF0IG1heSBhcHBlYXIgcHJvYmxlbWF0aWMgaW4gc29tZSBjYXNlcyBjYW4gc2VydmUgdmFsdWFibGUgcHVycG9zZXMgaW4gb3RoZXJzLiBJdCByZXNwZWN0cyB0aGUgZGlnbml0eSBhbmQgYXV0b25vbXkgb2YgYWxsIHVzZXJzLCBlc3BlY2lhbGx5IGluIHRlcm1zIG9mIHRoZSB2YWx1ZXMgb2YgZnJlZSB0aG91Z2h0IGFuZCBleHByZXNzaW9uIHRoYXQgcG93ZXIgaW5ub3ZhdGlvbiBhbmQgcHJvZ3Jlc3MuIFxuXG4qKlRlc3Rpbmc6KiogTGxhbWEgMy4yIGlzIGEgbmV3IHRlY2hub2xvZ3ksIGFuZCBsaWtlIGFueSBuZXcgdGVjaG5vbG9neSwgdGhlcmUgYXJlIHJpc2tzIGFzc29jaWF0ZWQgd2l0aCBpdHMgdXNlLiBUZXN0aW5nIGNvbmR1Y3RlZCB0byBkYXRlIGhhcyBub3QgY292ZXJlZCwgbm9yIGNvdWxkIGl0IGNvdmVyLCBhbGwgc2NlbmFyaW9zLiBGb3IgdGhlc2UgcmVhc29ucywgYXMgd2l0aCBhbGwgTExNcywgTGxhbWEgMy4yXHUyMDE5cyBwb3RlbnRpYWwgb3V0cHV0cyBjYW5ub3QgYmUgcHJlZGljdGVkIGluIGFkdmFuY2UsIGFuZCB0aGUgbW9kZWwgbWF5IGluIHNvbWUgaW5zdGFuY2VzIHByb2R1Y2UgaW5hY2N1cmF0ZSwgYmlhc2VkIG9yIG90aGVyIG9iamVjdGlvbmFibGUgcmVzcG9uc2VzIHRvIHVzZXIgcHJvbXB0cy4gVGhlcmVmb3JlLCBiZWZvcmUgZGVwbG95aW5nIGFueSBhcHBsaWNhdGlvbnMgb2YgTGxhbWEgMy4yIG1vZGVscywgZGV2ZWxvcGVycyBzaG91bGQgcGVyZm9ybSBzYWZldHkgdGVzdGluZyBhbmQgdHVuaW5nIHRhaWxvcmVkIHRvIHRoZWlyIHNwZWNpZmljIGFwcGxpY2F0aW9ucyBvZiB0aGUgbW9kZWwuIFBsZWFzZSByZWZlciB0byBhdmFpbGFibGUgcmVzb3VyY2VzIGluY2x1ZGluZyBvdXIgW1Jlc3BvbnNpYmxlIFVzZSBHdWlkZV0oaHR0cHM6Ly9sbGFtYS5tZXRhLmNvbS9yZXNwb25zaWJsZS11c2UtZ3VpZGUpLCBbVHJ1c3QgYW5kIFNhZmV0eV0oaHR0cHM6Ly9sbGFtYS5tZXRhLmNvbS90cnVzdC1hbmQtc2FmZXR5Lykgc29sdXRpb25zLCBhbmQgb3RoZXIgW3Jlc291cmNlc10oaHR0cHM6Ly9sbGFtYS5tZXRhLmNvbS9kb2NzL2dldC1zdGFydGVkLykgdG8gbGVhcm4gbW9yZSBhYm91dCByZXNwb25zaWJsZSBkZXZlbG9wbWVudC5cblxuKipZb3UgYXJlIHJlc3BvbnNpYmxlIGZvciBlbnN1cmluZyB0aGF0IHlvdXIgdXNlIG9mIE5WSURJQSBBSSBGb3VuZGF0aW9uIE1vZGVscyBjb21wbGllcyB3aXRoIGFsbCBhcHBsaWNhYmxlIGxhd3MuKioiLAogICAgImRpc3BsYXlOYW1lIjogIkxsYW1hLTMuMi0zQi1JbnN0cnVjdCIsCiAgICAiZXhwbGFpbmFiaWxpdHkiOiAiIiwKICAgICJmcmFtZXdvcmsiOiAiT3RoZXIiLAogICAgImhhc1BsYXlncm91bmQiOiBmYWxzZSwKICAgICJoYXNTaWduZWRWZXJzaW9uIjogdHJ1ZSwKICAgICJpc1BsYXlncm91bmRFbmFibGVkIjogZmFsc2UsCiAgICAiaXNQdWJsaWMiOiBmYWxzZSwKICAgICJpc1JlYWRPbmx5IjogdHJ1ZSwKICAgICJsYWJlbHMiOiBbCiAgICAgICAgIkJ1bGsgQnVpbGQiLAogICAgICAgICJOU1BFQ1QtMTFaOC0xMThQIiwKICAgICAgICAibGxhbWEtMy4yLTNiLWluc3RydWN0IiwKICAgICAgICAibnZhaWU6bW9kZWw6bnZhaWVfc3VwcG9ydGVkIiwKICAgICAgICAibnZpZGlhX25pbTptb2RlbDpuaW1tY3JvX252aWRpYV9uaW0iLAogICAgICAgICJwcm9kdWN0TmFtZXM6bmltLWRldiIsCiAgICAgICAgInByb2R1Y3ROYW1lczpudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJsYXRlc3RWZXJzaW9uSWRTdHIiOiAicnR4NDA5MHgxLXRocm91Z2hwdXQtbG9yYS1mcDgtMGp1Z2hzbXJwdyIsCiAgICAibGF0ZXN0VmVyc2lvblNpemVJbkJ5dGVzIjogMzc3NjcyNTEyNCwKICAgICJsb2dvIjogImh0dHBzOi8vYXNzZXRzLm5nYy5udmlkaWEuY29tL3Byb2R1Y3RzL2FwaS1jYXRhbG9nL2ltYWdlcy9sbGFtYS0zXzItM2ItaW5zdHJ1Y3QuanBnIiwKICAgICJtb2RlbEZvcm1hdCI6ICJOL0EiLAogICAgIm5hbWUiOiAibGxhbWEtMy4yLTNiLWluc3RydWN0IiwKICAgICJvcmdOYW1lIjogIm5pbSIsCiAgICAicHJlY2lzaW9uIjogIk4vQSIsCiAgICAicHJpdmFjeSI6ICIiLAogICAgInByb2R1Y3ROYW1lcyI6IFsKICAgICAgICAibmltLWRldiIsCiAgICAgICAgIm52LWFpLWVudGVycHJpc2UiCiAgICBdLAogICAgInB1YmxpY0RhdGFzZXRVc2VkIjoge30sCiAgICAicHVibGlzaGVyIjogIk1ldGEiLAogICAgInNhZmV0eUFuZFNlY3VyaXR5IjogIiIsCiAgICAic2hvcnREZXNjcmlwdGlvbiI6ICJUaGUgTWV0YSBMbGFtYSAzLjIgY29sbGVjdGlvbiBvZiBtdWx0aWxpbmd1YWwgbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxzIChMTE1zKSBpcyBhIGNvbGxlY3Rpb24gb2YgcHJlLXRyYWluZWQgYW5kIGluc3RydWN0aW9uLXR1bmVkIGdlbmVyYXRpdmUgbW9kZWxzIGluIDFCIGFuZCAzQiBzaXplcyAodGV4dCBpbi90ZXh0IG91dCkuIiwKICAgICJ0ZWFtTmFtZSI6ICJtZXRhIiwKICAgICJ1cGRhdGVkRGF0ZSI6ICIyMDI1LTA3LTI0VDIyOjMxOjAzLjQ1MloiCn0=
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/llama-3_2-3b-instruct
+    optimizationProfiles: []
   labels:
   - Llama
   - Meta
