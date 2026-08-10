@@ -348,7 +348,7 @@ def should_skip_gpu_count(gpu_upper, count, args):
     elif gpu_upper == "A100":
         if args.a100_min_count is not None and count < args.a100_min_count:
             return True
-        if count > args.a100_max_count:
+        if args.a100_max_count is not None and count > args.a100_max_count:
             return True
     elif gpu_upper == "B100":
         if args.b100_min_count is not None and count < args.b100_min_count:
@@ -372,7 +372,7 @@ def should_exclude_riva_streaming_mode(tags):
     mode = str(tags.get("mode", "")).strip().lower()
     return mode in ("str", "str-thr")
 
-def should_ignore_profile(tags, whitelisted_gpus, platform="public", a100_max_count=1,
+def should_ignore_profile(tags, whitelisted_gpus, platform="public", a100_max_count=None,
                          a10g_min_count=None, a10g_max_count=None, l40s_min_count=None, l40s_max_count=None,
                          h100_min_count=None, h100_max_count=None, h200_min_count=None, h200_max_count=None,
                          a100_min_count=None, b100_min_count=None, b100_max_count=None,
@@ -766,7 +766,7 @@ def main():
     parser.add_argument("--h200-min-count", type=int, default=None, help="Public only: Exclude H200 profiles where TP*PP < this value (default: no limit).")
     parser.add_argument("--h200-max-count", type=int, default=None, help="Public only: Exclude H200 profiles where TP*PP > this value (default: no limit).")
     parser.add_argument("--a100-min-count", type=int, default=None, help="Public only: Exclude A100 profiles where TP*PP < this value (default: no limit).")
-    parser.add_argument("--a100-max-count", type=int, default=1, help="Public only: Exclude A100 profiles where TP*PP > this value (default: 1). Use 4 to allow up to 4 GPUs.")
+    parser.add_argument("--a100-max-count", type=int, default=None, help="Public only: Exclude A100 profiles where TP*PP > this value. If not set, no upper limit is applied.")
     parser.add_argument("--b100-min-count", type=int, default=None, help="Public only: Exclude B100 profiles where TP*PP < this value (default: no limit).")
     parser.add_argument("--b100-max-count", type=int, default=None, help="Public only: Exclude B100 profiles where TP*PP > this value (default: no limit).")
     parser.add_argument("--b200-min-count", type=int, default=None, help="Public only: Exclude B200 profiles where TP*PP < this value (default: no limit).")

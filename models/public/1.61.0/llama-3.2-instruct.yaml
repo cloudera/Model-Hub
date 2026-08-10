@@ -55,6 +55,44 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-1b-instruct:a100x2-latency-bf16-ezdh3qtgsw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 1B Instruct A100x2 BF16 Latency
+      ngcMetadata:
+        345837de17bc4e103174352bc07a86112cef00318470e5477afb24908d09abb6:
+          model: meta/llama-3.2-1b-instruct
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: f517db32f12098356f9ef902992f57d5362a4e58a8d185c993cc93657f18a3cb
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
     - profileId: nim/meta/llama-3.2-1b-instruct:a10gx1-throughput-bf16-wmuh1shq9q
       framework: TensorRT-LLM
       displayName: Llama 3.2 1B Instruct A10Gx1 BF16 Throughput
@@ -1541,6 +1579,43 @@ models:
         value: 1.10.1
       - key: DOWNLOAD SIZE
         value: 7GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/meta/llama-3.2-3b-instruct:a100x2-latency-bf16-dbue0mkzcw
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 3B Instruct A100x2 BF16 Latency
+      ngcMetadata:
+        2146fcf18ea0412d564c6ed21d2f727281b95361fd78ccfa3d0570ec1716e8db:
+          model: meta/llama-3.2-3b-instruct
+          release: 1.10.1
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.10.1
+      - key: DOWNLOAD SIZE
+        value: 8GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
