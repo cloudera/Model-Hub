@@ -11,6 +11,82 @@ models:
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/mistralai/containers/mixtral-8x7b-instruct-v01
     optimizationProfiles:
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:a100x2-throughput-bf16-nisx-iechq
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 A100x2 BF16 Throughput
+      ngcMetadata:
+        09588a7e921ddc908cd1ba8dd335ca256f7ba6d45ef06ff7371073bcc2c811db:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: eaec3d7dad51376a67b5c38f5f81f081fe270aae31b1c0ebef2c3bbc843fbf3d
+            number_of_gpus: '2'
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:a100x4-latency-bf16-piz164ba9w
+      framework: TensorRT-LLM
+      displayName: Mixtral 8x7b Instruct V0.1 A100x4 BF16 Latency
+      ngcMetadata:
+        d215114ebed8d1f1be34b796051e44905969012bf9902f6434ba15e69998086b:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'false'
+            gpu: A100
+            gpu_device: 20b2:10de
+            llm_engine: tensorrt_llm
+            nim_workspace_hash_v1: bd2d689eec36d2d23bb51fe5199da43ea3d684f0c0460990243a14516c13dbfd
+            number_of_gpus: '4'
+            pp: '1'
+            precision: bf16
+            profile: latency
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: LATENCY
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: A100
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 88GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:a10gx8-latency-bf16-ujd-xwoijg
       framework: TensorRT-LLM
       displayName: Mixtral 8x7b Instruct V0.1 A10Gx8 BF16 Latency
@@ -45,6 +121,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 90GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:a10gx8-throughput-bf16-olwqahovww
@@ -81,6 +159,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 90GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:b200x1-throughput-bf16-62m7lyo5pw
@@ -117,6 +197,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 88GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:b200x1-throughput-fp8-ahgzihfdkg
@@ -153,6 +235,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 44GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:b200x2-latency-bf16-ojz3sbqt-w
@@ -189,6 +273,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 88GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:b200x2-latency-fp8--vtdeaeqta
@@ -225,9 +311,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 44GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2__2
       framework: VLLM
       displayName: Mixtral 8x7b Instruct V0.1 GENERICx1 VLLM BF16
       ngcMetadata:
@@ -251,9 +339,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 87GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-tp2
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-tp2__2
       framework: VLLM
       displayName: Mixtral 8x7b Instruct V0.1 GENERICx2 VLLM BF16
       ngcMetadata:
@@ -277,9 +367,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 87GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-tp4
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-tp4__2
       framework: VLLM
       displayName: Mixtral 8x7b Instruct V0.1 GENERICx4 VLLM BF16
       ngcMetadata:
@@ -303,9 +395,11 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 87GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
-    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-tp8
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-tp8__2
       framework: VLLM
       displayName: Mixtral 8x7b Instruct V0.1 GENERICx8 VLLM BF16
       ngcMetadata:
@@ -329,6 +423,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 87GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:h100x1-throughput-fp8-dnmkhbw0kq
@@ -365,6 +461,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 44GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:h100x2-throughput-bf16-tsmop0h2jg
@@ -401,6 +499,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 88GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:h100x2-latency-fp8-a8ywvuj0vw
@@ -437,6 +537,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 44GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:h100x4-latency-bf16-n8wcg--ztg
@@ -473,6 +575,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 88GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:h200x1-throughput-bf16-nemxtri80a
@@ -509,6 +613,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 88GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:h200x1-throughput-fp8-kkexcfr-iq
@@ -545,6 +651,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 44GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:h200x2-latency-bf16-q9es6zvp-g
@@ -581,6 +689,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 88GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:h200x2-latency-fp8--df8sqqzkw
@@ -617,6 +727,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 44GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:l40sx2-throughput-fp8-gr1mdinohw
@@ -653,6 +765,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 44GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:l40sx4-latency-bf16-xkwkzreylw
@@ -689,6 +803,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 88GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:l40sx4-throughput-bf16-t9ynusmoha
@@ -725,6 +841,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 88GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:l40sx4-latency-fp8-fr6pcw3xxa
@@ -761,8 +879,126 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 45GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2
+      framework: VLLM
+      displayName: Mixtral 8x7b Instruct V0.1 LORA GENERICx1 VLLM BF16
+      ngcMetadata:
+        61c1479f4e611effdbb853dbf3723f9f483f9261a16d05e67e8f122906bc9f05:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1143086cd34eaa9e23556534ece80597734ec4653acf4ed38fc87f993b235371
+            pp: '1'
+            precision: bf16
+            tp: '1'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-tp2
+      framework: VLLM
+      displayName: Mixtral 8x7b Instruct V0.1 LORA GENERICx2 VLLM BF16
+      ngcMetadata:
+        3d73091fd6b66d810cbb9dd011fd842d2a1482a02258ff05f31cd9b00d91f3db:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1143086cd34eaa9e23556534ece80597734ec4653acf4ed38fc87f993b235371
+            pp: '1'
+            precision: bf16
+            tp: '2'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-tp4
+      framework: VLLM
+      displayName: Mixtral 8x7b Instruct V0.1 LORA GENERICx4 VLLM BF16
+      ngcMetadata:
+        dd8ce8a7f1a9025f007275f451a6e8b289f4e7b4fea07ac9664ad04b10d1e030:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1143086cd34eaa9e23556534ece80597734ec4653acf4ed38fc87f993b235371
+            pp: '1'
+            precision: bf16
+            tp: '4'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-tp8
+      framework: VLLM
+      displayName: Mixtral 8x7b Instruct V0.1 LORA GENERICx8 VLLM BF16
+      ngcMetadata:
+        b85a412ddf8383e654e9be84de4a2697b5096e5e0f9ca33b43bd1d61968552e8:
+          model: mistralai/mixtral-8x7b-instruct-v0.1
+          release: 1.12.0
+          tags:
+            feat_lora: 'true'
+            feat_lora_max_rank: '32'
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1143086cd34eaa9e23556534ece80597734ec4653acf4ed38fc87f993b235371
+            pp: '1'
+            precision: bf16
+            tp: '8'
+      modelFormat: vllm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 1.12.0
+      - key: DOWNLOAD SIZE
+        value: 87GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv
       framework: TensorRT-LLM
       displayName: Mixtral 8x7b Instruct V0.1 RTX6000_BLACKWELL_SVx1 BF16 Latency
@@ -797,6 +1033,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 87GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv__4
@@ -833,6 +1071,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 87GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv__3
@@ -869,6 +1109,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 87GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
     - profileId: nim/mistralai/mixtral-8x7b-instruct-v0-1:hf-a60832c-tool-use-v2-rtx6000_blackwell_sv__2
@@ -905,6 +1147,8 @@ models:
         value: 1.12.0
       - key: DOWNLOAD SIZE
         value: 87GB
+      - key: LORA
+        value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
   labels:
