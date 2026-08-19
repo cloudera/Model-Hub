@@ -1318,10 +1318,38 @@ def main():
                         suffix = " ".join(differentiators)
                         profile['displayName'] = f"{display_name} {suffix}"
 
-        variant0 = model_data['models'][0]['modelVariants'][0]
-        if not isinstance(variant0.get('optimizationProfiles'), list):
-            variant0['optimizationProfiles'] = []
-        variant0['optimizationProfiles'].extend(optimization_profiles)
+        # Find the correct variant for these profiles based on the model name
+        variants = model_data['models'][0].get('modelVariants', [])
+        target_variant_idx = 0  # default to first variant
+
+        model_name_normalized = model.split('/')[-1].lower() if model else ''
+        for idx, variant in enumerate(variants):
+            # Check existing profiles' ngcMetadata for a matching model name
+            matched = False
+            for existing_profile in variant.get('optimizationProfiles', []):
+                metadata = existing_profile.get('ngcMetadata', {})
+                for hash_key, meta_val in metadata.items():
+                    if isinstance(meta_val, dict) and meta_val.get('model', '').lower() == model.lower():
+                        target_variant_idx = idx
+                        matched = True
+                        break
+                if matched:
+                    break
+            if matched:
+                break
+            # Fallback: check source URL using alphanumeric-only comparison
+            # to handle naming inconsistencies (e.g. "llama3.1" vs "llama-3.1")
+            source_url = variant.get('source', {}).get('URL', '').lower()
+            model_alnum = re.sub(r'[^a-z0-9]', '', model_name_normalized)
+            source_alnum = re.sub(r'[^a-z0-9]', '', source_url)
+            if model_alnum and model_alnum in source_alnum:
+                target_variant_idx = idx
+                break
+
+        target_variant = variants[target_variant_idx]
+        if not isinstance(target_variant.get('optimizationProfiles'), list):
+            target_variant['optimizationProfiles'] = []
+        target_variant['optimizationProfiles'].extend(optimization_profiles)
 
     # Make display names unique by adding suffixes to duplicates
     make_display_names_unique(model_data)

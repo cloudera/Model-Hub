@@ -50,44 +50,6 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: TENSORRT_LLM
-    - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a100x2-latency-bf16-eao98qqyaq
-      framework: TensorRT-LLM
-      displayName: Mistral 7B Instruct V0.3 A100x2 BF16 Latency
-      ngcMetadata:
-        cffacd84594ea7bf5f03f8eaaa107d0e6078dadf84c2b8919c53ecc44ec0a418:
-          model: mistralai/mistral-7b-instruct-v0.3
-          release: 1.12.0
-          tags:
-            feat_lora: 'false'
-            gpu: A100
-            gpu_device: 20b2:10de
-            llm_engine: tensorrt_llm
-            nim_workspace_hash_v1: 31efbfeecc0071b15073a663036ed7854fe34edad643248b0b33f1648d396528
-            number_of_gpus: '2'
-            pp: '1'
-            precision: bf16
-            profile: latency
-            tp: '2'
-      modelFormat: trt-llm
-      spec:
-      - key: PROFILE
-        value: LATENCY
-      - key: PRECISION
-        value: BF16
-      - key: GPU
-        value: A100
-      - key: COUNT
-        value: 2
-      - key: GPU DEVICE
-        value: 20B2:10DE
-      - key: NIM VERSION
-        value: 1.12.0
-      - key: DOWNLOAD SIZE
-        value: 14GB
-      - key: LORA
-        value: 'FALSE'
-      - key: LLM ENGINE
-        value: TENSORRT_LLM
     - profileId: nim/mistralai/mistral-7b-instruct-v0-3:a10gx1-throughput-bf16-dbarntjrxg
       framework: TensorRT-LLM
       displayName: Mistral 7B Instruct V0.3 A10Gx1 BF16 Throughput
