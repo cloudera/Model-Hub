@@ -1,0 +1,99 @@
+schema_version: '2.1'
+profile_selection_criteria: auto
+model: mistralai/mistral-medium-3.5-128b
+release: 2.0.6-variant
+profiles:
+- id: d12a2cd6396a8a244aba1025355cb334a594349702d7b419c4781adaab4a91c7
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    min_vram_per_device_gb: '80.0'
+    pp: '1'
+    precision: fp8
+    tp: '4'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=LICENSE
+        checksum: blake3:79cbd5516ada7a137879829f2fc08db5cd3172fdfa5356f65813a294a745a1f0
+      README.md:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=README.md
+        checksum: blake3:187b3dd109852c80e79482c4d9c8618ea27f37ee87b2cfe90fd409067b5f0b74
+      SYSTEM_PROMPT.txt:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=SYSTEM_PROMPT.txt
+        checksum: blake3:51f8a60f961bcf2da211877f7eb51a53ac616fe959ea67f929f7fa56b61ea379
+      chat_template.jinja:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=chat_template.jinja
+        checksum: blake3:8d77c10aceb368873fde32db434ef481d82f6e4af5fb5079d8d2975a5bdf1e9e
+      checksums.blake3:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=checksums.blake3
+        checksum: blake3:ea580110e70886a42215eff24371be5aeb1433519551c574af541ad5ca732557
+      consolidated-00001-of-00003.safetensors:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=consolidated-00001-of-00003.safetensors
+        checksum: blake3:a3887eeec7476fca349136a2c2873815b7fd18810adb89c8d2a68de706edf826
+      consolidated-00002-of-00003.safetensors:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=consolidated-00002-of-00003.safetensors
+        checksum: blake3:7b1302317f2598a6971ca053807511dbb33fee30a626382b14ad2047a84b312c
+      consolidated-00003-of-00003.safetensors:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=consolidated-00003-of-00003.safetensors
+        checksum: blake3:b8a3d84c5c661377f18d648fe00baa2241c2a3e0e9443749088fe43c2fef130d
+      consolidated.safetensors.index.json:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=consolidated.safetensors.index.json
+        checksum: blake3:92320508432f8ed0446f1a64e8e119bbd2699836ebf398f43cb847206c0e760f
+      params.json:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=params.json
+        checksum: blake3:1d68db444028989b5f3201da785baab0687380f74d7b5f346b76b741d1136ea9
+      processor_config.json:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=processor_config.json
+        checksum: blake3:86e7649773c4843fa664d2590a99c735d383053222f143b674e4d008df2e5b99
+      tekken.json:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=tekken.json
+        checksum: blake3:b8d600aba9f9dfec99abdfd23f24c2d4740d0286db4966571cf55704a2821a87
+  workspace_hash: eeb48547c969b453bd34c1760371781e4c66921adb40cf4db88471ce241e5ee4
+- id: f00188cd5a1695b10ddbec960e0f52563893522f318217b08443f581dea1f2ad
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    min_vram_per_device_gb: '120.0'
+    pp: '1'
+    precision: fp8
+    tp: '2'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=LICENSE
+        checksum: blake3:79cbd5516ada7a137879829f2fc08db5cd3172fdfa5356f65813a294a745a1f0
+      README.md:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=README.md
+        checksum: blake3:187b3dd109852c80e79482c4d9c8618ea27f37ee87b2cfe90fd409067b5f0b74
+      SYSTEM_PROMPT.txt:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=SYSTEM_PROMPT.txt
+        checksum: blake3:51f8a60f961bcf2da211877f7eb51a53ac616fe959ea67f929f7fa56b61ea379
+      chat_template.jinja:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=chat_template.jinja
+        checksum: blake3:8d77c10aceb368873fde32db434ef481d82f6e4af5fb5079d8d2975a5bdf1e9e
+      checksums.blake3:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=checksums.blake3
+        checksum: blake3:ea580110e70886a42215eff24371be5aeb1433519551c574af541ad5ca732557
+      consolidated-00001-of-00003.safetensors:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=consolidated-00001-of-00003.safetensors
+        checksum: blake3:a3887eeec7476fca349136a2c2873815b7fd18810adb89c8d2a68de706edf826
+      consolidated-00002-of-00003.safetensors:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=consolidated-00002-of-00003.safetensors
+        checksum: blake3:7b1302317f2598a6971ca053807511dbb33fee30a626382b14ad2047a84b312c
+      consolidated-00003-of-00003.safetensors:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=consolidated-00003-of-00003.safetensors
+        checksum: blake3:b8a3d84c5c661377f18d648fe00baa2241c2a3e0e9443749088fe43c2fef130d
+      consolidated.safetensors.index.json:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=consolidated.safetensors.index.json
+        checksum: blake3:92320508432f8ed0446f1a64e8e119bbd2699836ebf398f43cb847206c0e760f
+      params.json:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=params.json
+        checksum: blake3:1d68db444028989b5f3201da785baab0687380f74d7b5f346b76b741d1136ea9
+      processor_config.json:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=processor_config.json
+        checksum: blake3:86e7649773c4843fa664d2590a99c735d383053222f143b674e4d008df2e5b99
+      tekken.json:
+        uri: ngc://nim/mistralai/mistral-medium-3.5-128b:fp8-v1.0?file=tekken.json
+        checksum: blake3:b8d600aba9f9dfec99abdfd23f24c2d4740d0286db4966571cf55704a2821a87
+  workspace_hash: eeb48547c969b453bd34c1760371781e4c66921adb40cf4db88471ce241e5ee4

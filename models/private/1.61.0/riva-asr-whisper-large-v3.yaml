@@ -1,76 +1,173 @@
 models:
-- name: Riva ASR Whisper Large v3
-  displayName: Riva ASR Whisper Large v3
-  modelHubID: riva-asr-whisper-large-v3
-  category: Speech
-  type: NGC
+- category: Speech
+  config:
+    architectures:
+    - Other
+    modelType: llama
   description: Automatic speech recognition and speech translation model trained on 680K hours of labeled audio. Generalizes well across diverse datasets and domains without fine-tuning.
-  requireLicense: true
-  licenseAgreements:
-  - label: Use Policy
-    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
-  - label: License Agreement
-    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
-  modelVariants:
-  - variantId: Riva ASR Whisper Large v3
-    modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJidWlsdEJ5IjogIk9wZW5BSSIsCiAgICAiY2FuR3Vlc3REb3dubG9hZCI6IGZhbHNlLAogICAgImNyZWF0ZWREYXRlIjogIjIwMjQtMTAtMjhUMTY6NDU6MjAuOTkwWiIsCiAgICAiZGVzY3JpcHRpb24iOiAiT3ZlcnZpZXdcbj09PT09PT09PT1cblxuTW9yZSBkZXRhaWxzXG49PT09PT09PT09PT09XG5cbkRvY3VtZW50YXRpb25cbj09PT09PT09PT09PT09PSIsCiAgICAiZGlzcGxheU5hbWUiOiAiV2hpc3Blci1MYXJnZS12MyIsCiAgICAiZXhwbGFpbmFiaWxpdHkiOiAiIiwKICAgICJmcmFtZXdvcmsiOiAiT3RoZXIiLAogICAgImhhc1BsYXlncm91bmQiOiBmYWxzZSwKICAgICJoYXNTaWduZWRWZXJzaW9uIjogdHJ1ZSwKICAgICJpc1BsYXlncm91bmRFbmFibGVkIjogZmFsc2UsCiAgICAiaXNQdWJsaWMiOiBmYWxzZSwKICAgICJpc1JlYWRPbmx5IjogdHJ1ZSwKICAgICJsYWJlbHMiOiBbCiAgICAgICAgIk5JTSIsCiAgICAgICAgIk5TUEVDVC1GNVBWLVNHQU8iLAogICAgICAgICJXaGlzcGVyLUxhcmdlLXYzIiwKICAgICAgICAibnZhaWU6bW9kZWw6bnZhaWVfc3VwcG9ydGVkIiwKICAgICAgICAibnZpZGlhX25pbTptb2RlbDpuaW1tY3JvX252aWRpYV9uaW0iLAogICAgICAgICJwcm9kdWN0TmFtZXM6bmltLWRldiIsCiAgICAgICAgInByb2R1Y3ROYW1lczpudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJsYXRlc3RWZXJzaW9uSWRTdHIiOiAiaDEwMHgxLW9mbC0yNS4wOC1mcDE2LW1uejRwbm4wcHciLAogICAgImxhdGVzdFZlcnNpb25TaXplSW5CeXRlcyI6IDE1MzI4NjU4OTIsCiAgICAibG9nbyI6ICJodHRwczovL2Fzc2V0cy5uZ2MubnZpZGlhLmNvbS9wcm9kdWN0cy9hcGktY2F0YWxvZy9pbWFnZXMvcmFkdHRzLWhpZmlnYW4tcml2YS5qcGciLAogICAgIm1vZGVsRm9ybWF0IjogIlJNSVIiLAogICAgIm5hbWUiOiAid2hpc3Blci1sYXJnZS12MyIsCiAgICAib3JnTmFtZSI6ICJuaW0iLAogICAgInByZWNpc2lvbiI6ICJBTVAiLAogICAgInByaXZhY3kiOiAiIiwKICAgICJwcm9kdWN0TmFtZXMiOiBbCiAgICAgICAgIm5pbS1kZXYiLAogICAgICAgICJudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJwdWJsaWNEYXRhc2V0VXNlZCI6IHt9LAogICAgInB1Ymxpc2hlciI6ICJOVklESUEiLAogICAgInNhZmV0eUFuZFNlY3VyaXR5IjogIiIsCiAgICAic2hvcnREZXNjcmlwdGlvbiI6ICJXaGlzcGVyIGxhcmdlIHYzIHRyYWluZWQgYnkgT3BlbkFJIiwKICAgICJ0ZWFtTmFtZSI6ICJudmlkaWEiLAogICAgInVwZGF0ZWREYXRlIjogIjIwMjUtMDktMDZUMDQ6MTU6MzYuNzIzWiIKfQ==
-    source:
-      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/whisper_large
-    optimizationProfiles:
-    - profileId: nim/nvidia/whisper-large-v3:h100x1-ofl-25.08
-      framework: TensorRT-LLM
-      displayName: Whisper H100x1 Ofl
-      ngcMetadata:
-        72232937075119887298deb92b5e58f4d98a0ce0948df60d424f0d97b05da55e:
-          model: nvidia/riva-asr/whisper
-          release: 1.4.0
-          tags:
-            gpu_device: '2330'
-            mode: ofl
-            model_type: prebuilt
-            name: whisper-large-v3
-      modelFormat: trt-llm
-      spec:
-      - key: GPU
-        value: H100
-      - key: COUNT
-        value: 1
-      - key: GPU DEVICE
-        value: '2330'
-      - key: NIM VERSION
-        value: 1.4.0
-      - key: DOWNLOAD SIZE
-        value: 2GB
-      - key: MODEL TYPE
-        value: PREBUILT
-    - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-25.06
-      framework: TensorRT-LLM
-      displayName: Whisper Generic NVIDIA GPUx1
-      ngcMetadata:
-        5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0:
-          model: nvidia/riva-asr/whisper
-          release: 1.4.0
-          tags:
-            mode: ofl
-            model_type: rmir
-            name: whisper-large-v3
-      modelFormat: trt-llm
-      spec:
-      - key: COUNT
-        value: 1
-      - key: NIM VERSION
-        value: 1.4.0
-      - key: DOWNLOAD SIZE
-        value: 3GB
-      - key: MODEL TYPE
-        value: RMIR
+  displayName: Riva ASR Whisper Large v3
   labels:
   - Transformer
   - TensorRT-LLM
   - Audio
   - NVIDIA Validated
-  config:
-    architectures:
-    - Other
-    modelType: llama
   license: NVIDIA AI Foundation Models Community License
+  licenseAgreements:
+  - label: Use Policy
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/
+  - label: License Agreement
+    url: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/
+  modelHubID: riva-asr-whisper-large-v3
+  modelVariants:
+  - modelCard: ewogICAgImFjY2Vzc1R5cGUiOiAiTk9UX0xJU1RFRCIsCiAgICAiYXBwbGljYXRpb24iOiAiT3RoZXIiLAogICAgImJpYXMiOiAiIiwKICAgICJidWlsdEJ5IjogIk9wZW5BSSIsCiAgICAiY2FuR3Vlc3REb3dubG9hZCI6IGZhbHNlLAogICAgImNyZWF0ZWREYXRlIjogIjIwMjQtMTAtMjhUMTY6NDU6MjAuOTkwWiIsCiAgICAiZGVzY3JpcHRpb24iOiAiT3ZlcnZpZXdcbj09PT09PT09PT1cblxuTW9yZSBkZXRhaWxzXG49PT09PT09PT09PT09XG5cbkRvY3VtZW50YXRpb25cbj09PT09PT09PT09PT09PSIsCiAgICAiZGlzcGxheU5hbWUiOiAiV2hpc3Blci1MYXJnZS12MyIsCiAgICAiZXhwbGFpbmFiaWxpdHkiOiAiIiwKICAgICJmcmFtZXdvcmsiOiAiT3RoZXIiLAogICAgImhhc1BsYXlncm91bmQiOiBmYWxzZSwKICAgICJoYXNTaWduZWRWZXJzaW9uIjogdHJ1ZSwKICAgICJpc1BsYXlncm91bmRFbmFibGVkIjogZmFsc2UsCiAgICAiaXNQdWJsaWMiOiBmYWxzZSwKICAgICJpc1JlYWRPbmx5IjogdHJ1ZSwKICAgICJsYWJlbHMiOiBbCiAgICAgICAgIk5JTSIsCiAgICAgICAgIk5TUEVDVC1GNVBWLVNHQU8iLAogICAgICAgICJXaGlzcGVyLUxhcmdlLXYzIiwKICAgICAgICAibnZhaWU6bW9kZWw6bnZhaWVfc3VwcG9ydGVkIiwKICAgICAgICAibnZpZGlhX25pbTptb2RlbDpuaW1tY3JvX252aWRpYV9uaW0iLAogICAgICAgICJwcm9kdWN0TmFtZXM6bmltLWRldiIsCiAgICAgICAgInByb2R1Y3ROYW1lczpudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJsYXRlc3RWZXJzaW9uSWRTdHIiOiAiaDEwMHgxLW9mbC0yNS4wOC1mcDE2LW1uejRwbm4wcHciLAogICAgImxhdGVzdFZlcnNpb25TaXplSW5CeXRlcyI6IDE1MzI4NjU4OTIsCiAgICAibG9nbyI6ICJodHRwczovL2Fzc2V0cy5uZ2MubnZpZGlhLmNvbS9wcm9kdWN0cy9hcGktY2F0YWxvZy9pbWFnZXMvcmFkdHRzLWhpZmlnYW4tcml2YS5qcGciLAogICAgIm1vZGVsRm9ybWF0IjogIlJNSVIiLAogICAgIm5hbWUiOiAid2hpc3Blci1sYXJnZS12MyIsCiAgICAib3JnTmFtZSI6ICJuaW0iLAogICAgInByZWNpc2lvbiI6ICJBTVAiLAogICAgInByaXZhY3kiOiAiIiwKICAgICJwcm9kdWN0TmFtZXMiOiBbCiAgICAgICAgIm5pbS1kZXYiLAogICAgICAgICJudi1haS1lbnRlcnByaXNlIgogICAgXSwKICAgICJwdWJsaWNEYXRhc2V0VXNlZCI6IHt9LAogICAgInB1Ymxpc2hlciI6ICJOVklESUEiLAogICAgInNhZmV0eUFuZFNlY3VyaXR5IjogIiIsCiAgICAic2hvcnREZXNjcmlwdGlvbiI6ICJXaGlzcGVyIGxhcmdlIHYzIHRyYWluZWQgYnkgT3BlbkFJIiwKICAgICJ0ZWFtTmFtZSI6ICJudmlkaWEiLAogICAgInVwZGF0ZWREYXRlIjogIjIwMjUtMDktMDZUMDQ6MTU6MzYuNzIzWiIKfQ==
+    optimizationProfiles:
+    - profileId: nim/nvidia/whisper-large-v3:ofl-b200-rmir-26.01.1
+      framework: TensorRT-LLM
+      displayName: Whisper B200x1 Ofl Default
+      ngcMetadata:
+        6513df7aae201c0f9bfb67433e92ac73a8ad4686c94eb383645707247f721a53:
+          model: nvidia/riva-asr/whisper
+          release: 1.5.1
+          tags:
+            diarizer: disabled
+            gpu: B200
+            gpu_device: '2901'
+            mode: ofl
+            model_type: rmir
+            name: whisper-large-v3
+            nim_workspace_hash_v1: 205d057442884654b97577ba82e9656821b748e2600f8f955bc4904c9e925fa2
+            vad: default
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: '2901'
+      - key: NIM VERSION
+        value: 1.5.1
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: RMIR
+    - profileId: nim/nvidia/whisper-large-v3:b200x1-ofl-b200-26.01.1-fp16-up-tuzyugg
+      framework: TensorRT-LLM
+      displayName: Whisper B200x1 Ofl Default FP16 Ofl-b200-26.01.1
+      ngcMetadata:
+        23abda379994d0e70e5a88578bda91ffb0590b612aa292e889a00c65ac21038d:
+          model: nvidia/riva-asr/whisper
+          release: 1.5.1
+          tags:
+            ampereplus: disabled
+            diarizer: disabled
+            feat_lora: 'False'
+            gpu: B200
+            gpu_device: 2901:10de
+            mode: ofl
+            model_type: prebuilt
+            name: whisper-large-v3
+            nim_workspace_hash_v1: 5a64c74e724f0d3c76b2919e879e62b1311c7f1e8e5714fde44a2279bfefce70
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: ofl-b200-26.01.1
+            tp: '1'
+            vad: default
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: OFL-B200-26.01.1
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: B200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2901:10DE
+      - key: NIM VERSION
+        value: 1.5.1
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    - profileId: nim/nvidia/whisper-large-v3:ofl-rmir-26.01.1
+      framework: TensorRT-LLM
+      displayName: Whisper GENERICx1 TENSORRT-LLM
+      ngcMetadata:
+        4cba289a4e4a38df04596568c00b834d4bee31c590552f9dcf1b7c622a7d9f1a:
+          model: nvidia/riva-asr/whisper
+          release: 1.5.1
+          tags:
+            diarizer: disabled
+            mode: ofl
+            model_type: rmir
+            name: whisper-large-v3
+            nim_workspace_hash_v1: 45dd7a133ffcfdf3d37786248a6d4e17814f07d03526ae7ccb439a4167b6750b
+            vad: default
+      modelFormat: trt-llm
+      spec:
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.5.1
+      - key: DOWNLOAD SIZE
+        value: 3GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: RMIR
+    - profileId: nim/nvidia/whisper-large-v3:h100x1-ofl-26.01.2-fp16-hb8jkwhiqg
+      framework: TensorRT-LLM
+      displayName: Whisper H100x1 Ofl Default FP16 Ofl-26.01.2
+      ngcMetadata:
+        de2c5b2b80c1e8fcf6b0ddc43da919a8db4b2480f3fee599ac806a3e9cbac60d:
+          model: nvidia/riva-asr/whisper
+          release: 1.5.1
+          tags:
+            ampereplus: disabled
+            diarizer: disabled
+            feat_lora: 'False'
+            gpu: H100
+            gpu_device: 2330:10de
+            mode: ofl
+            model_type: prebuilt
+            name: whisper-large-v3
+            nim_workspace_hash_v1: 4b8193f208c3b2cef2fa5cc3f5cabbab72f0c35ff4c3e244b7bc4fa78bca1f4c
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: ofl-26.01.2
+            tp: '1'
+            vad: default
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: OFL-26.01.2
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: H100
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.5.1
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    source:
+      URL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/whisper_large
+    variantId: Riva ASR Whisper Large v3
+  name: Riva ASR Whisper Large v3
+  requireLicense: true
+  type: NGC

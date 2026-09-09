@@ -1,0 +1,98 @@
+schema_version: '2.0'
+profile_selection_criteria: auto
+model: nvidia/nemotron-table-structure-v1
+release: 1.8.0
+profiles:
+- id: 2e1ac3d2b2e881b0c86959c09a6ecca58947ac174745f2113203e539ed1310d8
+  tags:
+    compute_capability: '12.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/memory_footprint.json:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_12_0-fp16-cc048ad8?file=memory_footprint.json
+        checksum: blake3:302568dbb9f5a6b9da36c1289fe9ea642edb7c47e3b50c6467351be12e6a69b6
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_12_0-fp16-cc048ad8?file=model.plan
+        checksum: blake3:1c16dea6656d6ceda71d9ebc58b4079ee6fb7d501303dcc679b40ea0feaefbc6
+- id: 559383c085ac4149960e64c80cb9d094ede117c7e8ac753da2d1266b2231261c
+  tags:
+    compute_capability: '10.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/memory_footprint.json:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_10_0-fp16-4cf5769f?file=memory_footprint.json
+        checksum: blake3:8d28b771d17d02b73f677e67fb48822f7005047a41b6bd3d57e8848cef1b935e
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_10_0-fp16-4cf5769f?file=model.plan
+        checksum: blake3:46dfddd5f1ce3df1288dff1dae235f47e6a06a4c4c2b0c200e0054f44e87adb6
+- id: 5771e47a255ecced1575f31390662a85ec5d2fea250c64d1203c62daf96f4f57
+  tags:
+    compute_capability: '9.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/memory_footprint.json:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_9_0-fp16-6077e4c2?file=memory_footprint.json
+        checksum: blake3:ac1d12f444a0438bccbdb5febde4847ada25b98784840c1e5d8a5d0a6ab8c6b9
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_9_0-fp16-6077e4c2?file=model.plan
+        checksum: blake3:c25e128251e1f9bc4c7072ae3a2fa03c5abe4a2ba0b2ddec0aeebbef698d9b54
+- id: b313b88dbb2e4bf4fe60311a612e6216fe106be02375baa2e1d21cf8e24e5809
+  tags:
+    compute_capability: '8.9'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/memory_footprint.json:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_8_9-fp16-7df6bf53?file=memory_footprint.json
+        checksum: blake3:3c8d9e53f09689e71c27411bde16d63d383e2e252dd330640de9560ac363bcaf
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_8_9-fp16-7df6bf53?file=model.plan
+        checksum: blake3:f240eb8600c7cefb220ea3729a70b69e1da670f4b9e4381136e06c0a1406d13c
+- id: decb2c6f0af861f40b4438444bc61d865f0fb053589b21f9bf48c01b52714fa1
+  tags:
+    compute_capability: '8.0'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/memory_footprint.json:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_8_0-fp16-86285b94?file=memory_footprint.json
+        checksum: blake3:e6c309d87d0954133d7fc31e1a995275ee32fce19743a32264f089c44d817795
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_8_0-fp16-86285b94?file=model.plan
+        checksum: blake3:c98b3ee47d9b84d9907ffa13477f2574a806ccda49039acaf8733084048c739d
+- id: e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528
+  tags:
+    model_type: onnx
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/checksums.blake3:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:a100x1-onnx-fp16-l8hnwsbr3g?file=checksums.blake3
+        checksum: blake3:68ba920a760b29fa414cd89dc68ca98b4fb7b6a76ef473abb4ecf36d1f0edb3a
+      yolox/1/metadata.json:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:a100x1-onnx-fp16-l8hnwsbr3g?file=metadata.json
+        checksum: blake3:627c33aa9d0713715c4ebbb379af5fe98b09b808371aca5d6fbb4ebe4f583689
+      yolox/1/model.onnx:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:a100x1-onnx-fp16-l8hnwsbr3g?file=model.onnx
+        checksum: blake3:62cab0af168a488bceece5913f15a311de94ae432359b4fb6ee4033b6712b5f3
+- id: ee543681ee61cf712478f5c79e5e693963dd36d6a2675dfe1f26c790491229c6
+  tags:
+    compute_capability: '8.6'
+    model_type: tensorrt
+    precision: fp16
+  workspace:
+    files:
+      yolox/1/memory_footprint.json:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_8_6-fp16-b5af737d?file=memory_footprint.json
+        checksum: blake3:edf9a69f3a9342deb1470ea0c87ee3156af5a5c17246f1952b05c0ea0933741d
+      yolox/1/model.plan:
+        uri: ngc://nim/nvidia/nemotron-table-structure-v1:cc_8_6-fp16-b5af737d?file=model.plan
+        checksum: blake3:2c945abf22e9b80e51b2fc8f5c63143459ce30c2dab26963e4d9f958e9af5d0f

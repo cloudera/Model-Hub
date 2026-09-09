@@ -1,28 +1,89 @@
 schema_version: '2.0'
 profile_selection_criteria: auto
-model: nvidia/riva-asr/whisper # fixed by cloudera; was: `openai/whisper-large-v3`
-release: 1.4.0
+model: nvidia/riva-asr/whisper
+release: 1.5.1
 profiles:
-- id: 5e44fa6d8cd80ad46a089089157ff4565974f0a64fd37c594265c61f00418ae0
+- id: 23abda379994d0e70e5a88578bda91ffb0590b612aa292e889a00c65ac21038d
   tags:
-    mode: ofl
-    model_type: rmir
-    name: whisper-large-v3
-  workspace:
-    files:
-      whisper-large-v3-ofl-rmir-25.06/asr-whisper-large-v3-multi-offline-trtllm.rmir:
-        uri: ngc://nim/nvidia/whisper-large-v3:ofl-rmir-25.06?file=asr-whisper-large-v3-multi-offline-trtllm.rmir
-- id: 72232937075119887298deb92b5e58f4d98a0ce0948df60d424f0d97b05da55e
-  tags:
-    gpu_device: '2330'
+    ampereplus: disabled
+    diarizer: disabled
+    feat_lora: 'False'
+    gpu: b200
+    gpu_device: 2901:10de
     mode: ofl
     model_type: prebuilt
     name: whisper-large-v3
+    nim_workspace_hash_v1: 5a64c74e724f0d3c76b2919e879e62b1311c7f1e8e5714fde44a2279bfefce70
+    number_of_gpus: '1'
+    pp: '1'
+    precision: fp16
+    profile: ofl-b200-26.01.1
+    tp: '1'
+    vad: default
   workspace:
     files:
-      whisper-large-v3-h100x1-ofl-25.08-fp16-mnz4pnn0pw/asr-whisper-large-v3-multi-offline-trtllm.tar.gz:
-        uri: ngc://nim/nvidia/whisper-large-v3:h100x1-ofl-25.08-fp16-mnz4pnn0pw?file=asr-whisper-large-v3-multi-offline-trtllm.tar.gz
-      whisper-large-v3-h100x1-ofl-25.08-fp16-mnz4pnn0pw/checksums.blake3:
-        uri: ngc://nim/nvidia/whisper-large-v3:h100x1-ofl-25.08-fp16-mnz4pnn0pw?file=checksums.blake3
-      whisper-large-v3-h100x1-ofl-25.08-fp16-mnz4pnn0pw/metadata.json:
-        uri: ngc://nim/nvidia/whisper-large-v3:h100x1-ofl-25.08-fp16-mnz4pnn0pw?file=metadata.json
+      whisper-large-v3-b200x1-ofl-b200-26.01.1-fp16-up-tuzyugg/asr-whisper-large-v3-multi-offline-trtllm.tar.gz:
+        uri: ngc://nim/nvidia/whisper-large-v3:b200x1-ofl-b200-26.01.1-fp16-up-tuzyugg?file=asr-whisper-large-v3-multi-offline-trtllm.tar.gz
+        checksum: blake3:667883597ae50ac0173b3c0500646178dde62f8b9a0647e873d87972edc003f5
+      whisper-large-v3-b200x1-ofl-b200-26.01.1-fp16-up-tuzyugg/checksums.blake3:
+        uri: ngc://nim/nvidia/whisper-large-v3:b200x1-ofl-b200-26.01.1-fp16-up-tuzyugg?file=checksums.blake3
+        checksum: blake3:b566c13bd3e479c5529fc90e80786611462ae9d5d9408a2d7e84799a0aef4bbb
+      whisper-large-v3-b200x1-ofl-b200-26.01.1-fp16-up-tuzyugg/metadata.json:
+        uri: ngc://nim/nvidia/whisper-large-v3:b200x1-ofl-b200-26.01.1-fp16-up-tuzyugg?file=metadata.json
+        checksum: blake3:543b085292cee4c8fe799d7d053e6cd035f289ed945d11a7810e51340f75324c
+- id: 4cba289a4e4a38df04596568c00b834d4bee31c590552f9dcf1b7c622a7d9f1a
+  tags:
+    diarizer: disabled
+    mode: ofl
+    model_type: rmir
+    name: whisper-large-v3
+    nim_workspace_hash_v1: 45dd7a133ffcfdf3d37786248a6d4e17814f07d03526ae7ccb439a4167b6750b
+    vad: default
+  workspace:
+    files:
+      whisper-large-v3-ofl-rmir-26.01.1/asr-whisper-large-v3-multi-offline-trtllm.rmir:
+        uri: ngc://nim/nvidia/whisper-large-v3:ofl-rmir-26.01.1?file=asr-whisper-large-v3-multi-offline-trtllm.rmir
+        checksum: blake3:f6e1f1f3fc8339b2a7b2797f29f52ba23801d9aedface932a8e54ae57c7a99c4
+- id: 6513df7aae201c0f9bfb67433e92ac73a8ad4686c94eb383645707247f721a53
+  tags:
+    diarizer: disabled
+    gpu: b200
+    gpu_device: '2901'
+    mode: ofl
+    model_type: rmir
+    name: whisper-large-v3
+    nim_workspace_hash_v1: 205d057442884654b97577ba82e9656821b748e2600f8f955bc4904c9e925fa2
+    vad: default
+  workspace:
+    files:
+      whisper-large-v3-ofl-b200-rmir-26.01.1/asr-whisper-large-v3-multi-offline-trtllm.rmir:
+        uri: ngc://nim/nvidia/whisper-large-v3:ofl-b200-rmir-26.01.1?file=asr-whisper-large-v3-multi-offline-trtllm.rmir
+        checksum: blake3:d50d6b2e65893daf8e4c28a43e15db9fd5d8a02146f3b2c7e9e71860732b8d9a
+- id: de2c5b2b80c1e8fcf6b0ddc43da919a8db4b2480f3fee599ac806a3e9cbac60d
+  tags:
+    ampereplus: disabled
+    diarizer: disabled
+    feat_lora: 'False'
+    gpu: h100
+    gpu_device: 2330:10de
+    mode: ofl
+    model_type: prebuilt
+    name: whisper-large-v3
+    nim_workspace_hash_v1: 4b8193f208c3b2cef2fa5cc3f5cabbab72f0c35ff4c3e244b7bc4fa78bca1f4c
+    number_of_gpus: '1'
+    pp: '1'
+    precision: fp16
+    profile: ofl-26.01.2
+    tp: '1'
+    vad: default
+  workspace:
+    files:
+      whisper-large-v3-h100x1-ofl-26.01.2-fp16-hb8jkwhiqg/asr-whisper-large-v3-multi-offline-trtllm.tar.gz:
+        uri: ngc://nim/nvidia/whisper-large-v3:h100x1-ofl-26.01.2-fp16-hb8jkwhiqg?file=asr-whisper-large-v3-multi-offline-trtllm.tar.gz
+        checksum: blake3:f38592b7ac2ce060c6587cbcf6fcca5ce8e829dc19524cee6a9814ec9434a476
+      whisper-large-v3-h100x1-ofl-26.01.2-fp16-hb8jkwhiqg/checksums.blake3:
+        uri: ngc://nim/nvidia/whisper-large-v3:h100x1-ofl-26.01.2-fp16-hb8jkwhiqg?file=checksums.blake3
+        checksum: blake3:3a96a40d7e457eb2b8fbf67ee50e8bcd6baab77ca8c09ecca5d9b03cc2aa2dfc
+      whisper-large-v3-h100x1-ofl-26.01.2-fp16-hb8jkwhiqg/metadata.json:
+        uri: ngc://nim/nvidia/whisper-large-v3:h100x1-ofl-26.01.2-fp16-hb8jkwhiqg?file=metadata.json
+        checksum: blake3:ce15ab0456d656e3634b17f2a3d8ba5e6948f877cc30e27b122a7d5698ec8f68
