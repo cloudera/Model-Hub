@@ -1,0 +1,508 @@
+schema_version: '2.1'
+profile_selection_criteria: auto
+model: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning
+release: 2.0.4-variant
+profiles:
+- id: 9ea666ddf158de7957ac4a5e8c9b0b808f73f34eeb72eb490db786018f1be024
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    min_vram_per_device_gb: '40.0'
+    pp: '1'
+    precision: bf16
+    tp: '2'
+  workspace:
+    files:
+      README.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=README.md
+        checksum: blake3:08e488328db6c9d7917b8c8fb2ee285033310d05aa910568ff7b4395c3f1c6ca
+      __init__.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=__init__.py
+        checksum: blake3:af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262
+      audio_model.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=audio_model.py
+        checksum: blake3:018f8e38dc21c8713e114ae6c839fa9c1c228254b762f0a2601d0912708e81e6
+      bias.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=bias.md
+        checksum: blake3:35afc5c49dadb661c11ac82956fee55f1a7408fab9457e434c0cee3407f1c3a6
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=chat_template.jinja
+        checksum: blake3:9c2523e92dc85151b66208e13ecb09ce7f48861dd96ef990ff5eeb820ac996d7
+      checksums.blake3:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=checksums.blake3
+        checksum: blake3:612ae0a19f227e30112b099fbb51b82940d555b327af1e9e4408c9a4a5cfd634
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=config.json
+        checksum: blake3:012f6535ede966bd304b633a7fe6ebcb928f807c4b82b04b235b6c976f0226ef
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=configuration.py
+        checksum: blake3:4a9e495946e74ffda788dc8a6dd28c72f0e38beb6224facfc2c01447dd2cd4c8
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=configuration_nemotron_h.py
+        checksum: blake3:f446f56310b915be219fa25f77e7966adbd3b0e5883e88d3176d4e5fc6de32ec
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      evs.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=evs.py
+        checksum: blake3:770603e7f7f6a7521eae7df3196a5882804a229162217e13b4d68e08b2b70ffe
+      explainability.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=explainability.md
+        checksum: blake3:906017b4d18d54551d91397cb9c2fd08d5147139d43d1ecfdc35cf52bb875b06
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=generation_config.json
+        checksum: blake3:2aec94a0379f2b5f6257f586909abaae8382c3fc3a6e8745d250537a73644c7e
+      image_processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=image_processing.py
+        checksum: blake3:cda568ee2a00f8da8bc76b52699acf65af09e364ebecdb61923bffa5749a9cac
+      media/2414-165385-0000.wav:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2F2414-165385-0000.wav
+        checksum: blake3:b4bcd539dc04bb58708871afbb20401201ff1dd04592f32f49c0347f62bc778a
+      media/demo.mp4:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Fdemo.mp4
+        checksum: blake3:1a2bf60c3f3c6117f85dae0906af025abd3f8aa52754f2d058d80023b214a496
+      media/example1a.jpeg:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Fexample1a.jpeg
+        checksum: blake3:73923cb1ab181e25bf70eb872b6d12bf7333832678451eb66ea13ecbd02f1fe8
+      media/example1b.jpeg:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Fexample1b.jpeg
+        checksum: blake3:99c634b03c0b1a3e563fb04a3b3de14e51edf66e9182861f53334e589b6bd5d5
+      media/table.png:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Ftable.png
+        checksum: blake3:459eaacb11f770c5eb0c400dbe5cc2694db96eb8494527bd7964195f9e9c3411
+      media/tech.png:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Ftech.png
+        checksum: blake3:b4e3a7a8ab85c825b1e80736c9c671cc16d2601add99915310221ed0fa5a9478
+      model-00001-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00001-of-00017.safetensors
+        checksum: blake3:006fc9d9bd4a917c5165aeee5aee1f8d535daba6c8a9ebc2741a14a1bdf67772
+      model-00002-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00002-of-00017.safetensors
+        checksum: blake3:b8555261405c4b408be8c98fe91d70293d5e85631aebbe87d6d97ef6ac7588c7
+      model-00003-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00003-of-00017.safetensors
+        checksum: blake3:90e86072a60adcf7221bb73ccc1e6d8cae44f6fe828f02c233f84fbb2e4e6cbe
+      model-00004-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00004-of-00017.safetensors
+        checksum: blake3:ceb86712d6833fb2aa13d88e09199eb4dafb4bde5e6c0316b60a971c5b072c1b
+      model-00005-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00005-of-00017.safetensors
+        checksum: blake3:979aa71cecf46fa395ec754237bed9e5a2bd025aa408fe39d9243ec14c370864
+      model-00006-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00006-of-00017.safetensors
+        checksum: blake3:98368603e80da3ee404a1bbb5e3708b21768e3ff685e4dc78014c8f5a31c5d42
+      model-00007-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00007-of-00017.safetensors
+        checksum: blake3:b4cc54ebd2742f1e49a7f8e2fd9570325b87ed3fce9ae88298baa8b73520d751
+      model-00008-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00008-of-00017.safetensors
+        checksum: blake3:8a7a28bfa101f661cee5e98434d319b0297a95bf1e274c52001ce3b6a82486a1
+      model-00009-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00009-of-00017.safetensors
+        checksum: blake3:12f8507d31baa748093c3a49a63a18dcdad61e7f0e1fe85b1b404cf734d1cc9e
+      model-00010-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00010-of-00017.safetensors
+        checksum: blake3:8334a743e063b9851f087c8ff9f795b4348ce0d30f1d0d6a683b66d3e9c91a63
+      model-00011-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00011-of-00017.safetensors
+        checksum: blake3:074c988e045b192b7188b776cb3346d109ae4f0303052657b1427a220e43c076
+      model-00012-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00012-of-00017.safetensors
+        checksum: blake3:c69ddad47add33dddb13bd6bb9ed75337648a7d4d0a17dfc308c9e20ebaccea6
+      model-00013-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00013-of-00017.safetensors
+        checksum: blake3:1fc1d137c7c4cc9657ddb629cc6d10235eedf7734c54ba280b3d5530067d72a3
+      model-00014-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00014-of-00017.safetensors
+        checksum: blake3:8b7e5b7466f46b1b73c0731d757c274dd39e21dc8e3a5ccf21173c8439769f0e
+      model-00015-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00015-of-00017.safetensors
+        checksum: blake3:dc01c0f79497d0d7a4409933a5e237bf586fc64900b3adaae616ec24010d7590
+      model-00016-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00016-of-00017.safetensors
+        checksum: blake3:8f502e2a576efeb6d3ae1776ca8da9a4e6e4f20f328a232c8dcadb1040396401
+      model-00017-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00017-of-00017.safetensors
+        checksum: blake3:403d1918793e403da7fa8e2c855298d4735811439f7b0e07c7a5e21b9486f3d9
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model.safetensors.index.json
+        checksum: blake3:1ad1409d75985558e6367019d846ca5439724b1839073e739d3b31de0973f371
+      modeling.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=modeling.py
+        checksum: blake3:d8792b83e20bcdac733511d47c02ae19e14c383f03dff89a981c8a260c018df1
+      modeling_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=modeling_nemotron_h.py
+        checksum: blake3:c472358cfb3b70acb0e0003adc41121c2a12af521fdba7b882eb807b76eaebcd
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=preprocessor_config.json
+        checksum: blake3:d09c0b0aef64c3600262d0c526f7f74d8d909127394d5c64a83817ab59aa63db
+      privacy.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=privacy.md
+        checksum: blake3:9940d2fe639d8da6c481edb888f1107017fda545e4bcaf9faf8eb555529bab7f
+      processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=processing.py
+        checksum: blake3:a89901d905e7fcc25f9100989b23cafdd881afd9a1989feae8581cb2e753b909
+      processing_utils.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=processing_utils.py
+        checksum: blake3:6fd4d9a2b74e4a31a1099a9cd6eb19f9fe9b63a73a5fc473188212018771ef5e
+      safety.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=safety.md
+        checksum: blake3:5cf502b21afbcdfea69a1abda665afda259dce6a28e2d67ed024c010f752d8ec
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=special_tokens_map.json
+        checksum: blake3:d0eff392727c4b99fc7fa82ab4cd462a587c210a27db8dbf31e54ce261a07b25
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=tokenizer.json
+        checksum: blake3:d0e82f4be9d7063007197c6dff0c91745728c54f330f212bce37abb3b8561f83
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=tokenizer_config.json
+        checksum: blake3:d045e75c44367b14ee28b20e27af3bab6d1179f83ffb2ec0e3fb66d48313520f
+      video_io.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=video_io.py
+        checksum: blake3:15f401456556685b9d5a806e4f2dd7d8afd7d07e170656e0cd8c584e943f3053
+      video_processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=video_processing.py
+        checksum: blake3:d818ba41c6577e496908bdbf4f9dfda2d1acf6ba527987d50819ae587ae71fcf
+  workspace_hash: b0a3598568638765096ad894e3357339046530527ccc87fc6e8f45700bbe70a2
+- id: aba86c9500633b97b4a1f85ad83852131db59d551243e79b29746c83abb55012
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    min_vram_per_device_gb: '80.0'
+    pp: '1'
+    precision: bf16
+    tp: '1'
+  workspace:
+    files:
+      README.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=README.md
+        checksum: blake3:08e488328db6c9d7917b8c8fb2ee285033310d05aa910568ff7b4395c3f1c6ca
+      __init__.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=__init__.py
+        checksum: blake3:af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262
+      audio_model.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=audio_model.py
+        checksum: blake3:018f8e38dc21c8713e114ae6c839fa9c1c228254b762f0a2601d0912708e81e6
+      bias.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=bias.md
+        checksum: blake3:35afc5c49dadb661c11ac82956fee55f1a7408fab9457e434c0cee3407f1c3a6
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=chat_template.jinja
+        checksum: blake3:9c2523e92dc85151b66208e13ecb09ce7f48861dd96ef990ff5eeb820ac996d7
+      checksums.blake3:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=checksums.blake3
+        checksum: blake3:612ae0a19f227e30112b099fbb51b82940d555b327af1e9e4408c9a4a5cfd634
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=config.json
+        checksum: blake3:012f6535ede966bd304b633a7fe6ebcb928f807c4b82b04b235b6c976f0226ef
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=configuration.py
+        checksum: blake3:4a9e495946e74ffda788dc8a6dd28c72f0e38beb6224facfc2c01447dd2cd4c8
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=configuration_nemotron_h.py
+        checksum: blake3:f446f56310b915be219fa25f77e7966adbd3b0e5883e88d3176d4e5fc6de32ec
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      evs.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=evs.py
+        checksum: blake3:770603e7f7f6a7521eae7df3196a5882804a229162217e13b4d68e08b2b70ffe
+      explainability.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=explainability.md
+        checksum: blake3:906017b4d18d54551d91397cb9c2fd08d5147139d43d1ecfdc35cf52bb875b06
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=generation_config.json
+        checksum: blake3:2aec94a0379f2b5f6257f586909abaae8382c3fc3a6e8745d250537a73644c7e
+      image_processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=image_processing.py
+        checksum: blake3:cda568ee2a00f8da8bc76b52699acf65af09e364ebecdb61923bffa5749a9cac
+      media/2414-165385-0000.wav:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2F2414-165385-0000.wav
+        checksum: blake3:b4bcd539dc04bb58708871afbb20401201ff1dd04592f32f49c0347f62bc778a
+      media/demo.mp4:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Fdemo.mp4
+        checksum: blake3:1a2bf60c3f3c6117f85dae0906af025abd3f8aa52754f2d058d80023b214a496
+      media/example1a.jpeg:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Fexample1a.jpeg
+        checksum: blake3:73923cb1ab181e25bf70eb872b6d12bf7333832678451eb66ea13ecbd02f1fe8
+      media/example1b.jpeg:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Fexample1b.jpeg
+        checksum: blake3:99c634b03c0b1a3e563fb04a3b3de14e51edf66e9182861f53334e589b6bd5d5
+      media/table.png:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Ftable.png
+        checksum: blake3:459eaacb11f770c5eb0c400dbe5cc2694db96eb8494527bd7964195f9e9c3411
+      media/tech.png:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=media%2Ftech.png
+        checksum: blake3:b4e3a7a8ab85c825b1e80736c9c671cc16d2601add99915310221ed0fa5a9478
+      model-00001-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00001-of-00017.safetensors
+        checksum: blake3:006fc9d9bd4a917c5165aeee5aee1f8d535daba6c8a9ebc2741a14a1bdf67772
+      model-00002-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00002-of-00017.safetensors
+        checksum: blake3:b8555261405c4b408be8c98fe91d70293d5e85631aebbe87d6d97ef6ac7588c7
+      model-00003-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00003-of-00017.safetensors
+        checksum: blake3:90e86072a60adcf7221bb73ccc1e6d8cae44f6fe828f02c233f84fbb2e4e6cbe
+      model-00004-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00004-of-00017.safetensors
+        checksum: blake3:ceb86712d6833fb2aa13d88e09199eb4dafb4bde5e6c0316b60a971c5b072c1b
+      model-00005-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00005-of-00017.safetensors
+        checksum: blake3:979aa71cecf46fa395ec754237bed9e5a2bd025aa408fe39d9243ec14c370864
+      model-00006-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00006-of-00017.safetensors
+        checksum: blake3:98368603e80da3ee404a1bbb5e3708b21768e3ff685e4dc78014c8f5a31c5d42
+      model-00007-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00007-of-00017.safetensors
+        checksum: blake3:b4cc54ebd2742f1e49a7f8e2fd9570325b87ed3fce9ae88298baa8b73520d751
+      model-00008-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00008-of-00017.safetensors
+        checksum: blake3:8a7a28bfa101f661cee5e98434d319b0297a95bf1e274c52001ce3b6a82486a1
+      model-00009-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00009-of-00017.safetensors
+        checksum: blake3:12f8507d31baa748093c3a49a63a18dcdad61e7f0e1fe85b1b404cf734d1cc9e
+      model-00010-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00010-of-00017.safetensors
+        checksum: blake3:8334a743e063b9851f087c8ff9f795b4348ce0d30f1d0d6a683b66d3e9c91a63
+      model-00011-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00011-of-00017.safetensors
+        checksum: blake3:074c988e045b192b7188b776cb3346d109ae4f0303052657b1427a220e43c076
+      model-00012-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00012-of-00017.safetensors
+        checksum: blake3:c69ddad47add33dddb13bd6bb9ed75337648a7d4d0a17dfc308c9e20ebaccea6
+      model-00013-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00013-of-00017.safetensors
+        checksum: blake3:1fc1d137c7c4cc9657ddb629cc6d10235eedf7734c54ba280b3d5530067d72a3
+      model-00014-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00014-of-00017.safetensors
+        checksum: blake3:8b7e5b7466f46b1b73c0731d757c274dd39e21dc8e3a5ccf21173c8439769f0e
+      model-00015-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00015-of-00017.safetensors
+        checksum: blake3:dc01c0f79497d0d7a4409933a5e237bf586fc64900b3adaae616ec24010d7590
+      model-00016-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00016-of-00017.safetensors
+        checksum: blake3:8f502e2a576efeb6d3ae1776ca8da9a4e6e4f20f328a232c8dcadb1040396401
+      model-00017-of-00017.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model-00017-of-00017.safetensors
+        checksum: blake3:403d1918793e403da7fa8e2c855298d4735811439f7b0e07c7a5e21b9486f3d9
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=model.safetensors.index.json
+        checksum: blake3:1ad1409d75985558e6367019d846ca5439724b1839073e739d3b31de0973f371
+      modeling.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=modeling.py
+        checksum: blake3:d8792b83e20bcdac733511d47c02ae19e14c383f03dff89a981c8a260c018df1
+      modeling_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=modeling_nemotron_h.py
+        checksum: blake3:c472358cfb3b70acb0e0003adc41121c2a12af521fdba7b882eb807b76eaebcd
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=preprocessor_config.json
+        checksum: blake3:d09c0b0aef64c3600262d0c526f7f74d8d909127394d5c64a83817ab59aa63db
+      privacy.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=privacy.md
+        checksum: blake3:9940d2fe639d8da6c481edb888f1107017fda545e4bcaf9faf8eb555529bab7f
+      processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=processing.py
+        checksum: blake3:a89901d905e7fcc25f9100989b23cafdd881afd9a1989feae8581cb2e753b909
+      processing_utils.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=processing_utils.py
+        checksum: blake3:6fd4d9a2b74e4a31a1099a9cd6eb19f9fe9b63a73a5fc473188212018771ef5e
+      safety.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=safety.md
+        checksum: blake3:5cf502b21afbcdfea69a1abda665afda259dce6a28e2d67ed024c010f752d8ec
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=special_tokens_map.json
+        checksum: blake3:d0eff392727c4b99fc7fa82ab4cd462a587c210a27db8dbf31e54ce261a07b25
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=tokenizer.json
+        checksum: blake3:d0e82f4be9d7063007197c6dff0c91745728c54f330f212bce37abb3b8561f83
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=tokenizer_config.json
+        checksum: blake3:d045e75c44367b14ee28b20e27af3bab6d1179f83ffb2ec0e3fb66d48313520f
+      video_io.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=video_io.py
+        checksum: blake3:15f401456556685b9d5a806e4f2dd7d8afd7d07e170656e0cd8c584e943f3053
+      video_processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-a5fba9e_nim_bf16?file=video_processing.py
+        checksum: blake3:d818ba41c6577e496908bdbf4f9dfda2d1acf6ba527987d50819ae587ae71fcf
+  workspace_hash: b0a3598568638765096ad894e3357339046530527ccc87fc6e8f45700bbe70a2
+- id: ad007e6782cb8319932334129d428d9079517a5a2bfc53777074ab9a670ab89f
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    min_vram_per_device_gb: '48.0'
+    pp: '1'
+    precision: fp8
+    tp: '1'
+  workspace:
+    files:
+      README.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=README.md
+        checksum: blake3:f208f7e35bcdae86416053cad92180d74b42144577cf13a063b54840ef997a1f
+      audio_model.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=audio_model.py
+        checksum: blake3:018f8e38dc21c8713e114ae6c839fa9c1c228254b762f0a2601d0912708e81e6
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=chat_template.jinja
+        checksum: blake3:9c2523e92dc85151b66208e13ecb09ce7f48861dd96ef990ff5eeb820ac996d7
+      checksums.blake3:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=checksums.blake3
+        checksum: blake3:269a71bd663e75e53ff09aab2ce57c105024193c3e1d6e4372018b25799c83e7
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=config.json
+        checksum: blake3:0705c05ce4290e94bc3365869af5dddb08f48275a5b9d66e34a0756d6a246230
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=configuration.py
+        checksum: blake3:1553b843e8fc49e35646614d814ca9f5eac3c174382ceb43af532bc2b709978f
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=configuration_nemotron_h.py
+        checksum: blake3:f21a90d043c1d64046dd8f32c5d32dd7a1252e4a71d7d0650b29a81f46f16168
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      evs.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=evs.py
+        checksum: blake3:770603e7f7f6a7521eae7df3196a5882804a229162217e13b4d68e08b2b70ffe
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=generation_config.json
+        checksum: blake3:2aec94a0379f2b5f6257f586909abaae8382c3fc3a6e8745d250537a73644c7e
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=hf_quant_config.json
+        checksum: blake3:1d5f0a8e9e2bf5cb7b42ded3a7cf948721147a104500f2aa0f65ecee9b87c627
+      image_processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=image_processing.py
+        checksum: blake3:9ab56b16ae2154439a086e8d992bc0536d8b83401234ca6c636bd1143fe3ba78
+      model-00001-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=model-00001-of-00004.safetensors
+        checksum: blake3:48d591a5e47126259c1444e255f58019f6c8a913d4126f0de84bc130ae38e132
+      model-00002-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=model-00002-of-00004.safetensors
+        checksum: blake3:550331ee7f87a1442c102c6bcda4be2ff580fb275461243f35b18708bcb500fc
+      model-00003-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=model-00003-of-00004.safetensors
+        checksum: blake3:80288d6e770f11fd3420135d02d9da385e5d573e603313b02d878d4d20f82b12
+      model-00004-of-00004.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=model-00004-of-00004.safetensors
+        checksum: blake3:3842b6ab9422fe06f5e18f77d70aa3ae35cc240e3757b0bcc07761ae737b79d6
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=model.safetensors.index.json
+        checksum: blake3:253b7392d2697bfd9f9746983abde32d6f4080416f6223e38ef8b1488db350c8
+      modeling.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=modeling.py
+        checksum: blake3:d5d89f6b94aa7e1f512ab95b60a8cac32982c8a0c36bf96b8d3234527e24356e
+      modeling_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=modeling_nemotron_h.py
+        checksum: blake3:18d5a9262c8a002518b5176f2e59019f14993394138dec6997904ae1dd3baeb0
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=preprocessor_config.json
+        checksum: blake3:5a474887a20342b26778b5c69ab30e4f36405ac5f4429a98d1ed0d52c55a75dd
+      processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=processing.py
+        checksum: blake3:ad7793a1e20166809c053301bd3ffef2cfc90761be5cac2aff9e41f5b9301548
+      processing_utils.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=processing_utils.py
+        checksum: blake3:6fd4d9a2b74e4a31a1099a9cd6eb19f9fe9b63a73a5fc473188212018771ef5e
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=special_tokens_map.json
+        checksum: blake3:d0eff392727c4b99fc7fa82ab4cd462a587c210a27db8dbf31e54ce261a07b25
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=tokenizer.json
+        checksum: blake3:d0e82f4be9d7063007197c6dff0c91745728c54f330f212bce37abb3b8561f83
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=tokenizer_config.json
+        checksum: blake3:a8978b657c09fea2da13cf92efd22e71489ba1a9e239ca2b3e813ee767092932
+      video_io.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=video_io.py
+        checksum: blake3:ed9df20106a01cc250111f8a65f45f4c640711b951cb39533061aa1b8792c7a4
+      video_processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-6647b84_nim_fp8?file=video_processing.py
+        checksum: blake3:d818ba41c6577e496908bdbf4f9dfda2d1acf6ba527987d50819ae587ae71fcf
+  workspace_hash: e0f37a15468523bd9b3c857741f36bdb0c774afe6235b75bc0b0345e1973bd7f
+- id: d62eaa66527fa3c35dc50bce594f4622a16b183066fcece982ea532d5ae60196
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    min_vram_per_device_gb: '32.0'
+    pp: '1'
+    precision: nvfp4
+    tp: '1'
+  workspace:
+    files:
+      README.md:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=README.md
+        checksum: blake3:f208f7e35bcdae86416053cad92180d74b42144577cf13a063b54840ef997a1f
+      audio_model.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=audio_model.py
+        checksum: blake3:018f8e38dc21c8713e114ae6c839fa9c1c228254b762f0a2601d0912708e81e6
+      chat_template.jinja:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=chat_template.jinja
+        checksum: blake3:9c2523e92dc85151b66208e13ecb09ce7f48861dd96ef990ff5eeb820ac996d7
+      checksums.blake3:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=checksums.blake3
+        checksum: blake3:7a7a8d84d1eefabd8c68563f6db851ebbe89779ea68a5d2b37d52416fb2973e1
+      config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=config.json
+        checksum: blake3:8de53c92ecce3a09728bf09822c24a9ebb10696bfc100aec4a3f90dbb451f9ff
+      configuration.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=configuration.py
+        checksum: blake3:1553b843e8fc49e35646614d814ca9f5eac3c174382ceb43af532bc2b709978f
+      configuration_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=configuration_nemotron_h.py
+        checksum: blake3:f21a90d043c1d64046dd8f32c5d32dd7a1252e4a71d7d0650b29a81f46f16168
+      configuration_radio.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=configuration_radio.py
+        checksum: blake3:9ec243cfc26ccbef2e1ed2d8df07cc04a05c9e5d6f977bd2cf9bdee88534967d
+      evs.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=evs.py
+        checksum: blake3:770603e7f7f6a7521eae7df3196a5882804a229162217e13b4d68e08b2b70ffe
+      generation_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=generation_config.json
+        checksum: blake3:2aec94a0379f2b5f6257f586909abaae8382c3fc3a6e8745d250537a73644c7e
+      hf_quant_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=hf_quant_config.json
+        checksum: blake3:931a46c4c80810f24bc7467d0fb7416a8d986b8c08f3ea7d86af3bfd0c4c453a
+      image_processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=image_processing.py
+        checksum: blake3:9ab56b16ae2154439a086e8d992bc0536d8b83401234ca6c636bd1143fe3ba78
+      model-00001-of-00003.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=model-00001-of-00003.safetensors
+        checksum: blake3:e13bf664966f49a1936486e379e2426f66cf432237285fe38f65adaacd06b473
+      model-00002-of-00003.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=model-00002-of-00003.safetensors
+        checksum: blake3:6942bf642b2743357c3738c5acf6421ac3ec6e7caa00d23df2d05879a3786e5f
+      model-00003-of-00003.safetensors:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=model-00003-of-00003.safetensors
+        checksum: blake3:485bd693f97761391b21a46a0eb93034462bf84f7eb4226eea013b55337e566c
+      model.safetensors.index.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=model.safetensors.index.json
+        checksum: blake3:765a953f85f763a983232ae88ec2e3a5124d40e41fd979822163276f667e7cd4
+      modeling.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=modeling.py
+        checksum: blake3:d5d89f6b94aa7e1f512ab95b60a8cac32982c8a0c36bf96b8d3234527e24356e
+      modeling_nemotron_h.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=modeling_nemotron_h.py
+        checksum: blake3:18d5a9262c8a002518b5176f2e59019f14993394138dec6997904ae1dd3baeb0
+      preprocessor_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=preprocessor_config.json
+        checksum: blake3:5a474887a20342b26778b5c69ab30e4f36405ac5f4429a98d1ed0d52c55a75dd
+      processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=processing.py
+        checksum: blake3:ad7793a1e20166809c053301bd3ffef2cfc90761be5cac2aff9e41f5b9301548
+      processing_utils.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=processing_utils.py
+        checksum: blake3:6fd4d9a2b74e4a31a1099a9cd6eb19f9fe9b63a73a5fc473188212018771ef5e
+      special_tokens_map.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=special_tokens_map.json
+        checksum: blake3:d0eff392727c4b99fc7fa82ab4cd462a587c210a27db8dbf31e54ce261a07b25
+      tokenizer.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=tokenizer.json
+        checksum: blake3:d0e82f4be9d7063007197c6dff0c91745728c54f330f212bce37abb3b8561f83
+      tokenizer_config.json:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=tokenizer_config.json
+        checksum: blake3:a8978b657c09fea2da13cf92efd22e71489ba1a9e239ca2b3e813ee767092932
+      video_io.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=video_io.py
+        checksum: blake3:ed9df20106a01cc250111f8a65f45f4c640711b951cb39533061aa1b8792c7a4
+      video_processing.py:
+        uri: ngc://nim/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:hf-dc5f0b0_nim_nvfp4?file=video_processing.py
+        checksum: blake3:d818ba41c6577e496908bdbf4f9dfda2d1acf6ba527987d50819ae587ae71fcf
+  workspace_hash: 1b28fc00c3046efa5eab0524ed7e102489f675d0b2e8002fd8d8c480ceb10436

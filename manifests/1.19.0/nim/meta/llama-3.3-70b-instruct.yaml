@@ -1,7 +1,7 @@
 schema_version: '2.1'
 profile_selection_criteria: auto
 model: meta/llama-3.3-70b-instruct
-release: 2.0.3
+release: 2.0.9
 profiles:
 - id: 120f37d15ce21955b951e9acef346dcdcc0ebb17b9e09c1eef15e803a8b87665
   tags:
@@ -11,140 +11,6 @@ profiles:
     pp: '1'
     precision: bf16
     tp: '1'
-  workspace:
-    files:
-      LICENSE:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=LICENSE
-        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
-      README.md:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=README.md
-        checksum: blake3:8bd71939b6c992a670bae4018f224d6c28df0e303c8b9f0f90df9a4b0a159d4b
-      USE_POLICY.md:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=USE_POLICY.md
-        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
-      checksums.blake3:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=checksums.blake3
-        checksum: blake3:0d5d692052ae0fedd472b22c9d47d094be987c7e228fddb89489b0b59a686f96
-      config.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=config.json
-        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
-      generation_config.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=generation_config.json
-        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
-      model-00001-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00001-of-00030.safetensors
-        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
-      model-00002-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00002-of-00030.safetensors
-        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
-      model-00003-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00003-of-00030.safetensors
-        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
-      model-00004-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00004-of-00030.safetensors
-        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
-      model-00005-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00005-of-00030.safetensors
-        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
-      model-00006-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00006-of-00030.safetensors
-        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
-      model-00007-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00007-of-00030.safetensors
-        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
-      model-00008-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00008-of-00030.safetensors
-        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
-      model-00009-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00009-of-00030.safetensors
-        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
-      model-00010-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00010-of-00030.safetensors
-        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
-      model-00011-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00011-of-00030.safetensors
-        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
-      model-00012-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00012-of-00030.safetensors
-        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
-      model-00013-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00013-of-00030.safetensors
-        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
-      model-00014-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00014-of-00030.safetensors
-        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
-      model-00015-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00015-of-00030.safetensors
-        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
-      model-00016-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00016-of-00030.safetensors
-        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
-      model-00017-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00017-of-00030.safetensors
-        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
-      model-00018-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00018-of-00030.safetensors
-        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
-      model-00019-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00019-of-00030.safetensors
-        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
-      model-00020-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00020-of-00030.safetensors
-        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
-      model-00021-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00021-of-00030.safetensors
-        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
-      model-00022-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00022-of-00030.safetensors
-        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
-      model-00023-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00023-of-00030.safetensors
-        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
-      model-00024-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00024-of-00030.safetensors
-        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
-      model-00025-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00025-of-00030.safetensors
-        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
-      model-00026-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00026-of-00030.safetensors
-        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
-      model-00027-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00027-of-00030.safetensors
-        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
-      model-00028-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00028-of-00030.safetensors
-        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
-      model-00029-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00029-of-00030.safetensors
-        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
-      model-00030-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00030-of-00030.safetensors
-        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
-      model.safetensors.index.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model.safetensors.index.json
-        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
-      special_tokens_map.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=special_tokens_map.json
-        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
-      tokenizer.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer.json
-        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
-      tokenizer_config.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer_config.json
-        checksum: blake3:a167e7936d580bdc9428b38f6ff50c0b42412111ec8e93c2982419d26d17a3db
-      tool_use_config_v2.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tool_use_config_v2.json
-        checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
-  workspace_hash: 1db340e1e4aa024997b25f11c3e8ad46d1422da54fac9be939489ec3695a5751
-- id: 128b00593671377d1f538c52b7c83d57f6d0bee57b32af3143368a7fe246afea
-  tags:
-    feat_lora: 'true'
-    llm_engine: vllm
-    min_vram_per_device_gb: '47.0'
-    pp: '1'
-    precision: bf16
-    tp: '4'
   workspace:
     files:
       LICENSE:
@@ -579,6 +445,140 @@ profiles:
         uri: ngc://nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling?file=tool_use_config_v2.json
         checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
   workspace_hash: 4229087558d3d36bdd4c6f7b980ea6f9283e472fdd0c98099cc7007d13b133e4
+- id: 2330b945d3966ded2fe2c8b970de46ade58657da3406efb1615184a1cd5c0688
+  tags:
+    feat_lora: 'false'
+    llm_engine: vllm
+    min_vram_per_device_gb: '49.0'
+    pp: '1'
+    precision: bf16
+    tp: '4'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=LICENSE
+        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
+      README.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=README.md
+        checksum: blake3:8bd71939b6c992a670bae4018f224d6c28df0e303c8b9f0f90df9a4b0a159d4b
+      USE_POLICY.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=USE_POLICY.md
+        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
+      checksums.blake3:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=checksums.blake3
+        checksum: blake3:0d5d692052ae0fedd472b22c9d47d094be987c7e228fddb89489b0b59a686f96
+      config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=config.json
+        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
+      generation_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=generation_config.json
+        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
+      model-00001-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00001-of-00030.safetensors
+        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
+      model-00002-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00002-of-00030.safetensors
+        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
+      model-00003-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00003-of-00030.safetensors
+        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
+      model-00004-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00004-of-00030.safetensors
+        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
+      model-00005-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00005-of-00030.safetensors
+        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
+      model-00006-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00006-of-00030.safetensors
+        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
+      model-00007-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00007-of-00030.safetensors
+        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
+      model-00008-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00008-of-00030.safetensors
+        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
+      model-00009-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00009-of-00030.safetensors
+        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
+      model-00010-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00010-of-00030.safetensors
+        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
+      model-00011-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00011-of-00030.safetensors
+        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
+      model-00012-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00012-of-00030.safetensors
+        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
+      model-00013-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00013-of-00030.safetensors
+        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
+      model-00014-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00014-of-00030.safetensors
+        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
+      model-00015-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00015-of-00030.safetensors
+        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
+      model-00016-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00016-of-00030.safetensors
+        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
+      model-00017-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00017-of-00030.safetensors
+        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
+      model-00018-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00018-of-00030.safetensors
+        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
+      model-00019-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00019-of-00030.safetensors
+        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
+      model-00020-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00020-of-00030.safetensors
+        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
+      model-00021-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00021-of-00030.safetensors
+        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
+      model-00022-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00022-of-00030.safetensors
+        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
+      model-00023-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00023-of-00030.safetensors
+        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
+      model-00024-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00024-of-00030.safetensors
+        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
+      model-00025-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00025-of-00030.safetensors
+        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
+      model-00026-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00026-of-00030.safetensors
+        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
+      model-00027-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00027-of-00030.safetensors
+        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
+      model-00028-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00028-of-00030.safetensors
+        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
+      model-00029-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00029-of-00030.safetensors
+        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
+      model-00030-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00030-of-00030.safetensors
+        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
+      model.safetensors.index.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model.safetensors.index.json
+        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
+      special_tokens_map.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=special_tokens_map.json
+        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
+      tokenizer.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer.json
+        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
+      tokenizer_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer_config.json
+        checksum: blake3:a167e7936d580bdc9428b38f6ff50c0b42412111ec8e93c2982419d26d17a3db
+      tool_use_config_v2.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tool_use_config_v2.json
+        checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
+  workspace_hash: 1db340e1e4aa024997b25f11c3e8ad46d1422da54fac9be939489ec3695a5751
 - id: 2914d34f4fa4833f89591ad3d5f92257d2167acb8ddb298a7ea0ad69629dbb16
   tags:
     feat_lora: 'false'
@@ -781,274 +781,6 @@ profiles:
         uri: ngc://nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling?file=tool_use_config_v2.json
         checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
   workspace_hash: 4229087558d3d36bdd4c6f7b980ea6f9283e472fdd0c98099cc7007d13b133e4
-- id: 314bf2e552c132bc56ed8503d5bd9f3c159abe5c9ca8a694e5e2081eb7c04649
-  tags:
-    feat_lora: 'true'
-    llm_engine: vllm
-    min_vram_per_device_gb: '89.0'
-    pp: '1'
-    precision: bf16
-    tp: '2'
-  workspace:
-    files:
-      LICENSE:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=LICENSE
-        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
-      README.md:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=README.md
-        checksum: blake3:8bd71939b6c992a670bae4018f224d6c28df0e303c8b9f0f90df9a4b0a159d4b
-      USE_POLICY.md:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=USE_POLICY.md
-        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
-      checksums.blake3:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=checksums.blake3
-        checksum: blake3:0d5d692052ae0fedd472b22c9d47d094be987c7e228fddb89489b0b59a686f96
-      config.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=config.json
-        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
-      generation_config.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=generation_config.json
-        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
-      model-00001-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00001-of-00030.safetensors
-        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
-      model-00002-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00002-of-00030.safetensors
-        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
-      model-00003-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00003-of-00030.safetensors
-        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
-      model-00004-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00004-of-00030.safetensors
-        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
-      model-00005-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00005-of-00030.safetensors
-        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
-      model-00006-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00006-of-00030.safetensors
-        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
-      model-00007-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00007-of-00030.safetensors
-        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
-      model-00008-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00008-of-00030.safetensors
-        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
-      model-00009-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00009-of-00030.safetensors
-        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
-      model-00010-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00010-of-00030.safetensors
-        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
-      model-00011-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00011-of-00030.safetensors
-        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
-      model-00012-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00012-of-00030.safetensors
-        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
-      model-00013-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00013-of-00030.safetensors
-        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
-      model-00014-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00014-of-00030.safetensors
-        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
-      model-00015-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00015-of-00030.safetensors
-        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
-      model-00016-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00016-of-00030.safetensors
-        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
-      model-00017-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00017-of-00030.safetensors
-        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
-      model-00018-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00018-of-00030.safetensors
-        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
-      model-00019-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00019-of-00030.safetensors
-        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
-      model-00020-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00020-of-00030.safetensors
-        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
-      model-00021-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00021-of-00030.safetensors
-        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
-      model-00022-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00022-of-00030.safetensors
-        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
-      model-00023-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00023-of-00030.safetensors
-        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
-      model-00024-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00024-of-00030.safetensors
-        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
-      model-00025-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00025-of-00030.safetensors
-        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
-      model-00026-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00026-of-00030.safetensors
-        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
-      model-00027-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00027-of-00030.safetensors
-        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
-      model-00028-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00028-of-00030.safetensors
-        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
-      model-00029-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00029-of-00030.safetensors
-        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
-      model-00030-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00030-of-00030.safetensors
-        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
-      model.safetensors.index.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model.safetensors.index.json
-        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
-      special_tokens_map.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=special_tokens_map.json
-        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
-      tokenizer.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer.json
-        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
-      tokenizer_config.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer_config.json
-        checksum: blake3:a167e7936d580bdc9428b38f6ff50c0b42412111ec8e93c2982419d26d17a3db
-      tool_use_config_v2.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tool_use_config_v2.json
-        checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
-  workspace_hash: 1db340e1e4aa024997b25f11c3e8ad46d1422da54fac9be939489ec3695a5751
-- id: 40793560717b0e01f87024bc409baa6e4721e5694ea36cfc950372adfc660345
-  tags:
-    feat_lora: 'false'
-    llm_engine: vllm
-    min_vram_per_device_gb: '47.0'
-    pp: '1'
-    precision: bf16
-    tp: '4'
-  workspace:
-    files:
-      LICENSE:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=LICENSE
-        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
-      README.md:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=README.md
-        checksum: blake3:8bd71939b6c992a670bae4018f224d6c28df0e303c8b9f0f90df9a4b0a159d4b
-      USE_POLICY.md:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=USE_POLICY.md
-        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
-      checksums.blake3:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=checksums.blake3
-        checksum: blake3:0d5d692052ae0fedd472b22c9d47d094be987c7e228fddb89489b0b59a686f96
-      config.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=config.json
-        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
-      generation_config.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=generation_config.json
-        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
-      model-00001-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00001-of-00030.safetensors
-        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
-      model-00002-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00002-of-00030.safetensors
-        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
-      model-00003-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00003-of-00030.safetensors
-        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
-      model-00004-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00004-of-00030.safetensors
-        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
-      model-00005-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00005-of-00030.safetensors
-        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
-      model-00006-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00006-of-00030.safetensors
-        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
-      model-00007-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00007-of-00030.safetensors
-        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
-      model-00008-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00008-of-00030.safetensors
-        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
-      model-00009-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00009-of-00030.safetensors
-        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
-      model-00010-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00010-of-00030.safetensors
-        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
-      model-00011-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00011-of-00030.safetensors
-        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
-      model-00012-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00012-of-00030.safetensors
-        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
-      model-00013-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00013-of-00030.safetensors
-        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
-      model-00014-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00014-of-00030.safetensors
-        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
-      model-00015-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00015-of-00030.safetensors
-        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
-      model-00016-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00016-of-00030.safetensors
-        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
-      model-00017-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00017-of-00030.safetensors
-        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
-      model-00018-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00018-of-00030.safetensors
-        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
-      model-00019-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00019-of-00030.safetensors
-        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
-      model-00020-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00020-of-00030.safetensors
-        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
-      model-00021-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00021-of-00030.safetensors
-        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
-      model-00022-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00022-of-00030.safetensors
-        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
-      model-00023-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00023-of-00030.safetensors
-        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
-      model-00024-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00024-of-00030.safetensors
-        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
-      model-00025-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00025-of-00030.safetensors
-        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
-      model-00026-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00026-of-00030.safetensors
-        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
-      model-00027-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00027-of-00030.safetensors
-        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
-      model-00028-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00028-of-00030.safetensors
-        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
-      model-00029-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00029-of-00030.safetensors
-        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
-      model-00030-of-00030.safetensors:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00030-of-00030.safetensors
-        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
-      model.safetensors.index.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model.safetensors.index.json
-        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
-      special_tokens_map.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=special_tokens_map.json
-        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
-      tokenizer.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer.json
-        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
-      tokenizer_config.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer_config.json
-        checksum: blake3:a167e7936d580bdc9428b38f6ff50c0b42412111ec8e93c2982419d26d17a3db
-      tool_use_config_v2.json:
-        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tool_use_config_v2.json
-        checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
-  workspace_hash: 1db340e1e4aa024997b25f11c3e8ad46d1422da54fac9be939489ec3695a5751
 - id: 639213f8d80b20fddf456aa7c2e456b3d175b4043d1d5f1694a680757a25dad3
   tags:
     feat_lora: 'true'
@@ -1423,6 +1155,140 @@ profiles:
         uri: ngc://nim/meta/llama-3.3-70b-instruct:nvfp4-klvd4-nzbq-tool-calling?file=tool_use_config_v2.json
         checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
   workspace_hash: 4229087558d3d36bdd4c6f7b980ea6f9283e472fdd0c98099cc7007d13b133e4
+- id: 88136c9a71392ffa2e82d327e3172d19561bbe182ba4c3ddbc62c513d6a570ef
+  tags:
+    feat_lora: 'true'
+    llm_engine: vllm
+    min_vram_per_device_gb: '95.0'
+    pp: '1'
+    precision: bf16
+    tp: '2'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=LICENSE
+        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
+      README.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=README.md
+        checksum: blake3:8bd71939b6c992a670bae4018f224d6c28df0e303c8b9f0f90df9a4b0a159d4b
+      USE_POLICY.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=USE_POLICY.md
+        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
+      checksums.blake3:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=checksums.blake3
+        checksum: blake3:0d5d692052ae0fedd472b22c9d47d094be987c7e228fddb89489b0b59a686f96
+      config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=config.json
+        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
+      generation_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=generation_config.json
+        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
+      model-00001-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00001-of-00030.safetensors
+        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
+      model-00002-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00002-of-00030.safetensors
+        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
+      model-00003-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00003-of-00030.safetensors
+        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
+      model-00004-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00004-of-00030.safetensors
+        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
+      model-00005-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00005-of-00030.safetensors
+        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
+      model-00006-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00006-of-00030.safetensors
+        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
+      model-00007-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00007-of-00030.safetensors
+        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
+      model-00008-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00008-of-00030.safetensors
+        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
+      model-00009-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00009-of-00030.safetensors
+        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
+      model-00010-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00010-of-00030.safetensors
+        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
+      model-00011-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00011-of-00030.safetensors
+        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
+      model-00012-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00012-of-00030.safetensors
+        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
+      model-00013-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00013-of-00030.safetensors
+        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
+      model-00014-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00014-of-00030.safetensors
+        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
+      model-00015-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00015-of-00030.safetensors
+        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
+      model-00016-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00016-of-00030.safetensors
+        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
+      model-00017-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00017-of-00030.safetensors
+        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
+      model-00018-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00018-of-00030.safetensors
+        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
+      model-00019-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00019-of-00030.safetensors
+        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
+      model-00020-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00020-of-00030.safetensors
+        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
+      model-00021-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00021-of-00030.safetensors
+        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
+      model-00022-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00022-of-00030.safetensors
+        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
+      model-00023-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00023-of-00030.safetensors
+        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
+      model-00024-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00024-of-00030.safetensors
+        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
+      model-00025-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00025-of-00030.safetensors
+        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
+      model-00026-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00026-of-00030.safetensors
+        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
+      model-00027-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00027-of-00030.safetensors
+        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
+      model-00028-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00028-of-00030.safetensors
+        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
+      model-00029-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00029-of-00030.safetensors
+        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
+      model-00030-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00030-of-00030.safetensors
+        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
+      model.safetensors.index.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model.safetensors.index.json
+        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
+      special_tokens_map.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=special_tokens_map.json
+        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
+      tokenizer.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer.json
+        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
+      tokenizer_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer_config.json
+        checksum: blake3:a167e7936d580bdc9428b38f6ff50c0b42412111ec8e93c2982419d26d17a3db
+      tool_use_config_v2.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tool_use_config_v2.json
+        checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
+  workspace_hash: 1db340e1e4aa024997b25f11c3e8ad46d1422da54fac9be939489ec3695a5751
 - id: 8c893d6f32371b89fe359a0f1e5224acd074b5bf8037c68764b1e8e253943d85
   tags:
     feat_lora: 'true'
@@ -2105,6 +1971,140 @@ profiles:
         uri: ngc://nim/meta/llama-3.3-70b-instruct:fp8-rxbjb-qrcq-tool-calling?file=tool_use_config_v2.json
         checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
   workspace_hash: 0de0c8c6aa6b316e02d7a06f8bc2ec692d746ab775d1045423d6fce5d14b5302
+- id: edd209046a17adcd43c1d5cb56536e7dfd8cc16f46554dc2322de4332c23c7f7
+  tags:
+    feat_lora: 'true'
+    llm_engine: vllm
+    min_vram_per_device_gb: '49.0'
+    pp: '1'
+    precision: bf16
+    tp: '4'
+  workspace:
+    files:
+      LICENSE:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=LICENSE
+        checksum: blake3:3bfe2303b2a7c7c9b97bb59fc3eb6b4241629f9eed5e6393b258b075b65923f1
+      README.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=README.md
+        checksum: blake3:8bd71939b6c992a670bae4018f224d6c28df0e303c8b9f0f90df9a4b0a159d4b
+      USE_POLICY.md:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=USE_POLICY.md
+        checksum: blake3:4cc93ec7bee5f26f6bbdea4be5c815697e93d2040095741d9954d74eefd5c91c
+      checksums.blake3:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=checksums.blake3
+        checksum: blake3:0d5d692052ae0fedd472b22c9d47d094be987c7e228fddb89489b0b59a686f96
+      config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=config.json
+        checksum: blake3:4684285dad94b5c210c786d0d8837e99a45ec1d44d8d4f4b1a3631daf9094eef
+      generation_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=generation_config.json
+        checksum: blake3:a2f4277b9278e370b8216b020340012e6b234cedcd19e821cccce4db7cfe0e82
+      model-00001-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00001-of-00030.safetensors
+        checksum: blake3:d6ee6bdbd4ea0ae036eb4f06caa233c9a80d76881982a3521a7ccccff2d41f6f
+      model-00002-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00002-of-00030.safetensors
+        checksum: blake3:8f5d9b3e5a49bc7c6b7bd3582fa6e77e3f222702810eaaabfc6006f7b93d5a72
+      model-00003-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00003-of-00030.safetensors
+        checksum: blake3:5bf04d70783295098b0699e07ff7326c2549916c902ae330a876ca51ad996561
+      model-00004-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00004-of-00030.safetensors
+        checksum: blake3:535b7ec6e77d5b6c7e8e71875bbf49b97c55830e242ad60d5256b59d8ae531c1
+      model-00005-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00005-of-00030.safetensors
+        checksum: blake3:14f50c63a87276e005651efde5f77168e7c6015e95423adf0145251e45d2e282
+      model-00006-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00006-of-00030.safetensors
+        checksum: blake3:36d9052370578eb5bd1c68beee9c67c874d4249a180cff9a2872ea7243237743
+      model-00007-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00007-of-00030.safetensors
+        checksum: blake3:052ec9e547997c86be27823afd566d5e9eec836bc715cd8a60265a1d168229b2
+      model-00008-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00008-of-00030.safetensors
+        checksum: blake3:c5a17f07e30f8cc485ddfbc3f8d13cd17192c9673645de229b9c0ae4168d94c4
+      model-00009-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00009-of-00030.safetensors
+        checksum: blake3:0a3d35e901b631322cdc1811c127159503538f0bfd4b10f94dfe49726f2203d4
+      model-00010-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00010-of-00030.safetensors
+        checksum: blake3:353a49dca84a6e2a1199b2aace8e12db38d8f50c5934b08b98e65bee8538f8fe
+      model-00011-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00011-of-00030.safetensors
+        checksum: blake3:d5673b1a7e1d7a8217481012e0461a6b6d49ff8c193a92b341cf2df142afd9b8
+      model-00012-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00012-of-00030.safetensors
+        checksum: blake3:ba44923a2b4e51e61e9fed13445d0ec92bc8655c7b34de2e4a0995608a068d58
+      model-00013-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00013-of-00030.safetensors
+        checksum: blake3:847507a614f583bef7054bf05503d0c4f4950e77ac9a21f0f4c4795337d06747
+      model-00014-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00014-of-00030.safetensors
+        checksum: blake3:502c84637fcf427f9dbce870fd0800685825617fdd0b84b4a8cf5afc3e7162a3
+      model-00015-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00015-of-00030.safetensors
+        checksum: blake3:d6cbd414a5832ad5bc7ae09f3f3822ac075f5863d0fabe81638fb867c8e1425a
+      model-00016-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00016-of-00030.safetensors
+        checksum: blake3:5c58cf42bb99cc7a0acd9f742d6f15a73a2b74e1135c2f82b9635baf2aced719
+      model-00017-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00017-of-00030.safetensors
+        checksum: blake3:fa5573ab2d51c614cfd1cdcdb109c259be27eed897ff0c1fa2add7d864cc6b0e
+      model-00018-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00018-of-00030.safetensors
+        checksum: blake3:5048466957f70fbbdf167210a7d0ee9f8bcc18292229a3c06c38df5b3df82382
+      model-00019-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00019-of-00030.safetensors
+        checksum: blake3:d9cec332d69f439f842f60961539fb9b8b3aed929bfdffcc17826de57d4755fd
+      model-00020-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00020-of-00030.safetensors
+        checksum: blake3:c1c0fb1d93a570998e9e55432c4a1e88ff51cc85dc4a37e08bc514805a92f45a
+      model-00021-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00021-of-00030.safetensors
+        checksum: blake3:8212b2f5aa57f8b192301d198fb62128f6141a5da7a0abdd212656d5ef5f83ca
+      model-00022-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00022-of-00030.safetensors
+        checksum: blake3:f60259a1b9595fdd11195b008d505eb0e23dcf468f150f67696b217d4a722b76
+      model-00023-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00023-of-00030.safetensors
+        checksum: blake3:31e3257cd1377f6f4f4ddb2f058f92aba7ba642aef5712ced778aec8e7f79aa8
+      model-00024-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00024-of-00030.safetensors
+        checksum: blake3:4f2627e16bfe8b7169a17115a21d93d1eb36064800c8817f1b61d0a5d75c46e6
+      model-00025-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00025-of-00030.safetensors
+        checksum: blake3:d4bf2e1b48623a451dab087aa1318867cd550ec36be8cb0bbc8457e6bb15faf8
+      model-00026-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00026-of-00030.safetensors
+        checksum: blake3:47b4c7a705632c3dc06dfff17de25d26c0b3d140929d34411e603c227c314ca7
+      model-00027-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00027-of-00030.safetensors
+        checksum: blake3:b6418c9fe2478d1b611e5f4671efe2dce54cafc1515aa74b14a38343d6cc4f4b
+      model-00028-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00028-of-00030.safetensors
+        checksum: blake3:62681b66f7ad21204aaf9c56d4fc6d0c11e28f7fdeb3282542791e0aafeca578
+      model-00029-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00029-of-00030.safetensors
+        checksum: blake3:a282e62e950619ff5b4f7b5678e17e56bd26bbbb1bb968dff22ec1020ac07c14
+      model-00030-of-00030.safetensors:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model-00030-of-00030.safetensors
+        checksum: blake3:1090a31f85862ca0bafe1b04ed7ded06c3469fd40964a0e4677b3ae5b759de31
+      model.safetensors.index.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=model.safetensors.index.json
+        checksum: blake3:daef5ab5fcf0a1a3e640d94078b175f1930b51b1c2c3923d7ea08d874ed1cc0e
+      special_tokens_map.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=special_tokens_map.json
+        checksum: blake3:cfa0c2ac786b0a739f10c4dfc5a27a1e5ed3d83cb2bf5fd5b81f1f0992bcd486
+      tokenizer.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer.json
+        checksum: blake3:51e63f3c7d58ec06403bc442606644976fb4b92b45171faebcd67927d8a437eb
+      tokenizer_config.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tokenizer_config.json
+        checksum: blake3:a167e7936d580bdc9428b38f6ff50c0b42412111ec8e93c2982419d26d17a3db
+      tool_use_config_v2.json:
+        uri: ngc://nim/meta/llama-3.3-70b-instruct:bf16-6f6073b423013f6a7d4d9f39144961bfbfbc386b?file=tool_use_config_v2.json
+        checksum: blake3:d70d7d52bc4206dad2e4c615f01ed917463362a28176e7a76521a7b8426d7eba
+  workspace_hash: 1db340e1e4aa024997b25f11c3e8ad46d1422da54fac9be939489ec3695a5751
 - id: f8aa408323c38e25046ee87549a5847d666d02de45a029a40b34719dd3fb88c9
   tags:
     feat_lora: 'false'

@@ -1,529 +1,1424 @@
-schema_version: '2.0'
+schema_version: '2.1'
 profile_selection_criteria: auto
-model: mit/boltz2 # fixed by cloudera; was: `boltz2`
-release: 1.5.0
+model: mit/boltz2
+release: 1.8.0
 profiles:
-- id: 0a0827ab0549ab3db4893992ebd5b978504e4bdfd262e1584e316fa2a18d70d4
+- id: 01a9f765ee7c605bea1b133400819a69e42cd7abe4f3cd0fb642f058fda5f5fb
   tags:
-    feat_lora: 'False'
-    gpu: l40s
-    gpu_device: 26b9:10de
-    nim_workspace_hash_v1: ee5aba0a80d5193b7d0fdc840bf592e5058bed1ed97a3906a802497eea24ba62
-    number_of_gpus: '1'
+    backend: trt
+    compute_capability: '10.3'
+    feat_lora: 'false'
+    gpu: NVIDIA-GB300-WS
+    gpu_device: 31c2:10de
     pp: '1'
-    precision: fp16
-    profile: trt
-    sm: '89'
+    precision: bf16
     tp: '1'
-    v: '1'
+    v: 1.8.0
   workspace:
     files:
       boltz1_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=boltz1_conf.ckpt
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=boltz1_conf.ckpt
         checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
       boltz2_aff.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=boltz2_aff.ckpt
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=boltz2_aff.ckpt
         checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
       boltz2_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=boltz2_conf.ckpt
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=boltz2_conf.ckpt
         checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
       ccd.pkl:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=ccd.pkl
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=ccd.pkl
         checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
       checksums.blake3:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=checksums.blake3
-        checksum: blake3:461fee17142280b4be6d47d669b75c498a2fb02787e0ee42a3095234d9943e57
-      confidence_pairformer_1_1_bfloat16_4_1536_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=confidence_pairformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:16a2c9bdd0ae8a8a8845bb344834d21d3626af27cc7d380905c0e0d8e5e55ddd
-      confidence_pairformer_1_1_bfloat16_4_1536_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=confidence_pairformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:a9c45904ca06a34be2cba803ffae737971f3aab13c910b1058ef86994c82c757
-      confidence_pairformer_1_1_bfloat16_4_1536_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=confidence_pairformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:16a2c9bdd0ae8a8a8845bb344834d21d3626af27cc7d380905c0e0d8e5e55ddd
-      confidence_pairformer_1_1_bfloat16_4_1536_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=confidence_pairformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:dfe6ff59f380f7b3daa94310e63ffbf1d74cf24a45735733a099bf5896703d84
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=checksums.blake3
+        checksum: blake3:e2d80b36cb6916794c686759fb7bdff569ef3d66ba9aaeeb57255f0127319a39
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:3eadfa5c4ed46cbcad86b69130f948db8d8e5ac615d68b6062bb28bcaf84bf91
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:4c2a5104822fefde66dd4a78d0e77ad240a13138f5ba936737c5f8a91f3c5469
       metadata.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=metadata.json
-        checksum: blake3:0ace6cc274d74e1f7a8620a1b81978dee07a787b39baf11854c4483c1d8cf2c5
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=metadata.json
+        checksum: blake3:65c361b2c299a86f24dbbf5372ff920e5c4868e58714738b0166939f34d74b39
       mols.tar:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=mols.tar
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=mols.tar
         checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
-      structure_pairformer_1_1_bfloat16_4_1536_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=structure_pairformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:43b4888a91cda3797731227d3b82c2d0713f7cc51ca877693f9148c9c68d7e41
-      structure_pairformer_1_1_bfloat16_4_1536_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=structure_pairformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:a3cd132264af0db938b7d4ea706ae4110476ecd1440149d50ac2b26bc900a376
-      structure_pairformer_1_1_bfloat16_4_1536_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=structure_pairformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:43b4888a91cda3797731227d3b82c2d0713f7cc51ca877693f9148c9c68d7e41
-      structure_pairformer_1_1_bfloat16_4_1536_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=structure_pairformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:363e051f87c771dcb058d63cc6498ecba59543781a6370449f4a221614489b7a
-      token_transformer_1_1_bfloat16_4_1536_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=token_transformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:4939844357fe79fa6bf155fe66ecc92bb403b871dc22d1068235daa132d4102e
-      token_transformer_1_1_bfloat16_4_1536_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=token_transformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:dba23c49d329cb360fa8eb075333fdc21663c3f078224161ed0f2fe049599965
-      token_transformer_1_1_bfloat16_4_1536_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=token_transformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:dfb15a2e1dc3d5522c13238ca059ef311df3cdf0528528071434e649e848317b
-      token_transformer_1_1_bfloat16_4_1536_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpul40s_sm89_v1?file=token_transformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:f186dd943704b73576a3d56b2211fa340ba7901a93de1bb6d5382124d89c49ea
-- id: 152567fea7a4ca0777c5a0fec8cf2558e9578744169c9a062bb29635b248f7c8
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:ef2e1079d3252afee5029e13f953709d62e2127430d8e57132434a5e1ff45b43
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c6efa258d534edfa174e8230d2ddd1bdadc42d845a322433575991d988d7c174
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:f452d002f01425f198f9beb178678c40a9968a496b9dc5a8613e812805733e12
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:7de213327bcb83c0a2c43f5dcc195f231e977a792e7d8b37a75e877630011b3e
+  workspace_hash: 2befc9762134eeb4407f3a4a91a2ca84a9acaf69f5edcc805c5c221e0fc0f2ec
+- id: 14d31455ba050ff444a78a1751da193e7f49d9eee252cd0d0c8f8d4d7fc03da6
   tags:
-    feat_lora: 'False'
-    gpu: a100
-    gpu_device: 20b2:10de
-    nim_workspace_hash_v1: 6b699e0a548f481d77d403b9ad3ee29189896e3074637d7dee70732f3d765f43
-    number_of_gpus: '1'
+    backend: trt
+    compute_capability: '10.3'
+    feat_lora: 'false'
+    gpu: NVIDIA-GB300
+    gpu_device: 31c2:10de
     pp: '1'
-    precision: fp16
-    profile: trt
-    sm: '80'
+    precision: bf16
     tp: '1'
-    v: '1'
+    v: 1.8.0
   workspace:
     files:
       boltz1_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=boltz1_conf.ckpt
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=boltz1_conf.ckpt
         checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
       boltz2_aff.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=boltz2_aff.ckpt
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=boltz2_aff.ckpt
         checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
       boltz2_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=boltz2_conf.ckpt
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=boltz2_conf.ckpt
         checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
       ccd.pkl:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=ccd.pkl
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=ccd.pkl
         checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
       checksums.blake3:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=checksums.blake3
-        checksum: blake3:b1b33bf7ce74ca67e08a23c6798c35f7ddba0e8b0f366b5641c9ffe7738dd399
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:8c698684ce3892422f99598057cf4a6be3a9f27810106be8ece5f6540599f65b
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:1391d5d62f566b8f311d496dc848e162c9c1eaacd7af4ef1dbcb2462005da669
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=checksums.blake3
+        checksum: blake3:c029289d1c47bec43eb219e862fc86ad593a700431be55b377f91e68bec000ea
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:773a46b0f5eefe6f650bf26c9a1e96aa859844e15827b41c535f48f9e7144328
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:e7e484e9f74ddb54901dced18c953c899dd78b5f90e39a4dac57e60fb572b523
       metadata.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=metadata.json
-        checksum: blake3:e29e808b87cc5730386ec52f52cc148af90f1c6dd85f60d54ee0212ec014b692
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=metadata.json
+        checksum: blake3:a0c1d639285053e5b9b8298eb93fecf61c94dfdc3b5088fc4d68bb97a96ffb88
       mols.tar:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=mols.tar
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=mols.tar
         checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:e17baf91f5754b10f2b35749f58d9379b2a42e2b16872411d4b2c4bb1eb7df96
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:8bdf0f1a32853837357bf97c5cd28dbc8e45607f753ac486dac6277760429ce6
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:4d5cde87826f49fd7804300ea88222b74e2ca992255eca27224bd0dff8d651bb
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:05bf4981b4294e476a0b3f4dbfec3fa3645f6779a5681ba0dea532bdbf67a9ad
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:e9091720783a7ed25fee7aca0aadad18f1b309f66d593a3e5e8e74ed1309463e
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpua100_sm80_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:3a3936e908d2d7b3026b12dc41c3b322b2066290dd8e7d83c35d5ae624fa907f
-- id: 1c5afc6f2e6ef1592f2a24efa7af4edf4f511a5606a7bb104884cf3679bfeb4a
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c9226218eb45a7b58acf737ee9614c1a193933b67257cf05a2f7c87c1e83fa62
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:d9de0127796ed4c125e73e618c0ba77d234a00203fffd41846a8b5b168d31dc8
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:784d2c23a63a16d426eba69256f6011b03ff18cda42b80ddaea0ecfc0b099c91
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:da5036d40e82e43f86ab597f433b7e3f9e6dfd660e0d31f0ec5aafe068b99368
+  workspace_hash: 7ddcaa1b8bccb44f09131a27f65fb83c2c3dd59251ea3f58e21724a9759de952
+- id: 1ddc2cff848b43fdc285af283cf9dd85fe0d5557d22fdd56db8cf80edc1796de
   tags:
-    feat_lora: 'False'
-    gpu: gb200
-    gpu_device: 2941:10de
-    nim_workspace_hash_v1: ebcf1af96d333d580a14dbefb7a28884af1fb4cafc352ca2dcb1c7eff943161f
-    number_of_gpus: '1'
-    pp: '1'
-    precision: fp16
-    profile: trt
-    sm: '100'
-    tp: '1'
-    v: '1'
-  workspace:
-    files:
-      boltz1_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=boltz1_conf.ckpt
-        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
-      boltz2_aff.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=boltz2_aff.ckpt
-        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
-      boltz2_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=boltz2_conf.ckpt
-        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
-      ccd.pkl:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=ccd.pkl
-        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
-      checksums.blake3:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=checksums.blake3
-        checksum: blake3:34ee503f5dbc2ef326d204e8c733db2a13da0396cddc2d8dc31163c86c434a32
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:c182edc45a43d77519953ea5228a5bc6b437e73ff04cb270e86c5582ada34793
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:899ab7636d30b0722fd718c5645a698a3074b0c5e33587e3a163b9f6013db3f1
-      metadata.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=metadata.json
-        checksum: blake3:77471776de96a8aeb39009083844c529b2e9d4d01ecbfc1eabcd0c1fcd493851
-      mols.tar:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=mols.tar
-        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:9fa5654e454af53e74187ae88082bedf912c23726657e7d26a25525250d54d5d
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:7ce255ed1399e5442a04670732e5f070f56c548ce1125c31ce72740a5d7aaf8b
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:4d5cde87826f49fd7804300ea88222b74e2ca992255eca27224bd0dff8d651bb
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:16fceca44ca1f95f63f86b69bd1bd25528f8b3ceda8e66ed6f0e02cb66cb5260
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:e9091720783a7ed25fee7aca0aadad18f1b309f66d593a3e5e8e74ed1309463e
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpugb200_sm100_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:87340cd8aa45ef39657bc4ece161cb7da20e9be2ae12bdd12f807d26ebabb5d2
-- id: 1fcc0d78195c6466ba82beb6183f80fce8c81cbfab43603bea5deb5f68c74214
-  tags:
-    feat_lora: 'False'
-    gpu: b200
-    gpu_device: 2901:10de
-    nim_workspace_hash_v1: 9901047dd870ab843676bda8c9c29f7c7321dca0fbebe85784c2137c1f980996
-    number_of_gpus: '1'
-    pp: '1'
-    precision: fp16
-    profile: trt
-    sm: '100'
-    tp: '1'
-    v: '1'
-  workspace:
-    files:
-      boltz1_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=boltz1_conf.ckpt
-        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
-      boltz2_aff.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=boltz2_aff.ckpt
-        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
-      boltz2_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=boltz2_conf.ckpt
-        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
-      ccd.pkl:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=ccd.pkl
-        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
-      checksums.blake3:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=checksums.blake3
-        checksum: blake3:acd27690285c0782603770b97211b39743e273528732f885b3ab48484ebaea8a
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:f7f70c9e71045a1ff6407fc358ca48e0ab0a24d4164d46c82976d420e1a6c801
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:c4c47aa3ea819bbe21c5a7f438123d4b7a63bc7127703e0ea249c7a1a573a4ce
-      metadata.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=metadata.json
-        checksum: blake3:87cdb109c5458da6b5aad790c7d0456975e18b8b7172025ace20d6bd8e672bf3
-      mols.tar:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=mols.tar
-        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:eb153b6d7733ce31df5450575bed5da7eee7c1cb80c0d3a0066c4235b1a7b3e3
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:23d9b887ec4ca47c27328437bcc4acefd24837fe5c8df38209b4cffb984a8fa9
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:4d5cde87826f49fd7804300ea88222b74e2ca992255eca27224bd0dff8d651bb
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:c70d8ae3a8a9529a01e918b6e382901b2f5c6185f33f3cf457a5afa8138240c5
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:e9091720783a7ed25fee7aca0aadad18f1b309f66d593a3e5e8e74ed1309463e
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpub200_sm100_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:44426b33bea6f99aed69c49093b945e7f48cb7198afc5ad99d827d98eddc496f
-- id: 2eddbb2d985d6909e9d91582a5f8c04e36779c44097e3704712e70f3fe1066bf
-  tags:
-    feat_lora: 'False'
-    gpu: rtx6000_ada
-    gpu_device: 26b1:10de
-    nim_workspace_hash_v1: 7d0903d764248f6ffcc9d6a5bbf7badaceb3b71445c3729104c23827032f26bb
-    number_of_gpus: '1'
-    pp: '1'
-    precision: fp16
-    profile: trt
-    sm: '86'
-    tp: '1'
-    v: '1'
-  workspace:
-    files:
-      boltz1_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=boltz1_conf.ckpt
-        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
-      boltz2_aff.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=boltz2_aff.ckpt
-        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
-      boltz2_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=boltz2_conf.ckpt
-        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
-      ccd.pkl:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=ccd.pkl
-        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
-      checksums.blake3:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=checksums.blake3
-        checksum: blake3:e0f17768087b922ffbfb58cca4f91cb5f33f49ecf36fe950c973c8945e450be1
-      confidence_pairformer_1_1_bfloat16_4_1536_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=confidence_pairformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:16a2c9bdd0ae8a8a8845bb344834d21d3626af27cc7d380905c0e0d8e5e55ddd
-      confidence_pairformer_1_1_bfloat16_4_1536_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=confidence_pairformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:fa120cb4ec7390662ba31ea9090ab5bceda8f251fff4fc5d4cf821bb4abff0c9
-      confidence_pairformer_1_1_bfloat16_4_1536_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=confidence_pairformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:16a2c9bdd0ae8a8a8845bb344834d21d3626af27cc7d380905c0e0d8e5e55ddd
-      confidence_pairformer_1_1_bfloat16_4_1536_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=confidence_pairformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:2a1a23ad3125f59ce73e121f974a3b61b7c5ba125a4964531584a9aa93fa515c
-      metadata.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=metadata.json
-        checksum: blake3:77ab4bd5a28f79ac95b0842e9e41bde6af35baf5863e41214069ad71d4d4d4cb
-      mols.tar:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=mols.tar
-        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
-      structure_pairformer_1_1_bfloat16_4_1536_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=structure_pairformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:43b4888a91cda3797731227d3b82c2d0713f7cc51ca877693f9148c9c68d7e41
-      structure_pairformer_1_1_bfloat16_4_1536_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=structure_pairformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:102b9dbd097b0e9ee6b28265c25c2d8f2dac8f53fb5d62da9b5df35197063e2d
-      structure_pairformer_1_1_bfloat16_4_1536_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=structure_pairformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:43b4888a91cda3797731227d3b82c2d0713f7cc51ca877693f9148c9c68d7e41
-      structure_pairformer_1_1_bfloat16_4_1536_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=structure_pairformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:3b96c22a8bc0569ebe43dfbbfba6f3ca36d6b7f7a90036167b8aa569d5845555
-      token_transformer_1_1_bfloat16_4_1536_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=token_transformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:4939844357fe79fa6bf155fe66ecc92bb403b871dc22d1068235daa132d4102e
-      token_transformer_1_1_bfloat16_4_1536_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=token_transformer_1_1_bfloat16_4_1536_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:e461c3b337443d98bec81c3aac03e0bb063381a273b3f3381360a3ace4746f12
-      token_transformer_1_1_bfloat16_4_1536_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=token_transformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:dfb15a2e1dc3d5522c13238ca059ef311df3cdf0528528071434e649e848317b
-      token_transformer_1_1_bfloat16_4_1536_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpurtx6000_ada_sm86_v1?file=token_transformer_1_1_bfloat16_4_1536_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:5975d9ca6e6160578be754f1dc55e0ed7321ae6ca58f3c014336ef78cb7d5b3f
-- id: 674fafc1b8b3beb4e4e7b79118411a46ba6309559a00fa1ead02c5a403c6c404
-  tags:
-    nim_workspace_hash_v1: c576cb2882419f4be3858b09e23160699385612cc33f588cbdecee94cbc00c6c
-  workspace:
-    files:
-      boltz1_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0?file=boltz1_conf.ckpt
-        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
-      boltz2_aff.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0?file=boltz2_aff.ckpt
-        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
-      boltz2_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0?file=boltz2_conf.ckpt
-        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
-      ccd.pkl:
-        uri: ngc://nim/mit/boltz2:1.5.0?file=ccd.pkl
-        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
-      mols.tar:
-        uri: ngc://nim/mit/boltz2:1.5.0?file=mols.tar
-        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
-- id: 8385df99ec377150a55402efd25aadcb885707ff70ab0eee638dae2d88be1887
-  tags:
-    feat_lora: 'False'
-    gpu: dgx_spark
+    backend: trt
+    compute_capability: '12.1'
+    feat_lora: 'false'
+    gpu: NVIDIA-GB10
     gpu_device: 2e12:10de
-    nim_workspace_hash_v1: 339fb87cbc291bbcf347ec62e2cfc9ec7cfcc3ef7185a1e2f348ce0043586e8b
-    number_of_gpus: '1'
     pp: '1'
-    precision: fp16
-    profile: trt
-    sm: '121'
+    precision: bf16
     tp: '1'
-    v: '1'
+    v: 1.8.0
   workspace:
     files:
       boltz1_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=boltz1_conf.ckpt
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=boltz1_conf.ckpt
         checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
       boltz2_aff.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=boltz2_aff.ckpt
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=boltz2_aff.ckpt
         checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
       boltz2_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=boltz2_conf.ckpt
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=boltz2_conf.ckpt
         checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
       ccd.pkl:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=ccd.pkl
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=ccd.pkl
         checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
       checksums.blake3:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=checksums.blake3
-        checksum: blake3:ec5d288be45155acd1f988305564deec2b207683a4cbf16a4c96aaff77e492e6
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:53dc9818e0abbb070afe2bd84a395dc22f37760225b12b3281018a916f6de2ff
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:5f65cab5f9af8b3cc0de9a694435eee836a15e8fe3ed8f5f2f16e259bc19d5be
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=checksums.blake3
+        checksum: blake3:dcaa2b4461c50081961d0a862d4a208e6dc85b340853f49d713f640612a28b1c
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:09b8d2aebe753854c1940d592a50835cbb4a5429f83fa872554bd161731dab38
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:78f57057c6a8b4f5003266d9a22807f2d519e3a93d21d64e09de2f514f98eeb4
       metadata.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=metadata.json
-        checksum: blake3:b7ed9375469d042dd3de59663c46a6bb7f62a73a114a58c2e2b8721651ad2f3f
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=metadata.json
+        checksum: blake3:b18e84192fcb0cbb7a47f6fb7b1cc2ac1decab3f789749aecb52f46919338064
       mols.tar:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=mols.tar
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=mols.tar
         checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:08beef1199fb08c5e23ff60c9e6db58e1586805a666c4b9173f7313013f6f886
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:79079afe48922990d5bb999ab3a2bb4334e71d62f7243f2628962724b1fd1067
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:4d5cde87826f49fd7804300ea88222b74e2ca992255eca27224bd0dff8d651bb
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:b9b12f7b1140a5da68ade8f34be6bbec39f3dafa0473c0dc62a06b2bb13de517
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:e9091720783a7ed25fee7aca0aadad18f1b309f66d593a3e5e8e74ed1309463e
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpudgx_spark_sm121_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:f861665870a47a78ea04669eaa6cc47ce9c8dc9c8700090dc51546975a431deb
-- id: ce6d7e7af727534e635b4a958deebe86d0549302404034687271e9b83a5067d1
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:e12f0880044f7ab4bd231b4c3ef886d5523c848720fddd43d893f5e662aa6ab5
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:b797400a1819aa970f0a0886d5d62d0015779aa10b6e7f9ef7a07faeadcdf8a8
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:f1ed03e725bb7ddc9fb2b585c409b6164b1cb8739227356c6ce30e3bd260ed4b
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:ba36fa483c3e7f6b4956960849320e1172b58b214eafcdcc6fe734c64e616e4f
+  workspace_hash: 211f46aa4dc8b2df8a74989ce25190532b539a903cb3ba737598b76b8a875a35
+- id: 28926708ac9dc38b320b8ec7f4787a09b30ed4f997d2800de68bbdcbd94b4064
   tags:
-    feat_lora: 'False'
-    gpu: h100
-    gpu_device: 2330:10de
-    nim_workspace_hash_v1: 3f4287e2c0610000615510136bf1f19ad652ac0654f9d9acce324bbe041237e9
-    number_of_gpus: '1'
+    backend: trt
+    compute_capability: '10.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-B200
+    gpu_device: 2901:10de
     pp: '1'
-    precision: fp16
-    profile: trt
-    sm: '90'
+    precision: bf16
     tp: '1'
-    v: '1'
+    v: 1.8.0
   workspace:
     files:
       boltz1_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=boltz1_conf.ckpt
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=boltz1_conf.ckpt
         checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
       boltz2_aff.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=boltz2_aff.ckpt
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=boltz2_aff.ckpt
         checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
       boltz2_conf.ckpt:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=boltz2_conf.ckpt
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=boltz2_conf.ckpt
         checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
       ccd.pkl:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=ccd.pkl
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=ccd.pkl
         checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
       checksums.blake3:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=checksums.blake3
-        checksum: blake3:08018bfd0735d41347904d1dd9ac51453254f989d1f19f696057848d323720f2
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:30e40119a34f33997ed71152e253c8018a0f2e21c91d0606341cdf738f8b3454
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:21c3eb2466cccc7a5fc8c2d8ebf41b6439f9d34106898bcb1df99d3efa120c5e
-      confidence_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=confidence_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:5f20811a88213ed2c96616ce775988cf26773d109186b465e41a893894ecf780
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=checksums.blake3
+        checksum: blake3:746f8757e182846ed7a3b1e6ea7983e19dbbc37cb321854a28bb9e4513da0fcd
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:fff1c38e4f964a2fc2dcedb86264ec738ef8e0fc9f63dafaa907854c6ba463c6
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:6bb1b4ce5d6ae6054c8947f5fa35f448c8b6625f31c3f95bd1459a513a4b0b4b
       metadata.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=metadata.json
-        checksum: blake3:a378759289ffdbea2a409971cde0360f7c53d993d438f551f46d0162eb746ed2
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=metadata.json
+        checksum: blake3:e583ed0a568832d2bdbf01829ae5c28d00b489339684cfaa36f14ac2a5634f5a
       mols.tar:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=mols.tar
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=mols.tar
         checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=structure_pairformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:06683e93a04ffd5224319802b0316ecbc9db5f5d45428b717b36c0c3205577ec
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:93a0c2e7e0f572575156065847a664498129c5077d778267d716538ed0db7970
-      structure_pairformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=structure_pairformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:9e973a35479417f2cac8366eb5a23e6849513d1e7d56325ff78a0149c3d25b89
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:4d5cde87826f49fd7804300ea88222b74e2ca992255eca27224bd0dff8d651bb
-      token_transformer_1_1_bfloat16_4_2048_affinity_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=token_transformer_1_1_bfloat16_4_2048_affinity_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:b98cd87a7ef753d4384b6c0a3cb35f3974337a5c895d5cba7f645c60629b25d9
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/config.json:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Fconfig.json
-        checksum: blake3:e9091720783a7ed25fee7aca0aadad18f1b309f66d593a3e5e8e74ed1309463e
-      token_transformer_1_1_bfloat16_4_2048_engines/trt/rank0.engine:
-        uri: ngc://nim/mit/boltz2:1.5.0-gpuh100_sm90_v1?file=token_transformer_1_1_bfloat16_4_2048_engines%2Ftrt%2Frank0.engine
-        checksum: blake3:b923936b5d7a35273b714f166042bb1481e63ce6216a3b6fd6609015225d96bb
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c1d6a445d08a6d7dab9e8cac14f605b2c6ec64b020ebf9d01be407ad6151da44
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:ff22734c385bfeb96518066d3203b3bd5e60c50a244b412cfd4dafe2eb3abcce
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:d5069f08672d129f24ac76ba27d523f630e49b267d235cfbb2a2a1729cea671c
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-b200-13d48f06?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:638e8cb0e75039d8ea8d5a070286059d849317311bb68379314f9be97152a939
+  workspace_hash: 8da6735d76d769f5ecb553dcfdecd87a202a2303149d3b9c9c8cceae6907cfe3
+- id: 391c862b93968333259743142ea2ddab5a9fe0a82e359d5a4099d2aeb61ab145
+  tags:
+    backend: trt
+    compute_capability: '10.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-GB200
+    gpu_device: 2941:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=checksums.blake3
+        checksum: blake3:ddb8b7dad30fef1db858b3f063c3c66a9a696d339469199f8a8835d02d17c3a0
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:a8785605a45d16f325d7abbd8268f24d11d458afb96f3f5a622d67b073bae81a
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:0dceed2ed51f659e4a30b2c81afa7e653913d03127222d3cca9c8c77687284b7
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=metadata.json
+        checksum: blake3:40d633d6b049a463099b27fbf3e82e34d92e47a0f7c6edce759a4988272ceb0f
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:ad9b244045b9f1fc42d9559537b4e27d702c1c85d10a1ce0cfb17e354c35cbcc
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c4114e9e1777fa16306d30aae24feeacc7c9f4805af558cf0548f8e49bfef71f
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:e15fe1b4de51032d1ec7dc15f87e2c4e2e17207269e131e14ea80bd3979a2a6e
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:076efe88f380254f3a128ba4fd60268d3c174803dd07c2c452a180de1b33c21a
+  workspace_hash: 4aa9da939aa7ab10ed76b2c01b4a7ca3d31cbc0405279759ea4edbdd066dbafd
+- id: 54ad034e2adac67fb8d5508711ff1e23fc100a3f73789924bcebbcd273ee65ed
+  tags:
+    backend: trt
+    compute_capability: '8.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-A100-SXM4-80GB
+    gpu_device: 20b2:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=checksums.blake3
+        checksum: blake3:1c46a6182562089381ce9d3f710ebafc54392ec287bf816cbbaa6c22eb3838f1
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:f0c7d4737a8d5e239c6fb9220f800d4cd8ceb248fa81f56d7190b00969fb9dbd
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:fe152097fbb7e343ad86aed5af9cd292deb258587f51774c19c734513a74db4c
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=metadata.json
+        checksum: blake3:5efe152c4382b97dd57f6239f3c15eb03cc8f424a9eaf606b4e463b4ab411ec3
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:82f54bd501ae0d1245ae44c5c01f760f96701081c0c62f63041e19d196d2c5d7
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:55c95142048a9794af15f10815ec69b8298d60d33527ca50b347e9d9f69ea357
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:b16d0af705246842a8995f94a5891fcc7af7c9d69f822405c9ca114d7375a0d1
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_80gb-329dc8c2?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:260cfa5070e9364ed4e50ffb18e08f0774c00e4a35b3ac05620c5db64c10b9ac
+  workspace_hash: a08c53294327a80f46412ebacb96ca65de73f181258870cb7bcf96ea5596365b
+- id: 552db7646ab5f0864d9256b4f084986c616d04e04b1da2d1c91b30bb37b73b36
+  tags:
+    backend: trt
+    compute_capability: '12.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-RTX-PRO-6000-Blackwell-Workstation-Edition
+    gpu_device: 2bb1:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=checksums.blake3
+        checksum: blake3:a4bf987130952131e4171489fc8440ecdaaa3053ae11bed998f58e5bc126f35c
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:76361244a6ab92eabb85257c1cb65e017a5a5c8f4430c766c2cbf220d178ca8e
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:cfa2279590c767f081072e981681238ee840a243b4a4da040be368c9ecd387a4
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=metadata.json
+        checksum: blake3:7e8e4ab798ca6a73761be609604f7ba43644bb8d0ce75a6e7b43acc08998f27f
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:d7afe03c71ddeafcc76519271812ee1089c4056d77b0037ac7f742b9b906c5f6
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:839530bd665216f030f517d60e28f7da44a14b3f4c2dcbc0e152c7d6284c0098
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:da03229472c4fb84fca7f0a75b64c2cf4aa035ab715c00c3a00a757ef73ad312
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_12_0-trt-bf16-rtx_pro_6000_blackwell_workstation_edition-9c5de0bd?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:87736d8e7cf5ac08377641250eab41a6baead66fd29799d40cf5c7eaaac43220
+  workspace_hash: 6d4b65a3f896eccf3d37f6fbb801a064b13e81d477dec2736a8fba9ff1252029
+- id: 663c57b98a8226cacb4881c2bb8a72811d629f17c45ccabe16b6673b44451696
+  tags:
+    backend: trt
+    compute_capability: '8.9'
+    feat_lora: 'false'
+    gpu: NVIDIA-L40S
+    gpu_device: 26b9:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=checksums.blake3
+        checksum: blake3:dd705855b9c1e29919284ecc11b6a1253ac421730ad122dc7e16a1ce270d362a
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:2c7a18a063c6cdf02eb75ac6c5b4f3335064a0d8867b5483ef6521c58886eda2
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:fc7e84172f5f42683def9835d2a5fe37de85ea98061ab58f1c537ca2fcf9113b
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=metadata.json
+        checksum: blake3:5daa798d38b6fa65a4c5ad93aac8549bc99a214f1ba841a1bb42c89e43190964
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:82539ca6b00cab4f09205f31a1276fd497543ed28b3c5dc1c94139b476644ed3
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:ec4c873d5fec274016fe191c33f1aadd272c65e761deadc1d27d717833e7b733
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:b27dd9fe8495221e2cd78c82d8654e17ef30a127c11c15b67339767d48d6855f
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-l40s-29537a76?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:d2535bce2c5b3fda12a966bc83f57ff59b1757f7d3ae2dc3784c9259021d1fbc
+  workspace_hash: 3b58f37f1689359f851f142f006195ff80ec1a43b7dd4eb4d43e5fd74a5f8815
+- id: 6831f639c517683e052aa903758bb5bb446e19038797b1afc165032ebd099423
+  tags:
+    backend: trt
+    compute_capability: '9.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-H200-NVL
+    gpu_device: 233b:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=checksums.blake3
+        checksum: blake3:546e7f6c568f3a404d68cae5b625b46bb16d9c7f6574d96c92457d2f3366de79
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:b2f1fff837752b75f774b9195f58d3378ba996c8dfddf117b60ed5196d832217
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:58e5a67d9d91070bed471023918c614ade9ad577d295c2649ab13afd50e70c0b
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=metadata.json
+        checksum: blake3:24b7020e3ac08b33945ba81515094b8f4ac9b97f098e02f1935925a8041fc4b8
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:be933c257a674fb099050de7aaeb3c63ff22ed4c1939792856e78b313a6483c7
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:5881d3b5833b7b55b102df9779c6bc9b5239de46ee146e550b5d1d80fd805d55
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:8b522421096f98d766e0c8c24a850539d23c09b97da97f8b33ca7b0324703bfa
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:4d629f4e9f1e4c07672f9cf7a51b049aefc6743fa8cb9ee47d382711b0d6627f
+  workspace_hash: 69e5127952ca0fe01f3dd4117046861c724efef03e7d02b6db41251ef17d126c
+- id: 7dc78ccac59e58eef4e401066c8e8f90dcef358d3c7930effce7bbca1c1bd32e
+  tags:
+    backend: trt
+    compute_capability: '9.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-H100-80GB-HBM3
+    gpu_device: 2330:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=checksums.blake3
+        checksum: blake3:531f5604ff9acb8bb5ea46307ab67dd937dc5f825d5ac64d8d6d4eb9068c806c
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c453fb54d1d718d91267916e5415dcb8445ee0f69c918943e8155313a741d9c4
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:fa115500286c2ce38800e5b7880e4e7bedb35a652fec8ef87fc5fcb006dbcc7d
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=metadata.json
+        checksum: blake3:c30b230d49b7233700d2c21f679661fef25413bc2b30bdd68adaf241307b231a
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:7ea47462df6faf8c656bc2e8389ffd08845a37be7ef3f7448230d23b5fb8ddc6
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:7624de88c53f5cb09d6f374ce938e02310daa7bf15f52e2c493ced3cfc3c84fd
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c16f5c816efc0f0c6b4b9f627238e749ca8a6345b072b74f99d7dec23465be0b
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:e1334ea4cd60df87cec95a47b8048d8d5bb6fd4fd7aeded51b875d4abea34f41
+  workspace_hash: e192fe126fce312211867c0b6b91df5c54f98fbe42b66727785cb75d8535b801
+- id: 8c0b2b13fd9cae5f637c3b7cdf6746aa0e964a41a91408958cc6c9613e425ba3
+  tags:
+    backend: trt
+    compute_capability: '8.9'
+    feat_lora: 'false'
+    gpu: NVIDIA-RTX-6000-Ada-Generation
+    gpu_device: 26b1:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=checksums.blake3
+        checksum: blake3:8ceb83c57a31b6ef86ea422bf240537c547869a884630de8282c7f24bf8f1bcf
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c3ad0be68689cb60b46caa7f20bd9f47e865f85182ea28c139565e936881f888
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:552cd5c06897bac78703616fcdb0f2df6c88ed810017499c56d70f0d8f9a0a54
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=metadata.json
+        checksum: blake3:5be10140a3da71a13c54855bc2f83fab2e7a7b2edd3c673a8c14e83c8dcdb61d
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:8a8a356bc6262d472c4adfc2a1fcc44800d6165e6d97ac500848d5dfc95d410d
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:5d50b2f010d3d24acedd5be410f2e38c8c269072575ebd06a39d04ff7aa13f99
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:29ad950dd3765655454cb544f2ee0fabe731f47af5a9c450cff1d1b39efae5bc
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:405f6fd5920f44177fad452348748af93cd3bd7ce84d4f6cf6395646b2ac5c0d
+  workspace_hash: 32d1a9e6f0e6d75579aa4bad87c9612cc836cfc9fe31bf6bf00617a862821bf6
+- id: 93fcd97900276edc27ce2da631f0bd128fb91109c54a7fc94143750f82020631
+  tags:
+    backend: trt
+    compute_capability: '8.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-A100-PCIE-40GB
+    gpu_device: 20f1:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=checksums.blake3
+        checksum: blake3:2cc50371623248e544a8d2b9c46180e302da942ebded83e938fcde44b88345c8
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:a5eae7a62a8c74c25fb2656d9e22c1ba34f92abdc67b562d13029089220ddaa0
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:a228f5a2288ab1c9b5c748ac13c89604fb713fed1fe9c25eedfdd6a1ded8271b
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=metadata.json
+        checksum: blake3:0e0ddf3650cf382cd9368ea1c0da3e0c847fcce65de419030bb839f3381c7ecd
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:f64f3dca281ab99cd03988f38b9f8cb680ca19ab1cd4f9912839ef363b48371a
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:f24065bdafe6b398ad4f6cf0c50ea3ee841f49784f6478aa983b4f01ee4dd7bf
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:37ef56c8300660bba546f112b592e64e66b29979011b8ae7a255e1d2716adc92
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_pcie_40gb-255087c4?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:bc21a0dc33adfc90643db6661c369627ef6cf039a50652b66e4462bc0f3adeb9
+  workspace_hash: 59749232b105e5cff9bcb317e6bc1d1651aa659bf2f825c7e89fb9ccc091ebb5
+- id: 97033c7c92b8a99c9c95d9becaf43d4ba2b5c075ccede6b1d52db0a72c6156c8
+  tags:
+    backend: trt
+    compute_capability: '9.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-H100-PCIe
+    gpu_device: 2331:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=checksums.blake3
+        checksum: blake3:6a01d9ff201dd42b35a63808f507214fca2dc955ce057ace5b4f8924d808d0f0
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:7f9193cb91f99fc477781ef8203f090e5e501745ae3c72c9cfb8c55bd7c5b5c8
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:6884770337e5a1d8ce23806ce7c5ac8a361526f867916e8d5d28c5b13f2ce705
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=metadata.json
+        checksum: blake3:49407467d3ef4f23667c601157e819148ea0aab3ee46b70e163e4d4130cc5866
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:806d11ef5a7e800e24c30fc16b9b506f7aad3eb92d7c98aca1ecee7559389317
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:ade8e3d18452ac0dc50f043301963ccaba895e7dcabed1485c49a722d8675948
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c6d482dfc0953f4b3f387725e9b06b7cd3775e26327e3c131999775e38f21116
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:82f33310a6623bd93ce04ff39934ff34df1155b0aa3dad5b916b173a42cd5366
+  workspace_hash: 421d28ba062988d72e253e6f48072d655d840364f0b77530495e0ad75a3ba2c3
+- id: a471c399e4fda3402ce187cd189266996465d8881635d27d823d286434c90147
+  tags:
+    backend: trt
+    compute_capability: '10.3'
+    feat_lora: 'false'
+    gpu: NVIDIA-B300-SXM6-AC
+    gpu_device: 3182:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=checksums.blake3
+        checksum: blake3:60b649dff0c8362cea8bc8cbf7b1c44813ee9587fb3367a1f59594d04e73b880
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:4aeebf32b06a115f7a0d5ee9dc2cd026d09efc1d52f181500dc31f5634cb0b98
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:71e83aeec855bf66a5c458be96a3ef8286cfbaf5e90935cce798d5223efa9119
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=metadata.json
+        checksum: blake3:70ad9c5604dbd430eec560a2c5eca65842bb33323b838bc1c34cf688c51f863d
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:863937febfcdc27190ff9db0d03dd09a03286faf0909c3b5d68af7d39d4d58e2
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:2661ab57e07d15c0597378efc094bc0a55208df5755611e8de6ff3adc6f73de9
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:53cd2ca9769a335a9510771e1250ab70a2d62be5cccd792ac1c997420159d971
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:1ea2b20068ff20ae9f131a10912f5b499ba49c6d1417e2cbcfd3ea9845b1c380
+  workspace_hash: 96fa9a588630ff805db78d21b921ebc586a4feba7e1ce921b6dc51301e406497
+- id: afdfb1ecb61a699cbbbd4233510a5137170de4a0ec7a5b74c382dac0f2dd58a3
+  tags:
+    backend: trt
+    compute_capability: '9.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-H100-NVL
+    gpu_device: 2321:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=checksums.blake3
+        checksum: blake3:ec44f232e7d2f82f8586ce579dbdea024a8b3150649f217663af8383f057a919
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:ab224da06b626948fec87676de0d7dece5ce3e98ad7d74f8a7e241a28eea5965
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:4f0e36e0333cd6d03dc20da083a167a0fea0e0a4393a2c9f088ecd19bcec9fe7
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=metadata.json
+        checksum: blake3:08c1199ea455ffd4d95b0a647ae6176c23ed508f56cdfc16f99eeb06cd1610bc
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:dc4101d1ce0feae0ee620440336aab086e601ef28c17710ec8bca30918f4e23d
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:e3ce77ab487e6b569f560e6b6b560c46196cf6ebfc5d97df4b44b6d2c4094f4e
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:335fd97fc40c7ced2289e27316e340b590f5efa6dde61941d79ae2abc1cb7df9
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:95366d5c3f8df600452a4d3bce8be480a12be9f6eaf2d84a0b7fe9bc1c1c5d7c
+  workspace_hash: 7a9db9d0a8559c2674dbcffedfd41960b74658fb39a7a20d3b0683826b4e4a26
+- id: c10ce4ae9753a525ce6b195d24f8c0c58ea5459dd4379975079cc31b11f3f3fa
+  tags:
+    backend: trt
+    compute_capability: '8.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-A100-80GB-PCIe
+    gpu_device: 20b5:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=checksums.blake3
+        checksum: blake3:9e7cb0d8e9950151aa4252e28f902f2d8bfe4ba799ff681410e207e18f3a3574
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:9a35e8b18a758c4d11b745a6a8ef3797cfb354a69fc71c0565ba66caff6559df
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:b88e85a8ff95a318ec0140e72528ff8c0e46ca74af5f8c9121c3e10772d56bbd
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=metadata.json
+        checksum: blake3:2e190bc6a639ee85db8efa2818c7c2e754e7d861304f7a8eae832bcb61ae77e2
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:3efbc016e6d8aea365bac0e12286b17a1441b77295234686e332720e61904890
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:4fea51fc75b73a09b39572f15f14bed93bcd116adc2565deef7a50458dbac038
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:742ab8626270d724737bcccb6713919229281f069bdc5a9a2ff8cd7d5d07e355
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:trt-bf16-a100_80gb_pcie-a1044686?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:d8172b9f2847a81a5c90a4c517c19486dbc5e635beff7399e8be51ff1da13c89
+  workspace_hash: dc235c50a7b5e1498856827c724fa3e6c2f74675bde69a0ee4461dcb08dd02e5
+- id: c4a40b29300b31a5f9d56dca66a56891047a9d669fa1983ed1b521c5ccf9c6e9
+  tags:
+    backend: trt
+    compute_capability: '8.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-A100-SXM4-40GB
+    gpu_device: 20b0:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=checksums.blake3
+        checksum: blake3:bd82cde2200cf0c03a1f26e2cb1fc6d60597c078ea06ef5215a5779b00a6ab59
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:0d92df23e021012bcb13b43e5022af332eae68fb210158aa5d7930803e5308a2
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:425b2410b51e150cffcf5507834597598738cd93ff805ef0c3bffbdb09ea1654
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=metadata.json
+        checksum: blake3:576146b2257e1022709bd10a6b10501c9fb6ac49e07805e45bc4c0d3f842bc8e
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:181fc163f61db19b8246741c2f7d292ccba3e014fac193b9b27ce87e19dabc34
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:e86a8a0d5befa16a781775d58dc9d83ffe071908e473912af86be7e2fc6423a7
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:afa8288f65485445070c8e028b4519223239ac7b2d5b895fb9a2e4b82090bfdd
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_8_0-trt-bf16-a100_sxm4_40gb-3d497287?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:97cfc2ee5165bfb7f1252211a8dcb6f98847a88f4ee70cadea5868bf849e2827
+  workspace_hash: 77c5826c448bbf4a2912868e0f19f4b5367ea6ddfb83b442bddf4c66067e1ade
+- id: c674d5915db1ffe0b893677ef9c034d9df7ea05435052c43291e474d8877cb6d
+  tags:
+    backend: trt
+    compute_capability: '9.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-GH200-480GB
+    gpu_device: 2342:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=checksums.blake3
+        checksum: blake3:39152967a4e7513a271fa36152320e73f5695c76114bf9beaaa006a96e3bb5ea
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:237acbb16ce91b89fbd63662087d1a2428c496d8f5e166ddbea667d19e7cb207
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:3ec1eaad9c212e572106908cb9df993cbd863764e2c6af26c9ea3c9fa7ef36a7
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=metadata.json
+        checksum: blake3:b488bf2c08b3901a6cc56bc7fe71550a8d644bb1c2956270645b75e0b1de6be2
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:945c110722adf66b2b3a832bbfbdc6dce83253f6af5c47ca5333e1de433b07e1
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:98e5db1177f8ce17e72ad0a88214785c8bc1730e976b7e451e1ae2901df422e6
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:d1ad565bc07ce0912496538b8b051419f9cc8126c710a1c159423f7ffd935f90
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:21fb0f16630b828667977ce7758216a5a4042bfcd476945be7b92f171312ae40
+  workspace_hash: dc4020113ffae0381293f8c40ec3816e4d15d69d921b72399444524016814cdf
+- id: c79b090925ba0756689b82c733f709a505a1d40b5b123ed0113254a3039dac3e
+  tags:
+    backend: trt
+    compute_capability: '9.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-GH200-144G-HBM3e
+    gpu_device: 2348:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=checksums.blake3
+        checksum: blake3:a8f8b4de4664f395059d411298e9bdd666e199c59aca2f7635160538b74891cb
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:1ab770fbe062aaac404a5737a9294a7b824c6a0d40207f2bc09e4414aee290f9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:ba662775aa4857b8d7e0a9c1ea9e922ee7b5922c63163d30c4cc4babee659efa
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=metadata.json
+        checksum: blake3:ccbdf926e3762d6d5f3c400f22958236fcd9ecbdad9bc8269110496f605a1b14
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c7f01f29a38ba78140f1bed2055940ce1987bee43f8c3b4a9ddcfdce7156d087
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c71ba041631854b7467a4275c5aa98733d74bbb031cc9db626e3c644c3f58676
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:28c7b207c1dc35cb9b5a03761a714aad90c12e06f639bda8ed09a034f83c09f4
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:b07c1be477ca39fc206353fcaf6e05a9cc6ed6134fdb2f003d95271394fe8b32
+  workspace_hash: 342915b54442569bac0c57930d48a562336534697b273f1724bd02c493393b74
+- id: e8f54bc1286237ecce8b219882622dd6b689ceab8949c7663c5e58003f4d8ad5
+  tags:
+    backend: trt
+    compute_capability: '9.0'
+    feat_lora: 'false'
+    gpu: NVIDIA-H200
+    gpu_device: 2335:10de
+    pp: '1'
+    precision: bf16
+    tp: '1'
+    v: 1.8.0
+  workspace:
+    files:
+      boltz1_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=boltz1_conf.ckpt
+        checksum: blake3:4ee73719319c0bf67f360d08d1be235edc0daf35da339e5547bced5993c50391
+      boltz2_aff.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=boltz2_aff.ckpt
+        checksum: blake3:4de999c76f44ce71442f74cc441f01244db73f0c4a25ad222035b21a298c15fd
+      boltz2_conf.ckpt:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=boltz2_conf.ckpt
+        checksum: blake3:c7f05ef616171ce2d8fbfbf154f6c4e400c033abd40babe294a0c3e57a1e3f7b
+      ccd.pkl:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=ccd.pkl
+        checksum: blake3:ce9700224342daf9632f32a61e0d3f8f4eb849007717161be843db9ed1720797
+      checksums.blake3:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=checksums.blake3
+        checksum: blake3:96a3cd6f18566b659db2ac7a981531927d4dd97e7fd403f2e48024dff97fe6c7
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=confidence_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:3f0c5435be6afb34c0fa2f4734da6fab52a2258edbb3657dab8cefcd0129a274
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:b3ac4f0d292b2d8d546aa9f2cc196a1a3fe64171f1f4c7ef011248174a3170d9
+      confidence_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=confidence_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:9fd5d2f6d664eb15733d7e5244cf3cf1b1fa2ff62ae1731c2fec3d1db1cdd455
+      metadata.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=metadata.json
+        checksum: blake3:7b513a8eee0c0beb0e8bb820367e632e511c473a0a642d1e6a566ee3039f332a
+      mols.tar:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=mols.tar
+        checksum: blake3:e581116d462cb50675a418612879635c7049fb53367ba0c6c6aab18a02f1bfbf
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=structure_pairformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:3be5cc117a2885e56f1676602ec6d99a5d28c50bdd71408881b3a6241b4477a5
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:7ab1f1bc7a0673b8a8aa20c1f5b67d54f52d49941556efcb8e57b3cb76964b63
+      structure_pairformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=structure_pairformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:915afff31181c725872cfc9d16a25c23813ff1f2972ae64152b03c5d20446d3d
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:aec5fab5ddba2522ec63d26466b9b5037f3414149a0462336d261320c75f4106
+      token_transformer_1_1_bfloat16_4_768_affinity_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=token_transformer_1_1_bfloat16_4_768_affinity_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:40dcb2c96c14544a79bde7093ae35941a1bdbc7d86af5af55218750aa7676444
+      token_transformer_1_1_bfloat16_4_768_engines/trt/config.json:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Fconfig.json
+        checksum: blake3:536451cfb069a0867d689c654e078827cd7b4f875cd32f26790f8e151fdec2c0
+      token_transformer_1_1_bfloat16_4_768_engines/trt/rank0.engine:
+        uri: ngc://nim/mit/boltz2:cc_9_0-trt-bf16-h200-0deca8cf?file=token_transformer_1_1_bfloat16_4_768_engines%2Ftrt%2Frank0.engine
+        checksum: blake3:c3cc47acb7ef0b9ec8f90d61dd5ec864e81ab0046603f42795cf906e2e374401
+  workspace_hash: 33b29fd6be9581942c311e3092ee42f642c02a510f211aa11878fad8c987b908
