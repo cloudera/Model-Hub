@@ -1,4 +1,4 @@
-registryVersion: 1.18.0
+registryVersion: 1.18.1
 models:
 - category: Language
   certifications:
@@ -1008,6 +1008,362 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-b300-sxm6-ac-tp2
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-B300-SXM6-ACx2 NVFP4
+      ngcMetadata:
+        56027dc087daf0f66b6ddb55b5a6498474698ade5b966b8aa19f5155400ac6dd:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-B300-SXM6-AC
+            llm_engine: vllm
+            min_vram_per_device_gb: '200.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: NVIDIA-B300-SXM6-AC
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-b300-sxm6-ac-tp4__2
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-B300-SXM6-ACx4 NVFP4
+      ngcMetadata:
+        9231daa4c32113df6c3b55de1ca937cae2181eb2532cfbe9c69e6978ab8eaaf6:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-B300-SXM6-AC
+            llm_engine: vllm
+            min_vram_per_device_gb: '90.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: NVIDIA-B300-SXM6-AC
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-b300-sxm6-ac-tp4
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-B300-SXM6-ACx4 NVFP4 Throughput
+      ngcMetadata:
+        5b3441c9d0f55e8b4442537a4294304d5401d3a5542870bda16f3f8e18971878:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-B300-SXM6-AC
+            llm_engine: vllm
+            min_vram_per_device_gb: '90.0'
+            nim_description: agentic, throughput, ITL<20ms
+            nim_json_args: '{"block_size":64,"enable_expert_parallel":true,"enable_prefix_caching":true,"gpu_memory_utilization":0.85,"mamba_cache_mode":"align","mamba_ssm_cache_dtype":"bfloat16","max_num_batched_tokens":32768,"max_num_seqs":64,"prefix_match_unit":64}'
+            pp: '1'
+            precision: nvfp4
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: NVIDIA-B300-SXM6-AC
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-590d0da-nvidia-b300-sxm6-ac-tp8__2
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-B300-SXM6-ACx8 BF16
+      ngcMetadata:
+        ed859e3193b10dca4f8d105ff3f3f1c53261fef2721be32f3c4f031f58f8b166:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-B300-SXM6-AC
+            llm_engine: vllm
+            min_vram_per_device_gb: '139.0'
+            pp: '1'
+            precision: bf16
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-B300-SXM6-AC
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 1045GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-590d0da-nvidia-b300-sxm6-ac-tp8
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-B300-SXM6-ACx8 BF16 LORA
+      ngcMetadata:
+        6e5d16c97ff70966a8dff25d37fa32523dfd59bd1586573fd1500f0446b98081:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'true'
+            gpu: NVIDIA-B300-SXM6-AC
+            llm_engine: vllm
+            min_vram_per_device_gb: '139.0'
+            pp: '1'
+            precision: bf16
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-B300-SXM6-AC
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 1045GB
+      - key: LORA
+        value: 'TRUE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-b300-sxm6-ac-tp8
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-B300-SXM6-ACx8 NVFP4
+      ngcMetadata:
+        f38acdc8e16c79784d4d21ae67ad8690d0b292415a72c11e4a822887e83dc237:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-B300-SXM6-AC
+            llm_engine: vllm
+            min_vram_per_device_gb: '49.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: NVIDIA-B300-SXM6-AC
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-gb200-tp4
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-GB200x4 NVFP4
+      ngcMetadata:
+        350c0b570f0360540eb9df67cd29cff6ec597a5d2e8f1760bb4e80e7cccf225d:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-GB200
+            llm_engine: vllm
+            min_vram_per_device_gb: '90.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: NVIDIA-GB200
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-gb200-tp4__2
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-GB200x4 NVFP4 Throughput
+      ngcMetadata:
+        a953e969777d28fc50e322d31a1bdfaf6aeb1a3cdff63ca3760cf0d424b9a90a:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-GB200
+            llm_engine: vllm
+            min_vram_per_device_gb: '90.0'
+            nim_description: agentic, throughput, ITL<20ms
+            nim_json_args: '{"block_size":64,"enable_expert_parallel":true,"enable_prefix_caching":true,"gpu_memory_utilization":0.85,"mamba_cache_mode":"align","mamba_ssm_cache_dtype":"bfloat16","max_num_batched_tokens":32768,"max_num_seqs":64,"prefix_match_unit":64}'
+            pp: '1'
+            precision: nvfp4
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: NVIDIA-GB200
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-gb300-tp2
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-GB300x2 NVFP4
+      ngcMetadata:
+        28e62091ab9668aaf8f2d4ab3b13c4a053532ccafeddc626543a0700798ccf6e:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-GB300
+            llm_engine: vllm
+            min_vram_per_device_gb: '200.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: NVIDIA-GB300
+      - key: COUNT
+        value: 2
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-gb300-tp4
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-GB300x4 NVFP4
+      ngcMetadata:
+        1b2b81db19e458759ce4ccb9e164867691902c17b05a2c7119ccf984ed17b992:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-GB300
+            llm_engine: vllm
+            min_vram_per_device_gb: '90.0'
+            pp: '1'
+            precision: nvfp4
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: NVIDIA-GB300
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-gb300-tp4__2
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-GB300x4 NVFP4 Throughput
+      ngcMetadata:
+        4466f9f08faedae5362260c2552af473240428fd9bf17d7bbaaf5a535abdde1e:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-GB300
+            llm_engine: vllm
+            min_vram_per_device_gb: '90.0'
+            nim_description: agentic, throughput, ITL<20ms
+            nim_json_args: '{"block_size":64,"enable_expert_parallel":true,"enable_prefix_caching":true,"gpu_memory_utilization":0.85,"mamba_cache_mode":"align","mamba_ssm_cache_dtype":"bfloat16","max_num_batched_tokens":32768,"max_num_seqs":64,"prefix_match_unit":64}'
+            pp: '1'
+            precision: nvfp4
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: NVIDIA-GB300
+      - key: COUNT
+        value: 4
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-h100-80gb-hbm3-tp8
       framework: TensorRT-LLM
       displayName: Nemotron 3 Ultra 550B A55b NVIDIA-H100-80GB-HBM3x8
@@ -1059,6 +1415,67 @@ models:
         value: THROUGHPUT
       - key: GPU
         value: NVIDIA-H100-80GB-HBM3
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-h100-nvl-tp8__2
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-H100-NVLx8
+      ngcMetadata:
+        b70bc7e189b3e838ddbac872056790c1776debeb55ad2914e79237116213721b:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-H100-NVL
+            llm_engine: vllm
+            min_vram_per_device_gb: '49.0'
+            pp: '1'
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: GPU
+        value: NVIDIA-H100-NVL
+      - key: COUNT
+        value: 8
+      - key: NIM VERSION
+        value: 2.0.12
+      - key: DOWNLOAD SIZE
+        value: 329GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/nemotron-3-ultra-550b-a55b:hf-rl-052726-nvfp4-e9744cc-nvidia-h100-nvl-tp8
+      framework: TensorRT-LLM
+      displayName: Nemotron 3 Ultra 550B A55b NVIDIA-H100-NVLx8 Throughput
+      ngcMetadata:
+        39c0cc2ab5b34f5d33cb4fcfa793f37587765db7182a68282c6ccf918412ef23:
+          model: nvidia/nemotron-3-ultra-550b-a55b
+          release: 2.0.12
+          tags:
+            feat_lora: 'false'
+            gpu: NVIDIA-H100-NVL
+            llm_engine: vllm
+            min_vram_per_device_gb: '49.0'
+            nim_description: nvfp4 emulation
+            nim_json_args: '{"gpu_memory_utilization":0.85,"max_num_batched_tokens":4096,"max_num_seqs":256}'
+            pp: '1'
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: GPU
+        value: NVIDIA-H100-NVL
       - key: COUNT
         value: 8
       - key: NIM VERSION
@@ -1976,6 +2393,181 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-b300
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B B300x1 FP8 EAGLE
+      ngcMetadata:
+        bc3ddc12ca058f5d93e0dd82e880be070539ee9e86c69b2721695f08d8ee5267:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            draft_model_dir: eagle
+            draft_tensor_parallel_size: '1'
+            feat_lora: 'false'
+            gpu: B300
+            gpu_device: 3182:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: 87bc61f3c8bc48fad6ef807dbb5d5186cbf3261f6d67c10ffdd32ed50411f436
+            precision: fp8
+            speculative_algorithm: EAGLE
+            speculative_num_steps: '3'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 3182:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: DRAFT MODEL DIR
+        value: EAGLE
+      - key: LLM ENGINE
+        value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-b300__2
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B B300x1 FP8
+      ngcMetadata:
+        ff8046afcc9544d8b0fef35a6161388d53646b4fc252aa2ce5b537a7636d6608:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            feat_lora: 'false'
+            gpu: B300
+            gpu_device: 3182:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1313f21230a094878804693876b58e846676e6dfa42bc91ca943f0c1525ca7b2
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 3182:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp4-dynamic-kv8-b300
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B B300x1 NVFP4
+      ngcMetadata:
+        4ebe4dac6b44301315de3e70878c39a9a922a1f6c5cf4ba729700762cc8adb29:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            feat_lora: 'false'
+            gpu: B300
+            gpu_device: 3182:10de
+            llm_engine: vllm
+            nim_workspace_hash_v1: e68bd9b140dbffe485cef91749010dcefa590b94fbb0b458f349ee99f0b6df94
+            precision: nvfp4
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: B300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 3182:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-gb200
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B GB200x1 FP8
+      ngcMetadata:
+        b6c9a1a6395cac6c6d88a09660f65c664eb30e7bf557ef2e162b9b0f53a26e66:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1313f21230a094878804693876b58e846676e6dfa42bc91ca943f0c1525ca7b2
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp4-dynamic-kv8-gb200
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B GB200x1 NVFP4
+      ngcMetadata:
+        b4693b0e76de5c4b0d99d961ba9bffc7c71d294afce3616f139dd3b828b7c8aa:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: e68bd9b140dbffe485cef91749010dcefa590b94fbb0b458f349ee99f0b6df94
+            precision: nvfp4
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:hf-0303
       framework: VLLM
       displayName: Cosmos Reason2 8B GENERICx1 VLLM BF16
@@ -2038,6 +2630,234 @@ models:
         value: VLLM
       - key: SPECULATIVE ALGORITHM
         value: EAGLE
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-gh200-144gb
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B GH200-144GBx1 FP8
+      ngcMetadata:
+        a2b2c219d76c486ee2012acec86d22f400834920dbdd6c68f6ae9d35702fc597:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200-144GB
+            gpu_device: 2348:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1313f21230a094878804693876b58e846676e6dfa42bc91ca943f0c1525ca7b2
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200-144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-gh200-144gb__2
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B GH200-144GBx1 FP8 EAGLE
+      ngcMetadata:
+        f5af5f2875b1d0e238966f6dd9e2945c343e25e8c18dfd183452bada06f7ee39:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            draft_model_dir: eagle
+            draft_tensor_parallel_size: '1'
+            feat_lora: 'false'
+            gpu: GH200-144GB
+            gpu_device: 2348:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 87bc61f3c8bc48fad6ef807dbb5d5186cbf3261f6d67c10ffdd32ed50411f436
+            precision: fp8
+            speculative_algorithm: EAGLE
+            speculative_num_steps: '3'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200-144GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: DRAFT MODEL DIR
+        value: EAGLE
+      - key: LLM ENGINE
+        value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-gh200
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B GH200x1 FP8 EAGLE
+      ngcMetadata:
+        32c45047962f939f5f25df45baad488f8520645bff1dd54823bcbbeac625afe3:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            draft_model_dir: eagle
+            draft_tensor_parallel_size: '1'
+            feat_lora: 'false'
+            gpu: GH200
+            gpu_device: 2342:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 87bc61f3c8bc48fad6ef807dbb5d5186cbf3261f6d67c10ffdd32ed50411f436
+            precision: fp8
+            speculative_algorithm: EAGLE
+            speculative_num_steps: '3'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: DRAFT MODEL DIR
+        value: EAGLE
+      - key: LLM ENGINE
+        value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-gh200__2
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B GH200x1 FP8
+      ngcMetadata:
+        c07462d40fd25b5ec7c6d3e051e2f490ecf1e2e3abcb870391fff2d6b791ebdf:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200
+            gpu_device: 2342:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1313f21230a094878804693876b58e846676e6dfa42bc91ca943f0c1525ca7b2
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100-nvl
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B H100-NVLx1 FP8 EAGLE
+      ngcMetadata:
+        3fa747255489afc2bc15264cd532bf688e7a9e2cd0a5cd7de9c034024296f8f3:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            draft_model_dir: eagle
+            draft_tensor_parallel_size: '1'
+            feat_lora: 'false'
+            gpu: H100-NVL
+            gpu_device: 2321:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 87bc61f3c8bc48fad6ef807dbb5d5186cbf3261f6d67c10ffdd32ed50411f436
+            precision: fp8
+            speculative_algorithm: EAGLE
+            speculative_num_steps: '3'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: DRAFT MODEL DIR
+        value: EAGLE
+      - key: LLM ENGINE
+        value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100-nvl__2
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B H100-NVLx1 FP8
+      ngcMetadata:
+        e999d69f501fb494993fc4306bdb7e38e49cb3483bed1a9b5768754ec0dea2f7:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-NVL
+            gpu_device: 2321:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1313f21230a094878804693876b58e846676e6dfa42bc91ca943f0c1525ca7b2
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h100-pcie
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B H100-PCIEx1 FP8
@@ -2190,6 +3010,82 @@ models:
         value: VLLM
       - key: SPECULATIVE ALGORITHM
         value: EAGLE
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200-nvl
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B H200-NVLx1 FP8 EAGLE
+      ngcMetadata:
+        30221c1dbfd3c48e42cda84fd42cfd74cb3e1715d6d0a55c8de8a34578f36686:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            draft_model_dir: eagle
+            draft_tensor_parallel_size: '1'
+            feat_lora: 'false'
+            gpu: H200-NVL
+            gpu_device: 233b:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 87bc61f3c8bc48fad6ef807dbb5d5186cbf3261f6d67c10ffdd32ed50411f436
+            precision: fp8
+            speculative_algorithm: EAGLE
+            speculative_num_steps: '3'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: DRAFT MODEL DIR
+        value: EAGLE
+      - key: LLM ENGINE
+        value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200-nvl__2
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B H200-NVLx1 FP8
+      ngcMetadata:
+        3f542a1e4912971b0fa265c656a8270a5a32900bc5a66c341f612716ab5e3870:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200-NVL
+            gpu_device: 233b:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1313f21230a094878804693876b58e846676e6dfa42bc91ca943f0c1525ca7b2
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h200
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B H200x1 FP8 EAGLE
@@ -2266,6 +3162,82 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h20
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B H20x1 FP8
+      ngcMetadata:
+        42d9c7f6cf79a20a3e12d74d14e01cf0040758c0d99f0bfafb0aff973eeeca00:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            feat_lora: 'false'
+            gpu: H20
+            gpu_device: 2329:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 1313f21230a094878804693876b58e846676e6dfa42bc91ca943f0c1525ca7b2
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2329:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+    - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-h20__2
+      framework: TensorRT-LLM
+      displayName: Cosmos Reason2 8B H20x1 FP8 EAGLE
+      ngcMetadata:
+        44929dcccd75f996e2e8ea8136f601db47c6c340a2d688d563c351c9a9a68b49:
+          model: nvidia/cosmos-reason2-8b
+          release: 1.8.0
+          tags:
+            draft_model_dir: eagle
+            draft_tensor_parallel_size: '1'
+            feat_lora: 'false'
+            gpu: H20
+            gpu_device: 2329:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            nim_workspace_hash_v1: 87bc61f3c8bc48fad6ef807dbb5d5186cbf3261f6d67c10ffdd32ed50411f436
+            precision: fp8
+            speculative_algorithm: EAGLE
+            speculative_num_steps: '3'
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2329:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: DRAFT MODEL DIR
+        value: EAGLE
+      - key: LLM ENGINE
+        value: VLLM
+      - key: SPECULATIVE ALGORITHM
+        value: EAGLE
     - profileId: nim/nvidia/cosmos-reason2-8b:0303-fp8-static-kv8-l40s
       framework: TensorRT-LLM
       displayName: Cosmos Reason2 8B L40Sx1 FP8 EAGLE
@@ -2644,6 +3616,152 @@ models:
         value: VLLM
       - key: MODEL SIZE
         value: NANO
+    - profileId: nim/nvidia/cosmos3-nano-reasoner:modelopt-fp8-final_format_fix-b300
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Nano Reasoner B300x1 FP8
+      ngcMetadata:
+        c00308d5db051bc7821f85bb08c9fdb5f255e7a89117a4407346729fb4f76c8e:
+          model: nvidia/cosmos3-nano-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: B300
+            gpu_device: 3182:10de
+            llm_engine: vllm
+            model_size: nano
+            nim_workspace_hash_v1: 9bb49947e400efb57ebfce054f1ca97e6cb020282458b53718655ca0af1f4fda
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 3182:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: NANO
+    - profileId: nim/nvidia/cosmos3-nano-reasoner:modelopt-nvfp4-full-quantize-final_format_fix-b300
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Nano Reasoner B300x1 NVFP4
+      ngcMetadata:
+        94aa9b2ce1ccf19c84a5556c3ce37343dcc03fdcb7f6f10f6a1b14e8e6e172c5:
+          model: nvidia/cosmos3-nano-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: B300
+            gpu_device: 3182:10de
+            llm_engine: vllm
+            model_size: nano
+            nim_workspace_hash_v1: 631c6e99ad21295b12e757e0ece6865857a24c9223c4b58e940227eeeb030ccb
+            precision: nvfp4
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: B300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 3182:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: NANO
+    - profileId: nim/nvidia/cosmos3-nano-reasoner:modelopt-fp8-final_format_fix-gb200
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Nano Reasoner GB200x1 FP8
+      ngcMetadata:
+        c11a38244019135c24ce542d68ba1a33eed732255170a36863ea17f1ae1c2eee:
+          model: nvidia/cosmos3-nano-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: nano
+            nim_workspace_hash_v1: 9bb49947e400efb57ebfce054f1ca97e6cb020282458b53718655ca0af1f4fda
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: NANO
+    - profileId: nim/nvidia/cosmos3-nano-reasoner:modelopt-nvfp4-full-quantize-final_format_fix-gb200
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Nano Reasoner GB200x1 NVFP4
+      ngcMetadata:
+        da871b26339afebea954e495fb8ccd978bb36581d32629289df0d6c195103d9d:
+          model: nvidia/cosmos3-nano-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: nano
+            nim_workspace_hash_v1: 631c6e99ad21295b12e757e0ece6865857a24c9223c4b58e940227eeeb030ccb
+            precision: nvfp4
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 8GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: NANO
     - profileId: nim/nvidia/cosmos3-nano-reasoner:bf16-final
       framework: VLLM
       displayName: Cosmos3 Nano Reasoner GENERICx1 VLLM BF16
@@ -2668,6 +3786,80 @@ models:
         value: 1.7.0
       - key: DOWNLOAD SIZE
         value: 17GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: NANO
+    - profileId: nim/nvidia/cosmos3-nano-reasoner:modelopt-fp8-final_format_fix-gh200
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Nano Reasoner GH200x1 FP8
+      ngcMetadata:
+        cd5295636113ed39dbd48778343635aa5e5f92b56332c828ec71a39f82765adb:
+          model: nvidia/cosmos3-nano-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200
+            gpu_device: 2342:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: nano
+            nim_workspace_hash_v1: 9bb49947e400efb57ebfce054f1ca97e6cb020282458b53718655ca0af1f4fda
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: NANO
+    - profileId: nim/nvidia/cosmos3-nano-reasoner:modelopt-fp8-final_format_fix-h100-nvl
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Nano Reasoner H100-NVLx1 FP8
+      ngcMetadata:
+        549193251f10cf77a0ee4c9a360598b56659f3c4022b7644290b08ac8aa78b78:
+          model: nvidia/cosmos3-nano-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-NVL
+            gpu_device: 2321:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: nano
+            nim_workspace_hash_v1: 9bb49947e400efb57ebfce054f1ca97e6cb020282458b53718655ca0af1f4fda
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -2748,6 +3940,43 @@ models:
         value: VLLM
       - key: MODEL SIZE
         value: NANO
+    - profileId: nim/nvidia/cosmos3-nano-reasoner:modelopt-fp8-final_format_fix-h200-nvl
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Nano Reasoner H200-NVLx1 FP8
+      ngcMetadata:
+        215661256003062903d03fc8eeb3bcb8565b0b47b8322198805c420a953b2113:
+          model: nvidia/cosmos3-nano-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200-NVL
+            gpu_device: 233b:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: nano
+            nim_workspace_hash_v1: 9bb49947e400efb57ebfce054f1ca97e6cb020282458b53718655ca0af1f4fda
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: NANO
     - profileId: nim/nvidia/cosmos3-nano-reasoner:modelopt-fp8-final_format_fix-h200
       framework: TensorRT-LLM
       displayName: Cosmos3 Nano Reasoner H200x1 FP8
@@ -2775,6 +4004,43 @@ models:
         value: 1
       - key: GPU DEVICE
         value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 10GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: NANO
+    - profileId: nim/nvidia/cosmos3-nano-reasoner:modelopt-fp8-final_format_fix-h20
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Nano Reasoner H20x1 FP8
+      ngcMetadata:
+        85b3d523b8a055b078063f0c00634b183b13790d447e58b220557c6e93b2b4f9:
+          model: nvidia/cosmos3-nano-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: H20
+            gpu_device: 2329:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: nano
+            nim_workspace_hash_v1: 9bb49947e400efb57ebfce054f1ca97e6cb020282458b53718655ca0af1f4fda
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2329:10DE
       - key: NIM VERSION
         value: 1.7.0
       - key: DOWNLOAD SIZE
@@ -3080,6 +4346,224 @@ models:
         value: VLLM
       - key: MODEL SIZE
         value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:bf16-final-b300
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner B300x1 BF16
+      ngcMetadata:
+        52d027c69718089c30e0de4bb4365041a94a818c99685694cc8dab2163c8ecc4:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: B300
+            gpu_device: 3182:10de
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: 10d618803d9020c00c5e667dd45111bf2ff827aabe4ee06cfbe9c929ca05d995
+            precision: bf16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: B300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 3182:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 63GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:modelopt-fp8-final_format_fix-b300
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner B300x1 FP8
+      ngcMetadata:
+        975992b82a1b8abda2d623d384e8b678cf3316037422ba9ad7f4ab53b7c8fca6:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: B300
+            gpu_device: 3182:10de
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: e55a376a47bcc8310e62dff93d701bd3b956e27857d83ec101c54a444f48bb7a
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: B300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 3182:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 34GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:modelopt-nvfp4-full-quantize-final_format_fix-b300
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner B300x1 NVFP4
+      ngcMetadata:
+        b71375cfccf219cea7cadd1b243f906e800e566c8a39dfd705ec3e8b7ef7263f:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: B300
+            gpu_device: 3182:10de
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: 14ecc66f02a15adefb4fcdc0ba8208426e968b1484561a4243903c1eb6b64dc3
+            precision: nvfp4
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: B300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 3182:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 21GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:bf16-final-gb200
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner GB200x1 BF16
+      ngcMetadata:
+        6e4fba3ec132f5d8df963a46466c336dd6f17e4bb80a8707c513bf76db40fedf:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: 10d618803d9020c00c5e667dd45111bf2ff827aabe4ee06cfbe9c929ca05d995
+            precision: bf16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 63GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:modelopt-fp8-final_format_fix-gb200
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner GB200x1 FP8
+      ngcMetadata:
+        9ad3cf319a8223a6221d4043f35984ebcf475ad6c13e352015488b6a00516ed7:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: e55a376a47bcc8310e62dff93d701bd3b956e27857d83ec101c54a444f48bb7a
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 34GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:modelopt-nvfp4-full-quantize-final_format_fix-gb200
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner GB200x1 NVFP4
+      ngcMetadata:
+        08c789d7fc87e9fc5dbe1cdb4b048870662a53fa89aee8e031ad75a1af673b19:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: GB200
+            gpu_device: 2941:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: 14ecc66f02a15adefb4fcdc0ba8208426e968b1484561a4243903c1eb6b64dc3
+            precision: nvfp4
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 21GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
     - profileId: nim/nvidia/cosmos3-super-reasoner:bf16-final
       framework: VLLM
       displayName: Cosmos3 Super Reasoner GENERICx1 VLLM BF16
@@ -3130,6 +4614,152 @@ models:
         value: BF16
       - key: COUNT
         value: 2
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 63GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:modelopt-fp8-final_format_fix-gh200
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner GH200x1 FP8
+      ngcMetadata:
+        25b6c1655073c705da7d548b8c6d3d1a97917a19fc6d18ad8693667bf190563c:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200
+            gpu_device: 2342:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: e55a376a47bcc8310e62dff93d701bd3b956e27857d83ec101c54a444f48bb7a
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GH200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 34GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:bf16-final-gh200-tp2
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner GH200x2 BF16
+      ngcMetadata:
+        2153089cb4e4daa91ad5261afce32a9799ef0107a733da25823a54f79aa918be:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: GH200
+            gpu_device: 2342:10de
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: 10d618803d9020c00c5e667dd45111bf2ff827aabe4ee06cfbe9c929ca05d995
+            precision: bf16
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: GH200
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 63GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:modelopt-fp8-final_format_fix-h100-nvl
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner H100-NVLx1 FP8
+      ngcMetadata:
+        4db1ce4c33766f85997e628da6924b321bdfc37edb27208aae3a626ad663d47d:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-NVL
+            gpu_device: 2321:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: e55a376a47bcc8310e62dff93d701bd3b956e27857d83ec101c54a444f48bb7a
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 34GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:bf16-final-h100-nvl-tp2
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner H100-NVLx2 BF16
+      ngcMetadata:
+        bf6a3b82e07fd66f672146759ffc57df136f2917364d09b90d431ed24b177805:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: H100-NVL
+            gpu_device: 2321:10de
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: 10d618803d9020c00c5e667dd45111bf2ff827aabe4ee06cfbe9c929ca05d995
+            precision: bf16
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H100-NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2321:10DE
       - key: NIM VERSION
         value: 1.7.0
       - key: DOWNLOAD SIZE
@@ -3286,6 +4916,79 @@ models:
         value: VLLM
       - key: MODEL SIZE
         value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:modelopt-fp8-final_format_fix-h200-nvl
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner H200-NVLx1 FP8
+      ngcMetadata:
+        1fd8ada533d8f982581686420d832523edbf8204571ef0dec905369a4bd6534d:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200-NVL
+            gpu_device: 233b:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: e55a376a47bcc8310e62dff93d701bd3b956e27857d83ec101c54a444f48bb7a
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H200-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 34GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:bf16-final-h200-nvl-tp2
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner H200-NVLx2 BF16
+      ngcMetadata:
+        5c47102d9f6c5676f190f2712db2302c7cec4033c93d598368047933f10b028d:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: H200-NVL
+            gpu_device: 233b:10de
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: 10d618803d9020c00c5e667dd45111bf2ff827aabe4ee06cfbe9c929ca05d995
+            precision: bf16
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H200-NVL
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 233B:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 63GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
     - profileId: nim/nvidia/cosmos3-super-reasoner:modelopt-fp8-final_format_fix-h200
       framework: TensorRT-LLM
       displayName: Cosmos3 Super Reasoner H200x1 FP8
@@ -3349,6 +5052,79 @@ models:
         value: 2
       - key: GPU DEVICE
         value: 2335:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 63GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:modelopt-fp8-final_format_fix-h20
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner H20x1 FP8
+      ngcMetadata:
+        5fb0fbd23aa26236ac35030aa82545fd5378a64cbf7a97de5738718f14c99e18:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: H20
+            gpu_device: 2329:10de
+            kv_cache_precision: fp8
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: e55a376a47bcc8310e62dff93d701bd3b956e27857d83ec101c54a444f48bb7a
+            precision: fp8
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2329:10DE
+      - key: NIM VERSION
+        value: 1.7.0
+      - key: DOWNLOAD SIZE
+        value: 34GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
+      - key: MODEL SIZE
+        value: SUPER
+    - profileId: nim/nvidia/cosmos3-super-reasoner:bf16-final-h20-tp2
+      framework: TensorRT-LLM
+      displayName: Cosmos3 Super Reasoner H20x2 BF16
+      ngcMetadata:
+        c9e86023413d3447cb2cda3c1867fbbf89e89173b45d5a2c14b1786255df6c30:
+          model: nvidia/cosmos3-super-reasoner
+          release: 1.7.0
+          tags:
+            feat_lora: 'false'
+            gpu: H20
+            gpu_device: 2329:10de
+            llm_engine: vllm
+            model_size: super
+            nim_workspace_hash_v1: 10d618803d9020c00c5e667dd45111bf2ff827aabe4ee06cfbe9c929ca05d995
+            precision: bf16
+            tp: '2'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 2
+      - key: GPU DEVICE
+        value: 2329:10DE
       - key: NIM VERSION
         value: 1.7.0
       - key: DOWNLOAD SIZE
@@ -3643,6 +5419,112 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-580f841-nvfp4-gb10
+      framework: TensorRT-LLM
+      displayName: Minimax M25 GB10x1 NVFP4 Throughput
+      ngcMetadata:
+        9dac915e62cd5b6cdc5dd20d977dd6358f18ecec57413ad61ec129f352722bdd:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: GB10
+            gpu_device: 2e12:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: nvfp4
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: GB10
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2E12:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-gb300
+      framework: TensorRT-LLM
+      displayName: Minimax M25 GB300x1 FP8 Throughput
+      ngcMetadata:
+        1cc5bb0fc8709ef98feedb173f64f01e07b43da3d4351f582332aa43c6e151c5:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: GB300
+            gpu_device: 31c2:10de
+            llm_engine: sglang
+            max_running_requests: '128'
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: GB300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 31C2:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-580f841-nvfp4-gb300
+      framework: TensorRT-LLM
+      displayName: Minimax M25 GB300x1 NVFP4 Throughput
+      ngcMetadata:
+        1a34907bc88fcdbdac44e3eaf28b74fc53979b15d676420620dcf916f6f3fae9:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: GB300
+            gpu_device: 31c2:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: nvfp4
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: NVFP4
+      - key: GPU
+        value: GB300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 31C2:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: SGLANG
     - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-tp2
       framework: SGLang
       displayName: Minimax M25 GENERICx2 SGLang FP8 Fallback
@@ -3776,6 +5658,76 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h20-3e-tp4
+      framework: TensorRT-LLM
+      displayName: Minimax M25 H20-3Ex4 FP8 Throughput
+      ngcMetadata:
+        a9ac9417449d135374ed71e854aa3224be2dc20e3c694958255605b2a18012a2:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: H20-3E
+            gpu_device: 232c:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20-3E
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 232C:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h20-3e-tp8
+      framework: TensorRT-LLM
+      displayName: Minimax M25 H20-3Ex8 FP8 Throughput
+      ngcMetadata:
+        92002cd32314ff491e3ec40328828a8ac71d722bad232e67511b1e2be4088542:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            gpu: H20-3E
+            gpu_device: 232c:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20-3E
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 232C:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: SGLANG
     - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h200-tp4
       framework: TensorRT-LLM
       displayName: Minimax M25 H200x4 FP8 Throughput
@@ -3846,6 +5798,76 @@ models:
         value: 1.7.1
       - key: DOWNLOAD SIZE
         value: 215GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h20-tp4
+      framework: TensorRT-LLM
+      displayName: Minimax M25 H20x4 FP8 Throughput
+      ngcMetadata:
+        4e3e03e6b9ece1328f502822b74734f1209d8683b13e22a09b515741cdd27b75:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: H20
+            gpu_device: 2329:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 2329:10DE
+      - key: NIM VERSION
+        value: 1.7.1
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/minimax-ai/minimax-m25:hf-3040beaf-nim-h20-tp8
+      framework: TensorRT-LLM
+      displayName: Minimax M25 H20x8 FP8 Throughput
+      ngcMetadata:
+        62c80edbf3debd4ee9dee0b8503bee907c28c44d427c76f05eef261a9f446dc8:
+          model: minimax-ai/minimax-m25
+          release: 1.7.1
+          tags:
+            ep: '8'
+            feat_lora: 'false'
+            gpu: H20
+            gpu_device: 2329:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '8'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 8
+      - key: GPU DEVICE
+        value: 2329:10DE
+      - key: NIM VERSION
+        value: 1.7.1
       - key: LORA
         value: 'FALSE'
       - key: LLM ENGINE
@@ -4098,6 +6120,45 @@ models:
         value: 'FALSE'
       - key: LLM ENGINE
         value: VLLM
+    - profileId: nim/google/gemma-4-31b-it:hf-ba74f5b-nim-h20
+      framework: TensorRT-LLM
+      displayName: Gemma 4 31B It H20x1 BF16 Throughput
+      ngcMetadata:
+        2451018e33ff3420c343075025614f98b58764138370e69d37ec91451d046ce6:
+          model: google/gemma-4-31b-it
+          release: 1.7.1-variant
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: H20
+            gpu_device: 2329:10de
+            gpu_memory_utilization: '0.85'
+            kv_cache_dtype: fp8_e4m3
+            llm_engine: vllm
+            pp: '1'
+            precision: bf16
+            profile: throughput
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: H20
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2329:10DE
+      - key: NIM VERSION
+        value: 1.7.1-variant
+      - key: DOWNLOAD SIZE
+        value: 59GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: VLLM
     - profileId: nim/google/gemma-4-31b-it:hf-e5ef03a-nim-nvfp4-l40s-tp2
       framework: TensorRT-LLM
       displayName: Gemma 4 31B It L40Sx2 FP8 Throughput
@@ -4275,6 +6336,126 @@ models:
         value: 1
       - key: GPU DEVICE
         value: 20B2:10DE
+      - key: NIM VERSION
+        value: 1.10.0
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    - profileId: nim/nvidia/magpie-tts-multilingual:dgx-sparkx1-multi-generic-26.07.6-fp16-8qnfqdrs2a-dgx_spark
+      framework: TensorRT-LLM
+      displayName: Magpie TTS Multilingual DGX_SPARKx1 BatchSizex32 FP16 Multi_generic_26.07.6
+      ngcMetadata:
+        23e40dfd299c3e702c38f22189646c2a27e03d5e325e8a1c745139b76ee7ae0f:
+          model: nvidia/riva-tts/magpie-tts-multilingual
+          release: 1.10.0
+          tags:
+            ampereplus: disabled
+            batch_size: '32'
+            feat_lora: 'False'
+            gpu: DGX_SPARK
+            gpu_device: 2e12:10de
+            model_type: prebuilt
+            name: magpie-tts-multilingual
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: multi_generic_26.07.6
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: MULTI_GENERIC_26.07.6
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: DGX_SPARK
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2E12:10DE
+      - key: NIM VERSION
+        value: 1.10.0
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    - profileId: nim/nvidia/magpie-tts-multilingual:dgx-sparkx1-multi-generic-26.07.6-fp16-ryvo5zztjg-dgx_spark
+      framework: TensorRT-LLM
+      displayName: Magpie TTS Multilingual DGX_SPARKx1 BatchSizex64 FP16 Multi_generic_26.07.6
+      ngcMetadata:
+        0f6d35f1610364faf9277bd2e6e58542b2c48ecaaf112aa92a2f03d60aded8f9:
+          model: nvidia/riva-tts/magpie-tts-multilingual
+          release: 1.10.0
+          tags:
+            ampereplus: disabled
+            batch_size: '64'
+            feat_lora: 'False'
+            gpu: DGX_SPARK
+            gpu_device: 2e12:10de
+            model_type: prebuilt
+            name: magpie-tts-multilingual
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: multi_generic_26.07.6
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: MULTI_GENERIC_26.07.6
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: DGX_SPARK
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2E12:10DE
+      - key: NIM VERSION
+        value: 1.10.0
+      - key: DOWNLOAD SIZE
+        value: 2GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    - profileId: nim/nvidia/magpie-tts-multilingual:dgx-sparkx1-multi-generic-26.07.6-fp16-4mobl1kqoa-dgx_spark
+      framework: TensorRT-LLM
+      displayName: Magpie TTS Multilingual DGX_SPARKx1 BatchSizex8 FP16 Multi_generic_26.07.6
+      ngcMetadata:
+        20b7de0abc49089ad2e55d9406f9ab482fd3dac8b7142043461462035739679f:
+          model: nvidia/riva-tts/magpie-tts-multilingual
+          release: 1.10.0
+          tags:
+            ampereplus: disabled
+            batch_size: '8'
+            feat_lora: 'False'
+            gpu: DGX_SPARK
+            gpu_device: 2e12:10de
+            model_type: prebuilt
+            name: magpie-tts-multilingual
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: multi_generic_26.07.6
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: MULTI_GENERIC_26.07.6
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: DGX_SPARK
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2E12:10DE
       - key: NIM VERSION
         value: 1.10.0
       - key: DOWNLOAD SIZE
@@ -4831,6 +7012,221 @@ models:
         value: 1.5.3
       - key: DOWNLOAD SIZE
         value: 5GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-26.02.5-fp16-wrdwwdtizq-dgx_spark
+      framework: TensorRT-LLM
+      displayName: Parakeet 1 1B CTC En Us Offline DGX_SPARKx1 All Default FP16 Ofl-26.02.5
+      ngcMetadata:
+        4cef92abc1712ab6c9c39adf1aa6c5e3484706975ef1e808e33ff707b0f123de:
+          model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
+          release: 1.5.3
+          tags:
+            ampereplus: disabled
+            diarizer: disabled
+            feat_lora: 'False'
+            gpu: DGX_SPARK
+            gpu_device: '2e12'
+            mode: all
+            model_type: prebuilt
+            name: parakeet-1-1b-ctc-en-us
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: ofl-26.02.5
+            tp: '1'
+            type: default
+            vad: default
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: OFL-26.02.5
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: DGX_SPARK
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: '2E12'
+      - key: NIM VERSION
+        value: 1.5.3
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-26.02.5-fp16-az3gtig8sw-dgx_spark
+      framework: TensorRT-LLM
+      displayName: Parakeet 1 1B CTC En Us Offline DGX_SPARKx1 All Silero Sortformer FP16 Ofl-silero-sortformer-26.02.5
+      ngcMetadata:
+        3b02195aa023c19ef858721b58be45171d281e65fd5e698e6c76671cee30d6d8:
+          model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
+          release: 1.5.3
+          tags:
+            ampereplus: disabled
+            diarizer: sortformer
+            feat_lora: 'False'
+            gpu: DGX_SPARK
+            gpu_device: '2e12'
+            mode: all
+            model_type: prebuilt
+            name: parakeet-1-1b-ctc-en-us
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: ofl-silero-sortformer-26.02.5
+            tp: '1'
+            type: default
+            vad: silero
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: OFL-SILERO-SORTFORMER-26.02.5
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: DGX_SPARK
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: '2E12'
+      - key: NIM VERSION
+        value: 1.5.3
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-26.02.5-fp16-wrdwwdtizq-dgx_spark__2
+      framework: TensorRT-LLM
+      displayName: Parakeet 1 1B CTC En Us Offline DGX_SPARKx1 Ofl Default FP16 Ofl-26.02.5
+      ngcMetadata:
+        fc180a75ca0f49a33c1376d000b8d3df5844817ca9fd66e5c73a73260cfc4229:
+          model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
+          release: 1.5.3
+          tags:
+            ampereplus: disabled
+            diarizer: disabled
+            feat_lora: 'False'
+            gpu: DGX_SPARK
+            gpu_device: '2e12'
+            mode: ofl
+            model_type: prebuilt
+            name: parakeet-1-1b-ctc-en-us
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: ofl-26.02.5
+            tp: '1'
+            type: default
+            vad: default
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: OFL-26.02.5
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: DGX_SPARK
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: '2E12'
+      - key: NIM VERSION
+        value: 1.5.3
+      - key: DOWNLOAD SIZE
+        value: 4GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-ofl-silero-sortformer-26.02.5-fp16-az3gtig8sw-dgx_spark__2
+      framework: TensorRT-LLM
+      displayName: Parakeet 1 1B CTC En Us Offline DGX_SPARKx1 Ofl Silero Sortformer FP16 Ofl-silero-sortformer-26.02.5
+      ngcMetadata:
+        c21990bed5fb1c3569b766824e94a72f25a0a9f860fc78677a384c57b2dc6bcd:
+          model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
+          release: 1.5.3
+          tags:
+            ampereplus: disabled
+            diarizer: sortformer
+            feat_lora: 'False'
+            gpu: DGX_SPARK
+            gpu_device: '2e12'
+            mode: ofl
+            model_type: prebuilt
+            name: parakeet-1-1b-ctc-en-us
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: ofl-silero-sortformer-26.02.5
+            tp: '1'
+            type: default
+            vad: silero
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: OFL-SILERO-SORTFORMER-26.02.5
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: DGX_SPARK
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: '2E12'
+      - key: NIM VERSION
+        value: 1.5.3
+      - key: DOWNLOAD SIZE
+        value: 5GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: PREBUILT
+    - profileId: nim/nvidia/parakeet-1-1b-ctc-riva:dgx-sparkx1-true-ofl-silero-26.02.5-fp16--ewlpralzw-dgx_spark
+      framework: TensorRT-LLM
+      displayName: Parakeet 1 1B CTC En Us Offline DGX_SPARKx1 True-ofl Silero FP16 True-ofl-silero-26.02.5
+      ngcMetadata:
+        b7bf9559f063c01bc7d3e715d141fb4cb3014288099deda810dea05c99ac6a10:
+          model: nvidia/riva-asr/parakeet-1-1b-ctc-en-us-offline
+          release: 1.5.3
+          tags:
+            ampereplus: disabled
+            diarizer: disabled
+            feat_lora: 'False'
+            gpu: DGX_SPARK
+            gpu_device: '2e12'
+            mode: true-ofl
+            model_type: prebuilt
+            name: parakeet-1-1b-ctc-en-us
+            number_of_gpus: '1'
+            pp: '1'
+            precision: fp16
+            profile: true-ofl-silero-26.02.5
+            tp: '1'
+            type: default
+            vad: silero
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: TRUE-OFL-SILERO-26.02.5
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: DGX_SPARK
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: '2E12'
+      - key: NIM VERSION
+        value: 1.5.3
+      - key: DOWNLOAD SIZE
+        value: 4GB
       - key: LORA
         value: 'FALSE'
       - key: MODEL TYPE
@@ -7537,6 +9933,62 @@ models:
         value: 'FALSE'
       - key: MODEL TYPE
         value: ONNX
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:rtx5090x1-trt-fp16-fytv1-kpkq-cksum
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 RTX5090x1 FP16
+      ngcMetadata:
+        a1c13d988e661ffcff9de9a919de942e2257c8a1990280e18f1fcfbf1bdd39e5:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.14.4-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '12.0'
+            model_type: tensorrt
+            precision: fp16
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP16
+      - key: GPU
+        value: RTX5090
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.14.4-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: TENSORRT
+    - profileId: nim/nvidia/llama-3.2-nv-embedqa-1b-v2:rtx5090x1-trt-fp8-b-g-qaa9ra-cksum
+      framework: TensorRT-LLM
+      displayName: Llama 3.2 Nv Embedqa 1B V2 RTX5090x1 FP8
+      ngcMetadata:
+        c10e0d36e7605cdd0ccbb0e25f0be6d97c00b4113cc9242b577d550b92d83da8:
+          model: nvidia/llama-3.2-nv-embedqa-1b-v2
+          release: 1.14.4-stig-fips-x86
+          tags:
+            backend: trt
+            compute_capability: '12.0'
+            model_type: tensorrt
+            precision: fp8
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: RTX5090
+      - key: COUNT
+        value: 1
+      - key: NIM VERSION
+        value: 1.14.4-stig-fips-x86
+      - key: DOWNLOAD SIZE
+        value: 1GB
+      - key: LORA
+        value: 'FALSE'
+      - key: MODEL TYPE
+        value: TENSORRT
     source:
       URL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/llama-3.2-nv-embedqa-1b-v2
     variantId: Llama 3.2 NV EmbedQA 1b V2
@@ -7967,6 +10419,251 @@ models:
         value: 'FALSE'
       - key: V
         value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_10_3-trt-bf16-b300_sxm6_ac-7373399a-nvidia-b300-sxm6-ac
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-B300-SXM6-ACx1 V1.8.0 BF16
+      ngcMetadata:
+        a471c399e4fda3402ce187cd189266996465d8881635d27d823d286434c90147:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '10.3'
+            feat_lora: 'false'
+            gpu: NVIDIA-B300-SXM6-AC
+            gpu_device: 3182:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            v: 1.8.0
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-B300-SXM6-AC
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 3182:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
+      - key: V
+        value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_12_1-trt-bf16-gb10-39a87e6c-nvidia-gb10
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-GB10x1 V1.8.0 BF16
+      ngcMetadata:
+        1ddc2cff848b43fdc285af283cf9dd85fe0d5557d22fdd56db8cf80edc1796de:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '12.1'
+            feat_lora: 'false'
+            gpu: NVIDIA-GB10
+            gpu_device: 2e12:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            v: 1.8.0
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-GB10
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2E12:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
+      - key: V
+        value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_10_0-trt-bf16-gb200-76401285-nvidia-gb200
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-GB200x1 V1.8.0 BF16
+      ngcMetadata:
+        391c862b93968333259743142ea2ddab5a9fe0a82e359d5a4099d2aeb61ab145:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '10.0'
+            feat_lora: 'false'
+            gpu: NVIDIA-GB200
+            gpu_device: 2941:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            v: 1.8.0
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-GB200
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2941:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
+      - key: V
+        value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_10_3-trt-bf16-gb300_ws-80f64108-nvidia-gb300-ws
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-GB300-WSx1 V1.8.0 BF16
+      ngcMetadata:
+        01a9f765ee7c605bea1b133400819a69e42cd7abe4f3cd0fb642f058fda5f5fb:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '10.3'
+            feat_lora: 'false'
+            gpu: NVIDIA-GB300-WS
+            gpu_device: 31c2:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            v: 1.8.0
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-GB300-WS
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 31C2:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
+      - key: V
+        value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_10_3-trt-bf16-gb300-b82f8625-nvidia-gb300
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-GB300x1 V1.8.0 BF16
+      ngcMetadata:
+        14d31455ba050ff444a78a1751da193e7f49d9eee252cd0d0c8f8d4d7fc03da6:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '10.3'
+            feat_lora: 'false'
+            gpu: NVIDIA-GB300
+            gpu_device: 31c2:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            v: 1.8.0
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-GB300
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 31C2:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
+      - key: V
+        value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_9_0-trt-bf16-gh200_144g_hbm3e-fd9b2237-nvidia-gh200-144g-hbm3e
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-GH200-144G-HBM3Ex1 V1.8.0 BF16
+      ngcMetadata:
+        c79b090925ba0756689b82c733f709a505a1d40b5b123ed0113254a3039dac3e:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '9.0'
+            feat_lora: 'false'
+            gpu: NVIDIA-GH200-144G-HBM3E
+            gpu_device: 2348:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            v: 1.8.0
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-GH200-144G-HBM3E
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2348:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
+      - key: V
+        value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_9_0-trt-bf16-gh200_480gb-4bab8f34-nvidia-gh200-480gb
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-GH200-480GBx1 V1.8.0 BF16
+      ngcMetadata:
+        c674d5915db1ffe0b893677ef9c034d9df7ea05435052c43291e474d8877cb6d:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '9.0'
+            feat_lora: 'false'
+            gpu: NVIDIA-GH200-480GB
+            gpu_device: 2342:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            v: 1.8.0
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-GH200-480GB
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2342:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
+      - key: V
+        value: 1.8.0
     - profileId: nim/mit/boltz2:cc_9_0-trt-bf16-h100_80gb_hbm3-17c09067-nvidia-h100-80gb-hbm3
       framework: TensorRT-LLM
       displayName: Boltz2 NVIDIA-H100-80GB-HBM3x1 V1.8.0 BF16
@@ -8002,6 +10699,38 @@ models:
         value: 'FALSE'
       - key: V
         value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_9_0-trt-bf16-h100_nvl-1f266de0-nvidia-h100-nvl
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-H100-NVLx1 BF16
+      ngcMetadata:
+        afdfb1ecb61a699cbbbd4233510a5137170de4a0ec7a5b74c382dac0f2dd58a3:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '9.0'
+            feat_lora: 'false'
+            gpu: NVIDIA-H100-NVL
+            gpu_device: 2321:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-H100-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 2321:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
     - profileId: nim/mit/boltz2:cc_9_0-trt-bf16-h100_pcie-f504cb4f-nvidia-h100-pcie
       framework: TensorRT-LLM
       displayName: Boltz2 NVIDIA-H100-PCIEx1 V1.8.0 BF16
@@ -8029,6 +10758,41 @@ models:
         value: 1
       - key: GPU DEVICE
         value: 2331:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
+      - key: V
+        value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_9_0-trt-bf16-h200_nvl-e686c75c-nvidia-h200-nvl
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-H200-NVLx1 V1.8.0 BF16
+      ngcMetadata:
+        6831f639c517683e052aa903758bb5bb446e19038797b1afc165032ebd099423:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '9.0'
+            feat_lora: 'false'
+            gpu: NVIDIA-H200-NVL
+            gpu_device: 233b:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            v: 1.8.0
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-H200-NVL
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 233B:10DE
       - key: NIM VERSION
         value: 1.8.0
       - key: DOWNLOAD SIZE
@@ -8099,6 +10863,41 @@ models:
         value: 1
       - key: GPU DEVICE
         value: 26B9:10DE
+      - key: NIM VERSION
+        value: 1.8.0
+      - key: DOWNLOAD SIZE
+        value: 13GB
+      - key: LORA
+        value: 'FALSE'
+      - key: V
+        value: 1.8.0
+    - profileId: nim/mit/boltz2:cc_8_9-trt-bf16-rtx_6000_ada_generation-e1442d74-nvidia-rtx-6000-ada-generation
+      framework: TensorRT-LLM
+      displayName: Boltz2 NVIDIA-RTX-6000-ADA-GENERATIONx1 V1.8.0 BF16
+      ngcMetadata:
+        8c0b2b13fd9cae5f637c3b7cdf6746aa0e964a41a91408958cc6c9613e425ba3:
+          model: mit/boltz2
+          release: 1.8.0
+          tags:
+            backend: trt
+            compute_capability: '8.9'
+            feat_lora: 'false'
+            gpu: NVIDIA-RTX-6000-ADA-GENERATION
+            gpu_device: 26b1:10de
+            pp: '1'
+            precision: bf16
+            tp: '1'
+            v: 1.8.0
+      modelFormat: trt-llm
+      spec:
+      - key: PRECISION
+        value: BF16
+      - key: GPU
+        value: NVIDIA-RTX-6000-ADA-GENERATION
+      - key: COUNT
+        value: 1
+      - key: GPU DEVICE
+        value: 26B1:10DE
       - key: NIM VERSION
         value: 1.8.0
       - key: DOWNLOAD SIZE
@@ -8751,6 +11550,43 @@ models:
         value: 8
       - key: GPU DEVICE
         value: 2330:10DE
+      - key: NIM VERSION
+        value: 1.10.0-variant
+      - key: DOWNLOAD SIZE
+        value: 274GB
+      - key: LORA
+        value: 'FALSE'
+      - key: LLM ENGINE
+        value: SGLANG
+    - profileId: nim/deepseek-ai/deepseek-v4-flash:hf-nim-fp8-checksum-h20-3e-tp4
+      framework: TensorRT-LLM
+      displayName: Deepseek V4 Flash H20-3Ex4 FP8 Throughput
+      ngcMetadata:
+        a9ac9417449d135374ed71e854aa3224be2dc20e3c694958255605b2a18012a2:
+          model: deepseek-ai/deepseek-v4-flash
+          release: 1.10.0-variant
+          tags:
+            ep: '1'
+            feat_lora: 'false'
+            gpu: H20-3E
+            gpu_device: 232c:10de
+            llm_engine: sglang
+            pp: '1'
+            precision: fp8
+            profile: throughput
+            tp: '4'
+      modelFormat: trt-llm
+      spec:
+      - key: PROFILE
+        value: THROUGHPUT
+      - key: PRECISION
+        value: FP8
+      - key: GPU
+        value: H20-3E
+      - key: COUNT
+        value: 4
+      - key: GPU DEVICE
+        value: 232C:10DE
       - key: NIM VERSION
         value: 1.10.0-variant
       - key: DOWNLOAD SIZE
