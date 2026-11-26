@@ -1,17 +1,27 @@
 #!/usr/bin/env python3
 
 import argparse
-import json
-import os
 import base64
+import binascii
+import json
+import logging
+import os
+import re
+import stat
 import subprocess
 import sys
-import logging
-from pathlib import Path
-from datetime import datetime
+import tempfile
 
 import yaml
-from typing import List, Dict, Optional, Tuple
+
+MISTRAL_STAGING_MANIFEST = "mistral-staging.json"
+MISTRAL_LICENSE_FIELDS = (
+    "access_key_id",
+    "secret_access_key",
+    "region",
+    "bucket",
+)
+
 
 # courtesy : https://stackoverflow.com/questions/43765849/pyyaml-load-and-dump-yaml-file-and-preserve-tags-customtag
 class SafeUnknownConstructor(yaml.constructor.SafeConstructor):
@@ -19,9 +29,9 @@ class SafeUnknownConstructor(yaml.constructor.SafeConstructor):
         yaml.constructor.SafeConstructor.__init__(self)
 
     def construct_undefined(self, node):
-        data = getattr(self, 'construct_' + node.id)(node)
+        data = getattr(self, "construct_" + node.id)(node)
         datatype = type(data)
-        wraptype = type('TagWrap_'+datatype.__name__, (datatype,), {})
+        wraptype = type("TagWrap_" + datatype.__name__, (datatype,), {})
         wrapdata = wraptype(data)
         wrapdata.tag = lambda: None
         wrapdata.datatype = lambda: None
@@ -40,7 +50,7 @@ class SafeUnknownLoader(SafeUnknownConstructor, yaml.loader.SafeLoader):
 class SafeUnknownRepresenter(yaml.representer.SafeRepresenter):
     def represent_data(self, wrapdata):
         tag = False
-        if type(wrapdata).__name__.startswith('TagWrap_'):
+        if type(wrapdata).__name__.startswith("TagWrap_"):
             datatype = getattr(wrapdata, "wrapType")
             tag = getattr(wrapdata, "wrapTag")
             data = datatype(wrapdata)
@@ -51,198 +61,119 @@ class SafeUnknownRepresenter(yaml.representer.SafeRepresenter):
             node.tag = tag
         return node
 
+
 class SafeUnknownDumper(SafeUnknownRepresenter, yaml.dumper.SafeDumper):
 
-    def __init__(self, stream,
-            default_style=None, default_flow_style=False,
-            canonical=None, indent=None, width=None,
-            allow_unicode=None, line_break=None,
-            encoding=None, explicit_start=None, explicit_end=None,
-            version=None, tags=None, sort_keys=True):
+    def __init__(
+        self,
+        stream,
+        default_style=None,
+        default_flow_style=False,
+        canonical=None,
+        indent=None,
+        width=None,
+        allow_unicode=None,
+        line_break=None,
+        encoding=None,
+        explicit_start=None,
+        explicit_end=None,
+        version=None,
+        tags=None,
+        sort_keys=True,
+    ):
 
-        SafeUnknownRepresenter.__init__(self, default_style=default_style,
-                default_flow_style=default_flow_style, sort_keys=sort_keys)
+        SafeUnknownRepresenter.__init__(
+            self,
+            default_style=default_style,
+            default_flow_style=default_flow_style,
+            sort_keys=sort_keys,
+        )
 
-        yaml.dumper.SafeDumper.__init__(self,  stream,
-                                        default_style=default_style,
-                                        default_flow_style=default_flow_style,
-                                        canonical=canonical,
-                                        indent=indent,
-                                        width=width,
-                                        allow_unicode=allow_unicode,
-                                        line_break=line_break,
-                                        encoding=encoding,
-                                        explicit_start=explicit_start,
-                                        explicit_end=explicit_end,
-                                        version=version,
-                                        tags=tags,
-                                        sort_keys=sort_keys)
+        yaml.dumper.SafeDumper.__init__(
+            self,
+            stream,
+            default_style=default_style,
+            default_flow_style=default_flow_style,
+            canonical=canonical,
+            indent=indent,
+            width=width,
+            allow_unicode=allow_unicode,
+            line_break=line_break,
+            encoding=encoding,
+            explicit_start=explicit_start,
+            explicit_end=explicit_end,
+            version=version,
+            tags=tags,
+            sort_keys=sort_keys,
+        )
 
 
 MySafeLoader = SafeUnknownLoader
-yaml.constructor.SafeConstructor.add_constructor(None, SafeUnknownConstructor.construct_undefined)
-
-class ModelParser:
-    def __init__(self, yaml_file_path: str):
-        """Initialize the parser with a YAML file path."""
-        self.yaml_file_path = yaml_file_path
-        self.models_data = self._load_yaml()
-    
-    def _load_yaml(self) -> Dict:
-        """Load and parse the YAML file."""
-        try:
-            with open(self.yaml_file_path, "r") as file:
-                yaml_data = file.read()
-                return yaml.load(yaml_data,Loader=MySafeLoader)
-        except FileNotFoundError:
-            print(f"Error: File {self.yaml_file_path} not found.")
-            return {}
-        except yaml.YAMLError as e:
-            print(f"Error parsing YAML: {e}")
-            return {}
-    
-    def get_all_models(self) -> List[Dict[str, str]]:
-        """Fetch all models with their basic information."""
-        models = []
-        if 'models' in self.models_data:
-            for model in self.models_data['models']:
-                model_info = {
-                    'name': model.get('name', ''),
-                    'displayName': model.get('displayName', ''),
-                    'modelHubID': model.get('modelHubID', ''),
-                    'category': model.get('category', ''),
-                    'description': model.get('description', '')
-                }
-                models.append(model_info)
-        return models
-    
-    def get_model_variant_ids(self, model_name: str) -> List[str]:
-        """
-        Fetch all model variant IDs for a given model name.
-        
-        Args:
-            model_name: The name of the model to search for
-            
-        Returns:
-            List of variant IDs for the specified model
-        """
-        variant_ids = []
-        if 'models' in self.models_data:
-            for model in self.models_data['models']:
-                if model.get('name', '').lower() == model_name.lower():
-                    if 'modelVariants' in model:
-                        for variant in model['modelVariants']:
-                            variant_id = variant.get('variantId', '')
-                            if variant_id:
-                                variant_ids.append(variant_id)
-                    break
-        return variant_ids
-    
-    def get_optimization_profile_ids(self, model_name: str, variant_id: str = None) -> List[str]:
-        """
-        Fetch all optimization profile IDs for a given model name and optional variant ID.
-        
-        Args:
-            model_name: The name of the model
-            variant_id: Optional variant ID. If None, gets profiles from all variants
-            
-        Returns:
-            List of optimization profile IDs
-        """
-        profile_ids = []
-        if 'models' in self.models_data:
-            for model in self.models_data['models']:
-                if model.get('name', '').lower() == model_name.lower():
-                    if 'modelVariants' in model:
-                        for variant in model['modelVariants']:
-                            # If variant_id is specified, only process that variant
-                            if variant_id and variant.get('variantId', '').lower() != variant_id.lower():
-                                continue
-                            
-                            if 'optimizationProfiles' in variant:
-                                for profile in variant['optimizationProfiles']:
-                                    profile_id = profile.get('profileId', '')
-                                    if profile_id:
-                                        profile_ids.append(profile_id)
-                    break
-        return profile_ids
-    
-    def get_detailed_model_info(self, model_name: str) -> Optional[Dict]:
-        """
-        Get detailed information about a specific model including all variants and profiles.
-        
-        Args:
-            model_name: The name of the model
-            
-        Returns:
-            Dictionary containing detailed model information
-        """
-        if 'models' in self.models_data:
-            for model in self.models_data['models']:
-                if model.get('name', '').lower() == model_name.lower():
-                    return model
-        return None
-    
-
+yaml.constructor.SafeConstructor.add_constructor(
+    None, SafeUnknownConstructor.construct_undefined
+)
 
 
 def extract_last_part(input_string):
     # Split the string by '/' and return the last part
-    return input_string.split('/')[-1]
+    return input_string.split("/")[-1]
+
 
 def run_ngc_info_command(ID):
     logging.info(f"Start Fetching model info from NGC: {ID}")
     cmd = ["ngc", "registry", "model", "info", ID, "--format_type", "json"]
-    
-    # print the command without exposing Cloudera's key
-    logging.info(cmd)
-    
+
+    log_subprocess_cmd(cmd)
+
     # Set up environment with API keys
     # env = os.environ.copy()
     # env["NGC_CLI_API_KEY"] = os.environ.get("NGC_API_KEY")
     # env["NGC_CLI_ORG"] = os.environ.get("NGC_CLI_ORG")
-    
+
     # Run the command and collect output
     try:
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=False,
-            check=True
-        )
-        
+        result = subprocess.run(cmd, capture_output=True, text=False, check=True)
+
         logging.info(f"Finish Fetching NGC model repo {ID}")
-        
+
         # Parse the JSON output
         try:
             metadata_map = json.loads(result.stdout)
             return metadata_map, None
         except json.JSONDecodeError as e:
-            logging.error(f"Error while Unmarshalling the NGC info command to map: {str(e)}")
+            logging.error(
+                f"Error while Unmarshalling the NGC info command to map: {str(e)}"
+            )
+            log_subprocess_output(
+                logging.ERROR, "ngc model info stdout", result.stdout
+            )
+            log_subprocess_output(
+                logging.ERROR, "ngc model info stderr", result.stderr
+            )
             return None, e
-            
-    except subprocess.CalledProcessError as e:
-        logging.error(f"Error Fetching model repo: {ID}")
-        logging.error(f"Error: {str(e)}")
-        return None, e
 
+    except subprocess.CalledProcessError as e:
+        logging.error("Error fetching model repo: %s", ID)
+        logging.error("ngc model info failed: %s", redact_log_text(str(e)))
+        log_subprocess_output(logging.ERROR, "Command stdout", e.stdout or b"")
+        log_subprocess_output(logging.ERROR, "Command stderr", e.stderr or b"")
+        err_text = redact_log_text(
+            e.stderr.decode() if e.stderr else str(e)
+        )
+        return None, Exception(err_text)
 
 
 def get_ngc_model_info(model_id, tag):
     model_metadata_map, err = run_ngc_info_command(model_id)
     if err:
-        logging.error(f"Error Fetching model repo: {model_id}")
-        logging.error(f"Error: {str(err)}")
+        logging.error("Error fetching model repo: %s", model_id)
+        logging.error("Error: %s", redact_log_text(str(err)))
         return ""
-    versionMetadataMap, err = run_ngc_info_command(model_id + ":" + tag)
+    _, err = run_ngc_info_command(model_id + ":" + tag)
     if err:
-        logging.error(f"Error Fetching model repo: {model_id}")
-        logging.error(f"Error: {str(err)}")
+        logging.error("Error fetching model repo: %s", model_id)
+        logging.error("Error: %s", redact_log_text(str(err)))
         return ""
-    v1 = versionMetadataMap.get("totalSizeInBytes", "")
-    v2 = model_metadata_map.get("versionId", "")
-    if v2 != "":
-        model_metadata_map["versionId"] = v2
     return model_metadata_map
 
 
@@ -250,60 +181,19 @@ def load_ngc_spec(spec_file):
     with open(spec_file, "r") as file:
         yaml_data = file.read()
 
-    yaml_data = yaml.load(yaml_data,Loader=MySafeLoader)
+    yaml_data = yaml.load(yaml_data, Loader=MySafeLoader)
     return yaml_data
-
-
-def execute_nim_download_command(repo_id, folder_location, ngc_spec, profile_sha, version):
-    """
-    Execute nim cli download command to download model files.
-    
-    Args:
-        repo_id (str): Repository ID
-    """
-    model_name = repo_id.split(":")[0]
-    count = model_name.count('/')
-    if count != 2:
-        raise ValueError(f"Expected 3 '/' characters, but found {count} in model name")
-
-    # Get the absolute path of the ngc_spec folder
-    ngc_spec_abs = os.path.dirname(ngc_spec)
-    try:
-        manifests_dir = f"{ngc_spec_abs}/manifests"
-        if not os.path.exists(manifests_dir):
-            raise FileNotFoundError(f"Manifests directory not found: {manifests_dir}")
-        
-        manifest_path = f"{ngc_spec_abs}/manifests/{version}/{model_name}.yaml"
-        if not os.path.exists(manifest_path):
-            raise FileNotFoundError(f"Manifest file not found: {manifest_path}")
-    except Exception as e:
-        logging.error(f"Error accessing manifest files: {str(e)}")
-        return folder_location, e
-    cmd = [
-        "nimcli", "download", "--profiles", profile_sha, "--manifest-file",
-        manifest_path, "--model-cache-path", folder_location
-    ]
-
-    print(cmd)
-        
-    try:
-        # output = subprocess.check_output(cmd, env=env, stderr=subprocess.STDOUT)
-        subprocess.run(cmd, check=True)
-    except subprocess.CalledProcessError as e:
-        logging.error(f"Error download model repo: {repo_id}")
-        logging.error(f"Error: {str(e)}")
-        return folder_location, e
 
 
 def execute_ngc_download_command(repo_id, folder_location, files=None):
     """
     Execute NGC download command to download model files.
-    
+
     Args:
         repo_id (str): Repository ID
         folder_location (str): Destination folder
         files (list, optional): List of files to download. If None, download the entire repo.
-        
+
     Returns:
         tuple: (folder_location, error)
     """
@@ -311,100 +201,123 @@ def execute_ngc_download_command(repo_id, folder_location, files=None):
     # env = os.environ.copy()
     # env["NGC_CLI_API_KEY"] = os.environ.get("NGC_API_KEY")
     # env["NGC_CLI_ORG"] = os.environ.get("NGC_CLI_ORG")
-
+    ngcPrefix = "ngc://"
+    if repo_id.startswith(ngcPrefix):
+        repo_id = repo_id[len(ngcPrefix) :]
     if files and len(files) > 0:
         # Download specific files
         for file in files:
             cmd = [
-                "ngc", "registry", "model", "download-version", 
-                repo_id, "--file", file, "--dest", folder_location, 
-                "--format_type", "json"
+                "ngc",
+                "registry",
+                "model",
+                "download-version",
+                repo_id,
+                "--file",
+                file,
+                "--dest",
+                folder_location,
+                "--format_type",
+                "json",
             ]
-            logging.info(cmd)
-            
+            log_subprocess_cmd(cmd)
+
             try:
                 # output = subprocess.check_output(cmd,env=env, stderr=subprocess.STDOUT)
-                subprocess.run(cmd, check=True)
+                output = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
             except subprocess.CalledProcessError as e:
-                logging.error(f"Error download model repo: {repo_id}")
-                logging.error(f"Error: {str(e)}")
-                logging.error(f"Command output: {e.output.decode()}")
+                logging.error("Error downloading model repo: %s", repo_id)
+                logging.error("Error: %s", redact_log_text(str(e)))
+                log_subprocess_output(logging.ERROR, "Command output", e.output or b"")
                 return folder_location, e
     else:
         # Download entire repository
         cmd = [
-            "ngc", "registry", "model", "download-version", 
-            repo_id, "--dest", folder_location, "--format_type", "json"
+            "ngc",
+            "registry",
+            "model",
+            "download-version",
+            repo_id,
+            "--dest",
+            folder_location,
+            "--format_type",
+            "json",
         ]
-        logging.info(cmd)
-        
+        log_subprocess_cmd(cmd)
+
         try:
             # output = subprocess.check_output(cmd, env=env, stderr=subprocess.STDOUT)
-            subprocess.run(cmd, check=True)
+            output = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
         except subprocess.CalledProcessError as e:
-            logging.error(f"Error download model repo: {repo_id}")
-            logging.error(f"Error: {str(e)}")
-            logging.error(f"Command output: {e.output.decode()}")
-            return folder_location, Exception(e.output.decode())
-    
+            logging.error("Error downloading model repo: %s", repo_id)
+            logging.error("Error: %s", redact_log_text(str(e)))
+            log_subprocess_output(logging.ERROR, "Command output", e.output or b"")
+            return folder_location, Exception(redact_log_text(e.output.decode() if e.output else str(e)))
+
     return folder_location, None
 
 
 def extract_profile_components(data, target_profile_id):
     """
     Extract repoID and src files from components for a given profileID.
-    
+
     Args:
         yaml_data (str): The YAML data as a string
         target_profile_id (str): The profileID to search for
-        
+
     Returns:
         dict: A dictionary containing:
             - 'found' (bool): Whether the profile was found
             - 'components' (list): List of dictionaries with 'repo_id' and 'files' for each component
     """
     result = {
-        'found': False,
-        'components': [],
-        'ngcMetadata': None,
+        "found": False,
+        "components": [],
+        "ngcMetadata": None,
     }
-    modelCard = ''
+
     # Iterate through models
-    for model in data.get('models', []):
+    for model in data.get("models", []):
         # Iterate through variants
-        for variant in model.get('modelVariants', []):
-            modelCard = variant.get('modelCard', '')
+        for variant in model.get("modelVariants", []):
             # Iterate through profiles
-            for profile in variant.get('optimizationProfiles', []):
+            for profile in variant.get("optimizationProfiles", []):
                 # Check if this is the target profileID
-                if profile.get('profileId') == target_profile_id:
-                    result['found'] = True
-                    result['ngcMetadata'] = profile.get('ngcMetadata', None)
+                if profile.get("profileId") == target_profile_id:
+                    result["found"] = True
+                    result["ngcMetadata"] = profile.get("ngcMetadata", None)
                     # Look for ngcMetadata which contains the workspace components
-                    for sha_key, metadata in profile.get('ngcMetadata', {}).items():
-                        if 'workspace' in metadata and 'components' in metadata['workspace']:
-                            for component in metadata['workspace']['components']:
+                    for sha_key, metadata in profile.get("ngcMetadata", {}).items():
+                        if (
+                            "workspace" in metadata
+                            and "components" in metadata["workspace"]
+                        ):
+                            for component in metadata["workspace"]["components"]:
                                 component_info = {
-                                    'destination': component.get('dst', ''),
-                                    'repo_id': component.get('src', {}).get('repo_id', '')
+                                    "destination": component.get("dst", ""),
+                                    "repo_id": component.get("src", {}).get(
+                                        "repo_id", ""
+                                    ),
                                 }
-                                
+
                                 # Extract files if they exist
-                                files = component.get('src', {}).get('files', [])
+                                files = component.get("src", {}).get("files", [])
                                 if files:
                                     # Handle both direct strings and dictionaries with name tags
-                                    component_info['files'] = []
+                                    component_info["files"] = []
                                     for f in files:
                                         if isinstance(f, str):
-                                            component_info['files'].append(f)
-                                        elif isinstance(f, dict) and f.get('!name'):
-                                            component_info['files'].append(f.get('!name'))
-                                
-                                result['components'].append(component_info)
-                    
-                    return result, modelCard  # Return once the profile is found
-    
-    return result, modelCard  # Return not found if we get here
+                                            component_info["files"].append(f)
+                                        elif isinstance(f, dict) and f.get("!name"):
+                                            component_info["files"].append(
+                                                f.get("!name")
+                                            )
+
+                                result["components"].append(component_info)
+
+                    return result  # Return once the profile is found
+
+    return result  # Return not found if we get here
 
 
 def show_help():
@@ -412,112 +325,403 @@ def show_help():
     help_text = """
     Description: Fetches information about a model from the Hugging Face Hub and optionally downloads it,
     or uploads model artifacts to cloud storage.
-    Commands:
-      configure           Run interactive configuration setup to save default values
-      list-local-models   List all downloaded models with their download status and retry count
-    Download Options:
-      -do, --download         Download the model repository
-      -ri, --repo-id          Repository ID to download (required with --download)
-      -rt, --repo-type        Repository type: hf (HuggingFace) or ngc (NVIDIA GPU Cloud) [default: hf]
-      -p, --path              Path to download model files [default: from config or ~/.airgap/model]
-      -t, --token             Token for authentication
-      -ns, --ngc-spec         NGC spec file for downloading (required for NGC downloads)
-    Upload Options:
-      -c, --cloud             Cloud provider: aws, azure, or pvc
-      -s, --src               Source directory for upload
-      -d, --dst               Destination path in object storage
-      -r, --recursive         Recursively upload folders
-      -e, --endpoint          S3 gateway endpoint (for pvc only)
-      -i, --insecure          Allow insecure SSL connections
-      -ca, --ca-bundle        Path to custom CA bundle file
-      -ac, --account          Account for Azure uploads
-      -cn, --container        Container name for Azure uploads
+
     Examples:
-      # Configure default settings
-      python import_to_airgap.py configure
-      # List all downloaded models
-      python import_to_airgap.py list-local-models
-      # Download a HuggingFace model
-      python import_to_airgap.py -do --repo-id facebook/bart-large --repo-type hf
-      # Download an NGC model
-      python import_to_airgap.py -do --repo-id nim/meta/llama-3.1-8b-instruct:1.0.0 --repo-type ngc --ngc-spec spec.yaml
-      # Upload to cloud storage wih configured defaults
-      python import_to_airgap.py --repo-id bert-base-uncased --repo-type hf
-      # Upload to cloud storage with overridden defaults
-      # Upload to AWS S3
-      python import_to_airgap.py --cloud aws --src /path/to/models/ --dst s3://bucket/path --repo-id bert-base-uncased --repo-type hf
-      # Upload to private cloud with S3 endpoint
-      python import_to_airgap.py --cloud pvc --src /path/to/model/hf/meta/llama3.1 --dst s3://bucket/secured-models/hf/meta/llama3.1 --repo-id meta/llama3.1 --repo-type hf
-      # Upload to Azure Blob Storage
-      python import_to_airgap.py --cloud azure --src /path/to/model --account cloudera-customer1 --container data --dst modelregistry/secured-models/hf/meta/llama3.1 --repo-id meta/llama3.1 --repo-type hf
+      python script.py gpt2
+      python script.py --token YOUR_HF_TOKEN --repo-id facebook/bart-large
+      python script.py --download --path ~/my_models --repo-id bert-base-uncased
+      python script.py --repo-type dataset --download --repo-id mnist
+      python script.py --cloud aws --src /path/to/models/ --dst s3://bucket/path --recursive
+      python script.py --cloud pvc --src /path/to/model/hf/meta/llama3.1 --dst s3://bucket/secured-models/hf/meta/llama3.1
+      python script.py --cloud azure --src /path/to/model/hf/meta/llama3.1 --account cloudera-customer1 --container data --dst modelregistry/secured-models/hf/meta/llama3.1
+      python script.py --download --repo-type mistral --model-name mistral-small-2506 --license-key-env MISTRAL_LICENSE_KEY
+      # Then upload and register with source REMOTE, model_repo_type MISTRAL, repo_id mistral-small-2506.
+      # Large models (e.g. mistral-large-4-0-0) need substantial local disk (on the order of 2 TB for BF16).
     """
     print(help_text)
     sys.exit(1)
 
 
-def check_requirements(download_model, cloud):
-    """Check if the required tools are installed."""
-    if download_model:
-        try:
-            subprocess.run(["hf", "version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        except (subprocess.SubprocessError, FileNotFoundError):
-            print("Error: huggingface-cli is required for downloading but not installed.")
-            print("Please install it using pip:")
-            print("pip install --upgrade huggingface_hub")
-            return False
-        try:
-            subprocess.run(["ngc", "version", "info"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        except (subprocess.SubprocessError, FileNotFoundError):
-            print("Error: NGC CLI is required for downloading but not installed.")
-            print("Please install it ngc cli : https://org.ngc.nvidia.com/setup/installers/cli")
+# (version command, install hint) of the CLI each operation shells out to
+DOWNLOAD_REQUIREMENTS = {
+    "hf": (["huggingface-cli", "version"], "pip install huggingface_hub"),
+    "ngc": (
+        ["ngc", "version", "info"],
+        "https://org.ngc.nvidia.com/setup/installers/cli",
+    ),
+    "mistral": (["rclone", "version"], "https://rclone.org/install/"),
+}
+UPLOAD_REQUIREMENTS = {
+    "aws": (["aws", "--version"], "pip install awscli"),
+    "pvc": (["aws", "--version"], "pip install awscli"),
+    "azure": (["az", "--version"], "pip install azure-cli"),
+}
+
+
+def require_tool(purpose, requirement):
+    """Return True if the CLI tool is installed, else print how to get it."""
+    version_cmd, install_hint = requirement
+    try:
+        subprocess.run(
+            version_cmd,
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+    except (subprocess.SubprocessError, FileNotFoundError):
+        print(f"Error: {version_cmd[0]} is required for {purpose} but not installed.")
+        print(f"Install it: {install_hint}")
+        return False
+    return True
+
+
+def check_requirements(download_model, cloud, repo_type=None):
+    """Check that the tools needed for the requested operation are installed."""
+    # An unknown repo_type is reported by validate_repo_type
+    if download_model and repo_type in DOWNLOAD_REQUIREMENTS:
+        if not require_tool(
+            f"{repo_type} downloads", DOWNLOAD_REQUIREMENTS[repo_type]
+        ):
             return False
     if cloud:
-        if cloud == "aws" or cloud == "pvc":
-            try:
-                subprocess.run(["aws", "--version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            except (subprocess.SubprocessError, FileNotFoundError):
-                print(f"Error: aws-cli is required for uploading to {cloud} but not installed.")
-                print("Please install it using pip:")
-                print("  pip install awscli")
-                return False
-        elif cloud == "azure":
-            try:
-                subprocess.run(["az", "--version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            except (subprocess.SubprocessError, FileNotFoundError):
-                print("Error: Azure CLI is required for uploading to Azure Blob Storage but not installed.")
-                print("Please install it using pip:")
-                print("  pip install azure-cli")
-                return False
-        else:
+        if cloud not in UPLOAD_REQUIREMENTS:
             print(f"Unsupported cloud provider: {cloud}")
             return False
-    
+        if not require_tool(f"uploading to {cloud}", UPLOAD_REQUIREMENTS[cloud]):
+            return False
     return True
+
 
 def validate_repo_type(repo_type):
     """Validate the repository type."""
-    valid_types = ["hf", "ngc"]
+    valid_types = ["hf", "ngc", "mistral"]
     if repo_type not in valid_types:
         print(f"Error: Invalid repository type '{repo_type}'")
         print(f"Valid types are: {', '.join(valid_types)}")
         return False
     return True
 
+
+def mistral_bucket_weights_path(path_or_name):
+    """Return bucket-relative path under weights/ (e.g. weights/ministral-3b-2410)."""
+    path_or_name = path_or_name.strip().strip("/")
+    if path_or_name.startswith("weights/"):
+        return path_or_name
+    return f"weights/{path_or_name}"
+
+
+def load_mistral_recipe(recipe_path):
+    """Load MAIS Mistral recipe fields used for licensed-bucket download."""
+    if not os.path.isfile(recipe_path):
+        raise FileNotFoundError(f"recipe file not found: {recipe_path}")
+    with open(recipe_path, encoding="utf-8") as f:
+        doc = yaml.safe_load(f)
+    if not isinstance(doc, dict):
+        raise ValueError("recipe YAML must be a mapping at the top level")
+    model_name = doc.get("model_name")
+    if not model_name:
+        raise ValueError("recipe missing required field: model_name")
+    raw_weights = doc.get("weights_path") or model_name
+    weights_path = mistral_bucket_weights_path(str(raw_weights))
+    speculative = doc.get("speculative_model_name")
+    draft_weights_path = None
+    if speculative:
+        draft_weights_path = mistral_bucket_weights_path(str(speculative))
+    logging.info(
+        "Loaded Mistral recipe %s: model_name=%r weights_path=%r draft_weights_path=%r",
+        recipe_path,
+        str(model_name),
+        weights_path,
+        draft_weights_path,
+    )
+    return {
+        "model_name": str(model_name),
+        "weights_path": weights_path,
+        "draft_weights_path": draft_weights_path,
+    }
+
+
+def resolve_license_key(args):
+    """Return the Mistral license key from the named environment variable.
+
+    --license-key is refused so the credential is not taken from process argv.
+    """
+    if getattr(args, "license_key", None):
+        raise ValueError(
+            "refusing --license-key; set the Mistral license in an environment "
+            "variable and pass --license-key-env"
+        )
+    if args.license_key_env:
+        value = os.environ.get(args.license_key_env)
+        if not value:
+            raise ValueError(
+                f"environment variable '{args.license_key_env}' is unset or empty"
+            )
+        return value
+    raise ValueError("for --repo-type mistral, provide --license-key-env")
+
+
+def decode_mistral_license(key):
+    """Decode a base64 Mistral license key into S3 credential fields."""
+    try:
+        raw = base64.b64decode(key)
+    except (ValueError, binascii.Error):
+        raise ValueError("Mistral license key is not valid base64") from None
+    try:
+        creds = json.loads(raw)
+    except json.JSONDecodeError:
+        raise ValueError("Mistral license key does not decode to valid JSON") from None
+    if not isinstance(creds, dict):
+        raise ValueError("Mistral license key JSON must be an object")
+    missing = [f for f in MISTRAL_LICENSE_FIELDS if not creds.get(f)]
+    if missing:
+        raise ValueError(
+            "Mistral license key is missing required fields: " + ", ".join(missing)
+        )
+    return creds
+
+
+def write_rclone_config(creds, directory):
+    """Write a temporary rclone config with mode 0600."""
+    path = os.path.join(directory, "rclone.conf")
+    body = (
+        "[src]\n"
+        "type = s3\n"
+        "provider = AWS\n"
+        f"access_key_id = {creds['access_key_id']}\n"
+        f"secret_access_key = {creds['secret_access_key']}\n"
+        f"region = {creds['region']}\n"
+    )
+    mode = stat.S_IRUSR | stat.S_IWUSR
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, mode)
+    try:
+        with os.fdopen(fd, "w") as f:
+            f.write(body)
+    except Exception:
+        try:
+            os.unlink(path)
+        except OSError:
+            pass
+        raise
+    return path
+
+
+def build_rclone_copy_cmd(
+    bucket, main_weights_path, draft_weights_path, dest, conf_path
+):
+    """Build the rclone copy command for Mistral weights and tokenizers."""
+    main_weights_path = mistral_bucket_weights_path(main_weights_path)
+    cmd = [
+        "rclone",
+        "copy",
+        f"src:{bucket}",
+        dest,
+        "--config",
+        conf_path,
+        "--progress",
+        "--include",
+        f"{main_weights_path}/**",
+    ]
+    if draft_weights_path:
+        draft_weights_path = mistral_bucket_weights_path(draft_weights_path)
+        cmd.extend(["--include", f"{draft_weights_path}/**"])
+    cmd.extend(["--include", "tokenizers/**"])
+    return cmd
+
+
+def list_mistral_bucket_weight_dirs(creds):
+    """List top-level directory names under weights/ in the licensed bucket."""
+    with tempfile.TemporaryDirectory() as config_dir:
+        conf_path = write_rclone_config(creds, config_dir)
+        remote = f"src:{creds['bucket']}/weights"
+        try:
+            result = subprocess.run(
+                ["rclone", "lsd", remote, "--config", conf_path],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+        except (subprocess.SubprocessError, FileNotFoundError) as e:
+            stderr = getattr(e, "stderr", None) or ""
+            if stderr:
+                log_subprocess_output(logging.ERROR, "rclone lsd stderr", stderr)
+            raise RuntimeError(
+                f"failed to list {remote} (is rclone installed and credentials valid?): {e}"
+            ) from e
+    names = []
+    for line in result.stdout.splitlines():
+        parts = line.split()
+        if parts:
+            names.append(parts[-1])
+    return sorted(names)
+
+
+def require_mistral_draft_weights(draft_weights_path, creds):
+    """Refuse to produce a Mistral artifact without resolved draft weights.
+
+    The MAIS image enables speculative decoding by default, so every staged
+    artifact must include draft/eagle weights.
+    """
+    if draft_weights_path:
+        return
+    try:
+        candidates = [
+            d for d in list_mistral_bucket_weight_dirs(creds)
+            if "draft" in d or "eagle" in d
+        ]
+    except RuntimeError:
+        candidates = []
+    raise ValueError(
+        "draft weights are required: MAIS enables speculative decoding by default. "
+        "Pass --recipe with speculative_model_name (from the MAIS image, "
+        "/opt/ml/model/recipes/default/<model>.yaml), or --draft-model / "
+        "--draft-weights-path. "
+        f"Draft/eagle dirs visible in the bucket: {candidates or 'none listed'}"
+    )
+
+
+def write_mistral_staging_manifest(artifacts_dir, main_weights_path, draft_weights_path):
+    """Record the weight prefixes so the registry import job can verify them."""
+    manifest = {"main": main_weights_path, "draft": draft_weights_path}
+    with open(
+        os.path.join(artifacts_dir, MISTRAL_STAGING_MANIFEST), "w", encoding="utf-8"
+    ) as f:
+        json.dump(manifest, f)
+
+
+def print_mistral_weights_missing_hint(main_weights_path):
+    """Explain common licensed-bucket / recipe mismatches."""
+    print(
+        "\nHint: rclone copied 0 bytes for the main weights prefix. The MAIS recipe "
+        "weights_path must match a directory that exists in your licensed bucket "
+        "(entitlements vary by customer). Older recipes often reference retired "
+        "folders — e.g. weights/mistral-small-2506 vs weights/mistral-small-2603."
+    )
+    print(
+        "List what your license can read:\n"
+        "  python3 scripts/import_to_airgap.py --list-bucket-weights "
+        "--license-key-env MISTRAL_LICENSE_KEY"
+    )
+    print(
+        "Then use the matching recipe YAML (same weights_path basename), or override:\n"
+        f"  --main-weights-path {main_weights_path.replace('mistral-small-2506', 'mistral-small-2603')}"
+    )
+
+
+def _mistral_tree_nonempty(directory):
+    if not os.path.isdir(directory):
+        return False
+    for _, _, files in os.walk(directory):
+        if files:
+            return True
+    return False
+
+
+def _mistral_weights_nonempty(artifacts_dir, weights_path):
+    """Check weights_path (bucket-relative, e.g. weights/ministral-3b-2410)."""
+    rel = weights_path.strip("/").replace("/", os.sep)
+    weights_dir = os.path.join(artifacts_dir, rel)
+    return _mistral_tree_nonempty(weights_dir)
+
+
+def _mistral_tokenizers_nonempty(artifacts_dir):
+    return _mistral_tree_nonempty(os.path.join(artifacts_dir, "tokenizers"))
+
+
+def download_repo_mistral(
+    repo_id,
+    draft_weights_path,
+    creds,
+    download_path,
+    main_weights_path=None,
+):
+    """Download Mistral model weights from the licensed S3 bucket via rclone."""
+    artifacts_dir = os.path.join(download_path, "mistral", repo_id, "artifacts")
+    os.makedirs(artifacts_dir, exist_ok=True)
+    bucket = creds["bucket"]
+    main_weights_path = mistral_bucket_weights_path(
+        main_weights_path or repo_id
+    )
+    if not draft_weights_path:
+        logging.error("Draft weights path is required for Mistral download")
+        return False
+    draft_weights_path = mistral_bucket_weights_path(draft_weights_path)
+
+    logging.info(
+        "Mistral download: bucket=%s repo_id=%r main_weights=%r draft_weights=%r dest=%s",
+        bucket,
+        repo_id,
+        main_weights_path,
+        draft_weights_path,
+        artifacts_dir,
+    )
+
+    with tempfile.TemporaryDirectory() as config_dir:
+        conf_path = write_rclone_config(creds, config_dir)
+        cmd = build_rclone_copy_cmd(
+            bucket, main_weights_path, draft_weights_path, artifacts_dir, conf_path
+        )
+        log_subprocess_cmd(cmd)
+        try:
+            subprocess.run(cmd, check=True)
+        except subprocess.CalledProcessError as e:
+            logging.error(
+                "rclone copy failed for Mistral model %s (exit code %s)",
+                repo_id,
+                e.returncode,
+            )
+            return False
+        except FileNotFoundError:
+            logging.error(
+                "rclone not found; install from https://rclone.org/install/"
+            )
+            return False
+
+    if not _mistral_weights_nonempty(artifacts_dir, main_weights_path):
+        logging.error(
+            "No main weights under %s (expected prefix %s/)",
+            artifacts_dir,
+            main_weights_path,
+        )
+        print_mistral_weights_missing_hint(main_weights_path)
+        return False
+    if not _mistral_weights_nonempty(artifacts_dir, draft_weights_path):
+        logging.error(
+            "No draft weights under %s (expected prefix %s/)",
+            artifacts_dir,
+            draft_weights_path,
+        )
+        return False
+    if not _mistral_tokenizers_nonempty(artifacts_dir):
+        logging.error("No tokenizers under %s/tokenizers", artifacts_dir)
+        return False
+    write_mistral_staging_manifest(artifacts_dir, main_weights_path, draft_weights_path)
+    logging.info("Mistral download completed for %s at %s", repo_id, artifacts_dir)
+    return True
+
+
 def download_repo_hf(repo_id, token, download_path):
     """Download a Hugging Face repository using huggingface-cli."""
 
     print(f"Downloading repository: {repo_id} to {download_path}")
-    
+
     # Create necessary directories
     os.makedirs(os.path.join(download_path, "hf", repo_id, "artifacts"), exist_ok=True)
-    
+
     # Download the repository
     print("Starting download with huggingface-cli...")
     try:
-        cmd = ["hf", "download", repo_id, "--local-dir", f"{download_path}/hf/{repo_id}/artifacts"]
+        cmd = [
+            "huggingface-cli",
+            "download",
+            repo_id,
+            "--local-dir",
+            f"{download_path}/hf/{repo_id}/artifacts",
+        ]
         if token:
             cmd.extend(["--token", token])
-        
+
+        log_subprocess_cmd(cmd)
         subprocess.run(cmd, check=True)
         print(f"Download completed successfully for {repo_id}")
         return True
@@ -526,107 +730,75 @@ def download_repo_hf(repo_id, token, download_path):
         return False
 
 
-def canusenimcli(metadata):
-    """
-    Parse YAML string and extract release information.
-    
-    Args:
-        yaml_str (str): YAML string containing release data
-        
-    Returns:
-        dict: Dictionary containing parsed release information
-    """
-    try:
-        # Parse the YAML string
-
-        
-        # Extract information from the first entry in the YAML
-        # (In this case, there's only one entry with a hash as the key)
-        ngcmetadata = metadata['ngcMetadata']
-        
-        print(ngcmetadata)
-        hash_key = next(iter(ngcmetadata))
-        release_info = ngcmetadata[hash_key]
-        print(release_info)
-        # Check if the release key is present
-        if "release" not in release_info:
-            return False
-        if "model" in release_info:
-            if release_info['model'] ==  "nvidia/nemoretriever-parse":
-                return True
-        if "release" in release_info:
-            version = release_info["release"]
-            checkversion = "1.3.0"
-            from packaging.version import Version
-            return Version(version) >= Version(checkversion)
-    except Exception as e:
-        print("error Failed to parse YAML:", e)
-        return False
-
-def download_repo(repo_id, token, download_path, repo_type, metadata, ngc_spec):
+def download_repo(
+    repo_id,
+    token,
+    download_path,
+    repo_type,
+    metadata,
+    draft=None,
+    creds=None,
+    main_weights_path=None,
+):
     """Download a repository using huggingface-cli."""
-    print(f"start downloading {repo_type} repository: {repo_id}")
-    if repo_type == 'hf':
+    logging.info("Starting download: repo_type=%s repo_id=%s", repo_type, repo_id)
+    if repo_type == "hf":
         return download_repo_hf(repo_id, token, download_path)
-    elif repo_type == 'ngc':
-        ngcPrefix = 'ngc://'
-        if repo_id.startswith(ngcPrefix):
-            repo_id = repo_id[len(ngcPrefix):]
-        repo_path=extract_last_part(repo_id)
+    elif repo_type == "mistral":
+        return download_repo_mistral(
+            repo_id,
+            draft,
+            creds,
+            download_path,
+            main_weights_path=main_weights_path,
+        )
+    elif repo_type == "ngc":
+        repo_path = extract_last_part(repo_id)
         download_path = os.path.join(download_path, "ngc", repo_path, "artifacts")
         os.makedirs(download_path, exist_ok=True)
         # Implement NGC repository downloading if needed
-        nimcli=canusenimcli(metadata)
-        ngcmetadata = metadata['ngcMetadata']
-        profile_sha = next(iter(ngcmetadata))
-        spec = load_ngc_spec(ngc_spec)
-        version = ''
-        if 'registryVersion' in spec:
-            version = spec['registryVersion']
-        if nimcli:
-            model_name = repo_id.split(":")[0]
-            model_name_parts = model_name.split("/")
-            if len(model_name_parts)!=3:
-                raise NameError("Model name should have three parts "+model_name)
-            execute_nim_download_command(repo_id, download_path, ngc_spec, profile_sha, version)
-        else:
-            for component in metadata['components']:
-                print(f"Repo ID: {component['repo_id']}")
-                print(f"Destination: {component['destination']}")
-                execute_ngc_download_command(component['repo_id'], download_path, component.get('files'))
+        for component in metadata["components"]:
+            print(f"Repo ID: {component['repo_id']}")
+            print(f"Destination: {component['destination']}")
+            _, err = execute_ngc_download_command(
+                component["repo_id"], download_path, component.get("files")
+            )
+            if err:
+                print(f"Error: Failed to download {component['repo_id']}")
+                return False
     print("Finish downloading artifacts")
+    return True
 
 
 def get_repo_info_hf(repo_id, token):
     """Get huggingface repository metadata and save it to a file."""
-    import requests    
+    import requests
+
     # Prepare headers for API request
     headers = {"Accept": "application/json"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
-    
+
     # Make the API request
     url = f"https://huggingface.co/api/models/{repo_id}"
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()  # Raise exception for HTTP errors
-        
+
         # Parse JSON and save to file
         return response.json()
     except (requests.RequestException, json.JSONDecodeError) as e:
         print(f"Failed to fetch huggingface repo metadata for the model: {str(e)}")
         return None
 
+
 def get_repo_info_ngc(repo_id, spec_file):
     """Get NGC repository metadata and save it to a file."""
     # Implement NGC repository metadata fetching if needed
     spec = load_ngc_spec(spec_file)
-    ngcMetadata, modelCard =  extract_profile_components(spec, repo_id)
-    repo_id=repo_id.split(':')
-    try:
-        modelMetadata = json.loads(base64.b64decode(modelCard).decode('utf-8'))
-    except Exception:
-        modelMetadata = {}
+    ngcMetadata = extract_profile_components(spec, repo_id)
+    repo_id = repo_id.split(":")
+    modelMetadata = get_ngc_model_info(repo_id[0], repo_id[1])
     return ngcMetadata, modelMetadata
 
 
@@ -634,41 +806,54 @@ def get_repo_info(repo_id, token, repo_type, download_path, ngc_spec):
     """Get repository metadata and save it to a file."""
     print(f"Fetching information for {repo_type} repository: {repo_id}")
     print(f"Download path: {download_path}")
-    if repo_type == 'hf':
+    if repo_type == "hf":
         metadata_path = os.path.join(download_path, "hf", repo_id, "metadata")
         metadata = get_repo_info_hf(repo_id, token)
         os.makedirs(metadata_path, exist_ok=True)
         output_file = os.path.join(metadata_path, "metadata.json")
-        with open(output_file, 'w') as f:
+        with open(output_file, "w") as f:
             json.dump(metadata, f, indent=2)
-    elif repo_type == 'ngc':
+    elif repo_type == "ngc":
         repo_path = extract_last_part(repo_id)
         metadata_path = os.path.join(download_path, "ngc", repo_path, "metadata")
-        metadata, modelmetadata =  get_repo_info_ngc(repo_id, ngc_spec)
-        metadataToFile = metadata['ngcMetadata']
+        metadata, modelmetadata = get_repo_info_ngc(repo_id, ngc_spec)
+        metadataToFile = metadata["ngcMetadata"]
         os.makedirs(metadata_path, exist_ok=True)
         output_file = os.path.join(metadata_path, "metadata.yaml")
-        with open(output_file, 'w') as f:
-            yaml.dump(metadataToFile, f, default_flow_style=False, sort_keys=False, allow_unicode=True, Dumper=SafeUnknownDumper)
+        with open(output_file, "w") as f:
+            yaml.dump(
+                metadataToFile,
+                f,
+                default_flow_style=False,
+                sort_keys=False,
+                allow_unicode=True,
+                Dumper=SafeUnknownDumper,
+            )
         if modelmetadata:
             output_file = os.path.join(metadata_path, "modelmetadata.json")
-            with open(output_file, 'w') as f:
+            with open(output_file, "w") as f:
                 json.dump(modelmetadata, f, indent=2)
-            logging.info(f"Successfully saved modelmetadata to {output_file}")
-        else:
-            logging.warning(f"No modelmetadata available for {repo_id}")
     print("finish downloading metadata file")
 
-        # Implement NGC repository metadata fetching if needed
+    # Implement NGC repository metadata fetching if needed
 
-        
     print(f"Saved metadata to {output_file}")
     return metadata
 
 
-def upload_to_cloud(src, dst, cloud, token=None, recursive=False, endpoint=None, 
-                    insecure=False, ca_bundle=None, account=None, container=None,
-                    repo_id=None, repo_type=None):
+def upload_to_cloud(
+    src,
+    dst,
+    cloud,
+    token=None,
+    endpoint=None,
+    insecure=False,
+    ca_bundle=None,
+    account=None,
+    container=None,
+    repo_id=None,
+    repo_type=None,
+):
     """Upload files to cloud storage."""
 
     print(f"Start uploading  {repo_type} repository: {repo_id}")
@@ -676,510 +861,370 @@ def upload_to_cloud(src, dst, cloud, token=None, recursive=False, endpoint=None,
         if repo_type == "ngc":
             repo_id = extract_last_part(repo_id)
         src = os.path.join(src, repo_type, repo_id)
-        dst = dst +"/"+ repo_type +"/"+ repo_id
+        dst = dst + "/" + repo_type + "/" + repo_id
         if cloud == "aws":
             cmd = ["aws", "s3", "cp", src, f"{dst}/", "--recursive"]
-            
-            print(" ".join(cmd))
+
+            log_subprocess_cmd(cmd)
             subprocess.run(cmd, check=True)
-            
+
         elif cloud == "azure":
             cmd = [
-                "az", "storage", "blob", "upload-batch",
-                "--account-name", account,
-                "--destination", container,
-                "--destination-path", dst,
-                "--source", src
+                "az",
+                "storage",
+                "blob",
+                "upload-batch",
+                "--account-name",
+                account,
+                "--destination",
+                container,
+                "--destination-path",
+                dst,
+                "--source",
+                src,
             ]
             if token:
                 cmd.extend(["--sas-token", token])
-            
+
             subprocess.run(cmd, check=True)
-            
+
         elif cloud == "pvc":
             cmd = ["aws", "s3"]
-            
+
             if endpoint:
                 cmd.extend(["--endpoint", endpoint])
-            
+
             if insecure:
                 cmd.append("--no-verify-ssl")
             elif ca_bundle:
                 cmd.extend(["--ca-bundle", ca_bundle])
-            
+
             cmd.extend(["cp", src, dst, "--recursive"])
-            
+
             subprocess.run(cmd, check=True)
-            
+
         else:
             print(f"Unsupported cloud provider: {cloud}")
             return False
-        
+
         print(f"Uploaded: {src} -> {dst}")
         print(f"Finish uploading  {repo_type} repository: {repo_id} to {cloud}")
         return True
-    
+
     except subprocess.SubprocessError as e:
         print(f"Error during upload: {str(e)}")
         return False
 
 
-def print_models(models: List[Dict[str, str]], title: str = "Models"):
-    """Print models in a formatted way."""
-    print(f"\n=== {title.upper()} ===")
-    if not models:
-        print("No models found.")
-        return
-    
-    for i, model in enumerate(models, 1):
-        print(f"{i}. {model['name']}")
-        print(f"   Display Name: {model['displayName']}")
-        print(f"   Category: {model['category']}")
-        print(f"   Hub ID: {model['modelHubID']}")
-        if model['description']:
-            desc = model['description'][:100] + "..." if len(model['description']) > 100 else model['description']
-            print(f"   Description: {desc}")
-        print()
-
-def print_list(items: List[str], title: str):
-    """Print a list of items in a formatted way."""
-    print(f"\n=== {title.upper()} ===")
-    if not items:
-        print(f"No {title.lower()} found.")
-        return
-    
-    for i, item in enumerate(items, 1):
-        print(f"{i}. {item}")
-
-def print_detailed_model(model_data: Dict, model_name: str):
-    """Print detailed model information."""
-    print(f"\n=== DETAILED INFO FOR '{model_name}' ===")
-    
-    if not model_data:
-        print(f"Model '{model_name}' not found.")
-        return
-    
-    print(f"Name: {model_data.get('name', 'N/A')}")
-    print(f"Display Name: {model_data.get('displayName', 'N/A')}")
-    print(f"Model Hub ID: {model_data.get('modelHubID', 'N/A')}")
-    print(f"Category: {model_data.get('category', 'N/A')}")
-    print(f"Type: {model_data.get('type', 'N/A')}")
-    print(f"Description: {model_data.get('description', 'N/A')}")
-    print(f"License: {model_data.get('license', 'N/A')}")
-    
-    if 'labels' in model_data:
-        print(f"Labels: {', '.join(model_data['labels'])}")
-    
-    if 'modelVariants' in model_data:
-        print(f"\nModel Variants ({len(model_data['modelVariants'])}):")
-        for i, variant in enumerate(model_data['modelVariants'], 1):
-            print(f"  {i}. {variant.get('variantId', 'N/A')}")
-            if 'optimizationProfiles' in variant:
-                print(f"     Optimization Profiles ({len(variant['optimizationProfiles'])}):")
-                for j, profile in enumerate(variant['optimizationProfiles'], 1):
-                    profile_id = profile.get('profileId', 'N/A')
-                    display_name = profile.get('displayName', 'N/A')
-                    framework = profile.get('framework', 'N/A')
-                    print(f"       {j}. {profile_id}")
-                    print(f"          Display Name: {display_name}")
-                    print(f"          Framework: {framework}")
-
-
-def get_config_path():
-    """Get the path to the configuration file."""
-    home = Path.home()
-    config_dir = home / ".airgap"
-    config_dir.mkdir(parents=True, exist_ok=True)
-    return config_dir / "config.json"
-
-
-def get_metadata_file_path(download_path):
-    """Get the path to the models-metadata.yaml file."""
-    metadata_file = os.path.join(download_path, "models-metadata.yaml")
-    return metadata_file
-
-
-def load_models_metadata(download_path):
-    """Load models metadata from YAML file."""
-    metadata_file = get_metadata_file_path(download_path)
-    if os.path.exists(metadata_file):
-        try:
-            with open(metadata_file, 'r') as f:
-                data = yaml.safe_load(f)
-                return data if data else []
-        except (yaml.YAMLError, IOError) as e:
-            print(f"Warning: Could not load metadata file: {e}")
-            return []
-    return []
-
-
-def save_models_metadata(download_path, metadata):
-    """Save models metadata to YAML file."""
-    metadata_file = get_metadata_file_path(download_path)
-    try:
-        with open(metadata_file, 'w') as f:
-            yaml.dump(metadata, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
-    except IOError as e:
-        print(f"Error: Could not save metadata file: {e}")
-
-
-def update_model_metadata(download_path, repo_type, repo_id, download_success, start_time, finish_time):
-    """Update or add model metadata entry."""
-    metadata = load_models_metadata(download_path)
-    
-    # Find existing entry for this repo-type and repo-id
-    existing_entry = None
-    for entry in metadata:
-        if entry.get('repo-type') == repo_type and entry.get('repo-id') == repo_id:
-            existing_entry = entry
-            break
-    
-    if existing_entry:
-        # Update existing entry
-        existing_entry['num-retries'] = existing_entry.get('num-retries', 0) + 1
-        existing_entry['download-starttime'] = start_time
-        existing_entry['download-finishtime'] = finish_time
-        existing_entry['download-success'] = download_success
-    else:
-        # Create new entry
-        new_entry = {
-            'repo-type': repo_type,
-            'repo-id': repo_id,
-            'download-starttime': start_time,
-            'download-finishtime': finish_time,
-            'download-success': download_success,
-            'num-retries': 0
-        }
-        metadata.append(new_entry)
-    
-    save_models_metadata(download_path, metadata)
-    print(f"Metadata updated for {repo_type}/{repo_id}")
-
-
-def list_local_models(download_path):
-    """List all models from the models-metadata.yaml file."""
-    metadata = load_models_metadata(download_path)
-    
-    if not metadata:
-        print("No models found in metadata.")
-        return
-    
-    print("\n=== LOCAL MODELS ===")
-    print(f"{'Repo Type':<15} {'Repo ID':<50} {'Download Success':<20} {'Num Retries':<15}")
-    print("=" * 100)
-    
-    for entry in metadata:
-        repo_type = entry.get('repo-type', 'N/A')
-        repo_id = entry.get('repo-id', 'N/A')
-        download_success = 'true' if entry.get('download-success', False) else 'false'
-        num_retries = entry.get('num-retries', 0)
-        
-        print(f"{repo_type:<15} {repo_id:<50} {download_success:<20} {num_retries:<15}")
-    
-    print()
-
-
-def load_config():
-    """Load configuration from file."""
-    config_path = get_config_path()
-    if config_path.exists():
-        try:
-            with open(config_path, 'r') as f:
-                return json.load(f)
-        except (json.JSONDecodeError, IOError) as e:
-            print(f"Warning: Could not load config file: {e}")
-            return {}
-    return {}
-
-
-def save_config(config):
-    """Save configuration to file."""
-    config_path = get_config_path()
-    try:
-        with open(config_path, 'w') as f:
-            json.dump(config, f, indent=2)
-        print(f"\nConfiguration saved to {config_path}")
-    except IOError as e:
-        print(f"Error: Could not save config file: {e}")
-        sys.exit(1)
-
-
-def configure_interactive():
-    """Interactively configure the tool settings."""
-    print("=== Airgap Model Import Configuration ===\n")
-    
-    config = load_config()
-    
-    # Get default model path
-    default_path = str(Path.home() / ".airgap" / "model")
-    current_path = config.get('path', default_path)
-    path_input = input(f"Enter default model download/source path [{current_path}]: ").strip()
-    config['path'] = path_input if path_input else current_path
-    
-    # Get authentication token
-    current_token = config.get('token', '')
-    token_display = '*' * 8 if current_token else 'none'
-    token_input = input(f"Enter authentication token (for HuggingFace) [current: {token_display}]: ").strip()
-    if token_input:
-        config['token'] = token_input
-    elif not current_token:
-        config['token'] = ''
-    
-    # Get cloud provider
-    current_cloud = config.get('cloud', 'aws')
-    cloud_input = input(f"Enter cloud provider (aws/azure/pvc) [{current_cloud}]: ").strip().lower()
-    config['cloud'] = cloud_input if cloud_input else current_cloud
-    
-    # Validate cloud provider
-    if config['cloud'] not in ['aws', 'azure', 'pvc']:
-        print(f"Warning: Invalid cloud provider '{config['cloud']}'. Defaulting to 'aws'.")
-        config['cloud'] = 'aws'
-    
-    # Get destination path
-    current_dst = config.get('dst', '')
-    dst_input = input(f"Enter default destination path in cloud storage [{current_dst or 'none'}]: ").strip()
-    config['dst'] = dst_input if dst_input else current_dst
-    
-    # Cloud-specific configuration
-    if config['cloud'] in ['aws', 'pvc']:
-        print(f"\n--- AWS/PVC Configuration ---")
-        
-        if config['cloud'] == 'pvc':
-            current_endpoint = config.get('endpoint', '')
-            endpoint_input = input(f"Enter S3 endpoint URL [{current_endpoint or 'none'}]: ").strip()
-            config['endpoint'] = endpoint_input if endpoint_input else current_endpoint
-            
-            current_insecure = config.get('insecure', False)
-            insecure_input = input(f"Allow insecure SSL connections? (yes/no) [{'yes' if current_insecure else 'no'}]: ").strip().lower()
-            if insecure_input in ['yes', 'y']:
-                config['insecure'] = True
-                config.pop('ca_bundle', None)  # Remove ca_bundle if insecure is enabled
-            elif insecure_input in ['no', 'n']:
-                config['insecure'] = False
-                current_ca = config.get('ca_bundle', '')
-                ca_input = input(f"Enter path to CA bundle file [{current_ca or 'none'}]: ").strip()
-                config['ca_bundle'] = ca_input if ca_input else current_ca
-            # If no input, keep current settings
-        else:
-            # For AWS, clear PVC-specific settings
-            config.pop('endpoint', None)
-            config.pop('insecure', None)
-            config.pop('ca_bundle', None)
-        
-        # Clear Azure-specific settings
-        config.pop('account', None)
-        config.pop('container', None)
-    
-    elif config['cloud'] == 'azure':
-        print(f"\n--- Azure Configuration ---")
-        
-        current_account = config.get('account', '')
-        account_input = input(f"Enter Azure storage account name [{current_account or 'none'}]: ").strip()
-        config['account'] = account_input if account_input else current_account
-        
-        current_container = config.get('container', '')
-        container_input = input(f"Enter Azure container name [{current_container or 'none'}]: ").strip()
-        config['container'] = container_input if container_input else current_container
-        
-        # Clear AWS/PVC-specific settings
-        config.pop('endpoint', None)
-        config.pop('insecure', None)
-        config.pop('ca_bundle', None)
-    
-    # Save configuration
-    save_config(config)
-    print("\nConfiguration complete!")
-    return config
-
-
 def main():
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[logging.StreamHandler(sys.stdout)]
+    parser = argparse.ArgumentParser(description="Hugging Face model management script")
+
+    # Help option
+
+    # Download options
+    parser.add_argument("-t", "--token", default="", help="Token for authentication")
+    parser.add_argument("-j", "--json", action="store_true", help="Output raw JSON")
+    parser.add_argument(
+        "-do", "--download", action="store_true", help="Download the model repository"
+    )
+    parser.add_argument(
+        "-p", "--path", default="./models", help="Path to download model files"
+    )
+    parser.add_argument("-ri", "--repo-id", help="Repository ID to download")
+    parser.add_argument(
+        "--model-name",
+        dest="repo_id",
+        help="Model name (alias for --repo-id; used with --repo-type mistral)",
+    )
+    parser.add_argument(
+        "-rt", "--repo-type", default="hf", help="Repository type (default: hf)"
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="Verbose logging (DEBUG) to stderr",
+    )
+    license_group = parser.add_mutually_exclusive_group()
+    license_group.add_argument(
+        "--license-key",
+        help="Rejected. Pass the Mistral license via --license-key-env",
+    )
+    license_group.add_argument(
+        "--license-key-env",
+        help="Environment variable containing the Mistral license key",
+    )
+    parser.add_argument(
+        "--draft-model",
+        help=(
+            "Licensed-bucket draft/eagle weights name or weights/... path "
+            "(speculative decoding). Required unless --recipe sets "
+            "speculative_model_name. Prefer --recipe."
+        ),
+    )
+    parser.add_argument(
+        "--recipe",
+        help=(
+            "MAIS Mistral recipe YAML (model_name, weights_path, "
+            "speculative_model_name); sets --repo-id when omitted"
+        ),
+    )
+    parser.add_argument(
+        "--main-weights-path",
+        help=(
+            "Override licensed-bucket main weights prefix (e.g. "
+            "weights/mistral-small-2603); defaults from recipe or repo-id"
+        ),
+    )
+    parser.add_argument(
+        "--draft-weights-path",
+        help="Override licensed-bucket draft/eagle weights prefix",
+    )
+    parser.add_argument(
+        "--list-bucket-weights",
+        action="store_true",
+        help=(
+            "List weights/ subdirectories visible with the Mistral license key "
+            "(requires --license-key-env)"
+        ),
     )
 
-    # Load configuration first to get defaults
-    config = load_config()
-    
-    # Set up default values from config
-    default_path = config.get('path', str(Path.home() / ".airgap" / "model"))
-    default_token = config.get('token', '')
-    default_cloud = config.get('cloud', 'aws')
-    default_dst = config.get('dst', '')
-    default_endpoint = config.get('endpoint', '')
-    default_ca_bundle = config.get('ca_bundle', '')
-    default_account = config.get('account', '')
-    default_container = config.get('container', '')
-    
-    parser = argparse.ArgumentParser(description="Airgap model import and management tool", add_help=False)
-    parser.add_argument("-h", "--help", action="store_true", help="Show this help message and exit")
-    
-    # Configuration option
-    parser.add_argument("--configure", action="store_true", help="Configure default settings interactively")
-    
-    # Download options
-    parser.add_argument("-t", "--token", default=None, help=f"Token for authentication (default: configured value)")
-    parser.add_argument("-j", "--json", action="store_true", help="Output raw JSON")
-    parser.add_argument("-do", "--download", action="store_true", help="Download the model repository")
-    parser.add_argument("-p", "--path", default=None, help=f"Path to download/source model files (default: {default_path})")
-    parser.add_argument("-ri", "--repo-id", help="Repository ID to download")
-    parser.add_argument("-rt", "--repo-type", default="hf", help="Repository type (default: hf)")
-    
     # Upload options
-    parser.add_argument("-c", "--cloud", default=None, help=f"Cloud provider (aws, azure, pvc) (default: {default_cloud})")
-    parser.add_argument("-s", "--src", default=None, help=f"Source directory for upload (default: same as --path)")
-    parser.add_argument("-d", "--dst", default=None, help=f"Destination path in object storage (default: configured value)")
-    parser.add_argument("-r", "--recursive", action="store_true", help="Recursively upload folders")
-    parser.add_argument("-e", "--endpoint", default=None, help=f"S3 gateway endpoint (Private cloud only) (default: configured value)")
-    parser.add_argument("-i", "--insecure", action="store_true", help="Allow insecure SSL connections")
-    parser.add_argument("-ca", "--ca-bundle", default=None, help=f"Path to custom CA bundle file (default: configured value)")
-    parser.add_argument("-ac", "--account", default=None, help=f"Account for Azure uploads (default: configured value)")
-    parser.add_argument("-cn", "--container", default=None, help=f"Container name for Azure uploads (default: configured value)")
-    parser.add_argument("-ns", "--ngc-spec", help="NGC spec folder path")
-    
-    # Query options
-    parser.add_argument('-m', '--model-name', help='Name of the model to query')
-    parser.add_argument('-vid', '--variant-id', help='Variant ID (used with model name for specific queries)')
-    parser.add_argument('--list-all', action='store_true', help='List all available models')
-    parser.add_argument('--list-variants', action='store_true', help='List all variant IDs for the specified model')
-    parser.add_argument('--list-profiles', action='store_true', help='List all optimization profile IDs for the specified model (and variant if provided)')
-    parser.add_argument('--list-local-models', action='store_true', help='List all locally downloaded models from metadata')
-
-    # Support 'help' command by converting it to --help flag
-    if len(sys.argv) > 1 and sys.argv[1] == 'help':
-        sys.argv[1] = '--help'
+    parser.add_argument(
+        "-c", "--cloud", default="aws", help="Cloud provider (aws, azure, pvc)"
+    )
+    parser.add_argument("-s", "--src", help="Source directory for upload")
+    parser.add_argument("-d", "--dst", help="Destination path in object storage")
+    # TODO: remove once no external script passes --recursive.
+    # Kept so existing invocations don't fail; uploads are always recursive.
+    parser.add_argument(
+        "-r",
+        "--recursive",
+        action="store_true",
+        help="Deprecated no-op: uploads are always recursive",
+    )
+    parser.add_argument(
+        "-e", "--endpoint", help="S3 gateway endpoint (Private cloud only)"
+    )
+    parser.add_argument(
+        "-i", "--insecure", action="store_true", help="Allow insecure SSL connections"
+    )
+    parser.add_argument("-ca", "--ca-bundle", help="Path to custom CA bundle file")
+    parser.add_argument("-ac", "--account", help="Account for Azure uploads")
+    parser.add_argument("-cn", "--container", help="Container name for Azure uploads")
+    parser.add_argument("-ns", "--ngc-spec", help="NGC spec file for downloading")
 
     args = parser.parse_args()
-    
-    # Handle configure command
-    if args.configure:
-        configure_interactive()
-        sys.exit(0)
-    
-    # Apply defaults from config if not provided in command line
-    if args.token is None:
-        args.token = default_token
-    if args.path is None:
-        args.path = default_path
-    if args.cloud is None:
-        args.cloud = default_cloud
-    if args.src is None:
-        args.src = default_path  # src defaults to path
-    if args.dst is None:
-        args.dst = default_dst
-    if args.endpoint is None:
-        args.endpoint = default_endpoint
-    if args.ca_bundle is None:
-        if default_ca_bundle and default_ca_bundle != '':
-            args.ca_bundle = default_ca_bundle
-    if args.account is None:
-        if default_account and default_account != '':
-            args.account = default_account
-    if args.container is None:
-        if default_container and default_container != '':
-            args.container = default_container
-    
-    # Handle insecure flag - if explicitly set in command line, it overrides config
-    # Otherwise, use config value
-    if not args.insecure and config.get('insecure', False):
-        args.insecure = True
-    
+    configure_logging(verbose=args.verbose)
+
     # # Show help if requested or no arguments provided
-    if args.help or len(sys.argv) == 1:
-        show_help()
-    
+    # if args.help or len(sys.argv) == 1:
+    #     show_help()
+
     # Check requirements
-    if not check_requirements(args.download, args.cloud if args.src else None):
+    if not check_requirements(
+        args.download, args.cloud if args.src else None, args.repo_type
+    ):
         sys.exit(1)
-    
-    # Handle list-local-models command
-    if args.list_local_models:
-        list_local_models(args.path)
-        return
-    
-    # Handle different command combinations
-    if args.list_all:
-        ngc_spec_file = args.ngc_spec
-        parser = ModelParser(ngc_spec_file)
-        models = parser.get_all_models()
-        print_models(models, "All Models")
-        return
-    
-    elif args.model_name:
-        ngc_spec_file = args.ngc_spec
-        parser = ModelParser(ngc_spec_file)
-        
-        if args.list_variants:
-            variants = parser.get_model_variant_ids(args.model_name)
-            print_list(variants, f"Variants for '{args.model_name}'")
-        
-        elif args.list_profiles:
-            profiles = parser.get_optimization_profile_ids(args.model_name, args.variant_id)
-            if args.variant_id:
-                title = f"Optimization Profiles for '{args.model_name}' variant '{args.variant_id}'"
-            else:
-                title = f"Optimization Profiles for '{args.model_name}'"
-            print_list(profiles, title)
-        
-        else:
-            # Default: show basic info about the model
-            model_data = parser.get_detailed_model_info(args.model_name)
-            if model_data:
-                model_info = {
-                    'name': model_data.get('name', ''),
-                    'displayName': model_data.get('displayName', ''),
-                    'modelHubID': model_data.get('modelHubID', ''),
-                    'category': model_data.get('category', ''),
-                    'description': model_data.get('description', '')
-                }
-                print_models([model_info], f"Model '{args.model_name}'")
-            else:
-                print(f"Model '{args.model_name}' not found.")
-        return
+
+    if args.list_bucket_weights:
+        try:
+            license_key = resolve_license_key(args)
+            creds = decode_mistral_license(license_key)
+            logging.info("Listing weights/ in licensed bucket %s", creds["bucket"])
+            dirs = list_mistral_bucket_weight_dirs(creds)
+        except (ValueError, RuntimeError) as e:
+            logging.error("%s", redact_log_text(str(e)))
+            sys.exit(1)
+        print(f"weights/ directories in bucket {creds['bucket']}:")
+        for name in dirs:
+            print(f"  {name}")
+        if not dirs:
+            print("  (none listed — check license or rclone access)")
+        sys.exit(0)
+
     # Handle download use case
     if args.download:
-        if not args.repo_id:
-            print("Error: --repo-id is required for download")
+        if not args.repo_id and not args.recipe:
+            print(
+                "Error: --repo-id (or --model-name) or --recipe is required for download"
+            )
             sys.exit(1)
-        
+
         if not validate_repo_type(args.repo_type):
             sys.exit(1)
-        
-        # Track download timing and success
-        start_time = datetime.now().isoformat()
-        download_success = False
-        
-        try:
-            # Get repository info and download
-            metadata = get_repo_info(args.repo_id, args.token, args.repo_type, args.path, args.ngc_spec)
-            if metadata is not None:
-                download_repo(args.repo_id, args.token, args.path, args.repo_type, metadata, args.ngc_spec)
-                download_success = True
-            else:
-                print("Error: Failed to get repository metadata")
-        except Exception as e:
-            print(f"Error during download: {str(e)}")
-            download_success = False
-        finally:
-            finish_time = datetime.now().isoformat()
-            # Update metadata file
-            update_model_metadata(args.path, args.repo_type, args.repo_id, download_success, start_time, finish_time)
-        
-        if not download_success:
+
+        if args.repo_type == "mistral":
+            main_weights_path = None
+            draft_weights_path = None
+            try:
+                if args.recipe:
+                    recipe = load_mistral_recipe(args.recipe)
+                    if not args.repo_id:
+                        args.repo_id = recipe["model_name"]
+                    main_weights_path = recipe["weights_path"]
+                    draft_weights_path = recipe["draft_weights_path"]
+                license_key = resolve_license_key(args)
+                creds = decode_mistral_license(license_key)
+                if args.draft_model:
+                    draft_weights_path = mistral_bucket_weights_path(args.draft_model)
+                if main_weights_path is None:
+                    main_weights_path = mistral_bucket_weights_path(args.repo_id)
+                if args.main_weights_path:
+                    main_weights_path = mistral_bucket_weights_path(
+                        args.main_weights_path
+                    )
+                if args.draft_weights_path:
+                    draft_weights_path = mistral_bucket_weights_path(
+                        args.draft_weights_path
+                    )
+                require_mistral_draft_weights(draft_weights_path, creds)
+                logging.info(
+                    "Resolved Mistral download: repo_id=%r main_weights=%r draft_weights=%r",
+                    args.repo_id,
+                    main_weights_path,
+                    draft_weights_path,
+                )
+            except (ValueError, FileNotFoundError) as e:
+                logging.error("%s", redact_log_text(str(e)))
+                sys.exit(1)
+            if not download_repo(
+                args.repo_id,
+                args.token,
+                args.path,
+                args.repo_type,
+                None,
+                draft=draft_weights_path,
+                creds=creds,
+                main_weights_path=main_weights_path,
+            ):
+                sys.exit(1)
+            sys.exit(0)
+
+        # Get repository info and download
+        metadata = get_repo_info(
+            args.repo_id, args.token, args.repo_type, args.path, args.ngc_spec
+        )
+        if metadata is None:
+            print("Error: Failed to get repository metadata")
+            sys.exit(1)
+        if not download_repo(
+            args.repo_id, args.token, args.path, args.repo_type, metadata
+        ):
             sys.exit(1)
         sys.exit(0)
-    
 
-    if not upload_to_cloud(
-        args.src, args.dst, args.cloud, args.token, args.recursive,
-        args.endpoint, args.insecure, args.ca_bundle, args.account, args.container,
-        args.repo_id, args.repo_type
+    # Handle upload use case
+    if args.src and args.dst:
+        if not upload_to_cloud(
+            args.src,
+            args.dst,
+            args.cloud,
+            args.token,
+            args.endpoint,
+            args.insecure,
+            args.ca_bundle,
+            args.account,
+            args.container,
+            args.repo_id,
+            args.repo_type,
+        ):
+            sys.exit(1)
+        print("Upload completed.")
+    else:
+        print("Error: Missing required parameters.")
+        show_help()
 
-    ):
-        print(f"Error: Failed to upload repository: {args.repo_id} to {args.cloud}")
-        sys.exit(1)
-    print(f"Upload completed for repository: {args.repo_id} to {args.cloud}")
+# argv flags whose following value (or =value) must not appear in logs
+_SENSITIVE_CMD_FLAGS = frozenset(
+    {
+        "--token",
+        "--sas-token",
+        "--license-key",
+        "--access-key-id",
+        "--secret-access-key",
+        "--sharedaccesskey",
+    }
+)
+
+_LOG_REDACTIONS = (
+    (
+        re.compile(r'(?i)(access_key_id["\']?\s*[:=]\s*["\']?)[^"\'\s,}]+'),
+        r"\1<redacted>",
+    ),
+    (
+        re.compile(r'(?i)(secret_access_key["\']?\s*[:=]\s*["\']?)[^"\'\s,}]+'),
+        r"\1<redacted>",
+    ),
+    (re.compile(r"nvapi-[A-Za-z0-9_-]+"), "nvapi-<redacted>"),
+    (re.compile(r"(?i)(Bearer\s+)[A-Za-z0-9._-]+"), r"\1<redacted>"),
+    (re.compile(r"\bAKIA[0-9A-Z]{16}\b"), "AKIA<redacted>"),
+    (re.compile(r"(?i)(--token[=\s])\S+"), r"\1<redacted>"),
+    (re.compile(r"(?i)(--sas-token[=\s])\S+"), r"\1<redacted>"),
+)
+
+
+def redact_cmd_argv(cmd):
+    """Return a copy of argv safe to log (tokens and keys replaced)."""
+    if not cmd:
+        return []
+    argv = list(cmd)
+    safe = []
+    i = 0
+    while i < len(argv):
+        arg = argv[i]
+        if arg.startswith("NGC_API_KEY="):
+            safe.append("NGC_API_KEY=<redacted>")
+            i += 1
+            continue
+        if "=" in arg:
+            name, _, _value = arg.partition("=")
+            if name in _SENSITIVE_CMD_FLAGS or name.lower() in _SENSITIVE_CMD_FLAGS:
+                safe.append(f"{name}=<redacted>")
+                i += 1
+                continue
+        if arg in _SENSITIVE_CMD_FLAGS:
+            safe.append(arg)
+            if i + 1 < len(argv):
+                safe.append("<redacted>")
+                i += 2
+                continue
+        safe.append(arg)
+        i += 1
+    return safe
+
+
+def redact_log_text(text):
+    """Scrub secrets from subprocess or error text before logging."""
+    if not text:
+        return ""
+    if isinstance(text, bytes):
+        text = text.decode("utf-8", errors="replace")
+    for pattern, repl in _LOG_REDACTIONS:
+        text = pattern.sub(repl, text)
+    return text
+
+
+def configure_logging(verbose=False):
+    """Send script progress to stderr so stdout stays free for piping."""
+    level = logging.DEBUG if verbose else logging.INFO
+    logging.basicConfig(
+        level=level,
+        format="%(asctime)s %(levelname)s %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+
+
+def log_subprocess_cmd(cmd):
+    """Log an external command without secrets (argv only)."""
+    logging.info("Running command: %s", " ".join(redact_cmd_argv(cmd)))
+
+
+def log_subprocess_output(level, label, text):
+    """Log subprocess stdout/stderr after redacting credentials."""
+    logging.log(level, "%s: %s", label, redact_log_text(text))
+
+
 
 if __name__ == "__main__":
     main()
